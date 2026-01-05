@@ -1,93 +1,87 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Shield, Leaf } from "lucide-react";
+import { ArrowRight, Thermometer, Zap, Layers } from "lucide-react";
 import heroBattery from "@/assets/hero-battery.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
           src={heroBattery}
           alt="Energy Storage Systems"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
       </div>
 
       {/* Content */}
-      <div className="container-custom relative z-10 pt-20">
-        <div className="max-w-2xl stagger-children">
+      <div className="container-custom relative z-10 py-20">
+        <div className="max-w-4xl stagger-children">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary/30 mb-8">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm text-muted-foreground">
-              Next-Gen LiFePO4 Technology
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 border border-border/50 bg-background/50 mb-10">
+            <Zap className="w-4 h-4 text-primary" />
+            <span className="text-xs text-muted-foreground uppercase tracking-widest">
+              Engineering Validated — Architectural Component
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight mb-6">
-            Power Your
+          <h1 className="text-6xl md:text-8xl lg:text-9xl headline-italic mb-8">
+            <span className="text-foreground">RUGGED POWER.</span>
             <br />
-            <span className="text-gradient">Future</span> Today
+            <span className="text-primary">BUILT TO FIT.</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl text-muted-foreground mb-10 max-w-lg">
-            Premium LiFePO4 energy storage solutions for homes, businesses, and 
-            adventures. Safe, sustainable, and built to last.
+          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl leading-relaxed">
+            Modular LiFePO4 architecture designed to eliminate the voltage stability paradox. 
+            We prioritize mechanical fitment and thermal logic over synthetic capacity metrics.
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-wrap gap-4 mb-16">
-            <Button variant="hero" size="xl">
-              Explore Products
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-            <Button variant="heroOutline" size="xl">
-              Get a Quote
-            </Button>
-          </div>
-
           {/* Features */}
-          <div className="flex flex-wrap gap-8">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center">
-                <Zap className="w-6 h-6 text-primary" />
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+            <div className="flex items-center gap-4">
+              <div className="icon-circle">
+                <Thermometer className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="font-semibold text-foreground">10,000+ Cycles</p>
-                <p className="text-sm text-muted-foreground">Long lifespan</p>
+                <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">Thermal Logic</h4>
+                <p className="text-xs text-muted-foreground mt-0.5">Integrated safety heating boundaries</p>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center">
-                <Shield className="w-6 h-6 text-primary" />
+            <div className="flex items-center gap-4">
+              <div className="icon-circle">
+                <Zap className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="font-semibold text-foreground">10 Year Warranty</p>
-                <p className="text-sm text-muted-foreground">Peace of mind</p>
+                <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">Validation</h4>
+                <p className="text-xs text-muted-foreground mt-0.5">300A Validated Peak logic v4.2</p>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center">
-                <Leaf className="w-6 h-6 text-primary" />
+            <div className="flex items-center gap-4">
+              <div className="icon-circle">
+                <Layers className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="font-semibold text-foreground">100% Safe</p>
-                <p className="text-sm text-muted-foreground">No thermal runaway</p>
+                <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">Boundaries</h4>
+                <p className="text-xs text-muted-foreground mt-0.5">Standardized BCI / DIN Formats</p>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
-        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/50 flex items-start justify-center p-2">
-          <div className="w-1 h-3 rounded-full bg-primary animate-pulse" />
+          {/* CTAs */}
+          <div className="flex flex-wrap items-center gap-6">
+            <Button variant="hero" size="xl" className="group">
+              PROVISION SYSTEM
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <div className="text-left">
+              <p className="text-xs text-muted-foreground uppercase tracking-wider">Logic Assessment Required</p>
+              <p className="text-xs text-muted-foreground/60">Download Datasheets Below</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

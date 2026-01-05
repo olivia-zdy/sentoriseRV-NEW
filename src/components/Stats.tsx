@@ -1,21 +1,21 @@
 const stats = [
-  { value: "50K+", label: "Units Sold" },
-  { value: "98%", label: "Customer Satisfaction" },
-  { value: "45+", label: "Countries Served" },
-  { value: "10Y", label: "Warranty Coverage" },
+  { value: "10K+", label: "Modules Deployed", suffix: "" },
+  { value: "45", label: "Countries Active", suffix: "+" },
+  { value: "300A", label: "Peak Validated", suffix: "" },
+  { value: "10", label: "Year Warranty", suffix: "Y" },
 ];
 
 const Stats = () => {
   return (
-    <section className="py-16 bg-energy-gradient">
+    <section className="py-16 bg-primary">
       <div className="container-custom">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <p className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-2">
-                {stat.value}
+              <p className="text-4xl md:text-5xl font-black text-primary-foreground mb-2 headline-italic">
+                {stat.value}<span className="text-3xl">{stat.suffix}</span>
               </p>
-              <p className="text-primary-foreground/80 font-medium">
+              <p className="text-primary-foreground/70 text-xs font-bold uppercase tracking-widest">
                 {stat.label}
               </p>
             </div>

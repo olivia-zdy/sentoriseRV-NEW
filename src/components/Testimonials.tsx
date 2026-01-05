@@ -1,29 +1,26 @@
-import { Star } from "lucide-react";
+import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Michael Chen",
-    role: "Homeowner, California",
+    name: "Marcus Eriksson",
+    role: "Fleet Manager, Nordic Logistics",
     content:
-      "The PowerWall Pro has completely transformed our home's energy independence. We haven't paid an electricity bill in months!",
-    rating: 5,
-    avatar: "MC",
+      "The DIN H8 modules dropped right into our existing chassis rails. Zero modification required. The thermal logic has prevented any cold-weather failures across our entire fleet.",
+    avatar: "ME",
   },
   {
-    name: "Sarah Johnson",
-    role: "RV Enthusiast",
+    name: "Dr. Sarah Chen",
+    role: "Systems Engineer, Marine Tech",
     content:
-      "The RV Freedom battery is perfect for off-grid adventures. Reliable, lightweight, and the app monitoring is fantastic.",
-    rating: 5,
-    avatar: "SJ",
+      "Finally, a LiFePO4 manufacturer that understands mechanical fitment. The vibration-rated terminals and IP65 enclosure have survived 18 months of offshore deployment.",
+    avatar: "SC",
   },
   {
-    name: "David Park",
-    role: "Business Owner",
+    name: "Thomas Müller",
+    role: "Technical Director, RV Systems EU",
     content:
-      "We installed the Industrial BESS system last year. The ROI has been incredible with significant savings on peak demand charges.",
-    rating: 5,
-    avatar: "DP",
+      "We've tested 47 different battery brands. Sentorise is the only one that delivers consistent voltage sag control under high-draw scenarios. The engineering is legitimate.",
+    avatar: "TM",
   },
 ];
 
@@ -32,51 +29,43 @@ const Testimonials = () => {
     <section id="about" className="section-padding bg-background">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            Testimonials
-          </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-            Trusted by
-            <br />
-            <span className="text-gradient">Thousands Worldwide</span>
-          </h2>
+        <div className="flex items-center gap-4 mb-6">
+          <span className="text-xs text-muted-foreground uppercase tracking-widest">03. Field Validation</span>
         </div>
+        
+        <h2 className="text-4xl md:text-5xl lg:text-6xl headline-italic mb-16">
+          <span className="text-foreground">Engineering</span>
+          <br />
+          <span className="text-primary">Testimonials.</span>
+        </h2>
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="p-8 rounded-2xl bg-card border border-border/50 card-hover"
+              className="p-8 border border-border/30 bg-card/50 hover:border-primary/30 transition-colors"
             >
-              {/* Stars */}
-              <div className="flex gap-1 mb-6">
-                {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-5 h-5 fill-accent text-accent"
-                  />
-                ))}
-              </div>
+              {/* Quote Icon */}
+              <Quote className="w-8 h-8 text-primary/30 mb-6" />
 
               {/* Content */}
-              <p className="text-foreground text-lg mb-8 leading-relaxed">
+              <p className="text-foreground text-base mb-8 leading-relaxed">
                 "{testimonial.content}"
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-energy-gradient flex items-center justify-center">
-                  <span className="text-primary-foreground font-semibold">
+              <div className="flex items-center gap-4 pt-6 border-t border-border/30">
+                <div className="w-12 h-12 bg-primary flex items-center justify-center">
+                  <span className="text-primary-foreground font-bold text-sm">
                     {testimonial.avatar}
                   </span>
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">
+                  <p className="font-bold text-foreground text-sm">
                     {testimonial.name}
                   </p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs text-muted-foreground">
                     {testimonial.role}
                   </p>
                 </div>

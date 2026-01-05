@@ -3,27 +3,28 @@ import { Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
 const Footer = () => {
   const footerLinks = {
     Products: [
-      { name: "Home Storage", href: "#" },
-      { name: "Portable Power", href: "#" },
-      { name: "Commercial BESS", href: "#" },
-      { name: "RV & Marine", href: "#" },
+      { name: "DIN H8 Modules", href: "#" },
+      { name: "BCI 31 Series", href: "#" },
+      { name: "48V Systems", href: "#" },
+      { name: "Marine Grade", href: "#" },
     ],
-    Company: [
-      { name: "About Us", href: "#" },
-      { name: "Careers", href: "#" },
-      { name: "Press", href: "#" },
-      { name: "Blog", href: "#" },
+    Applications: [
+      { name: "Automotive", href: "#" },
+      { name: "Marine", href: "#" },
+      { name: "RV & Camper", href: "#" },
+      { name: "Industrial", href: "#" },
     ],
     Support: [
       { name: "Help Center", href: "#" },
+      { name: "Datasheets", href: "#" },
       { name: "Warranty", href: "#" },
-      { name: "Returns", href: "#" },
       { name: "Contact", href: "#" },
     ],
-    Legal: [
-      { name: "Privacy Policy", href: "#" },
-      { name: "Terms of Service", href: "#" },
-      { name: "Cookie Policy", href: "#" },
+    Company: [
+      { name: "About Sentorise", href: "#" },
+      { name: "Careers", href: "#" },
+      { name: "Blog", href: "#" },
+      { name: "Press", href: "#" },
     ],
   };
 
@@ -36,31 +37,31 @@ const Footer = () => {
   ];
 
   return (
-    <footer id="contact" className="bg-card border-t border-border/50">
+    <footer id="contact" className="bg-card border-t border-border/30">
       <div className="container-custom section-padding">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2">
             <a href="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-energy-gradient flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">E</span>
-              </div>
-              <span className="font-display text-2xl font-bold text-foreground">
-                Ener<span className="text-gradient">gia</span>
+              <span className="text-2xl font-black text-foreground tracking-tight">
+                SENTORISE
               </span>
+              <svg className="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L8 6H2V8L6 12L2 16V18H8L12 22L16 18H22V16L18 12L22 8V6H16L12 2Z" />
+              </svg>
             </a>
-            <p className="text-muted-foreground mb-6 max-w-xs">
-              Powering a sustainable future with premium LiFePO4 energy storage 
-              solutions for homes and businesses worldwide.
+            <p className="text-muted-foreground text-sm mb-6 max-w-xs leading-relaxed">
+              Modular LiFePO4 architecture designed for mechanical fitment 
+              and thermal logic validation.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
-                  className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+                  className="w-10 h-10 border border-border flex items-center justify-center text-muted-foreground hover:border-primary hover:text-primary transition-colors"
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
@@ -69,13 +70,13 @@ const Footer = () => {
           {/* Links */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="font-semibold text-foreground mb-4">{title}</h4>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-foreground mb-4">{title}</h4>
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
                       {link.name}
                     </a>
@@ -87,21 +88,14 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            © 2025 Energia. All rights reserved.
+        <div className="pt-8 border-t border-border/30 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-muted-foreground">
+            © 2025 Sentorise Green Energy. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/120px-Stripe_Logo%2C_revised_2016.svg.png"
-              alt="Stripe"
-              className="h-6 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
-            />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/120px-PayPal.svg.png"
-              alt="PayPal"
-              className="h-6 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
-            />
+          <div className="flex items-center gap-6 text-xs text-muted-foreground">
+            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-foreground transition-colors">Cookie Policy</a>
           </div>
         </div>
       </div>
