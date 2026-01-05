@@ -1,80 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Premium Energy Storage + Ella Fusion Design System */
+/* Sentorise Industrial Design System */
 
 @layer base {
   :root {
-    /* Core Colors - Dark premium with green energy accent */
-    --background: 0 0% 4%;
-    --foreground: 0 0% 96%;
+    /* Core Colors - Dark industrial with neon green accent */
+    --background: 220 20% 6%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 96%;
+    --card: 220 20% 10%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 96%;
+    --popover: 220 20% 10%;
+    --popover-foreground: 0 0% 98%;
 
-    /* Primary - Electric Teal for clean energy */
-    --primary: 160 84% 45%;
-    --primary-foreground: 0 0% 4%;
+    /* Primary - Neon Lime Green */
+    --primary: 72 100% 50%;
+    --primary-foreground: 220 20% 6%;
 
-    /* Secondary - Soft gray */
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 96%;
+    /* Secondary - Dark gray */
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 55%;
 
-    /* Accent - Golden highlight */
-    --accent: 45 100% 60%;
-    --accent-foreground: 0 0% 4%;
+    /* Accent - Same neon green */
+    --accent: 72 100% 50%;
+    --accent-foreground: 220 20% 6%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 160 84% 45%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 72 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0rem;
 
     /* Custom energy theme colors */
-    --energy-green: 160 84% 45%;
-    --energy-green-light: 160 70% 55%;
-    --energy-green-dark: 160 90% 30%;
-    --energy-blue: 200 90% 45%;
-    --energy-gradient: linear-gradient(135deg, hsl(160, 84%, 45%) 0%, hsl(200, 90%, 45%) 100%);
-    --energy-gradient-dark: linear-gradient(135deg, hsl(160, 90%, 30%) 0%, hsl(200, 90%, 35%) 100%);
+    --energy-green: 72 100% 50%;
+    --energy-green-light: 72 90% 60%;
+    --energy-green-dark: 72 100% 35%;
+    --energy-gradient: linear-gradient(135deg, hsl(72, 100%, 50%) 0%, hsl(120, 80%, 40%) 100%);
     
     /* Shadows */
-    --shadow-sm: 0 2px 8px -2px hsla(0, 0%, 0%, 0.3);
-    --shadow-md: 0 8px 24px -4px hsla(0, 0%, 0%, 0.4);
-    --shadow-lg: 0 16px 48px -8px hsla(0, 0%, 0%, 0.5);
-    --shadow-glow: 0 0 40px -10px hsla(160, 84%, 45%, 0.4);
+    --shadow-sm: 0 2px 8px -2px hsla(0, 0%, 0%, 0.4);
+    --shadow-md: 0 8px 24px -4px hsla(0, 0%, 0%, 0.5);
+    --shadow-lg: 0 16px 48px -8px hsla(0, 0%, 0%, 0.6);
+    --shadow-glow: 0 0 40px -10px hsla(72, 100%, 50%, 0.4);
     
     /* Typography */
-    --font-display: 'Playfair Display', Georgia, serif;
+    --font-display: 'Inter', system-ui, sans-serif;
     --font-sans: 'Inter', system-ui, sans-serif;
 
     /* Sidebar */
-    --sidebar-background: 0 0% 6%;
+    --sidebar-background: 220 20% 8%;
     --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 160 84% 45%;
-    --sidebar-primary-foreground: 0 0% 4%;
-    --sidebar-accent: 0 0% 12%;
+    --sidebar-primary: 72 100% 50%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 15% 15%;
     --sidebar-accent-foreground: 0 0% 96%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 160 84% 45%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 72 100% 50%;
   }
 
   .dark {
-    /* Dark mode is default, keeping same values */
-    --background: 0 0% 4%;
-    --foreground: 0 0% 96%;
+    --background: 220 20% 6%;
+    --foreground: 0 0% 98%;
   }
 }
 
@@ -94,7 +91,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    @apply font-semibold tracking-tight;
+    @apply font-bold tracking-tight;
   }
 }
 
@@ -107,13 +104,15 @@
     background-clip: text;
   }
 
+  /* Primary text color */
+  .text-primary-glow {
+    color: hsl(var(--primary));
+    text-shadow: 0 0 30px hsla(72, 100%, 50%, 0.5);
+  }
+
   /* Background gradients */
   .bg-energy-gradient {
     background: var(--energy-gradient);
-  }
-
-  .bg-energy-gradient-dark {
-    background: var(--energy-gradient-dark);
   }
 
   /* Glow effects */
@@ -122,12 +121,12 @@
   }
 
   .glow-primary-hover:hover {
-    box-shadow: 0 0 60px -10px hsla(160, 84%, 45%, 0.6);
+    box-shadow: 0 0 60px -10px hsla(72, 100%, 50%, 0.6);
   }
 
   /* Glass morphism */
   .glass {
-    background: hsla(0, 0%, 8%, 0.8);
+    background: hsla(220, 20%, 8%, 0.9);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
@@ -150,7 +149,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--energy-gradient);
+    background: hsl(var(--primary));
     transition: width 0.3s ease;
   }
 
@@ -164,18 +163,39 @@
   }
 
   .card-hover:hover {
-    transform: translateY(-8px);
+    transform: translateY(-4px);
     box-shadow: var(--shadow-lg), var(--shadow-glow);
   }
 
   /* Section padding */
   .section-padding {
-    @apply py-20 md:py-32;
+    @apply py-20 md:py-28;
   }
 
   /* Container */
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Italic bold headline style */
+  .headline-italic {
+    font-style: italic;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+  }
+
+  /* Icon circle */
+  .icon-circle {
+    @apply w-14 h-14 rounded-full border-2 border-border flex items-center justify-center;
+  }
+
+  /* Badge style */
+  .badge-glow {
+    @apply px-3 py-1 text-xs font-bold uppercase tracking-wider;
+    background: hsla(72, 100%, 50%, 0.15);
+    border: 1px solid hsla(72, 100%, 50%, 0.3);
+    color: hsl(var(--primary));
   }
 }
 
@@ -185,16 +205,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(0, 0%, 8%);
+  background: hsl(220, 20%, 8%);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(0, 0%, 20%);
-  border-radius: 4px;
+  background: hsl(220, 15%, 25%);
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(160, 84%, 45%);
+  background: hsl(72, 100%, 50%);
 }
 
 /* Animations */
@@ -209,10 +229,10 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px -5px hsla(160, 84%, 45%, 0.4);
+    box-shadow: 0 0 20px -5px hsla(72, 100%, 50%, 0.4);
   }
   50% {
-    box-shadow: 0 0 40px -5px hsla(160, 84%, 45%, 0.6);
+    box-shadow: 0 0 40px -5px hsla(72, 100%, 50%, 0.6);
   }
 }
 
@@ -236,6 +256,15 @@
   }
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -250,6 +279,10 @@
 
 .animate-fade-in {
   animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
 }
 
 /* Stagger children animations */

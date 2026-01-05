@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Playfair Display', 'Georgia', 'serif'],
+        display: ['Inter', 'system-ui', 'sans-serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
@@ -55,7 +55,6 @@ export default {
           green: "hsl(var(--energy-green))",
           "green-light": "hsl(var(--energy-green-light))",
           "green-dark": "hsl(var(--energy-green-dark))",
-          blue: "hsl(var(--energy-blue))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
