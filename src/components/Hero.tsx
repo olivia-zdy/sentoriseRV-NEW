@@ -1,7 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Bluetooth, Thermometer } from "lucide-react";
+import { ArrowRight, Shield, Bluetooth, Snowflake, Award } from "lucide-react";
 import heroBattery from "@/assets/hero-battery.jpg";
+
+const heroFeatures = [
+  {
+    icon: Bluetooth,
+    label: "Bluetooth App",
+    desc: "Real-time monitoring",
+  },
+  {
+    icon: Shield,
+    label: "Smart BMS",
+    desc: "Multi-layer protection",
+  },
+  {
+    icon: Snowflake,
+    label: "Cold Weather",
+    desc: "Low-temp protection",
+  },
+];
 
 const Hero = () => {
   return (
@@ -22,16 +40,15 @@ const Hero = () => {
         <div className="max-w-2xl stagger-children">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-8">
-            <Shield className="w-4 h-4 text-primary" />
+            <Award className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">
               European Quality • 5-Year Warranty
             </span>
           </div>
 
-          {/* Headline */}
+          {/* Headline - 混合创新风格 */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl headline-clean text-foreground mb-6">
-            Stay Powered.
-            <br />
+            <span className="block">Stay Powered.</span>
             <span className="text-primary">Stay Free.</span>
           </h1>
 
@@ -41,35 +58,19 @@ const Hero = () => {
             Smart monitoring, built-in protection, and reliable power for your adventures.
           </p>
 
-          {/* Features */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-            <div className="flex items-center gap-3 p-3 bg-card/80 backdrop-blur-sm rounded-lg border border-border">
-              <div className="icon-circle shrink-0">
-                <Bluetooth className="w-5 h-5 text-primary" />
+          {/* Features - 圆形玻璃态图标 */}
+          <div className="flex flex-wrap gap-6 md:gap-10 mb-10">
+            {heroFeatures.map((feature) => (
+              <div key={feature.label} className="feature-item-glass">
+                <div className="icon-circle-glass">
+                  <feature.icon className="w-6 h-6 text-primary" />
+                </div>
+                <div className="text-center">
+                  <p className="text-sm font-semibold text-foreground">{feature.label}</p>
+                  <p className="text-xs text-muted-foreground">{feature.desc}</p>
+                </div>
               </div>
-              <div>
-                <p className="text-sm font-semibold text-foreground">Bluetooth App</p>
-                <p className="text-xs text-muted-foreground">Real-time monitoring</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3 p-3 bg-card/80 backdrop-blur-sm rounded-lg border border-border">
-              <div className="icon-circle shrink-0">
-                <Shield className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-foreground">Smart BMS</p>
-                <p className="text-xs text-muted-foreground">Multi-layer protection</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3 p-3 bg-card/80 backdrop-blur-sm rounded-lg border border-border">
-              <div className="icon-circle shrink-0">
-                <Thermometer className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-foreground">Cold Weather</p>
-                <p className="text-xs text-muted-foreground">Low-temp protection</p>
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* CTAs */}

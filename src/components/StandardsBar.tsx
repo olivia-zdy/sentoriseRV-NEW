@@ -1,16 +1,16 @@
-import { Shield, Leaf, Award } from "lucide-react";
+import { Shield, Leaf, Award, ShieldCheck, RefreshCw } from "lucide-react";
 
 const standards = [
   { name: "CE Certified", icon: Award },
-  { name: "UN38.3 Tested", icon: Shield },
+  { name: "UN38.3 Tested", icon: ShieldCheck },
   { name: "RoHS Compliant", icon: Leaf },
   { name: "IEC 62619", icon: Shield },
-  { name: "5-Year Warranty", icon: Award },
+  { name: "5-Year Warranty", icon: RefreshCw },
 ];
 
 const StandardsBar = () => {
   return (
-    <div className="bg-muted border-y border-border py-6">
+    <div className="bg-muted/50 border-y border-border py-8">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Left - Label */}
@@ -20,12 +20,17 @@ const StandardsBar = () => {
             </span>
           </div>
 
-          {/* Center - Standards */}
-          <div className="flex items-center gap-6 md:gap-10 flex-wrap justify-center">
+          {/* Center - Standards with glass icons */}
+          <div className="flex items-center gap-4 md:gap-8 flex-wrap justify-center">
             {standards.map((standard) => (
-              <div key={standard.name} className="flex items-center gap-2">
-                <standard.icon className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-foreground">
+              <div 
+                key={standard.name} 
+                className="flex items-center gap-3 group cursor-default"
+              >
+                <div className="icon-circle-glass-sm">
+                  <standard.icon className="w-4 h-4 text-primary" />
+                </div>
+                <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
                   {standard.name}
                 </span>
               </div>

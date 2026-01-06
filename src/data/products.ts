@@ -27,13 +27,19 @@ export interface Product {
   isHot?: boolean;
   hasHeating?: boolean;
   hasBluetooth?: boolean;
+  price: number;
+  salePrice?: number;
+  inStock: boolean;
+  highlights: string[];
 }
 
-// Import images
-import productWall from "@/assets/product-wall-battery.jpg";
-import productPortable from "@/assets/product-portable.jpg";
-import productIndustrial from "@/assets/product-industrial.jpg";
-import productRV from "@/assets/product-rv-battery.jpg";
+// Import real product images
+import product6ah from "@/assets/product-6ah.png";
+import product50ah from "@/assets/product-50ah.png";
+import product100ahStd from "@/assets/product-100ah-std.png";
+import product100ahMini from "@/assets/product-100ah-mini.png";
+import product100ahDin from "@/assets/product-100ah-din.png";
+import product200ahHeated from "@/assets/product-200ah-heated.png";
 
 export const products: Product[] = [
   {
@@ -63,7 +69,10 @@ export const products: Product[] = [
       { label: "Cycle Life", value: "4000+ cycles" },
       { label: "Operating Temp", value: "-20°C to 60°C" },
     ],
-    image: productPortable,
+    image: product6ah,
+    price: 29.99,
+    inStock: true,
+    highlights: ["Ultra-compact", "BMS Protection", "4000+ Cycles"],
   },
   {
     id: "lite-12v50",
@@ -93,8 +102,11 @@ export const products: Product[] = [
       { label: "Bluetooth", value: "Yes" },
     ],
     badge: "Bluetooth",
-    image: productPortable,
+    image: product50ah,
     hasBluetooth: true,
+    price: 129.99,
+    inStock: true,
+    highlights: ["Bluetooth App", "Lightweight", "5-Year Warranty"],
   },
   {
     id: "core-12v100-std",
@@ -124,9 +136,12 @@ export const products: Product[] = [
       { label: "Format", value: "BCI Group 31" },
     ],
     badge: "Best Seller",
-    image: productRV,
+    image: product100ahStd,
     isHot: true,
     hasBluetooth: true,
+    price: 279.99,
+    inStock: true,
+    highlights: ["Best Seller", "Group 31", "100A Continuous"],
   },
   {
     id: "core-12v100-mini",
@@ -156,8 +171,11 @@ export const products: Product[] = [
       { label: "Bluetooth", value: "Yes" },
     ],
     badge: "Compact",
-    image: productWall,
+    image: product100ahMini,
     hasBluetooth: true,
+    price: 299.99,
+    inStock: true,
+    highlights: ["Ultra-Compact", "100Ah Power", "Space Saver"],
   },
   {
     id: "core-12v100-din",
@@ -187,8 +205,11 @@ export const products: Product[] = [
       { label: "Format", value: "DIN H8 (EN)" },
     ],
     badge: "DIN H8",
-    image: productIndustrial,
+    image: product100ahDin,
     hasBluetooth: true,
+    price: 319.99,
+    inStock: true,
+    highlights: ["DIN H8 Format", "EU RV Perfect Fit", "OEM Compatible"],
   },
   {
     id: "plus-12v200-heated",
@@ -218,10 +239,13 @@ export const products: Product[] = [
       { label: "Self-Heating", value: "Yes (-20°C activation)" },
     ],
     badge: "Heated",
-    image: productWall,
+    image: product200ahHeated,
     isNew: true,
     hasHeating: true,
     hasBluetooth: true,
+    price: 699.99,
+    inStock: true,
+    highlights: ["Self-Heating", "200Ah Capacity", "Arctic-Ready"],
   },
 ];
 
