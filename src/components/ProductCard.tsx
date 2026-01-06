@@ -34,15 +34,15 @@ const ProductCard = ({ product }: ProductCardProps) => {
           )}
         </div>
 
-        {/* Feature Icons */}
+        {/* Feature Icons - 玻璃态圆形容器 */}
         <div className="absolute top-3 right-3 flex flex-col gap-2">
           {product.hasBluetooth && (
-            <div className="w-8 h-8 rounded-full bg-background/90 flex items-center justify-center" title="Bluetooth Monitoring">
+            <div className="icon-circle-glass-sm" title="Bluetooth Monitoring">
               <Bluetooth className="w-4 h-4 text-primary" />
             </div>
           )}
           {product.hasHeating && (
-            <div className="w-8 h-8 rounded-full bg-background/90 flex items-center justify-center" title="Self-Heating">
+            <div className="icon-circle-glass-sm" title="Self-Heating">
               <Flame className="w-4 h-4 text-orange-500" />
             </div>
           )}
@@ -65,9 +65,24 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <h3 className="text-base font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
           {product.name}
         </h3>
-        <p className="text-sm text-muted-foreground font-mono">
+        <p className="text-sm text-muted-foreground font-mono mb-3">
           {product.voltage} • {product.capacity} • {product.energy}
         </p>
+        
+        {/* Price */}
+        <div className="flex items-baseline gap-2">
+          {product.salePrice ? (
+            <>
+              <span className="text-lg font-bold text-primary">€{product.salePrice.toFixed(2)}</span>
+              <span className="text-sm text-muted-foreground line-through">€{product.price.toFixed(2)}</span>
+            </>
+          ) : (
+            <span className="text-lg font-bold text-foreground">€{product.price.toFixed(2)}</span>
+          )}
+          {product.inStock && (
+            <span className="text-xs text-primary ml-auto">In Stock</span>
+          )}
+        </div>
       </div>
     </Link>
   );

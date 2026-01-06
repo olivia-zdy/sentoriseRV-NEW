@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ShoppingCart, Search, ChevronDown, Zap } from "lucide-react";
+import { Menu, X, ShoppingCart, Search, ChevronDown } from "lucide-react";
+import { useTheme } from "next-themes";
 import { ThemeToggle } from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
+import logoLight from "@/assets/logo-light.png";
+import logoDark from "@/assets/logo-dark.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { resolvedTheme } = useTheme();
 
   const navLinks = [
     { name: "Home", href: "/", active: location.pathname === "/" },
@@ -36,18 +40,19 @@ const Header = () => {
     { name: "Blog", href: "/blog", active: location.pathname === "/blog" },
   ];
 
+  const logoSrc = resolvedTheme === "dark" ? logoDark : logoLight;
+
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <nav className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="flex items-center gap-2">
-              <Zap className="w-6 h-6 text-primary" />
-              <span className="text-xl md:text-2xl font-bold text-foreground tracking-tight">
-                SENTORISE
-              </span>
-            </div>
+          <Link to="/" className="flex items-center">
+            <img 
+              src={logoSrc} 
+              alt="Sentorise" 
+              className="h-8 md:h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}

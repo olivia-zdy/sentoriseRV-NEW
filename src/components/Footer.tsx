@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Youtube, Linkedin, Zap } from "lucide-react";
+import { Facebook, Instagram, Youtube, Linkedin, Truck, RotateCcw, ShieldCheck } from "lucide-react";
+import { useTheme } from "next-themes";
+import logoLight from "@/assets/logo-light.png";
+import logoDark from "@/assets/logo-dark.png";
 
 const Footer = () => {
+  const { resolvedTheme } = useTheme();
+  const logoSrc = resolvedTheme === "dark" ? logoDark : logoLight;
+
   const footerLinks = {
     Products: [
       { name: "Lite Series", href: "/products?series=lite" },
@@ -36,17 +42,43 @@ const Footer = () => {
     { icon: Linkedin, href: "#", label: "LinkedIn" },
   ];
 
+  const dtcFeatures = [
+    { icon: Truck, label: "Free EU Shipping", desc: "Orders over €99" },
+    { icon: RotateCcw, label: "30-Day Returns", desc: "Hassle-free" },
+    { icon: ShieldCheck, label: "5-Year Warranty", desc: "Full coverage" },
+  ];
+
   return (
     <footer className="bg-card border-t border-border">
+      {/* DTC Features Bar */}
+      <div className="border-b border-border">
+        <div className="container-custom py-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {dtcFeatures.map((feature) => (
+              <div key={feature.label} className="flex items-center gap-3 justify-center md:justify-start">
+                <div className="icon-circle-glass-sm">
+                  <feature.icon className="w-4 h-4 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">{feature.label}</p>
+                  <p className="text-xs text-muted-foreground">{feature.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="container-custom section-padding">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-6">
-              <Zap className="w-6 h-6 text-primary" />
-              <span className="text-xl font-bold text-foreground">
-                SENTORISE
-              </span>
+            <Link to="/" className="inline-block mb-6">
+              <img 
+                src={logoSrc} 
+                alt="Sentorise" 
+                className="h-8 w-auto"
+              />
             </Link>
             <p className="text-muted-foreground text-sm mb-6 max-w-xs leading-relaxed">
               Premium LiFePO₄ batteries for RV, vanlife, and off-grid solar. 
@@ -58,9 +90,9 @@ const Footer = () => {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:border-primary hover:text-primary transition-colors"
+                  className="icon-circle-glass-sm"
                 >
-                  <social.icon className="w-4 h-4" />
+                  <social.icon className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                 </a>
               ))}
             </div>
