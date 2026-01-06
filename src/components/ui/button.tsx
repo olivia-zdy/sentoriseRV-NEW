@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-bold ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 uppercase tracking-wider",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold rounded-lg ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -15,16 +15,11 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-primary text-primary-foreground hover:brightness-110 shadow-lg hover:shadow-xl hover:shadow-primary/20 glow-primary-hover",
-        heroOutline: "border-2 border-foreground text-foreground hover:bg-foreground hover:text-background",
-        energy: "bg-primary text-primary-foreground glow-primary hover:brightness-110",
-        glass: "glass border border-border/30 text-foreground hover:bg-white/10",
       },
       size: {
-        default: "h-10 px-6 py-2",
-        sm: "h-9 px-4",
-        lg: "h-11 px-8",
-        xl: "h-14 px-10 text-sm",
+        default: "h-10 px-5 py-2",
+        sm: "h-9 px-4 text-xs",
+        lg: "h-12 px-6",
         icon: "h-10 w-10",
       },
     },

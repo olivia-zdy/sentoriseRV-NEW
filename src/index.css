@@ -1,77 +1,129 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Sentorise Industrial Design System */
+/* Sentorise European Design System */
 
 @layer base {
   :root {
-    /* Core Colors - Dark industrial with neon green accent */
-    --background: 220 20% 6%;
-    --foreground: 0 0% 98%;
+    /* Light Theme - Clean European Industrial */
+    --background: 0 0% 98%;
+    --foreground: 210 11% 15%;
 
-    --card: 220 20% 10%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 15%;
 
-    --popover: 220 20% 10%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 11% 15%;
 
-    /* Primary - Neon Lime Green */
-    --primary: 72 100% 50%;
-    --primary-foreground: 220 20% 6%;
+    /* Primary - Deep Forest Green */
+    --primary: 160 84% 22%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Dark gray */
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 0 0% 98%;
+    /* Secondary - Light gray */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 210 11% 15%;
 
-    --muted: 220 15% 18%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 210 11% 45%;
 
-    /* Accent - Same neon green */
-    --accent: 72 100% 50%;
-    --accent-foreground: 220 20% 6%;
+    /* Accent - Same forest green */
+    --accent: 160 84% 22%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 20%;
-    --ring: 72 100% 50%;
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 160 84% 22%;
 
-    --radius: 0rem;
+    --radius: 0.5rem;
 
-    /* Custom energy theme colors */
-    --energy-green: 72 100% 50%;
-    --energy-green-light: 72 90% 60%;
-    --energy-green-dark: 72 100% 35%;
-    --energy-gradient: linear-gradient(135deg, hsl(72, 100%, 50%) 0%, hsl(120, 80%, 40%) 100%);
+    /* Custom Sentorise colors */
+    --sentorise-green: 160 84% 22%;
+    --sentorise-green-light: 160 70% 35%;
+    --sentorise-green-dark: 160 90% 15%;
+    --sentorise-gradient: linear-gradient(135deg, hsl(160, 84%, 22%) 0%, hsl(160, 70%, 35%) 100%);
     
-    /* Shadows */
-    --shadow-sm: 0 2px 8px -2px hsla(0, 0%, 0%, 0.4);
-    --shadow-md: 0 8px 24px -4px hsla(0, 0%, 0%, 0.5);
-    --shadow-lg: 0 16px 48px -8px hsla(0, 0%, 0%, 0.6);
-    --shadow-glow: 0 0 40px -10px hsla(72, 100%, 50%, 0.4);
+    /* Shadows - Light theme */
+    --shadow-sm: 0 1px 2px 0 hsla(210, 11%, 15%, 0.05);
+    --shadow-md: 0 4px 6px -1px hsla(210, 11%, 15%, 0.1), 0 2px 4px -1px hsla(210, 11%, 15%, 0.06);
+    --shadow-lg: 0 10px 15px -3px hsla(210, 11%, 15%, 0.1), 0 4px 6px -2px hsla(210, 11%, 15%, 0.05);
+    --shadow-glow: 0 0 40px -10px hsla(160, 84%, 22%, 0.3);
     
     /* Typography */
     --font-display: 'Inter', system-ui, sans-serif;
     --font-sans: 'Inter', system-ui, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
 
-    /* Sidebar */
-    --sidebar-background: 220 20% 8%;
-    --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 72 100% 50%;
-    --sidebar-primary-foreground: 220 20% 6%;
-    --sidebar-accent: 220 15% 15%;
-    --sidebar-accent-foreground: 0 0% 96%;
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 72 100% 50%;
+    /* Sidebar - Light */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 11% 15%;
+    --sidebar-primary: 160 84% 22%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 96%;
+    --sidebar-accent-foreground: 210 11% 15%;
+    --sidebar-border: 210 20% 88%;
+    --sidebar-ring: 160 84% 22%;
   }
 
   .dark {
-    --background: 220 20% 6%;
+    /* Dark Theme - Premium Industrial */
+    --background: 220 20% 8%;
     --foreground: 0 0% 98%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary - Deep Forest Green */
+    --primary: 160 84% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Dark gray */
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 15% 22%;
+    --muted-foreground: 220 10% 55%;
+
+    /* Accent - Same forest green */
+    --accent: 160 84% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 160 84% 35%;
+
+    /* Custom Sentorise colors - Dark */
+    --sentorise-green: 160 84% 35%;
+    --sentorise-green-light: 160 70% 45%;
+    --sentorise-green-dark: 160 90% 25%;
+    --sentorise-gradient: linear-gradient(135deg, hsl(160, 84%, 35%) 0%, hsl(160, 70%, 45%) 100%);
+    
+    /* Shadows - Dark theme */
+    --shadow-sm: 0 2px 8px -2px hsla(0, 0%, 0%, 0.4);
+    --shadow-md: 0 8px 24px -4px hsla(0, 0%, 0%, 0.5);
+    --shadow-lg: 0 16px 48px -8px hsla(0, 0%, 0%, 0.6);
+    --shadow-glow: 0 0 40px -10px hsla(160, 84%, 35%, 0.4);
+
+    /* Sidebar - Dark */
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 160 84% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 220 15% 22%;
+    --sidebar-ring: 160 84% 35%;
   }
 }
 
@@ -98,21 +150,21 @@
 @layer utilities {
   /* Text gradients */
   .text-gradient {
-    background: var(--energy-gradient);
+    background: var(--sentorise-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Primary text color */
+  /* Primary text color with glow */
   .text-primary-glow {
     color: hsl(var(--primary));
-    text-shadow: 0 0 30px hsla(72, 100%, 50%, 0.5);
+    text-shadow: 0 0 30px hsla(160, 84%, 35%, 0.4);
   }
 
   /* Background gradients */
-  .bg-energy-gradient {
-    background: var(--energy-gradient);
+  .bg-sentorise-gradient {
+    background: var(--sentorise-gradient);
   }
 
   /* Glow effects */
@@ -121,20 +173,24 @@
   }
 
   .glow-primary-hover:hover {
-    box-shadow: 0 0 60px -10px hsla(72, 100%, 50%, 0.6);
+    box-shadow: 0 0 60px -10px hsla(160, 84%, 35%, 0.5);
   }
 
   /* Glass morphism */
   .glass {
-    background: hsla(220, 20%, 8%, 0.9);
+    background: hsla(var(--background) / 0.8);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
 
   .glass-light {
-    background: hsla(0, 0%, 100%, 0.05);
+    background: hsla(0, 0%, 100%, 0.7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+  }
+
+  .dark .glass-light {
+    background: hsla(0, 0%, 100%, 0.05);
   }
 
   /* Animated underline */
@@ -169,7 +225,7 @@
 
   /* Section padding */
   .section-padding {
-    @apply py-20 md:py-28;
+    @apply py-16 md:py-24;
   }
 
   /* Container */
@@ -177,25 +233,34 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Italic bold headline style */
-  .headline-italic {
-    font-style: italic;
-    font-weight: 900;
-    letter-spacing: -0.02em;
-    line-height: 0.95;
+  /* Headline style - Clean European */
+  .headline-clean {
+    @apply font-bold tracking-tight leading-tight;
   }
 
   /* Icon circle */
   .icon-circle {
-    @apply w-14 h-14 rounded-full border-2 border-border flex items-center justify-center;
+    @apply w-12 h-12 rounded-full border border-border flex items-center justify-center bg-card;
   }
 
   /* Badge style */
   .badge-glow {
-    @apply px-3 py-1 text-xs font-bold uppercase tracking-wider;
-    background: hsla(72, 100%, 50%, 0.15);
-    border: 1px solid hsla(72, 100%, 50%, 0.3);
+    @apply px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full;
+    background: hsla(160, 84%, 22%, 0.1);
+    border: 1px solid hsla(160, 84%, 22%, 0.2);
     color: hsl(var(--primary));
+  }
+
+  .dark .badge-glow {
+    background: hsla(160, 84%, 35%, 0.15);
+    border: 1px solid hsla(160, 84%, 35%, 0.3);
+  }
+
+  /* Spec badge */
+  .spec-badge {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-md;
+    background: hsl(var(--secondary));
+    color: hsl(var(--foreground));
   }
 }
 
@@ -205,16 +270,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(220, 20%, 8%);
+  background: hsl(var(--background));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(220, 15%, 25%);
-  border-radius: 0;
+  background: hsl(var(--border));
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(72, 100%, 50%);
+  background: hsl(var(--primary));
 }
 
 /* Animations */
@@ -229,10 +294,10 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px -5px hsla(72, 100%, 50%, 0.4);
+    box-shadow: 0 0 20px -5px hsla(160, 84%, 35%, 0.3);
   }
   50% {
-    box-shadow: 0 0 40px -5px hsla(72, 100%, 50%, 0.6);
+    box-shadow: 0 0 40px -5px hsla(160, 84%, 35%, 0.5);
   }
 }
 
