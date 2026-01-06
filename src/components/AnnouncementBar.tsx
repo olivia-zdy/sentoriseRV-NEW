@@ -1,29 +1,31 @@
-import { Globe } from "lucide-react";
+import { Globe, Truck } from "lucide-react";
 
 const AnnouncementBar = () => {
   return (
-    <div className="bg-background border-b border-border/50 py-2.5">
+    <div className="bg-primary text-primary-foreground py-2.5">
       <div className="container-custom flex items-center justify-between text-sm">
-        {/* Left - News */}
+        {/* Left - Promo */}
         <div className="flex items-center gap-3">
-          <span className="badge-glow rounded">LATEST NEWS</span>
-          <span className="text-muted-foreground hidden sm:inline">
-            NEW DIN H8 MODULES IN STOCK • UN38.3 VALIDATED
+          <Truck className="w-4 h-4" />
+          <span className="hidden sm:inline font-medium">
+            Free shipping on orders over €500
           </span>
+          <span className="sm:hidden font-medium">Free shipping €500+</span>
         </div>
 
-        {/* Right - Language & Shipping */}
-        <div className="flex items-center gap-4 text-muted-foreground">
-          <div className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors">
+        {/* Center - Tagline (hidden on mobile) */}
+        <div className="hidden md:flex items-center gap-2">
+          <span className="font-semibold">Stay Powered. Stay Free.</span>
+        </div>
+
+        {/* Right - Language & Currency */}
+        <div className="flex items-center gap-4 text-primary-foreground/80">
+          <div className="flex items-center gap-2 cursor-pointer hover:text-primary-foreground transition-colors">
             <Globe className="w-4 h-4" />
             <span className="hidden sm:inline">EN</span>
           </div>
-          <span className="hidden md:inline text-border">|</span>
+          <span className="hidden md:inline opacity-50">|</span>
           <span className="hidden md:inline">EUR €</span>
-          <span className="hidden lg:inline text-border">|</span>
-          <span className="hidden lg:inline">
-            FREE SHIPPING / <span className="text-primary">OVER €1500</span>
-          </span>
         </div>
       </div>
     </div>

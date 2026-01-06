@@ -1,45 +1,39 @@
-import { Shield, Check } from "lucide-react";
+import { Shield, Leaf, Award } from "lucide-react";
 
 const standards = [
-  "BCI GROUP 31",
-  "DIN H8 (EN)",
-  "IEC 62133",
-  "IP65 RATED",
-  "UL1973 CELLS",
+  { name: "CE Certified", icon: Award },
+  { name: "UN38.3 Tested", icon: Shield },
+  { name: "RoHS Compliant", icon: Leaf },
+  { name: "IEC 62619", icon: Shield },
+  { name: "5-Year Warranty", icon: Award },
 ];
 
 const StandardsBar = () => {
   return (
-    <div className="bg-secondary/50 border-y border-border/30 py-4">
+    <div className="bg-muted border-y border-border py-6">
       <div className="container-custom">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Left - Label */}
           <div className="flex items-center gap-3">
-            <Shield className="w-5 h-5 text-muted-foreground" />
-            <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
-              Hardware Integrity Standards:
+            <span className="text-sm font-medium text-muted-foreground">
+              Trusted Certifications:
             </span>
           </div>
 
           {/* Center - Standards */}
-          <div className="flex items-center gap-6 flex-wrap justify-center">
+          <div className="flex items-center gap-6 md:gap-10 flex-wrap justify-center">
             {standards.map((standard) => (
-              <div key={standard} className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-primary" />
-                <span className="text-xs font-bold uppercase tracking-wider text-foreground">
-                  {standard}
+              <div key={standard.name} className="flex items-center gap-2">
+                <standard.icon className="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium text-foreground">
+                  {standard.name}
                 </span>
               </div>
             ))}
           </div>
 
-          {/* Right - Badge */}
-          <div className="flex items-center gap-2 px-4 py-2 border border-border/50 bg-background/50">
-            <Check className="w-4 h-4 text-primary" />
-            <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-              Validated Chassis Component
-            </span>
-          </div>
+          {/* Right - Spacer for balance */}
+          <div className="hidden md:block w-32" />
         </div>
       </div>
     </div>

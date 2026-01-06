@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
@@ -12,47 +12,40 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="section-padding bg-secondary/30 border-y border-border/30">
+    <section className="section-padding bg-primary">
       <div className="container-custom">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Left - Content */}
-            <div>
-              <span className="text-xs text-muted-foreground uppercase tracking-widest mb-4 block">
-                Technical Updates
-              </span>
-              <h2 className="text-3xl md:text-4xl headline-italic mb-4">
-                <span className="text-foreground">Engineering</span>
-                <br />
-                <span className="text-primary">Bulletin.</span>
-              </h2>
-              <p className="text-muted-foreground">
-                Get notified about new module releases, firmware updates, 
-                and technical documentation.
-              </p>
-            </div>
+        <div className="max-w-3xl mx-auto text-center">
+          <Mail className="w-12 h-12 text-primary-foreground/80 mx-auto mb-6" />
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
+            Stay Updated
+          </h2>
+          <p className="text-primary-foreground/80 mb-8 max-w-lg mx-auto">
+            Get the latest product releases, technical guides, and exclusive offers 
+            delivered to your inbox.
+          </p>
 
-            {/* Right - Form */}
-            <div>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="w-full px-6 py-4 bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary"
-                  required
-                />
-                <Button variant="hero" size="xl" type="submit" className="w-full">
-                  Subscribe
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </form>
-              <p className="text-xs text-muted-foreground mt-4">
-                We respect your data. Unsubscribe at any time.
-              </p>
-            </div>
-          </div>
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-3 bg-primary-foreground text-foreground placeholder:text-muted-foreground rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-foreground/50"
+              required
+            />
+            <Button 
+              type="submit" 
+              variant="secondary"
+              className="group px-6"
+            >
+              Subscribe
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </form>
+          
+          <p className="text-xs text-primary-foreground/60 mt-4">
+            No spam. Unsubscribe at any time.
+          </p>
         </div>
       </div>
     </section>
