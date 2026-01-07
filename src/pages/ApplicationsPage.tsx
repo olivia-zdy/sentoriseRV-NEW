@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
@@ -5,11 +6,21 @@ import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Truck, Home, Ship, Sun, Tent, Car } from "lucide-react";
+import { glassIconClass } from "@/lib/utils";
+
+// Import real scene images
+import rvScene from "@/assets/product-rv-battery.jpg";
+import vanScene from "@/assets/product-portable.jpg";
+import solarScene from "@/assets/product-industrial.jpg";
+import marineScene from "@/assets/hero-battery.jpg";
+import campScene from "@/assets/product-portable.jpg";
+import cabinScene from "@/assets/product-wall-battery.jpg";
 
 const applications = [
   {
     id: "rv",
     icon: Truck,
+    image: rvScene,
     title: "RV & Motorhome",
     tagline: "The heart of your home on wheels",
     description: "Whether you're a weekend warrior or full-time RVer, Sentorise batteries provide reliable power for all your onboard systems — from lights and refrigerators to air conditioning and entertainment.",
@@ -25,6 +36,7 @@ const applications = [
   {
     id: "vanlife",
     icon: Car,
+    image: vanScene,
     title: "Van Life",
     tagline: "Freedom in a compact package",
     description: "Van conversions demand maximum power in minimum space. Our compact Core MINI and Lite series deliver serious energy density for Sprinters, Transits, and other popular van platforms.",
@@ -40,6 +52,7 @@ const applications = [
   {
     id: "solar",
     icon: Sun,
+    image: solarScene,
     title: "Off-Grid Solar",
     tagline: "Store the sun's energy",
     description: "Build a reliable off-grid power system with Sentorise batteries. Our deep-cycle LiFePO4 technology maximizes solar harvest and delivers consistent power day and night.",
@@ -55,6 +68,7 @@ const applications = [
   {
     id: "marine",
     icon: Ship,
+    image: marineScene,
     title: "Marine & Boat",
     tagline: "Power your adventures on the water",
     description: "Sentorise batteries handle the demands of marine environments — powering trolling motors, fish finders, and cabin systems with reliable, maintenance-free performance.",
@@ -70,6 +84,7 @@ const applications = [
   {
     id: "camping",
     icon: Tent,
+    image: campScene,
     title: "Camping & Outdoor",
     tagline: "Portable power for any adventure",
     description: "From weekend camping trips to extended backcountry expeditions, our Lite series provides reliable portable power for lights, phones, cameras, and small appliances.",
@@ -85,6 +100,7 @@ const applications = [
   {
     id: "cabin",
     icon: Home,
+    image: cabinScene,
     title: "Off-Grid Cabin",
     tagline: "Independent living, reliable power",
     description: "Power your remote cabin or holiday home with a complete off-grid system. Sentorise batteries store solar energy for lighting, water pumps, refrigeration, and more.",
@@ -99,7 +115,15 @@ const applications = [
   },
 ];
 
+type ApplicationFilter = "all" | "rv" | "vanlife" | "solar" | "marine" | "camping" | "cabin";
+
 const ApplicationsPage = () => {
+  const [activeFilter, setActiveFilter] = useState<ApplicationFilter>("all");
+
+  const filteredApplications = activeFilter === "all" 
+    ? applications 
+    : applications.filter(app => app.id === activeFilter);
+
   return (
     <div className="min-h-screen bg-background">
       <AnnouncementBar />
@@ -123,21 +147,59 @@ const ApplicationsPage = () => {
           </div>
         </section>
 
-        {/* Applications Grid */}
+        {/* Filter Bar */}
+        <section className="py-6 border-b border-border sticky top-16 md:top-20 bg-background/95 backdrop-blur-md z-30">
+          <div className="container-custom">
+            <div className="flex flex-wrap gap-2">
+              <Button
+                variant={activeFilter === "all" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setActiveFilter("all")}
+              >
+                All Applications
+              </Button>
+              {applications.map((app) => (
+                <Button
+                  key={app.id}
+                  variant={activeFilter === app.id ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setActiveFilter(app.id as ApplicationFilter)}
+                  className="gap-2"
+                >
+                  <app.icon className="w-4 h-4" />
+                  {app.title}
+                </Button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Applications Grid - Quick Entry Points */}
         <section className="section-padding">
           <div className="container-custom">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {applications.map((app) => (
+              {filteredApplications.map((app) => (
                 <a
                   key={app.id}
                   href={`#${app.id}`}
-                  className="group p-6 bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-lg transition-all"
+                  className="group relative aspect-[4/3] rounded-xl overflow-hidden"
                 >
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                    <app.icon className="w-6 h-6 text-primary" />
+                  {/* Background Image */}
+                  <img 
+                    src={app.image}
+                    alt={app.title}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                  
+                  {/* Content */}
+                  <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                    <div className={`${glassIconClass} mb-4 w-12 h-12`}>
+                      <app.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-1">{app.title}</h3>
+                    <p className="text-sm text-white/80">{app.tagline}</p>
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{app.title}</h3>
-                  <p className="text-sm text-muted-foreground">{app.tagline}</p>
                 </a>
               ))}
             </div>
@@ -145,7 +207,7 @@ const ApplicationsPage = () => {
         </section>
 
         {/* Detailed Sections */}
-        {applications.map((app, index) => (
+        {filteredApplications.map((app, index) => (
           <section
             key={app.id}
             id={app.id}
@@ -155,7 +217,9 @@ const ApplicationsPage = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                   <div className="flex items-center gap-3 mb-4">
-                    <app.icon className="w-8 h-8 text-primary" />
+                    <div className={glassIconClass}>
+                      <app.icon className="w-6 h-6 text-primary" />
+                    </div>
                     <span className="text-sm font-semibold text-primary uppercase tracking-wider">
                       {app.title}
                     </span>
@@ -177,18 +241,19 @@ const ApplicationsPage = () => {
                   </ul>
 
                   <Button asChild>
-                    <Link to="/products">
+                    <Link to={`/products?application=${app.id}`}>
                       View Recommended Products
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Link>
                   </Button>
                 </div>
 
-                <div className={`aspect-video bg-muted rounded-xl ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  {/* Placeholder for application image */}
-                  <div className="w-full h-full flex items-center justify-center">
-                    <app.icon className="w-24 h-24 text-muted-foreground/30" />
-                  </div>
+                <div className={`aspect-video rounded-xl overflow-hidden ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                  <img 
+                    src={app.image}
+                    alt={app.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>

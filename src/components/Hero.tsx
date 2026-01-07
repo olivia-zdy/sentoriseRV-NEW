@@ -1,7 +1,13 @@
+import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Bluetooth, Snowflake, Zap } from "lucide-react";
+import { ArrowRight, Shield, Bluetooth, Snowflake, Zap, ChevronDown } from "lucide-react";
+
+// Import all scene images for carousel
 import rvBatteryBg from "@/assets/product-rv-battery.jpg";
+import industrialBg from "@/assets/product-industrial.jpg";
+import portableBg from "@/assets/product-portable.jpg";
+import marineBg from "@/assets/hero-battery.jpg";
 
 const heroFeatures = [
   {
@@ -21,14 +27,52 @@ const heroFeatures = [
   },
 ];
 
+const heroScenes = [
+  { image: rvBatteryBg, alt: "RV & Motorhome" },
+  { image: industrialBg, alt: "Off-Grid Solar" },
+  { image: portableBg, alt: "Van Life" },
+  { image: marineBg, alt: "Marine" },
+];
+
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Preload first image
+  useEffect(() => {
+    const img = new Image();
+    img.src = heroScenes[0].image;
+    img.onload = () => setIsLoaded(true);
+  }, []);
+
+  // Auto-rotate carousel
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroScenes.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const goToSlide = useCallback((index: number) => {
+    setCurrentSlide(index);
+  }, []);
+
+  const scrollToContent = () => {
+    window.scrollTo({ top: window.innerHeight * 0.9, behavior: 'smooth' });
+  };
+
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Full-screen scene background */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${rvBatteryBg})` }}
-      />
+      {/* Carousel Background Images */}
+      {heroScenes.map((scene, index) => (
+        <div 
+          key={index}
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+            index === currentSlide ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{ backgroundImage: `url(${scene.image})` }}
+        />
+      ))}
       
       {/* Dark gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
@@ -73,7 +117,7 @@ const Hero = () => {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-wrap justify-center items-center gap-4">
+          <div className="flex flex-wrap justify-center items-center gap-4 mb-12">
             <Button asChild size="lg" className="group">
               <Link to="/products">
                 Shop Batteries
@@ -86,8 +130,33 @@ const Hero = () => {
               </Link>
             </Button>
           </div>
+
+          {/* Carousel Indicators */}
+          <div className="flex justify-center gap-2 mb-8">
+            {heroScenes.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  index === currentSlide 
+                    ? 'bg-primary w-8' 
+                    : 'bg-white/40 hover:bg-white/60'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <button 
+        onClick={scrollToContent}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 hover:text-white transition-colors z-10"
+        aria-label="Scroll down"
+      >
+        <ChevronDown className="w-8 h-8 animate-bounce" />
+      </button>
     </section>
   );
 };
