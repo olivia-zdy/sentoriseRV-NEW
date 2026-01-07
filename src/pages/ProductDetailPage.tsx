@@ -3,13 +3,25 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getProductById, products } from "@/data/products";
+import { getCertificationsForProduct } from "@/data/certifications";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Bluetooth, Shield, Thermometer, Battery, Zap, Flame, Download, Check } from "lucide-react";
+import { ArrowLeft, Bluetooth, Shield, Thermometer, Battery, Zap, Flame, Download, Check, Award, Truck, Home, Sun, Anchor } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
+import ProductGallery from "@/components/ProductGallery";
+import { glassIconClass } from "@/lib/utils";
+
+const applicationScenes = [
+  { id: "rv", name: "RV & Motorhome", icon: Truck, href: "/applications#rv" },
+  { id: "vanlife", name: "Van Life", icon: Truck, href: "/applications#vanlife" },
+  { id: "solar", name: "Off-Grid Solar", icon: Sun, href: "/applications#solar" },
+  { id: "marine", name: "Marine & Boat", icon: Anchor, href: "/applications#marine" },
+  { id: "cabin", name: "Off-Grid Cabin", icon: Home, href: "/applications#cabin" },
+];
 
 const ProductDetailPage = () => {
   const { productId } = useParams();
   const product = getProductById(productId || "");
+  const certifications = getCertificationsForProduct(productId || "");
 
   if (!product) {
     return (
@@ -30,10 +42,24 @@ const ProductDetailPage = () => {
     );
   }
 
+  // Create gallery images array (main image + additional angles if available)
+  const galleryImages = [product.image];
+
   // Get related products (same series, excluding current)
   const relatedProducts = products
     .filter(p => p.series === product.series && p.id !== product.id)
     .slice(0, 3);
+
+  // Determine recommended scenes based on use cases
+  const recommendedScenes = applicationScenes.filter(scene => 
+    product.useCases.some(uc => 
+      uc.toLowerCase().includes(scene.id) || 
+      uc.toLowerCase().includes(scene.name.toLowerCase().split(" ")[0])
+    )
+  ).slice(0, 4);
+
+  // Fallback to first 3 if no matches
+  const displayScenes = recommendedScenes.length > 0 ? recommendedScenes : applicationScenes.slice(0, 3);
 
   return (
     <div className="min-h-screen bg-background">
@@ -57,17 +83,11 @@ const ProductDetailPage = () => {
         <section className="section-padding">
           <div className="container-custom">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Image */}
+              {/* Image Gallery */}
               <div className="relative">
-                <div className="aspect-square bg-muted rounded-xl overflow-hidden">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <ProductGallery images={galleryImages} productName={product.name} />
                 {/* Badges */}
-                <div className="absolute top-4 left-4 flex flex-col gap-2">
+                <div className="absolute top-4 left-4 flex flex-col gap-2 z-10">
                   {product.badge && (
                     <span className="badge-glow">{product.badge}</span>
                   )}
@@ -145,6 +165,27 @@ const ProductDetailPage = () => {
                   </div>
                 </div>
 
+                {/* Certifications */}
+                {certifications.length > 0 && (
+                  <div className="mb-8">
+                    <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                      <Award className="w-4 h-4 text-primary" />
+                      Certifications & Safety
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {certifications.map((cert) => (
+                        <div
+                          key={cert.id}
+                          className="group relative px-3 py-1.5 bg-muted border border-border rounded-lg text-sm font-mono font-medium text-foreground hover:border-primary/50 transition-colors cursor-help"
+                          title={cert.description}
+                        >
+                          {cert.name}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 {/* CTAs */}
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg">
@@ -201,8 +242,31 @@ const ProductDetailPage = () => {
           </div>
         </section>
 
-        {/* Specifications */}
+        {/* Recommended Scenes */}
         <section className="section-padding">
+          <div className="container-custom">
+            <h2 className="text-2xl font-bold text-foreground mb-8">Recommended Applications</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {displayScenes.map((scene) => (
+                <Link
+                  key={scene.id}
+                  to={scene.href}
+                  className="group flex flex-col items-center gap-3 p-6 bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-lg transition-all"
+                >
+                  <div className={glassIconClass}>
+                    <scene.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                    {scene.name}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Specifications */}
+        <section className="section-padding bg-muted/30 border-t border-border">
           <div className="container-custom">
             <h2 className="text-2xl font-bold text-foreground mb-8">Technical Specifications</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -218,7 +282,7 @@ const ProductDetailPage = () => {
 
         {/* Related Products */}
         {relatedProducts.length > 0 && (
-          <section className="section-padding bg-muted/50 border-t border-border">
+          <section className="section-padding border-t border-border">
             <div className="container-custom">
               <h2 className="text-2xl font-bold text-foreground mb-8">Related Products</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
