@@ -1,14 +1,49 @@
 import { useState } from "react";
+import { z } from "zod";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Mail, Loader2 } from "lucide-react";
+import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
+
+const emailSchema = z.object({
+  email: z.string().trim().email("Please enter a valid email address").max(255, "Email too long"),
+});
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Newsletter signup:", email);
-    setEmail("");
+
+    const result = emailSchema.safeParse({ email });
+    if (!result.success) {
+      toast.error(result.error.errors[0].message);
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase
+        .from("newsletter_subscribers")
+        .insert([{ email: result.data.email }]);
+
+      if (error) {
+        if (error.code === "23505") {
+          toast.info("You're already subscribed!");
+        } else {
+          throw error;
+        }
+      } else {
+        toast.success("Successfully subscribed! Welcome to Sentorise.");
+        setEmail("");
+      }
+    } catch (error) {
+      console.error("Newsletter signup error:", error);
+      toast.error("Failed to subscribe. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -32,14 +67,25 @@ const Newsletter = () => {
               placeholder="Enter your email"
               className="flex-1 px-4 py-3 bg-primary-foreground text-foreground placeholder:text-muted-foreground rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-foreground/50"
               required
+              disabled={isSubmitting}
             />
             <Button 
               type="submit" 
               variant="secondary"
               className="group px-6"
+              disabled={isSubmitting}
             >
-              Subscribe
-              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  Subscribing...
+                </>
+              ) : (
+                <>
+                  Subscribe
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </>
+              )}
             </Button>
           </form>
           

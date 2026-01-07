@@ -8,20 +8,23 @@ import { CompareProvider } from "@/context/CompareContext";
 import CompareBar from "@/components/CompareBar";
 import Index from "./pages/Index";
 import ProductsPage from "./pages/ProductsPage";
-import ProductDetailPage from "./pages/ProductDetailPage";
 import ComparePage from "./pages/ComparePage";
-import WhySentorisePage from "./pages/WhySentorisePage";
+import ProductDetailPage from "./pages/ProductDetailPage";
+import ApplicationsPage from "./pages/ApplicationsPage";
 import SupportPage from "./pages/SupportPage";
 import BlogPage from "./pages/BlogPage";
-import ApplicationsPage from "./pages/ApplicationsPage";
 import StoriesPage from "./pages/StoriesPage";
+import WhySentorisePage from "./pages/WhySentorisePage";
+import PrivacyPage from "./pages/PrivacyPage";
+import TermsPage from "./pages/TermsPage";
 import NotFound from "./pages/NotFound";
+import AIChatWidget from "./components/AIChatWidget";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <TooltipProvider>
         <CompareProvider>
           <Toaster />
@@ -32,15 +35,17 @@ const App = () => (
               <Route path="/products" element={<ProductsPage />} />
               <Route path="/products/:productId" element={<ProductDetailPage />} />
               <Route path="/compare" element={<ComparePage />} />
-              <Route path="/why-sentorise" element={<WhySentorisePage />} />
+              <Route path="/applications" element={<ApplicationsPage />} />
               <Route path="/support" element={<SupportPage />} />
               <Route path="/blog" element={<BlogPage />} />
-              <Route path="/applications" element={<ApplicationsPage />} />
               <Route path="/stories" element={<StoriesPage />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="/why-sentorise" element={<WhySentorisePage />} />
+              <Route path="/privacy" element={<PrivacyPage />} />
+              <Route path="/terms" element={<TermsPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <CompareBar />
+            <AIChatWidget />
           </BrowserRouter>
         </CompareProvider>
       </TooltipProvider>
