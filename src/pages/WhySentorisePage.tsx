@@ -3,6 +3,9 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
+import BrandAcronym from "@/components/BrandAcronym";
+import AnimatedCounter from "@/components/AnimatedCounter";
+import PageMeta from "@/components/PageMeta";
 import { Button } from "@/components/ui/button";
 import { 
   Shield, 
@@ -12,8 +15,13 @@ import {
   Award, 
   Thermometer, 
   ArrowRight,
-  Check
+  Check,
+  Users,
+  Globe,
+  Zap,
+  Heart
 } from "lucide-react";
+import heroBattery from "@/assets/hero-battery.jpg";
 
 const values = [
   {
@@ -68,23 +76,45 @@ const markets = [
   { flag: "🇨🇦", country: "Canada", subtitle: "Cold Climate Tested" },
 ];
 
+const stats = [
+  { icon: Users, end: 50000, suffix: "+", label: "Happy Customers" },
+  { icon: Globe, end: 25, suffix: "+", label: "Countries Served" },
+  { icon: Zap, end: 4000, suffix: "+", label: "Cycle Lifespan" },
+  { icon: Heart, end: 98, suffix: "%", label: "Satisfaction Rate" },
+];
+
 const WhySentorisePage = () => {
   return (
     <div className="min-h-screen bg-background">
+      <PageMeta 
+        title="Why Sentorise" 
+        description="Discover why Sentorise is the trusted choice for LiFePO4 batteries. Safety-first engineering, international standards, and sustainable technology."
+      />
       <AnnouncementBar />
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-muted/50 border-b border-border">
-          <div className="container-custom">
+        {/* Hero Section with Background Image */}
+        <section className="relative py-20 md:py-32 overflow-hidden">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${heroBattery})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70" />
+          
+          <div className="container-custom relative z-10">
             <nav className="text-sm text-muted-foreground mb-6">
               <Link to="/" className="hover:text-primary">Home</Link>
               <span className="mx-2">/</span>
               <span className="text-foreground">Why Sentorise</span>
             </nav>
-            <div className="max-w-3xl">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Power Freedom, <span className="text-primary">Not Just Capacity</span>
+            <div className="max-w-2xl">
+              <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-semibold rounded-full mb-6">
+                The Sentorise Difference
+              </span>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+                Power Freedom,<br />
+                <span className="text-primary">Not Just Capacity</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 We're not just another battery seller. Sentorise is an energy brand 
@@ -105,6 +135,45 @@ const WhySentorisePage = () => {
                 </Button>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Animated Stats Section */}
+        <section className="py-12 md:py-16 bg-primary">
+          <div className="container-custom">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-foreground/10 mb-4">
+                    <stat.icon className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-1">
+                    <AnimatedCounter end={stat.end} suffix={stat.suffix} />
+                  </p>
+                  <p className="text-sm font-medium text-primary-foreground/80">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Brand Acronym Section */}
+        <section className="section-padding bg-muted/30">
+          <div className="container-custom">
+            <div className="text-center mb-10">
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider mb-4 block">
+                What SENTORISE Means
+              </span>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                Every Letter, A Promise
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Our name isn't just a brand — it's a commitment to the values that drive everything we build.
+              </p>
+            </div>
+            <BrandAcronym />
           </div>
         </section>
 
