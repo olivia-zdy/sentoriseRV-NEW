@@ -1,3 +1,4 @@
+import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -23,34 +24,36 @@ import AIChatWidget from "./components/AIChatWidget";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      <TooltipProvider>
-        <CompareProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/products" element={<ProductsPage />} />
-              <Route path="/products/:productId" element={<ProductDetailPage />} />
-              <Route path="/compare" element={<ComparePage />} />
-              <Route path="/applications" element={<ApplicationsPage />} />
-              <Route path="/support" element={<SupportPage />} />
-              <Route path="/blog" element={<BlogPage />} />
-              <Route path="/stories" element={<StoriesPage />} />
-              <Route path="/why-sentorise" element={<WhySentorisePage />} />
-              <Route path="/privacy" element={<PrivacyPage />} />
-              <Route path="/terms" element={<TermsPage />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            <CompareBar />
-            <AIChatWidget />
-          </BrowserRouter>
-        </CompareProvider>
-      </TooltipProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <TooltipProvider>
+          <CompareProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/products" element={<ProductsPage />} />
+                <Route path="/products/:productId" element={<ProductDetailPage />} />
+                <Route path="/compare" element={<ComparePage />} />
+                <Route path="/applications" element={<ApplicationsPage />} />
+                <Route path="/support" element={<SupportPage />} />
+                <Route path="/blog" element={<BlogPage />} />
+                <Route path="/stories" element={<StoriesPage />} />
+                <Route path="/why-sentorise" element={<WhySentorisePage />} />
+                <Route path="/privacy" element={<PrivacyPage />} />
+                <Route path="/terms" element={<TermsPage />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+              <CompareBar />
+              <AIChatWidget />
+            </BrowserRouter>
+          </CompareProvider>
+        </TooltipProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;

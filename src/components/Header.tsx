@@ -172,8 +172,8 @@ const Header = () => {
               <ShoppingCart className="w-5 h-5" />
             </Button>
             <ThemeToggle />
-            <Button variant="default" size="sm" className="ml-2">
-              Contact Us
+            <Button asChild variant="default" size="sm" className="ml-2">
+              <Link to="/support#contact">Contact Us</Link>
             </Button>
           </div>
 

@@ -1,146 +1,193 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Bluetooth, Flame, Scale, Zap, Battery, RefreshCw } from "lucide-react";
 import { Product } from "@/data/products";
+import { Button } from "@/components/ui/button";
 import { useCompare } from "@/context/CompareContext";
-import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
+import { Bluetooth, Thermometer, Zap, ShoppingCart, GitCompare, Check, Flame } from "lucide-react";
 
 interface ProductCardProps {
   product: Product;
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
-  const { addToCompare, removeFromCompare, isInCompare, canAddMore } = useCompare();
-  const inCompare = isInCompare(product.id);
+  const { addToCompare, removeFromCompare, isInCompare, compareList } = useCompare();
+  const isComparing = isInCompare(product.id);
+  const canAddMore = compareList.length < 3;
+
+  // Calculate discount percentage
+  const discountPercent = product.salePrice 
+    ? Math.round((1 - product.salePrice / product.price) * 100)
+    : null;
 
   const handleCompareClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    if (inCompare) {
+    if (isComparing) {
       removeFromCompare(product.id);
     } else if (canAddMore) {
       addToCompare(product);
     }
   };
 
-  // Extract cycle life from specs
-  const cycleLife = product.specs.find(s => s.label.includes("Cycle"))?.value || "4000+";
+  const getFeatureIcons = () => {
+    const icons = [];
+    if (product.features.some(f => f.toLowerCase().includes('bluetooth'))) {
+      icons.push({ icon: Bluetooth, label: 'Bluetooth' });
+    }
+    if (product.features.some(f => f.toLowerCase().includes('heat') || f.toLowerCase().includes('self-heating'))) {
+      icons.push({ icon: Thermometer, label: 'Self-Heating' });
+    }
+    if (product.features.some(f => f.toLowerCase().includes('fast') || f.toLowerCase().includes('quick'))) {
+      icons.push({ icon: Zap, label: 'Fast Charge' });
+    }
+    return icons;
+  };
+
+  const featureIcons = getFeatureIcons();
 
   return (
     <Link 
       to={`/products/${product.id}`}
-      className="group block bg-card rounded-xl border border-border overflow-hidden hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+      className="group block bg-card rounded-xl border border-border overflow-hidden card-hover"
     >
       {/* Image Container */}
-      <div className="relative aspect-square overflow-hidden bg-muted">
+      <div className="relative aspect-square bg-muted/30 p-6 flex items-center justify-center overflow-hidden">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
         />
         
-        {/* Badges - Top Left */}
-        <div className="absolute top-3 left-3 flex flex-col gap-2">
-          {product.badge && (
-            <span className="badge-glow">
-              {product.badge}
-            </span>
-          )}
+        {/* Top Badges Row */}
+        <div className="absolute top-3 left-3 flex flex-wrap gap-2">
           {product.isNew && (
-            <span className="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary text-primary-foreground">
-              New
-            </span>
+            <Badge className="bg-primary text-primary-foreground text-xs font-semibold">
+              NEW
+            </Badge>
+          )}
+          {product.isHot && (
+            <Badge className="bg-orange-500 text-white text-xs font-semibold flex items-center gap-1">
+              <Flame className="w-3 h-3" />
+              HOT
+            </Badge>
           )}
         </div>
 
-        {/* Feature Icons + Compare - Top Right */}
-        <div className="absolute top-3 right-3 flex flex-col gap-2">
-          {product.hasBluetooth && (
-            <div className="icon-circle-glass-sm" title="Bluetooth Monitoring">
-              <Bluetooth className="w-4 h-4 text-primary" />
-            </div>
-          )}
-          {product.hasHeating && (
-            <div className="icon-circle-glass-sm" title="Self-Heating">
-              <Flame className="w-4 h-4 text-orange-500" />
-            </div>
-          )}
-          {/* Compare Button */}
-          <button
-            onClick={handleCompareClick}
-            className={cn(
-              "icon-circle-glass-sm",
-              inCompare && "bg-primary/20 border-primary"
-            )}
-            title={inCompare ? "Remove from compare" : "Add to compare"}
-          >
-            <Scale className={cn("w-4 h-4", inCompare ? "text-primary" : "text-muted-foreground")} />
-          </button>
-        </div>
-
-        {/* Hover Overlay */}
-        <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <span className="flex items-center gap-2 text-primary-foreground text-sm font-semibold">
+        {/* Discount Badge - Top Right */}
+        {discountPercent && (
+          <Badge className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold">
+            -{discountPercent}%
+          </Badge>
+        )}
+        
+        {/* Feature Icons */}
+        {featureIcons.length > 0 && (
+          <div className="absolute bottom-3 left-3 flex gap-2">
+            {featureIcons.map(({ icon: Icon, label }) => (
+              <div 
+                key={label}
+                className="w-8 h-8 rounded-full bg-background/80 backdrop-blur-sm border border-border flex items-center justify-center"
+                title={label}
+              >
+                <Icon className="w-4 h-4 text-primary" />
+              </div>
+            ))}
+          </div>
+        )}
+        
+        {/* View Details Overlay */}
+        <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <span className="px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
             View Details
-            <ArrowRight className="w-4 h-4" />
           </span>
         </div>
       </div>
 
       {/* Content */}
       <div className="p-5">
-        <p className="text-xs text-primary font-semibold uppercase tracking-wider mb-2">
-          {product.series} Series • {product.category}
-        </p>
-        <h3 className="text-base font-semibold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
+        {/* Series & Category */}
+        <div className="flex items-center gap-2 mb-2">
+          <span className="text-xs font-semibold text-primary uppercase tracking-wider">
+            {product.series} Series
+          </span>
+          <span className="text-xs text-muted-foreground">•</span>
+          <span className="text-xs text-muted-foreground capitalize">{product.category}</span>
+        </div>
+
+        {/* Product Name */}
+        <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
           {product.name}
         </h3>
 
-        {/* Spec Grid - 4 columns */}
-        <div className="grid grid-cols-4 gap-2 mb-4 p-3 bg-muted/50 rounded-lg">
-          <div className="text-center">
-            <Zap className="w-4 h-4 text-primary mx-auto mb-1" />
-            <p className="text-xs font-bold text-foreground">{product.voltage}</p>
-            <p className="text-[10px] text-muted-foreground">Voltage</p>
+        {/* Key Specs Grid */}
+        <div className="grid grid-cols-2 gap-2 mb-4">
+          <div className="text-center p-2 bg-muted/50 rounded-lg">
+            <p className="text-xs text-muted-foreground">Voltage</p>
+            <p className="text-sm font-semibold text-foreground">{product.voltage}V</p>
           </div>
-          <div className="text-center">
-            <Battery className="w-4 h-4 text-primary mx-auto mb-1" />
-            <p className="text-xs font-bold text-foreground">{product.capacity}</p>
-            <p className="text-[10px] text-muted-foreground">Capacity</p>
+          <div className="text-center p-2 bg-muted/50 rounded-lg">
+            <p className="text-xs text-muted-foreground">Capacity</p>
+            <p className="text-sm font-semibold text-foreground">{product.capacity}Ah</p>
           </div>
-          <div className="text-center">
-            <Zap className="w-4 h-4 text-primary mx-auto mb-1" />
-            <p className="text-xs font-bold text-foreground">{product.energy}</p>
-            <p className="text-[10px] text-muted-foreground">Energy</p>
+          <div className="text-center p-2 bg-muted/50 rounded-lg">
+            <p className="text-xs text-muted-foreground">Energy</p>
+            <p className="text-sm font-semibold text-foreground">{product.energy}Wh</p>
           </div>
-          <div className="text-center">
-            <RefreshCw className="w-4 h-4 text-primary mx-auto mb-1" />
-            <p className="text-xs font-bold text-foreground">{cycleLife.replace(" cycles", "")}</p>
-            <p className="text-[10px] text-muted-foreground">Cycles</p>
+          <div className="text-center p-2 bg-muted/50 rounded-lg">
+            <p className="text-xs text-muted-foreground">Cycle Life</p>
+            <p className="text-sm font-semibold text-foreground">4000+</p>
           </div>
         </div>
 
-        {/* Feature Tags */}
-        <div className="flex flex-wrap gap-1.5 mb-4">
-          {product.highlights.slice(0, 2).map((highlight, i) => (
-            <span key={i} className="text-[10px] px-2 py-0.5 bg-secondary rounded-full text-secondary-foreground">
-              {highlight}
-            </span>
-          ))}
-        </div>
-        
-        {/* Price */}
-        <div className="flex items-baseline gap-2">
-          {product.salePrice ? (
-            <>
-              <span className="text-lg font-bold text-primary">€{product.salePrice.toFixed(2)}</span>
-              <span className="text-sm text-muted-foreground line-through">€{product.price.toFixed(2)}</span>
-            </>
-          ) : (
-            <span className="text-lg font-bold text-foreground">€{product.price.toFixed(2)}</span>
-          )}
-          {product.inStock && (
-            <span className="text-xs text-primary ml-auto">In Stock</span>
-          )}
+        {/* Highlights */}
+        {product.highlights && product.highlights.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mb-4">
+            {product.highlights.slice(0, 3).map((highlight, index) => (
+              <span 
+                key={index}
+                className="px-2 py-0.5 text-xs bg-secondary text-secondary-foreground rounded-full"
+              >
+                {highlight}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* Price & Actions */}
+        <div className="flex items-center justify-between pt-3 border-t border-border">
+          <div>
+            {product.salePrice ? (
+              <div className="flex items-baseline gap-2">
+                <span className="text-xl font-bold text-primary">€{product.salePrice}</span>
+                <span className="text-sm text-muted-foreground line-through">€{product.price}</span>
+              </div>
+            ) : (
+              <span className="text-xl font-bold text-foreground">€{product.price}</span>
+            )}
+            {product.inStock && (
+              <span className="text-xs text-green-600 dark:text-green-400 flex items-center gap-1 mt-1">
+                <Check className="w-3 h-3" /> In Stock
+              </span>
+            )}
+          </div>
+          
+          <div className="flex items-center gap-2">
+            <Button
+              variant={isComparing ? "default" : "outline"}
+              size="icon"
+              className="h-9 w-9"
+              onClick={handleCompareClick}
+              disabled={!isComparing && !canAddMore}
+              title={isComparing ? "Remove from compare" : "Add to compare"}
+            >
+              <GitCompare className="w-4 h-4" />
+            </Button>
+            <Button size="sm" className="gap-1.5">
+              <ShoppingCart className="w-4 h-4" />
+              <span className="hidden sm:inline">Add</span>
+            </Button>
+          </div>
         </div>
       </div>
     </Link>
