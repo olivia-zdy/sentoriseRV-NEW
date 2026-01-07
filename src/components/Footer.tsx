@@ -1,132 +1,135 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Youtube, Linkedin, Truck, RotateCcw, ShieldCheck } from "lucide-react";
 import { useTheme } from "next-themes";
 import logoLight from "@/assets/logo-light.png";
 import logoDark from "@/assets/logo-dark.png";
+import { Mail, Phone, MapPin, Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
+import { toast } from "sonner";
+
+const footerLinks = {
+  products: [
+    { name: "Lite Series", href: "/products?series=lite" },
+    { name: "Core Series", href: "/products?series=core" },
+    { name: "Plus Series", href: "/products?series=plus" },
+    { name: "Compare", href: "/compare" },
+  ],
+  applications: [
+    { name: "RV & Campervan", href: "/applications?scene=rv" },
+    { name: "Marine & Boat", href: "/applications?scene=marine" },
+    { name: "Solar & Off-Grid", href: "/applications?scene=solar" },
+    { name: "View All", href: "/applications" },
+  ],
+  company: [
+    { name: "About Us", href: "/why-sentorise" },
+    { name: "Customer Stories", href: "/stories" },
+    { name: "Blog", href: "/blog" },
+  ],
+  support: [
+    { name: "Help Center", href: "/support#faq" },
+    { name: "Downloads", href: "/support#downloads" },
+    { name: "Warranty", href: "/support#warranty" },
+    { name: "Contact Us", href: "/support#contact" },
+  ],
+};
+
+const socialLinks = [
+  { name: "Facebook", icon: Facebook, href: "#" },
+  { name: "Instagram", icon: Instagram, href: "#" },
+  { name: "YouTube", icon: Youtube, href: "#" },
+  { name: "LinkedIn", icon: Linkedin, href: "#" },
+];
 
 const Footer = () => {
   const { resolvedTheme } = useTheme();
-  const logoSrc = resolvedTheme === "dark" ? logoDark : logoLight;
+  const logo = resolvedTheme === "dark" ? logoDark : logoLight;
 
-  const footerLinks = {
-    Products: [
-      { name: "Lite Series", href: "/products?series=lite" },
-      { name: "Core Series", href: "/products?series=core" },
-      { name: "Plus Series", href: "/products?series=plus" },
-      { name: "All Batteries", href: "/products" },
-    ],
-    Applications: [
-      { name: "RV & Motorhome", href: "/applications#rv" },
-      { name: "Van Life", href: "/applications#vanlife" },
-      { name: "Off-Grid Solar", href: "/applications#solar" },
-      { name: "Marine", href: "/applications#marine" },
-    ],
-    Support: [
-      { name: "Help Center", href: "/support" },
-      { name: "Warranty", href: "/support#warranty" },
-      { name: "Downloads", href: "/support#downloads" },
-      { name: "Contact", href: "/support#contact" },
-    ],
-    Company: [
-      { name: "Why Sentorise", href: "/why-sentorise" },
-      { name: "Blog", href: "/blog" },
-      { name: "Sustainability", href: "/sustainability" },
-      { name: "Dealers", href: "/dealers" },
-    ],
+  const handleSocialClick = (e: React.MouseEvent, name: string) => {
+    e.preventDefault();
+    toast.info(`Our ${name} page is coming soon!`);
   };
 
-  const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Youtube, href: "#", label: "YouTube" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-  ];
-
-  const dtcFeatures = [
-    { icon: Truck, label: "Free EU Shipping", desc: "Orders over €99" },
-    { icon: RotateCcw, label: "30-Day Returns", desc: "Hassle-free" },
-    { icon: ShieldCheck, label: "5-Year Warranty", desc: "Full coverage" },
-  ];
-
   return (
-    <footer className="bg-card border-t border-border">
-      {/* DTC Features Bar */}
-      <div className="border-b border-border">
-        <div className="container-custom py-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {dtcFeatures.map((feature) => (
-              <div key={feature.label} className="flex items-center gap-3 justify-center md:justify-start">
-                <div className="icon-circle-glass-sm">
-                  <feature.icon className="w-4 h-4 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">{feature.label}</p>
-                  <p className="text-xs text-muted-foreground">{feature.desc}</p>
-                </div>
+    <footer className="bg-muted/50 border-t border-border">
+      <div className="container-custom py-12 md:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="col-span-2 md:col-span-3 lg:col-span-2">
+            <Link to="/" className="inline-block mb-4">
+              <img src={logo} alt="Sentorise" className="h-8" />
+            </Link>
+            <p className="text-sm text-muted-foreground mb-4 max-w-xs">
+              Premium LiFePO4 batteries for adventurers who demand reliability.
+            </p>
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-primary" />
+                <a href="mailto:info@sentorise.com" className="hover:text-foreground">info@sentorise.com</a>
               </div>
-            ))}
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-primary" />
+                <span>+49 123 456 7890</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-primary" />
+                <span>Berlin, Germany</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Products</h4>
+            <ul className="space-y-2">
+              {footerLinks.products.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground">{link.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Applications</h4>
+            <ul className="space-y-2">
+              {footerLinks.applications.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground">{link.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Company</h4>
+            <ul className="space-y-2">
+              {footerLinks.company.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground">{link.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Support</h4>
+            <ul className="space-y-2">
+              {footerLinks.support.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground">{link.name}</Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
-
-      <div className="container-custom section-padding">
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
-          {/* Brand */}
-          <div className="col-span-2">
-            <Link to="/" className="inline-block mb-6">
-              <img 
-                src={logoSrc} 
-                alt="Sentorise" 
-                className="h-8 w-auto"
-              />
-            </Link>
-            <p className="text-muted-foreground text-sm mb-6 max-w-xs leading-relaxed">
-              Premium LiFePO₄ batteries for RV, vanlife, and off-grid solar. 
-              European quality. 5-year warranty.
-            </p>
-            <div className="flex gap-3">
+      <div className="border-t border-border">
+        <div className="container-custom py-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
               {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="icon-circle-glass-sm"
-                >
-                  <social.icon className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                <a key={social.name} href={social.href} onClick={(e) => handleSocialClick(e, social.name)} className="w-9 h-9 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-colors" aria-label={social.name}>
+                  <social.icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
-          </div>
-
-          {/* Links */}
-          {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title}>
-              <h4 className="text-sm font-semibold text-foreground mb-4">{title}</h4>
-              <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      to={link.href}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+            <p className="text-sm text-muted-foreground text-center">© {new Date().getFullYear()} Sentorise. All rights reserved.</p>
+            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              <Link to="/privacy" className="hover:text-foreground">Privacy</Link>
+              <Link to="/terms" className="hover:text-foreground">Terms</Link>
             </div>
-          ))}
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            © 2025 Sentorise. All rights reserved.
-          </p>
-          <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <Link to="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-foreground transition-colors">Terms of Service</Link>
-            <Link to="/cookies" className="hover:text-foreground transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>
