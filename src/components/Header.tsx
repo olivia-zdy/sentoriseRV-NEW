@@ -126,8 +126,8 @@ const Header = () => {
                           <DropdownMenuItem key={item.name} asChild>
                             <Link to={item.href} className="flex flex-col items-start gap-0.5">
                               <span className="font-medium">{item.name}</span>
-                              {'desc' in item && (
-                                <span className="text-xs text-muted-foreground">{item.desc}</span>
+                              {'desc' in item && typeof (item as { desc?: string }).desc === 'string' && (
+                                <span className="text-xs text-muted-foreground">{(item as { desc: string }).desc}</span>
                               )}
                             </Link>
                           </DropdownMenuItem>
