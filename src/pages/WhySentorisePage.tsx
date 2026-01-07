@@ -10,9 +10,7 @@ import {
   Battery, 
   Leaf, 
   Award, 
-  Clock, 
   Thermometer, 
-  Zap,
   ArrowRight,
   Check
 } from "lucide-react";
@@ -25,8 +23,8 @@ const values = [
   },
   {
     icon: Award,
-    title: "European Quality Standards",
-    description: "Designed for European RV and solar markets. CE certified, UN38.3 tested, and compliant with IEC 62619 safety standards.",
+    title: "International Quality Standards",
+    description: "CE certified, UN38.3 tested, FCC compliant, and meets IEC 62619 safety standards. Ready for European and American markets.",
   },
   {
     icon: Bluetooth,
@@ -61,6 +59,15 @@ const differentiators = [
   "Eco-friendly packaging",
 ];
 
+const markets = [
+  { flag: "🇩🇪", country: "Germany", subtitle: "DIN Standards" },
+  { flag: "🇫🇷", country: "France", subtitle: "CE Certified" },
+  { flag: "🇬🇧", country: "United Kingdom", subtitle: "UK Approved" },
+  { flag: "🇪🇺", country: "Nordic Countries", subtitle: "Arctic Ready" },
+  { flag: "🇺🇸", country: "United States", subtitle: "BCI Compatible" },
+  { flag: "🇨🇦", country: "Canada", subtitle: "Cold Climate Tested" },
+];
+
 const WhySentorisePage = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -80,7 +87,7 @@ const WhySentorisePage = () => {
                 Power Freedom, <span className="text-primary">Not Just Capacity</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                We're not just another battery seller. Sentorise is a European energy brand 
+                We're not just another battery seller. Sentorise is an energy brand 
                 built for people who choose mobile, independent, and sustainable lifestyles. 
                 Our batteries are designed to give you reliable power wherever you roam.
               </p>
@@ -119,7 +126,7 @@ const WhySentorisePage = () => {
                   key={value.title}
                   className="p-6 md:p-8 bg-card rounded-xl border border-border"
                 >
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-5">
+                  <div className="icon-circle-glass mb-5">
                     <value.icon className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-3">
@@ -164,22 +171,32 @@ const WhySentorisePage = () => {
           <div className="container-custom">
             <div className="text-center mb-12">
               <span className="text-sm font-semibold text-primary uppercase tracking-wider mb-4 block">
-                Made for Europe
+                Global Reach, Local Standards
               </span>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                Designed for European Adventures
+                Trusted Across Europe & America
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Our batteries are specifically designed for European RV formats, camping culture, 
-                and climate conditions — from Mediterranean summers to Nordic winters.
+                Our batteries are specifically designed for European and American RV formats, camping culture, 
+                and climate conditions — from Mediterranean summers to Nordic winters, from sunny California to snowy Canada.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              {["Germany", "France", "United Kingdom", "Nordic Countries"].map((country) => (
-                <div key={country} className="p-6 bg-card rounded-xl border border-border">
-                  <Zap className="w-8 h-8 text-primary mx-auto mb-3" />
-                  <p className="font-semibold text-foreground">{country}</p>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+              {markets.map((market) => (
+                <div 
+                  key={market.country} 
+                  className="p-5 bg-card/50 backdrop-blur-sm rounded-xl border border-border hover:border-primary/50 hover:bg-card transition-all duration-300 group"
+                >
+                  <div className="text-4xl mb-3 text-center group-hover:scale-110 transition-transform duration-300">
+                    {market.flag}
+                  </div>
+                  <p className="font-semibold text-foreground text-center text-sm mb-1">
+                    {market.country}
+                  </p>
+                  <p className="text-xs text-muted-foreground text-center">
+                    {market.subtitle}
+                  </p>
                 </div>
               ))}
             </div>
