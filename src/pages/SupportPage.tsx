@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
+import PageMeta from "@/components/PageMeta";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -86,6 +88,10 @@ const faqs = [
 const SupportPage = () => {
   return (
     <div className="min-h-screen bg-background">
+      <PageMeta 
+        title="Support Center" 
+        description="Get help with Sentorise batteries. FAQs, downloads, warranty information, and contact support." 
+      />
       <AnnouncementBar />
       <Header />
       <main>
@@ -212,27 +218,38 @@ const SupportPage = () => {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="section-padding bg-primary">
+        <section id="contact" className="section-padding bg-muted/30">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                 Contact Us
               </h2>
-              <p className="text-primary-foreground/80 max-w-2xl mx-auto">
-                Need personalized help? Our support team is here for you.
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Need personalized help? Fill out the form below or reach us directly.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-              <div className="p-6 bg-primary-foreground/10 backdrop-blur-sm rounded-xl text-center border border-primary-foreground/20">
-                <Mail className="w-8 h-8 text-primary-foreground mx-auto mb-4" />
-                <h3 className="font-semibold text-primary-foreground mb-2">Email Support</h3>
-                <p className="text-primary-foreground/80">support@sentorise.com</p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+              {/* Contact Form */}
+              <div className="bg-card p-6 md:p-8 rounded-xl border border-border">
+                <h3 className="text-lg font-semibold text-foreground mb-6">Send us a message</h3>
+                <ContactForm />
               </div>
-              <div className="p-6 bg-primary-foreground/10 backdrop-blur-sm rounded-xl text-center border border-primary-foreground/20">
-                <Phone className="w-8 h-8 text-primary-foreground mx-auto mb-4" />
-                <h3 className="font-semibold text-primary-foreground mb-2">Phone Support</h3>
-                <p className="text-primary-foreground/80">+49 123 456 7890</p>
+
+              {/* Contact Info */}
+              <div className="space-y-6">
+                <div className="p-6 bg-card rounded-xl border border-border">
+                  <Mail className="w-8 h-8 text-primary mb-4" />
+                  <h3 className="font-semibold text-foreground mb-2">Email Support</h3>
+                  <p className="text-muted-foreground">support@sentorise.com</p>
+                  <p className="text-sm text-muted-foreground mt-2">We typically respond within 24 hours</p>
+                </div>
+                <div className="p-6 bg-card rounded-xl border border-border">
+                  <Phone className="w-8 h-8 text-primary mb-4" />
+                  <h3 className="font-semibold text-foreground mb-2">Phone Support</h3>
+                  <p className="text-muted-foreground">+49 123 456 7890</p>
+                  <p className="text-sm text-muted-foreground mt-2">Mon-Fri, 9:00 - 18:00 CET</p>
+                </div>
               </div>
             </div>
           </div>

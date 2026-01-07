@@ -1,14 +1,37 @@
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ProductGallery from "@/components/ProductGallery";
+import ServicePromises from "@/components/ServicePromises";
+import ShareButtons from "@/components/ShareButtons";
+import QuoteRequestModal from "@/components/QuoteRequestModal";
+import PageMeta from "@/components/PageMeta";
+import { Button } from "@/components/ui/button";
 import { getProductById, products } from "@/data/products";
 import { getCertificationsForProduct } from "@/data/certifications";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft, Bluetooth, Shield, Thermometer, Battery, Zap, Flame, Download, Check, Award, Truck, Home, Sun, Anchor } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
-import ProductGallery from "@/components/ProductGallery";
 import { glassIconClass } from "@/lib/utils";
+import { toast } from "sonner";
+import { 
+  ArrowLeft, 
+  Bluetooth, 
+  Shield, 
+  Thermometer, 
+  Battery, 
+  Zap, 
+  Flame, 
+  Download, 
+  Check, 
+  Award, 
+  Truck, 
+  Home, 
+  Sun, 
+  Anchor,
+  ChevronRight
+} from "lucide-react";
 
 const applicationScenes = [
   { id: "rv", name: "RV & Motorhome", icon: Truck, href: "/applications#rv" },
@@ -20,6 +43,8 @@ const applicationScenes = [
 
 const ProductDetailPage = () => {
   const { productId } = useParams();
+  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  
   const product = getProductById(productId || "");
   const certifications = getCertificationsForProduct(productId || "");
 
@@ -42,7 +67,7 @@ const ProductDetailPage = () => {
     );
   }
 
-  // Create gallery images array (main image + additional angles if available)
+  // Create gallery images array
   const galleryImages = [product.image];
 
   // Get related products (same series, excluding current)
@@ -58,22 +83,63 @@ const ProductDetailPage = () => {
     )
   ).slice(0, 4);
 
-  // Fallback to first 3 if no matches
   const displayScenes = recommendedScenes.length > 0 ? recommendedScenes : applicationScenes.slice(0, 3);
+
+  // Calculate estimated delivery date
+  const getDeliveryDate = () => {
+    const today = new Date();
+    const minDate = new Date(today);
+    minDate.setDate(today.getDate() + 2);
+    const maxDate = new Date(today);
+    maxDate.setDate(today.getDate() + 5);
+    const options: Intl.DateTimeFormatOptions = { month: 'short', day: 'numeric' };
+    return `${minDate.toLocaleDateString('en-US', options)} - ${maxDate.toLocaleDateString('en-US', options)}`;
+  };
+
+  // Schema.org structured data
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.name,
+    "description": product.description,
+    "brand": { "@type": "Brand", "name": "Sentorise" },
+    "sku": product.model,
+    "offers": {
+      "@type": "Offer",
+      "price": product.salePrice || product.price,
+      "priceCurrency": "EUR",
+      "availability": product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
+    }
+  };
+
+  const handleDatasheetClick = () => {
+    toast.info("Datasheet will be available soon. Contact us for specifications.");
+  };
 
   return (
     <div className="min-h-screen bg-background">
+      <PageMeta 
+        title={product.name} 
+        description={`${product.name} - ${product.voltage} ${product.capacity} LiFePO4 battery. ${product.description}`} 
+      />
+      
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+
       <AnnouncementBar />
       <Header />
       <main>
         {/* Breadcrumb */}
         <section className="py-4 border-b border-border bg-muted/30">
           <div className="container-custom">
-            <nav className="text-sm text-muted-foreground">
+            <nav className="flex items-center gap-2 text-sm text-muted-foreground">
               <Link to="/" className="hover:text-primary">Home</Link>
-              <span className="mx-2">/</span>
+              <ChevronRight className="w-4 h-4" />
               <Link to="/products" className="hover:text-primary">Products</Link>
-              <span className="mx-2">/</span>
+              <ChevronRight className="w-4 h-4" />
               <span className="text-foreground">{product.name}</span>
             </nav>
           </div>
@@ -86,7 +152,6 @@ const ProductDetailPage = () => {
               {/* Image Gallery */}
               <div className="relative">
                 <ProductGallery images={galleryImages} productName={product.name} />
-                {/* Badges */}
                 <div className="absolute top-4 left-4 flex flex-col gap-2 z-10">
                   {product.badge && (
                     <span className="badge-glow">{product.badge}</span>
@@ -94,6 +159,11 @@ const ProductDetailPage = () => {
                   {product.isNew && (
                     <span className="px-3 py-1 text-xs font-semibold uppercase rounded-full bg-primary text-primary-foreground">
                       New
+                    </span>
+                  )}
+                  {product.isHot && (
+                    <span className="px-3 py-1 text-xs font-semibold uppercase rounded-full bg-orange-500 text-white">
+                      Hot
                     </span>
                   )}
                 </div>
@@ -122,7 +192,7 @@ const ProductDetailPage = () => {
                 </p>
 
                 {/* Quick Specs */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
                   <div className="p-4 bg-muted rounded-lg text-center">
                     <Battery className="w-5 h-5 text-primary mx-auto mb-2" />
                     <p className="text-xs text-muted-foreground">Capacity</p>
@@ -146,7 +216,7 @@ const ProductDetailPage = () => {
                 </div>
 
                 {/* Feature Icons */}
-                <div className="flex flex-wrap gap-3 mb-8">
+                <div className="flex flex-wrap gap-3 mb-6">
                   {product.hasBluetooth && (
                     <div className="flex items-center gap-2 px-3 py-2 bg-muted rounded-lg">
                       <Bluetooth className="w-4 h-4 text-primary" />
@@ -165,9 +235,34 @@ const ProductDetailPage = () => {
                   </div>
                 </div>
 
+                {/* Price & Stock */}
+                <div className="mb-6">
+                  <div className="flex items-baseline gap-3 mb-2">
+                    {product.salePrice ? (
+                      <>
+                        <span className="text-3xl font-bold text-primary">€{product.salePrice}</span>
+                        <span className="text-xl text-muted-foreground line-through">€{product.price}</span>
+                        <span className="px-2 py-1 text-xs font-bold bg-red-500 text-white rounded">
+                          Save €{product.price - product.salePrice}
+                        </span>
+                      </>
+                    ) : (
+                      <span className="text-3xl font-bold text-foreground">€{product.price}</span>
+                    )}
+                  </div>
+                  {product.inStock && (
+                    <p className="text-sm text-green-600 dark:text-green-400 flex items-center gap-1">
+                      <Check className="w-4 h-4" /> In Stock - Ready to Ship
+                    </p>
+                  )}
+                  <p className="text-sm text-muted-foreground mt-1">
+                    🚚 Order now, estimated delivery: <strong>{getDeliveryDate()}</strong>
+                  </p>
+                </div>
+
                 {/* Certifications */}
                 {certifications.length > 0 && (
-                  <div className="mb-8">
+                  <div className="mb-6">
                     <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
                       <Award className="w-4 h-4 text-primary" />
                       Certifications & Safety
@@ -176,7 +271,7 @@ const ProductDetailPage = () => {
                       {certifications.map((cert) => (
                         <div
                           key={cert.id}
-                          className="group relative px-3 py-1.5 bg-muted border border-border rounded-lg text-sm font-mono font-medium text-foreground hover:border-primary/50 transition-colors cursor-help"
+                          className="px-3 py-1.5 bg-muted border border-border rounded-lg text-sm font-mono font-medium text-foreground"
                           title={cert.description}
                         >
                           {cert.name}
@@ -187,18 +282,26 @@ const ProductDetailPage = () => {
                 )}
 
                 {/* CTAs */}
-                <div className="flex flex-wrap gap-4 mb-8">
-                  <Button size="lg">
+                <div className="flex flex-wrap gap-4 mb-6">
+                  <Button size="lg" onClick={() => setQuoteModalOpen(true)}>
                     Request Quote
                   </Button>
-                  <Button variant="outline" size="lg">
+                  <Button variant="outline" size="lg" onClick={handleDatasheetClick}>
                     <Download className="w-4 h-4 mr-2" />
                     Datasheet
                   </Button>
                 </div>
 
+                {/* Share Buttons */}
+                <div className="mb-6">
+                  <ShareButtons title={`Check out ${product.name} from Sentorise`} />
+                </div>
+
+                {/* Service Promises */}
+                <ServicePromises />
+
                 {/* Model Info */}
-                <div className="p-4 bg-muted rounded-lg text-sm">
+                <div className="mt-6 p-4 bg-muted rounded-lg text-sm">
                   <p><span className="text-muted-foreground">Model:</span> <span className="font-mono">{product.model}</span></p>
                   <p><span className="text-muted-foreground">EAN:</span> <span className="font-mono">{product.ean}</span></p>
                   <p><span className="text-muted-foreground">Dimensions:</span> {product.dimensions}</p>
@@ -213,7 +316,6 @@ const ProductDetailPage = () => {
         <section className="section-padding bg-muted/30 border-y border-border">
           <div className="container-custom">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {/* Features */}
               <div>
                 <h2 className="text-xl font-bold text-foreground mb-6">Key Features</h2>
                 <ul className="space-y-3">
@@ -225,8 +327,6 @@ const ProductDetailPage = () => {
                   ))}
                 </ul>
               </div>
-
-              {/* Use Cases */}
               <div>
                 <h2 className="text-xl font-bold text-foreground mb-6">Perfect For</h2>
                 <ul className="space-y-3">
@@ -295,6 +395,14 @@ const ProductDetailPage = () => {
         )}
       </main>
       <Footer />
+
+      {/* Quote Request Modal */}
+      <QuoteRequestModal
+        open={quoteModalOpen}
+        onOpenChange={setQuoteModalOpen}
+        productId={product.id}
+        productName={product.name}
+      />
     </div>
   );
 };
