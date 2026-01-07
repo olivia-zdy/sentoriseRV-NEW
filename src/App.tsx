@@ -14,6 +14,7 @@ import WhySentorisePage from "./pages/WhySentorisePage";
 import SupportPage from "./pages/SupportPage";
 import BlogPage from "./pages/BlogPage";
 import ApplicationsPage from "./pages/ApplicationsPage";
+import StoriesPage from "./pages/StoriesPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
               <Route path="/support" element={<SupportPage />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/applications" element={<ApplicationsPage />} />
+              <Route path="/stories" element={<StoriesPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

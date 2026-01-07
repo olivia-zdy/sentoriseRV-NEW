@@ -3,6 +3,12 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { 
   HelpCircle, 
   FileText, 
@@ -13,6 +19,7 @@ import {
   Download,
   ExternalLink
 } from "lucide-react";
+import { glassIconClass } from "@/lib/utils";
 
 const supportCategories = [
   {
@@ -62,6 +69,18 @@ const faqs = [
     question: "How do I connect the Bluetooth app?",
     answer: "Download the Sentorise app from the App Store or Google Play. Turn on Bluetooth on your phone, open the app, and it will automatically detect nearby Sentorise batteries.",
   },
+  {
+    question: "Can I connect multiple batteries in parallel?",
+    answer: "Yes, our Core and Plus series batteries can be connected in parallel to increase capacity. We recommend connecting up to 4 batteries in parallel for optimal performance.",
+  },
+  {
+    question: "What's the difference between Lite, Core, and Plus series?",
+    answer: "Lite series (6-50Ah) is for portable and backup applications. Core series (100Ah) is our standard RV/solar battery in various formats. Plus series (200Ah) includes self-heating for cold climates.",
+  },
+  {
+    question: "Do I need a special charger for LiFePO4 batteries?",
+    answer: "We recommend using a charger with a LiFePO4 profile (14.4V-14.6V charge voltage). Many modern RV converters have a lithium mode, or you can use a dedicated LiFePO4 charger.",
+  },
 ];
 
 const SupportPage = () => {
@@ -88,7 +107,7 @@ const SupportPage = () => {
           </div>
         </section>
 
-        {/* Support Categories */}
+        {/* Support Categories - Glass Icons */}
         <section className="section-padding">
           <div className="container-custom">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -98,7 +117,7 @@ const SupportPage = () => {
                   href={category.link}
                   className="group p-6 bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-lg transition-all"
                 >
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                  <div className={`${glassIconClass} mb-4 group-hover:border-primary`}>
                     <category.icon className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">{category.title}</h3>
@@ -109,7 +128,7 @@ const SupportPage = () => {
           </div>
         </section>
 
-        {/* FAQ Section */}
+        {/* FAQ Section with Accordion */}
         <section id="faq" className="section-padding bg-muted/30 border-y border-border">
           <div className="container-custom">
             <div className="text-center mb-12">
@@ -121,17 +140,23 @@ const SupportPage = () => {
               </p>
             </div>
 
-            <div className="max-w-3xl mx-auto space-y-4">
-              {faqs.map((faq, index) => (
-                <div key={index} className="p-6 bg-card rounded-xl border border-border">
-                  <h3 className="text-base font-semibold text-foreground mb-2">
-                    {faq.question}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {faq.answer}
-                  </p>
-                </div>
-              ))}
+            <div className="max-w-3xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <AccordionItem 
+                    key={index} 
+                    value={`faq-${index}`}
+                    className="bg-card rounded-xl border border-border px-6 data-[state=open]:border-primary/30"
+                  >
+                    <AccordionTrigger className="text-left text-foreground font-semibold hover:no-underline py-5">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground pb-5">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
           </div>
         </section>
@@ -150,15 +175,38 @@ const SupportPage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {["Product Datasheets", "Installation Guides", "Certification Documents"].map((doc) => (
-                <div key={doc} className="p-6 bg-card rounded-xl border border-border text-center">
-                  <Download className="w-8 h-8 text-primary mx-auto mb-4" />
-                  <h3 className="font-semibold text-foreground mb-2">{doc}</h3>
+                <div key={doc} className="p-6 bg-card rounded-xl border border-border text-center hover:border-primary/30 transition-colors">
+                  <div className={`${glassIconClass} mx-auto mb-4`}>
+                    <Download className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-4">{doc}</h3>
                   <Button variant="outline" size="sm">
                     Download
                     <ExternalLink className="w-4 h-4 ml-2" />
                   </Button>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Warranty Section */}
+        <section id="warranty" className="section-padding bg-muted/30 border-y border-border">
+          <div className="container-custom">
+            <div className="max-w-3xl mx-auto text-center">
+              <div className={`${glassIconClass} mx-auto mb-6`}>
+                <Shield className="w-6 h-6 text-primary" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                5-Year Warranty
+              </h2>
+              <p className="text-muted-foreground mb-8 leading-relaxed">
+                All Sentorise batteries come with a comprehensive 5-year warranty. We stand behind 
+                our products with a guarantee that covers manufacturing defects and premature capacity 
+                loss. If your battery falls below 80% capacity within the warranty period, we'll 
+                replace it free of charge.
+              </p>
+              <Button>Register Your Product</Button>
             </div>
           </div>
         </section>
@@ -176,12 +224,12 @@ const SupportPage = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-              <div className="p-6 bg-primary-foreground/10 rounded-xl text-center">
+              <div className="p-6 bg-primary-foreground/10 backdrop-blur-sm rounded-xl text-center border border-primary-foreground/20">
                 <Mail className="w-8 h-8 text-primary-foreground mx-auto mb-4" />
                 <h3 className="font-semibold text-primary-foreground mb-2">Email Support</h3>
                 <p className="text-primary-foreground/80">support@sentorise.com</p>
               </div>
-              <div className="p-6 bg-primary-foreground/10 rounded-xl text-center">
+              <div className="p-6 bg-primary-foreground/10 backdrop-blur-sm rounded-xl text-center border border-primary-foreground/20">
                 <Phone className="w-8 h-8 text-primary-foreground mx-auto mb-4" />
                 <h3 className="font-semibold text-primary-foreground mb-2">Phone Support</h3>
                 <p className="text-primary-foreground/80">+49 123 456 7890</p>
