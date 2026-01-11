@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import BrandAcronym from "@/components/BrandAcronym";
+import BrandTimeline from "@/components/BrandTimeline";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import PageMeta from "@/components/PageMeta";
 import { Button } from "@/components/ui/button";
@@ -232,6 +233,24 @@ const WhySentorisePage = () => {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Brand Timeline Section */}
+        <section className="section-padding bg-muted/30">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider mb-4 block">
+                Our Journey
+              </span>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                The Sentorise Story
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                From a small workshop to a global energy brand — here's how we've grown while staying true to our mission.
+              </p>
+            </div>
+            <BrandTimeline />
           </div>
         </section>
 
