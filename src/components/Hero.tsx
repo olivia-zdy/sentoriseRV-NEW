@@ -146,7 +146,7 @@ const Hero = () => {
           {/* CTAs - Decision-oriented, not purchase-oriented */}
           <div className="flex flex-wrap justify-center items-center gap-4 mb-12">
             <Button asChild size="lg" className="group">
-              <Link to="/applications">
+              <Link to="/battery-selector">
                 Find Your Battery
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>

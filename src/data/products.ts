@@ -31,6 +31,10 @@ export interface Product {
   salePrice?: number;
   inStock: boolean;
   highlights: string[];
+  // Stock tracking fields
+  stockQuantity: number;
+  lowStockThreshold?: number;
+  restockDate?: string;
 }
 
 // Import real product images
@@ -73,6 +77,8 @@ export const products: Product[] = [
     price: 29.99,
     inStock: true,
     highlights: ["Ultra-compact", "BMS Protection", "4000+ Cycles"],
+    stockQuantity: 45,
+    lowStockThreshold: 15,
   },
   {
     id: "lite-12v50",
@@ -107,6 +113,8 @@ export const products: Product[] = [
     price: 129.99,
     inStock: true,
     highlights: ["Bluetooth App", "Lightweight", "5-Year Warranty"],
+    stockQuantity: 28,
+    lowStockThreshold: 10,
   },
   {
     id: "core-12v100-std",
@@ -142,6 +150,8 @@ export const products: Product[] = [
     price: 279.99,
     inStock: true,
     highlights: ["Best Seller", "Group 31", "100A Continuous"],
+    stockQuantity: 8,
+    lowStockThreshold: 10,
   },
   {
     id: "core-12v100-mini",
@@ -176,6 +186,8 @@ export const products: Product[] = [
     price: 299.99,
     inStock: true,
     highlights: ["Ultra-Compact", "100Ah Power", "Space Saver"],
+    stockQuantity: 22,
+    lowStockThreshold: 8,
   },
   {
     id: "core-12v100-din",
@@ -210,6 +222,8 @@ export const products: Product[] = [
     price: 319.99,
     inStock: true,
     highlights: ["DIN H8 Format", "EU RV Perfect Fit", "OEM Compatible"],
+    stockQuantity: 15,
+    lowStockThreshold: 10,
   },
   {
     id: "plus-12v200-heated",
@@ -246,6 +260,8 @@ export const products: Product[] = [
     price: 699.99,
     inStock: true,
     highlights: ["Self-Heating", "200Ah Capacity", "Arctic-Ready"],
+    stockQuantity: 3,
+    lowStockThreshold: 5,
   },
 ];
 

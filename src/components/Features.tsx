@@ -1,4 +1,8 @@
-import { Shield, Thermometer, Headphones, Puzzle, Battery, Zap } from "lucide-react";
+import { useState } from "react";
+import { Shield, Thermometer, Headphones, Puzzle, Battery, Zap, Cable } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import SystemDiagram from "@/components/SystemDiagram";
 
 // Reordered: Trust & Safety → Compatibility → Performance
 const featureGroups = [
@@ -42,6 +46,13 @@ const featureGroups = [
         description: "Connect up to 4 in series (48V) or 4 in parallel for higher capacity. Perfect for custom builds.",
         highlight: "4S4P Ready",
       },
+      {
+        icon: Cable,
+        title: "See How It Connects",
+        description: "Interactive wiring diagrams for RV, van, and off-grid setups. See exactly how Sentorise fits your system.",
+        highlight: "View Diagrams",
+        action: "diagram",
+      },
     ],
   },
   {
@@ -59,6 +70,8 @@ const featureGroups = [
 ];
 
 const Features = () => {
+  const [diagramOpen, setDiagramOpen] = useState(false);
+
   return (
     <section id="features" className="section-padding bg-background">
       <div className="container-custom">
@@ -105,10 +118,27 @@ const Features = () => {
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                         <feature.icon className="w-6 h-6 text-primary" />
                       </div>
-                      {feature.highlight && (
+                      {feature.highlight && feature.action !== "diagram" && (
                         <span className="px-3 py-1 text-xs font-semibold bg-primary/10 text-primary rounded-full">
                           {feature.highlight}
                         </span>
+                      )}
+                      {feature.action === "diagram" && (
+                        <Dialog open={diagramOpen} onOpenChange={setDiagramOpen}>
+                          <DialogTrigger asChild>
+                            <Button variant="outline" size="sm" className="text-xs">
+                              {feature.highlight}
+                            </Button>
+                          </DialogTrigger>
+                          <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
+                            <DialogHeader>
+                              <DialogTitle className="text-xl font-bold text-foreground">
+                                System Wiring Diagrams
+                              </DialogTitle>
+                            </DialogHeader>
+                            <SystemDiagram />
+                          </DialogContent>
+                        </Dialog>
                       )}
                     </div>
                     <h4 className="text-lg font-semibold text-foreground mb-3">
