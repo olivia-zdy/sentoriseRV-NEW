@@ -9,6 +9,7 @@ import ServicePromises from "@/components/ServicePromises";
 import ShareButtons from "@/components/ShareButtons";
 import QuoteRequestModal from "@/components/QuoteRequestModal";
 import PageMeta from "@/components/PageMeta";
+import StockStatus from "@/components/StockStatus";
 import { Button } from "@/components/ui/button";
 import { getProductById, products } from "@/data/products";
 import { getCertificationsForProduct } from "@/data/certifications";
@@ -237,7 +238,7 @@ const ProductDetailPage = () => {
 
                 {/* Price & Stock */}
                 <div className="mb-6">
-                  <div className="flex items-baseline gap-3 mb-2">
+                  <div className="flex items-baseline gap-3 mb-4">
                     {product.salePrice ? (
                       <>
                         <span className="text-3xl font-bold text-primary">€{product.salePrice}</span>
@@ -250,14 +251,12 @@ const ProductDetailPage = () => {
                       <span className="text-3xl font-bold text-foreground">€{product.price}</span>
                     )}
                   </div>
-                  {product.inStock && (
-                    <p className="text-sm text-green-600 dark:text-green-400 flex items-center gap-1">
-                      <Check className="w-4 h-4" /> In Stock - Ready to Ship
-                    </p>
-                  )}
-                  <p className="text-sm text-muted-foreground mt-1">
-                    🚚 Order now, estimated delivery: <strong>{getDeliveryDate()}</strong>
-                  </p>
+                  <StockStatus 
+                    stockQuantity={product.stockQuantity}
+                    lowStockThreshold={product.lowStockThreshold}
+                    restockDate={product.restockDate}
+                    showDelivery={true}
+                  />
                 </div>
 
                 {/* Certifications */}

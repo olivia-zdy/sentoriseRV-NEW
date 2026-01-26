@@ -3,7 +3,8 @@ import { Product } from "@/data/products";
 import { Button } from "@/components/ui/button";
 import { useCompare } from "@/context/CompareContext";
 import { Badge } from "@/components/ui/badge";
-import { Bluetooth, Thermometer, Zap, ShoppingCart, GitCompare, Check, Flame } from "lucide-react";
+import StockStatus from "@/components/StockStatus";
+import { Bluetooth, Thermometer, Zap, ShoppingCart, GitCompare, Flame } from "lucide-react";
 
 interface ProductCardProps {
   product: Product;
@@ -165,11 +166,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
             ) : (
               <span className="text-xl font-bold text-foreground">€{product.price}</span>
             )}
-            {product.inStock && (
-              <span className="text-xs text-green-600 dark:text-green-400 flex items-center gap-1 mt-1">
-                <Check className="w-3 h-3" /> In Stock
-              </span>
-            )}
+            <StockStatus 
+              stockQuantity={product.stockQuantity} 
+              lowStockThreshold={product.lowStockThreshold}
+              compact={true}
+              showDelivery={false}
+            />
           </div>
           
           <div className="flex items-center gap-2">
