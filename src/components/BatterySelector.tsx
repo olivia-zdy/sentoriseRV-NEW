@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { products, Product } from "@/data/products";
+import { useCompare } from "@/context/CompareContext";
 import { 
   Truck, 
   Tent, 
@@ -19,7 +20,8 @@ import {
   RotateCcw,
   CheckCircle2,
   HelpCircle,
-  Home
+  Home,
+  GitCompare
 } from "lucide-react";
 
 type Step = "scenario" | "space" | "power" | "climate" | "result";
@@ -65,6 +67,8 @@ const climateOptions = [
 const BatterySelector = () => {
   const [currentStep, setCurrentStep] = useState<Step>("scenario");
   const [selection, setSelection] = useState<Selection>({});
+  const { addToCompare, clearCompare } = useCompare();
+  const navigate = useNavigate();
 
   const currentStepIndex = steps.indexOf(currentStep);
   const progress = ((currentStepIndex) / (steps.length - 1)) * 100;
@@ -349,12 +353,28 @@ const BatterySelector = () => {
                     </div>
                   </div>
 
-                  <Button asChild className="w-full sm:w-auto">
-                    <Link to={`/products/${primary.id}`}>
-                      View Details
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Link>
-                  </Button>
+                  <div className="flex flex-wrap gap-3">
+                    <Button asChild className="flex-1 sm:flex-none">
+                      <Link to={`/products/${primary.id}`}>
+                        View Details
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Link>
+                    </Button>
+                    {alternatives.length > 0 && (
+                      <Button 
+                        variant="outline"
+                        onClick={() => {
+                          clearCompare();
+                          addToCompare(primary);
+                          alternatives.slice(0, 2).forEach(p => addToCompare(p));
+                          navigate('/compare');
+                        }}
+                      >
+                        <GitCompare className="w-4 h-4 mr-2" />
+                        Compare All
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </div>
             </Card>
