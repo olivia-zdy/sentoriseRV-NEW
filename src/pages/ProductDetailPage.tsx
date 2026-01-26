@@ -10,6 +10,7 @@ import ShareButtons from "@/components/ShareButtons";
 import QuoteRequestModal from "@/components/QuoteRequestModal";
 import PageMeta from "@/components/PageMeta";
 import StockStatus from "@/components/StockStatus";
+import PowerCalculator from "@/components/PowerCalculator";
 import { Button } from "@/components/ui/button";
 import { getProductById, products } from "@/data/products";
 import { getCertificationsForProduct } from "@/data/certifications";
@@ -341,25 +342,38 @@ const ProductDetailPage = () => {
           </div>
         </section>
 
-        {/* Recommended Scenes */}
+        {/* Power Calculator */}
         <section className="section-padding">
           <div className="container-custom">
-            <h2 className="text-2xl font-bold text-foreground mb-8">Recommended Applications</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              {displayScenes.map((scene) => (
-                <Link
-                  key={scene.id}
-                  to={scene.href}
-                  className="group flex flex-col items-center gap-3 p-6 bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-lg transition-all"
-                >
-                  <div className={glassIconClass}>
-                    <scene.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-                    {scene.name}
-                  </span>
-                </Link>
-              ))}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <h2 className="text-2xl font-bold text-foreground mb-4">Calculate Your Power Needs</h2>
+                <p className="text-muted-foreground mb-6">
+                  Not sure if this battery is right for you? Add your appliances and we'll calculate if the {product.name} meets your needs.
+                </p>
+                <PowerCalculator currentProduct={product} />
+              </div>
+              
+              {/* Recommended Applications */}
+              <div>
+                <h2 className="text-2xl font-bold text-foreground mb-8">Recommended Applications</h2>
+                <div className="grid grid-cols-2 gap-4">
+                  {displayScenes.map((scene) => (
+                    <Link
+                      key={scene.id}
+                      to={scene.href}
+                      className="group flex flex-col items-center gap-3 p-6 bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-lg transition-all"
+                    >
+                      <div className={glassIconClass}>
+                        <scene.icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                        {scene.name}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
