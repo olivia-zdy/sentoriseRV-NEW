@@ -20,25 +20,25 @@ const StandardsBar = () => {
             </span>
           </div>
 
-          {/* Center - Standards with glass icons */}
-          <div className="flex items-center gap-4 md:gap-8 flex-wrap justify-center">
-            {standards.map((standard) => (
+          {/* Center - Standards with glass icons - tighter spacing */}
+          <div className="flex items-center gap-3 md:gap-5 flex-wrap justify-center">
+            {standards.map((standard, index) => (
               <div 
                 key={standard.name} 
-                className="flex items-center gap-3 group cursor-default"
+                className="flex items-center gap-2 group cursor-default"
               >
-                <div className="icon-circle-glass-sm">
-                  <standard.icon className="w-4 h-4 text-primary" />
+                <div className="w-8 h-8 rounded-full bg-background/70 backdrop-blur-sm border border-border/40 flex items-center justify-center">
+                  <standard.icon className="w-3.5 h-3.5 text-primary" />
                 </div>
-                <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                <span className="text-xs font-medium text-foreground group-hover:text-primary transition-colors">
                   {standard.name}
                 </span>
+                {index < standards.length - 1 && (
+                  <span className="hidden md:inline text-border mx-1">•</span>
+                )}
               </div>
             ))}
           </div>
-
-          {/* Right - Spacer for balance */}
-          <div className="hidden md:block w-32" />
         </div>
       </div>
     </div>
