@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Bluetooth, Snowflake, Zap, ChevronDown } from "lucide-react";
+import { ArrowRight, Shield, Bluetooth, Snowflake, ChevronDown, CheckCircle2 } from "lucide-react";
 
 // Import all scene images for carousel
 import rvBatteryBg from "@/assets/product-rv-battery.jpg";
@@ -9,21 +9,29 @@ import industrialBg from "@/assets/product-industrial.jpg";
 import portableBg from "@/assets/product-portable.jpg";
 import marineBg from "@/assets/hero-battery.jpg";
 
+// Target audience segments - clear user identification
+const audienceSegments = [
+  "RV & Motorhome",
+  "Van Life",
+  "Off-Grid Solar",
+  "Marine & Boat",
+];
+
 const heroFeatures = [
   {
-    icon: Bluetooth,
-    label: "Bluetooth App",
-    desc: "Real-time monitoring",
+    icon: Shield,
+    label: "5-Year Warranty",
+    desc: "Full replacement guarantee",
   },
   {
-    icon: Shield,
+    icon: Bluetooth,
     label: "Smart BMS",
-    desc: "Multi-layer protection",
+    desc: "Real-time monitoring app",
   },
   {
     icon: Snowflake,
-    label: "Cold Weather",
-    desc: "Low-temp protection",
+    label: "Thermal Control",
+    desc: "-20°C to 60°C safe range",
   },
 ];
 
@@ -75,31 +83,50 @@ const Hero = () => {
       ))}
       
       {/* Dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/45" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
 
       {/* Content - Centered */}
       <div className="container-custom relative z-10 py-16 md:py-24">
-        <div className="max-w-3xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full mb-8">
-            <Zap className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-white">
-              5-Year Warranty • 4000+ Cycles
-            </span>
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Audience Segments - Clear user identification */}
+          <div className="flex flex-wrap justify-center gap-2 mb-6">
+            {audienceSegments.map((segment) => (
+              <span 
+                key={segment}
+                className="px-3 py-1 text-xs font-medium bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white/90"
+              >
+                {segment}
+              </span>
+            ))}
           </div>
 
-          {/* Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-7xl headline-clean text-white mb-6">
-            <span className="block">Stay Powered.</span>
-            <span className="text-primary">Stay Free.</span>
+          {/* Headline - Clear value proposition */}
+          <h1 className="text-4xl md:text-5xl lg:text-7xl headline-clean text-white mb-4">
+            <span className="block">Premium LiFePO₄ Power</span>
+            <span className="text-primary">for European Adventurers</span>
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed max-w-2xl mx-auto">
-            Premium LiFePO₄ batteries designed for RV, vanlife, and off-grid solar. 
-            Smart monitoring, built-in protection, and reliable power for your adventures.
+          {/* Differentiator - Why us, not just what we do */}
+          <p className="text-lg md:text-xl text-white/90 mb-4 leading-relaxed max-w-2xl mx-auto font-medium">
+            Designed for RV, vanlife & off-grid users who refuse to compromise.
           </p>
+          
+          {/* Trust anchors - Verifiable claims */}
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8 text-sm text-white/80">
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4 text-primary" />
+              CE & UN38.3 Certified
+            </span>
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4 text-primary" />
+              4000+ Cycle Lifespan
+            </span>
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4 text-primary" />
+              Berlin-Based Support
+            </span>
+          </div>
 
           {/* Features - Glass icons */}
           <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-10">
@@ -116,17 +143,17 @@ const Hero = () => {
             ))}
           </div>
 
-          {/* CTAs */}
+          {/* CTAs - Decision-oriented, not purchase-oriented */}
           <div className="flex flex-wrap justify-center items-center gap-4 mb-12">
             <Button asChild size="lg" className="group">
-              <Link to="/products">
-                Shop Batteries
+              <Link to="/applications">
+                Find Your Battery
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white">
               <Link to="/why-sentorise">
-                Why Sentorise
+                How It Works
               </Link>
             </Button>
           </div>
