@@ -1,8 +1,11 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageMeta from "@/components/PageMeta";
 import WarrantyRegistrationForm from "@/components/WarrantyRegistrationForm";
-import { Shield, CheckCircle2, Clock, Truck } from "lucide-react";
+import WarrantyLookup from "@/components/WarrantyLookup";
+import { Shield, CheckCircle2, Clock, Truck, Search, FileEdit } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const WarrantyPage = () => {
   return (
@@ -74,13 +77,42 @@ const WarrantyPage = () => {
           </div>
         </section>
 
-        {/* Registration Form */}
+        {/* Registration Form & Lookup Tabs */}
         <section className="py-12 md:py-16">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto">
-              <div className="bg-card rounded-2xl border shadow-sm p-6 md:p-10">
-                <WarrantyRegistrationForm />
-              </div>
+              <Tabs defaultValue="register" className="w-full">
+                <TabsList className="grid w-full grid-cols-2 mb-8">
+                  <TabsTrigger value="register" className="gap-2">
+                    <FileEdit className="w-4 h-4" />
+                    Register Warranty
+                  </TabsTrigger>
+                  <TabsTrigger value="lookup" className="gap-2">
+                    <Search className="w-4 h-4" />
+                    Check Status
+                  </TabsTrigger>
+                </TabsList>
+                
+                <TabsContent value="register">
+                  <div className="bg-card rounded-2xl border shadow-sm p-6 md:p-10">
+                    <WarrantyRegistrationForm />
+                  </div>
+                </TabsContent>
+                
+                <TabsContent value="lookup">
+                  <div className="bg-card rounded-2xl border shadow-sm p-6 md:p-10">
+                    <div className="mb-6">
+                      <h2 className="text-xl font-bold text-foreground mb-2">
+                        Check Your Warranty Status
+                      </h2>
+                      <p className="text-muted-foreground">
+                        Enter the email address you used during registration to view your warranty details.
+                      </p>
+                    </div>
+                    <WarrantyLookup />
+                  </div>
+                </TabsContent>
+              </Tabs>
             </div>
           </div>
         </section>

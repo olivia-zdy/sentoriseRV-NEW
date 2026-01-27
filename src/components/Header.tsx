@@ -39,8 +39,9 @@ const applicationDropdownItems = [
 
 const supportDropdownItems = [
   { name: "Help Center", href: "/support#faq" },
+  { name: "Register Warranty", href: "/warranty" },
   { name: "Downloads", href: "/support#downloads" },
-  { name: "Warranty", href: "/support#warranty" },
+  { name: "Warranty Policy", href: "/support#warranty" },
   { name: "Contact Us", href: "/support#contact" },
 ];
 
