@@ -59,24 +59,31 @@ const BrandAcronym = () => {
           <motion.div
             className="p-4 sm:p-3 lg:p-4 rounded-xl border-2 text-center overflow-hidden relative min-h-[80px] sm:min-h-[90px] lg:min-h-[100px] flex flex-col justify-center"
             animate={{
-              backgroundColor: hoveredIndex === index 
-                ? "hsl(var(--card))" 
-                : hoveredIndex !== null 
-                  ? "hsl(var(--muted) / 0.4)" 
-                  : "hsl(var(--muted) / 0.8)",
               borderColor: hoveredIndex === index ? "hsl(var(--primary))" : "hsl(var(--border) / 0.3)",
               boxShadow: hoveredIndex === index 
                 ? "0 20px 60px -10px hsl(var(--primary) / 0.6), 0 0 0 2px hsl(var(--primary) / 0.2)" 
                 : "0 2px 8px -2px hsl(var(--foreground) / 0.05)",
-              filter: hoveredIndex !== null && hoveredIndex !== index 
-                ? "blur(2px) brightness(0.5) saturate(0.3)" 
-                : "blur(0px) brightness(1) saturate(1)",
               scale: hoveredIndex === index ? 1.08 : hoveredIndex !== null ? 0.95 : 1,
-              opacity: hoveredIndex !== null && hoveredIndex !== index ? 0.6 : 1,
             }}
             transition={{ duration: 0.35, type: "spring", stiffness: 280, damping: 22 }}
           >
-            {/* Gradient background on hover - more prominent */}
+            {/* Background layer - this gets blurred */}
+            <motion.div
+              className="absolute inset-0 rounded-xl"
+              animate={{
+                backgroundColor: hoveredIndex === index 
+                  ? "hsl(var(--card))" 
+                  : hoveredIndex !== null 
+                    ? "hsl(var(--muted) / 0.5)" 
+                    : "hsl(var(--muted) / 0.8)",
+                filter: hoveredIndex !== null && hoveredIndex !== index 
+                  ? "blur(1px)" 
+                  : "blur(0px)",
+              }}
+              transition={{ duration: 0.3 }}
+            />
+            
+            {/* Gradient background on hover */}
             <motion.div
               className={`absolute inset-0 bg-gradient-to-br ${item.color}`}
               animate={{
@@ -85,23 +92,31 @@ const BrandAcronym = () => {
               transition={{ duration: 0.3 }}
             />
             
-            {/* Letter */}
+            {/* Letter - always clear */}
             <motion.span
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary block mb-1 relative z-10"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold block mb-1 relative z-10"
               animate={{
                 scale: hoveredIndex === index ? 1.15 : 1,
                 y: hoveredIndex === index ? -2 : 0,
+                color: hoveredIndex === index 
+                  ? "hsl(var(--primary))" 
+                  : hoveredIndex !== null 
+                    ? "hsl(var(--muted-foreground) / 0.5)" 
+                    : "hsl(var(--primary))",
               }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
               {item.letter}
             </motion.span>
             
-            {/* Meaning */}
+            {/* Meaning - always readable */}
             <motion.span
-              className="text-[10px] sm:text-xs lg:text-sm font-semibold text-foreground block relative z-10 leading-tight"
+              className="text-[10px] sm:text-xs lg:text-sm font-semibold block relative z-10 leading-tight"
               animate={{
-                opacity: hoveredIndex === index ? 1 : 0.8,
+                opacity: hoveredIndex === index ? 1 : hoveredIndex !== null ? 0.4 : 0.8,
+                color: hoveredIndex === index 
+                  ? "hsl(var(--foreground))" 
+                  : "hsl(var(--muted-foreground))",
               }}
             >
               {item.meaning}
