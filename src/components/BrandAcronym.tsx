@@ -57,20 +57,24 @@ const BrandAcronym = () => {
           className="relative cursor-pointer"
         >
           <motion.div
-            className="p-3 md:p-4 bg-muted/80 dark:bg-card/80 backdrop-blur-sm rounded-xl border-2 border-border/50 text-center overflow-hidden relative shadow-sm"
+            className="p-3 md:p-4 rounded-xl border-2 text-center overflow-hidden relative"
             animate={{
+              backgroundColor: hoveredIndex === index 
+                ? "hsl(var(--background) / 0.3)" 
+                : "hsl(var(--muted) / 0.8)",
               borderColor: hoveredIndex === index ? "hsl(var(--primary))" : "hsl(var(--border) / 0.5)",
               boxShadow: hoveredIndex === index 
-                ? "0 10px 40px -10px hsl(var(--primary) / 0.4)" 
+                ? "0 15px 50px -10px hsl(var(--primary) / 0.5)" 
                 : "0 2px 8px -2px hsl(var(--foreground) / 0.08)",
+              filter: hoveredIndex !== null && hoveredIndex !== index ? "blur(1px) brightness(0.7)" : "blur(0px) brightness(1)",
             }}
             transition={{ duration: 0.3 }}
           >
-            {/* Gradient background on hover */}
+            {/* Gradient background on hover - more prominent */}
             <motion.div
-              className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0`}
+              className={`absolute inset-0 bg-gradient-to-br ${item.color}`}
               animate={{
-                opacity: hoveredIndex === index ? 0.1 : 0,
+                opacity: hoveredIndex === index ? 0.25 : 0,
               }}
               transition={{ duration: 0.3 }}
             />
