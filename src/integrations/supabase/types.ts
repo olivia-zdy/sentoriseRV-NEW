@@ -14,30 +14,6 @@ export type Database = {
   }
   public: {
     Tables: {
-      chat_messages: {
-        Row: {
-          content: string
-          created_at: string | null
-          id: string
-          role: string
-          session_id: string
-        }
-        Insert: {
-          content: string
-          created_at?: string | null
-          id?: string
-          role: string
-          session_id: string
-        }
-        Update: {
-          content?: string
-          created_at?: string | null
-          id?: string
-          role?: string
-          session_id?: string
-        }
-        Relationships: []
-      }
       contact_submissions: {
         Row: {
           created_at: string | null
@@ -128,6 +104,27 @@ export type Database = {
           product_name?: string
           quantity?: number | null
           status?: string | null
+        }
+        Relationships: []
+      }
+      rate_limits: {
+        Row: {
+          count: number
+          created_at: string | null
+          key: string
+          window_start: number
+        }
+        Insert: {
+          count?: number
+          created_at?: string | null
+          key: string
+          window_start: number
+        }
+        Update: {
+          count?: number
+          created_at?: string | null
+          key?: string
+          window_start?: number
         }
         Relationships: []
       }

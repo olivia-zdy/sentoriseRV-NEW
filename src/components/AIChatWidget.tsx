@@ -3,11 +3,16 @@ import { MessageCircle, X, Send, Loader2, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { toast } from "sonner";
 
 type Message = {
   role: "user" | "assistant";
   content: string;
 };
+
+// Validation limits (defense in depth - server also validates)
+const MAX_MESSAGE_LENGTH = 2000;
+const MAX_CONVERSATION_LENGTH = 50;
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/chat-assistant`;
 
@@ -28,9 +33,22 @@ const AIChatWidget = () => {
   }, [messages]);
 
   const sendMessage = async () => {
-    if (!input.trim() || isLoading) return;
+    const trimmed = input.trim();
+    
+    // Client-side validation (defense in depth)
+    if (!trimmed || isLoading) return;
+    
+    if (trimmed.length > MAX_MESSAGE_LENGTH) {
+      toast.error(`Message too long. Maximum ${MAX_MESSAGE_LENGTH} characters allowed.`);
+      return;
+    }
+    
+    if (messages.length >= MAX_CONVERSATION_LENGTH) {
+      toast.error("Conversation too long. Please refresh to start a new chat.");
+      return;
+    }
 
-    const userMessage: Message = { role: "user", content: input.trim() };
+    const userMessage: Message = { role: "user", content: trimmed };
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
