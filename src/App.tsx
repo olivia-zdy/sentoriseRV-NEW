@@ -19,6 +19,7 @@ import BlogPage from "./pages/BlogPage";
 import StoriesPage from "./pages/StoriesPage";
 import WhySentorisePage from "./pages/WhySentorisePage";
 import BatterySelectorPage from "./pages/BatterySelectorPage";
+import WarrantyPage from "./pages/WarrantyPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import TermsPage from "./pages/TermsPage";
 import NotFound from "./pages/NotFound";
@@ -54,6 +55,7 @@ const App = () => (
                   <Route path="/stories" element={<StoriesPage />} />
                   <Route path="/why-sentorise" element={<WhySentorisePage />} />
                   <Route path="/battery-selector" element={<BatterySelectorPage />} />
+                  <Route path="/warranty" element={<WarrantyPage />} />
                   <Route path="/privacy" element={<PrivacyPage />} />
                   <Route path="/terms" element={<TermsPage />} />
                   <Route path="*" element={<NotFound />} />

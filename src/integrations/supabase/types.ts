@@ -131,6 +131,69 @@ export type Database = {
         }
         Relationships: []
       }
+      warranty_registrations: {
+        Row: {
+          city: string | null
+          country: string | null
+          created_at: string
+          email: string
+          id: string
+          name: string
+          notes: string | null
+          order_number: string | null
+          phone: string | null
+          postal_code: string | null
+          product_name: string
+          product_sku: string | null
+          purchase_date: string
+          purchase_location: string | null
+          serial_number: string | null
+          status: string | null
+          street_address: string | null
+          warranty_end_date: string | null
+        }
+        Insert: {
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+          notes?: string | null
+          order_number?: string | null
+          phone?: string | null
+          postal_code?: string | null
+          product_name: string
+          product_sku?: string | null
+          purchase_date: string
+          purchase_location?: string | null
+          serial_number?: string | null
+          status?: string | null
+          street_address?: string | null
+          warranty_end_date?: string | null
+        }
+        Update: {
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          notes?: string | null
+          order_number?: string | null
+          phone?: string | null
+          postal_code?: string | null
+          product_name?: string
+          product_sku?: string | null
+          purchase_date?: string
+          purchase_location?: string | null
+          serial_number?: string | null
+          status?: string | null
+          street_address?: string | null
+          warranty_end_date?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
