@@ -57,7 +57,7 @@ const BrandAcronym = () => {
           className="relative cursor-pointer"
         >
           <motion.div
-            className="p-4 sm:p-3 lg:p-4 rounded-xl border-2 text-center overflow-hidden relative min-h-[80px] sm:min-h-[90px] lg:min-h-[100px] flex flex-col justify-center"
+            className="p-4 sm:p-3 lg:p-4 pb-10 sm:pb-12 rounded-xl border-2 text-center overflow-hidden relative min-h-[80px] sm:min-h-[90px] lg:min-h-[100px] flex flex-col items-center gap-1"
             animate={{
               borderColor: hoveredIndex === index ? "hsl(var(--primary))" : "hsl(var(--border) / 0.3)",
               boxShadow: hoveredIndex === index 
@@ -94,7 +94,7 @@ const BrandAcronym = () => {
             
             {/* Letter - always clear */}
             <motion.span
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold block mb-1 relative z-10"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold block mb-1 relative z-20"
               animate={{
                 scale: hoveredIndex === index ? 1.15 : 1,
                 y: hoveredIndex === index ? -2 : 0,
@@ -109,11 +109,11 @@ const BrandAcronym = () => {
               {item.letter}
             </motion.span>
             
-            {/* Meaning - always readable */}
+            {/* Meaning - hide on active to avoid overlapping with description */}
             <motion.span
-              className="text-[10px] sm:text-xs lg:text-sm font-semibold block relative z-10 leading-tight"
+              className="text-[10px] sm:text-xs lg:text-sm font-semibold block relative z-20 leading-tight"
               animate={{
-                opacity: hoveredIndex === index ? 1 : hoveredIndex !== null ? 0.4 : 0.8,
+                opacity: hoveredIndex === index ? 0 : hoveredIndex !== null ? 0.65 : 0.85,
                 color: hoveredIndex === index 
                   ? "hsl(var(--foreground))" 
                   : "hsl(var(--muted-foreground))",
