@@ -45,6 +45,15 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+      {/* Preload LCP image for faster discovery */}
+      <img 
+        src={heroScenes[0].image} 
+        alt="" 
+        fetchPriority="high"
+        aria-hidden="true"
+        className="absolute w-0 h-0 opacity-0 pointer-events-none"
+      />
+      
       {/* Carousel Background Images */}
       {heroScenes.map((scene, index) => (
         <div 
