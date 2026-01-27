@@ -57,66 +57,46 @@ const BrandAcronym = () => {
           className="relative cursor-pointer"
         >
           <motion.div
-            className="p-4 sm:p-3 lg:p-4 pb-10 sm:pb-12 rounded-xl border-2 text-center overflow-hidden relative min-h-[80px] sm:min-h-[90px] lg:min-h-[100px] flex flex-col items-center gap-1"
+            className="p-4 sm:p-3 lg:p-4 rounded-xl border-2 text-center overflow-hidden relative min-h-[80px] sm:min-h-[90px] lg:min-h-[100px] flex flex-col justify-center"
             animate={{
-              borderColor: hoveredIndex === index ? "hsl(var(--primary))" : "hsl(var(--border) / 0.3)",
+              backgroundColor: hoveredIndex === index 
+                ? "hsl(var(--background) / 0.3)" 
+                : "hsl(var(--muted) / 0.8)",
+              borderColor: hoveredIndex === index ? "hsl(var(--primary))" : "hsl(var(--border) / 0.5)",
               boxShadow: hoveredIndex === index 
-                ? "0 20px 60px -10px hsl(var(--primary) / 0.6), 0 0 0 2px hsl(var(--primary) / 0.2)" 
-                : "0 2px 8px -2px hsl(var(--foreground) / 0.05)",
-              scale: hoveredIndex === index ? 1.08 : hoveredIndex !== null ? 0.95 : 1,
+                ? "0 15px 50px -10px hsl(var(--primary) / 0.5)" 
+                : "0 2px 8px -2px hsl(var(--foreground) / 0.08)",
+              filter: hoveredIndex !== null && hoveredIndex !== index ? "blur(1px) brightness(0.7)" : "blur(0px) brightness(1)",
+              scale: hoveredIndex === index ? 1.05 : 1,
             }}
-            transition={{ duration: 0.35, type: "spring", stiffness: 280, damping: 22 }}
+            transition={{ duration: 0.3, type: "spring", stiffness: 300, damping: 25 }}
           >
-            {/* Background layer - this gets blurred */}
-            <motion.div
-              className="absolute inset-0 rounded-xl"
-              animate={{
-                backgroundColor: hoveredIndex === index 
-                  ? "hsl(var(--card))" 
-                  : hoveredIndex !== null 
-                    ? "hsl(var(--muted) / 0.5)" 
-                    : "hsl(var(--muted) / 0.8)",
-                filter: hoveredIndex !== null && hoveredIndex !== index 
-                  ? "blur(1px)" 
-                  : "blur(0px)",
-              }}
-              transition={{ duration: 0.3 }}
-            />
-            
-            {/* Gradient background on hover */}
+            {/* Gradient background on hover - more prominent */}
             <motion.div
               className={`absolute inset-0 bg-gradient-to-br ${item.color}`}
               animate={{
-                opacity: hoveredIndex === index ? 0.15 : 0,
+                opacity: hoveredIndex === index ? 0.25 : 0,
               }}
               transition={{ duration: 0.3 }}
             />
             
-            {/* Letter - always clear */}
+            {/* Letter */}
             <motion.span
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold block mb-1 relative z-20"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary block mb-1 relative z-10"
               animate={{
                 scale: hoveredIndex === index ? 1.15 : 1,
                 y: hoveredIndex === index ? -2 : 0,
-                color: hoveredIndex === index 
-                  ? "hsl(var(--primary))" 
-                  : hoveredIndex !== null 
-                    ? "hsl(var(--muted-foreground) / 0.5)" 
-                    : "hsl(var(--primary))",
               }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
               {item.letter}
             </motion.span>
             
-            {/* Meaning - hide on active to avoid overlapping with description */}
+            {/* Meaning */}
             <motion.span
-              className="text-[10px] sm:text-xs lg:text-sm font-semibold block relative z-20 leading-tight"
+              className="text-[10px] sm:text-xs lg:text-sm font-semibold text-foreground block relative z-10 leading-tight"
               animate={{
-                opacity: hoveredIndex === index ? 0 : hoveredIndex !== null ? 0.65 : 0.85,
-                color: hoveredIndex === index 
-                  ? "hsl(var(--foreground))" 
-                  : "hsl(var(--muted-foreground))",
+                opacity: hoveredIndex === index ? 1 : 0.8,
               }}
             >
               {item.meaning}
