@@ -155,7 +155,7 @@ const ProductsPage = () => {
       <AnnouncementBar />
       <Header />
       <main>
-        {/* Hero Section */}
+        {/* Hero Section - Above the Fold Clarity */}
         <section className="py-12 md:py-16 bg-muted/50 border-b border-border">
           <div className="container-custom">
             <nav className="text-sm text-muted-foreground mb-6">
@@ -169,13 +169,33 @@ const ProductsPage = () => {
                 </>
               )}
             </nav>
+            
+            {/* Clear Product Definition */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              LiFePO₄ Battery Range
+              12V LiFePO₄ Batteries
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl">
-              From compact 6Ah emergency backups to powerful 200Ah heated systems — 
-              find the perfect battery for your adventure.
+            
+            {/* Key Differentiator */}
+            <p className="text-lg text-muted-foreground max-w-2xl mb-6">
+              Built-in BMS with low-temperature protection. Works reliably from -20°C to 60°C.
             </p>
+            
+            {/* Core USP Bar */}
+            <div className="flex flex-wrap gap-4 text-sm">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20">
+                <span className="w-2 h-2 rounded-full bg-primary" />
+                Low-Temp Safe Charging
+              </span>
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted text-muted-foreground border border-border">
+                5-Year Warranty
+              </span>
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted text-muted-foreground border border-border">
+                4000+ Cycles
+              </span>
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted text-muted-foreground border border-border">
+                EU Support (Berlin)
+              </span>
+            </div>
           </div>
         </section>
 
