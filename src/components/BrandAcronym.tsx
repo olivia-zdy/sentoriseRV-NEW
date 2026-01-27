@@ -57,12 +57,12 @@ const BrandAcronym = () => {
           className="relative cursor-pointer"
         >
           <motion.div
-            className="p-3 md:p-4 bg-card rounded-xl border border-border text-center overflow-hidden relative"
+            className="p-3 md:p-4 bg-muted/80 dark:bg-card/80 backdrop-blur-sm rounded-xl border-2 border-border/50 text-center overflow-hidden relative shadow-sm"
             animate={{
-              borderColor: hoveredIndex === index ? "hsl(var(--primary))" : "hsl(var(--border))",
+              borderColor: hoveredIndex === index ? "hsl(var(--primary))" : "hsl(var(--border) / 0.5)",
               boxShadow: hoveredIndex === index 
-                ? "0 10px 40px -10px hsl(var(--primary) / 0.3)" 
-                : "0 0 0 0 transparent",
+                ? "0 10px 40px -10px hsl(var(--primary) / 0.4)" 
+                : "0 2px 8px -2px hsl(var(--foreground) / 0.08)",
             }}
             transition={{ duration: 0.3 }}
           >
