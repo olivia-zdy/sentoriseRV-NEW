@@ -156,12 +156,12 @@ const ProductsPage = () => {
       <Header />
       <main>
         {/* Hero Section - Above the Fold Clarity */}
-        <section className="py-12 md:py-16 bg-muted/50 border-b border-border">
+        <section className="py-10 md:py-14 bg-muted/50 border-b border-border">
           <div className="container-custom">
             <nav className="text-sm text-muted-foreground mb-6">
               <Link to="/" className="hover:text-primary">Home</Link>
               <span className="mx-2">/</span>
-              <span className="text-foreground">Products</span>
+              <span className="text-foreground">12V LiFePO₄ Batteries</span>
               {appFilter && (
                 <>
                   <span className="mx-2">/</span>
@@ -171,30 +171,37 @@ const ProductsPage = () => {
             </nav>
             
             {/* Clear Product Definition */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3">
               12V LiFePO₄ Batteries
             </h1>
             
             {/* Key Differentiator */}
-            <p className="text-lg text-muted-foreground max-w-2xl mb-6">
-              Built-in BMS with low-temperature protection. Works reliably from -20°C to 60°C.
+            <p className="text-muted-foreground max-w-xl mb-6">
+              Low-temperature protection on all models. Bluetooth monitoring. 5-year warranty.
             </p>
             
-            {/* Core USP Bar */}
-            <div className="flex flex-wrap gap-4 text-sm">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20">
-                <span className="w-2 h-2 rounded-full bg-primary" />
-                Low-Temp Safe Charging
-              </span>
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted text-muted-foreground border border-border">
-                5-Year Warranty
-              </span>
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted text-muted-foreground border border-border">
-                4000+ Cycles
-              </span>
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted text-muted-foreground border border-border">
-                EU Support (Berlin)
-              </span>
+            {/* Filter Toggle - Mobile */}
+            <div className="flex items-center justify-between md:hidden">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setShowFilters(!showFilters)}
+              >
+                <SlidersHorizontal className="w-4 h-4 mr-2" />
+                Filters
+              </Button>
+              <Select value={sortBy} onValueChange={(v) => setSortBy(v as SortOption)}>
+                <SelectTrigger className="w-[160px]">
+                  <SelectValue placeholder="Sort by" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="price-asc">Price: Low to High</SelectItem>
+                  <SelectItem value="price-desc">Price: High to Low</SelectItem>
+                  <SelectItem value="capacity-asc">Capacity: Small</SelectItem>
+                  <SelectItem value="capacity-desc">Capacity: Large</SelectItem>
+                  <SelectItem value="newest">Newest First</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
           </div>
         </section>
