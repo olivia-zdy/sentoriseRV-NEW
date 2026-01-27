@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ShoppingCart, Search, ChevronDown } from "lucide-react";
+import { Menu, X, Search, ChevronDown } from "lucide-react";
 import { useTheme } from "next-themes";
 import { ThemeToggle } from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
+import { CartDrawer } from "./CartDrawer";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -168,9 +169,7 @@ const Header = () => {
             <Button variant="ghost" size="icon" className="rounded-full">
               <Search className="w-5 h-5" />
             </Button>
-            <Button variant="ghost" size="icon" className="rounded-full relative">
-              <ShoppingCart className="w-5 h-5" />
-            </Button>
+            <CartDrawer />
             <ThemeToggle />
             <Button asChild variant="default" size="sm" className="ml-2">
               <Link to="/support#contact">Contact Us</Link>
