@@ -77,13 +77,15 @@ const WarrantyRegistrationForm = ({ onSuccess }: WarrantyRegistrationFormProps) 
   const onSubmit = async (data: WarrantyFormData) => {
     setIsSubmitting(true);
     try {
+      const productLabel = products.find(p => p.value === data.product_name)?.label || data.product_name;
+      
       const { error } = await supabase
         .from("warranty_registrations")
         .insert({
           name: data.name,
           email: data.email,
           phone: data.phone || null,
-          product_name: products.find(p => p.value === data.product_name)?.label || data.product_name,
+          product_name: productLabel,
           product_sku: data.product_name,
           serial_number: data.serial_number || null,
           purchase_date: data.purchase_date,
@@ -100,14 +102,41 @@ const WarrantyRegistrationForm = ({ onSuccess }: WarrantyRegistrationFormProps) 
       // Calculate warranty end date for display
       const endDate = new Date(data.purchase_date);
       endDate.setFullYear(endDate.getFullYear() + 5);
+      const warrantyEndDateStr = endDate.toISOString().split('T')[0];
+      
       setWarrantyEndDate(endDate.toLocaleDateString('de-DE', { 
         year: 'numeric', 
         month: 'long', 
         day: 'numeric' 
       }));
 
+      // Send confirmation email
+      try {
+        const emailResponse = await supabase.functions.invoke('send-warranty-confirmation', {
+          body: {
+            name: data.name,
+            email: data.email,
+            product_name: productLabel,
+            purchase_date: data.purchase_date,
+            warranty_end_date: warrantyEndDateStr,
+            serial_number: data.serial_number || undefined,
+            order_number: data.order_number || undefined,
+          }
+        });
+        
+        if (emailResponse.error) {
+          console.error("Email sending error:", emailResponse.error);
+          // Don't fail the whole registration if email fails
+        } else {
+          console.log("Confirmation email sent successfully");
+        }
+      } catch (emailError) {
+        console.error("Failed to send confirmation email:", emailError);
+        // Continue anyway - registration was successful
+      }
+
       setIsSuccess(true);
-      toast.success("Warranty registered successfully!");
+      toast.success("Warranty registered successfully! Confirmation email sent.");
       onSuccess?.();
     } catch (error) {
       console.error("Warranty registration error:", error);

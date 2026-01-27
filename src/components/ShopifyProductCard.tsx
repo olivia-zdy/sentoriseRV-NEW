@@ -133,10 +133,19 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
         </div>
 
         {/* Trust indicators */}
-        <div className="flex items-center gap-2 pt-2 border-t text-xs text-muted-foreground">
-          <span>5-Year Warranty</span>
-          <span>•</span>
-          <span>Free EU Shipping</span>
+        <div className="flex items-center justify-between pt-2 border-t text-xs text-muted-foreground">
+          <div className="flex items-center gap-2">
+            <span>5-Year Warranty</span>
+            <span>•</span>
+            <span>Free EU Shipping</span>
+          </div>
+          <Link 
+            to="/warranty" 
+            onClick={(e) => e.stopPropagation()}
+            className="text-primary hover:underline"
+          >
+            Register
+          </Link>
         </div>
       </div>
     </Link>

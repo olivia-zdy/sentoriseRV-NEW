@@ -280,10 +280,14 @@ const ProductDetailPage = () => {
 
                 {/* Key Guarantees */}
                 <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-6">
-                  <span className="flex items-center gap-1.5">
+                  <Link 
+                    to="/warranty" 
+                    className="flex items-center gap-1.5 hover:text-primary transition-colors"
+                  >
                     <Shield className="w-4 h-4 text-primary" />
                     5-Year Warranty
-                  </span>
+                    <span className="text-xs text-primary">→ Register</span>
+                  </Link>
                   <span className="flex items-center gap-1.5">
                     <Zap className="w-4 h-4 text-primary" />
                     4000+ Cycles
