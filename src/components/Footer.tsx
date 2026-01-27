@@ -26,6 +26,7 @@ const footerLinks = {
   support: [
     { name: "Help Center", href: "/support#faq" },
     { name: "Downloads", href: "/support#downloads" },
+    { name: "Register Warranty", href: "/warranty" },
     { name: "Warranty Policy", href: "/support#warranty" },
     { name: "Contact Us", href: "/support#contact" },
   ],

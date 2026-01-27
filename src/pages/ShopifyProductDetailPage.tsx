@@ -236,13 +236,16 @@ const ShopifyProductDetailPage = () => {
 
             {/* Trust Signals */}
             <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/30">
+              <Link 
+                to="/warranty" 
+                className="flex items-start gap-3 p-4 rounded-lg bg-muted/30 hover:bg-primary/10 transition-colors group"
+              >
                 <Shield className="w-5 h-5 text-primary mt-0.5" />
                 <div>
-                  <p className="font-medium text-sm">5-Year Warranty</p>
-                  <p className="text-xs text-muted-foreground">Full coverage</p>
+                  <p className="font-medium text-sm group-hover:text-primary transition-colors">5-Year Warranty</p>
+                  <p className="text-xs text-muted-foreground">Register now →</p>
                 </div>
-              </div>
+              </Link>
               <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/30">
                 <Truck className="w-5 h-5 text-primary mt-0.5" />
                 <div>
