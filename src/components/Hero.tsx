@@ -66,7 +66,7 @@ const Hero = () => {
     const timer = setInterval(() => {
       setDirection(1);
       setCurrentSlide((prev) => (prev + 1) % heroScenes.length);
-    }, 6000);
+    }, 8000);
     return () => clearInterval(timer);
   }, []);
 
@@ -129,9 +129,21 @@ const Hero = () => {
             >
               <motion.span 
                 initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                className="inline-block px-4 py-1.5 bg-primary text-primary-foreground backdrop-blur-sm rounded-full text-base font-semibold mb-4 shadow-lg shadow-primary/30"
+                animate={{ 
+                  opacity: 1, 
+                  scale: 1,
+                  boxShadow: [
+                    "0 0 20px hsl(var(--primary) / 0.4)",
+                    "0 0 30px hsl(var(--primary) / 0.6)",
+                    "0 0 20px hsl(var(--primary) / 0.4)"
+                  ]
+                }}
+                transition={{ 
+                  duration: 0.4, 
+                  delay: 0.1,
+                  boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+                }}
+                className="inline-block px-4 py-1.5 bg-primary text-primary-foreground backdrop-blur-sm rounded-full text-base font-semibold mb-4"
               >
                 {currentScene.title}
               </motion.span>
@@ -158,14 +170,23 @@ const Hero = () => {
 
           {/* Key Trust Points */}
           <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="flex flex-wrap gap-x-6 gap-y-2 mb-8 text-sm text-white/70"
+            className="flex flex-wrap gap-3 mb-8"
           >
-            <span>✓ 5-Year Warranty</span>
-            <span>✓ Bluetooth Monitoring</span>
-            <span>✓ Free EU Shipping</span>
+            {["5-Year Warranty", "Bluetooth Monitoring", "Free EU Shipping"].map((point, index) => (
+              <motion.span 
+                key={point}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.7 + index * 0.1 }}
+                className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm text-white font-medium"
+              >
+                <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+                {point}
+              </motion.span>
+            ))}
           </motion.div>
 
           {/* CTAs */}
