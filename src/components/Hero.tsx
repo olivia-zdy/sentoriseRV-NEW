@@ -131,7 +131,7 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="inline-block px-3 py-1 bg-primary/20 backdrop-blur-sm rounded-full text-primary text-sm font-medium mb-4"
+                className="inline-block px-4 py-1.5 bg-primary text-primary-foreground backdrop-blur-sm rounded-full text-base font-semibold mb-4 shadow-lg shadow-primary/30"
               >
                 {currentScene.title}
               </motion.span>
