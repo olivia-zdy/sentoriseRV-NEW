@@ -22,30 +22,30 @@ const heroScenes: HeroScene[] = [
   { 
     image: heroRvWinter, 
     alt: "RV & Motorhome",
-    title: "山野探险",
-    subtitle: "让房车在雪山脚下也能自由驰骋",
-    highlight: "低温充电保护 · 零下20°C正常工作"
+    title: "Mountain Adventure",
+    subtitle: "Power your RV through any terrain",
+    highlight: "Cold-weather protection · Works at -20°C"
   },
   { 
     image: heroOffgridSolar, 
     alt: "Off-Grid Solar",
-    title: "离网生活",
-    subtitle: "太阳能系统的完美储能搭档",
-    highlight: "4000+循环寿命 · 10年可靠续航"
+    title: "Off-Grid Living",
+    subtitle: "The perfect partner for solar systems",
+    highlight: "4000+ cycles · 10 years of reliable power"
   },
   { 
     image: heroVanlife, 
     alt: "Van Life",
-    title: "海边露营",
-    subtitle: "Van Life 探索者的能量伙伴",
-    highlight: "蓝牙智能监控 · 随时掌握电量"
+    title: "Coastal Camping",
+    subtitle: "Energy companion for Van Life explorers",
+    highlight: "Bluetooth monitoring · Track power anytime"
   },
   { 
     image: heroMarine, 
     alt: "Marine",
-    title: "海上航行",
-    subtitle: "为游艇和帆船提供稳定动力",
-    highlight: "IP67防水 · 专为海洋环境设计"
+    title: "Ocean Voyage",
+    subtitle: "Stable power for yachts and sailboats",
+    highlight: "IP67 waterproof · Built for marine environments"
   },
 ];
 
@@ -153,15 +153,6 @@ const Hero = () => {
       <div className="container-custom relative z-10 py-16 md:py-20">
         <div className="max-w-2xl">
           
-          {/* Category Identifier */}
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-sm text-white/70 uppercase tracking-widest mb-4"
-          >
-            12V LiFePO₄ Battery
-          </motion.p>
 
           {/* Scene-specific Title */}
           <AnimatePresence mode="wait">
@@ -209,9 +200,9 @@ const Hero = () => {
             transition={{ delay: 0.6 }}
             className="flex flex-wrap gap-x-6 gap-y-2 mb-8 text-sm text-white/70"
           >
-            <span>✓ 5年质保</span>
-            <span>✓ 蓝牙监控</span>
-            <span>✓ 欧盟免运</span>
+            <span>✓ 5-Year Warranty</span>
+            <span>✓ Bluetooth Monitoring</span>
+            <span>✓ Free EU Shipping</span>
           </motion.div>
 
           {/* CTAs */}
