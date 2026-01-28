@@ -1,11 +1,16 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
+
+// Rate limiting configuration - strict for email function
+const RATE_LIMIT_WINDOW = 3600; // 1 hour in seconds
+const MAX_EMAILS_PER_IP = 5; // 5 emails per hour per IP
 
 interface WarrantyConfirmationRequest {
   name: string;
@@ -17,6 +22,113 @@ interface WarrantyConfirmationRequest {
   order_number?: string;
 }
 
+// Sanitize error messages to prevent information leakage
+function getSafeErrorMessage(error: unknown): string {
+  if (!(error instanceof Error)) return "An unexpected error occurred. Please try again.";
+  
+  const msg = error.message.toLowerCase();
+  
+  // Map known errors to safe messages
+  if (msg.includes("rate limit")) return "Too many requests. Please try again later.";
+  if (msg.includes("missing required")) return "Invalid request data.";
+  if (msg.includes("warranty not found") || msg.includes("no matching")) return "Unable to process request.";
+  if (msg.includes("resend") || msg.includes("email")) return "Email service temporarily unavailable.";
+  if (msg.includes("not configured")) return "Service temporarily unavailable.";
+  
+  // Generic fallback - never expose internal error details
+  return "An error occurred. Please contact support@sentorise.com if this persists.";
+}
+
+// Check rate limit using the rate_limits table
+async function checkRateLimit(clientIp: string): Promise<{ allowed: boolean; error?: string }> {
+  const supabaseUrl = Deno.env.get("SUPABASE_URL");
+  const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+
+  if (!supabaseUrl || !supabaseServiceKey) {
+    console.warn("Rate limiting skipped: Supabase credentials not configured");
+    return { allowed: true };
+  }
+
+  const supabase = createClient(supabaseUrl, supabaseServiceKey);
+  const rateLimitKey = `warranty-email:${clientIp}`;
+  const now = Math.floor(Date.now() / 1000);
+
+  try {
+    const { data: existing, error: selectError } = await supabase
+      .from("rate_limits")
+      .select("*")
+      .eq("key", rateLimitKey)
+      .single();
+
+    if (selectError && selectError.code !== "PGRST116") {
+      console.error("Rate limit check error:", selectError);
+      return { allowed: true }; // Fail open to not block legitimate users
+    }
+
+    if (existing) {
+      if (now - existing.window_start < RATE_LIMIT_WINDOW) {
+        if (existing.count >= MAX_EMAILS_PER_IP) {
+          return { allowed: false, error: "Rate limit exceeded" };
+        }
+        await supabase
+          .from("rate_limits")
+          .update({ count: existing.count + 1 })
+          .eq("key", rateLimitKey);
+      } else {
+        // Window expired, reset
+        await supabase
+          .from("rate_limits")
+          .update({ count: 1, window_start: now })
+          .eq("key", rateLimitKey);
+      }
+    } else {
+      // New record
+      await supabase.from("rate_limits").insert({ key: rateLimitKey, count: 1, window_start: now });
+    }
+
+    return { allowed: true };
+  } catch (error) {
+    console.error("Rate limit error:", error);
+    return { allowed: true }; // Fail open
+  }
+}
+
+// Verify warranty exists in database before sending email
+async function verifyWarrantyExists(data: WarrantyConfirmationRequest): Promise<boolean> {
+  const supabaseUrl = Deno.env.get("SUPABASE_URL");
+  const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+
+  if (!supabaseUrl || !supabaseServiceKey) {
+    console.warn("Warranty verification skipped: Supabase credentials not configured");
+    return true; // Allow if we can't verify
+  }
+
+  const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+  try {
+    // Check if a matching warranty registration exists
+    const { data: warranty, error } = await supabase
+      .from("warranty_registrations")
+      .select("id")
+      .eq("email", data.email.toLowerCase().trim())
+      .eq("product_name", data.product_name)
+      .eq("purchase_date", data.purchase_date)
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+
+    if (error) {
+      console.error("Warranty verification error:", error);
+      return false;
+    }
+
+    return warranty !== null;
+  } catch (error) {
+    console.error("Warranty verification exception:", error);
+    return false;
+  }
+}
+
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
@@ -24,16 +136,59 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const data: WarrantyConfirmationRequest = await req.json();
-    console.log("Sending warranty confirmation email to:", data.email);
+    // Get client IP for rate limiting
+    const clientIp =
+      req.headers.get("x-forwarded-for")?.split(",")[0].trim() ||
+      req.headers.get("x-real-ip") ||
+      "unknown";
+
+    console.log(`Warranty email request from IP: ${clientIp}`);
+
+    // Check rate limit FIRST
+    const rateLimitResult = await checkRateLimit(clientIp);
+    if (!rateLimitResult.allowed) {
+      console.warn(`Rate limit exceeded for IP: ${clientIp}`);
+      return new Response(
+        JSON.stringify({ error: "Too many requests. Please try again later." }),
+        { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    // Parse request body
+    let data: WarrantyConfirmationRequest;
+    try {
+      data = await req.json();
+    } catch {
+      return new Response(
+        JSON.stringify({ error: "Invalid request data." }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
 
     // Validate required fields
     if (!data.email || !data.name || !data.product_name || !data.purchase_date || !data.warranty_end_date) {
-      throw new Error("Missing required fields");
+      return new Response(
+        JSON.stringify({ error: "Invalid request data." }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    // Verify warranty exists in database before sending email
+    const warrantyExists = await verifyWarrantyExists(data);
+    if (!warrantyExists) {
+      console.warn(`No matching warranty found for email: ${data.email}, product: ${data.product_name}`);
+      return new Response(
+        JSON.stringify({ error: "Unable to process request." }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
     }
 
     if (!RESEND_API_KEY) {
-      throw new Error("RESEND_API_KEY is not configured");
+      console.error("RESEND_API_KEY is not configured");
+      return new Response(
+        JSON.stringify({ error: "Service temporarily unavailable." }),
+        { status: 503, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
     }
 
     // Format dates for display
@@ -203,12 +358,15 @@ const handler = async (req: Request): Promise<Response> => {
 
     if (!emailResponse.ok) {
       console.error("Resend API error:", emailResult);
-      throw new Error(emailResult.message || "Failed to send email");
+      return new Response(
+        JSON.stringify({ error: "Email service temporarily unavailable." }),
+        { status: 503, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
     }
 
     console.log("Warranty confirmation email sent successfully:", emailResult);
 
-    return new Response(JSON.stringify({ success: true, data: emailResult }), {
+    return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
@@ -216,10 +374,9 @@ const handler = async (req: Request): Promise<Response> => {
       },
     });
   } catch (error: unknown) {
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
-    console.error("Error in send-warranty-confirmation function:", errorMessage);
+    console.error("Error in send-warranty-confirmation function:", error);
     return new Response(
-      JSON.stringify({ error: errorMessage }),
+      JSON.stringify({ error: getSafeErrorMessage(error) }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },
