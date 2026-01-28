@@ -166,9 +166,9 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="text-lg md:text-xl text-primary font-medium mt-4"
+                className="text-xl md:text-2xl text-primary font-bold mt-5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
               >
-                {currentScene.highlight}
+                ✦ {currentScene.highlight}
               </motion.p>
             </motion.div>
           </AnimatePresence>
