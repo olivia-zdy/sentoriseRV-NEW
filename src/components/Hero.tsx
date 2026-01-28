@@ -16,6 +16,7 @@ interface HeroScene {
   title: string;
   subtitle: string;
   highlight: string;
+  trustPoints: string[];
 }
 
 const heroScenes: HeroScene[] = [
@@ -24,28 +25,32 @@ const heroScenes: HeroScene[] = [
     alt: "RV & Motorhome",
     title: "Mountain Adventure",
     subtitle: "Power your RV through any terrain",
-    highlight: "Cold-weather protection · Works at -20°C"
+    highlight: "Cold-weather protection · Works at -20°C",
+    trustPoints: ["Heated Models Available", "5-Year Warranty", "DIN & BCI Sizes"]
   },
   { 
     image: heroOffgridSolar, 
     alt: "Off-Grid Solar",
     title: "Off-Grid Living",
     subtitle: "The perfect partner for solar systems",
-    highlight: "4000+ cycles · 10 years of reliable power"
+    highlight: "4000+ cycles · 10 years of reliable power",
+    trustPoints: ["MPPT Compatible", "200A Max Discharge", "Free EU Shipping"]
   },
   { 
     image: heroVanlife, 
     alt: "Van Life",
     title: "Coastal Camping",
     subtitle: "Energy companion for Van Life explorers",
-    highlight: "Bluetooth monitoring · Track power anytime"
+    highlight: "Bluetooth monitoring · Track power anytime",
+    trustPoints: ["Compact & Lightweight", "App Monitoring", "Easy DIY Install"]
   },
   { 
     image: heroMarine, 
     alt: "Marine",
     title: "Ocean Voyage",
     subtitle: "Stable power for yachts and sailboats",
-    highlight: "IP67 waterproof · Built for marine environments"
+    highlight: "IP67 waterproof · Built for marine environments",
+    trustPoints: ["Saltwater Resistant", "Vibration Proof", "Marine Certified"]
   },
 ];
 
@@ -168,26 +173,30 @@ const Hero = () => {
             </motion.div>
           </AnimatePresence>
 
-          {/* Key Trust Points */}
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="flex flex-wrap gap-3 mb-8"
-          >
-            {["5-Year Warranty", "Bluetooth Monitoring", "Free EU Shipping"].map((point, index) => (
-              <motion.span 
-                key={point}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.7 + index * 0.1 }}
-                className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm text-white font-medium"
-              >
-                <span className="w-1.5 h-1.5 bg-primary rounded-full" />
-                {point}
-              </motion.span>
-            ))}
-          </motion.div>
+          {/* Scene-specific Trust Points */}
+          <AnimatePresence mode="wait">
+            <motion.div 
+              key={`trust-${currentSlide}`}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.4, delay: 0.4 }}
+              className="flex flex-wrap gap-3 mb-8"
+            >
+              {currentScene.trustPoints.map((point, index) => (
+                <motion.span 
+                  key={point}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm text-white font-medium"
+                >
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+                  {point}
+                </motion.span>
+              ))}
+            </motion.div>
+          </AnimatePresence>
 
           {/* CTAs */}
           <motion.div 
