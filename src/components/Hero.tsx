@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
 // Import scene images for carousel
-import rvBatteryBg from "@/assets/product-rv-battery.jpg";
-import industrialBg from "@/assets/product-industrial.jpg";
-import portableBg from "@/assets/product-portable.jpg";
-import marineBg from "@/assets/hero-battery.jpg";
+import heroRvWinter from "@/assets/hero-rv-winter.jpg";
+import heroOffgridSolar from "@/assets/hero-offgrid-solar.jpg";
+import heroVanlife from "@/assets/hero-vanlife.jpg";
+import heroMarine from "@/assets/hero-marine.jpg";
 
 const heroScenes = [
-  { image: rvBatteryBg, alt: "RV & Motorhome" },
-  { image: industrialBg, alt: "Off-Grid Solar" },
-  { image: portableBg, alt: "Van Life" },
-  { image: marineBg, alt: "Marine" },
+  { image: heroRvWinter, alt: "RV & Motorhome" },
+  { image: heroOffgridSolar, alt: "Off-Grid Solar" },
+  { image: heroVanlife, alt: "Van Life" },
+  { image: heroMarine, alt: "Marine" },
 ];
 
 const Hero = () => {
