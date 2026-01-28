@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronDown, Play, Pause, Volume2, VolumeX } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Import scene images for carousel
@@ -49,15 +49,10 @@ const heroScenes: HeroScene[] = [
   },
 ];
 
-
-
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isVideoMode, setIsVideoMode] = useState(false);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
 
   // Preload first image
   useEffect(() => {
@@ -66,16 +61,14 @@ const Hero = () => {
     img.onload = () => setIsLoaded(true);
   }, []);
 
-  // Auto-rotate carousel (only when not in video mode)
+  // Auto-rotate carousel
   useEffect(() => {
-    if (isVideoMode) return;
-    
     const timer = setInterval(() => {
       setDirection(1);
       setCurrentSlide((prev) => (prev + 1) % heroScenes.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, [isVideoMode]);
+  }, []);
 
   const goToSlide = useCallback((index: number) => {
     setDirection(index > currentSlide ? 1 : -1);
@@ -84,11 +77,6 @@ const Hero = () => {
 
   const scrollToContent = () => {
     window.scrollTo({ top: window.innerHeight * 0.9, behavior: 'smooth' });
-  };
-
-  const toggleVideoMode = () => {
-    setIsVideoMode(!isVideoMode);
-    setIsVideoPlaying(!isVideoMode);
   };
 
   const currentScene = heroScenes[currentSlide];
@@ -104,46 +92,22 @@ const Hero = () => {
         className="absolute w-0 h-0 opacity-0 pointer-events-none"
       />
       
-      {/* Video Background (when enabled) */}
-      {isVideoMode && (
+      {/* Animated Carousel Background Images */}
+      <AnimatePresence initial={false} mode="wait">
         <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          key={currentSlide}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.98 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           className="absolute inset-0"
         >
-          <video
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            loop
-            muted={isMuted}
-            playsInline
-            poster={heroScenes[0].image}
-          >
-            {/* Placeholder for video - you can add your video source here */}
-            <source src="" type="video/mp4" />
-          </video>
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${currentScene.image})` }}
+          />
         </motion.div>
-      )}
-      
-      {/* Animated Carousel Background Images */}
-      {!isVideoMode && (
-        <AnimatePresence initial={false} mode="wait">
-          <motion.div 
-            key={currentSlide}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.98 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="absolute inset-0"
-          >
-            <div 
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${currentScene.image})` }}
-            />
-          </motion.div>
-        </AnimatePresence>
-      )}
+      </AnimatePresence>
       
       {/* Gradient overlays */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 z-[1]" />
@@ -152,7 +116,6 @@ const Hero = () => {
       {/* Content - Left-aligned for clarity */}
       <div className="container-custom relative z-10 py-16 md:py-20">
         <div className="max-w-2xl">
-          
 
           {/* Scene-specific Title */}
           <AnimatePresence mode="wait">
@@ -225,59 +188,28 @@ const Hero = () => {
             </Button>
           </motion.div>
 
-          {/* Carousel Indicators + Video Controls */}
-          <div className="flex items-center gap-4">
-            {/* Slide Indicators */}
-            <div className="flex gap-2">
-              {heroScenes.map((scene, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`group relative h-2 rounded-full transition-all duration-500 ${
-                    index === currentSlide 
-                      ? 'bg-primary w-8' 
-                      : 'bg-white/40 hover:bg-white/60 w-2'
-                  }`}
-                  aria-label={`Go to ${scene.title}`}
-                >
-                  {index === currentSlide && (
-                    <motion.div
-                      className="absolute inset-0 bg-primary rounded-full"
-                      layoutId="activeSlide"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                </button>
-              ))}
-            </div>
-
-            {/* Video Controls */}
-            <div className="flex items-center gap-2 ml-4">
+          {/* Carousel Indicators */}
+          <div className="flex gap-2">
+            {heroScenes.map((scene, index) => (
               <button
-                onClick={toggleVideoMode}
-                className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-colors"
-                aria-label={isVideoMode ? "Show images" : "Play video"}
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`group relative h-2 rounded-full transition-all duration-500 ${
+                  index === currentSlide 
+                    ? 'bg-primary w-8' 
+                    : 'bg-white/40 hover:bg-white/60 w-2'
+                }`}
+                aria-label={`Go to ${scene.title}`}
               >
-                {isVideoMode && isVideoPlaying ? (
-                  <Pause className="w-4 h-4" />
-                ) : (
-                  <Play className="w-4 h-4" />
+                {index === currentSlide && (
+                  <motion.div
+                    className="absolute inset-0 bg-primary rounded-full"
+                    layoutId="activeSlide"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
                 )}
               </button>
-              {isVideoMode && (
-                <button
-                  onClick={() => setIsMuted(!isMuted)}
-                  className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-colors"
-                  aria-label={isMuted ? "Unmute" : "Mute"}
-                >
-                  {isMuted ? (
-                    <VolumeX className="w-4 h-4" />
-                  ) : (
-                    <Volume2 className="w-4 h-4" />
-                  )}
-                </button>
-              )}
-            </div>
+            ))}
           </div>
         </div>
       </div>
