@@ -58,7 +58,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <>
       <Link 
-        to={`/products/${product.id}`}
+        to={`/product/${product.id}`}
         className="group block bg-card rounded-xl border border-border overflow-hidden card-hover"
       >
         {/* Image Container */}
