@@ -28,6 +28,14 @@ const TermsPage = lazy(() => import("./pages/TermsPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const AIChatWidget = lazy(() => import("./components/AIChatWidget"));
 
+// Admin pages
+const AdminLogin = lazy(() => import("./pages/admin/AdminLogin"));
+const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
+const LeadFollowUp = lazy(() => import("./pages/admin/LeadFollowUp"));
+const FeedbackHub = lazy(() => import("./pages/admin/FeedbackHub"));
+const BrandAssets = lazy(() => import("./pages/admin/BrandAssets"));
+const AdminSettings = lazy(() => import("./pages/admin/AdminSettings"));
+
 const queryClient = new QueryClient();
 
 // Cart sync wrapper component
@@ -62,6 +70,12 @@ const App = () => (
                     <Route path="/warranty" element={<WarrantyPage />} />
                     <Route path="/privacy" element={<PrivacyPage />} />
                     <Route path="/terms" element={<TermsPage />} />
+                    <Route path="/admin/login" element={<AdminLogin />} />
+                    <Route path="/admin" element={<AdminDashboard />} />
+                    <Route path="/admin/leads" element={<LeadFollowUp />} />
+                    <Route path="/admin/feedback" element={<FeedbackHub />} />
+                    <Route path="/admin/assets" element={<BrandAssets />} />
+                    <Route path="/admin/settings" element={<AdminSettings />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </Suspense>
