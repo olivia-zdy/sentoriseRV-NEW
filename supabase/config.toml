@@ -5,3 +5,12 @@ verify_jwt = false
 
 [functions.send-warranty-confirmation]
 verify_jwt = false
+
+[functions.notify-new-lead]
+verify_jwt = false
+
+[functions.notify-reminder-due]
+verify_jwt = false
+
+[functions.generate-brand-asset]
+verify_jwt = false

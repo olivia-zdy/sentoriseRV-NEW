@@ -113,7 +113,7 @@ export default function BrandAssets() {
     setIsGenerating(true);
 
     try {
-      // For now, create a placeholder asset - AI generation can be added later
+      // First create the asset record
       const { data, error } = await supabase
         .from('brand_assets')
         .insert({
@@ -122,16 +122,34 @@ export default function BrandAssets() {
           template_type: selectedTemplate.id,
           dimensions: selectedTemplate.dimensions,
           settings: { headline, tagline },
-          status: 'draft',
+          status: 'generating',
         })
         .select()
         .single();
 
       if (error) throw error;
 
+      // Call the AI generation function
+      const { data: genResult, error: genError } = await supabase.functions.invoke('generate-brand-asset', {
+        body: {
+          asset_id: data.id,
+          template_type: selectedTemplate.id,
+          dimensions: selectedTemplate.dimensions,
+          headline,
+          tagline,
+          asset_type: selectedTemplate.type,
+        },
+      });
+
+      if (genError) {
+        // Update status to failed if generation fails
+        await supabase.from('brand_assets').update({ status: 'draft' }).eq('id', data.id);
+        throw new Error(genError.message || 'AI generation failed');
+      }
+
       toast({
-        title: 'Asset created',
-        description: 'Your brand asset has been saved as a draft',
+        title: 'Asset generated!',
+        description: 'Your AI-powered brand asset is ready',
       });
 
       setCreateDialogOpen(false);
@@ -144,7 +162,7 @@ export default function BrandAssets() {
       console.error('Error creating asset:', error);
       toast({
         title: 'Error',
-        description: 'Failed to create asset',
+        description: error instanceof Error ? error.message : 'Failed to create asset',
         variant: 'destructive',
       });
     } finally {
@@ -296,10 +314,10 @@ export default function BrandAssets() {
                       {isGenerating ? (
                         <>
                           <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                          Creating...
+                          Generating with AI...
                         </>
                       ) : (
-                        'Create Asset'
+                        '🎨 Generate with AI'
                       )}
                     </Button>
                   </DialogFooter>
