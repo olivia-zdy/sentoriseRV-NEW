@@ -53,7 +53,7 @@ const handler = async (req: Request): Promise<Response> => {
       })
     );
 
-    const adminEmail = "team@sentorise.com"; // Change to your team email
+    const adminEmail = "onboarding@resend.dev"; // Using Resend test domain for now
 
     const reminderRows = leadDetails
       .filter((item) => item.lead)
@@ -131,7 +131,7 @@ const handler = async (req: Request): Promise<Response> => {
     `;
 
     const emailResponse = await resend.emails.send({
-      from: "Sentorise Reminders <notifications@sentorise.com>",
+      from: "Sentorise Reminders <onboarding@resend.dev>",
       to: [adminEmail],
       subject: `📅 ${reminders.length} Follow-up Reminder${reminders.length > 1 ? "s" : ""} for Today`,
       html,

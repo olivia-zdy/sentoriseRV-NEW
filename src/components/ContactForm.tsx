@@ -70,6 +70,16 @@ const ContactForm = () => {
 
       if (error) throw error;
 
+      // Trigger email notification to admin team (fire and forget)
+      supabase.functions.invoke('notify-new-lead', {
+        body: {
+          lead_type: 'contact_submission',
+          name: result.data.name,
+          email: result.data.email,
+          message: result.data.message,
+        }
+      }).catch(err => console.error('Notification failed:', err));
+
       toast.success("Message sent successfully! We'll get back to you soon.");
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
