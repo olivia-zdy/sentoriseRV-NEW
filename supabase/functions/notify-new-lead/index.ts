@@ -32,8 +32,8 @@ const handler = async (req: Request): Promise<Response> => {
     const resend = new Resend(RESEND_API_KEY);
     const lead: NewLeadNotification = await req.json();
 
-    // Get admin notification email - you can customize this
-    const adminEmail = "team@sentorise.com"; // Change to your team email
+    // Get admin notification email - update this to your real team email
+    const adminEmail = "onboarding@resend.dev"; // Using Resend test domain for now
 
     const isQuoteRequest = lead.lead_type === "quote_request";
     const subject = isQuoteRequest 
@@ -116,7 +116,7 @@ const handler = async (req: Request): Promise<Response> => {
     `;
 
     const emailResponse = await resend.emails.send({
-      from: "Sentorise Leads <notifications@sentorise.com>",
+      from: "Sentorise Leads <onboarding@resend.dev>",
       to: [adminEmail],
       subject,
       html,
