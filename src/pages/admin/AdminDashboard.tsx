@@ -4,10 +4,8 @@ import {
   Users, 
   MessageSquare, 
   Palette, 
-  TrendingUp, 
   Clock,
   AlertTriangle,
-  CheckCircle,
   ArrowRight
 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -15,6 +13,9 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { supabase } from '@/integrations/supabase/client';
 import { AdminLayout } from './components/AdminLayout';
+import { DashboardStats } from '@/components/admin/DashboardStats';
+import { ExportButton } from '@/components/admin/ExportButton';
+import { SkeletonTable } from '@/components/ui/skeleton-card';
 import { format, differenceInHours, isToday } from 'date-fns';
 
 interface DashboardStats {
@@ -178,14 +179,38 @@ export default function AdminDashboard() {
     },
   ];
 
+  // Prepare leads for stats component
+  const allLeadsForStats = recentLeads.map(lead => ({
+    id: lead.id,
+    created_at: lead.created_at || new Date().toISOString(),
+    lead_status: lead.lead_status,
+    source: lead.source,
+  }));
+
+  // Export columns for leads
+  const exportColumns = [
+    { key: 'name', label: 'Name' },
+    { key: 'email', label: 'Email' },
+    { key: 'source', label: 'Source' },
+    { key: 'lead_status', label: 'Status' },
+    { key: 'created_at', label: 'Created At' },
+  ];
+
   return (
     <AdminLayout>
       <div className="space-y-6">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
-          <p className="text-muted-foreground">
-            Overview of your leads, feedback, and brand assets
-          </p>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
+            <p className="text-muted-foreground">
+              Overview of your leads, feedback, and brand assets
+            </p>
+          </div>
+          <ExportButton
+            data={recentLeads}
+            columns={exportColumns}
+            filename="sentorise_leads"
+          />
         </div>
 
         {/* Stats Grid */}
@@ -205,6 +230,11 @@ export default function AdminDashboard() {
             </Link>
           ))}
         </div>
+
+        {/* Lead Trend Chart */}
+        {!isLoading && recentLeads.length > 0 && (
+          <DashboardStats leads={allLeadsForStats} period={30} />
+        )}
 
         {/* Today's Reminders */}
         {todayReminders.length > 0 && (
@@ -257,7 +287,7 @@ export default function AdminDashboard() {
           </CardHeader>
           <CardContent>
             {isLoading ? (
-              <p className="text-muted-foreground text-center py-4">Loading...</p>
+              <SkeletonTable rows={5} />
             ) : recentLeads.length === 0 ? (
               <p className="text-muted-foreground text-center py-4">No leads yet</p>
             ) : (
