@@ -108,57 +108,8 @@ export function useAdminAuth() {
     return { error };
   };
 
-  const signUp = async (email: string, password: string, name: string) => {
-    const redirectUrl = `${window.location.origin}/admin`;
-    
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: redirectUrl,
-        data: {
-          name,
-        },
-      },
-    });
-
-    if (!error && data.user) {
-      // Create team member record
-      const { error: memberError } = await supabase
-        .from('team_members')
-        .insert({
-          user_id: data.user.id,
-          email,
-          name,
-        });
-
-      if (memberError) {
-        console.error('Error creating team member:', memberError);
-        return { error: memberError };
-      }
-
-      // Assign default role (first user gets admin, others get support)
-      const { data: existingMembers } = await supabase
-        .from('team_members')
-        .select('id')
-        .limit(2);
-
-      const defaultRole = (existingMembers?.length || 0) <= 1 ? 'admin' : 'support';
-
-      const { error: roleError } = await supabase
-        .from('user_roles')
-        .insert({
-          user_id: data.user.id,
-          role: defaultRole,
-        });
-
-      if (roleError) {
-        console.error('Error assigning role:', roleError);
-      }
-    }
-
-    return { error };
-  };
+  // Note: Public signup has been removed for security reasons.
+  // Team members should be created by administrators only.
 
   const signOut = async () => {
     const { error } = await supabase.auth.signOut();
@@ -181,7 +132,6 @@ export function useAdminAuth() {
     isLoading,
     isTeamMember,
     signIn,
-    signUp,
     signOut,
     hasRole,
     isAdmin,
