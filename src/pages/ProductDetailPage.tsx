@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -10,6 +9,8 @@ import ShareButtons from "@/components/ShareButtons";
 import QuoteRequestModal from "@/components/QuoteRequestModal";
 import PageMeta from "@/components/PageMeta";
 import StockStatus from "@/components/StockStatus";
+import ProductSchema from "@/components/SEO/ProductSchema";
+import BreadcrumbSchema from "@/components/SEO/BreadcrumbSchema";
 import { Button } from "@/components/ui/button";
 import { getProductById, products } from "@/data/products";
 import { getCertificationsForProduct } from "@/data/certifications";
@@ -129,38 +130,40 @@ const ProductDetailPage = () => {
     .filter(p => p.series === product.series && p.id !== product.id)
     .slice(0, 3);
 
-  // Schema.org structured data
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": product.name,
-    "description": product.description,
-    "brand": { "@type": "Brand", "name": "Sentorise" },
-    "sku": product.model,
-    "offers": {
-      "@type": "Offer",
-      "price": product.salePrice || product.price,
-      "priceCurrency": "EUR",
-      "availability": product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
-    }
-  };
-
   const handleDatasheetClick = () => {
     toast.info("Datasheet will be available soon. Contact us for specifications.");
   };
 
+  // Breadcrumb data for schema
+  const breadcrumbItems = [
+    { name: "Home", url: "https://sentorise.lovable.app/" },
+    { name: "Products", url: "https://sentorise.lovable.app/products" },
+    { name: product.capacity, url: `https://sentorise.lovable.app/product/${product.id}` },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <PageMeta 
-        title={`${product.name} | Sentorise`} 
-        description={`${product.name} - ${judgmentSentence} ${product.voltage} ${product.capacity} LiFePO4 battery with 5-year warranty.`} 
+        title={product.name} 
+        description={`${product.name} - ${judgmentSentence} ${product.voltage} ${product.capacity} LiFePO4 battery with 5-year warranty.`}
+        canonical={`/product/${product.id}`}
+        ogType="product"
       />
       
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
-      </Helmet>
+      <ProductSchema
+        name={product.name}
+        description={product.description}
+        image={product.image}
+        sku={product.model}
+        price={product.price}
+        salePrice={product.salePrice}
+        inStock={product.inStock}
+        category="Batteries > LiFePO4"
+        weight={product.weight?.replace('kg', '')}
+        url={`https://sentorise.lovable.app/product/${product.id}`}
+      />
+      
+      <BreadcrumbSchema items={breadcrumbItems} />
 
       <AnnouncementBar />
       <Header />
