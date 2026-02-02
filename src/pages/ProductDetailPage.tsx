@@ -11,6 +11,9 @@ import PageMeta from "@/components/PageMeta";
 import StockStatus from "@/components/StockStatus";
 import ProductSchema from "@/components/SEO/ProductSchema";
 import BreadcrumbSchema from "@/components/SEO/BreadcrumbSchema";
+import ProductUseCases from "@/components/ProductUseCases";
+import ProductFAQ from "@/components/ProductFAQ";
+import ProductComparisonTable from "@/components/ProductComparisonTable";
 import { Button } from "@/components/ui/button";
 import { getProductById, products } from "@/data/products";
 import { getCertificationsForProduct } from "@/data/certifications";
@@ -435,6 +438,29 @@ const ProductDetailPage = () => {
             </div>
           </section>
         )}
+
+        {/* Use Cases Section */}
+        <ProductUseCases 
+          productId={product.id} 
+          series={product.series} 
+          capacity={product.capacity} 
+        />
+
+        {/* LiFePO4 vs Lead-Acid Comparison */}
+        <ProductComparisonTable 
+          capacity={product.capacity}
+          weight={product.weight}
+          cycleLife="4000+ cycles"
+        />
+
+        {/* Product FAQ */}
+        <ProductFAQ
+          productId={product.id}
+          productName={product.name}
+          hasHeating={product.hasHeating}
+          hasBluetooth={product.hasBluetooth}
+          capacity={product.capacity}
+        />
 
         {/* Warranty & Support Module */}
         <section className="section-padding bg-muted/30 border-y border-border">
