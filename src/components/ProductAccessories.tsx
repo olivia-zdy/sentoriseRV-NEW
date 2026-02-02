@@ -1,18 +1,26 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useCartStore, ShopifyProduct } from "@/stores/cartStore";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { 
   ShoppingCart, 
   Plus,
   Check,
+  X,
   Package,
   Zap,
   Cable,
   Gauge,
   Shield,
-  Loader2
+  Loader2,
+  ChevronLeft,
+  ChevronRight,
+  Star,
+  Users,
+  Wrench
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -125,32 +133,79 @@ interface BundleOption {
   accessories: string[];
   discountPercent: number;
   forProducts: string[];
+  // Enhanced fields for comparison
+  tier: "starter" | "complete" | "pro";
+  tagline: string;
+  bestFor: string;
+  highlights: string[];
+  limitations: string[];
+  isRecommended?: boolean;
+  icon: React.ElementType;
 }
 
 const bundles: BundleOption[] = [
   {
     id: "bundle-starter",
     name: "Starter Bundle",
+    tagline: "Get Started",
     description: "Essential accessories to get your battery system running safely.",
     accessories: ["acc-cable-anderson", "acc-fuse-holder", "acc-terminal-kit"],
     discountPercent: 15,
     forProducts: ["all"],
+    tier: "starter",
+    bestFor: "DIY beginners & basic wiring setups",
+    highlights: [
+      "Anderson cable set",
+      "100A fuse protection",
+      "Terminal kit"
+    ],
+    limitations: [
+      "No charger included",
+      "No monitoring"
+    ],
+    isRecommended: false,
+    icon: Wrench,
   },
   {
     id: "bundle-complete",
-    name: "Complete Installation Bundle",
+    name: "Complete Bundle",
+    tagline: "Most Popular",
     description: "Everything you need for a professional installation.",
     accessories: ["acc-charger-smart", "acc-cable-anderson", "acc-fuse-holder", "acc-monitor-shunt", "acc-terminal-kit"],
     discountPercent: 20,
     forProducts: ["core-12v100-std", "core-12v100-mini", "core-12v100-din"],
+    tier: "complete",
+    bestFor: "Full RV or solar installation",
+    highlights: [
+      "10A smart charger",
+      "Battery monitor w/ shunt",
+      "All Starter items included"
+    ],
+    limitations: [
+      "No bus bar for multi-battery"
+    ],
+    isRecommended: true,
+    icon: Star,
   },
   {
     id: "bundle-pro",
-    name: "Pro System Bundle",
+    name: "Pro Bundle",
+    tagline: "Full System",
     description: "High-capacity setup with advanced monitoring and protection.",
     accessories: ["acc-charger-20a", "acc-monitor-shunt", "acc-fuse-holder", "acc-bus-bar"],
     discountPercent: 20,
     forProducts: ["plus-12v200-heated"],
+    tier: "pro",
+    bestFor: "200Ah+ systems & multi-battery banks",
+    highlights: [
+      "20A high-power charger",
+      "Advanced monitoring",
+      "Distribution bus bar",
+      "Full protection suite"
+    ],
+    limitations: [],
+    isRecommended: false,
+    icon: Users,
   },
 ];
 
@@ -170,6 +225,148 @@ const categoryLabels = {
   mounting: "Mounting & Enclosures",
 };
 
+// Bundle Comparison Card Component
+interface BundleComparisonCardProps {
+  bundle: BundleOption;
+  prices: { original: number; discounted: number };
+  bundleItems: Accessory[];
+  isAdding: boolean;
+  onAdd: () => void;
+  isMobile: boolean;
+}
+
+const BundleComparisonCard = ({ 
+  bundle, 
+  prices, 
+  bundleItems, 
+  isAdding, 
+  onAdd, 
+  isMobile 
+}: BundleComparisonCardProps) => {
+  const IconComponent = bundle.icon;
+  
+  return (
+    <Card 
+      className={`relative flex flex-col ${
+        isMobile ? 'min-w-[80vw] snap-center' : ''
+      } ${
+        bundle.isRecommended 
+          ? 'border-2 border-primary ring-2 ring-primary/20' 
+          : 'border-border'
+      } transition-all hover:shadow-lg`}
+    >
+      {/* Recommended Badge */}
+      {bundle.isRecommended && (
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+          <Badge className="bg-primary text-primary-foreground px-3 py-1 shadow-md">
+            <Star className="w-3 h-3 mr-1 fill-current" />
+            {bundle.tagline}
+          </Badge>
+        </div>
+      )}
+      
+      {/* Discount Badge */}
+      <Badge 
+        className={`absolute top-3 right-3 ${
+          bundle.isRecommended ? 'bg-primary' : 'bg-secondary'
+        }`}
+      >
+        Save {bundle.discountPercent}%
+      </Badge>
+      
+      <CardHeader className={`pb-2 ${bundle.isRecommended ? 'pt-6' : 'pt-4'}`}>
+        <div className="flex items-center gap-2 mb-1">
+          <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
+            bundle.isRecommended ? 'bg-primary/10' : 'bg-muted'
+          }`}>
+            <IconComponent className={`w-4 h-4 ${
+              bundle.isRecommended ? 'text-primary' : 'text-muted-foreground'
+            }`} />
+          </div>
+          <div>
+            <h4 className="font-bold text-foreground">{bundle.name}</h4>
+            {!bundle.isRecommended && (
+              <span className="text-xs text-muted-foreground">{bundle.tagline}</span>
+            )}
+          </div>
+        </div>
+      </CardHeader>
+      
+      <CardContent className="flex-1 flex flex-col pt-0">
+        {/* Best For */}
+        <div className="bg-muted/50 rounded-lg px-3 py-2 mb-4">
+          <p className="text-xs text-muted-foreground">
+            <span className="font-medium text-foreground">Best for: </span>
+            {bundle.bestFor}
+          </p>
+        </div>
+        
+        {/* Highlights - What's included */}
+        <div className="flex-1 space-y-2 mb-4">
+          <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+            What's included
+          </p>
+          <ul className="space-y-1.5">
+            {bundle.highlights.map((item, idx) => (
+              <li key={idx} className="flex items-start gap-2 text-sm">
+                <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                <span className="text-foreground">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        {/* Limitations - What's NOT included */}
+        {bundle.limitations.length > 0 && (
+          <div className="space-y-2 mb-4 pb-4 border-b border-border">
+            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+              Not included
+            </p>
+            <ul className="space-y-1.5">
+              {bundle.limitations.map((item, idx) => (
+                <li key={idx} className="flex items-start gap-2 text-sm">
+                  <X className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        
+        {/* Price */}
+        <div className="mb-4">
+          <div className="flex items-baseline gap-2">
+            <span className="text-2xl font-bold text-primary">
+              €{prices.discounted.toFixed(2)}
+            </span>
+            <span className="text-sm text-muted-foreground line-through">
+              €{prices.original.toFixed(2)}
+            </span>
+          </div>
+          <p className="text-xs text-muted-foreground mt-1">
+            {bundleItems.length} items included
+          </p>
+        </div>
+        
+        {/* CTA Button */}
+        <Button 
+          className="w-full"
+          variant={bundle.isRecommended ? 'default' : 'outline'}
+          onClick={onAdd}
+          disabled={isAdding}
+        >
+          {isAdding ? (
+            <Loader2 className="w-4 h-4 animate-spin mr-2" />
+          ) : (
+            <ShoppingCart className="w-4 h-4 mr-2" />
+          )}
+          Add Bundle to Cart
+        </Button>
+      </CardContent>
+    </Card>
+  );
+};
+
 interface ProductAccessoriesProps {
   productId: string;
   productName: string;
@@ -178,6 +375,9 @@ interface ProductAccessoriesProps {
 const ProductAccessories = ({ productId, productName }: ProductAccessoriesProps) => {
   const [selectedAccessories, setSelectedAccessories] = useState<Set<string>>(new Set());
   const [isAddingBundle, setIsAddingBundle] = useState<string | null>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
 
   // Filter accessories compatible with this product
   const compatibleAccessories = accessories.filter(
@@ -188,6 +388,18 @@ const ProductAccessories = ({ productId, productName }: ProductAccessoriesProps)
   const compatibleBundles = bundles.filter(
     b => b.forProducts.includes("all") || b.forProducts.includes(productId)
   );
+
+  // Scroll to specific slide (mobile carousel)
+  const scrollToSlide = (index: number) => {
+    if (scrollContainerRef.current) {
+      const cardWidth = scrollContainerRef.current.scrollWidth / compatibleBundles.length;
+      scrollContainerRef.current.scrollTo({
+        left: cardWidth * index,
+        behavior: 'smooth'
+      });
+      setCurrentSlide(index);
+    }
+  };
 
   const toggleAccessory = (accId: string) => {
     setSelectedAccessories(prev => {
@@ -250,64 +462,64 @@ const ProductAccessories = ({ productId, productName }: ProductAccessoriesProps)
             </div>
           </div>
 
-          {/* Bundle Deals */}
+          {/* Bundle Comparison Cards */}
           {compatibleBundles.length > 0 && (
             <div className="mb-10">
               <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Zap className="w-5 h-5 text-primary" />
-                Bundle & Save
+                Bundle & Save — Compare Options
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {compatibleBundles.map(bundle => {
-                  const prices = getBundlePrice(bundle);
-                  const bundleItems = accessories.filter(a => bundle.accessories.includes(a.id));
-                  
-                  return (
-                    <div 
+              
+              {/* Mobile: Horizontal scroll carousel */}
+              {isMobile ? (
+                <div className="relative">
+                  <div 
+                    ref={scrollContainerRef}
+                    className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mx-4 px-4"
+                    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                  >
+                    {compatibleBundles.map((bundle, index) => (
+                      <BundleComparisonCard
+                        key={bundle.id}
+                        bundle={bundle}
+                        prices={getBundlePrice(bundle)}
+                        bundleItems={accessories.filter(a => bundle.accessories.includes(a.id))}
+                        isAdding={isAddingBundle === bundle.id}
+                        onAdd={() => handleAddBundleToCart(bundle)}
+                        isMobile={true}
+                      />
+                    ))}
+                  </div>
+                  {/* Scroll indicators */}
+                  <div className="flex justify-center gap-2 mt-3">
+                    {compatibleBundles.map((bundle, index) => (
+                      <button
+                        key={bundle.id}
+                        className={`w-2 h-2 rounded-full transition-colors ${
+                          currentSlide === index ? 'bg-primary' : 'bg-muted-foreground/30'
+                        }`}
+                        onClick={() => scrollToSlide(index)}
+                        aria-label={`Go to ${bundle.name}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                /* Desktop: 3-column grid comparison */
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {compatibleBundles.map(bundle => (
+                    <BundleComparisonCard
                       key={bundle.id}
-                      className="relative bg-gradient-to-br from-primary/5 to-primary/10 border-2 border-primary/20 rounded-xl p-5 hover:border-primary/40 transition-colors"
-                    >
-                      <Badge className="absolute -top-2 -right-2 bg-primary text-primary-foreground">
-                        Save {bundle.discountPercent}%
-                      </Badge>
-                      
-                      <h4 className="font-bold text-foreground mb-1">{bundle.name}</h4>
-                      <p className="text-sm text-muted-foreground mb-4">{bundle.description}</p>
-                      
-                      <div className="space-y-2 mb-4">
-                        {bundleItems.map(item => (
-                          <div key={item.id} className="flex items-center gap-2 text-sm">
-                            <Check className="w-4 h-4 text-primary" />
-                            <span className="text-muted-foreground">{item.name}</span>
-                          </div>
-                        ))}
-                      </div>
-                      
-                      <div className="flex items-baseline gap-2 mb-4">
-                        <span className="text-2xl font-bold text-primary">
-                          €{prices.discounted.toFixed(2)}
-                        </span>
-                        <span className="text-sm text-muted-foreground line-through">
-                          €{prices.original.toFixed(2)}
-                        </span>
-                      </div>
-                      
-                      <Button 
-                        className="w-full"
-                        onClick={() => handleAddBundleToCart(bundle)}
-                        disabled={isAddingBundle === bundle.id}
-                      >
-                        {isAddingBundle === bundle.id ? (
-                          <Loader2 className="w-4 h-4 animate-spin mr-2" />
-                        ) : (
-                          <ShoppingCart className="w-4 h-4 mr-2" />
-                        )}
-                        Add Bundle to Cart
-                      </Button>
-                    </div>
-                  );
-                })}
-              </div>
+                      bundle={bundle}
+                      prices={getBundlePrice(bundle)}
+                      bundleItems={accessories.filter(a => bundle.accessories.includes(a.id))}
+                      isAdding={isAddingBundle === bundle.id}
+                      onAdd={() => handleAddBundleToCart(bundle)}
+                      isMobile={false}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           )}
 
