@@ -99,7 +99,7 @@ const BrandAcronym = () => {
             
             {/* Description - slides up on hover */}
             <motion.div
-              className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-card via-card to-transparent px-2 pb-3 pt-8"
+              className="absolute inset-x-0 bottom-0 bg-card px-2 pb-3 pt-6"
               initial={{ y: "100%", opacity: 0 }}
               animate={{
                 y: hoveredIndex === index ? 0 : "100%",
@@ -107,7 +107,7 @@ const BrandAcronym = () => {
               }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
             >
-              <span className="text-[10px] md:text-xs text-muted-foreground leading-tight block">
+              <span className="text-xs text-foreground leading-tight block font-medium">
                 {item.description}
               </span>
             </motion.div>
