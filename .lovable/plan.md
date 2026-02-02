@@ -1,130 +1,59 @@
 
 
-# Bundle对比说明卡片增强计划
+# BrandAcronym 内容升级计划
 
 ## 目标
-为ProductAccessories模块中的每个Bundle套餐添加详细的对比说明卡片，帮助用户快速理解不同档位的区别，做出合适的购买决策。
+将 SENTORISE 品牌首字母释义从"消费电子风格"升级为"工程品牌风格"，更克制、更欧洲、更专业。
 
 ---
 
-## 当前状态分析
+## 变更内容
 
-现有三个Bundle档位：
-- **Starter Bundle** (15% off): 基础配件 - Anderson线缆 + 保险丝座 + 端子套件
-- **Complete Bundle** (20% off): 完整安装 - 充电器 + 线缆 + 保险丝 + 监控 + 端子
-- **Pro Bundle** (20% off): 专业系统 - 20A充电器 + 监控 + 保险丝 + 分配总线
+### 1. 页面标题更新 (WhySentorisePage.tsx)
 
-当前问题：用户无法快速判断哪个Bundle适合自己的使用场景。
+| 元素 | 当前 | 更新后 |
+|------|------|--------|
+| 主标题 | Every Letter, A Promise | Every Letter, A Commitment |
+| 副标题 | Our name isn't just a brand — it's a commitment... | Our name reflects the principles behind every product we design, test, and deliver — not slogans, but standards we build by. |
 
----
+### 2. 字母释义数据更新 (BrandAcronym.tsx)
 
-## 实施方案
-
-### 1. 新增Bundle对比数据结构
-
-为每个Bundle添加：
-- `bestFor`: 目标用户描述（如"First-time RV owners"）
-- `includes`: 功能亮点图标列表
-- `doesNotInclude`: 不包含的项目（与更高级别对比）
-- `upgradeReason`: 升级到更高档位的理由
-
-### 2. 对比卡片UI设计
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  Bundle对比说明区域（在Bundle网格上方）                      │
-├─────────────────┬─────────────────┬─────────────────────────┤
-│ Starter         │ Complete        │ Pro                     │
-│ "Get Started"   │ "Most Popular"  │ "Full System"           │
-├─────────────────┼─────────────────┼─────────────────────────┤
-│ Best for:       │ Best for:       │ Best for:               │
-│ Basic setup     │ Full install    │ High-capacity systems   │
-├─────────────────┼─────────────────┼─────────────────────────┤
-│ ✓ Cables        │ ✓ All Starter + │ ✓ 20A Charger           │
-│ ✓ Fuse          │ ✓ Charger       │ ✓ Advanced Monitor      │
-│ ✓ Terminals     │ ✓ Monitor       │ ✓ Bus Bar               │
-│                 │                 │ ✓ Protection            │
-├─────────────────┼─────────────────┼─────────────────────────┤
-│ ✗ No charger    │ ✗ No bus bar    │ ✓ Everything included   │
-│ ✗ No monitor    │                 │                         │
-├─────────────────┼─────────────────┼─────────────────────────┤
-│ €50.XX          │ €119.XX         │ €135.XX                 │
-│ [Add Bundle]    │ [Add Bundle]    │ [Add Bundle]            │
-└─────────────────┴─────────────────┴─────────────────────────┘
-```
-
-### 3. 交互增强
-
-- 添加"Compare Bundles"展开/折叠按钮
-- 高亮推荐的Bundle（如Complete标记为"Most Popular"）
-- 移动端：使用水平滑动卡片或堆叠布局
+| 字母 | 当前 meaning | 更新后 meaning | 当前 description | 更新后 description |
+|------|-------------|---------------|-----------------|-------------------|
+| S | Safety First | Safety First | Multi-layer BMS protection | Multi-layer protection, certified components, and strict safety testing. |
+| E | Endurance | Endurance | 4000+ cycle lifespan | Designed for long cycle life and stable performance across years of use. |
+| N | Nature Friendly | Nature Responsible | Non-toxic, recyclable | Lower-impact materials and responsible lifecycle approach. |
+| T | Technology | Smart Monitoring Technology | Smart Bluetooth monitoring | Real-time system visibility for safer, smarter energy control. |
+| O | Optimized | Optimized Performance | Peak performance design | Engineered for efficiency and reliability across diverse applications. |
+| R | Reliability | Reliability | Tested for real-world use | Tested under demanding environments for dependable power. |
+| I | Innovation | Intelligent Design | Self-heating technology | Thoughtful engineering balancing performance, usability, and durability. |
+| S | Service | Support & Service | 5-year warranty support | Clear guidance, responsive assistance, and long-term warranty coverage. |
+| E | Excellence | Engineering Excellence | International standards | Precision, verification, and continuous improvement in every detail. |
 
 ---
 
-## 技术实现细节
+## 技术实现
 
-### 数据结构更新
+### 文件变更清单
 
-```typescript
-interface BundleOption {
-  id: string;
-  name: string;
-  description: string;
-  accessories: string[];
-  discountPercent: number;
-  forProducts: string[];
-  // 新增字段
-  tier: "starter" | "complete" | "pro";
-  bestFor: string;
-  highlights: string[];
-  limitations: string[];
-  isRecommended?: boolean;
-}
-```
+| 文件 | 操作 | 变更内容 |
+|------|------|----------|
+| `src/pages/WhySentorisePage.tsx` | 编辑 | 更新第170-175行的主标题和副标题文案 |
+| `src/components/BrandAcronym.tsx` | 编辑 | 更新第4-14行的 `acronym` 数组数据 |
 
-### Bundle对比数据
+### 设计原则保留
 
-| 属性 | Starter | Complete | Pro |
-|------|---------|----------|-----|
-| bestFor | "Basic wiring, DIY beginners" | "Full RV/solar install" | "200Ah+ systems, multi-battery" |
-| highlights | Cables, Fuse, Terminals | +Charger, +Monitor | 20A Charger, Bus Bar |
-| limitations | No charger, No monitor | No bus bar | - |
-| isRecommended | false | true | false |
-
-### 组件结构
-
-```
-ProductAccessories
-├── BundleComparisonHeader (新增)
-│   └── 3列对比表格
-├── BundleCards (现有，略微调整)
-│   └── 添加tier标记和推荐badge
-└── IndividualAccessories (现有)
-```
-
----
-
-## 移动端适配
-
-- 对比表格改为水平滚动卡片
-- 每个Bundle卡片宽度80vw，可左右滑动
-- 添加滑动指示器dots
-- "Compare All"按钮打开全屏对比sheet
-
----
-
-## 文件变更清单
-
-| 文件 | 操作 | 说明 |
-|------|------|------|
-| `src/components/ProductAccessories.tsx` | 编辑 | 更新Bundle数据结构，添加对比卡片组件 |
+- 保持 hover 展示 description 的交互逻辑
+- 保持 Framer Motion 动画效果
+- 保持渐变色配色方案
+- 不添加 icon 或插画，只用字体和层级
 
 ---
 
 ## 预期效果
 
-1. 用户一眼看出三档Bundle的差异
-2. 明确"推荐"选项降低选择焦虑
-3. "不包含"列表帮助用户评估是否需要升级
-4. 移动端友好的滑动对比体验
+1. 品牌调性从"消费电子"转向"工程专业"
+2. 文案更克制、更欧洲风格
+3. 每个字母 = 工程原则 + 用户可感知结果
+4. T 不再强调 Bluetooth，而是强调"监控能力"本质
 
