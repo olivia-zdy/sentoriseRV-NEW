@@ -168,10 +168,10 @@ const WhySentorisePage = () => {
                 What SENTORISE Means
               </span>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                Every Letter, A Promise
+                Every Letter, A Commitment
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Our name isn't just a brand — it's a commitment to the values that drive everything we build.
+                Our name reflects the principles behind every product we design, test, and deliver — not slogans, but standards we build by.
               </p>
             </div>
             <BrandAcronym />
