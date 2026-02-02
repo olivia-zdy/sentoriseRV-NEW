@@ -2,15 +2,15 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const acronym = [
-  { letter: "S", meaning: "Safety First", description: "Multi-layer protection, certified components, and strict safety testing.", color: "from-emerald-500 to-teal-600" },
-  { letter: "E", meaning: "Endurance", description: "Designed for long cycle life and stable performance across years of use.", color: "from-blue-500 to-cyan-600" },
-  { letter: "N", meaning: "Nature Responsible", description: "Lower-impact materials and responsible lifecycle approach.", color: "from-green-500 to-emerald-600" },
-  { letter: "T", meaning: "Smart Monitoring Technology", description: "Real-time system visibility for safer, smarter energy control.", color: "from-violet-500 to-purple-600" },
-  { letter: "O", meaning: "Optimized Performance", description: "Engineered for efficiency and reliability across diverse applications.", color: "from-orange-500 to-amber-600" },
-  { letter: "R", meaning: "Reliability", description: "Tested under demanding environments for dependable power.", color: "from-red-500 to-rose-600" },
-  { letter: "I", meaning: "Intelligent Design", description: "Thoughtful engineering balancing performance, usability, and durability.", color: "from-indigo-500 to-blue-600" },
-  { letter: "S", meaning: "Support & Service", description: "Clear guidance, responsive assistance, and long-term warranty coverage.", color: "from-pink-500 to-rose-600" },
-  { letter: "E", meaning: "Engineering Excellence", description: "Precision, verification, and continuous improvement in every detail.", color: "from-yellow-500 to-orange-600" },
+  { letter: "S", meaning: "Safety", description: "Multi-layer protection, certified components, strict testing.", color: "from-emerald-500 to-teal-600" },
+  { letter: "E", meaning: "Endurance", description: "Long cycle life, stable performance across years.", color: "from-blue-500 to-cyan-600" },
+  { letter: "N", meaning: "Nature", description: "Lower-impact materials, responsible lifecycle.", color: "from-green-500 to-emerald-600" },
+  { letter: "T", meaning: "Technology", description: "Real-time monitoring for smarter energy control.", color: "from-violet-500 to-purple-600" },
+  { letter: "O", meaning: "Optimized", description: "Efficiency and reliability across applications.", color: "from-orange-500 to-amber-600" },
+  { letter: "R", meaning: "Reliability", description: "Tested under demanding environments.", color: "from-red-500 to-rose-600" },
+  { letter: "I", meaning: "Intelligent", description: "Balanced performance, usability, durability.", color: "from-indigo-500 to-blue-600" },
+  { letter: "S", meaning: "Service", description: "Responsive support, long-term warranty.", color: "from-pink-500 to-rose-600" },
+  { letter: "E", meaning: "Excellence", description: "Precision and continuous improvement.", color: "from-yellow-500 to-orange-600" },
 ];
 
 const containerVariants = {
