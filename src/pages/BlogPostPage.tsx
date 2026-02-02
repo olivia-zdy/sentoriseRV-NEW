@@ -220,38 +220,110 @@ const BlogPostPage = () => {
   );
 };
 
-// Simple markdown-like content formatter
+// Improved markdown-like content formatter
 const formatContent = (content: string): string => {
-  return content
+  const lines = content.trim().split('\n');
+  let html = '';
+  let inList = false;
+  let inTable = false;
+  let isFirstTableRow = true;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    
+    // Skip empty lines
+    if (!line) {
+      if (inList) {
+        html += '</ul>\n';
+        inList = false;
+      }
+      if (inTable) {
+        html += '</tbody></table>\n';
+        inTable = false;
+        isFirstTableRow = true;
+      }
+      continue;
+    }
+
     // Headers
-    .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-    // Bold
+    if (line.startsWith('### ')) {
+      if (inList) { html += '</ul>\n'; inList = false; }
+      html += `<h3>${line.slice(4)}</h3>\n`;
+      continue;
+    }
+    if (line.startsWith('## ')) {
+      if (inList) { html += '</ul>\n'; inList = false; }
+      html += `<h2>${line.slice(3)}</h2>\n`;
+      continue;
+    }
+
+    // Table rows
+    if (line.startsWith('|') && line.endsWith('|')) {
+      const cells = line.slice(1, -1).split('|').map(c => c.trim());
+      
+      // Skip separator row
+      if (cells.every(c => /^[-:]+$/.test(c))) {
+        continue;
+      }
+
+      if (!inTable) {
+        html += '<table class="w-full border-collapse border border-border my-4"><thead>';
+        inTable = true;
+        isFirstTableRow = true;
+      }
+
+      if (isFirstTableRow) {
+        html += `<tr>${cells.map(c => `<th class="bg-muted p-3 text-left font-semibold border border-border">${formatInlineText(c)}</th>`).join('')}</tr></thead><tbody>`;
+        isFirstTableRow = false;
+      } else {
+        html += `<tr>${cells.map(c => `<td class="p-3 border border-border">${formatInlineText(c)}</td>`).join('')}</tr>`;
+      }
+      continue;
+    }
+
+    // Unordered list
+    if (line.startsWith('- ')) {
+      if (!inList) {
+        html += '<ul class="list-disc pl-6 my-4 space-y-2">\n';
+        inList = true;
+      }
+      html += `<li>${formatInlineText(line.slice(2))}</li>\n`;
+      continue;
+    }
+
+    // Ordered list
+    if (/^\d+\.\s/.test(line)) {
+      if (!inList) {
+        html += '<ol class="list-decimal pl-6 my-4 space-y-2">\n';
+        inList = true;
+      }
+      html += `<li>${formatInlineText(line.replace(/^\d+\.\s/, ''))}</li>\n`;
+      continue;
+    }
+
+    // Close lists before paragraph
+    if (inList) {
+      html += '</ul>\n';
+      inList = false;
+    }
+
+    // Paragraph
+    html += `<p class="my-4">${formatInlineText(line)}</p>\n`;
+  }
+
+  // Close any open tags
+  if (inList) html += '</ul>\n';
+  if (inTable) html += '</tbody></table>\n';
+
+  return html;
+};
+
+// Format inline elements (bold, italic, etc.)
+const formatInlineText = (text: string): string => {
+  return text
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    // Lists
-    .replace(/^- (.*$)/gim, '<li>$1</li>')
-    .replace(/^(\d+)\. (.*$)/gim, '<li>$2</li>')
-    // Tables (basic)
-    .replace(/\|(.+)\|/g, (match) => {
-      const cells = match.split('|').filter(Boolean);
-      if (cells.every(c => c.trim().match(/^-+$/))) {
-        return ''; // Skip separator row
-      }
-      const isHeader = match.includes('---');
-      const tag = isHeader ? 'th' : 'td';
-      return `<tr>${cells.map(cell => `<${tag}>${cell.trim()}</${tag}>`).join('')}</tr>`;
-    })
-    // Wrap lists
-    .replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>')
-    // Paragraphs
-    .split('\n\n')
-    .map(block => {
-      if (block.startsWith('<h') || block.startsWith('<ul') || block.startsWith('<tr') || block.trim() === '') {
-        return block;
-      }
-      return `<p>${block}</p>`;
-    })
-    .join('\n');
+    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+    .replace(/`(.*?)`/g, '<code class="bg-muted px-1.5 py-0.5 rounded text-sm">$1</code>');
 };
 
 export default BlogPostPage;
