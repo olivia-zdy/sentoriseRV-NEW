@@ -79,8 +79,8 @@ const BrandAcronym = () => {
             <motion.span
               className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary block mb-1 relative z-10"
               animate={{
-                scale: hoveredIndex === index ? 1.2 : 1,
-                y: hoveredIndex === index ? -2 : 0,
+                scale: hoveredIndex === index ? 1.1 : 1,
+                opacity: hoveredIndex === index ? 0.15 : 1,
               }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
@@ -91,8 +91,9 @@ const BrandAcronym = () => {
             <motion.span
               className="text-xs font-semibold text-foreground block relative z-10"
               animate={{
-                opacity: hoveredIndex === index ? 1 : 0.8,
+                opacity: hoveredIndex === index ? 0 : 0.8,
               }}
+              transition={{ duration: 0.2 }}
             >
               {item.meaning}
             </motion.span>
