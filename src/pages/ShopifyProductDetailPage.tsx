@@ -11,6 +11,7 @@ import ProductFAQ from "@/components/ProductFAQ";
 import ProductComparisonTable from "@/components/ProductComparisonTable";
 import ProductReviews from "@/components/ProductReviews";
 import ProductAccessories from "@/components/ProductAccessories";
+import AmazonCTA from "@/components/AmazonCTA";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -280,10 +281,14 @@ const ShopifyProductDetailPage = () => {
                     4000+ Cycles
                   </span>
                   {hasBluetooth && (
-                    <span className="flex items-center gap-1.5">
+                    <Link 
+                      to="/bluetooth-guide" 
+                      className="flex items-center gap-1.5 hover:text-primary transition-colors"
+                    >
                       <Bluetooth className="w-4 h-4 text-primary" />
                       Bluetooth
-                    </span>
+                      <span className="text-xs text-primary">→ Setup Guide</span>
+                    </Link>
                   )}
                 </div>
 
@@ -491,6 +496,13 @@ const ShopifyProductDetailPage = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Amazon CTA */}
+        <section className="section-padding">
+          <div className="container-custom max-w-4xl">
+            <AmazonCTA variant="prominent" />
           </div>
         </section>
 
