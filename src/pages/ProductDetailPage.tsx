@@ -14,6 +14,8 @@ import BreadcrumbSchema from "@/components/SEO/BreadcrumbSchema";
 import ProductUseCases from "@/components/ProductUseCases";
 import ProductFAQ from "@/components/ProductFAQ";
 import ProductComparisonTable from "@/components/ProductComparisonTable";
+import ProductReviews from "@/components/ProductReviews";
+import ProductMediaShowcase from "@/components/ProductMediaShowcase";
 import { Button } from "@/components/ui/button";
 import { getProductById, products } from "@/data/products";
 import { getCertificationsForProduct } from "@/data/certifications";
@@ -460,6 +462,19 @@ const ProductDetailPage = () => {
           hasHeating={product.hasHeating}
           hasBluetooth={product.hasBluetooth}
           capacity={product.capacity}
+        />
+
+        {/* Product Media Showcase */}
+        <ProductMediaShowcase
+          productId={product.id}
+          productName={product.name}
+          primaryImage={product.image}
+        />
+
+        {/* Customer Reviews */}
+        <ProductReviews
+          productId={product.id}
+          productName={product.name}
         />
 
         {/* Warranty & Support Module */}

@@ -4,9 +4,20 @@ import { fetchProductByHandle } from "@/lib/shopify";
 import { useCartStore, ShopifyProduct } from "@/stores/cartStore";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AnnouncementBar from "@/components/AnnouncementBar";
 import PageMeta from "@/components/PageMeta";
+import ServicePromises from "@/components/ServicePromises";
+import ProductFAQ from "@/components/ProductFAQ";
+import ProductComparisonTable from "@/components/ProductComparisonTable";
+import ProductReviews from "@/components/ProductReviews";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { 
   ShoppingCart, 
   Loader2, 
@@ -16,7 +27,14 @@ import {
   Shield, 
   Truck,
   CheckCircle2,
-  AlertCircle
+  AlertCircle,
+  ChevronRight,
+  Zap,
+  Snowflake,
+  AlertTriangle,
+  Check,
+  Award,
+  Info
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -49,6 +67,7 @@ const ShopifyProductDetailPage = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-background">
+        <AnnouncementBar />
         <Header />
         <main className="container-custom py-20">
           <div className="flex items-center justify-center py-20">
@@ -64,6 +83,7 @@ const ShopifyProductDetailPage = () => {
   if (error || !product) {
     return (
       <div className="min-h-screen bg-background">
+        <AnnouncementBar />
         <Header />
         <main className="container-custom py-20">
           <div className="text-center py-20">
@@ -91,6 +111,10 @@ const ShopifyProductDetailPage = () => {
                        product.description?.toLowerCase().includes('bluetooth');
   const hasHeating = product.title.toLowerCase().includes('heated') || 
                      product.description?.toLowerCase().includes('self-heating');
+
+  // Extract capacity from title (e.g., "100Ah" from "Core 12V 100Ah")
+  const capacityMatch = product.title.match(/(\d+)Ah/i);
+  const capacity = capacityMatch ? `${capacityMatch[1]}Ah` : "100Ah";
 
   const formatPrice = (amount: number) => {
     return new Intl.NumberFormat('en-GB', {
@@ -129,147 +153,346 @@ const ShopifyProductDetailPage = () => {
         title={product.title}
         description={product.description?.slice(0, 155) || `${product.title} - Sentorise LiFePO₄ Battery`}
       />
+      <AnnouncementBar />
       <Header />
       
-      <main className="container-custom py-8 md:py-12">
+      <main>
         {/* Breadcrumb */}
-        <nav className="mb-8">
-          <ol className="flex items-center gap-2 text-sm text-muted-foreground">
-            <li><Link to="/" className="hover:text-foreground">Home</Link></li>
-            <li>/</li>
-            <li><Link to="/products" className="hover:text-foreground">Products</Link></li>
-            <li>/</li>
-            <li className="text-foreground">{product.title}</li>
-          </ol>
-        </nav>
+        <section className="py-4 border-b border-border bg-muted/30">
+          <div className="container-custom">
+            <nav className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Link to="/" className="hover:text-primary">Home</Link>
+              <ChevronRight className="w-4 h-4" />
+              <Link to="/products" className="hover:text-primary">Shop</Link>
+              <ChevronRight className="w-4 h-4" />
+              <span className="text-foreground">{product.title}</span>
+            </nav>
+          </div>
+        </section>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
-          {/* Product Image */}
-          <div className="relative">
-            <div className="aspect-square bg-muted/30 rounded-2xl overflow-hidden border p-8">
-              {image && (
-                <img 
-                  src={image.url} 
-                  alt={image.altText || product.title}
-                  className="w-full h-full object-contain"
-                />
-              )}
-            </div>
-            
-            {/* Feature Badges */}
-            <div className="absolute top-6 left-6 flex flex-col gap-2">
-              {hasBluetooth && (
-                <Badge variant="secondary" className="text-sm px-3 py-1">
-                  <Bluetooth className="w-4 h-4 mr-2" />
-                  Bluetooth Monitoring
-                </Badge>
-              )}
-              {hasHeating && (
-                <Badge className="bg-orange-500/90 text-white text-sm px-3 py-1">
-                  <Thermometer className="w-4 h-4 mr-2" />
-                  Self-Heating
-                </Badge>
-              )}
+        {/* Product Hero */}
+        <section className="section-padding">
+          <div className="container-custom">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
+              {/* Product Image */}
+              <div className="relative">
+                <div className="aspect-square bg-muted/30 rounded-2xl overflow-hidden border p-8">
+                  {image && (
+                    <img 
+                      src={image.url} 
+                      alt={image.altText || product.title}
+                      className="w-full h-full object-contain"
+                    />
+                  )}
+                </div>
+                
+                {/* Feature Badges */}
+                <div className="absolute top-6 left-6 flex flex-col gap-2">
+                  {hasBluetooth && (
+                    <Badge variant="secondary" className="text-sm px-3 py-1">
+                      <Bluetooth className="w-4 h-4 mr-2" />
+                      Bluetooth Monitoring
+                    </Badge>
+                  )}
+                  {hasHeating && (
+                    <Badge className="bg-orange-500/90 text-white text-sm px-3 py-1">
+                      <Thermometer className="w-4 h-4 mr-2" />
+                      Self-Heating
+                    </Badge>
+                  )}
+                </div>
+              </div>
+
+              {/* Product Info */}
+              <div className="space-y-6">
+                <div>
+                  <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    {product.title}
+                  </h1>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    {product.description}
+                  </p>
+                </div>
+
+                {/* Price */}
+                <div className="py-4 border-y">
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-4xl font-bold text-primary">
+                      {formatPrice(price)}
+                    </span>
+                    <span className="text-sm text-muted-foreground">incl. VAT</span>
+                  </div>
+                </div>
+
+                {/* Quantity & Add to Cart */}
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <label className="text-sm font-medium">Quantity:</label>
+                    <div className="flex items-center border rounded-lg">
+                      <Button 
+                        variant="ghost" 
+                        size="sm"
+                        onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                        className="px-3"
+                      >
+                        -
+                      </Button>
+                      <span className="w-12 text-center font-medium">{quantity}</span>
+                      <Button 
+                        variant="ghost" 
+                        size="sm"
+                        onClick={() => setQuantity(quantity + 1)}
+                        className="px-3"
+                      >
+                        +
+                      </Button>
+                    </div>
+                  </div>
+
+                  <Button 
+                    size="lg" 
+                    className="w-full text-lg py-6"
+                    onClick={handleAddToCart}
+                    disabled={isAdding || !variant?.availableForSale}
+                  >
+                    {isAdding ? (
+                      <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                    ) : (
+                      <ShoppingCart className="w-5 h-5 mr-2" />
+                    )}
+                    Add to Cart — {formatPrice(price * quantity)}
+                  </Button>
+                </div>
+
+                {/* Key Guarantees */}
+                <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                  <Link 
+                    to="/warranty" 
+                    className="flex items-center gap-1.5 hover:text-primary transition-colors"
+                  >
+                    <Shield className="w-4 h-4 text-primary" />
+                    5-Year Warranty
+                    <span className="text-xs text-primary">→ Register</span>
+                  </Link>
+                  <span className="flex items-center gap-1.5">
+                    <Zap className="w-4 h-4 text-primary" />
+                    4000+ Cycles
+                  </span>
+                  {hasBluetooth && (
+                    <span className="flex items-center gap-1.5">
+                      <Bluetooth className="w-4 h-4 text-primary" />
+                      Bluetooth
+                    </span>
+                  )}
+                </div>
+
+                {/* Trust Signals */}
+                <div className="grid grid-cols-2 gap-4 pt-4">
+                  <Link 
+                    to="/warranty" 
+                    className="flex items-start gap-3 p-4 rounded-lg bg-muted/30 hover:bg-primary/10 transition-colors group"
+                  >
+                    <Shield className="w-5 h-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium text-sm group-hover:text-primary transition-colors">5-Year Warranty</p>
+                      <p className="text-xs text-muted-foreground">Register now →</p>
+                    </div>
+                  </Link>
+                  <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/30">
+                    <Truck className="w-5 h-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium text-sm">Free EU Shipping</p>
+                      <p className="text-xs text-muted-foreground">2-5 business days</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/30">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium text-sm">4000+ Cycles</p>
+                      <p className="text-xs text-muted-foreground">Long lifespan</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/30">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium text-sm">-20°C to 60°C</p>
+                      <p className="text-xs text-muted-foreground">Operating range</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+        </section>
 
-          {/* Product Info */}
-          <div className="space-y-6">
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                {product.title}
-              </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {product.description}
-              </p>
-            </div>
-
-            {/* Price */}
-            <div className="py-4 border-y">
-              <div className="flex items-baseline gap-3">
-                <span className="text-4xl font-bold text-primary">
-                  {formatPrice(price)}
-                </span>
-                <span className="text-sm text-muted-foreground">incl. VAT</span>
-              </div>
-            </div>
-
-            {/* Quantity & Add to Cart */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <label className="text-sm font-medium">Quantity:</label>
-                <div className="flex items-center border rounded-lg">
-                  <Button 
-                    variant="ghost" 
-                    size="sm"
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="px-3"
-                  >
-                    -
-                  </Button>
-                  <span className="w-12 text-center font-medium">{quantity}</span>
-                  <Button 
-                    variant="ghost" 
-                    size="sm"
-                    onClick={() => setQuantity(quantity + 1)}
-                    className="px-3"
-                  >
-                    +
-                  </Button>
+        {/* Low Temperature Module */}
+        <section className="section-padding bg-muted/30 border-y border-border">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center">
+                  <Snowflake className="w-6 h-6 text-blue-500" />
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold text-foreground">Low-Temperature Behavior</h2>
+                  <p className="text-sm text-muted-foreground">How this battery handles cold weather</p>
                 </div>
               </div>
 
-              <Button 
-                size="lg" 
-                className="w-full text-lg py-6"
-                onClick={handleAddToCart}
-                disabled={isAdding || !variant?.availableForSale}
-              >
-                {isAdding ? (
-                  <Loader2 className="w-5 h-5 animate-spin mr-2" />
-                ) : (
-                  <ShoppingCart className="w-5 h-5 mr-2" />
-                )}
-                Add to Cart — {formatPrice(price * quantity)}
-              </Button>
-            </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-card border border-border rounded-lg p-5">
+                  <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <AlertTriangle className="w-4 h-4 text-amber-500" />
+                    Charging in Cold
+                  </h3>
+                  {hasHeating ? (
+                    <div className="space-y-2 text-sm text-muted-foreground">
+                      <p><span className="text-foreground font-medium">Self-heating activates at -10°C.</span> The battery warms itself before accepting charge.</p>
+                      <p>Wait time: ~15-30 minutes depending on ambient temp.</p>
+                      <p className="text-xs bg-muted p-2 rounded">Note: Self-heating uses battery power (~5% capacity for warm-up).</p>
+                    </div>
+                  ) : (
+                    <div className="space-y-2 text-sm text-muted-foreground">
+                      <p><span className="text-foreground font-medium">Charging blocked below 0°C</span> to protect cell health.</p>
+                      <p>If you need to charge in freezing temps, use an external battery heater or choose the 200Ah Heated model.</p>
+                      <p className="text-xs bg-muted p-2 rounded">This is a safety feature, not a limitation.</p>
+                    </div>
+                  )}
+                </div>
 
-            {/* Trust Signals */}
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <Link 
-                to="/warranty" 
-                className="flex items-start gap-3 p-4 rounded-lg bg-muted/30 hover:bg-primary/10 transition-colors group"
-              >
-                <Shield className="w-5 h-5 text-primary mt-0.5" />
-                <div>
-                  <p className="font-medium text-sm group-hover:text-primary transition-colors">5-Year Warranty</p>
-                  <p className="text-xs text-muted-foreground">Register now →</p>
-                </div>
-              </Link>
-              <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/30">
-                <Truck className="w-5 h-5 text-primary mt-0.5" />
-                <div>
-                  <p className="font-medium text-sm">Free EU Shipping</p>
-                  <p className="text-xs text-muted-foreground">2-5 business days</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/30">
-                <CheckCircle2 className="w-5 h-5 text-primary mt-0.5" />
-                <div>
-                  <p className="font-medium text-sm">4000+ Cycles</p>
-                  <p className="text-xs text-muted-foreground">Long lifespan</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/30">
-                <CheckCircle2 className="w-5 h-5 text-primary mt-0.5" />
-                <div>
-                  <p className="font-medium text-sm">-20°C to 60°C</p>
-                  <p className="text-xs text-muted-foreground">Operating range</p>
+                <div className="bg-card border border-border rounded-lg p-5">
+                  <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary" />
+                    Discharging in Cold
+                  </h3>
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <p><span className="text-foreground font-medium">Works down to -20°C.</span> You can use stored power even in deep cold.</p>
+                    <p>Capacity may temporarily decrease by 10-20% at extreme cold.</p>
+                    <p className="text-xs bg-muted p-2 rounded">Full capacity restores when battery warms up.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* Bluetooth Module */}
+        {hasBluetooth && (
+          <section className="section-padding">
+            <div className="container-custom">
+              <div className="max-w-4xl mx-auto">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Bluetooth className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h2 className="text-xl font-bold text-foreground">Bluetooth Monitoring</h2>
+                    <p className="text-sm text-muted-foreground">Real-time battery status on your phone</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="bg-card border border-border rounded-lg p-4">
+                    <h3 className="font-medium text-foreground mb-2">What You See</h3>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• Voltage, current, temperature</li>
+                      <li>• State of charge (%)</li>
+                      <li>• Cycle count</li>
+                      <li>• Cell balance status</li>
+                    </ul>
+                  </div>
+                  <div className="bg-card border border-border rounded-lg p-4">
+                    <h3 className="font-medium text-foreground mb-2">Compatibility</h3>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• iOS 12 or later</li>
+                      <li>• Android 8.0 or later</li>
+                      <li>• Range: ~10 meters</li>
+                      <li>• Free Sentorise app</li>
+                    </ul>
+                  </div>
+                  <div className="bg-card border border-border rounded-lg p-4">
+                    <h3 className="font-medium text-foreground mb-2">Setup</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Download app → Enable Bluetooth → Auto-detect battery. No pairing code needed.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* LiFePO4 vs Lead-Acid Comparison */}
+        <ProductComparisonTable 
+          capacity={capacity}
+          cycleLife="4000+ cycles"
+        />
+
+        {/* Product FAQ */}
+        <ProductFAQ
+          productId={handle || ""}
+          productName={product.title}
+          hasHeating={hasHeating}
+          hasBluetooth={hasBluetooth}
+          capacity={capacity}
+        />
+
+        {/* Customer Reviews */}
+        <ProductReviews
+          productId={handle || ""}
+          productName={product.title}
+        />
+
+        {/* Warranty & Support Module */}
+        <section className="section-padding bg-muted/30 border-y border-border">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Award className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold text-foreground">5-Year Warranty</h2>
+                  <p className="text-sm text-muted-foreground">Clear terms, Berlin-based support</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-card border border-border rounded-lg p-5">
+                  <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary" />
+                    What's Covered
+                  </h3>
+                  <ul className="text-sm text-muted-foreground space-y-2">
+                    <li>• Cell failure or premature capacity loss (&lt;80%)</li>
+                    <li>• BMS malfunction</li>
+                    <li>• Manufacturing defects</li>
+                    <li>• Full replacement within warranty period</li>
+                  </ul>
+                </div>
+                <div className="bg-card border border-border rounded-lg p-5">
+                  <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <Info className="w-4 h-4 text-muted-foreground" />
+                    What's Not Covered
+                  </h3>
+                  <ul className="text-sm text-muted-foreground space-y-2">
+                    <li>• Physical damage or water exposure</li>
+                    <li>• Incorrect installation</li>
+                    <li>• Use with incompatible chargers</li>
+                    <li>• Bypass of BMS protection circuits</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Service Promises */}
+        <section className="py-8 border-t border-border">
+          <div className="container-custom">
+            <ServicePromises />
+          </div>
+        </section>
       </main>
       
       <Footer />
