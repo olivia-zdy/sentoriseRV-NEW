@@ -10,6 +10,7 @@ import ServicePromises from "@/components/ServicePromises";
 import ProductFAQ from "@/components/ProductFAQ";
 import ProductComparisonTable from "@/components/ProductComparisonTable";
 import ProductReviews from "@/components/ProductReviews";
+import ProductAccessories from "@/components/ProductAccessories";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -435,6 +436,12 @@ const ShopifyProductDetailPage = () => {
           hasHeating={hasHeating}
           hasBluetooth={hasBluetooth}
           capacity={capacity}
+        />
+
+        {/* Recommended Accessories & Bundles */}
+        <ProductAccessories
+          productId={handle || ""}
+          productName={product.title}
         />
 
         {/* Customer Reviews */}
