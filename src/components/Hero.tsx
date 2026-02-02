@@ -1,14 +1,29 @@
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, ShoppingBag, ExternalLink } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 // Import scene images for carousel
 import heroRvWinter from "@/assets/hero-rv-winter.jpg";
 import heroOffgridSolar from "@/assets/hero-offgrid-solar.jpg";
 import heroVanlife from "@/assets/hero-vanlife.jpg";
 import heroMarine from "@/assets/hero-marine.jpg";
+
+// Amazon stores
+const amazonStores = [
+  { country: "Germany", flag: "🇩🇪", domain: "amazon.de", url: "https://www.amazon.de/stores/Sentorise" },
+  { country: "France", flag: "🇫🇷", domain: "amazon.fr", url: "https://www.amazon.fr/stores/Sentorise" },
+  { country: "UK", flag: "🇬🇧", domain: "amazon.co.uk", url: "https://www.amazon.co.uk/stores/Sentorise" },
+  { country: "Italy", flag: "🇮🇹", domain: "amazon.it", url: "https://www.amazon.it/stores/Sentorise" },
+  { country: "Spain", flag: "🇪🇸", domain: "amazon.es", url: "https://www.amazon.es/stores/Sentorise" },
+];
 
 interface HeroScene {
   image: string;
@@ -23,34 +38,34 @@ const heroScenes: HeroScene[] = [
   { 
     image: heroRvWinter, 
     alt: "RV & Motorhome",
-    title: "Mountain Adventure",
-    subtitle: "Power your RV through any terrain",
-    highlight: "Cold-weather protection · Works at -20°C",
-    trustPoints: ["Heated Models Available", "5-Year Warranty", "DIN & BCI Sizes"]
+    title: "12V LiFePO₄ Battery",
+    subtitle: "Cold-Weather Ready. Built for European Winters.",
+    highlight: "Power that works at -20°C • Self-heating available",
+    trustPoints: ["5-Year Warranty", "Bluetooth Monitoring", "EU Stock & Support"]
   },
   { 
     image: heroOffgridSolar, 
     alt: "Off-Grid Solar",
-    title: "Off-Grid Living",
-    subtitle: "The perfect partner for solar systems",
-    highlight: "4000+ cycles · 10 years of reliable power",
-    trustPoints: ["MPPT Compatible", "200A Max Discharge", "Free EU Shipping"]
+    title: "Off-Grid Solar",
+    subtitle: "4000+ Cycles. 10 Years of Reliable Power.",
+    highlight: "MPPT compatible • 200A max discharge",
+    trustPoints: ["5-Year Warranty", "Low-Temp Protection", "Free EU Shipping"]
   },
   { 
     image: heroVanlife, 
     alt: "Van Life",
-    title: "Coastal Camping",
-    subtitle: "Energy companion for Van Life explorers",
-    highlight: "Bluetooth monitoring · Track power anytime",
-    trustPoints: ["Compact & Lightweight", "App Monitoring", "Easy DIY Install"]
+    title: "Van Life & Camping",
+    subtitle: "Compact Power. Real-Time Monitoring.",
+    highlight: "Bluetooth app • Track voltage, SoC & temperature",
+    trustPoints: ["5-Year Warranty", "Lightweight Design", "Easy DIY Install"]
   },
   { 
     image: heroMarine, 
     alt: "Marine",
-    title: "Ocean Voyage",
-    subtitle: "Stable power for yachts and sailboats",
-    highlight: "IP67 waterproof · Built for marine environments",
-    trustPoints: ["Saltwater Resistant", "Vibration Proof", "Marine Certified"]
+    title: "Marine & Boat",
+    subtitle: "Stable Power for Yachts & Sailboats.",
+    highlight: "Vibration-proof • Saltwater resistant",
+    trustPoints: ["5-Year Warranty", "BMS Protection", "CE Certified"]
   },
 ];
 
@@ -198,22 +213,55 @@ const Hero = () => {
             </motion.div>
           </AnimatePresence>
 
-          {/* CTAs */}
+          {/* CTAs - Primary: Amazon, Secondary: Learn More */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="flex flex-wrap items-center gap-4 mb-10"
+            className="flex flex-wrap items-center gap-3 mb-10"
           >
-            <Button asChild size="lg" className="group">
-              <Link to="/products">
-                Shop Batteries
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
+            {/* Primary CTA: Buy on Amazon */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  size="lg" 
+                  className="group bg-[#FF9900] hover:bg-[#e88a00] text-black font-bold px-6"
+                >
+                  <ShoppingBag className="w-5 h-5 mr-2" />
+                  Buy on Amazon
+                  <ChevronDown className="w-4 h-4 ml-2" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-48">
+                {amazonStores.map((store) => (
+                  <DropdownMenuItem key={store.domain} asChild>
+                    <a 
+                      href={store.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      <span>{store.flag}</span>
+                      <span>{store.country}</span>
+                      <ExternalLink className="w-3 h-3 ml-auto text-muted-foreground" />
+                    </a>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Secondary: How to Choose */}
             <Button asChild variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white">
               <Link to="/battery-selector">
                 How to Choose
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
+            </Button>
+
+            {/* Tertiary: View Products */}
+            <Button asChild variant="ghost" size="lg" className="text-white/80 hover:text-white hover:bg-white/10">
+              <Link to="/products">
+                View All Products
               </Link>
             </Button>
           </motion.div>

@@ -45,9 +45,15 @@ const supportCategories = [
   {
     icon: MessageCircle,
     title: "Contact Support",
-    description: "Get in touch with our technical support team for personalized assistance.",
+    description: "Get in touch with our technical support team. Response within 24-48 hours.",
     link: "#contact",
   },
+];
+
+const quickLinks = [
+  { name: "Bluetooth Setup Guide", href: "/bluetooth-guide", description: "5-step app connection guide" },
+  { name: "Register Warranty", href: "/warranty", description: "Activate your 5-year coverage" },
+  { name: "Battery Selector", href: "/battery-selector", description: "Find the right battery for you" },
 ];
 
 const faqs = [
@@ -69,20 +75,28 @@ const faqs = [
   },
   {
     question: "How do I connect the Bluetooth app?",
-    answer: "Download the Sentorise app from the App Store or Google Play. Turn on Bluetooth on your phone, open the app, and it will automatically detect nearby Sentorise batteries.",
+    answer: "Download the Sentorise app from the App Store or Google Play. Turn on Bluetooth on your phone, open the app, and it will automatically detect nearby Sentorise batteries. See our complete Bluetooth Setup Guide for step-by-step instructions."
   },
   {
     question: "Can I connect multiple batteries in parallel?",
-    answer: "Yes, our Core and Plus series batteries can be connected in parallel to increase capacity. We recommend connecting up to 4 batteries in parallel for optimal performance.",
+    answer: "Yes, our Core and Plus series batteries can be connected in parallel to increase capacity. We recommend connecting up to 4 batteries in parallel for optimal performance. Always match batteries of the same model and state of charge."
   },
   {
     question: "What's the difference between Lite, Core, and Plus series?",
-    answer: "Lite series (6-50Ah) is for portable and backup applications. Core series (100Ah) is our standard RV/solar battery in various formats. Plus series (200Ah) includes self-heating for cold climates.",
+    answer: "Lite series (6-50Ah) is for portable and backup applications. Core series (100Ah) is our standard RV/solar battery in various formats (Standard, MINI, DIN H8). Plus series (200Ah) includes self-heating for cold climates down to -20°C."
   },
   {
     question: "Do I need a special charger for LiFePO4 batteries?",
-    answer: "We recommend using a charger with a LiFePO4 profile (14.4V-14.6V charge voltage). Many modern RV converters have a lithium mode, or you can use a dedicated LiFePO4 charger.",
+    answer: "We recommend using a charger with a LiFePO4 profile (14.4V-14.6V charge voltage). Many modern RV converters have a lithium mode. Never use a charger above 14.6V as this can damage the cells."
   },
+  {
+    question: "What happens if I try to charge below 0°C?",
+    answer: "The built-in BMS will prevent charging below 0°C to protect cell health. For cold-weather charging, use our Plus 200Ah Heated model which activates self-heating at -10°C. Discharging works down to -20°C on all models."
+  },
+  {
+    question: "How do I make a warranty claim?",
+    answer: "Contact support@sentorise.de with your registration email and describe the issue. We'll guide you through diagnosis. If replacement is needed, we ship a new unit before you return the old one (in most EU countries)."
+  }
 ];
 
 const SupportPage = () => {
@@ -130,6 +144,26 @@ const SupportPage = () => {
                   <p className="text-sm text-muted-foreground">{category.description}</p>
                 </a>
               ))}
+            </div>
+
+            {/* Quick Links */}
+            <div className="mt-8 p-6 bg-primary/5 rounded-xl border border-primary/20">
+              <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {quickLinks.map((link) => (
+                  <Link 
+                    key={link.name}
+                    to={link.href}
+                    className="flex items-center justify-between p-3 bg-card rounded-lg border hover:border-primary/30 transition-colors"
+                  >
+                    <div>
+                      <p className="font-medium text-foreground">{link.name}</p>
+                      <p className="text-xs text-muted-foreground">{link.description}</p>
+                    </div>
+                    <ExternalLink className="w-4 h-4 text-muted-foreground" />
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>

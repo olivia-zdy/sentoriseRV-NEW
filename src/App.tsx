@@ -23,6 +23,7 @@ const StoriesPage = lazy(() => import("./pages/StoriesPage"));
 const WhySentorisePage = lazy(() => import("./pages/WhySentorisePage"));
 const BatterySelectorPage = lazy(() => import("./pages/BatterySelectorPage"));
 const WarrantyPage = lazy(() => import("./pages/WarrantyPage"));
+const BluetoothGuidePage = lazy(() => import("./pages/BluetoothGuidePage"));
 const PrivacyPage = lazy(() => import("./pages/PrivacyPage"));
 const TermsPage = lazy(() => import("./pages/TermsPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -68,6 +69,7 @@ const App = () => (
                     <Route path="/why-sentorise" element={<WhySentorisePage />} />
                     <Route path="/battery-selector" element={<BatterySelectorPage />} />
                     <Route path="/warranty" element={<WarrantyPage />} />
+                    <Route path="/bluetooth-guide" element={<BluetoothGuidePage />} />
                     <Route path="/privacy" element={<PrivacyPage />} />
                     <Route path="/terms" element={<TermsPage />} />
                     <Route path="/admin/login" element={<AdminLogin />} />

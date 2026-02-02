@@ -25,9 +25,11 @@ const footerLinks = {
   ],
   support: [
     { name: "Help Center", href: "/support#faq" },
+    { name: "Bluetooth Guide", href: "/bluetooth-guide" },
     { name: "Downloads", href: "/support#downloads" },
     { name: "Register Warranty", href: "/warranty" },
     { name: "Warranty Policy", href: "/support#warranty" },
+    { name: "Returns Policy", href: "/terms#returns" },
     { name: "Contact Us", href: "/support#contact" },
   ],
 };
@@ -223,6 +225,7 @@ const Footer = () => {
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
               <Link to="/privacy" className="hover:text-foreground">Privacy Policy</Link>
               <Link to="/terms" className="hover:text-foreground">Terms of Service</Link>
+              <Link to="/terms#returns" className="hover:text-foreground">Returns</Link>
               <Link to="/support#warranty" className="hover:text-foreground">Warranty</Link>
             </div>
           </div>

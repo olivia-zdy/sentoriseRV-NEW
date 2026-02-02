@@ -3,8 +3,10 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrustBadges from "@/components/TrustBadges";
 import CoreValueModules from "@/components/CoreValueModules";
+import VerifiableTrust from "@/components/VerifiableTrust";
 import ProductMatrix from "@/components/ProductMatrix";
 import ShopifyProductGrid from "@/components/ShopifyProductGrid";
+import AmazonCTA from "@/components/AmazonCTA";
 import HomepageFAQ from "@/components/HomepageFAQ";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
@@ -56,6 +58,9 @@ const Index = () => {
         {/* Core Values: 3 modules with scenario-risk-solution-boundary */}
         <CoreValueModules />
         
+        {/* Verifiable Trust: Contact SLA, Warranty, Certifications */}
+        <VerifiableTrust />
+        
         {/* Product Matrix: Quick capacity selection */}
         <ProductMatrix />
         
@@ -64,6 +69,13 @@ const Index = () => {
           title="Shop Our Batteries"
           subtitle="All products in stock with fast EU shipping. Add to cart and checkout securely."
         />
+        
+        {/* Amazon CTA: Prominent purchase path */}
+        <section className="section-padding">
+          <div className="container-custom max-w-4xl">
+            <AmazonCTA variant="prominent" />
+          </div>
+        </section>
         
         {/* FAQ: 4 key purchase decision questions */}
         <HomepageFAQ />

@@ -66,16 +66,38 @@ const TermsPage = () => {
               </p>
             </section>
 
-            <section className="mb-8">
+            <section id="returns" className="mb-8 scroll-mt-24">
               <h2 className="text-xl font-semibold text-foreground mb-4">5. Returns and Refunds</h2>
               <p className="text-muted-foreground mb-4">
                 We offer a 30-day money-back guarantee on all products. To be eligible for a return:
               </p>
-              <ul className="list-disc pl-6 text-muted-foreground space-y-2">
+              <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
                 <li>Product must be unused and in original packaging</li>
                 <li>Return must be initiated within 30 days of delivery</li>
-                <li>Customer is responsible for return shipping costs (unless defective)</li>
+                <li>Contact support@sentorise.de to receive a return authorization number</li>
               </ul>
+              
+              <h3 className="font-semibold text-foreground mb-2 mt-6">Return Shipping</h3>
+              <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
+                <li><strong>Defective product:</strong> We provide free return shipping label</li>
+                <li><strong>Change of mind:</strong> Customer pays return shipping costs</li>
+                <li><strong>Amazon purchases:</strong> Use Amazon's standard return process</li>
+              </ul>
+
+              <h3 className="font-semibold text-foreground mb-2 mt-6">Refund Timeline</h3>
+              <ul className="list-disc pl-6 text-muted-foreground space-y-2">
+                <li>Refund processed within 5 business days of receiving returned product</li>
+                <li>Original payment method credited within 3-7 business days (bank dependent)</li>
+                <li>Shipping costs are non-refundable unless product was defective</li>
+              </ul>
+
+              <div className="mt-6 p-4 bg-muted/50 rounded-lg">
+                <p className="text-sm text-muted-foreground">
+                  <strong className="text-foreground">Note:</strong> Batteries showing signs of use, 
+                  physical damage, or modifications are not eligible for return. For warranty claims 
+                  on used products, see Section 6 (Warranty).
+                </p>
+              </div>
             </section>
 
             <section className="mb-8">
