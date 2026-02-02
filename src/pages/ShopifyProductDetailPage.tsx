@@ -11,7 +11,7 @@ import ProductFAQ from "@/components/ProductFAQ";
 import ProductComparisonTable from "@/components/ProductComparisonTable";
 import ProductReviews from "@/components/ProductReviews";
 import ProductAccessories from "@/components/ProductAccessories";
-import AmazonCTA from "@/components/AmazonCTA";
+
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -499,12 +499,6 @@ const ShopifyProductDetailPage = () => {
           </div>
         </section>
 
-        {/* Amazon CTA */}
-        <section className="section-padding">
-          <div className="container-custom max-w-4xl">
-            <AmazonCTA variant="prominent" />
-          </div>
-        </section>
 
         {/* Service Promises */}
         <section className="py-8 border-t border-border">

@@ -1,29 +1,14 @@
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronDown, ShoppingBag, ExternalLink } from "lucide-react";
+import { ArrowRight, ChevronDown, ShoppingBag } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 // Import scene images for carousel
 import heroRvWinter from "@/assets/hero-rv-winter.jpg";
 import heroOffgridSolar from "@/assets/hero-offgrid-solar.jpg";
 import heroVanlife from "@/assets/hero-vanlife.jpg";
 import heroMarine from "@/assets/hero-marine.jpg";
-
-// Amazon stores
-const amazonStores = [
-  { country: "Germany", flag: "🇩🇪", domain: "amazon.de", url: "https://www.amazon.de/stores/Sentorise" },
-  { country: "France", flag: "🇫🇷", domain: "amazon.fr", url: "https://www.amazon.fr/stores/Sentorise" },
-  { country: "UK", flag: "🇬🇧", domain: "amazon.co.uk", url: "https://www.amazon.co.uk/stores/Sentorise" },
-  { country: "Italy", flag: "🇮🇹", domain: "amazon.it", url: "https://www.amazon.it/stores/Sentorise" },
-  { country: "Spain", flag: "🇪🇸", domain: "amazon.es", url: "https://www.amazon.es/stores/Sentorise" },
-];
 
 interface HeroScene {
   image: string;
@@ -213,42 +198,24 @@ const Hero = () => {
             </motion.div>
           </AnimatePresence>
 
-          {/* CTAs - Primary: Amazon, Secondary: Learn More */}
+          {/* CTAs - Primary: Shop, Secondary: Learn More */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
             className="flex flex-wrap items-center gap-3 mb-10"
           >
-            {/* Primary CTA: Buy on Amazon */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button 
-                  size="lg" 
-                  className="group bg-[#FF9900] hover:bg-[#e88a00] text-black font-bold px-6"
-                >
-                  <ShoppingBag className="w-5 h-5 mr-2" />
-                  Buy on Amazon
-                  <ChevronDown className="w-4 h-4 ml-2" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-48">
-                {amazonStores.map((store) => (
-                  <DropdownMenuItem key={store.domain} asChild>
-                    <a 
-                      href={store.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      <span>{store.flag}</span>
-                      <span>{store.country}</span>
-                      <ExternalLink className="w-3 h-3 ml-auto text-muted-foreground" />
-                    </a>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+            {/* Primary CTA: Shop Now */}
+            <Button 
+              asChild
+              size="lg" 
+              className="group font-bold px-6"
+            >
+              <Link to="/products">
+                <ShoppingBag className="w-5 h-5 mr-2" />
+                Shop Now
+              </Link>
+            </Button>
 
             {/* Secondary: How to Choose */}
             <Button asChild variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white">
