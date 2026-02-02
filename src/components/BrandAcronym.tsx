@@ -2,15 +2,15 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const acronym = [
-  { letter: "S", meaning: "Safety First", description: "Multi-layer BMS protection", color: "from-emerald-500 to-teal-600" },
-  { letter: "E", meaning: "Endurance", description: "4000+ cycle lifespan", color: "from-blue-500 to-cyan-600" },
-  { letter: "N", meaning: "Nature Friendly", description: "Non-toxic, recyclable", color: "from-green-500 to-emerald-600" },
-  { letter: "T", meaning: "Technology", description: "Smart Bluetooth monitoring", color: "from-violet-500 to-purple-600" },
-  { letter: "O", meaning: "Optimized", description: "Peak performance design", color: "from-orange-500 to-amber-600" },
-  { letter: "R", meaning: "Reliability", description: "Tested for real-world use", color: "from-red-500 to-rose-600" },
-  { letter: "I", meaning: "Innovation", description: "Self-heating technology", color: "from-indigo-500 to-blue-600" },
-  { letter: "S", meaning: "Service", description: "5-year warranty support", color: "from-pink-500 to-rose-600" },
-  { letter: "E", meaning: "Excellence", description: "International standards", color: "from-yellow-500 to-orange-600" },
+  { letter: "S", meaning: "Safety First", description: "Multi-layer protection, certified components, and strict safety testing.", color: "from-emerald-500 to-teal-600" },
+  { letter: "E", meaning: "Endurance", description: "Designed for long cycle life and stable performance across years of use.", color: "from-blue-500 to-cyan-600" },
+  { letter: "N", meaning: "Nature Responsible", description: "Lower-impact materials and responsible lifecycle approach.", color: "from-green-500 to-emerald-600" },
+  { letter: "T", meaning: "Smart Monitoring Technology", description: "Real-time system visibility for safer, smarter energy control.", color: "from-violet-500 to-purple-600" },
+  { letter: "O", meaning: "Optimized Performance", description: "Engineered for efficiency and reliability across diverse applications.", color: "from-orange-500 to-amber-600" },
+  { letter: "R", meaning: "Reliability", description: "Tested under demanding environments for dependable power.", color: "from-red-500 to-rose-600" },
+  { letter: "I", meaning: "Intelligent Design", description: "Thoughtful engineering balancing performance, usability, and durability.", color: "from-indigo-500 to-blue-600" },
+  { letter: "S", meaning: "Support & Service", description: "Clear guidance, responsive assistance, and long-term warranty coverage.", color: "from-pink-500 to-rose-600" },
+  { letter: "E", meaning: "Engineering Excellence", description: "Precision, verification, and continuous improvement in every detail.", color: "from-yellow-500 to-orange-600" },
 ];
 
 const containerVariants = {
