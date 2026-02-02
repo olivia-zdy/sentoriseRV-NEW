@@ -100,7 +100,7 @@ const BrandAcronym = () => {
             
             {/* Description - slides up on hover */}
             <motion.div
-              className="absolute inset-x-0 bottom-0 bg-card px-2 pb-3 pt-6"
+              className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-card via-card to-transparent px-2 pb-3 pt-8"
               initial={{ y: "100%", opacity: 0 }}
               animate={{
                 y: hoveredIndex === index ? 0 : "100%",
