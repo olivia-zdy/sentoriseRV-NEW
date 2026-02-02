@@ -19,6 +19,7 @@ const ShopifyProductDetailPage = lazy(() => import("./pages/ShopifyProductDetail
 const ApplicationsPage = lazy(() => import("./pages/ApplicationsPage"));
 const SupportPage = lazy(() => import("./pages/SupportPage"));
 const BlogPage = lazy(() => import("./pages/BlogPage"));
+const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
 const StoriesPage = lazy(() => import("./pages/StoriesPage"));
 const WhySentorisePage = lazy(() => import("./pages/WhySentorisePage"));
 const BatterySelectorPage = lazy(() => import("./pages/BatterySelectorPage"));
@@ -65,6 +66,7 @@ const App = () => (
                     <Route path="/applications" element={<ApplicationsPage />} />
                     <Route path="/support" element={<SupportPage />} />
                     <Route path="/blog" element={<BlogPage />} />
+                    <Route path="/blog/:id" element={<BlogPostPage />} />
                     <Route path="/stories" element={<StoriesPage />} />
                     <Route path="/why-sentorise" element={<WhySentorisePage />} />
                     <Route path="/battery-selector" element={<BatterySelectorPage />} />
