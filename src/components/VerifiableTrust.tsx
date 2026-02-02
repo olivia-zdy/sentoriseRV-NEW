@@ -137,7 +137,7 @@ const VerifiableTrust = () => {
                   <CheckCircle2 className="w-4 h-4 text-primary mt-0.5" />
                   <div>
                     <span className="text-foreground font-medium">30-Day Returns</span>
-                    <p className="text-muted-foreground text-xs">Via Amazon, hassle-free</p>
+                    <p className="text-muted-foreground text-xs">Hassle-free, full refund</p>
                   </div>
                 </div>
                 <div className="pt-2 border-t">

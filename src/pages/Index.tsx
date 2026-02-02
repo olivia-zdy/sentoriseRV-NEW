@@ -6,7 +6,7 @@ import CoreValueModules from "@/components/CoreValueModules";
 import VerifiableTrust from "@/components/VerifiableTrust";
 import ProductMatrix from "@/components/ProductMatrix";
 import ShopifyProductGrid from "@/components/ShopifyProductGrid";
-import AmazonCTA from "@/components/AmazonCTA";
+
 import HomepageFAQ from "@/components/HomepageFAQ";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
@@ -70,12 +70,6 @@ const Index = () => {
           subtitle="All products in stock with fast EU shipping. Add to cart and checkout securely."
         />
         
-        {/* Amazon CTA: Prominent purchase path */}
-        <section className="section-padding">
-          <div className="container-custom max-w-4xl">
-            <AmazonCTA variant="prominent" />
-          </div>
-        </section>
         
         {/* FAQ: 4 key purchase decision questions */}
         <HomepageFAQ />
