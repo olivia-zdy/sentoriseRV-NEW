@@ -3,6 +3,7 @@ import { ArrowLeft, Check, X, Bluetooth, Flame, Trash2 } from "lucide-react";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageMeta from "@/components/PageMeta";
 import { Button } from "@/components/ui/button";
 import { useCompare } from "@/context/CompareContext";
 
@@ -57,6 +58,10 @@ const ComparePage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageMeta 
+        title="Compare Batteries | Sentorise"
+        description="Compare Sentorise LiFePO₄ battery specifications side by side. Find the best battery for your needs."
+      />
       <AnnouncementBar />
       <Header />
       <main>
@@ -115,7 +120,7 @@ const ComparePage = () => {
                             {product.series} Series
                           </p>
                           <Link
-                            to={`/products/${product.id}`}
+                            to={`/product/${product.id}`}
                             className="text-sm font-semibold text-foreground hover:text-primary transition-colors"
                           >
                             {product.name}
@@ -220,7 +225,7 @@ const ComparePage = () => {
                     {compareList.map((product) => (
                       <td key={product.id} className="p-4 text-center">
                         <Button asChild size="sm" className="w-full max-w-[160px]">
-                          <Link to={`/products/${product.id}`}>
+                          <Link to={`/product/${product.id}`}>
                             View Details
                           </Link>
                         </Button>

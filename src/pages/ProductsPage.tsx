@@ -180,29 +180,6 @@ const ProductsPage = () => {
               Low-temperature protection on all models. Bluetooth monitoring. 5-year warranty.
             </p>
             
-            {/* Filter Toggle - Mobile */}
-            <div className="flex items-center justify-between md:hidden">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setShowFilters(!showFilters)}
-              >
-                <SlidersHorizontal className="w-4 h-4 mr-2" />
-                Filters
-              </Button>
-              <Select value={sortBy} onValueChange={(v) => setSortBy(v as SortOption)}>
-                <SelectTrigger className="w-[160px]">
-                  <SelectValue placeholder="Sort by" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="price-asc">Price: Low to High</SelectItem>
-                  <SelectItem value="price-desc">Price: High to Low</SelectItem>
-                  <SelectItem value="capacity-asc">Capacity: Small</SelectItem>
-                  <SelectItem value="capacity-desc">Capacity: Large</SelectItem>
-                  <SelectItem value="newest">Newest First</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
           </div>
         </section>
 
