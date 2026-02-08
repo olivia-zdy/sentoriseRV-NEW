@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Star, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { glassIconClassSm } from "@/lib/utils";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const testimonials = [
   {
@@ -74,9 +75,9 @@ const Testimonials = () => {
         {/* Testimonials Grid - 2 rows of 3 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {testimonials.map((testimonial, index) => (
+            <ScrollReveal key={index} delay={index * 0.08}>
             <div
-              key={index}
-              className="group p-6 md:p-8 bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-lg transition-all"
+              className="group p-6 md:p-8 bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-lg transition-all h-full"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-4">
@@ -107,6 +108,7 @@ const Testimonials = () => {
                 </div>
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
 

@@ -1,4 +1,5 @@
 import { Snowflake, Smartphone, ShieldCheck, AlertTriangle } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 // 3 core value modules following scenario-risk-solution-boundary structure
 const coreValues = [
@@ -50,10 +51,10 @@ const CoreValueModules = () => {
 
         {/* Value Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {coreValues.map((value) => (
+          {coreValues.map((value, index) => (
+            <ScrollReveal key={value.id} delay={index * 0.1}>
             <div
-              key={value.id}
-              className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors"
+              className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors h-full"
             >
               {/* Icon & Title */}
               <div className="flex items-center gap-3 mb-5">
@@ -108,6 +109,7 @@ const CoreValueModules = () => {
                 </div>
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

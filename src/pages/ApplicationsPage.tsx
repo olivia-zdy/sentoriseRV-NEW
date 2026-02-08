@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import PageMeta from "@/components/PageMeta";
 import PageTransition from "@/components/PageTransition";
+import ScrollReveal from "@/components/ScrollReveal";
+import FAQSchema from "@/components/SEO/FAQSchema";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Truck, Home, Ship, Sun, Tent, Car } from "lucide-react";
 import { glassIconClass } from "@/lib/utils";
@@ -117,6 +119,25 @@ const applications = [
   },
 ];
 
+const applicationFaqs = [
+  {
+    question: "Which battery size do I need for my RV?",
+    answer: "For weekend use with basic loads (lights, fridge, charging), 100Ah is sufficient. Full-time RV living with higher demands typically requires 200–400Ah. Use our battery selector for a personalized recommendation."
+  },
+  {
+    question: "Can I connect multiple batteries in parallel?",
+    answer: "Yes, Sentorise batteries support parallel connections to increase capacity. You can connect up to 4 batteries in parallel. All batteries should be the same model and state of charge when connecting."
+  },
+  {
+    question: "Are these batteries safe for indoor installation?",
+    answer: "Yes. LiFePO4 chemistry does not produce gas during normal operation and is the safest lithium battery type. All models include BMS protection against overcharge, over-discharge, and short circuits."
+  },
+  {
+    question: "What solar charge controller do I need?",
+    answer: "We recommend MPPT charge controllers for best efficiency. Sentorise batteries are compatible with Victron, EPEver, Renogy, and other major brands. Set the charging profile to LiFePO4 (14.4V charge, 13.8V float)."
+  }
+];
+
 type ApplicationFilter = "all" | "rv" | "vanlife" | "solar" | "marine" | "camping" | "cabin";
 
 const ApplicationsPage = () => {
@@ -132,6 +153,7 @@ const ApplicationsPage = () => {
         title="Applications | Sentorise LiFePO₄ Batteries"
         description="Discover the right Sentorise battery for your RV, van, off-grid solar, marine, or camping setup. Real-world application guides and product recommendations."
       />
+      <FAQSchema faqs={applicationFaqs} />
       <AnnouncementBar />
       <Header />
       <PageTransition>
@@ -185,11 +207,11 @@ const ApplicationsPage = () => {
         <section className="section-padding">
           <div className="container-custom">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredApplications.map((app) => (
+              {filteredApplications.map((app, index) => (
+                <ScrollReveal key={app.id} delay={index * 0.08}>
                 <a
-                  key={app.id}
                   href={`#${app.id}`}
-                  className="group relative aspect-[4/3] rounded-xl overflow-hidden"
+                  className="group relative aspect-[4/3] rounded-xl overflow-hidden block"
                 >
                   {/* Background Image */}
                   <img 
@@ -208,6 +230,7 @@ const ApplicationsPage = () => {
                     <p className="text-sm text-white/80">{app.tagline}</p>
                   </div>
                 </a>
+                </ScrollReveal>
               ))}
             </div>
           </div>
