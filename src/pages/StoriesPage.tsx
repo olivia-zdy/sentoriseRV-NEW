@@ -8,13 +8,13 @@ import { Star, ArrowRight, Quote } from "lucide-react";
 import { customerStories } from "@/data/customerStories";
 import { glassIconClass } from "@/lib/utils";
 
-// Import scene images for backgrounds
-import rvScene from "@/assets/product-rv-battery.jpg";
-import vanScene from "@/assets/product-portable.jpg";
-import solarScene from "@/assets/product-industrial.jpg";
-import marineScene from "@/assets/hero-battery.jpg";
-import campScene from "@/assets/product-portable.jpg";
-import cabinScene from "@/assets/product-wall-battery.jpg";
+// Import dedicated scene images
+import rvScene from "@/assets/scene-rv.jpg";
+import vanScene from "@/assets/scene-vanlife.jpg";
+import solarScene from "@/assets/scene-solar.jpg";
+import marineScene from "@/assets/scene-marine.jpg";
+import campScene from "@/assets/scene-camping.jpg";
+import cabinScene from "@/assets/scene-cabin.jpg";
 
 const sceneImages: Record<string, string> = {
   rv: rvScene,
