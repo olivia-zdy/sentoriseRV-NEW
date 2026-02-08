@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import PageMeta from "@/components/PageMeta";
+import PageTransition from "@/components/PageTransition";
 import { ArrowLeft, Calendar, Clock, User, Tag, Share2, List, ChevronRight } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
 import { Button } from "@/components/ui/button";
@@ -202,6 +203,7 @@ const BlogPostPage = () => {
       />
       <AnnouncementBar />
       <Header />
+      <PageTransition>
       <main>
         {/* Hero Image */}
         <div className="relative h-[40vh] md:h-[50vh] bg-muted overflow-hidden">
@@ -361,6 +363,7 @@ const BlogPostPage = () => {
 
         <Newsletter />
       </main>
+      </PageTransition>
       <Footer />
     </div>
   );

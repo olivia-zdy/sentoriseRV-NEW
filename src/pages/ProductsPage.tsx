@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import PageTransition from "@/components/PageTransition";
 import { Link, useSearchParams } from "react-router-dom";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
@@ -154,6 +155,7 @@ const ProductsPage = () => {
     <div className="min-h-screen bg-background">
       <AnnouncementBar />
       <Header />
+      <PageTransition>
       <main>
         {/* Hero Section - Above the Fold Clarity */}
         <section className="py-10 md:py-14 bg-muted/50 border-b border-border">
@@ -355,6 +357,7 @@ const ProductsPage = () => {
           </div>
         </section>
       </main>
+      </PageTransition>
       <Footer />
     </div>
   );

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PageTransition from "@/components/PageTransition";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -15,6 +16,7 @@ const BatterySelectorPage = () => {
       />
       <AnnouncementBar />
       <Header />
+      <PageTransition>
       <main className="section-padding">
         <div className="container-custom max-w-4xl">
           {/* Back Link */}
@@ -43,6 +45,7 @@ const BatterySelectorPage = () => {
           <BatterySelector />
         </div>
       </main>
+      </PageTransition>
       <Footer />
     </div>
   );

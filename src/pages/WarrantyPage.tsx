@@ -1,3 +1,4 @@
+import PageTransition from "@/components/PageTransition";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -17,6 +18,7 @@ const WarrantyPage = () => {
       <AnnouncementBar />
       <Header />
       
+      <PageTransition>
       <main>
         {/* Hero Section */}
         <section className="bg-gradient-to-b from-primary/5 to-background py-16 md:py-24">
@@ -172,6 +174,7 @@ const WarrantyPage = () => {
           </div>
         </section>
       </main>
+      </PageTransition>
       
       <Footer />
     </div>

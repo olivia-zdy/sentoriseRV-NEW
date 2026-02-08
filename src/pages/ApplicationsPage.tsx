@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import PageMeta from "@/components/PageMeta";
+import PageTransition from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Truck, Home, Ship, Sun, Tent, Car } from "lucide-react";
 import { glassIconClass } from "@/lib/utils";
@@ -133,6 +134,7 @@ const ApplicationsPage = () => {
       />
       <AnnouncementBar />
       <Header />
+      <PageTransition>
       <main>
         {/* Hero Section */}
         <section className="py-12 md:py-16 bg-muted/50 border-b border-border">
@@ -267,6 +269,7 @@ const ApplicationsPage = () => {
 
         <Newsletter />
       </main>
+      </PageTransition>
       <Footer />
     </div>
   );

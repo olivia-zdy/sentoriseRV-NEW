@@ -4,6 +4,7 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageMeta from "@/components/PageMeta";
+import PageTransition from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
 import { useCompare } from "@/context/CompareContext";
 
@@ -64,6 +65,7 @@ const ComparePage = () => {
       />
       <AnnouncementBar />
       <Header />
+      <PageTransition>
       <main>
         {/* Header */}
         <section className="py-8 bg-muted/50 border-b border-border">
@@ -238,6 +240,7 @@ const ComparePage = () => {
           </div>
         </section>
       </main>
+      </PageTransition>
       <Footer />
     </div>
   );

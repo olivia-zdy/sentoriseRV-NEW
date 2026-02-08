@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PageTransition from "@/components/PageTransition";
 import { Link, useParams } from "react-router-dom";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
@@ -172,6 +173,7 @@ const ProductDetailPage = () => {
 
       <AnnouncementBar />
       <Header />
+      <PageTransition>
       <main>
         {/* Breadcrumb */}
         <section className="py-4 border-b border-border bg-muted/30">
@@ -581,6 +583,7 @@ const ProductDetailPage = () => {
           </section>
         )}
       </main>
+      </PageTransition>
       <Footer />
 
       {/* Quote Request Modal */}
