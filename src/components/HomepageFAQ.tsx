@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 import {
   Accordion,
   AccordionContent,
@@ -47,6 +48,7 @@ const HomepageFAQ = () => {
           </div>
 
           {/* FAQ Accordion */}
+          <ScrollReveal>
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq) => (
               <AccordionItem
@@ -63,6 +65,7 @@ const HomepageFAQ = () => {
               </AccordionItem>
             ))}
           </Accordion>
+          </ScrollReveal>
 
           {/* Link to Full Support */}
           <div className="text-center mt-8">

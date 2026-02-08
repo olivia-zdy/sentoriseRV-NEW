@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ScrollReveal from "@/components/ScrollReveal";
 
 // Simplified product matrix entry for quick capacity selection
 const capacityOptions = [
@@ -46,7 +47,8 @@ const ProductMatrix = () => {
 
         {/* Capacity Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {capacityOptions.map((option) => (
+          {capacityOptions.map((option, index) => (
+            <ScrollReveal key={option.capacity} delay={index * 0.1}>
             <Link
               key={option.capacity}
               to={`/product/${option.productId}`}
@@ -86,6 +88,7 @@ const ProductMatrix = () => {
                 <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>
+            </ScrollReveal>
           ))}
         </div>
 

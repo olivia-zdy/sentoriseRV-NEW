@@ -2,6 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Loader2 } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -49,6 +50,7 @@ const Newsletter = () => {
   return (
     <section className="section-padding bg-primary">
       <div className="container-custom">
+        <ScrollReveal>
         <div className="max-w-3xl mx-auto text-center">
           <Mail className="w-12 h-12 text-primary-foreground/80 mx-auto mb-6" />
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
@@ -93,6 +95,7 @@ const Newsletter = () => {
             No spam. Unsubscribe at any time.
           </p>
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

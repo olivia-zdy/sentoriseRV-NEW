@@ -9,6 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import ScrollReveal from "@/components/ScrollReveal";
 import { 
   Shield, 
   Clock, 
@@ -83,7 +84,8 @@ const VerifiableTrust = () => {
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             
             {/* Pillar 1: Contact & SLA */}
-            <div className="bg-card rounded-xl border p-6">
+            <ScrollReveal delay={0}>
+            <div className="bg-card rounded-xl border p-6 h-full">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Clock className="w-6 h-6 text-primary" />
               </div>
@@ -117,8 +119,11 @@ const VerifiableTrust = () => {
               </div>
             </div>
 
+            </ScrollReveal>
+
             {/* Pillar 2: Warranty & Returns */}
-            <div className="bg-card rounded-xl border p-6">
+            <ScrollReveal delay={0.1}>
+            <div className="bg-card rounded-xl border p-6 h-full">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Shield className="w-6 h-6 text-primary" />
               </div>
@@ -156,8 +161,11 @@ const VerifiableTrust = () => {
               </div>
             </div>
 
+            </ScrollReveal>
+
             {/* Pillar 3: Certifications */}
-            <div className="bg-card rounded-xl border p-6">
+            <ScrollReveal delay={0.2}>
+            <div className="bg-card rounded-xl border p-6 h-full">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <FileCheck className="w-6 h-6 text-primary" />
               </div>
@@ -202,9 +210,12 @@ const VerifiableTrust = () => {
                 </Button>
               </div>
             </div>
+
+            </ScrollReveal>
           </div>
 
           {/* Company Info Bar */}
+          <ScrollReveal>
           <div className="bg-card rounded-xl border p-4">
             <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-muted-foreground">
               <span className="flex items-center gap-2">
@@ -219,6 +230,7 @@ const VerifiableTrust = () => {
               </a>
             </div>
           </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import PageMeta from "@/components/PageMeta";
 import PageTransition from "@/components/PageTransition";
+import ArticleSchema from "@/components/SEO/ArticleSchema";
+import BreadcrumbSchema from "@/components/SEO/BreadcrumbSchema";
 import { ArrowLeft, Calendar, Clock, User, Tag, Share2, List, ChevronRight } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
 import { Button } from "@/components/ui/button";
@@ -200,7 +202,21 @@ const BlogPostPage = () => {
       <PageMeta
         title={`${post.title} | Sentorise Blog`}
         description={post.excerpt}
+        canonical={`/blog/${post.id}`}
+        ogType="article"
       />
+      <ArticleSchema
+        title={post.title}
+        description={post.excerpt}
+        author={post.author}
+        datePublished={post.date}
+        url={`/blog/${post.id}`}
+      />
+      <BreadcrumbSchema items={[
+        { name: "Home", url: "https://sentorise.lovable.app/" },
+        { name: "Blog", url: "https://sentorise.lovable.app/blog" },
+        { name: post.title, url: `https://sentorise.lovable.app/blog/${post.id}` }
+      ]} />
       <AnnouncementBar />
       <Header />
       <PageTransition>
