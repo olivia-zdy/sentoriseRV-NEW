@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageMeta from "@/components/PageMeta";
 import { Button } from "@/components/ui/button";
 import { Star, ArrowRight, Quote } from "lucide-react";
 import { customerStories } from "@/data/customerStories";
@@ -27,6 +28,10 @@ const sceneImages: Record<string, string> = {
 const StoriesPage = () => {
   return (
     <div className="min-h-screen bg-background">
+      <PageMeta 
+        title="Customer Stories | Sentorise"
+        description="Discover how adventurers across Europe power their journeys with Sentorise LiFePO₄ batteries. Real stories from RV, van life, solar, and marine users."
+      />
       <AnnouncementBar />
       <Header />
       <main>

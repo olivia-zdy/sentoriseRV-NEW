@@ -4,6 +4,7 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
+import PageMeta from "@/components/PageMeta";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Truck, Home, Ship, Sun, Tent, Car } from "lucide-react";
 import { glassIconClass } from "@/lib/utils";
@@ -126,6 +127,10 @@ const ApplicationsPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageMeta 
+        title="Applications | Sentorise LiFePO₄ Batteries"
+        description="Discover the right Sentorise battery for your RV, van, off-grid solar, marine, or camping setup. Real-world application guides and product recommendations."
+      />
       <AnnouncementBar />
       <Header />
       <main>

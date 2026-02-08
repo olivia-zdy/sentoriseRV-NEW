@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageMeta from "@/components/PageMeta";
@@ -152,6 +153,7 @@ const BluetoothGuidePage = () => {
         title="Bluetooth Monitoring Guide" 
         description="Complete guide to setting up and using Bluetooth monitoring on your Sentorise LiFePO₄ battery. 5-step setup, troubleshooting, and app features." 
       />
+      <AnnouncementBar />
       <Header />
       
       <main>

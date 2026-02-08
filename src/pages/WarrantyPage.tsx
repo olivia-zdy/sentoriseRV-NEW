@@ -1,3 +1,4 @@
+import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageMeta from "@/components/PageMeta";
@@ -13,6 +14,7 @@ const WarrantyPage = () => {
         title="Register Your 5-Year Warranty" 
         description="Register your Sentorise LiFePO₄ battery for 5 years of comprehensive warranty coverage. Quick and easy online registration." 
       />
+      <AnnouncementBar />
       <Header />
       
       <main>
