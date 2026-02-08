@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PageTransition from "@/components/PageTransition";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -93,6 +94,7 @@ const WhySentorisePage = () => {
       />
       <AnnouncementBar />
       <Header />
+      <PageTransition>
       <main>
         {/* Hero Section with Background Image */}
         <section className="relative py-20 md:py-32 overflow-hidden">
@@ -293,6 +295,7 @@ const WhySentorisePage = () => {
 
         <Newsletter />
       </main>
+      </PageTransition>
       <Footer />
     </div>
   );

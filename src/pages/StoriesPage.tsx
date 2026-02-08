@@ -3,6 +3,7 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageMeta from "@/components/PageMeta";
+import PageTransition from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
 import { Star, ArrowRight, Quote } from "lucide-react";
 import { customerStories } from "@/data/customerStories";
@@ -34,6 +35,7 @@ const StoriesPage = () => {
       />
       <AnnouncementBar />
       <Header />
+      <PageTransition>
       <main>
         {/* Hero Section */}
         <section className="py-12 md:py-16 bg-muted/50 border-b border-border">
@@ -200,6 +202,7 @@ const StoriesPage = () => {
           </div>
         </section>
       </main>
+      </PageTransition>
       <Footer />
     </div>
   );

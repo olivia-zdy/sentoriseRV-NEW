@@ -8,6 +8,7 @@ import PageMeta from "@/components/PageMeta";
 import { ArrowRight, Calendar, Clock, Tag, Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { blogPosts, categories, allTags } from "@/data/blogPosts";
 import { Input } from "@/components/ui/input";
+import PageTransition from "@/components/PageTransition";
 
 const POSTS_PER_PAGE = 6;
 
@@ -78,6 +79,7 @@ const BlogPage = () => {
       />
       <AnnouncementBar />
       <Header />
+      <PageTransition>
       <main>
         {/* Hero Section */}
         <section className="py-12 md:py-16 bg-muted/50 border-b border-border">
@@ -328,6 +330,7 @@ const BlogPage = () => {
 
         <Newsletter />
       </main>
+      </PageTransition>
       <Footer />
     </div>
   );

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PageTransition from "@/components/PageTransition";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -108,6 +109,7 @@ const SupportPage = () => {
       />
       <AnnouncementBar />
       <Header />
+      <PageTransition>
       <main>
         {/* Hero Section */}
         <section className="py-12 md:py-16 bg-muted/50 border-b border-border">
@@ -289,6 +291,7 @@ const SupportPage = () => {
           </div>
         </section>
       </main>
+      </PageTransition>
       <Footer />
     </div>
   );

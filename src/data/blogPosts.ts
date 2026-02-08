@@ -1,12 +1,12 @@
-// Import real images
-import heroImage from "@/assets/hero-battery.jpg";
-import rvImage from "@/assets/product-rv-battery.jpg";
-import portableImage from "@/assets/product-portable.jpg";
-import wallImage from "@/assets/product-wall-battery.jpg";
-import industrialImage from "@/assets/product-industrial.jpg";
-import product100ahStd from "@/assets/product-100ah-std.png";
-import product200ahHeated from "@/assets/product-200ah-heated.png";
-import heroMarine from "@/assets/hero-marine.jpg";
+// Import dedicated blog cover images
+import blogRvGuide from "@/assets/blog-rv-guide.jpg";
+import blogWinterCamping from "@/assets/blog-winter-camping.jpg";
+import blogSolarSystem from "@/assets/blog-solar-system.jpg";
+import blogBatteryComparison from "@/assets/blog-battery-comparison.jpg";
+import blogBmsTechnology from "@/assets/blog-bms-technology.jpg";
+import blogVanlifeBuilds from "@/assets/blog-vanlife-builds.jpg";
+import blogMarineInstall from "@/assets/blog-marine-install.jpg";
+import blogChargingTips from "@/assets/blog-charging-tips.jpg";
 
 export interface BlogPost {
   id: string;
@@ -69,7 +69,7 @@ For most RV applications, we recommend starting with a 100Ah battery for basic n
     author: "Sentorise Team",
     date: "2025-01-15",
     readTime: 8,
-    image: rvImage,
+    image: blogRvGuide,
     featured: true,
   },
   {
@@ -112,7 +112,7 @@ Charging a lithium battery below freezing can cause lithium plating on the anode
     author: "Technical Team",
     date: "2025-01-10",
     readTime: 5,
-    image: product200ahHeated,
+    image: blogWinterCamping,
   },
   {
     id: "3",
@@ -170,7 +170,7 @@ Example: 700Wh ÷ 4h × 1.25 = 220W of solar panels
     author: "Sentorise Team",
     date: "2025-01-05",
     readTime: 10,
-    image: wallImage,
+    image: blogSolarSystem,
   },
   {
     id: "4",
@@ -223,7 +223,7 @@ If you're upgrading from lead-acid to LiFePO4, you may need to update your charg
     author: "Technical Team",
     date: "2024-12-28",
     readTime: 7,
-    image: heroImage,
+    image: blogBatteryComparison,
   },
   {
     id: "5",
@@ -278,7 +278,7 @@ Sentorise batteries include a 100A continuous BMS with:
     author: "Technical Team",
     date: "2024-12-20",
     readTime: 6,
-    image: product100ahStd,
+    image: blogBmsTechnology,
   },
   {
     id: "6",
@@ -340,7 +340,7 @@ Have a Sentorise-powered van? We'd love to feature your build. Contact us with p
     author: "Community",
     date: "2024-12-15",
     readTime: 12,
-    image: portableImage,
+    image: blogVanlifeBuilds,
   },
   {
     id: "7",
@@ -393,7 +393,7 @@ For marine use, we recommend our standard 100Ah or 200Ah batteries with their IP
     author: "Technical Team",
     date: "2024-12-10",
     readTime: 9,
-    image: heroMarine,
+    image: blogMarineInstall,
   },
   {
     id: "8",
@@ -449,7 +449,7 @@ With good practices, expect:
     author: "Sentorise Team",
     date: "2024-12-05",
     readTime: 5,
-    image: wallImage,
+    image: blogChargingTips,
   },
 ];
 

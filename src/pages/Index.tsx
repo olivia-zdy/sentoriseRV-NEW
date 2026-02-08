@@ -1,3 +1,4 @@
+import PageTransition from "@/components/PageTransition";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -48,6 +49,7 @@ const Index = () => {
       
       <AnnouncementBar />
       <Header />
+      <PageTransition>
       <main>
         {/* Hero: Category + Differentiator + CTAs */}
         <Hero />
@@ -80,6 +82,7 @@ const Index = () => {
         {/* Conversion */}
         <Newsletter />
       </main>
+      </PageTransition>
       <Footer />
       <BackToTop />
     </div>
