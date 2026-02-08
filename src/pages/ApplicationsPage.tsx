@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import Newsletter from "@/components/Newsletter";
 import PageMeta from "@/components/PageMeta";
 import PageTransition from "@/components/PageTransition";
@@ -289,6 +295,43 @@ const ApplicationsPage = () => {
             </div>
           </section>
         ))}
+
+        {/* FAQ Section */}
+        <section className="section-padding bg-background">
+          <div className="container-custom">
+            <div className="max-w-3xl mx-auto">
+              <ScrollReveal>
+              <div className="text-center mb-10">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+                  Application FAQs
+                </h2>
+                <p className="text-muted-foreground">
+                  Common questions about choosing and using batteries for your setup.
+                </p>
+              </div>
+              </ScrollReveal>
+
+              <ScrollReveal>
+              <Accordion type="single" collapsible className="space-y-3">
+                {applicationFaqs.map((faq, index) => (
+                  <AccordionItem
+                    key={index}
+                    value={`faq-${index}`}
+                    className="border border-border rounded-lg px-6 bg-card"
+                  >
+                    <AccordionTrigger className="text-left text-foreground hover:text-primary hover:no-underline py-4">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground pb-4 leading-relaxed">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
 
         <Newsletter />
       </main>
