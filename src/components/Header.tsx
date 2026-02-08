@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+// Mega menu navigation - rebuilt
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Search, ChevronDown } from "lucide-react";
 import { useTheme } from "next-themes";
