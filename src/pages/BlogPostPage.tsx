@@ -10,6 +10,7 @@ import ArticleSchema from "@/components/SEO/ArticleSchema";
 import BreadcrumbSchema from "@/components/SEO/BreadcrumbSchema";
 import { ArrowLeft, Calendar, Clock, User, Tag, Share2, List, ChevronRight } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
+import BlogProductRecommendations from "@/components/BlogProductRecommendations";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -325,6 +326,9 @@ const BlogPostPage = () => {
                   </Link>
                 ))}
               </div>
+
+              {/* Product Recommendations for Engineering articles */}
+              <BlogProductRecommendations tags={post.tags} category={post.category} />
 
               {/* Back Link */}
               <div className="mb-12">
