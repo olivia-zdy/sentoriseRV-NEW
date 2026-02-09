@@ -5,6 +5,7 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageMeta from "@/components/PageMeta";
+import ProductSchema from "@/components/SEO/ProductSchema";
 import { getAccessoryBySlug, accessoryProducts } from "@/data/accessories";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -58,6 +59,17 @@ const AccessoryDetailPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageMeta title={product.seoTitle} description={product.seoDescription} />
+      <ProductSchema
+        name={product.name}
+        description={product.description}
+        image={product.image}
+        sku={product.id}
+        price={product.price}
+        salePrice={product.salePrice}
+        inStock={product.inStock}
+        url={`https://sentorise.lovable.app/accessory/${product.slug}`}
+        category="Battery Accessories"
+      />
       <BreadcrumbSchema items={breadcrumbs} />
       <AnnouncementBar />
       <Header />
