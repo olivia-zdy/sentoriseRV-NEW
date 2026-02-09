@@ -8,6 +8,18 @@ import blogVanlifeBuilds from "@/assets/blog-vanlife-builds.jpg";
 import blogMarineInstall from "@/assets/blog-marine-install.jpg";
 import blogChargingTips from "@/assets/blog-charging-tips.jpg";
 
+// Engineering article cover images
+import blogEngColdWeather from "@/assets/blog-eng-cold-weather.jpg";
+import blogEngParallelBalance from "@/assets/blog-eng-parallel-balance.jpg";
+import blogEngVoltageUpgrade from "@/assets/blog-eng-voltage-upgrade.jpg";
+import blogEngInverterMatch from "@/assets/blog-eng-inverter-match.jpg";
+import blogEngMarineCorrosion from "@/assets/blog-eng-marine-corrosion.jpg";
+import blogEngMultiSource from "@/assets/blog-eng-multi-source.jpg";
+import blogEngHighCurrent from "@/assets/blog-eng-high-current.jpg";
+import blogEngStorageAging from "@/assets/blog-eng-storage-aging.jpg";
+import blogEngRandomShutdown from "@/assets/blog-eng-random-shutdown.jpg";
+import blogEngBluetoothData from "@/assets/blog-eng-bluetooth-data.jpg";
+
 export interface BlogPost {
   id: string;
   title: string;
@@ -521,7 +533,7 @@ If your winter use case involves loads over 1000W, you need to plan for cold-wea
     author: "Technical Team",
     date: "2025-02-08",
     readTime: 10,
-    image: blogWinterCamping,
+    image: blogEngColdWeather,
     featured: true,
   },
   {
@@ -597,7 +609,7 @@ The short answer: not recommended. The engineering answer: possible with constra
     author: "Technical Team",
     date: "2025-02-06",
     readTime: 11,
-    image: blogBmsTechnology,
+    image: blogEngParallelBalance,
   },
   {
     id: "11",
@@ -662,7 +674,7 @@ For 90% of RV and small marine applications, a well-designed 12V system with pro
     author: "Technical Team",
     date: "2025-02-04",
     readTime: 9,
-    image: blogSolarSystem,
+    image: blogEngVoltageUpgrade,
   },
   {
     id: "12",
@@ -742,7 +754,7 @@ These assume 12V systems. At 24V, current is halved and requirements are more ma
     author: "Technical Team",
     date: "2025-02-02",
     readTime: 12,
-    image: blogBatteryComparison,
+    image: blogEngInverterMatch,
     featured: true,
   },
   {
@@ -821,7 +833,7 @@ The power MOSFETs in the BMS are the main current-carrying switches. In marine e
     author: "Technical Team",
     date: "2025-01-30",
     readTime: 11,
-    image: blogMarineInstall,
+    image: blogEngMarineCorrosion,
   },
   {
     id: "14",
@@ -901,7 +913,7 @@ Shore Power → AC-DC Charger ─────────┘
     author: "Technical Team",
     date: "2025-01-28",
     readTime: 10,
-    image: blogChargingTips,
+    image: blogEngMultiSource,
   },
   {
     id: "15",
@@ -979,7 +991,7 @@ So a battery rated for 4000 cycles might deliver 3000–3600 cycles under regula
     author: "Technical Team",
     date: "2025-01-25",
     readTime: 10,
-    image: blogBatteryComparison,
+    image: blogEngHighCurrent,
   },
   {
     id: "16",
@@ -1070,7 +1082,7 @@ LiFePO₄ is exceptionally tolerant compared to other lithium chemistries — NM
     author: "Technical Team",
     date: "2025-01-22",
     readTime: 9,
-    image: blogChargingTips,
+    image: blogEngStorageAging,
   },
   {
     id: "17",
@@ -1168,7 +1180,7 @@ Blade fuses and ANL fuses rely on spring contact pressure. Over time:
     author: "Technical Team",
     date: "2025-01-20",
     readTime: 13,
-    image: blogRvGuide,
+    image: blogEngRandomShutdown,
   },
   {
     id: "18",
@@ -1261,7 +1273,7 @@ Only BMS systems with cell-level Bluetooth reporting (like those showing individ
     author: "Technical Team",
     date: "2025-01-18",
     readTime: 11,
-    image: blogBmsTechnology,
+    image: blogEngBluetoothData,
   },
 ];
 
