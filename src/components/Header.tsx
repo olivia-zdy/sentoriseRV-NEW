@@ -197,6 +197,8 @@ const Header = () => {
             <img 
               src={logoSrc} 
               alt="Sentorise" 
+              width={138}
+              height={40}
               className="h-8 md:h-10 w-auto"
             />
           </Link>
