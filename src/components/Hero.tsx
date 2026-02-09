@@ -47,9 +47,11 @@ const Hero = () => {
     setCurrentSlide(index);
   }, [currentSlide]);
 
-  const scrollToContent = () => {
-    window.scrollTo({ top: window.innerHeight * 0.9, behavior: 'smooth' });
-  };
+  const scrollToContent = useCallback(() => {
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: window.innerHeight * 0.9, behavior: 'smooth' });
+    });
+  }, []);
 
   const key = sceneKeys[currentSlide];
   const trustKeys = sceneTrustPointKeys[key];
@@ -172,7 +174,7 @@ const Hero = () => {
                 aria-label={`Go to ${sceneAlts[index]}`}
               >
                 {index === currentSlide && (
-                  <motion.div className="absolute inset-0 bg-primary rounded-full" layoutId="activeSlide" transition={{ type: "spring", stiffness: 380, damping: 30 }} />
+                  <span className="absolute inset-0 bg-primary rounded-full animate-in fade-in duration-300" />
                 )}
               </button>
             ))}
