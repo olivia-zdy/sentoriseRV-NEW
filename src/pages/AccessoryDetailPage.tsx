@@ -109,8 +109,13 @@ const AccessoryDetailPage = () => {
                     {/* Price & Status */}
                     <div className="flex items-center gap-4 mb-6">
                       <span className="text-3xl font-bold text-primary">
-                        €{product.price.toFixed(2)}
+                        €{(product.salePrice ?? product.price).toFixed(2)}
                       </span>
+                      {product.salePrice && (
+                        <span className="text-lg text-muted-foreground line-through">
+                          €{product.price.toFixed(2)}
+                        </span>
+                      )}
                       {product.preOrder ? (
                         <div className="flex items-center gap-2 text-sm bg-primary/10 text-primary px-3 py-1.5 rounded-lg">
                           <Clock className="w-4 h-4" />
