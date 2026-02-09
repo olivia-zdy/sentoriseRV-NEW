@@ -6,7 +6,7 @@ const AnnouncementBar = () => {
   const { t } = useTranslation();
   const { market, formatPrice } = useMarket();
 
-  const freeShippingThreshold = 500; // EUR base
+  const freeShippingThreshold = 199; // EUR base
   const formattedThreshold = formatPrice(freeShippingThreshold);
 
   const languageLabels: Record<string, string> = {
