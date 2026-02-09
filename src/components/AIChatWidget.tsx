@@ -29,10 +29,12 @@ const AIChatWidget = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    requestAnimationFrame(() => {
-      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    });
-  }, [messages]);
+    if (isOpen) {
+      requestAnimationFrame(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+      });
+    }
+  }, [messages, isOpen]);
 
   const sendMessage = async () => {
     const trimmed = input.trim();
