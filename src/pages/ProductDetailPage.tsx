@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PageTransition from "@/components/PageTransition";
 import { Link, useParams } from "react-router-dom";
 import AnnouncementBar from "@/components/AnnouncementBar";
@@ -7,7 +7,6 @@ import Footer from "@/components/Footer";
 import ProductGallery from "@/components/ProductGallery";
 import ServicePromises from "@/components/ServicePromises";
 import ShareButtons from "@/components/ShareButtons";
-import QuoteRequestModal from "@/components/QuoteRequestModal";
 import PageMeta from "@/components/PageMeta";
 import StockStatus from "@/components/StockStatus";
 import ProductSchema from "@/components/SEO/ProductSchema";
@@ -42,8 +41,12 @@ import {
   ChevronRight,
   Snowflake,
   AlertTriangle,
-  Info
+  Info,
+  ShoppingCart,
+  Loader2
 } from "lucide-react";
+import { fetchProductByHandle } from "@/lib/shopify";
+import { useCartStore, ShopifyProduct } from "@/stores/cartStore";
 
 // Generate suitable/unsuitable based on product characteristics
 const getSuitabilityInfo = (product: ReturnType<typeof getProductById>) => {
@@ -98,13 +101,38 @@ const getJudgmentSentence = (product: ReturnType<typeof getProductById>) => {
   }
   return "Reliable 12V LiFePO₄ power with smart BMS protection.";
 };
+// Map static product IDs to Shopify handles
+const productToShopifyHandle: Record<string, string> = {
+  "lite-12v6": "lite-12v-6ah-ultra-compact-lifepo4",
+  "lite-12v50": "lite-12v-50ah-lightweight-lifepo4",
+  "core-12v100-std": "core-12v-100ah-standard-lifepo4",
+  "core-12v100-mini": "core-12v-100ah-mini-lifepo4",
+  "core-12v100-din": "core-12v-100ah-din-h8-lifepo4",
+  "plus-12v200-heated": "plus-12v-200ah-heated-lifepo4",
+};
 
 const ProductDetailPage = () => {
   const { productId } = useParams();
-  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const [isAdding, setIsAdding] = useState(false);
+  const [shopifyVariantId, setShopifyVariantId] = useState<string | null>(null);
+  const [shopifyProduct, setShopifyProduct] = useState<ShopifyProduct | null>(null);
+  const addItem = useCartStore(state => state.addItem);
   
   const product = getProductById(productId || "");
   const certifications = getCertificationsForProduct(productId || "");
+
+  // Fetch Shopify product for Add to Cart
+  useEffect(() => {
+    const handle = productToShopifyHandle[productId || ""];
+    if (!handle) return;
+    fetchProductByHandle(handle).then(sp => {
+      if (sp) {
+        const variant = sp.variants?.edges?.[0]?.node;
+        if (variant) setShopifyVariantId(variant.id);
+        setShopifyProduct({ node: sp });
+      }
+    });
+  }, [productId]);
 
   if (!product) {
     return (
@@ -135,6 +163,30 @@ const ProductDetailPage = () => {
   const relatedProducts = products
     .filter(p => p.series === product.series && p.id !== product.id)
     .slice(0, 3);
+
+  const handleAddToCart = async () => {
+    if (!shopifyVariantId || !shopifyProduct) {
+      toast.error("This product is not available for purchase yet.");
+      return;
+    }
+    setIsAdding(true);
+    try {
+      const variant = shopifyProduct.node.variants.edges[0].node;
+      await addItem({
+        product: shopifyProduct,
+        variantId: shopifyVariantId,
+        variantTitle: variant.title,
+        price: variant.price,
+        quantity: 1,
+        selectedOptions: variant.selectedOptions || [],
+      });
+      toast.success(`${product.name} added to cart`);
+    } catch {
+      toast.error("Failed to add to cart");
+    } finally {
+      setIsAdding(false);
+    }
+  };
 
   const handleDatasheetClick = () => {
     toast.info("Datasheet will be available soon. Contact us for specifications.");
@@ -279,8 +331,12 @@ const ProductDetailPage = () => {
 
                 {/* CTAs */}
                 <div className="flex flex-wrap gap-3 mb-6">
-                  <Button size="lg" onClick={() => setQuoteModalOpen(true)} className="flex-1 sm:flex-none">
-                    Request Quote
+                  <Button size="lg" onClick={handleAddToCart} disabled={isAdding} className="flex-1 sm:flex-none">
+                    {isAdding ? (
+                      <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Adding...</>
+                    ) : (
+                      <><ShoppingCart className="w-4 h-4 mr-2" /> Add to Cart</>
+                    )}
                   </Button>
                   <Button variant="outline" size="lg" onClick={handleDatasheetClick}>
                     <Download className="w-4 h-4 mr-2" />
@@ -586,13 +642,6 @@ const ProductDetailPage = () => {
       </PageTransition>
       <Footer />
 
-      {/* Quote Request Modal */}
-      <QuoteRequestModal
-        open={quoteModalOpen}
-        onOpenChange={setQuoteModalOpen}
-        productId={product.id}
-        productName={product.name}
-      />
     </div>
   );
 };
