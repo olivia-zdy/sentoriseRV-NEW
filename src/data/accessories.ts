@@ -38,7 +38,8 @@ export const accessoryProducts: AccessoryProduct[] = [
     name: "20A LiFePO₄ Battery Charger",
     subtitle: "14.6V Fast Charging, Fully Potted & Water-Resistant Design",
     category: "charger",
-    price: 89.99,
+    price: 149.99,
+    salePrice: 109,
     image: charger20aImg,
     badge: "Pre-order",
     inStock: false,
@@ -165,7 +166,7 @@ export const accessoryProducts: AccessoryProduct[] = [
     name: "TR24 IP68 Battery Monitor",
     subtitle: "500A M8 Shunt | 8–100V | Bluetooth | High-Precision Coulomb Counter",
     category: "monitor",
-    price: 49.99,
+    price: 89.99,
     image: batteryMonitorTr24Img,
     inStock: true,
     description:

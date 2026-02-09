@@ -152,24 +152,9 @@ const Footer = () => {
             </div>
 
             {/* Warehouse Locations */}
-            <div className="space-y-3 text-xs text-muted-foreground">
+            <div className="space-y-2 text-xs text-muted-foreground">
               <p className="font-medium text-foreground text-sm">Warehouses</p>
-              <div>
-                <p className="font-medium text-foreground">🇩🇪 Germany</p>
-                <p>OYB EU GmbH</p>
-                <p>Auf der Struth 1, 61279 Grävenwiesbach</p>
-              </div>
-              <div>
-                <p className="font-medium text-foreground">🇵🇱 Poland</p>
-                <p>Generała Mikołaja Bołtucia 8</p>
-                <p>05-827 Grodzisk Mazowiecki</p>
-              </div>
-              <div>
-                <p className="font-medium text-foreground">🇬🇧 United Kingdom</p>
-                <p>Unit 1141, Space Station, Warstock Road</p>
-                <p>Kings Heath, Birmingham B14 4ST</p>
-                <p>Tel: 0121 430 7024 / 07577 472 388</p>
-              </div>
+              <p>🇩🇪 Germany · 🇵🇱 Poland · 🇬🇧 United Kingdom</p>
             </div>
 
             {/* Legal & Tax Registration - Collapsible */}
