@@ -56,10 +56,11 @@ const Hero = () => {
   const key = sceneKeys[currentSlide];
   const trustKeys = sceneTrustPointKeys[key];
 
+  // Use public path for first slide (LCP preload), Vite-bundled for others
+  const firstSlidePublicUrl = "/hero-rv-winter.jpg";
+
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-      <img src={sceneImages[0]} alt="" fetchPriority="high" aria-hidden="true" className="absolute w-0 h-0 opacity-0 pointer-events-none" />
-      
       <AnimatePresence initial={false} mode="wait">
         <motion.div 
           key={currentSlide}
@@ -69,7 +70,17 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="absolute inset-0"
         >
-          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${sceneImages[currentSlide]})` }} />
+          {currentSlide === 0 ? (
+            <img 
+              src={firstSlidePublicUrl} 
+              alt={sceneAlts[0]}
+              fetchPriority="high"
+              decoding="sync"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          ) : (
+            <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${sceneImages[currentSlide]})` }} />
+          )}
         </motion.div>
       </AnimatePresence>
       
