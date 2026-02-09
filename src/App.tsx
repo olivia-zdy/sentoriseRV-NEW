@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { CompareProvider } from "@/context/CompareContext";
+import { MarketProvider } from "@/context/MarketContext";
 import { useCartSync } from "@/hooks/useCartSync";
 import CompareBar from "@/components/CompareBar";
 import Index from "./pages/Index";
@@ -54,6 +55,7 @@ const App = () => (
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <TooltipProvider>
           <CompareProvider>
+            <MarketProvider>
             <CartSyncProvider>
               <Toaster />
               <Sonner />
@@ -93,6 +95,7 @@ const App = () => (
                 </Suspense>
               </BrowserRouter>
             </CartSyncProvider>
+            </MarketProvider>
           </CompareProvider>
         </TooltipProvider>
       </ThemeProvider>

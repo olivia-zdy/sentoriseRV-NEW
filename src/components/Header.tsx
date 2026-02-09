@@ -3,7 +3,9 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Search, ChevronDown } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useTranslation } from "react-i18next";
 import { ThemeToggle } from "./ThemeToggle";
+import { MarketSelector } from "./MarketSelector";
 import { Button } from "@/components/ui/button";
 import { CartDrawer } from "./CartDrawer";
 import {
@@ -158,33 +160,34 @@ const Header = () => {
   const megaTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
   const { resolvedTheme } = useTheme();
+  const { t } = useTranslation();
 
   const navLinks: NavLink[] = [
-    { name: "Home", href: "/", active: location.pathname === "/" },
+    { name: t('nav.home'), href: "/", active: location.pathname === "/" },
     { 
-      name: "Products", 
+      name: t('nav.products'), 
       href: "/products", 
       megaMenu: productsMegaMenu,
       active: location.pathname.startsWith("/products")
     },
     { 
-      name: "Applications", 
+      name: t('nav.applications'), 
       href: "/applications", 
       megaMenu: applicationsMegaMenu,
       active: location.pathname === "/applications"
     },
     { 
-      name: "Why Sentorise", 
+      name: t('nav.whySentorise'), 
       href: "/why-sentorise",
       active: location.pathname === "/why-sentorise"
     },
     { 
-      name: "Support", 
+      name: t('nav.support'), 
       href: "/support", 
       megaMenu: supportMegaMenu,
       active: location.pathname === "/support"
     },
-    { name: "Blog", href: "/blog", active: location.pathname.startsWith("/blog") },
+    { name: t('nav.blog'), href: "/blog", active: location.pathname.startsWith("/blog") },
   ];
 
   const logoSrc = resolvedTheme === "dark" ? logoDark : logoLight;
@@ -269,18 +272,20 @@ const Header = () => {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-2">
+            <MarketSelector />
             <Button variant="ghost" size="icon" className="rounded-full">
               <Search className="w-5 h-5" />
             </Button>
             <CartDrawer />
             <ThemeToggle />
             <Button asChild variant="default" size="sm" className="ml-2">
-              <Link to="/support#contact">Contact Us</Link>
+              <Link to="/support#contact">{t('nav.contactUs')}</Link>
             </Button>
           </div>
 
           {/* Mobile Actions */}
-          <div className="flex lg:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-1">
+            <MarketSelector />
             <ThemeToggle />
             <button
               className="p-2 text-foreground"
@@ -361,7 +366,7 @@ const Header = () => {
               ))}
               <div className="pt-4 mt-4 border-t border-border">
                 <Button asChild variant="default" className="w-full">
-                  <Link to="/support#contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
+                  <Link to="/support#contact" onClick={() => setIsMenuOpen(false)}>{t('nav.contactUs')}</Link>
                 </Button>
               </div>
             </div>
