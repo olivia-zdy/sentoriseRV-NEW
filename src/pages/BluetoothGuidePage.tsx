@@ -434,8 +434,8 @@ const BluetoothGuidePage = () => {
                 <div className="p-4 bg-card rounded-lg border text-left">
                   <Mail className="w-6 h-6 text-primary mb-2" />
                   <p className="font-semibold text-foreground">Email Support</p>
-                  <a href="mailto:support@sentorise.de" className="text-primary text-sm hover:underline">
-                    support@sentorise.de
+                  <a href="mailto:support@sentorise.com" className="text-primary text-sm hover:underline">
+                    support@sentorise.com
                   </a>
                   <p className="text-xs text-muted-foreground mt-1">Response: 24-48 hours</p>
                 </div>

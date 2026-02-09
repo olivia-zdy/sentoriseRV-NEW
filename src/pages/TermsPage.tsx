@@ -74,7 +74,7 @@ const TermsPage = () => {
               <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
                 <li>Product must be unused and in original packaging</li>
                 <li>Return must be initiated within 30 days of delivery</li>
-                <li>Contact support@sentorise.de to receive a return authorization number</li>
+                <li>Contact support@sentorise.com to receive a return authorization number</li>
               </ul>
               
               <h3 className="font-semibold text-foreground mb-2 mt-6">Return Shipping</h3>
