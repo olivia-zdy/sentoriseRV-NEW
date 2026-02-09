@@ -1,23 +1,25 @@
+import { lazy, Suspense } from "react";
 import PageTransition from "@/components/PageTransition";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrustBadges from "@/components/TrustBadges";
 import CoreValueModules from "@/components/CoreValueModules";
-import VerifiableTrust from "@/components/VerifiableTrust";
-import ProductMatrix from "@/components/ProductMatrix";
-import MediaCoverageBar from "@/components/MediaCoverageBar";
-import ShopifyProductGrid from "@/components/ShopifyProductGrid";
-import HomepageAccessories from "@/components/HomepageAccessories";
-
-import HomepageFAQ from "@/components/HomepageFAQ";
-import Testimonials from "@/components/Testimonials";
-import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import PageMeta from "@/components/PageMeta";
 import OrganizationSchema from "@/components/SEO/OrganizationSchema";
 import FAQSchema from "@/components/SEO/FAQSchema";
+
+// Lazy load below-the-fold sections to reduce initial JS bundle
+const VerifiableTrust = lazy(() => import("@/components/VerifiableTrust"));
+const ProductMatrix = lazy(() => import("@/components/ProductMatrix"));
+const ShopifyProductGrid = lazy(() => import("@/components/ShopifyProductGrid"));
+const HomepageAccessories = lazy(() => import("@/components/HomepageAccessories"));
+const HomepageFAQ = lazy(() => import("@/components/HomepageFAQ"));
+const MediaCoverageBar = lazy(() => import("@/components/MediaCoverageBar"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
+const Newsletter = lazy(() => import("@/components/Newsletter"));
 
 const homepageFaqs = [
   {
@@ -62,33 +64,20 @@ const Index = () => {
         {/* Core Values: 3 modules with scenario-risk-solution-boundary */}
         <CoreValueModules />
         
-        {/* Verifiable Trust: Contact SLA, Warranty, Certifications */}
-        <VerifiableTrust />
-        
-        {/* Product Matrix: Quick capacity selection */}
-        <ProductMatrix />
-        
-        {/* Shop: Live Shopify Products */}
-        <ShopifyProductGrid 
-          title="Shop Our Batteries"
-          subtitle="All products in stock with fast EU shipping. Add to cart and checkout securely."
-        />
-        
-        {/* Accessories */}
-        <HomepageAccessories />
-        
-
-        {/* FAQ: 4 key purchase decision questions */}
-        <HomepageFAQ />
-        
-        {/* Media Coverage */}
-        <MediaCoverageBar />
-        
-        {/* Social Proof */}
-        <Testimonials />
-        
-        {/* Conversion */}
-        <Newsletter />
+        {/* Below-the-fold sections lazy loaded to reduce initial JS */}
+        <Suspense fallback={<div className="min-h-[200px]" />}>
+          <VerifiableTrust />
+          <ProductMatrix />
+          <ShopifyProductGrid 
+            title="Shop Our Batteries"
+            subtitle="All products in stock with fast EU shipping. Add to cart and checkout securely."
+          />
+          <HomepageAccessories />
+          <HomepageFAQ />
+          <MediaCoverageBar />
+          <Testimonials />
+          <Newsletter />
+        </Suspense>
       </main>
       </PageTransition>
       <Footer />
