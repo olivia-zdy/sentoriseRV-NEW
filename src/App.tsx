@@ -23,6 +23,8 @@ const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
 const StoriesPage = lazy(() => import("./pages/StoriesPage"));
 const WhySentorisePage = lazy(() => import("./pages/WhySentorisePage"));
 const BatterySelectorPage = lazy(() => import("./pages/BatterySelectorPage"));
+const AccessoriesPage = lazy(() => import("./pages/AccessoriesPage"));
+const AccessoryDetailPage = lazy(() => import("./pages/AccessoryDetailPage"));
 const WarrantyPage = lazy(() => import("./pages/WarrantyPage"));
 const BluetoothGuidePage = lazy(() => import("./pages/BluetoothGuidePage"));
 const PrivacyPage = lazy(() => import("./pages/PrivacyPage"));
@@ -62,6 +64,8 @@ const App = () => (
                     <Route path="/products" element={<ProductsPage />} />
                     <Route path="/product/:productId" element={<ProductDetailPage />} />
                     <Route path="/shop/:handle" element={<ShopifyProductDetailPage />} />
+                    <Route path="/accessories" element={<AccessoriesPage />} />
+                    <Route path="/accessory/:slug" element={<AccessoryDetailPage />} />
                     <Route path="/compare" element={<ComparePage />} />
                     <Route path="/applications" element={<ApplicationsPage />} />
                     <Route path="/support" element={<SupportPage />} />

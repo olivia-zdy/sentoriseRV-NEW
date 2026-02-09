@@ -35,6 +35,14 @@ const productsMegaMenu = [
     ],
   },
   {
+    title: "Accessories",
+    items: [
+      { name: "Chargers", href: "/accessories" },
+      { name: "Battery Monitors", href: "/accessories" },
+      { name: "View All Accessories", href: "/accessories" },
+    ],
+  },
+  {
     title: "Tools",
     items: [
       { name: "Battery Selector", href: "/battery-selector" },
