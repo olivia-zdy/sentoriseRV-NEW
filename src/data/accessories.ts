@@ -1,5 +1,8 @@
 import charger20aImg from "@/assets/accessory-charger-20a.webp";
 import batteryMonitorTr24Img from "@/assets/accessory-battery-monitor-tr24.png";
+import andersonCableImg from "@/assets/accessory-anderson-cable.png";
+import anlFuseImg from "@/assets/accessory-anl-fuse.png";
+import terminalKitImg from "@/assets/accessory-terminal-kit.png";
 
 export interface AccessoryProduct {
   id: string;
@@ -266,8 +269,217 @@ export const accessoryProducts: AccessoryProduct[] = [
       "For high-current systems, use properly sized cables with secure crimped connections.",
     ],
   },
+  {
+    id: "SENT-CBL-SB50-SET",
+    slug: "anderson-sb50-cable-set",
+    name: "Anderson SB50 Cable Set",
+    subtitle: "50A Rated | 8 AWG | Red & Black Pair | Ring Terminals",
+    category: "cable",
+    price: 24.99,
+    image: andersonCableImg,
+    badge: "Pre-order",
+    inStock: false,
+    preOrder: true,
+    estimatedShipping: "March 2026",
+    description:
+      "Professional-grade Anderson SB50 cable set for connecting LiFePO₄ batteries to chargers, inverters, and other equipment. Features heavy-duty 8 AWG silicone wire with pre-crimped ring terminals for secure battery connections.",
+    keyFeatures: [
+      "50A Rated: Suitable for chargers, inverters, and solar controllers",
+      "8 AWG Silicone Wire: Flexible, heat-resistant, and durable",
+      "Pre-Crimped Ring Terminals: M8 ring terminals for direct battery connection",
+      "Color-Coded: Red (positive) and black (negative) for safe installation",
+      "Anderson SB50 Connector: Industry-standard quick-connect/disconnect",
+    ],
+    specifications: [
+      { label: "Connector Type", value: "Anderson SB50" },
+      { label: "Current Rating", value: "50A continuous" },
+      { label: "Wire Gauge", value: "8 AWG (8.4mm²)" },
+      { label: "Wire Type", value: "Silicone insulation" },
+      { label: "Terminal Type", value: "M8 ring terminal" },
+      { label: "Cable Length", value: "1.0m per cable" },
+      { label: "Voltage Rating", value: "600V" },
+      { label: "Temperature Range", value: "-40°C to 200°C" },
+      { label: "SKU", value: "SENT-CBL-SB50-SET" },
+    ],
+    sections: [
+      {
+        title: "Quick & Secure Connections",
+        content:
+          "The Anderson SB50 connector provides a reliable, genderless quick-connect system that prevents accidental reverse polarity. Simply plug in to connect your battery to chargers, inverters, or solar charge controllers.",
+      },
+      {
+        title: "Heavy-Duty Construction",
+        content:
+          "Built with 8 AWG silicone-insulated wire that stays flexible even in cold temperatures. The pre-crimped M8 ring terminals ensure a secure, low-resistance connection to your battery terminals.",
+      },
+    ],
+    applications: [
+      "Battery-to-charger connections",
+      "Battery-to-inverter wiring",
+      "Solar charge controller connections",
+      "Parallel battery bank wiring",
+    ],
+    packageContents: [
+      "Red Anderson SB50 cable with M8 ring terminal × 1",
+      "Black Anderson SB50 cable with M8 ring terminal × 1",
+    ],
+    faqs: [
+      {
+        question: "Can I use this cable set with any LiFePO₄ battery?",
+        answer: "Yes, the M8 ring terminals are compatible with all Sentorise batteries and most other LiFePO₄ batteries with M8 terminal posts.",
+      },
+      {
+        question: "Is 8 AWG sufficient for a 100Ah battery?",
+        answer: "Yes. 8 AWG supports up to 50A continuous, which is suitable for most charger and moderate inverter connections. For high-current inverter setups (>50A), use thicker gauge cables.",
+      },
+    ],
+    seoTitle: "Anderson SB50 Cable Set – 50A 8AWG Battery Cables | Sentorise",
+    seoDescription:
+      "Anderson SB50 cable set with 8 AWG silicone wire and M8 ring terminals. Quick-connect battery cables for LiFePO₄ chargers, inverters, and solar systems.",
+    compatibility: "Compatible with all Sentorise batteries and most 12V LiFePO₄ systems with M8 terminals.",
+  },
+  {
+    id: "SENT-FUSE-ANL-300A",
+    slug: "anl-fuse-holder-300a",
+    name: "ANL Fuse Holder + 300A Fuse",
+    subtitle: "Inline Protection | M8 Studs | Transparent Cover | IP54",
+    category: "protection",
+    price: 19.99,
+    image: anlFuseImg,
+    badge: "Pre-order",
+    inStock: false,
+    preOrder: true,
+    estimatedShipping: "March 2026",
+    description:
+      "Industrial-grade ANL fuse holder with included 300A fuse for protecting your LiFePO₄ battery system. Features a transparent protective cover for visual fuse inspection and M8 stud terminals for secure high-current connections.",
+    keyFeatures: [
+      "300A ANL Fuse Included: Pre-installed for immediate use",
+      "Transparent Cover: Visual inspection without disassembly",
+      "M8 Stud Terminals: Secure high-current bolt connections",
+      "IP54 Rated Housing: Dust and splash protection",
+      "Compact Inline Design: Easy installation in battery circuits",
+    ],
+    specifications: [
+      { label: "Fuse Type", value: "ANL (bolt-down)" },
+      { label: "Fuse Rating", value: "300A" },
+      { label: "Voltage Rating", value: "32V DC" },
+      { label: "Terminal Type", value: "M8 stud" },
+      { label: "Protection Rating", value: "IP54" },
+      { label: "Housing Material", value: "High-impact ABS" },
+      { label: "Cover", value: "Transparent polycarbonate" },
+      { label: "Wire Range", value: "Up to 2/0 AWG (70mm²)" },
+      { label: "SKU", value: "SENT-FUSE-ANL-300A" },
+    ],
+    sections: [
+      {
+        title: "Essential Circuit Protection",
+        content:
+          "An ANL fuse is a critical safety component in any battery system. It protects your wiring and equipment from overcurrent and short circuits by safely breaking the circuit before damage occurs.",
+      },
+      {
+        title: "Easy Visual Inspection",
+        content:
+          "The transparent polycarbonate cover allows you to visually verify fuse condition without removing the cover or disconnecting any wiring. A blown fuse is immediately visible.",
+      },
+    ],
+    applications: [
+      "Battery-to-inverter main fuse",
+      "Battery bank protection",
+      "High-current DC circuit protection",
+      "RV and marine electrical systems",
+    ],
+    packageContents: [
+      "ANL fuse holder with cover × 1",
+      "300A ANL fuse (pre-installed) × 1",
+      "M8 mounting hardware × 1 set",
+    ],
+    faqs: [
+      {
+        question: "Where should I install the ANL fuse?",
+        answer: "Install the fuse on the positive cable, as close to the battery positive terminal as possible. This protects the entire circuit downstream.",
+      },
+      {
+        question: "How do I choose the right fuse rating?",
+        answer: "The fuse should be rated slightly above your maximum expected current but below your cable's ampacity. 300A is suitable for most 200Ah battery systems with large inverters.",
+      },
+    ],
+    seoTitle: "ANL Fuse Holder + 300A Fuse – Battery Circuit Protection | Sentorise",
+    seoDescription:
+      "ANL fuse holder with 300A fuse for LiFePO₄ battery systems. IP54 rated, transparent cover, M8 stud terminals for RV, marine, and off-grid protection.",
+    compatibility: "Compatible with all 12V–32V DC battery systems. Recommended for 100Ah+ battery setups.",
+  },
+  {
+    id: "SENT-TERM-KIT-M8",
+    slug: "battery-terminal-kit",
+    name: "Battery Terminal Kit",
+    subtitle: "M8 Copper Lugs | Heat Shrink | Stainless Hardware | 6 Pairs",
+    category: "cable",
+    price: 14.99,
+    image: terminalKitImg,
+    inStock: false,
+    preOrder: true,
+    estimatedShipping: "March 2026",
+    badge: "Pre-order",
+    description:
+      "Complete battery terminal connection kit with tinned copper lugs, adhesive heat shrink tubing, and stainless steel hardware. Everything needed for professional, corrosion-resistant battery connections.",
+    keyFeatures: [
+      "Tinned Copper Lugs: Corrosion-resistant M8 ring terminals in multiple gauges",
+      "Adhesive Heat Shrink: Waterproof seal with built-in adhesive lining",
+      "Stainless Steel Hardware: M8 bolts, nuts, and spring washers included",
+      "Multi-Gauge Support: Terminals for 6, 8, 10, and 12 AWG cables",
+      "6 Pairs Included: Enough for a complete battery system setup",
+    ],
+    specifications: [
+      { label: "Terminal Type", value: "Tinned copper ring lug" },
+      { label: "Stud Size", value: "M8 (5/16\")" },
+      { label: "Wire Gauges", value: "6, 8, 10, 12 AWG" },
+      { label: "Terminal Quantity", value: "12 pcs (6 pairs)" },
+      { label: "Heat Shrink", value: "Adhesive-lined, 3:1 ratio" },
+      { label: "Hardware", value: "M8 × 16mm stainless bolts, nuts, washers" },
+      { label: "Material", value: "Tinned copper / SS304" },
+      { label: "SKU", value: "SENT-TERM-KIT-M8" },
+    ],
+    sections: [
+      {
+        title: "Professional-Grade Connections",
+        content:
+          "Tinned copper lugs provide excellent conductivity while resisting corrosion in humid and marine environments. The adhesive-lined heat shrink creates a waterproof seal around each connection.",
+      },
+      {
+        title: "Complete Kit",
+        content:
+          "Everything you need in one package: ring terminals in multiple gauges, color-coded heat shrink, and stainless steel fasteners. No separate hardware store visits required.",
+      },
+    ],
+    applications: [
+      "Battery terminal connections",
+      "Inverter and charger wiring",
+      "Bus bar connections",
+      "Solar charge controller wiring",
+    ],
+    packageContents: [
+      "Tinned copper ring terminals (assorted gauges) × 12",
+      "Adhesive heat shrink tubing (red & black) × 12",
+      "M8 × 16mm stainless bolts × 6",
+      "M8 stainless nylon-lock nuts × 6",
+      "M8 stainless spring washers × 6",
+    ],
+    faqs: [
+      {
+        question: "Do I need a crimping tool?",
+        answer: "Yes, a hydraulic or ratcheting cable crimper is recommended for a proper crimp. Pliers alone will not create a reliable connection.",
+      },
+      {
+        question: "Are these terminals compatible with Sentorise batteries?",
+        answer: "Yes. All Sentorise batteries use M8 terminal posts, and these lugs are designed to fit perfectly.",
+      },
+    ],
+    seoTitle: "Battery Terminal Kit – M8 Copper Lugs & Hardware | Sentorise",
+    seoDescription:
+      "Complete M8 battery terminal kit with tinned copper lugs, adhesive heat shrink, and stainless steel hardware for LiFePO₄ battery installations.",
+    compatibility: "Compatible with all M8 battery terminal posts including all Sentorise batteries.",
+  },
 ];
-
 export const getAccessoryBySlug = (slug: string): AccessoryProduct | undefined => {
   return accessoryProducts.find((a) => a.slug === slug);
 };

@@ -9,11 +9,13 @@ import { accessoryProducts } from "@/data/accessories";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Zap, Gauge, ArrowRight, Clock } from "lucide-react";
+import { Zap, Gauge, ArrowRight, Clock, Cable, Shield } from "lucide-react";
 
 const categoryIcons: Record<string, React.ElementType> = {
   charger: Zap,
   monitor: Gauge,
+  cable: Cable,
+  protection: Shield,
 };
 
 const AccessoriesPage = () => {
@@ -47,7 +49,7 @@ const AccessoriesPage = () => {
           {/* Products Grid */}
           <section className="section-padding">
             <div className="container-custom">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 {accessoryProducts.map((product, index) => {
                   const Icon = categoryIcons[product.category] || Zap;
                   return (
