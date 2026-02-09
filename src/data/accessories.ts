@@ -175,7 +175,7 @@ export const accessoryProducts: AccessoryProduct[] = [
     image: batteryMonitorTr24Img,
     inStock: false,
     preOrder: true,
-    estimatedShipping: "Q3 2025",
+    estimatedShipping: "March 2025",
     badge: "Pre-order",
     description:
       "500A high-current battery monitoring solution with M8 bolt-type shunt, suitable for RV, marine, energy storage, and industrial power systems.",
