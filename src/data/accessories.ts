@@ -173,7 +173,10 @@ export const accessoryProducts: AccessoryProduct[] = [
     category: "monitor",
     price: 89.99,
     image: batteryMonitorTr24Img,
-    inStock: true,
+    inStock: false,
+    preOrder: true,
+    estimatedShipping: "Q3 2025",
+    badge: "Pre-order",
     description:
       "500A high-current battery monitoring solution with M8 bolt-type shunt, suitable for RV, marine, energy storage, and industrial power systems.",
     keyFeatures: [
