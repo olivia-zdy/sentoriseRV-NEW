@@ -49,40 +49,74 @@ const TableOfContents = ({
   if (headings.length === 0) return null;
 
   return (
-    <div className="sticky top-20 z-30 mb-6">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between gap-2 px-4 py-3 bg-card border border-border rounded-xl text-sm font-medium text-foreground hover:bg-muted/50 transition-colors"
-      >
-        <span className="flex items-center gap-2">
-          <List className="w-4 h-4" />
-          Table of Contents
-        </span>
-        <ChevronRight className={cn("w-4 h-4 transition-transform", isOpen && "rotate-90")} />
-      </button>
-      
-      {isOpen && (
-        <nav className="mt-2 p-4 bg-card border border-border rounded-xl">
-          <ul className="space-y-2">
-            {headings.map((heading) => (
-              <li key={heading.id}>
-                <a
-                  href={`#${heading.id}`}
-                  onClick={() => setIsOpen(false)}
-                  className={cn(
-                    "block text-sm transition-colors hover:text-primary",
-                    heading.level === 3 && "pl-4",
-                    activeId === heading.id ? "text-primary font-medium" : "text-muted-foreground"
-                  )}
-                >
-                  {heading.text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
-    </div>
+    <>
+      {/* Mobile TOC Toggle */}
+      <div className="lg:hidden sticky top-20 z-30 mb-6">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-full flex items-center justify-between gap-2 px-4 py-3 bg-card border border-border rounded-xl text-sm font-medium text-foreground hover:bg-muted/50 transition-colors"
+        >
+          <span className="flex items-center gap-2">
+            <List className="w-4 h-4" />
+            Table of Contents
+          </span>
+          <ChevronRight className={cn("w-4 h-4 transition-transform", isOpen && "rotate-90")} />
+        </button>
+        
+        {isOpen && (
+          <nav className="mt-2 p-4 bg-card border border-border rounded-xl">
+            <ul className="space-y-2">
+              {headings.map((heading) => (
+                <li key={heading.id}>
+                  <a
+                    href={`#${heading.id}`}
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "block text-sm transition-colors hover:text-primary",
+                      heading.level === 3 && "pl-4",
+                      activeId === heading.id ? "text-primary font-medium" : "text-muted-foreground"
+                    )}
+                  >
+                    {heading.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+      </div>
+
+      {/* Desktop TOC Sidebar */}
+      <aside className="hidden lg:block sticky top-24 self-start w-56 shrink-0">
+        <div className="p-4 bg-card border border-border rounded-xl">
+          <h4 className="flex items-center gap-2 text-sm font-semibold text-foreground mb-4">
+            <List className="w-4 h-4" />
+            Contents
+          </h4>
+          <nav>
+            <ul className="space-y-1.5">
+              {headings.map((heading) => (
+                <li key={heading.id}>
+                  <a
+                    href={`#${heading.id}`}
+                    className={cn(
+                      "block text-xs transition-colors hover:text-primary border-l-2 py-0.5",
+                      heading.level === 3 && "pl-4",
+                      heading.level === 2 && "pl-3",
+                      activeId === heading.id 
+                        ? "text-primary font-medium border-primary" 
+                        : "text-muted-foreground border-transparent hover:border-primary/50"
+                    )}
+                  >
+                    {heading.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </aside>
+    </>
   );
 };
 
@@ -256,11 +290,13 @@ const BlogPostPage = () => {
           </div>
 
           {/* Article Content with TOC */}
-          <div className="max-w-4xl">
+          <div className="flex gap-8 items-start">
             {/* Main Content */}
-            <div>
-              {/* Collapsible TOC */}
-              <TableOfContents headings={headings} activeId={activeHeadingId} />
+            <div className="flex-1 min-w-0 max-w-4xl">
+              {/* Mobile TOC */}
+              <div className="lg:hidden">
+                <TableOfContents headings={headings} activeId={activeHeadingId} />
+              </div>
               
               <div className="bg-card rounded-2xl border border-border p-6 md:p-10 mb-8">
                 <div 
@@ -344,6 +380,11 @@ const BlogPostPage = () => {
                   </div>
                 </section>
               )}
+            </div>
+
+            {/* Desktop TOC Sidebar */}
+            <div className="hidden lg:block">
+              <TableOfContents headings={headings} activeId={activeHeadingId} />
             </div>
           </div>
         </article>
