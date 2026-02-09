@@ -112,7 +112,284 @@
     "lowStock": "Only {{count}} left!",
     "estimatedDelivery": "Estimated Delivery",
     "sale": "Sale",
-    "viewAll": "View All Products"
+    "viewAll": "View All Products",
+    "series": "Series",
+    "voltage": "Voltage",
+    "capacity": "Capacity",
+    "energy": "Energy",
+    "cycleLife": "Cycle Life",
+    "filters": "Filters",
+    "sortBy": "Sort by",
+    "priceLowHigh": "Price: Low to High",
+    "priceHighLow": "Price: High to Low",
+    "capacitySmall": "Capacity: Small",
+    "capacityLarge": "Capacity: Large",
+    "newestFirst": "Newest First",
+    "all": "All",
+    "bluetooth": "Bluetooth",
+    "selfHeating": "Self-Heating",
+    "clearFilters": "Clear filters",
+    "showing": "Showing {{count}} product",
+    "showing_plural": "Showing {{count}} products",
+    "noProducts": "No products found matching your criteria.",
+    "clearAll": "Clear all filters",
+    "pageTitle": "12V LiFePO₄ Batteries",
+    "pageSubtitle": "Low-temperature protection on all models. Bluetooth monitoring. 5-year warranty.",
+    "add": "Add"
+  },
+  "productNames": {
+    "lite-12v6": {
+      "name": "Lite 12V 6Ah Ultra-Compact",
+      "tagline": "Pocket-sized power backup",
+      "description": "The smallest member of the Sentorise family. Perfect for emergency kits, routers, camping lights, and any situation where reliable power matters but space is limited."
+    },
+    "lite-12v50": {
+      "name": "Lite 12V 50Ah Lightweight",
+      "tagline": "Portable power, serious capacity",
+      "description": "The perfect balance between portability and power. Equipped with Bluetooth monitoring for real-time status updates on your smartphone."
+    },
+    "core-12v100-std": {
+      "name": "Core 12V 100Ah Standard",
+      "tagline": "The RV workhorse",
+      "description": "Our flagship RV battery in the popular Group 31 format. Direct drop-in replacement for lead-acid batteries with 4x the cycle life and half the weight."
+    },
+    "core-12v100-mini": {
+      "name": "Core 12V 100Ah MINI",
+      "tagline": "Full power, minimal footprint",
+      "description": "Same 100Ah capacity as the standard Core, but in a significantly smaller package. Ideal for vans and RVs with tight battery compartments."
+    },
+    "core-12v100-din": {
+      "name": "Core 12V 100Ah DIN H8",
+      "tagline": "European standard fitment",
+      "description": "Designed specifically for European RV under-seat battery compartments. The DIN H8 format ensures perfect fitment in most European motorhomes and caravans."
+    },
+    "plus-12v200-heated": {
+      "name": "Plus 12V 200Ah Heated",
+      "tagline": "Arctic-ready power station",
+      "description": "Our most capable battery for demanding applications. Features integrated self-heating for reliable operation in sub-zero temperatures, perfect for Nordic climates and winter camping."
+    }
+  },
+  "applications": {
+    "pageTitle": "Power Every Adventure",
+    "pageSubtitle": "From weekend camping to full-time off-grid living, Sentorise batteries deliver reliable power for every lifestyle and application.",
+    "allApplications": "All Applications",
+    "viewRecommended": "View Recommended Products",
+    "faqTitle": "Application FAQs",
+    "faqSubtitle": "Common questions about choosing and using batteries for your setup.",
+    "rv": {
+      "title": "RV & Motorhome",
+      "tagline": "The heart of your home on wheels",
+      "description": "Whether you're a weekend warrior or full-time RVer, Sentorise batteries provide reliable power for all your onboard systems — from lights and refrigerators to air conditioning and entertainment.",
+      "benefits": ["Drop-in replacement for lead-acid batteries", "50% lighter than equivalent lead-acid", "No maintenance required", "Safe for indoor installation", "Bluetooth monitoring from inside your RV"]
+    },
+    "vanlife": {
+      "title": "Van Life",
+      "tagline": "Freedom in a compact package",
+      "description": "Van conversions demand maximum power in minimum space. Our compact Core MINI and Lite series deliver serious energy density for Sprinters, Transits, and other popular van platforms.",
+      "benefits": ["Ultra-compact designs for tight spaces", "Lightweight for better fuel economy", "Silent operation — no venting required", "Works with all popular solar controllers", "5-year warranty for peace of mind"]
+    },
+    "solar": {
+      "title": "Off-Grid Solar",
+      "tagline": "Store the sun's energy",
+      "description": "Build a reliable off-grid power system with Sentorise batteries. Our deep-cycle LiFePO4 technology maximizes solar harvest and delivers consistent power day and night.",
+      "benefits": ["4000+ cycle lifespan", "95%+ round-trip efficiency", "Full depth of discharge capability", "Parallel connection for more capacity", "Works with Victron, MPPT, and hybrid inverters"]
+    },
+    "marine": {
+      "title": "Marine & Boat",
+      "tagline": "Power your adventures on the water",
+      "description": "Sentorise batteries handle the demands of marine environments — powering trolling motors, fish finders, and cabin systems with reliable, maintenance-free performance.",
+      "benefits": ["Vibration-resistant construction", "IP-rated enclosures available", "No acid spills or fumes", "Consistent voltage under load", "Lightweight for better boat performance"]
+    },
+    "camping": {
+      "title": "Camping & Outdoor",
+      "tagline": "Portable power for any adventure",
+      "description": "From weekend camping trips to extended backcountry expeditions, our Lite series provides reliable portable power for lights, phones, cameras, and small appliances.",
+      "benefits": ["Ultra-lightweight and portable", "Works with portable solar panels", "Powers camping lights, fans, and chargers", "Long shelf life — ready when you need it", "Compact enough for backpacking basecamp"]
+    },
+    "cabin": {
+      "title": "Off-Grid Cabin",
+      "tagline": "Independent living, reliable power",
+      "description": "Power your remote cabin or holiday home with a complete off-grid system. Sentorise batteries store solar energy for lighting, water pumps, refrigeration, and more.",
+      "benefits": ["High capacity for whole-cabin power", "Self-heating for cold climates", "Low maintenance — set and forget", "Expandable with parallel connections", "10+ year expected lifespan"]
+    },
+    "faqs": [
+      {
+        "question": "Which battery size do I need for my RV?",
+        "answer": "For weekend use with basic loads (lights, fridge, charging), 100Ah is sufficient. Full-time RV living with higher demands typically requires 200–400Ah. Use our battery selector for a personalized recommendation."
+      },
+      {
+        "question": "Can I connect multiple batteries in parallel?",
+        "answer": "Yes, Sentorise batteries support parallel connections to increase capacity. You can connect up to 4 batteries in parallel. All batteries should be the same model and state of charge when connecting."
+      },
+      {
+        "question": "Are these batteries safe for indoor installation?",
+        "answer": "Yes. LiFePO4 chemistry does not produce gas during normal operation and is the safest lithium battery type. All models include BMS protection against overcharge, over-discharge, and short circuits."
+      },
+      {
+        "question": "What solar charge controller do I need?",
+        "answer": "We recommend MPPT charge controllers for best efficiency. Sentorise batteries are compatible with Victron, EPEver, Renogy, and other major brands. Set the charging profile to LiFePO4 (14.4V charge, 13.8V float)."
+      }
+    ]
+  },
+  "support": {
+    "pageTitle": "Support Center",
+    "pageSubtitle": "Get help with your Sentorise products. Find answers, download resources, or contact our support team.",
+    "helpCenter": "Help Center",
+    "helpCenterDesc": "Find answers to frequently asked questions about our products, installation, and maintenance.",
+    "downloads": "Downloads",
+    "downloadsDesc": "Access product datasheets, user manuals, installation guides, and certification documents.",
+    "warranty": "Warranty",
+    "warrantyDesc": "Learn about our 5-year warranty coverage and how to make a claim if needed.",
+    "contactSupport": "Contact Support",
+    "contactSupportDesc": "Get in touch with our technical support team. Response within 24-48 hours.",
+    "quickLinks": "Quick Links",
+    "bluetoothSetup": "Bluetooth Setup Guide",
+    "bluetoothSetupDesc": "5-step app connection guide",
+    "registerWarranty": "Register Warranty",
+    "registerWarrantyDesc": "Activate your 5-year coverage",
+    "batterySelector": "Battery Selector",
+    "batterySelectorDesc": "Find the right battery for you",
+    "faqTitle": "Frequently Asked Questions",
+    "faqSubtitle": "Quick answers to common questions about Sentorise batteries.",
+    "downloadsTitle": "Downloads",
+    "downloadsSubtitle": "Access product documentation and resources.",
+    "productDatasheets": "Product Datasheets",
+    "installationGuides": "Installation Guides",
+    "certificationDocs": "Certification Documents",
+    "download": "Download",
+    "warrantyTitle": "5-Year Warranty",
+    "warrantyText": "All Sentorise batteries come with a comprehensive 5-year warranty. We stand behind our products with a guarantee that covers manufacturing defects and premature capacity loss. If your battery falls below 80% capacity within the warranty period, we'll replace it free of charge.",
+    "registerProduct": "Register Your Product",
+    "contactTitle": "Contact Us",
+    "contactSubtitle": "Need personalized help? Fill out the form below or reach us directly.",
+    "sendMessage": "Send us a message",
+    "emailSupport": "Email Support",
+    "emailAddress": "support@sentorise.com",
+    "emailResponse": "We typically respond within 24 hours",
+    "phoneSupport": "Phone Support",
+    "phoneNumber": "+49 123 456 7890",
+    "phoneHours": "Mon-Fri, 9:00 - 18:00 CET",
+    "faqs": [
+      {
+        "question": "How long do Sentorise batteries last?",
+        "answer": "Our LiFePO4 batteries are rated for 4000+ cycles at 80% depth of discharge. With typical RV use, this translates to 10+ years of reliable service."
+      },
+      {
+        "question": "Can I use Sentorise batteries in cold weather?",
+        "answer": "Yes, all our batteries include low-temperature charge protection that prevents charging below 0°C to protect cell integrity. Our Plus series includes self-heating for operation down to -20°C."
+      },
+      {
+        "question": "Are your batteries compatible with my existing solar setup?",
+        "answer": "Sentorise batteries work with most solar charge controllers and inverters. We recommend using a LiFePO4-compatible charge controller for optimal performance."
+      },
+      {
+        "question": "What does the 5-year warranty cover?",
+        "answer": "Our warranty covers manufacturing defects and premature capacity loss. Batteries that fall below 80% capacity within 5 years of purchase are eligible for replacement."
+      },
+      {
+        "question": "How do I connect the Bluetooth app?",
+        "answer": "Download the Sentorise app from the App Store or Google Play. Turn on Bluetooth on your phone, open the app, and it will automatically detect nearby Sentorise batteries. See our complete Bluetooth Setup Guide for step-by-step instructions."
+      },
+      {
+        "question": "Can I connect multiple batteries in parallel?",
+        "answer": "Yes, our Core and Plus series batteries can be connected in parallel to increase capacity. We recommend connecting up to 4 batteries in parallel for optimal performance. Always match batteries of the same model and state of charge."
+      },
+      {
+        "question": "What's the difference between Lite, Core, and Plus series?",
+        "answer": "Lite series (6-50Ah) is for portable and backup applications. Core series (100Ah) is our standard RV/solar battery in various formats (Standard, MINI, DIN H8). Plus series (200Ah) includes self-heating for cold climates down to -20°C."
+      },
+      {
+        "question": "Do I need a special charger for LiFePO4 batteries?",
+        "answer": "We recommend using a charger with a LiFePO4 profile (14.4V-14.6V charge voltage). Many modern RV converters have a lithium mode. Never use a charger above 14.6V as this can damage the cells."
+      },
+      {
+        "question": "What happens if I try to charge below 0°C?",
+        "answer": "The built-in BMS will prevent charging below 0°C to protect cell health. For cold-weather charging, use our Plus 200Ah Heated model which activates self-heating at -10°C. Discharging works down to -20°C on all models."
+      },
+      {
+        "question": "How do I make a warranty claim?",
+        "answer": "Contact support@sentorise.de with your registration email and describe the issue. We'll guide you through diagnosis. If replacement is needed, we ship a new unit before you return the old one (in most EU countries)."
+      }
+    ]
+  },
+  "warranty": {
+    "pageTitle": "5-Year Warranty Registration",
+    "pageSubtitle": "Protect your investment with our comprehensive 5-year warranty. Register your Sentorise battery in just 2 minutes.",
+    "coverage": "5-Year Coverage",
+    "coverageDesc": "Full warranty protection",
+    "freeReplacement": "Free Replacement",
+    "freeReplacementDesc": "For manufacturing defects",
+    "quickProcessing": "Quick Processing",
+    "quickProcessingDesc": "Fast claim resolution",
+    "euService": "EU-Wide Service",
+    "euServiceDesc": "Berlin-based support",
+    "registerTab": "Register Warranty",
+    "lookupTab": "Check Status",
+    "lookupTitle": "Check Your Warranty Status",
+    "lookupSubtitle": "Enter the email address you used during registration to view your warranty details.",
+    "coveredTitle": "What's Covered",
+    "covered": "Covered",
+    "notCovered": "Not Covered",
+    "coveredItems": [
+      "Manufacturing defects",
+      "BMS (Battery Management System) failures",
+      "Cell capacity degradation below 80%",
+      "Heating system malfunctions (heated models)",
+      "Bluetooth module defects",
+      "Terminal connection issues"
+    ],
+    "notCoveredItems": [
+      "Physical damage from misuse or accidents",
+      "Water damage from improper installation",
+      "Damage from incorrect charging voltage",
+      "Unauthorized modifications",
+      "Normal wear and cosmetic damage",
+      "Commercial/industrial use (unless specified)"
+    ],
+    "registrationNote": "Warranty registration must be completed within 30 days of purchase. Keep your proof of purchase (receipt or invoice) for warranty claims. For questions, contact"
+  },
+  "whySentorise": {
+    "badge": "The Sentorise Difference",
+    "heroTitle1": "Power Freedom,",
+    "heroTitle2": "Not Just Capacity",
+    "heroSubtitle": "We're not just another battery seller. Sentorise is an energy brand built for people who choose mobile, independent, and sustainable lifestyles. Our batteries are designed to give you reliable power wherever you roam.",
+    "exploreProducts": "Explore Products",
+    "contactUs": "Contact Us",
+    "happyCustomers": "Happy Customers",
+    "countriesServed": "Countries Served",
+    "cycleLifespan": "Cycle Lifespan",
+    "satisfactionRate": "Satisfaction Rate",
+    "acronymLabel": "What SENTORISE Means",
+    "acronymTitle": "Every Letter, A Commitment",
+    "acronymSubtitle": "Our name reflects the principles behind every product we design, test, and deliver — not slogans, but standards we build by.",
+    "philosophyLabel": "Our Philosophy",
+    "philosophyTitle": "Built for Reliability, Not Specs",
+    "values": {
+      "safety": { "title": "Safety-First Engineering", "description": "Every Sentorise battery uses Grade-A LiFePO4 cells with multi-layer BMS protection against overcharge, over-discharge, short circuit, and thermal runaway." },
+      "quality": { "title": "International Quality Standards", "description": "CE certified, UN38.3 tested, FCC compliant, and meets IEC 62619 safety standards. Ready for European and American markets." },
+      "smart": { "title": "Smart Monitoring", "description": "Check battery status, voltage, current, temperature, and remaining capacity in real-time from our smartphone app via Bluetooth." },
+      "longLife": { "title": "Long-Life Technology", "description": "4000+ cycle lifespan — that's 4x longer than lead-acid batteries. Our LiFePO4 chemistry delivers consistent performance for 10+ years." },
+      "weather": { "title": "All-Weather Performance", "description": "Built-in low-temperature protection prevents charging below freezing. Plus series includes self-heating for Arctic conditions." },
+      "sustainable": { "title": "Sustainable Choice", "description": "LiFePO4 is non-toxic and recyclable. Our eco-friendly paper-mold packaging reduces plastic waste. Power your adventures responsibly." }
+    },
+    "differentiatorTitle": "What Sets Us Apart",
+    "differentiatorSubtitle": "While others chase synthetic capacity metrics, we focus on what matters: reliability, safety, and real-world performance.",
+    "differentiators": [
+      "5-Year warranty on all products",
+      "European DIN and BCI standard formats",
+      "Bluetooth monitoring on most models",
+      "Grade-A prismatic LiFePO4 cells",
+      "Multi-layer BMS protection",
+      "Low-temperature charge protection",
+      "Self-heating available (Plus series)",
+      "Eco-friendly packaging"
+    ],
+    "journeyLabel": "Our Journey",
+    "journeyTitle": "The Sentorise Story",
+    "journeySubtitle": "From a small workshop to a global energy brand — here's how we've grown while staying true to our mission.",
+    "marketsLabel": "Global Reach, Local Standards",
+    "marketsTitle": "Trusted Across Europe & America",
+    "marketsSubtitle": "Our batteries are specifically designed for European and American RV formats, camping culture, and climate conditions — from Mediterranean summers to Nordic winters, from sunny California to snowy Canada."
   },
   "features": {
     "sectionLabel": "Why Sentorise",
@@ -209,7 +486,8 @@
     "specifications": "Specifications",
     "description": "Description",
     "reviews": "Reviews",
-    "relatedProducts": "Related Products"
+    "relatedProducts": "Related Products",
+    "home": "Home"
   },
   "market": {
     "selectMarket": "Select Market",

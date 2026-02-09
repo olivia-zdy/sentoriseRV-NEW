@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Product } from "@/data/products";
 import { Button } from "@/components/ui/button";
 import { useCompare } from "@/context/CompareContext";
@@ -14,6 +15,7 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
+  const { t } = useTranslation();
   const { addToCompare, removeFromCompare, isInCompare, compareList } = useCompare();
   const { formatPrice } = useMarket();
   const [quickViewOpen, setQuickViewOpen] = useState(false);

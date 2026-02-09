@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -26,140 +27,54 @@ import marineScene from "@/assets/scene-marine.jpg";
 import campScene from "@/assets/scene-camping.jpg";
 import cabinScene from "@/assets/scene-cabin.jpg";
 
-const applications = [
-  {
-    id: "rv",
-    icon: Truck,
-    image: rvScene,
-    title: "RV & Motorhome",
-    tagline: "The heart of your home on wheels",
-    description: "Whether you're a weekend warrior or full-time RVer, Sentorise batteries provide reliable power for all your onboard systems — from lights and refrigerators to air conditioning and entertainment.",
-    benefits: [
-      "Drop-in replacement for lead-acid batteries",
-      "50% lighter than equivalent lead-acid",
-      "No maintenance required",
-      "Safe for indoor installation",
-      "Bluetooth monitoring from inside your RV",
-    ],
-    recommendedProducts: ["Core 12V 100Ah Standard", "Core 12V 100Ah DIN H8", "Plus 12V 200Ah Heated"],
-  },
-  {
-    id: "vanlife",
-    icon: Car,
-    image: vanScene,
-    title: "Van Life",
-    tagline: "Freedom in a compact package",
-    description: "Van conversions demand maximum power in minimum space. Our compact Core MINI and Lite series deliver serious energy density for Sprinters, Transits, and other popular van platforms.",
-    benefits: [
-      "Ultra-compact designs for tight spaces",
-      "Lightweight for better fuel economy",
-      "Silent operation — no venting required",
-      "Works with all popular solar controllers",
-      "5-year warranty for peace of mind",
-    ],
-    recommendedProducts: ["Core 12V 100Ah MINI", "Lite 12V 50Ah Lightweight", "Core 12V 100Ah Standard"],
-  },
-  {
-    id: "solar",
-    icon: Sun,
-    image: solarScene,
-    title: "Off-Grid Solar",
-    tagline: "Store the sun's energy",
-    description: "Build a reliable off-grid power system with Sentorise batteries. Our deep-cycle LiFePO4 technology maximizes solar harvest and delivers consistent power day and night.",
-    benefits: [
-      "4000+ cycle lifespan",
-      "95%+ round-trip efficiency",
-      "Full depth of discharge capability",
-      "Parallel connection for more capacity",
-      "Works with Victron, MPPT, and hybrid inverters",
-    ],
-    recommendedProducts: ["Plus 12V 200Ah Heated", "Core 12V 100Ah Standard", "Core 12V 100Ah DIN H8"],
-  },
-  {
-    id: "marine",
-    icon: Ship,
-    image: marineScene,
-    title: "Marine & Boat",
-    tagline: "Power your adventures on the water",
-    description: "Sentorise batteries handle the demands of marine environments — powering trolling motors, fish finders, and cabin systems with reliable, maintenance-free performance.",
-    benefits: [
-      "Vibration-resistant construction",
-      "IP-rated enclosures available",
-      "No acid spills or fumes",
-      "Consistent voltage under load",
-      "Lightweight for better boat performance",
-    ],
-    recommendedProducts: ["Core 12V 100Ah Standard", "Lite 12V 50Ah Lightweight"],
-  },
-  {
-    id: "camping",
-    icon: Tent,
-    image: campScene,
-    title: "Camping & Outdoor",
-    tagline: "Portable power for any adventure",
-    description: "From weekend camping trips to extended backcountry expeditions, our Lite series provides reliable portable power for lights, phones, cameras, and small appliances.",
-    benefits: [
-      "Ultra-lightweight and portable",
-      "Works with portable solar panels",
-      "Powers camping lights, fans, and chargers",
-      "Long shelf life — ready when you need it",
-      "Compact enough for backpacking basecamp",
-    ],
-    recommendedProducts: ["Lite 12V 6Ah Ultra-Compact", "Lite 12V 50Ah Lightweight"],
-  },
-  {
-    id: "cabin",
-    icon: Home,
-    image: cabinScene,
-    title: "Off-Grid Cabin",
-    tagline: "Independent living, reliable power",
-    description: "Power your remote cabin or holiday home with a complete off-grid system. Sentorise batteries store solar energy for lighting, water pumps, refrigeration, and more.",
-    benefits: [
-      "High capacity for whole-cabin power",
-      "Self-heating for cold climates",
-      "Low maintenance — set and forget",
-      "Expandable with parallel connections",
-      "10+ year expected lifespan",
-    ],
-    recommendedProducts: ["Plus 12V 200Ah Heated", "Core 12V 100Ah Standard"],
-  },
-];
+const applicationIds = ["rv", "vanlife", "solar", "marine", "camping", "cabin"] as const;
 
-const applicationFaqs = [
-  {
-    question: "Which battery size do I need for my RV?",
-    answer: "For weekend use with basic loads (lights, fridge, charging), 100Ah is sufficient. Full-time RV living with higher demands typically requires 200–400Ah. Use our battery selector for a personalized recommendation."
-  },
-  {
-    question: "Can I connect multiple batteries in parallel?",
-    answer: "Yes, Sentorise batteries support parallel connections to increase capacity. You can connect up to 4 batteries in parallel. All batteries should be the same model and state of charge when connecting."
-  },
-  {
-    question: "Are these batteries safe for indoor installation?",
-    answer: "Yes. LiFePO4 chemistry does not produce gas during normal operation and is the safest lithium battery type. All models include BMS protection against overcharge, over-discharge, and short circuits."
-  },
-  {
-    question: "What solar charge controller do I need?",
-    answer: "We recommend MPPT charge controllers for best efficiency. Sentorise batteries are compatible with Victron, EPEver, Renogy, and other major brands. Set the charging profile to LiFePO4 (14.4V charge, 13.8V float)."
-  }
-];
+const applicationIcons: Record<string, typeof Truck> = {
+  rv: Truck,
+  vanlife: Car,
+  solar: Sun,
+  marine: Ship,
+  camping: Tent,
+  cabin: Home,
+};
 
-type ApplicationFilter = "all" | "rv" | "vanlife" | "solar" | "marine" | "camping" | "cabin";
+const applicationImages: Record<string, string> = {
+  rv: rvScene,
+  vanlife: vanScene,
+  solar: solarScene,
+  marine: marineScene,
+  camping: campScene,
+  cabin: cabinScene,
+};
+
+const recommendedProducts: Record<string, string[]> = {
+  rv: ["Core 12V 100Ah Standard", "Core 12V 100Ah DIN H8", "Plus 12V 200Ah Heated"],
+  vanlife: ["Core 12V 100Ah MINI", "Lite 12V 50Ah Lightweight", "Core 12V 100Ah Standard"],
+  solar: ["Plus 12V 200Ah Heated", "Core 12V 100Ah Standard", "Core 12V 100Ah DIN H8"],
+  marine: ["Core 12V 100Ah Standard", "Lite 12V 50Ah Lightweight"],
+  camping: ["Lite 12V 6Ah Ultra-Compact", "Lite 12V 50Ah Lightweight"],
+  cabin: ["Plus 12V 200Ah Heated", "Core 12V 100Ah Standard"],
+};
+
+type ApplicationFilter = "all" | typeof applicationIds[number];
 
 const ApplicationsPage = () => {
+  const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState<ApplicationFilter>("all");
 
-  const filteredApplications = activeFilter === "all" 
-    ? applications 
-    : applications.filter(app => app.id === activeFilter);
+  const filteredIds = activeFilter === "all" 
+    ? [...applicationIds] 
+    : applicationIds.filter(id => id === activeFilter);
+
+  const faqs = t('applications.faqs', { returnObjects: true }) as Array<{ question: string; answer: string }>;
 
   return (
     <div className="min-h-screen bg-background">
       <PageMeta 
-        title="Applications | Sentorise LiFePO₄ Batteries"
-        description="Discover the right Sentorise battery for your RV, van, off-grid solar, marine, or camping setup. Real-world application guides and product recommendations."
+        title={`${t('nav.applications')} | Sentorise LiFePO₄`}
+        description={t('applications.pageSubtitle')}
       />
-      <FAQSchema faqs={applicationFaqs} />
+      <FAQSchema faqs={Array.isArray(faqs) ? faqs : []} />
       <AnnouncementBar />
       <Header />
       <PageTransition>
@@ -168,16 +83,15 @@ const ApplicationsPage = () => {
         <section className="py-12 md:py-16 bg-muted/50 border-b border-border">
           <div className="container-custom">
             <nav className="text-sm text-muted-foreground mb-6">
-              <Link to="/" className="hover:text-primary">Home</Link>
+              <Link to="/" className="hover:text-primary">{t('common.home')}</Link>
               <span className="mx-2">/</span>
-              <span className="text-foreground">Applications</span>
+              <span className="text-foreground">{t('nav.applications')}</span>
             </nav>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Power Every Adventure
+              {t('applications.pageTitle')}
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              From weekend camping to full-time off-grid living, Sentorise batteries 
-              deliver reliable power for every lifestyle and application.
+              {t('applications.pageSubtitle')}
             </p>
           </div>
         </section>
@@ -191,110 +105,117 @@ const ApplicationsPage = () => {
                 size="sm"
                 onClick={() => setActiveFilter("all")}
               >
-                All Applications
+                {t('applications.allApplications')}
               </Button>
-              {applications.map((app) => (
-                <Button
-                  key={app.id}
-                  variant={activeFilter === app.id ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setActiveFilter(app.id as ApplicationFilter)}
-                  className="gap-2"
-                >
-                  <app.icon className="w-4 h-4" />
-                  {app.title}
-                </Button>
-              ))}
+              {applicationIds.map((id) => {
+                const Icon = applicationIcons[id];
+                return (
+                  <Button
+                    key={id}
+                    variant={activeFilter === id ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActiveFilter(id)}
+                    className="gap-2"
+                  >
+                    <Icon className="w-4 h-4" />
+                    {t(`applications.${id}.title`)}
+                  </Button>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        {/* Applications Grid - Quick Entry Points */}
+        {/* Applications Grid */}
         <section className="section-padding">
           <div className="container-custom">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredApplications.map((app, index) => (
-                <ScrollReveal key={app.id} delay={index * 0.08}>
-                <a
-                  href={`#${app.id}`}
-                  className="group relative aspect-[4/3] rounded-xl overflow-hidden block"
-                >
-                  {/* Background Image */}
-                  <img 
-                    src={app.image}
-                    alt={app.title}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
-                  
-                  {/* Content */}
-                  <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                    <div className={`${glassIconClass} mb-4 w-12 h-12`}>
-                      <app.icon className="w-6 h-6 text-primary" />
+              {filteredIds.map((id, index) => {
+                const Icon = applicationIcons[id];
+                return (
+                  <ScrollReveal key={id} delay={index * 0.08}>
+                  <a
+                    href={`#${id}`}
+                    className="group relative aspect-[4/3] rounded-xl overflow-hidden block"
+                  >
+                    <img 
+                      src={applicationImages[id]}
+                      alt={t(`applications.${id}.title`)}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                    <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                      <div className={`${glassIconClass} mb-4 w-12 h-12`}>
+                        <Icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-1">{t(`applications.${id}.title`)}</h3>
+                      <p className="text-sm text-white/80">{t(`applications.${id}.tagline`)}</p>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-1">{app.title}</h3>
-                    <p className="text-sm text-white/80">{app.tagline}</p>
-                  </div>
-                </a>
-                </ScrollReveal>
-              ))}
+                  </a>
+                  </ScrollReveal>
+                );
+              })}
             </div>
           </div>
         </section>
 
         {/* Detailed Sections */}
-        {filteredApplications.map((app, index) => (
-          <section
-            key={app.id}
-            id={app.id}
-            className={`section-padding ${index % 2 === 0 ? 'bg-muted/30' : 'bg-background'} border-t border-border`}
-          >
-            <div className="container-custom">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className={glassIconClass}>
-                      <app.icon className="w-6 h-6 text-primary" />
+        {filteredIds.map((id, index) => {
+          const Icon = applicationIcons[id];
+          const benefits = t(`applications.${id}.benefits`, { returnObjects: true }) as string[];
+          return (
+            <section
+              key={id}
+              id={id}
+              className={`section-padding ${index % 2 === 0 ? 'bg-muted/30' : 'bg-background'} border-t border-border`}
+            >
+              <div className="container-custom">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className={glassIconClass}>
+                        <Icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <span className="text-sm font-semibold text-primary uppercase tracking-wider">
+                        {t(`applications.${id}.title`)}
+                      </span>
                     </div>
-                    <span className="text-sm font-semibold text-primary uppercase tracking-wider">
-                      {app.title}
-                    </span>
+                    <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                      {t(`applications.${id}.tagline`)}
+                    </h2>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                      {t(`applications.${id}.description`)}
+                    </p>
+
+                    <ul className="space-y-3 mb-8">
+                      {Array.isArray(benefits) && benefits.map((benefit, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                          <span className="text-muted-foreground">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Button asChild>
+                      <Link to={`/products?application=${id}`}>
+                        {t('applications.viewRecommended')}
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Link>
+                    </Button>
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                    {app.tagline}
-                  </h2>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {app.description}
-                  </p>
 
-                  <ul className="space-y-3 mb-8">
-                    {app.benefits.map((benefit, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                        <span className="text-muted-foreground">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Button asChild>
-                    <Link to={`/products?application=${app.id}`}>
-                      View Recommended Products
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Link>
-                  </Button>
-                </div>
-
-                <div className={`aspect-video rounded-xl overflow-hidden ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <img 
-                    src={app.image}
-                    alt={app.title}
-                    className="w-full h-full object-cover"
-                  />
+                  <div className={`aspect-video rounded-xl overflow-hidden ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                    <img 
+                      src={applicationImages[id]}
+                      alt={t(`applications.${id}.title`)}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
-        ))}
+            </section>
+          );
+        })}
 
         {/* FAQ Section */}
         <section className="section-padding bg-background">
@@ -303,17 +224,17 @@ const ApplicationsPage = () => {
               <ScrollReveal>
               <div className="text-center mb-10">
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-                  Application FAQs
+                  {t('applications.faqTitle')}
                 </h2>
                 <p className="text-muted-foreground">
-                  Common questions about choosing and using batteries for your setup.
+                  {t('applications.faqSubtitle')}
                 </p>
               </div>
               </ScrollReveal>
 
               <ScrollReveal>
               <Accordion type="single" collapsible className="space-y-3">
-                {applicationFaqs.map((faq, index) => (
+                {Array.isArray(faqs) && faqs.map((faq, index) => (
                   <AccordionItem
                     key={index}
                     value={`faq-${index}`}

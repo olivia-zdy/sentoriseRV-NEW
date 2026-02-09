@@ -112,7 +112,284 @@
     "lowStock": "Plus que {{count}} en stock !",
     "estimatedDelivery": "Livraison estimée",
     "sale": "Promo",
-    "viewAll": "Voir tous les produits"
+    "viewAll": "Voir tous les produits",
+    "series": "Série",
+    "voltage": "Tension",
+    "capacity": "Capacité",
+    "energy": "Énergie",
+    "cycleLife": "Durée de vie",
+    "filters": "Filtres",
+    "sortBy": "Trier par",
+    "priceLowHigh": "Prix : Croissant",
+    "priceHighLow": "Prix : Décroissant",
+    "capacitySmall": "Capacité : Petite",
+    "capacityLarge": "Capacité : Grande",
+    "newestFirst": "Plus récent",
+    "all": "Tous",
+    "bluetooth": "Bluetooth",
+    "selfHeating": "Auto-chauffant",
+    "clearFilters": "Effacer les filtres",
+    "showing": "{{count}} produit affiché",
+    "showing_plural": "{{count}} produits affichés",
+    "noProducts": "Aucun produit ne correspond à vos critères.",
+    "clearAll": "Effacer tous les filtres",
+    "pageTitle": "Batteries LiFePO₄ 12V",
+    "pageSubtitle": "Protection basse température sur tous les modèles. Surveillance Bluetooth. Garantie 5 ans.",
+    "add": "Ajouter"
+  },
+  "productNames": {
+    "lite-12v6": {
+      "name": "Lite 12V 6Ah Ultra-Compact",
+      "tagline": "Alimentation de secours de poche",
+      "description": "Le plus petit membre de la famille Sentorise. Parfait pour les kits d'urgence, routeurs, lampes de camping et toute situation où une alimentation fiable est essentielle mais l'espace est limité."
+    },
+    "lite-12v50": {
+      "name": "Lite 12V 50Ah Léger",
+      "tagline": "Énergie portable, capacité sérieuse",
+      "description": "L'équilibre parfait entre portabilité et puissance. Équipé de la surveillance Bluetooth pour des mises à jour en temps réel sur votre smartphone."
+    },
+    "core-12v100-std": {
+      "name": "Core 12V 100Ah Standard",
+      "tagline": "Le cheval de bataille des camping-cars",
+      "description": "Notre batterie phare pour camping-car au format populaire Group 31. Remplacement direct des batteries au plomb avec 4x la durée de vie et moitié du poids."
+    },
+    "core-12v100-mini": {
+      "name": "Core 12V 100Ah MINI",
+      "tagline": "Pleine puissance, encombrement minimal",
+      "description": "Même capacité de 100Ah que le Core standard, mais dans un format nettement plus compact. Idéal pour les vans et camping-cars avec des compartiments étroits."
+    },
+    "core-12v100-din": {
+      "name": "Core 12V 100Ah DIN H8",
+      "tagline": "Format standard européen",
+      "description": "Conçu spécifiquement pour les compartiments sous siège des camping-cars européens. Le format DIN H8 assure un ajustement parfait dans la plupart des camping-cars et caravanes européens."
+    },
+    "plus-12v200-heated": {
+      "name": "Plus 12V 200Ah Chauffant",
+      "tagline": "Station d'énergie prête pour l'Arctique",
+      "description": "Notre batterie la plus performante pour les applications exigeantes. Avec auto-chauffage intégré pour un fonctionnement fiable par températures négatives, parfait pour les climats nordiques et le camping d'hiver."
+    }
+  },
+  "applications": {
+    "pageTitle": "L'énergie pour chaque aventure",
+    "pageSubtitle": "Du camping le week-end à la vie autonome à temps plein, les batteries Sentorise fournissent une énergie fiable pour chaque style de vie et application.",
+    "allApplications": "Toutes les applications",
+    "viewRecommended": "Voir les produits recommandés",
+    "faqTitle": "FAQ Applications",
+    "faqSubtitle": "Questions fréquentes sur le choix et l'utilisation des batteries pour votre installation.",
+    "rv": {
+      "title": "Camping-car",
+      "tagline": "Le cœur de votre maison sur roues",
+      "description": "Que vous soyez un campeur du week-end ou un camping-cariste à plein temps, les batteries Sentorise alimentent tous vos systèmes de bord — de l'éclairage et du réfrigérateur à la climatisation et au divertissement.",
+      "benefits": ["Remplacement direct des batteries au plomb", "50% plus léger que le plomb équivalent", "Sans entretien", "Sûr pour installation intérieure", "Surveillance Bluetooth depuis l'intérieur"]
+    },
+    "vanlife": {
+      "title": "Van Life",
+      "tagline": "La liberté dans un format compact",
+      "description": "Les conversions de vans exigent une puissance maximale dans un espace minimal. Nos séries compactes Core MINI et Lite offrent une densité énergétique sérieuse pour Sprinters, Transits et autres plateformes populaires.",
+      "benefits": ["Designs ultra-compacts pour espaces restreints", "Léger pour une meilleure consommation", "Fonctionnement silencieux — pas de ventilation", "Compatible avec tous les régulateurs solaires", "Garantie 5 ans pour votre tranquillité"]
+    },
+    "solar": {
+      "title": "Solaire autonome",
+      "tagline": "Stocker l'énergie du soleil",
+      "description": "Construisez un système d'alimentation autonome fiable avec les batteries Sentorise. Notre technologie LiFePO4 deep-cycle maximise la récolte solaire et fournit une énergie constante jour et nuit.",
+      "benefits": ["4000+ cycles de durée de vie", "95%+ d'efficacité aller-retour", "Capacité de décharge complète", "Connexion parallèle pour plus de capacité", "Compatible Victron, MPPT et onduleurs hybrides"]
+    },
+    "marine": {
+      "title": "Marine & Bateau",
+      "tagline": "L'énergie pour vos aventures sur l'eau",
+      "description": "Les batteries Sentorise répondent aux exigences de l'environnement marin — alimentant moteurs électriques, sondeurs et systèmes de cabine avec des performances fiables et sans entretien.",
+      "benefits": ["Construction résistante aux vibrations", "Boîtiers IP disponibles", "Pas de fuites d'acide ni de vapeurs", "Tension constante sous charge", "Léger pour de meilleures performances"]
+    },
+    "camping": {
+      "title": "Camping & Plein air",
+      "tagline": "Énergie portable pour chaque aventure",
+      "description": "Des sorties camping du week-end aux expéditions en pleine nature, notre série Lite fournit une énergie portable fiable pour lampes, téléphones, caméras et petits appareils.",
+      "benefits": ["Ultra-léger et portable", "Fonctionne avec panneaux solaires portables", "Alimente lampes, ventilateurs et chargeurs", "Longue durée de stockage — toujours prêt", "Assez compact pour le camp de base"]
+    },
+    "cabin": {
+      "title": "Chalet autonome",
+      "tagline": "Vie indépendante, énergie fiable",
+      "description": "Alimentez votre chalet isolé ou maison de vacances avec un système autonome complet. Les batteries Sentorise stockent l'énergie solaire pour l'éclairage, les pompes à eau, la réfrigération et plus.",
+      "benefits": ["Haute capacité pour tout le chalet", "Auto-chauffage pour climats froids", "Peu d'entretien — installer et oublier", "Extensible par connexion parallèle", "10+ ans de durée de vie prévue"]
+    },
+    "faqs": [
+      {
+        "question": "Quelle taille de batterie me faut-il pour mon camping-car ?",
+        "answer": "Pour une utilisation le week-end avec des charges de base (éclairage, frigo, recharge), 100Ah suffisent. La vie en camping-car à plein temps nécessite généralement 200–400Ah. Utilisez notre sélecteur de batterie pour une recommandation personnalisée."
+      },
+      {
+        "question": "Puis-je connecter plusieurs batteries en parallèle ?",
+        "answer": "Oui, les batteries Sentorise supportent les connexions parallèles pour augmenter la capacité. Vous pouvez connecter jusqu'à 4 batteries en parallèle. Toutes les batteries doivent être du même modèle et au même état de charge."
+      },
+      {
+        "question": "Ces batteries sont-elles sûres pour une installation intérieure ?",
+        "answer": "Oui. La chimie LiFePO4 ne produit pas de gaz en fonctionnement normal et est le type de batterie lithium le plus sûr. Tous les modèles incluent une protection BMS contre la surcharge, la décharge profonde et les courts-circuits."
+      },
+      {
+        "question": "Quel régulateur de charge solaire me faut-il ?",
+        "answer": "Nous recommandons les régulateurs MPPT pour la meilleure efficacité. Les batteries Sentorise sont compatibles avec Victron, EPEver, Renogy et autres grandes marques. Réglez le profil de charge sur LiFePO4 (14,4V charge, 13,8V float)."
+      }
+    ]
+  },
+  "support": {
+    "pageTitle": "Centre de support",
+    "pageSubtitle": "Aide pour vos produits Sentorise. Trouvez des réponses, téléchargez des ressources ou contactez notre équipe support.",
+    "helpCenter": "Centre d'aide",
+    "helpCenterDesc": "Trouvez des réponses aux questions fréquentes sur nos produits, l'installation et la maintenance.",
+    "downloads": "Téléchargements",
+    "downloadsDesc": "Accédez aux fiches produits, manuels d'utilisation, guides d'installation et documents de certification.",
+    "warranty": "Garantie",
+    "warrantyDesc": "En savoir plus sur notre garantie de 5 ans et comment faire une réclamation.",
+    "contactSupport": "Contacter le support",
+    "contactSupportDesc": "Contactez notre équipe de support technique. Réponse sous 24-48 heures.",
+    "quickLinks": "Accès rapide",
+    "bluetoothSetup": "Guide de configuration Bluetooth",
+    "bluetoothSetupDesc": "Guide de connexion en 5 étapes",
+    "registerWarranty": "Enregistrer la garantie",
+    "registerWarrantyDesc": "Activez votre couverture de 5 ans",
+    "batterySelector": "Sélecteur de batterie",
+    "batterySelectorDesc": "Trouvez la bonne batterie pour vous",
+    "faqTitle": "Questions fréquemment posées",
+    "faqSubtitle": "Réponses rapides aux questions courantes sur les batteries Sentorise.",
+    "downloadsTitle": "Téléchargements",
+    "downloadsSubtitle": "Accédez à la documentation produit et aux ressources.",
+    "productDatasheets": "Fiches produits",
+    "installationGuides": "Guides d'installation",
+    "certificationDocs": "Documents de certification",
+    "download": "Télécharger",
+    "warrantyTitle": "Garantie 5 ans",
+    "warrantyText": "Toutes les batteries Sentorise sont livrées avec une garantie complète de 5 ans. Nous soutenons nos produits avec une garantie couvrant les défauts de fabrication et la perte de capacité prématurée. Si votre batterie tombe en dessous de 80% de capacité pendant la période de garantie, nous la remplacerons gratuitement.",
+    "registerProduct": "Enregistrer votre produit",
+    "contactTitle": "Contactez-nous",
+    "contactSubtitle": "Besoin d'aide personnalisée ? Remplissez le formulaire ci-dessous ou contactez-nous directement.",
+    "sendMessage": "Envoyez-nous un message",
+    "emailSupport": "Support par e-mail",
+    "emailAddress": "support@sentorise.com",
+    "emailResponse": "Nous répondons généralement sous 24 heures",
+    "phoneSupport": "Support téléphonique",
+    "phoneNumber": "+49 123 456 7890",
+    "phoneHours": "Lun-Ven, 9h00 - 18h00 CET",
+    "faqs": [
+      {
+        "question": "Quelle est la durée de vie des batteries Sentorise ?",
+        "answer": "Nos batteries LiFePO4 sont conçues pour 4000+ cycles à 80% de profondeur de décharge. Avec une utilisation typique en camping-car, cela se traduit par 10+ ans de service fiable."
+      },
+      {
+        "question": "Puis-je utiliser les batteries Sentorise par temps froid ?",
+        "answer": "Oui, toutes nos batteries incluent une protection de charge basse température qui empêche la charge en dessous de 0°C. Notre série Plus inclut l'auto-chauffage pour un fonctionnement jusqu'à -20°C."
+      },
+      {
+        "question": "Vos batteries sont-elles compatibles avec mon installation solaire ?",
+        "answer": "Les batteries Sentorise fonctionnent avec la plupart des régulateurs de charge solaire et onduleurs. Nous recommandons un régulateur compatible LiFePO4 pour des performances optimales."
+      },
+      {
+        "question": "Que couvre la garantie de 5 ans ?",
+        "answer": "Notre garantie couvre les défauts de fabrication et la perte de capacité prématurée. Les batteries tombant en dessous de 80% de capacité dans les 5 ans sont éligibles au remplacement."
+      },
+      {
+        "question": "Comment connecter l'application Bluetooth ?",
+        "answer": "Téléchargez l'application Sentorise depuis l'App Store ou Google Play. Activez le Bluetooth, ouvrez l'application et elle détectera automatiquement les batteries Sentorise à proximité. Consultez notre guide complet."
+      },
+      {
+        "question": "Puis-je connecter plusieurs batteries en parallèle ?",
+        "answer": "Oui, nos séries Core et Plus peuvent être connectées en parallèle pour augmenter la capacité. Nous recommandons jusqu'à 4 batteries en parallèle. Utilisez toujours le même modèle et état de charge."
+      },
+      {
+        "question": "Quelle est la différence entre les séries Lite, Core et Plus ?",
+        "answer": "Série Lite (6-50Ah) pour applications portables et de secours. Série Core (100Ah) notre batterie standard pour camping-car/solaire en différents formats (Standard, MINI, DIN H8). Série Plus (200Ah) avec auto-chauffage pour climats froids jusqu'à -20°C."
+      },
+      {
+        "question": "Ai-je besoin d'un chargeur spécial pour les batteries LiFePO4 ?",
+        "answer": "Nous recommandons un chargeur avec profil LiFePO4 (14,4V-14,6V). De nombreux convertisseurs de camping-car modernes ont un mode lithium. N'utilisez jamais un chargeur au-dessus de 14,6V."
+      },
+      {
+        "question": "Que se passe-t-il si j'essaie de charger en dessous de 0°C ?",
+        "answer": "Le BMS intégré empêchera la charge en dessous de 0°C. Pour la charge par temps froid, utilisez notre modèle Plus 200Ah Chauffant qui active l'auto-chauffage à -10°C."
+      },
+      {
+        "question": "Comment faire une réclamation de garantie ?",
+        "answer": "Contactez support@sentorise.de avec votre e-mail d'enregistrement et décrivez le problème. Nous vous guiderons dans le diagnostic. Si un remplacement est nécessaire, nous expédions une nouvelle unité avant que vous ne retourniez l'ancienne."
+      }
+    ]
+  },
+  "warranty": {
+    "pageTitle": "Enregistrement de garantie 5 ans",
+    "pageSubtitle": "Protégez votre investissement avec notre garantie complète de 5 ans. Enregistrez votre batterie Sentorise en seulement 2 minutes.",
+    "coverage": "Couverture 5 ans",
+    "coverageDesc": "Protection garantie complète",
+    "freeReplacement": "Remplacement gratuit",
+    "freeReplacementDesc": "Pour les défauts de fabrication",
+    "quickProcessing": "Traitement rapide",
+    "quickProcessingDesc": "Résolution rapide des réclamations",
+    "euService": "Service dans toute l'UE",
+    "euServiceDesc": "Support basé à Berlin",
+    "registerTab": "Enregistrer la garantie",
+    "lookupTab": "Vérifier le statut",
+    "lookupTitle": "Vérifier le statut de votre garantie",
+    "lookupSubtitle": "Entrez l'adresse e-mail utilisée lors de l'enregistrement pour consulter les détails de votre garantie.",
+    "coveredTitle": "Ce qui est couvert",
+    "covered": "Couvert",
+    "notCovered": "Non couvert",
+    "coveredItems": [
+      "Défauts de fabrication",
+      "Pannes du BMS (Système de gestion de batterie)",
+      "Dégradation de capacité en dessous de 80%",
+      "Dysfonctionnements du système de chauffage (modèles chauffants)",
+      "Défauts du module Bluetooth",
+      "Problèmes de connexion des bornes"
+    ],
+    "notCoveredItems": [
+      "Dommages physiques dus à une mauvaise utilisation ou accidents",
+      "Dommages par eau dus à une installation incorrecte",
+      "Dommages dus à une tension de charge incorrecte",
+      "Modifications non autorisées",
+      "Usure normale et dommages esthétiques",
+      "Utilisation commerciale/industrielle (sauf indication)"
+    ],
+    "registrationNote": "L'enregistrement de la garantie doit être effectué dans les 30 jours suivant l'achat. Conservez votre preuve d'achat (reçu ou facture) pour les réclamations. Pour toute question, contactez"
+  },
+  "whySentorise": {
+    "badge": "La différence Sentorise",
+    "heroTitle1": "Liberté énergétique,",
+    "heroTitle2": "Pas seulement de la capacité",
+    "heroSubtitle": "Nous ne sommes pas qu'un vendeur de batteries. Sentorise est une marque d'énergie pour ceux qui choisissent un mode de vie mobile, indépendant et durable. Nos batteries vous offrent une énergie fiable où que vous alliez.",
+    "exploreProducts": "Découvrir les produits",
+    "contactUs": "Contactez-nous",
+    "happyCustomers": "Clients satisfaits",
+    "countriesServed": "Pays desservis",
+    "cycleLifespan": "Cycles de durée de vie",
+    "satisfactionRate": "Taux de satisfaction",
+    "acronymLabel": "Ce que SENTORISE signifie",
+    "acronymTitle": "Chaque lettre, un engagement",
+    "acronymSubtitle": "Notre nom reflète les principes derrière chaque produit que nous concevons, testons et livrons — pas des slogans, mais des standards que nous respectons.",
+    "philosophyLabel": "Notre philosophie",
+    "philosophyTitle": "Conçu pour la fiabilité, pas les specs",
+    "values": {
+      "safety": { "title": "Ingénierie sécurité d'abord", "description": "Chaque batterie Sentorise utilise des cellules LiFePO4 Grade-A avec protection BMS multicouche contre surcharge, décharge profonde, court-circuit et emballement thermique." },
+      "quality": { "title": "Standards de qualité internationaux", "description": "Certifié CE, testé UN38.3, conforme FCC et conforme à la norme IEC 62619. Prêt pour les marchés européens et américains." },
+      "smart": { "title": "Surveillance intelligente", "description": "Vérifiez l'état, la tension, le courant, la température et la capacité restante en temps réel depuis notre application smartphone via Bluetooth." },
+      "longLife": { "title": "Technologie longue durée", "description": "4000+ cycles de durée de vie — c'est 4x plus que les batteries au plomb. Notre chimie LiFePO4 offre des performances constantes pendant 10+ ans." },
+      "weather": { "title": "Performance tous temps", "description": "Protection basse température intégrée empêche la charge sous zéro. La série Plus inclut l'auto-chauffage pour les conditions arctiques." },
+      "sustainable": { "title": "Choix durable", "description": "Le LiFePO4 est non toxique et recyclable. Notre emballage en papier moulé réduit les déchets plastiques. Alimentez vos aventures de manière responsable." }
+    },
+    "differentiatorTitle": "Ce qui nous distingue",
+    "differentiatorSubtitle": "Pendant que d'autres poursuivent des métriques de capacité synthétiques, nous nous concentrons sur l'essentiel : fiabilité, sécurité et performance réelle.",
+    "differentiators": [
+      "Garantie 5 ans sur tous les produits",
+      "Formats standard européens DIN et BCI",
+      "Surveillance Bluetooth sur la plupart des modèles",
+      "Cellules LiFePO4 prismatiques Grade-A",
+      "Protection BMS multicouche",
+      "Protection de charge basse température",
+      "Auto-chauffage disponible (série Plus)",
+      "Emballage écologique"
+    ],
+    "journeyLabel": "Notre parcours",
+    "journeyTitle": "L'histoire Sentorise",
+    "journeySubtitle": "D'un petit atelier à une marque d'énergie mondiale — voici comment nous avons grandi tout en restant fidèles à notre mission.",
+    "marketsLabel": "Portée mondiale, standards locaux",
+    "marketsTitle": "Confiance en Europe & en Amérique",
+    "marketsSubtitle": "Nos batteries sont spécifiquement conçues pour les formats de camping-cars européens et américains, la culture du camping et les conditions climatiques — des étés méditerranéens aux hivers nordiques."
   },
   "features": {
     "sectionLabel": "Pourquoi Sentorise",
@@ -209,7 +486,8 @@
     "specifications": "Spécifications",
     "description": "Description",
     "reviews": "Avis",
-    "relatedProducts": "Produits similaires"
+    "relatedProducts": "Produits similaires",
+    "home": "Accueil"
   },
   "market": {
     "selectMarket": "Choisir le marché",
