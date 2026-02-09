@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Product } from "@/data/products";
 import { Button } from "@/components/ui/button";
 import { useCompare } from "@/context/CompareContext";
+import { useMarket } from "@/context/MarketContext";
 import { Badge } from "@/components/ui/badge";
 import StockStatus from "@/components/StockStatus";
 import QuickViewModal from "@/components/QuickViewModal";
@@ -14,6 +15,7 @@ interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const { addToCompare, removeFromCompare, isInCompare, compareList } = useCompare();
+  const { formatPrice } = useMarket();
   const [quickViewOpen, setQuickViewOpen] = useState(false);
   const isComparing = isInCompare(product.id);
   const canAddMore = compareList.length < 3;
@@ -172,11 +174,11 @@ const ProductCard = ({ product }: ProductCardProps) => {
             <div>
               {product.salePrice ? (
                 <div className="flex items-baseline gap-2">
-                  <span className="text-xl font-bold text-primary">€{product.salePrice}</span>
-                  <span className="text-sm text-muted-foreground line-through">€{product.price}</span>
+                  <span className="text-xl font-bold text-primary">{formatPrice(product.salePrice)}</span>
+                  <span className="text-sm text-muted-foreground line-through">{formatPrice(product.price)}</span>
                 </div>
               ) : (
-                <span className="text-xl font-bold text-foreground">€{product.price}</span>
+                <span className="text-xl font-bold text-foreground">{formatPrice(product.price)}</span>
               )}
               <StockStatus 
                 stockQuantity={product.stockQuantity} 

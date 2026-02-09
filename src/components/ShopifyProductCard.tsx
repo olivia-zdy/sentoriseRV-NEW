@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ShopifyProduct, useCartStore } from "@/stores/cartStore";
+import { useMarket } from "@/context/MarketContext";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Loader2, Bluetooth, Thermometer } from "lucide-react";
@@ -13,6 +15,8 @@ interface ShopifyProductCardProps {
 export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
   const [isAdding, setIsAdding] = useState(false);
   const addItem = useCartStore(state => state.addItem);
+  const { formatPrice: formatMarketPrice } = useMarket();
+  const { t } = useTranslation();
   const { node } = product;
   
   const price = parseFloat(node.priceRange.minVariantPrice.amount);
@@ -28,12 +32,8 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
   const isCompact = node.title.toLowerCase().includes('mini') || 
                     node.title.toLowerCase().includes('compact');
 
-  const formatPrice = (amount: number) => {
-    return new Intl.NumberFormat('en-GB', {
-      style: 'currency',
-      currency: currencyCode,
-    }).format(amount);
-  };
+  // Price is in EUR from Shopify, convert via market context
+  const displayPrice = formatMarketPrice(price);
 
   const handleAddToCart = async (e: React.MouseEvent) => {
     e.preventDefault();
@@ -111,7 +111,7 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
         <div className="flex items-center justify-between pt-2">
           <div>
             <span className="text-2xl font-bold text-primary">
-              {formatPrice(price)}
+              {displayPrice}
             </span>
           </div>
           
@@ -126,7 +126,7 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
             ) : (
               <>
                 <ShoppingCart className="w-4 h-4" />
-                Add
+                {t('products.addToCart')}
               </>
             )}
           </Button>
@@ -135,9 +135,9 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
         {/* Trust indicators */}
         <div className="flex items-center justify-between pt-2 border-t text-xs text-muted-foreground">
           <div className="flex items-center gap-2">
-            <span>5-Year Warranty</span>
+            <span>{t('products.warranty')}</span>
             <span>•</span>
-            <span>Free EU Shipping</span>
+            <span>{t('products.freeShipping')}</span>
           </div>
           <Link 
             to="/warranty" 
