@@ -145,6 +145,19 @@ const Footer = () => {
                 <p>Tel: 0121 430 7024 / 07577 472 388</p>
               </div>
             </div>
+
+            {/* Legal & Tax Registration */}
+            <div className="space-y-2 text-xs text-muted-foreground mt-4">
+              <p className="font-medium text-foreground text-sm">Registrations</p>
+              <div className="grid grid-cols-1 gap-1">
+                <p>🇩🇪 VAT: DE456359817 · Tax: 15/386/85849</p>
+                <p>🇩🇪 Packaging: DE3211405650846 · WEEE: 33736135</p>
+                <p>🇫🇷 VAT: FR31989375530 · SIRET: 98937553000015</p>
+                <p>🇫🇷 Packaging: FR451595_01YOLN · EORI: FRCN989375530</p>
+                <p>🇳🇱 Battery: RL10007589</p>
+                <p>🇬🇧 VAT: GB500901051 · EORI: GB500901051000</p>
+              </div>
+            </div>
           </div>
 
           {/* Products */}
