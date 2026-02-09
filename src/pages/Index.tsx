@@ -67,11 +67,7 @@ const Index = () => {
         {/* Product Matrix: Quick capacity selection */}
         <ProductMatrix />
         
-        {/* Shop: Live Shopify Products */}
-        <ShopifyProductGrid 
-          title="Shop Our Batteries"
-          subtitle="All products in stock with fast EU shipping. Add to cart and checkout securely."
-        />
+        
         
         
         {/* FAQ: 4 key purchase decision questions */}
