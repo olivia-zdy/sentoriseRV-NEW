@@ -206,15 +206,15 @@ const ProductDetailPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageMeta 
-        title={product.name} 
-        description={`${product.name} - ${judgmentSentence} ${product.voltage} ${product.capacity} LiFePO4 battery with 5-year warranty.`}
+        title={t(`productNames.${product.id}.name`, { defaultValue: product.name })} 
+        description={`${t(`productNames.${product.id}.name`, { defaultValue: product.name })} - ${judgmentSentence} ${product.voltage} ${product.capacity} LiFePO4 battery with 5-year warranty.`}
         canonical={`/product/${product.id}`}
         ogType="product"
       />
       
       <ProductSchema
-        name={product.name}
-        description={product.description}
+        name={t(`productNames.${product.id}.name`, { defaultValue: product.name })}
+        description={t(`productNames.${product.id}.description`, { defaultValue: product.description })}
         image={product.image}
         sku={product.model}
         price={product.price}
@@ -272,7 +272,7 @@ const ProductDetailPage = () => {
 
                 {/* Product Name */}
                 <h1 className="text-2xl md:text-3xl font-bold text-foreground mt-2 mb-2">
-                  {product.name}
+                  {t(`productNames.${product.id}.name`, { defaultValue: product.name })}
                 </h1>
 
                 {/* Judgment Sentence - PRD Required */}

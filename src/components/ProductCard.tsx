@@ -19,6 +19,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
   const { addToCompare, removeFromCompare, isInCompare, compareList } = useCompare();
   const { formatPrice } = useMarket();
   const [quickViewOpen, setQuickViewOpen] = useState(false);
+  
+  // Use translated product name/description if available
+  const productName = t(`productNames.${product.id}.name`, { defaultValue: product.name });
+  const productTagline = t(`productNames.${product.id}.tagline`, { defaultValue: product.tagline });
   const isComparing = isInCompare(product.id);
   const canAddMore = compareList.length < 3;
 
@@ -134,7 +138,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
           {/* Product Name */}
           <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
-            {product.name}
+            {productName}
           </h3>
 
           {/* Key Specs Grid */}
