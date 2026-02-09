@@ -40,7 +40,12 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
   const currencyCode = node.priceRange.minVariantPrice.currencyCode;
   const shopifyImage = node.images?.edges?.[0]?.node;
   const localImage = localImageMap[node.handle];
-  const imageUrl = localImage || shopifyImage?.url;
+  // For Shopify CDN images, request a smaller size to reduce download
+  const shopifyUrl = shopifyImage?.url;
+  const optimizedShopifyUrl = shopifyUrl && shopifyUrl.includes('cdn.shopify.com')
+    ? `${shopifyUrl}${shopifyUrl.includes('?') ? '&' : '?'}width=400`
+    : shopifyUrl;
+  const imageUrl = localImage || optimizedShopifyUrl;
   const imageAlt = shopifyImage?.altText || node.title;
   const variant = node.variants?.edges?.[0]?.node;
   
@@ -92,6 +97,10 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
           <img 
             src={imageUrl} 
             alt={imageAlt}
+            width={400}
+            height={400}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
           />
         )}

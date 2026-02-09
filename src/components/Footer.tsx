@@ -116,7 +116,7 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Link to="/" className="inline-block mb-4">
-              <img src={logo} alt="Sentorise" className="h-8" />
+              <img src={logo} alt="Sentorise" width={110} height={32} className="h-8" />
             </Link>
             <p className="text-sm text-muted-foreground mb-4 max-w-xs">{t('footer.companyDesc')}</p>
             <div className="space-y-2 text-sm text-muted-foreground mb-4">
