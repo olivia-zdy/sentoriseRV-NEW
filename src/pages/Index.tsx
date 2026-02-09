@@ -8,6 +8,7 @@ import VerifiableTrust from "@/components/VerifiableTrust";
 import ProductMatrix from "@/components/ProductMatrix";
 import MediaCoverageBar from "@/components/MediaCoverageBar";
 import ShopifyProductGrid from "@/components/ShopifyProductGrid";
+import HomepageAccessories from "@/components/HomepageAccessories";
 
 import HomepageFAQ from "@/components/HomepageFAQ";
 import Testimonials from "@/components/Testimonials";
@@ -73,8 +74,10 @@ const Index = () => {
           subtitle="All products in stock with fast EU shipping. Add to cart and checkout securely."
         />
         
+        {/* Accessories */}
+        <HomepageAccessories />
         
-        
+
         {/* FAQ: 4 key purchase decision questions */}
         <HomepageFAQ />
         
