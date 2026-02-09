@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTheme } from "next-themes";
 import logoLight from "@/assets/logo-light.png";
 import logoDark from "@/assets/logo-dark.png";
-import { Mail, Phone, MapPin, Facebook, Instagram, Youtube, Linkedin, Shield, Award, Leaf, ShieldCheck } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Youtube, Linkedin, Shield, Award, Leaf, ShieldCheck, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 
 const footerLinks = {
@@ -47,6 +48,31 @@ const socialLinks = [
   { name: "YouTube", icon: Youtube, href: "#" },
   { name: "LinkedIn", icon: Linkedin, href: "#" },
 ];
+
+const RegistrationsToggle = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="text-xs text-muted-foreground mt-4">
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex items-center gap-1 font-medium text-foreground text-sm hover:text-primary transition-colors"
+      >
+        Registrations
+        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+      </button>
+      {open && (
+        <div className="grid grid-cols-1 gap-1 mt-2 animate-in fade-in slide-in-from-top-2 duration-200">
+          <p>🇩🇪 VAT: DE456359817 · Tax: 15/386/85849</p>
+          <p>🇩🇪 Packaging: DE3211405650846 · WEEE: 33736135</p>
+          <p>🇫🇷 VAT: FR31989375530 · SIRET: 98937553000015</p>
+          <p>🇫🇷 Packaging: FR451595_01YOLN · EORI: FRCN989375530</p>
+          <p>🇳🇱 Battery: RL10007589</p>
+          <p>🇬🇧 VAT: GB500901051 · EORI: GB500901051000</p>
+        </div>
+      )}
+    </div>
+  );
+};
 
 const Footer = () => {
   const { resolvedTheme } = useTheme();
@@ -146,18 +172,8 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Legal & Tax Registration */}
-            <div className="space-y-2 text-xs text-muted-foreground mt-4">
-              <p className="font-medium text-foreground text-sm">Registrations</p>
-              <div className="grid grid-cols-1 gap-1">
-                <p>🇩🇪 VAT: DE456359817 · Tax: 15/386/85849</p>
-                <p>🇩🇪 Packaging: DE3211405650846 · WEEE: 33736135</p>
-                <p>🇫🇷 VAT: FR31989375530 · SIRET: 98937553000015</p>
-                <p>🇫🇷 Packaging: FR451595_01YOLN · EORI: FRCN989375530</p>
-                <p>🇳🇱 Battery: RL10007589</p>
-                <p>🇬🇧 VAT: GB500901051 · EORI: GB500901051000</p>
-              </div>
-            </div>
+            {/* Legal & Tax Registration - Collapsible */}
+            <RegistrationsToggle />
           </div>
 
           {/* Products */}
