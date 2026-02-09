@@ -16,104 +16,7 @@ import {
 import logoLight from "@/assets/logo-light.png";
 import logoDark from "@/assets/logo-dark.png";
 
-// Mega menu column definitions
-const productsMegaMenu = [
-  {
-    title: "By Series",
-    items: [
-      { name: "Lite Series (6–50Ah)", href: "/products?series=Lite" },
-      { name: "Core Series (100Ah)", href: "/products?series=Core" },
-      { name: "Plus Series (200Ah)", href: "/products?series=Plus" },
-      { name: "View All Products", href: "/products" },
-    ],
-  },
-  {
-    title: "By Feature",
-    items: [
-      { name: "Bluetooth Batteries", href: "/products?feature=bluetooth" },
-      { name: "Self-Heating Models", href: "/products?feature=heated" },
-      { name: "Mini / Compact", href: "/products?feature=mini" },
-      { name: "DIN H8 Format", href: "/products?feature=din" },
-    ],
-  },
-  {
-    title: "Accessories",
-    items: [
-      { name: "Chargers", href: "/accessories" },
-      { name: "Battery Monitors", href: "/accessories" },
-      { name: "View All Accessories", href: "/accessories" },
-    ],
-  },
-  {
-    title: "Tools",
-    items: [
-      { name: "Battery Selector", href: "/battery-selector" },
-      { name: "Power Calculator", href: "/battery-selector#calculator" },
-      { name: "Product Comparison", href: "/compare" },
-    ],
-  },
-];
-
-const applicationsMegaMenu = [
-  {
-    title: "Mobile Living",
-    items: [
-      { name: "RV & Motorhome", href: "/applications#rv" },
-      { name: "Van Life", href: "/applications#vanlife" },
-      { name: "Camping & Outdoor", href: "/applications#camping" },
-    ],
-  },
-  {
-    title: "Energy Systems",
-    items: [
-      { name: "Off-Grid Solar", href: "/applications#solar" },
-      { name: "Off-Grid Cabin", href: "/applications#cabin" },
-      { name: "Backup Power", href: "/applications#backup" },
-    ],
-  },
-  {
-    title: "Marine",
-    items: [
-      { name: "Marine & Boat", href: "/applications#marine" },
-      { name: "Trolling Motor", href: "/applications#trolling" },
-    ],
-  },
-];
-
-const supportMegaMenu = [
-  {
-    title: "Support",
-    items: [
-      { name: "Help Center", href: "/support#faq" },
-      { name: "Contact Us", href: "/support#contact" },
-      { name: "Bluetooth Guide", href: "/bluetooth-guide" },
-    ],
-  },
-  {
-    title: "Warranty",
-    items: [
-      { name: "Register Warranty", href: "/warranty" },
-      { name: "Warranty Policy", href: "/support#warranty" },
-      { name: "Warranty Lookup", href: "/warranty#lookup" },
-    ],
-  },
-  {
-    title: "Resources",
-    items: [
-      { name: "Knowledge Center", href: "/blog" },
-      { name: "User Stories", href: "/stories" },
-      { name: "Downloads", href: "/support#downloads" },
-    ],
-  },
-  {
-    title: "Policy",
-    items: [
-      { name: "Terms & Conditions", href: "/terms" },
-      { name: "Privacy Policy", href: "/privacy" },
-      { name: "Shipping Policy", href: "/terms#shipping" },
-    ],
-  },
-];
+// Mega menu definitions moved inside the component to use t()
 
 type MegaMenuColumn = { title: string; items: { name: string; href: string }[] };
 
@@ -161,6 +64,71 @@ const Header = () => {
   const location = useLocation();
   const { resolvedTheme } = useTheme();
   const { t } = useTranslation();
+
+  const productsMegaMenu: MegaMenuColumn[] = [
+    { title: t('megaMenu.bySeries'), items: [
+      { name: t('megaMenu.liteSeries'), href: "/products?series=Lite" },
+      { name: t('megaMenu.coreSeries'), href: "/products?series=Core" },
+      { name: t('megaMenu.plusSeries'), href: "/products?series=Plus" },
+      { name: t('megaMenu.viewAllProducts'), href: "/products" },
+    ]},
+    { title: t('megaMenu.byFeature'), items: [
+      { name: t('megaMenu.bluetoothBatteries'), href: "/products?feature=bluetooth" },
+      { name: t('megaMenu.selfHeatingModels'), href: "/products?feature=heated" },
+      { name: t('megaMenu.miniCompact'), href: "/products?feature=mini" },
+      { name: t('megaMenu.dinH8Format'), href: "/products?feature=din" },
+    ]},
+    { title: t('megaMenu.accessories'), items: [
+      { name: t('megaMenu.chargers'), href: "/accessories" },
+      { name: t('megaMenu.batteryMonitors'), href: "/accessories" },
+      { name: t('megaMenu.viewAllAccessories'), href: "/accessories" },
+    ]},
+    { title: t('megaMenu.tools'), items: [
+      { name: t('megaMenu.batterySelector'), href: "/battery-selector" },
+      { name: t('megaMenu.powerCalculator'), href: "/battery-selector#calculator" },
+      { name: t('megaMenu.productComparison'), href: "/compare" },
+    ]},
+  ];
+
+  const applicationsMegaMenu: MegaMenuColumn[] = [
+    { title: t('megaMenu.mobileLiving'), items: [
+      { name: t('megaMenu.rvMotorhome'), href: "/applications#rv" },
+      { name: t('megaMenu.vanLife'), href: "/applications#vanlife" },
+      { name: t('megaMenu.campingOutdoor'), href: "/applications#camping" },
+    ]},
+    { title: t('megaMenu.energySystems'), items: [
+      { name: t('megaMenu.offGridSolar'), href: "/applications#solar" },
+      { name: t('megaMenu.offGridCabin'), href: "/applications#cabin" },
+      { name: t('megaMenu.backupPower'), href: "/applications#backup" },
+    ]},
+    { title: t('megaMenu.marine'), items: [
+      { name: t('megaMenu.marineBoat'), href: "/applications#marine" },
+      { name: t('megaMenu.trollingMotor'), href: "/applications#trolling" },
+    ]},
+  ];
+
+  const supportMegaMenu: MegaMenuColumn[] = [
+    { title: t('megaMenu.supportTitle'), items: [
+      { name: t('megaMenu.helpCenter'), href: "/support#faq" },
+      { name: t('megaMenu.contactUsMenu'), href: "/support#contact" },
+      { name: t('megaMenu.bluetoothGuide'), href: "/bluetooth-guide" },
+    ]},
+    { title: t('megaMenu.warranty'), items: [
+      { name: t('megaMenu.registerWarranty'), href: "/warranty" },
+      { name: t('megaMenu.warrantyPolicy'), href: "/support#warranty" },
+      { name: t('megaMenu.warrantyLookup'), href: "/warranty#lookup" },
+    ]},
+    { title: t('megaMenu.resources'), items: [
+      { name: t('megaMenu.knowledgeCenter'), href: "/blog" },
+      { name: t('megaMenu.userStories'), href: "/stories" },
+      { name: t('megaMenu.downloads'), href: "/support#downloads" },
+    ]},
+    { title: t('megaMenu.policy'), items: [
+      { name: t('megaMenu.termsConditions'), href: "/terms" },
+      { name: t('megaMenu.privacyPolicy'), href: "/privacy" },
+      { name: t('megaMenu.shippingPolicy'), href: "/terms#shipping" },
+    ]},
+  ];
 
   const navLinks: NavLink[] = [
     { name: t('nav.home'), href: "/", active: location.pathname === "/" },
