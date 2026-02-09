@@ -6,6 +6,7 @@ import TrustBadges from "@/components/TrustBadges";
 import CoreValueModules from "@/components/CoreValueModules";
 import VerifiableTrust from "@/components/VerifiableTrust";
 import ProductMatrix from "@/components/ProductMatrix";
+import MediaCoverageBar from "@/components/MediaCoverageBar";
 import ShopifyProductGrid from "@/components/ShopifyProductGrid";
 
 import HomepageFAQ from "@/components/HomepageFAQ";
@@ -75,6 +76,9 @@ const Index = () => {
         
         {/* FAQ: 4 key purchase decision questions */}
         <HomepageFAQ />
+        
+        {/* Media Coverage */}
+        <MediaCoverageBar />
         
         {/* Social Proof */}
         <Testimonials />
