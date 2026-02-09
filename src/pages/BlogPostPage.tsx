@@ -11,6 +11,7 @@ import BreadcrumbSchema from "@/components/SEO/BreadcrumbSchema";
 import { ArrowLeft, Calendar, Clock, User, Tag, Share2, List, ChevronRight } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
 import BlogProductRecommendations from "@/components/BlogProductRecommendations";
+import BlogSystemPairingGuide from "@/components/BlogSystemPairingGuide";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -292,6 +293,9 @@ const BlogPostPage = () => {
                   </Link>
                 ))}
               </div>
+
+              {/* System Pairing Guide for Engineering articles */}
+              <BlogSystemPairingGuide tags={post.tags} category={post.category} />
 
               {/* Product Recommendations for Engineering articles */}
               <BlogProductRecommendations tags={post.tags} category={post.category} />
