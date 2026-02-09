@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { accessoryProducts } from "@/data/accessories";
+import { useMarket } from "@/context/MarketContext";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 
 const HomepageAccessories = () => {
+  const { formatPrice } = useMarket();
   return (
     <section className="section-padding bg-muted/30">
       <div className="container-custom">
@@ -48,7 +50,7 @@ const HomepageAccessories = () => {
                 </p>
                 <div className="flex items-center justify-between pt-1">
                   <span className="text-lg font-bold text-primary">
-                    €{(product.salePrice ?? product.price).toFixed(2)}
+                    {formatPrice(product.salePrice ?? product.price)}
                   </span>
                   <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
