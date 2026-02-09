@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { useMarket } from "@/context/MarketContext";
 import PageTransition from "@/components/PageTransition";
 import { Link, useParams } from "react-router-dom";
 import AnnouncementBar from "@/components/AnnouncementBar";
@@ -117,6 +119,8 @@ const ProductDetailPage = () => {
   const [shopifyVariantId, setShopifyVariantId] = useState<string | null>(null);
   const [shopifyProduct, setShopifyProduct] = useState<ShopifyProduct | null>(null);
   const addItem = useCartStore(state => state.addItem);
+  const { t } = useTranslation();
+  const { formatPrice } = useMarket();
   
   const product = getProductById(productId || "");
   const certifications = getCertificationsForProduct(productId || "");
@@ -311,14 +315,14 @@ const ProductDetailPage = () => {
                   <div className="flex items-baseline gap-3 mb-3">
                     {product.salePrice ? (
                       <>
-                        <span className="text-3xl font-bold text-primary">€{product.salePrice}</span>
-                        <span className="text-lg text-muted-foreground line-through">€{product.price}</span>
-                        <span className="px-2 py-0.5 text-xs font-bold bg-red-500 text-white rounded">
-                          Save €{product.price - product.salePrice}
+                        <span className="text-3xl font-bold text-primary">{formatPrice(product.salePrice)}</span>
+                        <span className="text-lg text-muted-foreground line-through">{formatPrice(product.price)}</span>
+                        <span className="px-2 py-0.5 text-xs font-bold bg-destructive text-destructive-foreground rounded">
+                          -{Math.round((1 - product.salePrice / product.price) * 100)}%
                         </span>
                       </>
                     ) : (
-                      <span className="text-3xl font-bold text-foreground">€{product.price}</span>
+                      <span className="text-3xl font-bold text-foreground">{formatPrice(product.price)}</span>
                     )}
                   </div>
                   <StockStatus 
