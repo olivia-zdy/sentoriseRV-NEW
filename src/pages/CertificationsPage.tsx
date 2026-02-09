@@ -52,16 +52,16 @@ const certifications = [
 ];
 
 const mediaPartners = [
-  { name: "Börse", displayName: "Börse" },
-  { name: "Le Figaro", displayName: "LE FIGARO" },
-  { name: "Neozone", displayName: "NEOZONE" },
-  { name: "Yahoo!", displayName: "yahoo!" },
-  { name: "NewsBreak", displayName: "NEWSBREAK" },
-  { name: "SBT Insight", displayName: "SBT Insight" },
-  { name: "One News Page", displayName: "One News Page" },
-  { name: "Alphens.nl", displayName: "Alphens.nl" },
-  { name: "Nydus", displayName: "Nydus" },
-  { name: "tz", displayName: "tz" },
+  { name: "Börse", style: "font-serif font-black text-2xl tracking-tight" },
+  { name: "LE FIGARO", style: "font-serif font-bold text-xl tracking-wide" },
+  { name: "NEOZONE", style: "font-sans font-black text-xl tracking-widest uppercase" },
+  { name: "yahoo!", style: "font-sans font-bold text-2xl italic text-purple-600 dark:text-purple-400" },
+  { name: "NEWSBREAK", style: "font-sans font-black text-lg tracking-wider uppercase" },
+  { name: "SBT Insight", style: "font-sans font-semibold text-lg tracking-wide" },
+  { name: "One News Page", style: "font-sans font-bold text-base" },
+  { name: "Alphens.nl", style: "font-sans font-semibold text-lg italic" },
+  { name: "tz", style: "font-serif font-black text-3xl text-red-600 dark:text-red-400" },
+  { name: "Nydus", style: "font-sans font-bold text-xl tracking-tight" },
 ];
 
 const CertificationsPage = () => {
@@ -165,9 +165,9 @@ const CertificationsPage = () => {
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                 {mediaPartners.map((partner, index) => (
                   <ScrollReveal key={partner.name} delay={index * 0.05}>
-                    <div className="flex items-center justify-center h-20 px-4 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-md transition-all duration-300">
-                      <span className="text-lg font-bold text-foreground/70 group-hover:text-foreground transition-colors">
-                        {partner.displayName}
+                    <div className="group flex items-center justify-center h-20 px-4 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-md transition-all duration-300">
+                      <span className={`${partner.style} text-foreground/60 group-hover:text-foreground transition-colors select-none`}>
+                        {partner.name}
                       </span>
                     </div>
                   </ScrollReveal>
