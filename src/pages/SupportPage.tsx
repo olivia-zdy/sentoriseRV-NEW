@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PageTransition from "@/components/PageTransition";
+import ScrollReveal from "@/components/ScrollReveal";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -132,6 +133,7 @@ const SupportPage = () => {
         {/* Support Categories - Glass Icons */}
         <section className="section-padding">
           <div className="container-custom">
+            <ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {supportCategories.map((category) => (
                 <a
@@ -147,8 +149,9 @@ const SupportPage = () => {
                 </a>
               ))}
             </div>
+            </ScrollReveal>
 
-            {/* Quick Links */}
+            <ScrollReveal delay={0.1}>
             <div className="mt-8 p-6 bg-primary/5 rounded-xl border border-primary/20">
               <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -167,12 +170,14 @@ const SupportPage = () => {
                 ))}
               </div>
             </div>
+            </ScrollReveal>
           </div>
         </section>
 
         {/* FAQ Section with Accordion */}
         <section id="faq" className="section-padding bg-muted/30 border-y border-border">
           <div className="container-custom">
+            <ScrollReveal>
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                 Frequently Asked Questions
@@ -181,8 +186,10 @@ const SupportPage = () => {
                 Quick answers to common questions about Sentorise batteries.
               </p>
             </div>
+            </ScrollReveal>
 
             <div className="max-w-3xl mx-auto">
+              <ScrollReveal delay={0.1}>
               <Accordion type="single" collapsible className="space-y-4">
                 {faqs.map((faq, index) => (
                   <AccordionItem 
@@ -199,6 +206,7 @@ const SupportPage = () => {
                   </AccordionItem>
                 ))}
               </Accordion>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -206,6 +214,7 @@ const SupportPage = () => {
         {/* Downloads */}
         <section id="downloads" className="section-padding">
           <div className="container-custom">
+            <ScrollReveal>
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                 Downloads
@@ -214,7 +223,9 @@ const SupportPage = () => {
                 Access product documentation and resources.
               </p>
             </div>
+            </ScrollReveal>
 
+            <ScrollReveal delay={0.1}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {["Product Datasheets", "Installation Guides", "Certification Documents"].map((doc) => (
                 <div key={doc} className="p-6 bg-card rounded-xl border border-border text-center hover:border-primary/30 transition-colors">
@@ -229,12 +240,14 @@ const SupportPage = () => {
                 </div>
               ))}
             </div>
+            </ScrollReveal>
           </div>
         </section>
 
         {/* Warranty Section */}
         <section id="warranty" className="section-padding bg-muted/30 border-y border-border">
           <div className="container-custom">
+            <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center">
               <div className={`${glassIconClass} mx-auto mb-6`}>
                 <Shield className="w-6 h-6 text-primary" />
@@ -250,12 +263,14 @@ const SupportPage = () => {
               </p>
               <Button>Register Your Product</Button>
             </div>
+            </ScrollReveal>
           </div>
         </section>
 
         {/* Contact Section */}
         <section id="contact" className="section-padding bg-muted/30">
           <div className="container-custom">
+            <ScrollReveal>
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                 Contact Us
@@ -264,7 +279,9 @@ const SupportPage = () => {
                 Need personalized help? Fill out the form below or reach us directly.
               </p>
             </div>
+            </ScrollReveal>
 
+            <ScrollReveal delay={0.1}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
               {/* Contact Form */}
               <div className="bg-card p-6 md:p-8 rounded-xl border border-border">
@@ -288,6 +305,7 @@ const SupportPage = () => {
                 </div>
               </div>
             </div>
+            </ScrollReveal>
           </div>
         </section>
       </main>
