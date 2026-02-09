@@ -96,8 +96,8 @@ const VerifiableTrust = () => {
                 <div className="flex items-start gap-2">
                   <Mail className="w-4 h-4 text-primary mt-0.5" />
                   <div>
-                    <a href="mailto:support@sentorise.de" className="text-foreground hover:text-primary font-medium">
-                      support@sentorise.de
+                    <a href="mailto:support@sentorise.com" className="text-foreground hover:text-primary font-medium">
+                      support@sentorise.com
                     </a>
                     <p className="text-muted-foreground text-xs">Response within 24-48 hours</p>
                   </div>
@@ -225,8 +225,8 @@ const VerifiableTrust = () => {
               <span>Friedrichstraße 123, 10117 Berlin</span>
               <span>VAT: DE123456789</span>
               <span>HRB 12345 B</span>
-              <a href="mailto:support@sentorise.de" className="text-primary hover:underline">
-                support@sentorise.de
+              <a href="mailto:support@sentorise.com" className="text-primary hover:underline">
+                support@sentorise.com
               </a>
             </div>
           </div>

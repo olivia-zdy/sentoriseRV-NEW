@@ -142,8 +142,8 @@ const WarrantyPage = () => {
               <div className="mt-8 p-4 bg-primary/5 rounded-lg border border-primary/10">
                 <p className="text-sm text-muted-foreground">
                   <strong className="text-foreground">Note:</strong> {t('warranty.registrationNote')}{" "}
-                  <a href="mailto:warranty@sentorise.de" className="text-primary hover:underline">
-                    warranty@sentorise.de
+                  <a href="mailto:support@sentorise.com" className="text-primary hover:underline">
+                    support@sentorise.com
                   </a>
                 </p>
               </div>
