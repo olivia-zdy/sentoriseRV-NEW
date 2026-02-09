@@ -121,6 +121,7 @@ const Header = () => {
     { title: t('megaMenu.resources'), items: [
       { name: t('megaMenu.knowledgeCenter'), href: "/blog" },
       { name: t('megaMenu.userStories'), href: "/stories" },
+      { name: t('megaMenu.certifications'), href: "/certifications" },
       { name: t('megaMenu.downloads'), href: "/support#downloads" },
     ]},
     { title: t('megaMenu.policy'), items: [

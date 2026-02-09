@@ -30,6 +30,7 @@ const WarrantyPage = lazy(() => import("./pages/WarrantyPage"));
 const BluetoothGuidePage = lazy(() => import("./pages/BluetoothGuidePage"));
 const PrivacyPage = lazy(() => import("./pages/PrivacyPage"));
 const TermsPage = lazy(() => import("./pages/TermsPage"));
+const CertificationsPage = lazy(() => import("./pages/CertificationsPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const AIChatWidget = lazy(() => import("./components/AIChatWidget"));
 
@@ -80,6 +81,7 @@ const App = () => (
                     <Route path="/bluetooth-guide" element={<BluetoothGuidePage />} />
                     <Route path="/privacy" element={<PrivacyPage />} />
                     <Route path="/terms" element={<TermsPage />} />
+                    <Route path="/certifications" element={<CertificationsPage />} />
                     <Route path="/admin/login" element={<AdminLogin />} />
                     <Route path="/admin" element={<AdminDashboard />} />
                     <Route path="/admin/leads" element={<LeadFollowUp />} />

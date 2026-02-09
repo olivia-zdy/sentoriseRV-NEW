@@ -49,6 +49,7 @@
     "resources": "Ressources",
     "knowledgeCenter": "Base de connaissances",
     "userStories": "Témoignages",
+    "certifications": "Certifications & Médias",
     "downloads": "Téléchargements",
     "policy": "Mentions légales",
     "termsConditions": "CGV",
@@ -502,5 +503,20 @@
     "returns": "Retour sous 30 jours",
     "cycles": "4000+ Cycles",
     "certifiedSafe": "Certifié sûr"
+  },
+  "certifications": {
+    "badge": "Qualité & Conformité",
+    "title": "Nos Certifications",
+    "subtitle": "Certifié par de multiples organismes de test internationalement reconnus.",
+    "statCerts": "Certifications Internationales",
+    "statWarranty": "Ans de Garantie",
+    "statTests": "Tests de Sécurité Réussis",
+    "statCompliance": "Conformité UE",
+    "mediaBadge": "Presse & Médias",
+    "mediaTitle": "Couverture Médiatique",
+    "mediaSubtitle": "Mentionné et présenté dans les principaux médias européens et internationaux.",
+    "ctaTitle": "Besoin de documents de certification ?",
+    "ctaDescription": "Téléchargez les rapports de test officiels et les certificats de conformité.",
+    "ctaButton": "Accéder aux téléchargements"
   }
 }

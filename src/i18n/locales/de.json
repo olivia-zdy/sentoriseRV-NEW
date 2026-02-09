@@ -49,6 +49,7 @@
     "resources": "Ressourcen",
     "knowledgeCenter": "Wissensdatenbank",
     "userStories": "Erfahrungsberichte",
+    "certifications": "Zertifizierungen & Medien",
     "downloads": "Downloads",
     "policy": "Richtlinien",
     "termsConditions": "AGB",
@@ -502,5 +503,20 @@
     "returns": "30 Tage Rückgabe",
     "cycles": "4000+ Zyklen",
     "certifiedSafe": "Zertifiziert sicher"
+  },
+  "certifications": {
+    "badge": "Qualität & Konformität",
+    "title": "Unsere Zertifizierungen",
+    "subtitle": "Mehrfach technisch zertifiziert durch international anerkannte Prüforganisationen.",
+    "statCerts": "Internationale Zertifizierungen",
+    "statWarranty": "Jahre Garantie",
+    "statTests": "Sicherheitstests bestanden",
+    "statCompliance": "EU-Konformität",
+    "mediaBadge": "Presse & Medien",
+    "mediaTitle": "Medienberichte",
+    "mediaSubtitle": "Erwähnt und vorgestellt in führenden europäischen und internationalen Medien.",
+    "ctaTitle": "Zertifizierungsdokumente benötigt?",
+    "ctaDescription": "Laden Sie offizielle Prüfberichte und Konformitätszertifikate für Ihre Unterlagen herunter.",
+    "ctaButton": "Zu den Downloads"
   }
 }
