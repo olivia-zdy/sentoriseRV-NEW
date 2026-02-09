@@ -116,27 +116,35 @@ const Footer = () => {
             
             {/* Company Entity Info */}
             <div className="space-y-2 text-sm text-muted-foreground mb-4">
-              <p className="font-medium text-foreground">Sentorise Energy GmbH</p>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
-                <span>Friedrichstraße 123, 10117 Berlin, Germany</span>
-              </div>
+              <p className="font-medium text-foreground">Sentorise Energy</p>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
                 <a href="mailto:support@sentorise.com" className="hover:text-foreground">
                   support@sentorise.com
                 </a>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                <span>+49 30 1234 5678</span>
-              </div>
             </div>
 
-            {/* VAT Info */}
-            <p className="text-xs text-muted-foreground">
-              VAT: DE123456789 | HRB 12345 B
-            </p>
+            {/* Warehouse Locations */}
+            <div className="space-y-3 text-xs text-muted-foreground">
+              <p className="font-medium text-foreground text-sm">Warehouses</p>
+              <div>
+                <p className="font-medium text-foreground">🇩🇪 Germany</p>
+                <p>OYB EU GmbH</p>
+                <p>Auf der Struth 1, 61279 Grävenwiesbach</p>
+              </div>
+              <div>
+                <p className="font-medium text-foreground">🇵🇱 Poland</p>
+                <p>Generała Mikołaja Bołtucia 8</p>
+                <p>05-827 Grodzisk Mazowiecki</p>
+              </div>
+              <div>
+                <p className="font-medium text-foreground">🇬🇧 United Kingdom</p>
+                <p>Unit 1141, Space Station, Warstock Road</p>
+                <p>Kings Heath, Birmingham B14 4ST</p>
+                <p>Tel: 0121 430 7024 / 07577 472 388</p>
+              </div>
+            </div>
           </div>
 
           {/* Products */}
@@ -218,7 +226,7 @@ const Footer = () => {
 
             {/* Copyright */}
             <p className="text-sm text-muted-foreground text-center">
-              © {new Date().getFullYear()} Sentorise Energy GmbH. All rights reserved.
+              © {new Date().getFullYear()} Sentorise Energy. All rights reserved.
             </p>
 
             {/* Legal Links */}
