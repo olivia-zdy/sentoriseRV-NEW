@@ -49,6 +49,7 @@
     "resources": "Resources",
     "knowledgeCenter": "Knowledge Center",
     "userStories": "User Stories",
+    "certifications": "Certifications & Media",
     "downloads": "Downloads",
     "policy": "Policy",
     "termsConditions": "Terms & Conditions",
@@ -502,5 +503,20 @@
     "returns": "30-Day Returns",
     "cycles": "4000+ Cycles",
     "certifiedSafe": "Certified Safe"
+  },
+  "certifications": {
+    "badge": "Quality & Compliance",
+    "title": "Our Certifications",
+    "subtitle": "Passed multiple technical certifications from internationally recognized testing organizations.",
+    "statCerts": "International Certifications",
+    "statWarranty": "Year Warranty",
+    "statTests": "Safety Tests Passed",
+    "statCompliance": "EU Compliance",
+    "mediaBadge": "Press & Media",
+    "mediaTitle": "Media Coverage",
+    "mediaSubtitle": "Featured and referenced by leading European and international media outlets.",
+    "ctaTitle": "Need Certification Documents?",
+    "ctaDescription": "Download official test reports and compliance certificates for your records or regulatory needs.",
+    "ctaButton": "Go to Downloads"
   }
 }
