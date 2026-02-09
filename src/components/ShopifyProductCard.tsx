@@ -8,6 +8,23 @@ import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Loader2, Bluetooth, Thermometer } from "lucide-react";
 import { toast } from "sonner";
 
+// Local image overrides to fix Shopify CDN mismatch
+import img6ah from "@/assets/product-6ah.png";
+import img50ah from "@/assets/product-50ah.png";
+import img100ahStd from "@/assets/product-100ah-std.png";
+import img100ahMini from "@/assets/product-100ah-mini.png";
+import img100ahDin from "@/assets/product-100ah-din.png";
+import img200ahHeated from "@/assets/product-200ah-heated.png";
+
+const localImageMap: Record<string, string> = {
+  "lite-12v-6ah-ultra-compact-lifepo-battery": img6ah,
+  "lite-12v-50ah-bluetooth-lifepo-battery": img50ah,
+  "core-12v-100ah-standard-lifepo-battery": img100ahStd,
+  "core-12v-100ah-mini-compact-lifepo-battery": img100ahMini,
+  "core-12v-100ah-din-h8-under-seat-lifepo-battery": img100ahDin,
+  "plus-12v-200ah-heated-arctic-lifepo-battery": img200ahHeated,
+};
+
 interface ShopifyProductCardProps {
   product: ShopifyProduct;
 }
@@ -21,7 +38,10 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
   
   const price = parseFloat(node.priceRange.minVariantPrice.amount);
   const currencyCode = node.priceRange.minVariantPrice.currencyCode;
-  const image = node.images?.edges?.[0]?.node;
+  const shopifyImage = node.images?.edges?.[0]?.node;
+  const localImage = localImageMap[node.handle];
+  const imageUrl = localImage || shopifyImage?.url;
+  const imageAlt = shopifyImage?.altText || node.title;
   const variant = node.variants?.edges?.[0]?.node;
   
   // Detect features from tags or title
@@ -68,10 +88,10 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
     >
       {/* Image */}
       <div className="relative aspect-square bg-muted/30 p-4">
-        {image && (
+        {imageUrl && (
           <img 
-            src={image.url} 
-            alt={image.altText || node.title}
+            src={imageUrl} 
+            alt={imageAlt}
             className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
           />
         )}
