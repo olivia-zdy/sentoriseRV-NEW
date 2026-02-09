@@ -1,6 +1,8 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useCartStore, ShopifyProduct } from "@/stores/cartStore";
+import charger20aImg from "@/assets/accessory-charger-20a.webp";
+import batteryMonitorTr24Img from "@/assets/accessory-battery-monitor-tr24.png";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -40,6 +42,28 @@ interface Accessory {
 // Accessory catalog - in production, this would come from Shopify
 const accessories: Accessory[] = [
   {
+    id: "acc-charger-20a-wp",
+    name: "20A LiFePO₄ Charger – Waterproof",
+    description: "14.6V 20A fast charger with fully potted waterproof design, 0V wake-up function, and multi-layer protection. EU plug.",
+    price: 149.99,
+    originalPrice: 149.99,
+    image: charger20aImg,
+    category: "charger",
+    compatibility: ["core-12v100-std", "core-12v100-mini", "core-12v100-din", "plus-12v200-heated"],
+    inStock: false,
+    badge: "Pre-order"
+  },
+  {
+    id: "acc-monitor-tr24",
+    name: "TR24 IP68 Battery Monitor",
+    description: "500A M8 shunt coulomb counter, 8–100V wide voltage, IP68 waterproof, Bluetooth connectivity.",
+    price: 89.99,
+    image: batteryMonitorTr24Img,
+    category: "monitor",
+    compatibility: ["all"],
+    inStock: true,
+  },
+  {
     id: "acc-cable-anderson",
     name: "Anderson SB50 Cable Set",
     description: "Heavy-duty 50A rated Anderson connectors with 1.5m cable length. Perfect for RV and solar installations.",
@@ -49,38 +73,6 @@ const accessories: Accessory[] = [
     compatibility: ["all"],
     inStock: true,
     badge: "Popular"
-  },
-  {
-    id: "acc-charger-smart",
-    name: "LiFePO₄ Smart Charger 14.6V/10A",
-    description: "Optimized charging profile for LiFePO₄ chemistry. Auto-detect and temperature compensation.",
-    price: 49.99,
-    originalPrice: 59.99,
-    image: "https://images.unsplash.com/photo-1609592424117-6a6e7eecc699?w=300&h=300&fit=crop",
-    category: "charger",
-    compatibility: ["lite-12v6", "lite-12v50", "core-12v100-std", "core-12v100-mini", "core-12v100-din"],
-    inStock: true,
-    badge: "Recommended"
-  },
-  {
-    id: "acc-charger-20a",
-    name: "LiFePO₄ Smart Charger 14.6V/20A",
-    description: "High-power charger for 100Ah+ batteries. Built-in cooling fan and LED status display.",
-    price: 79.99,
-    image: "https://images.unsplash.com/photo-1609592424117-6a6e7eecc699?w=300&h=300&fit=crop",
-    category: "charger",
-    compatibility: ["core-12v100-std", "core-12v100-mini", "core-12v100-din", "plus-12v200-heated"],
-    inStock: true,
-  },
-  {
-    id: "acc-monitor-shunt",
-    name: "Battery Monitor with Shunt",
-    description: "Precision Coulomb counter with 500A shunt. Shows voltage, current, SOC, and history.",
-    price: 39.99,
-    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=300&h=300&fit=crop",
-    category: "monitor",
-    compatibility: ["all"],
-    inStock: true,
   },
   {
     id: "acc-fuse-holder",
@@ -111,18 +103,6 @@ const accessories: Accessory[] = [
     category: "mounting",
     compatibility: ["core-12v100-std", "core-12v100-mini", "core-12v100-din", "plus-12v200-heated"],
     inStock: true,
-  },
-  {
-    id: "acc-battery-box",
-    name: "Weatherproof Battery Box",
-    description: "IP65 rated enclosure for outdoor installations. Fits Group 31 batteries.",
-    price: 69.99,
-    originalPrice: 89.99,
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop",
-    category: "mounting",
-    compatibility: ["core-12v100-std"],
-    inStock: true,
-    badge: "20% Off"
   },
 ];
 
@@ -171,14 +151,14 @@ const bundles: BundleOption[] = [
     name: "Complete Bundle",
     tagline: "Most Popular",
     description: "Everything you need for a professional installation.",
-    accessories: ["acc-charger-smart", "acc-cable-anderson", "acc-fuse-holder", "acc-monitor-shunt", "acc-terminal-kit"],
+    accessories: ["acc-charger-20a-wp", "acc-cable-anderson", "acc-fuse-holder", "acc-monitor-tr24", "acc-terminal-kit"],
     discountPercent: 20,
     forProducts: ["core-12v100-std", "core-12v100-mini", "core-12v100-din"],
     tier: "complete",
     bestFor: "Full RV or solar installation",
     highlights: [
-      "10A smart charger",
-      "Battery monitor w/ shunt",
+      "20A waterproof charger",
+      "TR24 battery monitor w/ 500A shunt",
       "All Starter items included"
     ],
     limitations: [
@@ -192,7 +172,7 @@ const bundles: BundleOption[] = [
     name: "Pro Bundle",
     tagline: "Full System",
     description: "High-capacity setup with advanced monitoring and protection.",
-    accessories: ["acc-charger-20a", "acc-monitor-shunt", "acc-fuse-holder", "acc-bus-bar"],
+    accessories: ["acc-charger-20a-wp", "acc-monitor-tr24", "acc-fuse-holder", "acc-bus-bar"],
     discountPercent: 20,
     forProducts: ["plus-12v200-heated"],
     tier: "pro",
