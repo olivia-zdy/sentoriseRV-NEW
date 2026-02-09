@@ -24,7 +24,7 @@ const MediaCoverageBar = () => {
           {mediaNames.map((media) => (
             <span
               key={media.name}
-              className={`${media.style} text-sm md:text-base text-foreground/40 select-none`}
+              className={`${media.style} text-sm md:text-base text-foreground/65 select-none`}
             >
               {media.name}
             </span>
