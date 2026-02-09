@@ -42,7 +42,7 @@ interface Accessory {
 // Accessory catalog - in production, this would come from Shopify
 const accessories: Accessory[] = [
   {
-    id: "acc-charger-20a-wp",
+    id: "SENT-CHG-14V6-20A-WP",
     name: "20A LiFePO₄ Charger – Waterproof",
     description: "14.6V 20A fast charger with fully potted waterproof design, 0V wake-up function, and multi-layer protection. EU plug.",
     price: 149.99,
@@ -54,7 +54,7 @@ const accessories: Accessory[] = [
     badge: "Pre-order"
   },
   {
-    id: "acc-monitor-tr24",
+    id: "SENT-METER-500A-BT-WP",
     name: "TR24 IP68 Battery Monitor",
     description: "500A M8 shunt coulomb counter, 8–100V wide voltage, IP68 waterproof, Bluetooth connectivity.",
     price: 89.99,
@@ -151,7 +151,7 @@ const bundles: BundleOption[] = [
     name: "Complete Bundle",
     tagline: "Most Popular",
     description: "Everything you need for a professional installation.",
-    accessories: ["acc-charger-20a-wp", "acc-cable-anderson", "acc-fuse-holder", "acc-monitor-tr24", "acc-terminal-kit"],
+    accessories: ["SENT-CHG-14V6-20A-WP", "acc-cable-anderson", "acc-fuse-holder", "SENT-METER-500A-BT-WP", "acc-terminal-kit"],
     discountPercent: 20,
     forProducts: ["core-12v100-std", "core-12v100-mini", "core-12v100-din"],
     tier: "complete",
@@ -172,7 +172,7 @@ const bundles: BundleOption[] = [
     name: "Pro Bundle",
     tagline: "Full System",
     description: "High-capacity setup with advanced monitoring and protection.",
-    accessories: ["acc-charger-20a-wp", "acc-monitor-tr24", "acc-fuse-holder", "acc-bus-bar"],
+    accessories: ["SENT-CHG-14V6-20A-WP", "SENT-METER-500A-BT-WP", "acc-fuse-holder", "acc-bus-bar"],
     discountPercent: 20,
     forProducts: ["plus-12v200-heated"],
     tier: "pro",

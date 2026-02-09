@@ -33,7 +33,7 @@ export interface AccessoryProduct {
 
 export const accessoryProducts: AccessoryProduct[] = [
   {
-    id: "acc-charger-20a-wp",
+    id: "SENT-CHG-14V6-20A-WP",
     slug: "lifepo4-charger-20a",
     name: "20A LiFePO₄ Battery Charger",
     subtitle: "14.6V Fast Charging, Fully Potted & Water-Resistant Design",
@@ -72,13 +72,18 @@ export const accessoryProducts: AccessoryProduct[] = [
       { label: "Status Indicator", value: "LED charging status" },
       { label: "Operating Temperature", value: "-20°C to 50°C" },
       { label: "Storage Temperature", value: "-25°C to 85°C" },
-      { label: "Dimensions", value: "176 × 124.5 × 59 mm" },
+      { label: "Dimensions", value: "176 × 124.5 × 59 mm (6.93 × 4.90 × 2.32 in)" },
+      { label: "Packaging", value: "270 × 195 × 132 mm" },
       { label: "Input Cable", value: "3 × 0.75mm², 1.2m" },
       { label: "Output Cable", value: "2 × 2.5mm², 1.1m" },
       { label: "Connector", value: "50A Anderson + terminal rings" },
       { label: "Plug Type", value: "EU Standard (Schuko)" },
-      { label: "Weight", value: "~1.9 kg" },
+      { label: "Weight", value: "1.45 kg (shipping: 1.9 kg)" },
       { label: "Certifications", value: "CE compliant" },
+      { label: "SKU", value: "SENT-CHG-14V6-20A-WP" },
+      { label: "Barcode", value: "6979061120085" },
+      { label: "HS Code", value: "8504.40.9990" },
+      { label: "Origin", value: "CN" },
     ],
     sections: [
       {
@@ -161,7 +166,7 @@ export const accessoryProducts: AccessoryProduct[] = [
     ],
   },
   {
-    id: "acc-monitor-tr24",
+    id: "SENT-METER-500A-BT-WP",
     slug: "battery-monitor-tr24",
     name: "TR24 IP68 Battery Monitor",
     subtitle: "500A M8 Shunt | 8–100V | Bluetooth | High-Precision Coulomb Counter",
@@ -187,8 +192,11 @@ export const accessoryProducts: AccessoryProduct[] = [
       { label: "Capacity Range", value: "0.1–9999Ah" },
       { label: "Protection Rating", value: "IP68" },
       { label: "Operating Temperature", value: "-10°C to 60°C" },
-      { label: "Panel Size", value: "72.5 × 72.5 mm" },
+      { label: "Panel Size", value: "72.5 × 72.5 mm (2.85 × 2.85 in)" },
+      { label: "Panel Depth", value: "20.75 mm (0.82 in)" },
       { label: "Mounting Cutout", value: "Ø67 ±0.3 mm" },
+      { label: "SKU", value: "SENT-METER-500A-BT-WP" },
+      { label: "Barcode", value: "6979061120078" },
     ],
     sections: [
       {
