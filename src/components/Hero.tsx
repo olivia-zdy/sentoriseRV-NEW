@@ -40,6 +40,7 @@ const Hero = () => {
   const goToSlide = useCallback((index: number) => {
     setDirection(index > currentSlide ? 1 : -1);
     setCurrentSlide(index);
+    setHasTransitioned(true);
   }, [currentSlide]);
 
   const scrollToContent = useCallback(() => {
@@ -50,14 +51,15 @@ const Hero = () => {
 
   const key = sceneKeys[currentSlide];
   const trustKeys = sceneTrustPointKeys[key];
-
-  // Use public path for first slide (LCP preload), Vite-bundled for others
   const firstSlidePublicUrl = "/hero-rv-winter.jpg";
+
+  // On initial load (no transition yet), render pure HTML/CSS — no framer-motion layout measurement
+  const isInitial = !hasTransitioned && currentSlide === 0;
 
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-      {/* First slide renders as static img for instant LCP, subsequent slides use motion */}
-      {!hasTransitioned && currentSlide === 0 ? (
+      {/* Background image */}
+      {isInitial ? (
         <div className="absolute inset-0">
           <img 
             src={firstSlidePublicUrl} 
@@ -97,92 +99,146 @@ const Hero = () => {
 
       <div className="container-custom relative z-10 py-16 md:py-20">
         <div className="max-w-2xl">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentSlide}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="mb-4"
-            >
-              <motion.span 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1, boxShadow: ["0 0 20px hsl(var(--primary) / 0.4)", "0 0 30px hsl(var(--primary) / 0.6)", "0 0 20px hsl(var(--primary) / 0.4)"] }}
-                transition={{ duration: 0.4, delay: 0.1, boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" } }}
-                className="inline-block px-4 py-1.5 bg-primary text-primary-foreground backdrop-blur-sm rounded-full text-base font-semibold mb-4"
-              >
-                {t(`hero.scenes.${key}.title`)}
-              </motion.span>
-              
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
-              >
-                {t(`hero.scenes.${key}.subtitle`)}
-              </motion.h1>
-              
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="text-lg md:text-xl text-primary font-semibold mt-4 drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]"
-              >
-                {t(`hero.scenes.${key}.highlight`)}
-              </motion.p>
-            </motion.div>
-          </AnimatePresence>
+          {isInitial ? (
+            /* Static initial render — CSS fade-in only, no JS layout measurement */
+            <>
+              <div className="mb-4 animate-in fade-in duration-500">
+                <span className="inline-block px-4 py-1.5 bg-primary text-primary-foreground backdrop-blur-sm rounded-full text-base font-semibold mb-4 shadow-[0_0_20px_hsl(var(--primary)/0.4)]">
+                  {t(`hero.scenes.${key}.title`)}
+                </span>
+                
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                  {t(`hero.scenes.${key}.subtitle`)}
+                </h1>
+                
+                <p className="text-lg md:text-xl text-primary font-semibold mt-4 drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
+                  {t(`hero.scenes.${key}.highlight`)}
+                </p>
+              </div>
 
-          <AnimatePresence mode="wait">
-            <motion.div 
-              key={`trust-${currentSlide}`}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.4, delay: 0.4 }}
-              className="flex flex-wrap gap-3 mb-8"
-            >
-              {trustKeys.map((tKey, index) => (
-                <motion.span 
-                  key={tKey}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm text-white font-medium"
+              <div className="flex flex-wrap gap-3 mb-8 animate-in fade-in duration-500 delay-200">
+                {trustKeys.map((tKey) => (
+                  <span 
+                    key={tKey}
+                    className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm text-white font-medium"
+                  >
+                    <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+                    {t(`hero.trustPoints.${tKey}`)}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3 mb-10 animate-in fade-in duration-500 delay-500">
+                <Button asChild size="lg" className="group font-bold px-6">
+                  <Link to="/products">
+                    <ShoppingBag className="w-5 h-5 mr-2" />
+                    {t('hero.shopNow')}
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white">
+                  <Link to="/battery-selector">
+                    {t('hero.howToChoose')}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </Button>
+                <Button asChild variant="ghost" size="lg" className="text-white/80 hover:text-white hover:bg-white/10">
+                  <Link to="/products">
+                    {t('hero.viewAllProducts')}
+                  </Link>
+                </Button>
+              </div>
+            </>
+          ) : (
+            /* After first transition — full framer-motion animations */
+            <>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="mb-4"
                 >
-                  <span className="w-1.5 h-1.5 bg-primary rounded-full" />
-                  {t(`hero.trustPoints.${tKey}`)}
-                </motion.span>
-              ))}
-            </motion.div>
-          </AnimatePresence>
+                  <motion.span 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1, boxShadow: ["0 0 20px hsl(var(--primary) / 0.4)", "0 0 30px hsl(var(--primary) / 0.6)", "0 0 20px hsl(var(--primary) / 0.4)"] }}
+                    transition={{ duration: 0.4, delay: 0.1, boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" } }}
+                    className="inline-block px-4 py-1.5 bg-primary text-primary-foreground backdrop-blur-sm rounded-full text-base font-semibold mb-4"
+                  >
+                    {t(`hero.scenes.${key}.title`)}
+                  </motion.span>
+                  
+                  <motion.h1 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+                  >
+                    {t(`hero.scenes.${key}.subtitle`)}
+                  </motion.h1>
+                  
+                  <motion.p 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="text-lg md:text-xl text-primary font-semibold mt-4 drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]"
+                  >
+                    {t(`hero.scenes.${key}.highlight`)}
+                  </motion.p>
+                </motion.div>
+              </AnimatePresence>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            className="flex flex-wrap items-center gap-3 mb-10"
-          >
-            <Button asChild size="lg" className="group font-bold px-6">
-              <Link to="/products">
-                <ShoppingBag className="w-5 h-5 mr-2" />
-                {t('hero.shopNow')}
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white">
-              <Link to="/battery-selector">
-                {t('hero.howToChoose')}
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-            </Button>
-            <Button asChild variant="ghost" size="lg" className="text-white/80 hover:text-white hover:bg-white/10">
-              <Link to="/products">
-                {t('hero.viewAllProducts')}
-              </Link>
-            </Button>
-          </motion.div>
+              <AnimatePresence mode="wait">
+                <motion.div 
+                  key={`trust-${currentSlide}`}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.4, delay: 0.4 }}
+                  className="flex flex-wrap gap-3 mb-8"
+                >
+                  {trustKeys.map((tKey, index) => (
+                    <motion.span 
+                      key={tKey}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.5 + index * 0.1 }}
+                      className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm text-white font-medium"
+                    >
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+                      {t(`hero.trustPoints.${tKey}`)}
+                    </motion.span>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                className="flex flex-wrap items-center gap-3 mb-10"
+              >
+                <Button asChild size="lg" className="group font-bold px-6">
+                  <Link to="/products">
+                    <ShoppingBag className="w-5 h-5 mr-2" />
+                    {t('hero.shopNow')}
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white">
+                  <Link to="/battery-selector">
+                    {t('hero.howToChoose')}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </Button>
+                <Button asChild variant="ghost" size="lg" className="text-white/80 hover:text-white hover:bg-white/10">
+                  <Link to="/products">
+                    {t('hero.viewAllProducts')}
+                  </Link>
+                </Button>
+              </motion.div>
+            </>
+          )}
 
           <div className="flex gap-2">
             {sceneKeys.map((s, index) => (
@@ -201,16 +257,13 @@ const Hero = () => {
         </div>
       </div>
 
-      <motion.button 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
+      <button 
         onClick={scrollToContent}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 hover:text-white transition-colors z-10"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 hover:text-white transition-colors z-10 animate-in fade-in duration-700 delay-700"
         aria-label="Scroll down"
       >
         <ChevronDown className="w-7 h-7 animate-bounce" />
-      </motion.button>
+      </button>
     </section>
   );
 };
