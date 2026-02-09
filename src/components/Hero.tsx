@@ -25,19 +25,14 @@ const sceneTrustPointKeys: Record<string, string[]> = {
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [hasTransitioned, setHasTransitioned] = useState(false);
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = sceneImages[0];
-    img.onload = () => setIsLoaded(true);
-  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setDirection(1);
       setCurrentSlide((prev) => (prev + 1) % sceneKeys.length);
+      setHasTransitioned(true);
     }, 8000);
     return () => clearInterval(timer);
   }, []);
@@ -61,28 +56,41 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-      <AnimatePresence initial={false} mode="wait">
-        <motion.div 
-          key={currentSlide}
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.98 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="absolute inset-0"
-        >
-          {currentSlide === 0 ? (
-            <img 
-              src={firstSlidePublicUrl} 
-              alt={sceneAlts[0]}
-              fetchPriority="high"
-              decoding="sync"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          ) : (
-            <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${sceneImages[currentSlide]})` }} />
-          )}
-        </motion.div>
-      </AnimatePresence>
+      {/* First slide renders as static img for instant LCP, subsequent slides use motion */}
+      {!hasTransitioned && currentSlide === 0 ? (
+        <div className="absolute inset-0">
+          <img 
+            src={firstSlidePublicUrl} 
+            alt={sceneAlts[0]}
+            fetchPriority="high"
+            decoding="sync"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
+      ) : (
+        <AnimatePresence initial={false} mode="wait">
+          <motion.div 
+            key={currentSlide}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.98 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            {currentSlide === 0 ? (
+              <img 
+                src={firstSlidePublicUrl} 
+                alt={sceneAlts[0]}
+                fetchPriority="high"
+                decoding="sync"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            ) : (
+              <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${sceneImages[currentSlide]})` }} />
+            )}
+          </motion.div>
+        </AnimatePresence>
+      )}
       
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 z-[1]" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30 z-[1]" />
