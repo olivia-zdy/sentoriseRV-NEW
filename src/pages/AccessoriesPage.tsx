@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageMeta from "@/components/PageMeta";
 import { accessoryProducts } from "@/data/accessories";
+import { useMarket } from "@/context/MarketContext";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -19,6 +20,7 @@ const categoryIcons: Record<string, React.ElementType> = {
 };
 
 const AccessoriesPage = () => {
+  const { formatPrice } = useMarket();
   return (
     <div className="min-h-screen bg-background">
       <PageMeta
@@ -111,11 +113,11 @@ const AccessoriesPage = () => {
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-2">
                               <span className="text-2xl font-bold text-primary">
-                                €{(product.salePrice ?? product.price).toFixed(2)}
+                                {formatPrice(product.salePrice ?? product.price)}
                               </span>
                               {product.salePrice && (
                                 <span className="text-sm text-muted-foreground line-through">
-                                  €{product.price.toFixed(2)}
+                                  {formatPrice(product.price)}
                                 </span>
                               )}
                             </div>
