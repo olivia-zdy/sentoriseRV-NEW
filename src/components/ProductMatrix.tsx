@@ -2,56 +2,27 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { useMarket } from "@/context/MarketContext";
+import { products } from "@/data/products";
 import ScrollReveal from "@/components/ScrollReveal";
+
+// Select representative products for the capacity matrix
+const matrixProductIds = [
+  "lite-12v6",
+  "lite-12v50",
+  "core-12v100-std",
+  "core-12v100-mini",
+  "plus-12v200-heated",
+];
 
 const ProductMatrix = () => {
   const { t } = useTranslation();
   const { formatPrice } = useMarket();
 
-  const capacityOptions = [
-    {
-      capacity: "6Ah",
-      energy: "76.8Wh",
-      typical: t('productMatrix.typical6', 'Portable devices, fish finders'),
-      productId: "lite-12v6",
-      price: 39.99,
-      badge: null,
-    },
-    {
-      capacity: "50Ah",
-      energy: "640Wh",
-      typical: t('productMatrix.typical50', 'Weekend trips, small systems'),
-      productId: "lite-12v50",
-      price: 129.99,
-      badge: null,
-    },
-    {
-      capacity: "100Ah",
-      energy: "1280Wh",
-      typical: t('productMatrix.typical100', 'Daily RV/van use, most popular'),
-      productId: "core-12v100-std",
-      price: 279.99,
-      badge: t('productMatrix.mostPopular', 'Most Popular'),
-    },
-    {
-      capacity: "100Ah",
-      energy: "1280Wh",
-      typical: t('productMatrix.typical100mini', 'Compact spaces, DIN H8 fit'),
-      productId: "core-12v100-mini",
-      price: 299.99,
-      badge: t('productMatrix.compact', 'Compact'),
-      label: "Mini",
-    },
-    {
-      capacity: "200Ah",
-      energy: "2560Wh",
-      typical: t('productMatrix.typical200', 'Heavy use, cold climates, off-grid'),
-      productId: "plus-12v200-heated",
-      price: 699.99,
-      badge: t('productMatrix.selfHeating', 'Self-Heating'),
-    },
-  ];
+  const matrixProducts = matrixProductIds
+    .map(id => products.find(p => p.id === id))
+    .filter(Boolean);
 
   return (
     <section className="section-padding bg-muted/30">
@@ -68,51 +39,73 @@ const ProductMatrix = () => {
 
         {/* Capacity Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
-          {capacityOptions.map((option, index) => (
-            <ScrollReveal key={option.productId} delay={index * 0.08}>
-              <Link
-                to={`/product/${option.productId}`}
-                className="group relative bg-card border border-border rounded-xl p-5 hover:border-primary/50 hover:shadow-lg transition-all flex flex-col h-full"
-              >
-                {/* Badge */}
-                {option.badge && (
-                  <span className="absolute -top-3 left-4 px-3 py-1 text-xs font-semibold bg-primary text-primary-foreground rounded-full">
-                    {option.badge}
-                  </span>
-                )}
+          {matrixProducts.map((product, index) => {
+            if (!product) return null;
+            const discountPercent = product.salePrice
+              ? Math.round((1 - product.salePrice / product.price) * 100)
+              : null;
+            const displayLabel = product.id === "core-12v100-mini" ? "Mini" : null;
 
-                {/* Capacity Display */}
-                <div className="text-center mb-3 pt-2">
-                  <span className="text-3xl md:text-4xl font-bold text-foreground">
-                    {option.capacity.replace("Ah", "")}
-                  </span>
-                  <span className="text-lg text-muted-foreground">Ah</span>
-                  {"label" in option && option.label && (
-                    <span className="ml-1 text-sm font-medium text-primary">{option.label}</span>
+            return (
+              <ScrollReveal key={product.id} delay={index * 0.08}>
+                <Link
+                  to={`/product/${product.id}`}
+                  className="group relative bg-card border border-border rounded-xl p-5 hover:border-primary/50 hover:shadow-lg transition-all flex flex-col h-full"
+                >
+                  {/* Badge */}
+                  {product.badge && (
+                    <span className="absolute -top-3 left-4 px-3 py-1 text-xs font-semibold bg-primary text-primary-foreground rounded-full">
+                      {product.badge}
+                    </span>
                   )}
-                  <p className="text-xs text-muted-foreground mt-1">
-                    {option.energy}
+
+                  {/* Discount Badge */}
+                  {discountPercent && (
+                    <Badge className="absolute -top-3 right-4 bg-red-500 text-white text-xs font-bold">
+                      -{discountPercent}%
+                    </Badge>
+                  )}
+
+                  {/* Capacity Display */}
+                  <div className="text-center mb-3 pt-2">
+                    <span className="text-3xl md:text-4xl font-bold text-foreground">
+                      {product.capacity.replace("Ah", "")}
+                    </span>
+                    <span className="text-lg text-muted-foreground">Ah</span>
+                    {displayLabel && (
+                      <span className="ml-1 text-sm font-medium text-primary">{displayLabel}</span>
+                    )}
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {product.energy}
+                    </p>
+                  </div>
+
+                  {/* Tagline */}
+                  <p className="text-xs text-center text-muted-foreground mb-3 flex-1">
+                    {t(`productNames.${product.id}.tagline`, { defaultValue: product.tagline })}
                   </p>
-                </div>
 
-                {/* Typical Use */}
-                <p className="text-xs text-center text-muted-foreground mb-3 flex-1">
-                  {option.typical}
-                </p>
+                  {/* Price */}
+                  <div className="text-center mb-3">
+                    {product.salePrice ? (
+                      <>
+                        <span className="text-lg font-bold text-primary">{formatPrice(product.salePrice)}</span>
+                        <span className="text-xs text-muted-foreground line-through ml-2">{formatPrice(product.price)}</span>
+                      </>
+                    ) : (
+                      <span className="text-lg font-bold text-foreground">{formatPrice(product.price)}</span>
+                    )}
+                  </div>
 
-                {/* Price */}
-                <p className="text-center text-lg font-bold text-foreground mb-3">
-                  {formatPrice(option.price)}
-                </p>
-
-                {/* CTA */}
-                <div className="flex items-center justify-center text-xs font-medium text-primary group-hover:underline">
-                  {t('productMatrix.viewDetails', 'View Details')}
-                  <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
-            </ScrollReveal>
-          ))}
+                  {/* CTA */}
+                  <div className="flex items-center justify-center text-xs font-medium text-primary group-hover:underline">
+                    {t('productMatrix.viewDetails', 'View Details')}
+                    <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Link>
+              </ScrollReveal>
+            );
+          })}
         </div>
 
         {/* Secondary Links */}
