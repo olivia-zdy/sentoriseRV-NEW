@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import PageTransition from "@/components/PageTransition";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
@@ -9,11 +10,16 @@ import { Shield, CheckCircle2, Clock, Truck, Search, FileEdit } from "lucide-rea
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const WarrantyPage = () => {
+  const { t } = useTranslation();
+
+  const coveredItems = t('warranty.coveredItems', { returnObjects: true }) as string[];
+  const notCoveredItems = t('warranty.notCoveredItems', { returnObjects: true }) as string[];
+
   return (
     <div className="min-h-screen bg-background">
       <PageMeta 
-        title="Register Your 5-Year Warranty" 
-        description="Register your Sentorise LiFePO₄ battery for 5 years of comprehensive warranty coverage. Quick and easy online registration." 
+        title={t('warranty.pageTitle')} 
+        description={t('warranty.pageSubtitle')} 
       />
       <AnnouncementBar />
       <Header />
@@ -27,11 +33,10 @@ const WarrantyPage = () => {
               <Shield className="w-10 h-10 text-primary" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              5-Year Warranty Registration
+              {t('warranty.pageTitle')}
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Protect your investment with our comprehensive 5-year warranty. 
-              Register your Sentorise battery in just 2 minutes.
+              {t('warranty.pageSubtitle')}
             </p>
           </div>
         </section>
@@ -40,42 +45,22 @@ const WarrantyPage = () => {
         <section className="border-b bg-muted/30">
           <div className="container-custom py-8">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Shield className="w-5 h-5 text-primary" />
+              {[
+                { icon: Shield, titleKey: "warranty.coverage", descKey: "warranty.coverageDesc" },
+                { icon: CheckCircle2, titleKey: "warranty.freeReplacement", descKey: "warranty.freeReplacementDesc" },
+                { icon: Clock, titleKey: "warranty.quickProcessing", descKey: "warranty.quickProcessingDesc" },
+                { icon: Truck, titleKey: "warranty.euService", descKey: "warranty.euServiceDesc" },
+              ].map((item) => (
+                <div key={item.titleKey} className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">{t(item.titleKey)}</p>
+                    <p className="text-sm text-muted-foreground">{t(item.descKey)}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-semibold text-foreground">5-Year Coverage</p>
-                  <p className="text-sm text-muted-foreground">Full warranty protection</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <CheckCircle2 className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">Free Replacement</p>
-                  <p className="text-sm text-muted-foreground">For manufacturing defects</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">Quick Processing</p>
-                  <p className="text-sm text-muted-foreground">Fast claim resolution</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Truck className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">EU-Wide Service</p>
-                  <p className="text-sm text-muted-foreground">Berlin-based support</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -88,11 +73,11 @@ const WarrantyPage = () => {
                 <TabsList className="grid w-full grid-cols-2 mb-8">
                   <TabsTrigger value="register" className="gap-2">
                     <FileEdit className="w-4 h-4" />
-                    Register Warranty
+                    {t('warranty.registerTab')}
                   </TabsTrigger>
                   <TabsTrigger value="lookup" className="gap-2">
                     <Search className="w-4 h-4" />
-                    Check Status
+                    {t('warranty.lookupTab')}
                   </TabsTrigger>
                 </TabsList>
                 
@@ -106,10 +91,10 @@ const WarrantyPage = () => {
                   <div className="bg-card rounded-2xl border shadow-sm p-6 md:p-10">
                     <div className="mb-6">
                       <h2 className="text-xl font-bold text-foreground mb-2">
-                        Check Your Warranty Status
+                        {t('warranty.lookupTitle')}
                       </h2>
                       <p className="text-muted-foreground">
-                        Enter the email address you used during registration to view your warranty details.
+                        {t('warranty.lookupSubtitle')}
                       </p>
                     </div>
                     <WarrantyLookup />
@@ -125,46 +110,38 @@ const WarrantyPage = () => {
           <div className="container-custom">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-2xl font-bold text-foreground mb-6">
-                What's Covered
+                {t('warranty.coveredTitle')}
               </h2>
               
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
                     <CheckCircle2 className="w-5 h-5 text-primary" />
-                    Covered
+                    {t('warranty.covered')}
                   </h3>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>• Manufacturing defects</li>
-                    <li>• BMS (Battery Management System) failures</li>
-                    <li>• Cell capacity degradation below 80%</li>
-                    <li>• Heating system malfunctions (heated models)</li>
-                    <li>• Bluetooth module defects</li>
-                    <li>• Terminal connection issues</li>
+                    {Array.isArray(coveredItems) && coveredItems.map((item, i) => (
+                      <li key={i}>• {item}</li>
+                    ))}
                   </ul>
                 </div>
                 
                 <div>
                   <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2 text-destructive">
                     <span className="w-5 h-5 flex items-center justify-center">✕</span>
-                    Not Covered
+                    {t('warranty.notCovered')}
                   </h3>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>• Physical damage from misuse or accidents</li>
-                    <li>• Water damage from improper installation</li>
-                    <li>• Damage from incorrect charging voltage</li>
-                    <li>• Unauthorized modifications</li>
-                    <li>• Normal wear and cosmetic damage</li>
-                    <li>• Commercial/industrial use (unless specified)</li>
+                    {Array.isArray(notCoveredItems) && notCoveredItems.map((item, i) => (
+                      <li key={i}>• {item}</li>
+                    ))}
                   </ul>
                 </div>
               </div>
 
               <div className="mt-8 p-4 bg-primary/5 rounded-lg border border-primary/10">
                 <p className="text-sm text-muted-foreground">
-                  <strong className="text-foreground">Note:</strong> Warranty registration 
-                  must be completed within 30 days of purchase. Keep your proof of purchase 
-                  (receipt or invoice) for warranty claims. For questions, contact{" "}
+                  <strong className="text-foreground">Note:</strong> {t('warranty.registrationNote')}{" "}
                   <a href="mailto:warranty@sentorise.de" className="text-primary hover:underline">
                     warranty@sentorise.de
                   </a>

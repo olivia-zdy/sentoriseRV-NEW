@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import PageTransition from "@/components/PageTransition";
 import { Link, useSearchParams } from "react-router-dom";
 import AnnouncementBar from "@/components/AnnouncementBar";
@@ -31,16 +32,8 @@ const priceRanges = [
   { id: "premium", label: "> €400", min: 400.01, max: Infinity },
 ];
 
-const applicationFilters = [
-  { id: "rv", label: "RV & Motorhome" },
-  { id: "vanlife", label: "Van Life" },
-  { id: "solar", label: "Off-Grid Solar" },
-  { id: "marine", label: "Marine & Boat" },
-  { id: "camping", label: "Camping" },
-  { id: "cabin", label: "Off-Grid Cabin" },
-];
-
 const ProductsPage = () => {
+  const { t } = useTranslation();
   const [searchParams, setSearchParams] = useSearchParams();
   const seriesFilter = searchParams.get("series");
   const appFilter = searchParams.get("application");
@@ -53,7 +46,6 @@ const ProductsPage = () => {
   const [sortBy, setSortBy] = useState<SortOption>("price-asc");
   const [showFilters, setShowFilters] = useState(false);
 
-  // Parse capacity from string like "100Ah" to number
   const parseCapacity = (capacity: string): number => {
     return parseInt(capacity.replace(/[^0-9]/g, "")) || 0;
   };
@@ -61,12 +53,10 @@ const ProductsPage = () => {
   const filteredProducts = useMemo(() => {
     let result = [...products];
 
-    // Series filter
     if (selectedSeries) {
       result = result.filter(p => p.series.toLowerCase() === selectedSeries.toLowerCase());
     }
 
-    // Application filter (from URL)
     if (appFilter) {
       const appKeywords: Record<string, string[]> = {
         rv: ["rv", "motorhome", "caravan"],
@@ -84,7 +74,6 @@ const ProductsPage = () => {
       }
     }
 
-    // Capacity filter
     if (selectedCapacity) {
       const range = capacityRanges.find(r => r.id === selectedCapacity);
       if (range) {
@@ -95,7 +84,6 @@ const ProductsPage = () => {
       }
     }
 
-    // Price filter
     if (selectedPrice) {
       const range = priceRanges.find(r => r.id === selectedPrice);
       if (range) {
@@ -106,15 +94,9 @@ const ProductsPage = () => {
       }
     }
 
-    // Feature filters
-    if (hasBluetooth) {
-      result = result.filter(p => p.hasBluetooth);
-    }
-    if (hasHeating) {
-      result = result.filter(p => p.hasHeating);
-    }
+    if (hasBluetooth) result = result.filter(p => p.hasBluetooth);
+    if (hasHeating) result = result.filter(p => p.hasHeating);
 
-    // Sorting
     result.sort((a, b) => {
       const priceA = a.salePrice || a.price;
       const priceB = b.salePrice || b.price;
@@ -122,18 +104,12 @@ const ProductsPage = () => {
       const capB = parseCapacity(b.capacity);
 
       switch (sortBy) {
-        case "price-asc":
-          return priceA - priceB;
-        case "price-desc":
-          return priceB - priceA;
-        case "capacity-asc":
-          return capA - capB;
-        case "capacity-desc":
-          return capB - capA;
-        case "newest":
-          return a.isNew ? -1 : b.isNew ? 1 : 0;
-        default:
-          return 0;
+        case "price-asc": return priceA - priceB;
+        case "price-desc": return priceB - priceA;
+        case "capacity-asc": return capA - capB;
+        case "capacity-desc": return capB - capA;
+        case "newest": return a.isNew ? -1 : b.isNew ? 1 : 0;
+        default: return 0;
       }
     });
 
@@ -157,13 +133,13 @@ const ProductsPage = () => {
       <Header />
       <PageTransition>
       <main>
-        {/* Hero Section - Above the Fold Clarity */}
+        {/* Hero Section */}
         <section className="py-10 md:py-14 bg-muted/50 border-b border-border">
           <div className="container-custom">
             <nav className="text-sm text-muted-foreground mb-6">
-              <Link to="/" className="hover:text-primary">Home</Link>
+              <Link to="/" className="hover:text-primary">{t('common.home')}</Link>
               <span className="mx-2">/</span>
-              <span className="text-foreground">12V LiFePO₄ Batteries</span>
+              <span className="text-foreground">{t('products.pageTitle')}</span>
               {appFilter && (
                 <>
                   <span className="mx-2">/</span>
@@ -172,57 +148,43 @@ const ProductsPage = () => {
               )}
             </nav>
             
-            {/* Clear Product Definition */}
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3">
-              12V LiFePO₄ Batteries
+              {t('products.pageTitle')}
             </h1>
             
-            {/* Key Differentiator */}
             <p className="text-muted-foreground max-w-xl mb-6">
-              Low-temperature protection on all models. Bluetooth monitoring. 5-year warranty.
+              {t('products.pageSubtitle')}
             </p>
-            
           </div>
         </section>
 
         {/* Filter Section */}
         <section className="py-6 border-b border-border">
           <div className="container-custom">
-            {/* Mobile Filter Toggle */}
             <div className="flex items-center justify-between mb-4 md:hidden">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setShowFilters(!showFilters)}
-              >
+              <Button variant="outline" size="sm" onClick={() => setShowFilters(!showFilters)}>
                 <SlidersHorizontal className="w-4 h-4 mr-2" />
-                Filters
+                {t('products.filters')}
               </Button>
               <Select value={sortBy} onValueChange={(v) => setSortBy(v as SortOption)}>
                 <SelectTrigger className="w-[160px]">
-                  <SelectValue placeholder="Sort by" />
+                  <SelectValue placeholder={t('products.sortBy')} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="price-asc">Price: Low to High</SelectItem>
-                  <SelectItem value="price-desc">Price: High to Low</SelectItem>
-                  <SelectItem value="capacity-asc">Capacity: Small</SelectItem>
-                  <SelectItem value="capacity-desc">Capacity: Large</SelectItem>
-                  <SelectItem value="newest">Newest First</SelectItem>
+                  <SelectItem value="price-asc">{t('products.priceLowHigh')}</SelectItem>
+                  <SelectItem value="price-desc">{t('products.priceHighLow')}</SelectItem>
+                  <SelectItem value="capacity-asc">{t('products.capacitySmall')}</SelectItem>
+                  <SelectItem value="capacity-desc">{t('products.capacityLarge')}</SelectItem>
+                  <SelectItem value="newest">{t('products.newestFirst')}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
-            {/* Desktop Filters */}
             <div className={`space-y-4 ${showFilters ? "block" : "hidden md:block"}`}>
-              {/* Series Filter */}
               <div className="flex flex-wrap items-center gap-3">
-                <span className="text-sm font-medium text-muted-foreground mr-2">Series:</span>
-                <Button
-                  variant={selectedSeries === null ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedSeries(null)}
-                >
-                  All ({products.length})
+                <span className="text-sm font-medium text-muted-foreground mr-2">{t('products.series')}:</span>
+                <Button variant={selectedSeries === null ? "default" : "outline"} size="sm" onClick={() => setSelectedSeries(null)}>
+                  {t('products.all')} ({products.length})
                 </Button>
                 {productSeries.map((series) => (
                   <Button
@@ -236,94 +198,60 @@ const ProductsPage = () => {
                 ))}
               </div>
 
-              {/* Capacity Filter */}
               <div className="flex flex-wrap items-center gap-3">
-                <span className="text-sm font-medium text-muted-foreground mr-2">Capacity:</span>
-                <Button
-                  variant={selectedCapacity === null ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedCapacity(null)}
-                >
-                  All
+                <span className="text-sm font-medium text-muted-foreground mr-2">{t('products.capacity')}:</span>
+                <Button variant={selectedCapacity === null ? "default" : "outline"} size="sm" onClick={() => setSelectedCapacity(null)}>
+                  {t('products.all')}
                 </Button>
                 {capacityRanges.map((range) => (
-                  <Button
-                    key={range.id}
-                    variant={selectedCapacity === range.id ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSelectedCapacity(range.id)}
-                  >
+                  <Button key={range.id} variant={selectedCapacity === range.id ? "default" : "outline"} size="sm" onClick={() => setSelectedCapacity(range.id)}>
                     {range.label}
                   </Button>
                 ))}
               </div>
 
-              {/* Price Filter */}
               <div className="flex flex-wrap items-center gap-3">
-                <span className="text-sm font-medium text-muted-foreground mr-2">Price:</span>
-                <Button
-                  variant={selectedPrice === null ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedPrice(null)}
-                >
-                  All
+                <span className="text-sm font-medium text-muted-foreground mr-2">{t('products.series')}:</span>
+                <Button variant={selectedPrice === null ? "default" : "outline"} size="sm" onClick={() => setSelectedPrice(null)}>
+                  {t('products.all')}
                 </Button>
                 {priceRanges.map((range) => (
-                  <Button
-                    key={range.id}
-                    variant={selectedPrice === range.id ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSelectedPrice(range.id)}
-                  >
+                  <Button key={range.id} variant={selectedPrice === range.id ? "default" : "outline"} size="sm" onClick={() => setSelectedPrice(range.id)}>
                     {range.label}
                   </Button>
                 ))}
               </div>
 
-              {/* Feature Checkboxes + Sort */}
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-6">
                   <div className="flex items-center gap-2">
-                    <Checkbox
-                      id="bluetooth"
-                      checked={hasBluetooth}
-                      onCheckedChange={(checked) => setHasBluetooth(checked as boolean)}
-                    />
-                    <label htmlFor="bluetooth" className="text-sm text-foreground cursor-pointer">
-                      Bluetooth
-                    </label>
+                    <Checkbox id="bluetooth" checked={hasBluetooth} onCheckedChange={(checked) => setHasBluetooth(checked as boolean)} />
+                    <label htmlFor="bluetooth" className="text-sm text-foreground cursor-pointer">{t('products.bluetooth')}</label>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Checkbox
-                      id="heating"
-                      checked={hasHeating}
-                      onCheckedChange={(checked) => setHasHeating(checked as boolean)}
-                    />
-                    <label htmlFor="heating" className="text-sm text-foreground cursor-pointer">
-                      Self-Heating
-                    </label>
+                    <Checkbox id="heating" checked={hasHeating} onCheckedChange={(checked) => setHasHeating(checked as boolean)} />
+                    <label htmlFor="heating" className="text-sm text-foreground cursor-pointer">{t('products.selfHeating')}</label>
                   </div>
                   {hasActiveFilters && (
                     <Button variant="ghost" size="sm" onClick={clearFilters} className="text-muted-foreground">
                       <X className="w-4 h-4 mr-1" />
-                      Clear filters
+                      {t('products.clearFilters')}
                     </Button>
                   )}
                 </div>
 
-                {/* Sort - Desktop */}
                 <div className="hidden md:flex items-center gap-2">
-                  <span className="text-sm text-muted-foreground">Sort:</span>
+                  <span className="text-sm text-muted-foreground">{t('products.sortBy')}:</span>
                   <Select value={sortBy} onValueChange={(v) => setSortBy(v as SortOption)}>
                     <SelectTrigger className="w-[180px]">
-                      <SelectValue placeholder="Sort by" />
+                      <SelectValue placeholder={t('products.sortBy')} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="price-asc">Price: Low to High</SelectItem>
-                      <SelectItem value="price-desc">Price: High to Low</SelectItem>
-                      <SelectItem value="capacity-asc">Capacity: Small to Large</SelectItem>
-                      <SelectItem value="capacity-desc">Capacity: Large to Small</SelectItem>
-                      <SelectItem value="newest">Newest First</SelectItem>
+                      <SelectItem value="price-asc">{t('products.priceLowHigh')}</SelectItem>
+                      <SelectItem value="price-desc">{t('products.priceHighLow')}</SelectItem>
+                      <SelectItem value="capacity-asc">{t('products.capacitySmall')}</SelectItem>
+                      <SelectItem value="capacity-desc">{t('products.capacityLarge')}</SelectItem>
+                      <SelectItem value="newest">{t('products.newestFirst')}</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -335,9 +263,8 @@ const ProductsPage = () => {
         {/* Products Grid */}
         <section className="section-padding">
           <div className="container-custom">
-            {/* Results count */}
             <p className="text-sm text-muted-foreground mb-6">
-              Showing {filteredProducts.length} product{filteredProducts.length !== 1 ? "s" : ""}
+              {t('products.showing', { count: filteredProducts.length })}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -348,9 +275,9 @@ const ProductsPage = () => {
             
             {filteredProducts.length === 0 && (
               <div className="text-center py-16">
-                <p className="text-muted-foreground mb-4">No products found matching your criteria.</p>
+                <p className="text-muted-foreground mb-4">{t('products.noProducts')}</p>
                 <Button variant="outline" onClick={clearFilters}>
-                  Clear all filters
+                  {t('products.clearAll')}
                 </Button>
               </div>
             )}
