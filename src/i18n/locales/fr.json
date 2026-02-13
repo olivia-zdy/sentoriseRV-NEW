@@ -134,8 +134,10 @@
     "showing_plural": "{{count}} produits affichés",
     "noProducts": "Aucun produit ne correspond à vos critères.",
     "clearAll": "Effacer tous les filtres",
-    "pageTitle": "Batteries LiFePO₄ 12V",
-    "pageSubtitle": "Protection basse température sur tous les modèles. Surveillance Bluetooth. Garantie 5 ans.",
+    "pageTitle": "Produits de stockage d'énergie",
+    "pageSubtitle": "Batteries LiFePO₄ et accessoires pour camping-cars, systèmes solaires, off-grid et énergie mobile.",
+    "batteries": "Batteries",
+    "accessories": "Accessoires",
     "add": "Ajouter"
   },
   "productNames": {
