@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 import { Link } from "react-router-dom";
 import { useTheme } from "next-themes";
 import { useTranslation } from "react-i18next";
@@ -14,11 +14,11 @@ const socialLinks = [
   { name: "LinkedIn", icon: Linkedin, href: "#" },
 ];
 
-const RegistrationsToggle = () => {
+const RegistrationsToggle = forwardRef<HTMLDivElement>((_, ref) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   return (
-    <div className="text-xs text-muted-foreground mt-4">
+    <div ref={ref} className="text-xs text-muted-foreground mt-4">
       <button onClick={() => setOpen(!open)} className="flex items-center gap-1 font-medium text-foreground text-sm hover:text-primary transition-colors">
         {t('footer.registrations')}
         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
@@ -35,7 +35,9 @@ const RegistrationsToggle = () => {
       )}
     </div>
   );
-};
+});
+
+RegistrationsToggle.displayName = 'RegistrationsToggle';
 
 const Footer = () => {
   const { resolvedTheme } = useTheme();

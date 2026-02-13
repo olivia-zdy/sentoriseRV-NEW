@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, forwardRef } from "react";
 // Mega menu navigation - rebuilt
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Search, ChevronDown } from "lucide-react";
@@ -27,33 +27,35 @@ interface NavLink {
   megaMenu?: MegaMenuColumn[];
 }
 
-const MegaMenuPanel = ({ columns, onClose }: { columns: MegaMenuColumn[]; onClose: () => void }) => (
-  <div className="absolute top-full left-0 w-full bg-popover border-b border-border shadow-lg z-50 animate-fade-in">
-    <div className="container-custom py-8">
-      <div className={`grid gap-8 ${columns.length === 4 ? 'grid-cols-4' : 'grid-cols-3'}`}>
-        {columns.map((col) => (
-          <div key={col.title}>
-            <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">
-              {col.title}
-            </h4>
-            <ul className="space-y-2.5">
-              {col.items.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    to={item.href}
-                    className="text-sm text-foreground/80 hover:text-primary transition-colors"
-                    onClick={onClose}
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+const MegaMenuPanel = forwardRef<HTMLDivElement, { columns: MegaMenuColumn[]; onClose: () => void }>(
+  ({ columns, onClose }, ref) => (
+    <div ref={ref} className="absolute top-full left-0 w-full bg-popover border-b border-border shadow-lg z-50 animate-fade-in">
+      <div className="container-custom py-8">
+        <div className={`grid gap-8 ${columns.length === 4 ? 'grid-cols-4' : 'grid-cols-3'}`}>
+          {columns.map((col) => (
+            <div key={col.title}>
+              <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">
+                {col.title}
+              </h4>
+              <ul className="space-y-2.5">
+                {col.items.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      to={item.href}
+                      className="text-sm text-foreground/80 hover:text-primary transition-colors"
+                      onClick={onClose}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
+  )
 );
 
 const Header = () => {
