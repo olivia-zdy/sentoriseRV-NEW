@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2, Truck, Check } from "lucide-react";
+import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2, Truck, Check, Shield, RotateCcw, Award } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import { useMarket } from "@/context/MarketContext";
 import { useTranslation } from "react-i18next";
@@ -171,6 +171,21 @@ export const CartDrawer = () => {
                     </>
                   )}
                 </Button>
+                {/* Trust Badges */}
+                <div className="flex items-center justify-center gap-4 py-2">
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <Shield className="w-3.5 h-3.5 text-primary" />
+                    <span>SSL Encrypted</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <RotateCcw className="w-3.5 h-3.5 text-primary" />
+                    <span>30-Day Returns</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <Award className="w-3.5 h-3.5 text-primary" />
+                    <span>5-Year Warranty</span>
+                  </div>
+                </div>
                 <p className="text-xs text-muted-foreground text-center">
                   Secure checkout powered by Shopify
                 </p>

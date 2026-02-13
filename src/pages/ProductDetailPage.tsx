@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useRecentlyViewed } from "@/hooks/useRecentlyViewed";
 import { useMarket } from "@/context/MarketContext";
 import PageTransition from "@/components/PageTransition";
 import { Link, useParams } from "react-router-dom";
@@ -124,6 +125,12 @@ const ProductDetailPage = () => {
   
   const product = getProductById(productId || "");
   const certifications = getCertificationsForProduct(productId || "");
+  const { recentlyViewed, trackView } = useRecentlyViewed(productId);
+
+  // Track this product view
+  useEffect(() => {
+    if (productId) trackView(productId);
+  }, [productId, trackView]);
 
   // Fetch Shopify product for Add to Cart
   useEffect(() => {
@@ -638,6 +645,21 @@ const ProductDetailPage = () => {
                 {relatedProducts.map((p) => (
                   <ProductCard key={p.id} product={p} />
                 ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Recently Viewed */}
+        {recentlyViewed.length > 0 && (
+          <section className="section-padding border-t border-border">
+            <div className="container-custom">
+              <h2 className="text-xl font-bold text-foreground mb-6">{t('product.recentlyViewed', { defaultValue: 'Recently Viewed' })}</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                {recentlyViewed.slice(0, 4).map((id) => {
+                  const p = getProductById(id);
+                  return p ? <ProductCard key={p.id} product={p} /> : null;
+                })}
               </div>
             </div>
           </section>
