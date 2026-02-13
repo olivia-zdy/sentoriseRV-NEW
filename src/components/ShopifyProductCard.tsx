@@ -17,10 +17,10 @@ import img100ahDin from "@/assets/product-100ah-din.png";
 import img200ahHeated from "@/assets/product-200ah-heated.png";
 
 const localImageMap: Record<string, string> = {
-  "lite-12v-6ah-ultra-compact-lifepo-battery": img100ahMini,
-  "lite-12v-50ah-bluetooth-lifepo-battery": img6ah,
-  "core-12v-100ah-standard-lifepo-battery": img50ah,
-  "core-12v-100ah-mini-compact-lifepo-battery": img100ahStd,
+  "lite-12v-6ah-ultra-compact-lifepo-battery": img6ah,
+  "lite-12v-50ah-bluetooth-lifepo-battery": img50ah,
+  "core-12v-100ah-standard-lifepo-battery": img100ahStd,
+  "core-12v-100ah-mini-compact-lifepo-battery": img100ahMini,
   "core-12v-100ah-din-h8-under-seat-lifepo-battery": img100ahDin,
   "plus-12v-200ah-heated-arctic-lifepo-battery": img200ahHeated,
 };
