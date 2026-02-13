@@ -57,16 +57,42 @@
     "shippingPolicy": "Shipping Policy"
   },
   "hero": {
-    "category": "12V LiFePO₄ Battery",
-    "headline": "12V LiFePO₄ Batteries for Your RV. Built for European Winters.",
-    "subheadline": "5-year warranty • UN38.3 certified • Low-temp protection to −20°C • Bluetooth monitoring • Fast EU shipping",
+    "scenes": {
+      "rv": {
+        "title": "12V LiFePO₄ Battery",
+        "subtitle": "Cold-Weather Ready. Built for European Winters.",
+        "highlight": "Power that works at -20°C • Self-heating available"
+      },
+      "solar": {
+        "title": "Off-Grid Solar",
+        "subtitle": "4000+ Cycles. 10 Years of Reliable Power.",
+        "highlight": "MPPT compatible • 200A max discharge"
+      },
+      "vanlife": {
+        "title": "Van Life & Camping",
+        "subtitle": "Compact Power. Real-Time Monitoring.",
+        "highlight": "Bluetooth app • Track voltage, SoC & temperature"
+      },
+      "marine": {
+        "title": "Marine & Boat",
+        "subtitle": "Stable Power for Yachts & Sailboats.",
+        "highlight": "Vibration-proof • Saltwater resistant"
+      }
+    },
     "trustPoints": {
       "warranty": "5-Year Warranty",
       "bluetooth": "Bluetooth Monitoring",
-      "lowTemp": "Low-Temp Protection"
+      "euStock": "EU Stock & Support",
+      "lowTemp": "Low-Temp Protection",
+      "freeShipping": "Free EU Shipping",
+      "lightweight": "Lightweight Design",
+      "easyInstall": "Easy DIY Install",
+      "bms": "BMS Protection",
+      "ce": "CE Certified"
     },
-    "exploreBatteries": "Explore Batteries",
-    "capacityGuide": "Capacity Guide"
+    "shopNow": "Shop Now",
+    "howToChoose": "How to Choose",
+    "viewAllProducts": "View All Products"
   },
   "products": {
     "title": "Our Batteries",

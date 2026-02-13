@@ -44,8 +44,6 @@
     --sentorise-green: 160 84% 22%;
     --sentorise-green-light: 160 70% 35%;
     --sentorise-green-dark: 160 90% 15%;
-    --sentorise-amber: 42 95% 50%;
-    --sentorise-amber-dark: 42 95% 45%;
     --sentorise-gradient: linear-gradient(135deg, hsl(160, 84%, 22%) 0%, hsl(160, 70%, 35%) 100%);
     
     /* Shadows - Light theme */
@@ -107,8 +105,6 @@
     --sentorise-green: 160 84% 35%;
     --sentorise-green-light: 160 70% 45%;
     --sentorise-green-dark: 160 90% 25%;
-    --sentorise-amber: 42 95% 55%;
-    --sentorise-amber-dark: 42 95% 50%;
     --sentorise-gradient: linear-gradient(135deg, hsl(160, 84%, 35%) 0%, hsl(160, 70%, 45%) 100%);
     
     /* Shadows - Dark theme */
