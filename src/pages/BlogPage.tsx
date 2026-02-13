@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
@@ -183,10 +183,10 @@ const BlogPage = () => {
               ))}
             </div>
 
-            {/* Tags */}
+            {/* Tags - compact with overflow */}
             <div className="flex flex-wrap items-center gap-2">
-              <Tag className="w-4 h-4 text-muted-foreground" />
-              {allTags.map((tag) => (
+              <Tag className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+              {allTags.slice(0, 8).map((tag) => (
                 <button
                   key={tag}
                   onClick={() => toggleTag(tag)}
@@ -199,6 +199,28 @@ const BlogPage = () => {
                   {tag}
                 </button>
               ))}
+              {allTags.length > 8 && (
+                <details className="inline">
+                  <summary className="text-xs text-muted-foreground hover:text-foreground cursor-pointer list-none px-3 py-1 rounded-full border border-dashed border-border hover:border-primary/30 transition-colors">
+                    +{allTags.length - 8} more
+                  </summary>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {allTags.slice(8).map((tag) => (
+                      <button
+                        key={tag}
+                        onClick={() => toggleTag(tag)}
+                        className={`px-3 py-1 text-xs font-medium rounded-full border transition-colors ${
+                          activeTags.includes(tag)
+                            ? "bg-primary/10 text-primary border-primary/30"
+                            : "bg-background text-muted-foreground border-border hover:border-primary/30"
+                        }`}
+                      >
+                        {tag}
+                      </button>
+                    ))}
+                  </div>
+                </details>
+              )}
               {(activeTags.length > 0 || searchQuery || activeCategory !== "All") && (
                 <button
                   onClick={clearFilters}
