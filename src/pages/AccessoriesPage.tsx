@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import PageTransition from "@/components/PageTransition";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnnouncementBar from "@/components/AnnouncementBar";
@@ -10,7 +11,7 @@ import { useMarket } from "@/context/MarketContext";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Zap, Gauge, ArrowRight, Clock, Cable, Shield } from "lucide-react";
+import { Zap, Gauge, ArrowRight, Clock, Cable, Shield, Battery, Wrench } from "lucide-react";
 
 const categoryIcons: Record<string, React.ElementType> = {
   charger: Zap,
@@ -21,6 +22,7 @@ const categoryIcons: Record<string, React.ElementType> = {
 
 const AccessoriesPage = () => {
   const { formatPrice } = useMarket();
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
       <PageMeta
@@ -37,14 +39,32 @@ const AccessoriesPage = () => {
               <nav className="text-sm text-muted-foreground mb-6">
                 <Link to="/" className="hover:text-primary">Home</Link>
                 <span className="mx-2">/</span>
-                <span className="text-foreground">Accessories</span>
+                <Link to="/products" className="hover:text-primary">{t('products.pageTitle')}</Link>
+                <span className="mx-2">/</span>
+                <span className="text-foreground">{t('products.accessories')}</span>
               </nav>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3">
-                Battery Accessories
+                {t('products.pageTitle')}
               </h1>
-              <p className="text-muted-foreground max-w-xl">
-                Professional chargers, monitors, and installation components designed to complement your Sentorise battery system.
+              <p className="text-muted-foreground max-w-xl mb-6">
+                {t('products.pageSubtitle')}
               </p>
+
+              {/* Category Tabs */}
+              <div className="flex gap-2">
+                <Link to="/products">
+                  <Button variant="outline" size="sm" className="gap-2">
+                    <Battery className="w-4 h-4" />
+                    {t('products.batteries')}
+                  </Button>
+                </Link>
+                <Link to="/accessories">
+                  <Button variant="default" size="sm" className="gap-2">
+                    <Wrench className="w-4 h-4" />
+                    {t('products.accessories')}
+                  </Button>
+                </Link>
+              </div>
             </div>
           </section>
 

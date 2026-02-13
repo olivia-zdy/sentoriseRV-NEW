@@ -134,8 +134,10 @@
     "showing_plural": "{{count}} Produkte angezeigt",
     "noProducts": "Keine Produkte gefunden, die Ihren Kriterien entsprechen.",
     "clearAll": "Alle Filter löschen",
-    "pageTitle": "12V LiFePO₄ Batterien",
-    "pageSubtitle": "Tieftemperaturschutz bei allen Modellen. Bluetooth-Überwachung. 5 Jahre Garantie.",
+    "pageTitle": "Energiespeicherprodukte",
+    "pageSubtitle": "LiFePO₄-Batterien und Zubehör für Wohnmobile, Off-Grid-, Solar- und mobile Energiesysteme.",
+    "batteries": "Batterien",
+    "accessories": "Zubehör",
     "add": "Hinzufügen"
   },
   "productNames": {

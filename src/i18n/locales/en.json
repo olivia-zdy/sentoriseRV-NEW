@@ -134,8 +134,10 @@
     "showing_plural": "Showing {{count}} products",
     "noProducts": "No products found matching your criteria.",
     "clearAll": "Clear all filters",
-    "pageTitle": "12V LiFePO₄ Batteries",
-    "pageSubtitle": "Low-temperature protection on all models. Bluetooth monitoring. 5-year warranty.",
+    "pageTitle": "Energy Storage Products",
+    "pageSubtitle": "LiFePO₄ batteries and accessories for RV, off-grid, solar, and mobile energy systems.",
+    "batteries": "Batteries",
+    "accessories": "Accessories",
     "add": "Add"
   },
   "productNames": {

@@ -16,7 +16,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { SlidersHorizontal, X } from "lucide-react";
+import { SlidersHorizontal, X, Battery, Wrench } from "lucide-react";
 
 type SortOption = "price-asc" | "price-desc" | "capacity-asc" | "capacity-desc" | "newest";
 
@@ -155,6 +155,30 @@ const ProductsPage = () => {
             <p className="text-muted-foreground max-w-xl mb-6">
               {t('products.pageSubtitle')}
             </p>
+
+            {/* Category Tabs */}
+            <div className="flex gap-2">
+              <Link to="/products">
+                <Button 
+                  variant="default"
+                  size="sm" 
+                  className="gap-2"
+                >
+                  <Battery className="w-4 h-4" />
+                  {t('products.batteries')}
+                </Button>
+              </Link>
+              <Link to="/accessories">
+                <Button 
+                  variant="outline"
+                  size="sm" 
+                  className="gap-2"
+                >
+                  <Wrench className="w-4 h-4" />
+                  {t('products.accessories')}
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
 
