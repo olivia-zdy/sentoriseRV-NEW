@@ -2,15 +2,26 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2 } from "lucide-react";
+import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2, Truck, Check } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
+import { useMarket } from "@/context/MarketContext";
+import { useTranslation } from "react-i18next";
+
+const FREE_SHIPPING_THRESHOLD_EUR = 199;
 
 export const CartDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { items, isLoading, isSyncing, updateQuantity, removeItem, getCheckoutUrl, syncCart } = useCartStore();
+  const { convertPrice, formatPrice: marketFormatPrice } = useMarket();
+  const { t } = useTranslation();
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
   const currencyCode = items[0]?.price.currencyCode || 'GBP';
+
+  const freeShippingThreshold = convertPrice(FREE_SHIPPING_THRESHOLD_EUR);
+  const remaining = Math.max(0, freeShippingThreshold - totalPrice);
+  const progress = Math.min(100, (totalPrice / freeShippingThreshold) * 100);
+  const qualified = remaining <= 0;
 
   useEffect(() => { 
     if (isOpen) syncCart(); 
@@ -50,6 +61,33 @@ export const CartDrawer = () => {
             {totalItems === 0 ? "Your cart is empty" : `${totalItems} item${totalItems !== 1 ? 's' : ''} in your cart`}
           </SheetDescription>
         </SheetHeader>
+        {/* Free Shipping Progress */}
+        {totalItems > 0 && (
+          <div className={`mt-4 p-3 rounded-lg border ${qualified ? 'bg-primary/5 border-primary/20' : 'bg-muted/30 border-border'}`}>
+            <div className="flex items-center gap-2 mb-2">
+              {qualified ? (
+                <Check className="w-4 h-4 text-primary flex-shrink-0" />
+              ) : (
+                <Truck className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+              )}
+              <span className={`text-sm font-medium ${qualified ? 'text-primary' : 'text-foreground'}`}>
+                {qualified
+                  ? t('cart.freeShippingQualified', { defaultValue: 'You qualify for free shipping!' })
+                  : t('cart.freeShippingRemaining', {
+                      amount: formatPrice(remaining),
+                      defaultValue: `Add ${formatPrice(remaining)} more for free shipping`,
+                    })}
+              </span>
+            </div>
+            <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+              <div
+                className="h-full bg-primary rounded-full transition-all duration-500 ease-out"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+          </div>
+        )}
+
         <div className="flex flex-col flex-1 pt-6 min-h-0">
           {items.length === 0 ? (
             <div className="flex-1 flex items-center justify-center">
