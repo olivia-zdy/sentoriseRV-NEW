@@ -56,6 +56,10 @@ export default {
           "green-light": "hsl(var(--energy-green-light))",
           "green-dark": "hsl(var(--energy-green-dark))",
         },
+        amber: {
+          DEFAULT: "hsl(var(--sentorise-amber))",
+          dark: "hsl(var(--sentorise-amber-dark))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

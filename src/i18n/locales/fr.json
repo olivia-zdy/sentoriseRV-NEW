@@ -57,42 +57,16 @@
     "shippingPolicy": "Politique de livraison"
   },
   "hero": {
-    "scenes": {
-      "rv": {
-        "title": "Batterie LiFePO₄ 12V",
-        "subtitle": "Prêt pour le froid. Conçu pour les hivers européens.",
-        "highlight": "Fonctionne à -20°C • Auto-chauffage disponible"
-      },
-      "solar": {
-        "title": "Solaire autonome",
-        "subtitle": "4000+ cycles. 10 ans d'énergie fiable.",
-        "highlight": "Compatible MPPT • 200A décharge max"
-      },
-      "vanlife": {
-        "title": "Van Life & Camping",
-        "subtitle": "Énergie compacte. Surveillance en temps réel.",
-        "highlight": "App Bluetooth • Tension, SoC & température"
-      },
-      "marine": {
-        "title": "Marine & Bateau",
-        "subtitle": "Énergie stable pour yachts & voiliers.",
-        "highlight": "Anti-vibration • Résistant au sel"
-      }
-    },
+    "category": "Batterie 12V LiFePO₄",
+    "headline": "Batteries 12V LiFePO₄ pour votre camping-car. Conçue pour les hivers européens.",
+    "subheadline": "Garantie 5 ans • Certifiée UN38.3 • Protection par temps froid jusqu'à −20°C • Suivi Bluetooth • Livraison rapide en EU",
     "trustPoints": {
       "warranty": "Garantie 5 ans",
-      "bluetooth": "Surveillance Bluetooth",
-      "euStock": "Stock UE & Support",
-      "lowTemp": "Protection basse température",
-      "freeShipping": "Livraison UE gratuite",
-      "lightweight": "Design léger",
-      "easyInstall": "Installation facile",
-      "bms": "Protection BMS",
-      "ce": "Certifié CE"
+      "bluetooth": "Suivi Bluetooth",
+      "lowTemp": "Protection par temps froid"
     },
-    "shopNow": "Acheter maintenant",
-    "howToChoose": "Comment choisir",
-    "viewAllProducts": "Voir tous les produits"
+    "exploreBatteries": "Explorer les batteries",
+    "capacityGuide": "Guide des capacités"
   },
   "products": {
     "title": "Nos Batteries",
