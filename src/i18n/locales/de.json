@@ -57,42 +57,16 @@
     "shippingPolicy": "Versandrichtlinien"
   },
   "hero": {
-    "scenes": {
-      "rv": {
-        "title": "12V LiFePO₄ Batterie",
-        "subtitle": "Winterfest. Gebaut für europäische Winter.",
-        "highlight": "Funktioniert bei -20°C • Selbstheizung verfügbar"
-      },
-      "solar": {
-        "title": "Autarke Solaranlage",
-        "subtitle": "4000+ Zyklen. 10 Jahre zuverlässige Energie.",
-        "highlight": "MPPT-kompatibel • 200A maximale Entladung"
-      },
-      "vanlife": {
-        "title": "Van Life & Camping",
-        "subtitle": "Kompakte Energie. Echtzeit-Überwachung.",
-        "highlight": "Bluetooth-App • Spannung, SoC & Temperatur verfolgen"
-      },
-      "marine": {
-        "title": "Marine & Boot",
-        "subtitle": "Stabile Energie für Yachten & Segelboote.",
-        "highlight": "Vibrationsfest • Salzwasserbeständig"
-      }
-    },
+    "category": "12V LiFePO₄ Batterie",
+    "headline": "12V LiFePO₄ Batterien für Ihr Wohnmobil. Gebaut für europäische Winter.",
+    "subheadline": "5 Jahre Garantie • UN38.3 zertifiziert • Tieftemperaturschutz bis −20°C • Bluetooth-Überwachung • Schnelle EU-Lieferung",
     "trustPoints": {
       "warranty": "5 Jahre Garantie",
       "bluetooth": "Bluetooth-Überwachung",
-      "euStock": "EU-Lager & Support",
-      "lowTemp": "Tieftemperaturschutz",
-      "freeShipping": "Kostenloser EU-Versand",
-      "lightweight": "Leichtbauweise",
-      "easyInstall": "Einfache Selbstmontage",
-      "bms": "BMS-Schutz",
-      "ce": "CE-zertifiziert"
+      "lowTemp": "Tieftemperaturschutz"
     },
-    "shopNow": "Jetzt kaufen",
-    "howToChoose": "Wie wählen",
-    "viewAllProducts": "Alle Produkte ansehen"
+    "exploreBatteries": "Batterien erkunden",
+    "capacityGuide": "Kapazitätsleitfaden"
   },
   "products": {
     "title": "Unsere Batterien",

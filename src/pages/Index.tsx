@@ -44,8 +44,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageMeta 
-        title="Cold-Weather Ready 12V LiFePO₄ Batteries" 
-        description="12V LiFePO4 batteries with low-temperature protection for RV, vanlife, and off-grid solar. 5-year warranty, Bluetooth monitoring, Berlin-based support."
+        title="12V LiFePO₄ Batteries for RV & Off-Grid | Sentorise" 
+        description="12V LiFePO₄ batteries for RV and off-grid installations. 5-year warranty, UN38.3 certified, low-temp protection to -20°C, Bluetooth monitoring. Fast EU shipping."
         canonical="/"
       />
       <OrganizationSchema />
@@ -54,27 +54,42 @@ const Index = () => {
       <AnnouncementBar />
       <Header />
       <main>
-        {/* Hero: Category + Differentiator + CTAs */}
+        {/* Hero: Who + What + Differentiator */}
         <Hero />
         
-        {/* Trust Badges: Immediate credibility */}
-        <TrustBadges />
+        {/* Product Matrix: Capacity-first browsing (50Ah, 100Ah, 200Ah) */}
+        <Suspense fallback={<div className="min-h-[200px]" />}>
+          <ProductMatrix />
+        </Suspense>
         
-        {/* Core Values: 3 modules with scenario-risk-solution-boundary */}
+        {/* Core Technical Values: BMS, Low-Temp, System Compatibility */}
         <CoreValueModules />
         
-        {/* Below-the-fold sections lazy loaded to reduce initial JS */}
+        {/* Verifiable Trust: Certifications, Contact SLA, Downloads */}
         <Suspense fallback={<div className="min-h-[200px]" />}>
           <VerifiableTrust />
-          <ProductMatrix />
+        </Suspense>
+        
+        {/* Purchase: Shop Grid with Live Pricing & Stock Status */}
+        <Suspense fallback={<div className="min-h-[200px]" />}>
           <ShopifyProductGrid 
             title="Shop Our Batteries"
             subtitle="All products in stock with fast EU shipping. Add to cart and checkout securely."
           />
-          <HomepageAccessories />
-          <HomepageFAQ />
-          <MediaCoverageBar />
+        </Suspense>
+        
+        {/* Social Proof: Real User Stories */}
+        <Suspense fallback={<div className="min-h-[200px]" />}>
           <Testimonials />
+        </Suspense>
+        
+        {/* FAQ: Objection Resolution */}
+        <Suspense fallback={<div className="min-h-[200px]" />}>
+          <HomepageFAQ />
+        </Suspense>
+        
+        {/* Email Capture */}
+        <Suspense fallback={<div className="min-h-[200px]" />}>
           <Newsletter />
         </Suspense>
       </main>
