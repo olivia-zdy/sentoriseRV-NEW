@@ -38,12 +38,12 @@ export interface Product {
 }
 
 // Import real product images
-import product6ah from "@/assets/product-6ah.png";
-import product50ah from "@/assets/product-50ah.png";
-import product100ahStd from "@/assets/product-100ah-std.png";
-import product100ahMini from "@/assets/product-100ah-mini.png";
-import product100ahDin from "@/assets/product-100ah-din.png";
-import product200ahHeated from "@/assets/product-200ah-heated.png";
+import product6ah from "@/assets/product-6ah.png?format=webp&quality=85";
+import product50ah from "@/assets/product-50ah.png?format=webp&quality=85";
+import product100ahStd from "@/assets/product-100ah-std.png?format=webp&quality=85";
+import product100ahMini from "@/assets/product-100ah-mini.png?format=webp&quality=85";
+import product100ahDin from "@/assets/product-100ah-din.png?format=webp&quality=85";
+import product200ahHeated from "@/assets/product-200ah-heated.png?format=webp&quality=85";
 
 export const products: Product[] = [
   {

@@ -9,6 +9,20 @@ interface PageMetaProps {
   ogType?: "website" | "article" | "product";
 }
 
+const HREFLANG_MAP: Record<string, { lang: string; prefix: string }[]> = {};
+
+// Generate hreflang entries for a given path
+const getHreflangLinks = (path: string, siteUrl: string) => {
+  // All pages are available in all 3 languages via market switcher
+  // DE = default (x-default), FR, EN (UK)
+  return [
+    { lang: 'de', href: `${siteUrl}${path}` },
+    { lang: 'fr', href: `${siteUrl}${path}` },
+    { lang: 'en', href: `${siteUrl}${path}` },
+    { lang: 'x-default', href: `${siteUrl}${path}` },
+  ];
+};
+
 const PageMeta = ({ 
   title, 
   description,
@@ -19,6 +33,7 @@ const PageMeta = ({
 }: PageMetaProps) => {
   const fullTitle = `${title} | Sentorise`;
   const siteUrl = "https://sentorise.lovable.app";
+  const hreflangLinks = canonical ? getHreflangLinks(canonical, siteUrl) : [];
 
   return (
     <Helmet>
@@ -27,6 +42,11 @@ const PageMeta = ({
       
       {/* Canonical */}
       {canonical && <link rel="canonical" href={`${siteUrl}${canonical}`} />}
+      
+      {/* Hreflang for multi-language SEO */}
+      {hreflangLinks.map(({ lang, href }) => (
+        <link key={lang} rel="alternate" hrefLang={lang} href={href} />
+      ))}
       
       {/* Robots */}
       {noindex && <meta name="robots" content="noindex, nofollow" />}
