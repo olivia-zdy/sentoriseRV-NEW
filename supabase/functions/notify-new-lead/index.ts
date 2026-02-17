@@ -24,6 +24,17 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // --- Authentication: only allow calls with the service role key ---
+    const authHeader = req.headers.get("Authorization");
+    const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+    if (!authHeader || authHeader !== `Bearer ${serviceRoleKey}`) {
+      return new Response(
+        JSON.stringify({ error: "Unauthorized" }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+    // --- End authentication ---
+
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     if (!RESEND_API_KEY) {
       throw new Error("RESEND_API_KEY is not configured");
@@ -32,9 +43,6 @@ const handler = async (req: Request): Promise<Response> => {
     const resend = new Resend(RESEND_API_KEY);
     const lead: NewLeadNotification = await req.json();
 
-    // Admin notification email - production configuration
-    // NOTE: Requires sentorise.com domain to be verified in Resend dashboard
-    // Until verified, emails will only work with onboarding@resend.dev
     const adminEmail = "team@sentorise.com";
 
     const isQuoteRequest = lead.lead_type === "quote_request";
