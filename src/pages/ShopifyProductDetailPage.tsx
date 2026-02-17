@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { fetchProductByHandle } from "@/lib/shopify";
 import { useCartStore, ShopifyProduct } from "@/stores/cartStore";
+import { useMarket } from "@/context/MarketContext";
+import { products as localProducts } from "@/data/products";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnnouncementBar from "@/components/AnnouncementBar";
@@ -48,6 +50,7 @@ const ShopifyProductDetailPage = () => {
   const [isAdding, setIsAdding] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const addItem = useCartStore(state => state.addItem);
+  const { formatPrice: formatMarketPrice } = useMarket();
 
   useEffect(() => {
     const loadProduct = async () => {
@@ -109,6 +112,25 @@ const ShopifyProductDetailPage = () => {
   const image = product.images?.edges?.[0]?.node;
   const variant = product.variants?.edges?.[0]?.node;
 
+  // Discount logic: Shopify compareAtPrice first, then local fallback
+  const handleToLocalId: Record<string, string> = {
+    "lite-12v-6ah-ultra-compact-lifepo-battery": "lite-12v6",
+    "lite-12v-50ah-bluetooth-lifepo-battery": "lite-12v50",
+    "core-12v-100ah-standard-lifepo-battery": "core-12v100-std",
+    "core-12v-100ah-mini-compact-lifepo-battery": "core-12v100-mini",
+    "core-12v-100ah-din-h8-under-seat-lifepo-battery": "core-12v100-din",
+    "plus-12v-200ah-heated-arctic-lifepo-battery": "plus-12v200-heated",
+  };
+  const shopifyCompareAtAmt = product.compareAtPriceRange?.minVariantPrice?.amount;
+  const shopifyCompareAt = shopifyCompareAtAmt ? parseFloat(shopifyCompareAtAmt) : null;
+  const localProduct = handle ? localProducts.find(p => p.id === handleToLocalId[handle]) : null;
+  const hasLocalDiscount = localProduct?.price && localProduct?.salePrice && localProduct.salePrice < localProduct.price;
+  const compareAtPrice = (shopifyCompareAt && shopifyCompareAt > price)
+    ? shopifyCompareAt
+    : hasLocalDiscount ? localProduct!.price : null;
+  const hasDiscount = compareAtPrice !== null && compareAtPrice > price;
+  const discountPercent = hasDiscount ? Math.round((1 - price / compareAtPrice) * 100) : 0;
+
   const hasBluetooth = product.title.toLowerCase().includes('bluetooth') || 
                        product.description?.toLowerCase().includes('bluetooth');
   const hasHeating = product.title.toLowerCase().includes('heated') || 
@@ -118,12 +140,8 @@ const ShopifyProductDetailPage = () => {
   const capacityMatch = product.title.match(/(\d+)Ah/i);
   const capacity = capacityMatch ? `${capacityMatch[1]}Ah` : "100Ah";
 
-  const formatPrice = (amount: number) => {
-    return new Intl.NumberFormat('en-GB', {
-      style: 'currency',
-      currency: currencyCode,
-    }).format(amount);
-  };
+  const displayPrice = formatMarketPrice(price);
+  const displayCompareAtPrice = hasDiscount ? formatMarketPrice(compareAtPrice) : null;
 
   const handleAddToCart = async () => {
     if (!variant) return;
@@ -220,10 +238,25 @@ const ShopifyProductDetailPage = () => {
                 <div className="py-4 border-y">
                   <div className="flex items-baseline gap-3">
                     <span className="text-4xl font-bold text-primary">
-                      {formatPrice(price)}
+                      {displayPrice}
                     </span>
+                    {displayCompareAtPrice && (
+                      <span className="text-xl text-muted-foreground line-through">
+                        {displayCompareAtPrice}
+                      </span>
+                    )}
                     <span className="text-sm text-muted-foreground">incl. VAT</span>
                   </div>
+                  {hasDiscount && discountPercent > 0 && (
+                    <div className="mt-2 flex items-center gap-2">
+                      <Badge className="bg-destructive text-destructive-foreground text-sm font-bold">
+                        -{discountPercent}%
+                      </Badge>
+                      <span className="text-sm text-destructive font-medium">
+                        Save {discountPercent}%
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Quantity & Add to Cart */}
@@ -262,7 +295,7 @@ const ShopifyProductDetailPage = () => {
                     ) : (
                       <ShoppingCart className="w-5 h-5 mr-2" />
                     )}
-                    Add to Cart — {formatPrice(price * quantity)}
+                    Add to Cart — {formatMarketPrice(price * quantity)}
                   </Button>
                 </div>
 
