@@ -136,41 +136,41 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
           </div>
         )}
 
-        {/* Feature Badges */}
+        {/* Feature Badges - Top Left */}
         {(hasBluetooth || hasHeating) && (
-          <div className="absolute bottom-10 left-3 flex flex-wrap gap-1.5">
+          <div className="absolute top-3 left-3 flex flex-col gap-1.5">
             {hasBluetooth && (
-              <Badge className="bg-blue-600 text-white text-xs font-semibold px-2.5 py-1 shadow-sm">
-                <Bluetooth className="w-3.5 h-3.5 mr-1" />
+              <span className="inline-flex items-center bg-blue-600 text-white text-[11px] font-bold px-2 py-0.5 rounded shadow-md">
+                <Bluetooth className="w-3 h-3 mr-1" />
                 Bluetooth
-              </Badge>
+              </span>
             )}
             {hasHeating && (
-              <Badge className="bg-orange-500 text-white text-xs font-semibold px-2.5 py-1 shadow-sm">
-                <Thermometer className="w-3.5 h-3.5 mr-1" />
+              <span className="inline-flex items-center bg-orange-500 text-white text-[11px] font-bold px-2 py-0.5 rounded shadow-md">
+                <Thermometer className="w-3 h-3 mr-1" />
                 Heated
-              </Badge>
+              </span>
             )}
           </div>
         )}
 
-        {/* Form-factor Badges */}
+        {/* Form-factor Badges - Bottom Left */}
         {(isCompact || isDinH8 || isUltraCompact) && (
           <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
             {isUltraCompact && (
-              <Badge variant="outline" className="bg-card/90 backdrop-blur-sm text-foreground text-xs font-medium px-2.5 py-1 border-border">
+              <span className="text-[11px] font-medium text-muted-foreground bg-card/90 backdrop-blur-sm border border-border rounded px-2 py-0.5">
                 Ultra-Compact
-              </Badge>
+              </span>
             )}
             {isCompact && !isUltraCompact && (
-              <Badge variant="outline" className="bg-card/90 backdrop-blur-sm text-foreground text-xs font-medium px-2.5 py-1 border-border">
+              <span className="text-[11px] font-medium text-muted-foreground bg-card/90 backdrop-blur-sm border border-border rounded px-2 py-0.5">
                 Compact
-              </Badge>
+              </span>
             )}
             {isDinH8 && (
-              <Badge variant="outline" className="bg-card/90 backdrop-blur-sm text-foreground text-xs font-medium px-2.5 py-1 border-border">
+              <span className="text-[11px] font-medium text-muted-foreground bg-card/90 backdrop-blur-sm border border-border rounded px-2 py-0.5">
                 DIN H8
-              </Badge>
+              </span>
             )}
           </div>
         )}
