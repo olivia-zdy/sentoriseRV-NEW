@@ -81,20 +81,6 @@ const QuoteRequestModal = ({
 
       if (error) throw error;
 
-      // Trigger email notification to admin team (fire and forget)
-      supabase.functions.invoke('notify-new-lead', {
-        body: {
-          lead_type: 'quote_request',
-          name: result.data.name,
-          email: result.data.email,
-          phone: result.data.phone,
-          company: result.data.company,
-          product_name: productName,
-          quantity: result.data.quantity,
-          message: result.data.message,
-        }
-      }).catch(err => console.error('Notification failed:', err));
-
       toast.success("Quote request submitted! We'll contact you within 24 hours.");
       onOpenChange(false);
       setFormData({ name: "", email: "", phone: "", company: "", quantity: 1, message: "" });
