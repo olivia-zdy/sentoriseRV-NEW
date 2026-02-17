@@ -24,24 +24,19 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    // --- Authentication: service role key OR webhook secret ---
+    // --- Authentication: service role key OR internal webhook token ---
     const authHeader = req.headers.get("Authorization");
-    const webhookSecret = req.headers.get("x-webhook-secret");
+    const webhookToken = req.headers.get("x-webhook-secret");
     const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
-    const expectedWebhookSecret = Deno.env.get("NOTIFY_LEAD_WEBHOOK_SECRET");
 
-    console.log("Auth debug:", {
-      hasAuthHeader: !!authHeader,
-      hasWebhookSecret: !!webhookSecret,
-      hasExpectedWebhookSecret: !!expectedWebhookSecret,
-      webhookSecretLength: webhookSecret?.length,
-      expectedSecretLength: expectedWebhookSecret?.length,
-    });
+    // Internal trigger token - matches value in notify_new_lead_trigger() DB function
+    const INTERNAL_WEBHOOK_TOKEN = "wh_sentorise_lead_notify_2026";
 
     const isServiceRole = authHeader && authHeader === `Bearer ${serviceRoleKey}`;
-    const isWebhook = webhookSecret && expectedWebhookSecret && webhookSecret === expectedWebhookSecret;
+    const isInternalTrigger = webhookToken === INTERNAL_WEBHOOK_TOKEN;
 
-    if (!isServiceRole && !isWebhook) {
+    if (!isServiceRole && !isInternalTrigger) {
+      console.log("Auth failed:", { hasAuth: !!authHeader, hasWebhook: !!webhookToken });
       return new Response(
         JSON.stringify({ error: "Unauthorized" }),
         { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
