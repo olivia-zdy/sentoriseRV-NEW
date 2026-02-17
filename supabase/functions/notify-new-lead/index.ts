@@ -36,7 +36,7 @@ const handler = async (req: Request): Promise<Response> => {
     const isInternalTrigger = webhookToken === INTERNAL_WEBHOOK_TOKEN;
 
     if (!isServiceRole && !isInternalTrigger) {
-      console.log("Auth failed:", { hasAuth: !!authHeader, hasWebhook: !!webhookToken });
+      return new Response(
       return new Response(
         JSON.stringify({ error: "Unauthorized" }),
         { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
