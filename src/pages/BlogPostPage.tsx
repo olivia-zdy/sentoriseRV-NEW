@@ -1,5 +1,6 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState, useMemo } from "react";
+import DOMPurify from "dompurify";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -312,7 +313,7 @@ const BlogPostPage = () => {
                     prose-table:border prose-table:border-border
                     prose-th:bg-muted prose-th:p-3 prose-th:text-left prose-th:font-semibold
                     prose-td:p-3 prose-td:border-t prose-td:border-border"
-                  dangerouslySetInnerHTML={{ __html: formatContent(post.content) }}
+                  dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(formatContent(post.content)) }}
                 />
               </div>
 
