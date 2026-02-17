@@ -161,19 +161,41 @@ const ProductCard = ({ product }: ProductCardProps) => {
             </div>
           </div>
 
-          {/* Highlights */}
-          {product.highlights && product.highlights.length > 0 && (
-            <div className="flex flex-wrap gap-1.5 mb-4">
-              {product.highlights.slice(0, 3).map((highlight, index) => (
-                <span 
-                  key={index}
-                  className="px-2 py-0.5 text-xs bg-secondary text-secondary-foreground rounded-full"
-                >
-                  {highlight}
-                </span>
-              ))}
-            </div>
-          )}
+          {/* Highlights - split into feature vs form factor */}
+          {product.highlights && product.highlights.length > 0 && (() => {
+            const featureKeywords = ['bluetooth', 'self-heating', 'bms', 'continuous', 'cycles', 'capacity', 'warranty', 'power', 'arctic'];
+            const featureBadges: string[] = [];
+            const formBadges: string[] = [];
+            product.highlights.slice(0, 4).forEach(h => {
+              if (featureKeywords.some(k => h.toLowerCase().includes(k))) {
+                featureBadges.push(h);
+              } else {
+                formBadges.push(h);
+              }
+            });
+            return (
+              <div className="space-y-1.5 mb-4">
+                {featureBadges.length > 0 && (
+                  <div className="flex flex-wrap gap-1.5">
+                    {featureBadges.map((h, i) => (
+                      <span key={i} className="px-2 py-0.5 text-xs bg-primary/10 text-primary rounded-full font-medium">
+                        {h}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                {formBadges.length > 0 && (
+                  <div className="flex flex-wrap gap-1.5">
+                    {formBadges.map((h, i) => (
+                      <span key={i} className="px-2 py-0.5 text-xs bg-secondary text-secondary-foreground rounded-full">
+                        {h}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })()}
 
           {/* Price & Actions */}
           <div className="pt-3 border-t border-border space-y-3">
