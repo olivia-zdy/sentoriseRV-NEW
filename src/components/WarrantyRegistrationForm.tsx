@@ -56,6 +56,7 @@ const WarrantyRegistrationForm = ({ onSuccess }: WarrantyRegistrationFormProps) 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [warrantyEndDate, setWarrantyEndDate] = useState<string | null>(null);
+  const formRef = useState<HTMLFormElement | null>(null);
 
   const {
     register,
@@ -70,6 +71,17 @@ const WarrantyRegistrationForm = ({ onSuccess }: WarrantyRegistrationFormProps) 
       country: "Germany",
     },
   });
+
+  // Auto-scroll to first validation error
+  const onError = () => {
+    toast.error("Please fill in all required fields before submitting.");
+    setTimeout(() => {
+      const firstError = document.querySelector('.text-destructive');
+      if (firstError) {
+        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 100);
+  };
 
   const selectedProduct = watch("product_name");
   const purchaseDate = watch("purchase_date");
@@ -183,7 +195,7 @@ const WarrantyRegistrationForm = ({ onSuccess }: WarrantyRegistrationFormProps) 
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+    <form onSubmit={handleSubmit(onSubmit, onError)} className="space-y-8">
       {/* Product Selection */}
       <div className="space-y-4">
         <h3 className="text-lg font-semibold flex items-center gap-2">
