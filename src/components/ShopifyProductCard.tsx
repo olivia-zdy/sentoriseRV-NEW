@@ -47,26 +47,21 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
   const { t } = useTranslation();
   const { node } = product;
   
-  const price = parseFloat(node.priceRange.minVariantPrice.amount);
-  const compareAtPriceAmount = node.compareAtPriceRange?.minVariantPrice?.amount;
-  const shopifyCompareAt = compareAtPriceAmount ? parseFloat(compareAtPriceAmount) : null;
-  
-  // Fallback to local product data for discount pricing when Shopify has no compareAtPrice
+  // Use local product data as source of truth for display pricing (EUR)
   const localProduct = localProducts.find(p => p.id === handleToLocalId[node.handle]);
   const localOriginalPrice = localProduct?.price;
   const localSalePrice = localProduct?.salePrice;
-  const hasLocalDiscount = localOriginalPrice && localSalePrice && localSalePrice < localOriginalPrice;
   
-  const compareAtPrice = (shopifyCompareAt && shopifyCompareAt > price) 
-    ? shopifyCompareAt 
-    : hasLocalDiscount ? localOriginalPrice : null;
-  const hasDiscount = compareAtPrice !== null && compareAtPrice > price;
-  const discountPercent = hasDiscount ? Math.round((1 - price / compareAtPrice) * 100) : 0;
+  // Primary display price: prefer local salePrice > local price > Shopify price
+  const basePrice = localSalePrice || localOriginalPrice || parseFloat(node.priceRange.minVariantPrice.amount);
+  const compareAtPrice = (localOriginalPrice && localSalePrice && localSalePrice < localOriginalPrice) 
+    ? localOriginalPrice 
+    : null;
+  const hasDiscount = compareAtPrice !== null && compareAtPrice > basePrice;
+  const discountPercent = hasDiscount ? Math.round((1 - basePrice / compareAtPrice) * 100) : 0;
 
-  const currencyCode = node.priceRange.minVariantPrice.currencyCode;
   const shopifyImage = node.images?.edges?.[0]?.node;
   const localImage = localImageMap[node.handle];
-  // For Shopify CDN images, request a smaller size to reduce download
   const shopifyUrl = shopifyImage?.url;
   const optimizedShopifyUrl = shopifyUrl && shopifyUrl.includes('cdn.shopify.com')
     ? `${shopifyUrl}${shopifyUrl.includes('?') ? '&' : '?'}width=400`
@@ -85,8 +80,8 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
   const isDinH8 = node.title.toLowerCase().includes('din h8');
   const isUltraCompact = node.title.toLowerCase().includes('ultra-compact');
 
-  // Price is in EUR from Shopify, convert via market context
-  const displayPrice = formatMarketPrice(price);
+  // Format prices via market context (always from EUR base)
+  const displayPrice = formatMarketPrice(basePrice);
   const displayCompareAtPrice = hasDiscount ? formatMarketPrice(compareAtPrice) : null;
 
   const handleAddToCart = async (e: React.MouseEvent) => {
@@ -136,12 +131,12 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
         
         {/* Discount Badge - Top Right, Large & Bold */}
         {hasDiscount && discountPercent > 0 && (
-          <div className="absolute top-3 right-3 bg-destructive text-destructive-foreground rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
-            <span className="text-sm font-extrabold leading-none">-{discountPercent}%</span>
+          <div className="absolute top-3 right-3 bg-destructive text-destructive-foreground rounded-full w-14 h-14 flex items-center justify-center shadow-lg">
+            <span className="text-base font-extrabold leading-none">-{discountPercent}%</span>
           </div>
         )}
 
-        {/* Feature Badges - functional features (top-left of image area) */}
+        {/* Feature Badges */}
         {(hasBluetooth || hasHeating) && (
           <div className="absolute bottom-10 left-3 flex flex-wrap gap-1.5">
             {hasBluetooth && (
@@ -159,7 +154,7 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
           </div>
         )}
 
-        {/* Form-factor Badges - shell/use case (bottom of image) */}
+        {/* Form-factor Badges */}
         {(isCompact || isDinH8 || isUltraCompact) && (
           <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
             {isUltraCompact && (
@@ -191,28 +186,28 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
           {node.description}
         </p>
 
-        {/* Price Section - More prominent discount display */}
+        {/* Price Section - Large & prominent */}
         <div className="pt-2">
           {hasDiscount && displayCompareAtPrice ? (
-            <div className="flex items-baseline gap-2 mb-1">
-              <span className="text-2xl font-bold text-destructive">
-                {displayPrice}
-              </span>
-              <span className="text-base text-muted-foreground line-through">
-                {displayCompareAtPrice}
+            <div className="space-y-1.5">
+              <div className="flex items-baseline gap-2">
+                <span className="text-2xl font-extrabold text-foreground">
+                  {displayPrice}
+                </span>
+                <span className="text-sm text-muted-foreground line-through">
+                  {displayCompareAtPrice}
+                </span>
+              </div>
+              <span className="inline-block bg-destructive text-destructive-foreground text-xs font-bold px-2.5 py-1 rounded-md">
+                {t('products.save', { percent: discountPercent, defaultValue: `Save ${discountPercent}%` })}
               </span>
             </div>
           ) : (
             <div className="mb-1">
-              <span className="text-2xl font-bold text-primary">
+              <span className="text-2xl font-extrabold text-foreground">
                 {displayPrice}
               </span>
             </div>
-          )}
-          {hasDiscount && discountPercent > 0 && (
-            <span className="inline-block bg-destructive/10 text-destructive text-xs font-bold px-2 py-0.5 rounded">
-              {t('products.save', { percent: discountPercent, defaultValue: `Save ${discountPercent}%` })}
-            </span>
           )}
         </div>
 
