@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
@@ -60,8 +60,23 @@ type ApplicationFilter = "all" | typeof applicationIds[number];
 
 const ApplicationsPage = () => {
   const { t } = useTranslation();
+  const location = useLocation();
   const [activeFilter, setActiveFilter] = useState<ApplicationFilter>("all");
 
+  // Read URL hash to auto-filter and scroll to the specific application
+  useEffect(() => {
+    const hash = location.hash.replace('#', '') as typeof applicationIds[number];
+    if (hash && applicationIds.includes(hash)) {
+      setActiveFilter(hash);
+      // Scroll to the detailed section after a brief delay for render
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+    }
+  }, [location.hash]);
   const filteredIds = activeFilter === "all" 
     ? [...applicationIds] 
     : applicationIds.filter(id => id === activeFilter);
