@@ -34,13 +34,12 @@ const WarrantyLookup = () => {
     setSearched(true);
 
     try {
-      const { data, error } = await supabase
-        .from("warranty_registrations")
-        .select("id, product_name, serial_number, purchase_date, warranty_end_date, status, created_at")
-        .eq("email", email.toLowerCase().trim())
-        .order("created_at", { ascending: false });
+      const { data: fnData, error } = await supabase.functions.invoke('lookup-warranty', {
+        body: { email: email.toLowerCase().trim() },
+      });
 
       if (error) throw error;
+      const data = fnData?.data;
 
       setRecords(data || []);
       
