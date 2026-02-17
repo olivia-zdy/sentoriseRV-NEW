@@ -13,7 +13,7 @@ import FAQSchema from "@/components/SEO/FAQSchema";
 
 // Lazy load below-the-fold sections to reduce initial JS bundle
 const VerifiableTrust = lazy(() => import("@/components/VerifiableTrust"));
-const ProductMatrix = lazy(() => import("@/components/ProductMatrix"));
+const BatterySelector = lazy(() => import("@/components/BatterySelector"));
 const ShopifyProductGrid = lazy(() => import("@/components/ShopifyProductGrid"));
 const HomepageAccessories = lazy(() => import("@/components/HomepageAccessories"));
 const HomepageFAQ = lazy(() => import("@/components/HomepageFAQ"));
@@ -66,7 +66,19 @@ const Index = () => {
         {/* Below-the-fold sections lazy loaded to reduce initial JS */}
         <Suspense fallback={<div className="min-h-[200px]" />}>
           <VerifiableTrust />
-          <ProductMatrix />
+          <section className="section-padding bg-muted/30">
+            <div className="container-custom">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+                  Find Your Perfect Battery
+                </h2>
+                <p className="text-muted-foreground max-w-xl mx-auto">
+                  Answer a few quick questions and we'll recommend the ideal capacity for your setup.
+                </p>
+              </div>
+              <BatterySelector />
+            </div>
+          </section>
           <ShopifyProductGrid 
             title="Shop Our Batteries"
             subtitle="All products in stock with fast EU shipping. Add to cart and checkout securely."
