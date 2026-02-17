@@ -59,7 +59,7 @@
   "hero": {
     "scenes": {
       "rv": {
-        "title": "12V LiFePO₄ Battery",
+        "title": "LiFePO₄ Battery",
         "subtitle": "Cold-Weather Ready. Built for European Winters.",
         "highlight": "Power that works at -20°C • Self-heating available"
       },
@@ -84,7 +84,7 @@
       "bluetooth": "Bluetooth Monitoring",
       "euStock": "EU Stock & Support",
       "lowTemp": "Low-Temp Protection",
-      "freeShipping": "Free EU Shipping",
+      "freeShipping": "Free Shipping over €199",
       "lightweight": "Lightweight Design",
       "easyInstall": "Easy DIY Install",
       "bms": "BMS Protection",
@@ -106,7 +106,7 @@
     "viewDetails": "View Details",
     "quickView": "Quick View",
     "compare": "Compare",
-    "freeShipping": "Free EU Shipping",
+    "freeShipping": "Free Shipping €199+",
     "warranty": "5-Year Warranty",
     "register": "Register",
     "inStock": "In Stock",
@@ -429,7 +429,7 @@
   },
   "servicePromises": {
     "freeShipping": "Free EU Shipping",
-    "freeShippingDesc": "Orders €99+",
+    "freeShippingDesc": "Orders €199+",
     "returns": "30-Day Returns",
     "returnsDesc": "Money Back Guarantee",
     "warranty": "5-Year Warranty",

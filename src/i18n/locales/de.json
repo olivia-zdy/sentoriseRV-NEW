@@ -59,7 +59,7 @@
   "hero": {
     "scenes": {
       "rv": {
-        "title": "12V LiFePO₄ Batterie",
+        "title": "LiFePO₄ Batterie",
         "subtitle": "Winterfest. Gebaut für europäische Winter.",
         "highlight": "Funktioniert bei -20°C • Selbstheizung verfügbar"
       },
@@ -84,7 +84,7 @@
       "bluetooth": "Bluetooth-Überwachung",
       "euStock": "EU-Lager & Support",
       "lowTemp": "Tieftemperaturschutz",
-      "freeShipping": "Kostenloser EU-Versand",
+      "freeShipping": "Kostenloser Versand ab 199€",
       "lightweight": "Leichtbauweise",
       "easyInstall": "Einfache Selbstmontage",
       "bms": "BMS-Schutz",
@@ -106,7 +106,7 @@
     "viewDetails": "Details ansehen",
     "quickView": "Schnellansicht",
     "compare": "Vergleichen",
-    "freeShipping": "Kostenloser EU-Versand",
+    "freeShipping": "Versandkostenfrei ab 199€",
     "warranty": "5 Jahre Garantie",
     "register": "Registrieren",
     "inStock": "Auf Lager",
@@ -429,7 +429,7 @@
   },
   "servicePromises": {
     "freeShipping": "Kostenloser EU-Versand",
-    "freeShippingDesc": "Ab €99",
+    "freeShippingDesc": "Ab 199€",
     "returns": "30 Tage Rückgabe",
     "returnsDesc": "Geld-zurück-Garantie",
     "warranty": "5 Jahre Garantie",
