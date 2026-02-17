@@ -44,8 +44,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageMeta 
-        title="Cold-Weather Ready 12V LiFePO₄ Batteries" 
-        description="12V LiFePO4 batteries with low-temperature protection for RV, vanlife, and off-grid solar. 5-year warranty, Bluetooth monitoring, Berlin-based support."
+        title="Cold-Weather Ready LiFePO₄ Batteries" 
+        description="LiFePO4 batteries with low-temperature protection for RV, vanlife, and off-grid solar. 5-year warranty, Bluetooth monitoring, Berlin-based support."
         canonical="/"
       />
       <OrganizationSchema />

@@ -343,8 +343,8 @@ const ShopifyProductDetailPage = () => {
                   <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/30">
                     <Truck className="w-5 h-5 text-primary mt-0.5" />
                     <div>
-                      <p className="font-medium text-sm">Free EU Shipping</p>
-                      <p className="text-xs text-muted-foreground">2-5 business days</p>
+                      <p className="font-medium text-sm">Free Shipping €199+</p>
+                      <p className="text-xs text-muted-foreground">EU orders, 2-5 business days</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/30">
