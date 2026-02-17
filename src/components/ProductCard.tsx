@@ -145,15 +145,15 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <div className="grid grid-cols-2 gap-2 mb-4">
             <div className="text-center p-2 bg-muted/50 rounded-lg">
               <p className="text-xs text-muted-foreground">Voltage</p>
-              <p className="text-sm font-semibold text-foreground">{product.voltage}V</p>
+              <p className="text-sm font-semibold text-foreground">{product.voltage}</p>
             </div>
             <div className="text-center p-2 bg-muted/50 rounded-lg">
               <p className="text-xs text-muted-foreground">Capacity</p>
-              <p className="text-sm font-semibold text-foreground">{product.capacity}Ah</p>
+              <p className="text-sm font-semibold text-foreground">{product.capacity}</p>
             </div>
             <div className="text-center p-2 bg-muted/50 rounded-lg">
               <p className="text-xs text-muted-foreground">Energy</p>
-              <p className="text-sm font-semibold text-foreground">{product.energy}Wh</p>
+              <p className="text-sm font-semibold text-foreground">{product.energy}</p>
             </div>
             <div className="text-center p-2 bg-muted/50 rounded-lg">
               <p className="text-xs text-muted-foreground">Cycle Life</p>
