@@ -269,7 +269,7 @@ const BluetoothGuidePage = () => {
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl font-bold text-foreground mb-2">What You Can Monitor</h2>
-              <p className="text-muted-foreground mb-8">
+              <p className="text-foreground/70 mb-8">
                 Real-time battery data at your fingertips.
               </p>
 
