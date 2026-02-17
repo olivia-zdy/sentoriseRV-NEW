@@ -18,10 +18,10 @@ import img100ahDin from "@/assets/product-100ah-din.png";
 import img200ahHeated from "@/assets/product-200ah-heated.png";
 
 const localImageMap: Record<string, string> = {
-  "lite-12v-6ah-ultra-compact-lifepo-battery": img100ahMini,
-  "lite-12v-50ah-bluetooth-lifepo-battery": img6ah,
-  "core-12v-100ah-standard-lifepo-battery": img50ah,
-  "core-12v-100ah-mini-compact-lifepo-battery": img100ahStd,
+  "lite-12v-6ah-ultra-compact-lifepo-battery": img6ah,
+  "lite-12v-50ah-bluetooth-lifepo-battery": img50ah,
+  "core-12v-100ah-standard-lifepo-battery": img100ahStd,
+  "core-12v-100ah-mini-compact-lifepo-battery": img100ahMini,
   "core-12v-100ah-din-h8-under-seat-lifepo-battery": img100ahDin,
   "plus-12v-200ah-heated-arctic-lifepo-battery": img200ahHeated,
 };
@@ -132,27 +132,29 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
           />
         )}
         
-        {/* Feature & Discount Badges */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1">
-          {hasDiscount && discountPercent > 0 && (
-            <Badge className="bg-destructive text-destructive-foreground text-xs font-bold">
-              -{discountPercent}%
-            </Badge>
-          )}
+        {/* Discount Badge - Top Right, Large & Bold */}
+        {hasDiscount && discountPercent > 0 && (
+          <div className="absolute top-3 right-3 bg-destructive text-destructive-foreground rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+            <span className="text-sm font-extrabold leading-none">-{discountPercent}%</span>
+          </div>
+        )}
+
+        {/* Feature Badges - Bottom of image, horizontal */}
+        <div className="absolute bottom-3 left-3 right-3 flex flex-wrap gap-1.5">
           {hasBluetooth && (
-            <Badge variant="secondary" className="text-xs">
-              <Bluetooth className="w-3 h-3 mr-1" />
+            <Badge className="bg-blue-600 text-white text-xs font-semibold px-2.5 py-1 shadow-sm">
+              <Bluetooth className="w-3.5 h-3.5 mr-1" />
               Bluetooth
             </Badge>
           )}
           {hasHeating && (
-            <Badge className="bg-accent text-accent-foreground text-xs">
-              <Thermometer className="w-3 h-3 mr-1" />
+            <Badge className="bg-orange-500 text-white text-xs font-semibold px-2.5 py-1 shadow-sm">
+              <Thermometer className="w-3.5 h-3.5 mr-1" />
               Heated
             </Badge>
           )}
           {isCompact && (
-            <Badge variant="outline" className="text-xs bg-background/80">
+            <Badge className="bg-violet-600 text-white text-xs font-semibold px-2.5 py-1 shadow-sm">
               Compact
             </Badge>
           )}
@@ -169,30 +171,38 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
           {node.description}
         </p>
 
-        <div className="flex items-center justify-between pt-2">
-          <div className="flex flex-col">
-            <div className="flex items-center gap-2">
+        {/* Price Section - More prominent discount display */}
+        <div className="pt-2">
+          {hasDiscount && displayCompareAtPrice ? (
+            <div className="flex items-baseline gap-2 mb-1">
+              <span className="text-2xl font-bold text-destructive">
+                {displayPrice}
+              </span>
+              <span className="text-base text-muted-foreground line-through">
+                {displayCompareAtPrice}
+              </span>
+            </div>
+          ) : (
+            <div className="mb-1">
               <span className="text-2xl font-bold text-primary">
                 {displayPrice}
               </span>
-              {displayCompareAtPrice && (
-                <span className="text-sm text-muted-foreground line-through">
-                  {displayCompareAtPrice}
-                </span>
-              )}
             </div>
-            {hasDiscount && discountPercent > 0 && (
-              <span className="text-xs text-destructive font-medium">
-                {t('products.save', { percent: discountPercent, defaultValue: `Save ${discountPercent}%` })}
-              </span>
-            )}
-          </div>
-          
+          )}
+          {hasDiscount && discountPercent > 0 && (
+            <span className="inline-block bg-destructive/10 text-destructive text-xs font-bold px-2 py-0.5 rounded">
+              {t('products.save', { percent: discountPercent, defaultValue: `Save ${discountPercent}%` })}
+            </span>
+          )}
+        </div>
+
+        {/* Add to Cart */}
+        <div className="pt-1">
           <Button 
             size="sm" 
             onClick={handleAddToCart}
             disabled={isAdding || !variant?.availableForSale}
-            className="gap-2"
+            className="w-full gap-2"
           >
             {isAdding ? (
               <Loader2 className="w-4 h-4 animate-spin" />
