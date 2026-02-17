@@ -13,6 +13,9 @@ import ProductFAQ from "@/components/ProductFAQ";
 import ProductComparisonTable from "@/components/ProductComparisonTable";
 import ProductReviews from "@/components/ProductReviews";
 import ProductAccessories from "@/components/ProductAccessories";
+import InstallationGuide from "@/components/InstallationGuide";
+import VideoShowcase from "@/components/VideoShowcase";
+import SeriesComparisonTable from "@/components/SeriesComparisonTable";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -461,6 +464,20 @@ const ShopifyProductDetailPage = () => {
           </section>
         )}
 
+        {/* Installation Guide */}
+        <InstallationGuide
+          productName={product.title}
+          capacity={capacity}
+          hasHeating={hasHeating}
+          hasBluetooth={hasBluetooth}
+        />
+
+        {/* Series Comparison Table */}
+        <SeriesComparisonTable
+          currentProductId={localProduct?.id || handle || ""}
+          series={localProduct?.series}
+        />
+
         {/* LiFePO4 vs Lead-Acid Comparison */}
         <ProductComparisonTable 
           capacity={capacity}
@@ -480,6 +497,14 @@ const ShopifyProductDetailPage = () => {
         <ProductAccessories
           productId={handle || ""}
           productName={product.title}
+        />
+
+        {/* Video Guides */}
+        <VideoShowcase
+          productName={product.title}
+          capacity={capacity}
+          hasBluetooth={hasBluetooth}
+          hasHeating={hasHeating}
         />
 
         {/* Customer Reviews */}
