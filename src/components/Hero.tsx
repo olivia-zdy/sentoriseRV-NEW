@@ -111,7 +111,7 @@ const Hero = () => {
                   {t(`hero.scenes.${key}.subtitle`)}
                 </h1>
                 
-                <p className="text-lg md:text-xl text-primary font-semibold mt-4 drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
+                <p className="text-lg md:text-xl text-white/90 font-semibold mt-4 drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)]">
                   {t(`hero.scenes.${key}.highlight`)}
                 </p>
               </div>
@@ -182,7 +182,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="text-lg md:text-xl text-primary font-semibold mt-4 drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]"
+                    className="text-lg md:text-xl text-white/90 font-semibold mt-4 drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)]"
                   >
                     {t(`hero.scenes.${key}.highlight`)}
                   </motion.p>
