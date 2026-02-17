@@ -24,10 +24,16 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    // --- Authentication: only allow calls with the service role key ---
+    // --- Authentication: service role key OR webhook secret ---
     const authHeader = req.headers.get("Authorization");
+    const webhookSecret = req.headers.get("x-webhook-secret");
     const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
-    if (!authHeader || authHeader !== `Bearer ${serviceRoleKey}`) {
+    const expectedWebhookSecret = Deno.env.get("NOTIFY_LEAD_WEBHOOK_SECRET");
+
+    const isServiceRole = authHeader && authHeader === `Bearer ${serviceRoleKey}`;
+    const isWebhook = webhookSecret && expectedWebhookSecret && webhookSecret === expectedWebhookSecret;
+
+    if (!isServiceRole && !isWebhook) {
       return new Response(
         JSON.stringify({ error: "Unauthorized" }),
         { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
