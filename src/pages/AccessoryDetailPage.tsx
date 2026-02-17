@@ -173,7 +173,7 @@ const AccessoryDetailPage = () => {
                     <div className="flex flex-wrap gap-4 text-xs text-muted-foreground">
                       <div className="flex items-center gap-1.5">
                         <Truck className="w-4 h-4 text-primary" />
-                        Free EU Shipping
+                        Free Shipping €199+
                       </div>
                       <div className="flex items-center gap-1.5">
                         <Shield className="w-4 h-4 text-primary" />
