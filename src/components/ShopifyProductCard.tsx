@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Loader2, Bluetooth, Thermometer } from "lucide-react";
 import { toast } from "sonner";
+import { products as localProducts } from "@/data/products";
 
 // Local image overrides to fix Shopify CDN mismatch
 import img6ah from "@/assets/product-6ah.png";
@@ -25,6 +26,16 @@ const localImageMap: Record<string, string> = {
   "plus-12v-200ah-heated-arctic-lifepo-battery": img200ahHeated,
 };
 
+// Map Shopify handles to local product IDs for fallback pricing
+const handleToLocalId: Record<string, string> = {
+  "lite-12v-6ah-ultra-compact-lifepo-battery": "lite-12v6",
+  "lite-12v-50ah-bluetooth-lifepo-battery": "lite-12v50",
+  "core-12v-100ah-standard-lifepo-battery": "core-12v100-std",
+  "core-12v-100ah-mini-compact-lifepo-battery": "core-12v100-mini",
+  "core-12v-100ah-din-h8-under-seat-lifepo-battery": "core-12v100-din",
+  "plus-12v-200ah-heated-arctic-lifepo-battery": "plus-12v200-heated",
+};
+
 interface ShopifyProductCardProps {
   product: ShopifyProduct;
 }
@@ -37,6 +48,21 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
   const { node } = product;
   
   const price = parseFloat(node.priceRange.minVariantPrice.amount);
+  const compareAtPriceAmount = node.compareAtPriceRange?.minVariantPrice?.amount;
+  const shopifyCompareAt = compareAtPriceAmount ? parseFloat(compareAtPriceAmount) : null;
+  
+  // Fallback to local product data for discount pricing when Shopify has no compareAtPrice
+  const localProduct = localProducts.find(p => p.id === handleToLocalId[node.handle]);
+  const localOriginalPrice = localProduct?.price;
+  const localSalePrice = localProduct?.salePrice;
+  const hasLocalDiscount = localOriginalPrice && localSalePrice && localSalePrice < localOriginalPrice;
+  
+  const compareAtPrice = (shopifyCompareAt && shopifyCompareAt > price) 
+    ? shopifyCompareAt 
+    : hasLocalDiscount ? localOriginalPrice : null;
+  const hasDiscount = compareAtPrice !== null && compareAtPrice > price;
+  const discountPercent = hasDiscount ? Math.round((1 - price / compareAtPrice) * 100) : 0;
+
   const currencyCode = node.priceRange.minVariantPrice.currencyCode;
   const shopifyImage = node.images?.edges?.[0]?.node;
   const localImage = localImageMap[node.handle];
@@ -59,6 +85,7 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
 
   // Price is in EUR from Shopify, convert via market context
   const displayPrice = formatMarketPrice(price);
+  const displayCompareAtPrice = hasDiscount ? formatMarketPrice(compareAtPrice) : null;
 
   const handleAddToCart = async (e: React.MouseEvent) => {
     e.preventDefault();
@@ -105,8 +132,13 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
           />
         )}
         
-        {/* Feature Badges */}
+        {/* Feature & Discount Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-1">
+          {hasDiscount && discountPercent > 0 && (
+            <Badge className="bg-destructive text-destructive-foreground text-xs font-bold">
+              -{discountPercent}%
+            </Badge>
+          )}
           {hasBluetooth && (
             <Badge variant="secondary" className="text-xs">
               <Bluetooth className="w-3 h-3 mr-1" />
@@ -114,7 +146,7 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
             </Badge>
           )}
           {hasHeating && (
-            <Badge className="bg-orange-500/90 text-white text-xs">
+            <Badge className="bg-accent text-accent-foreground text-xs">
               <Thermometer className="w-3 h-3 mr-1" />
               Heated
             </Badge>
@@ -138,10 +170,22 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
         </p>
 
         <div className="flex items-center justify-between pt-2">
-          <div>
-            <span className="text-2xl font-bold text-primary">
-              {displayPrice}
-            </span>
+          <div className="flex flex-col">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl font-bold text-primary">
+                {displayPrice}
+              </span>
+              {displayCompareAtPrice && (
+                <span className="text-sm text-muted-foreground line-through">
+                  {displayCompareAtPrice}
+                </span>
+              )}
+            </div>
+            {hasDiscount && discountPercent > 0 && (
+              <span className="text-xs text-destructive font-medium">
+                {t('products.save', { percent: discountPercent, defaultValue: `Save ${discountPercent}%` })}
+              </span>
+            )}
           </div>
           
           <Button 
