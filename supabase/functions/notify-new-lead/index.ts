@@ -4,7 +4,7 @@ import { Resend } from "https://esm.sh/resend@2.0.0";
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
+    "authorization, x-client-info, apikey, content-type, x-webhook-secret, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
 interface NewLeadNotification {
@@ -29,6 +29,14 @@ const handler = async (req: Request): Promise<Response> => {
     const webhookSecret = req.headers.get("x-webhook-secret");
     const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
     const expectedWebhookSecret = Deno.env.get("NOTIFY_LEAD_WEBHOOK_SECRET");
+
+    console.log("Auth debug:", {
+      hasAuthHeader: !!authHeader,
+      hasWebhookSecret: !!webhookSecret,
+      hasExpectedWebhookSecret: !!expectedWebhookSecret,
+      webhookSecretLength: webhookSecret?.length,
+      expectedSecretLength: expectedWebhookSecret?.length,
+    });
 
     const isServiceRole = authHeader && authHeader === `Bearer ${serviceRoleKey}`;
     const isWebhook = webhookSecret && expectedWebhookSecret && webhookSecret === expectedWebhookSecret;
