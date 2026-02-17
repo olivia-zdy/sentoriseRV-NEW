@@ -82,6 +82,8 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
                      node.description?.toLowerCase().includes('self-heating');
   const isCompact = node.title.toLowerCase().includes('mini') || 
                     node.title.toLowerCase().includes('compact');
+  const isDinH8 = node.title.toLowerCase().includes('din h8');
+  const isUltraCompact = node.title.toLowerCase().includes('ultra-compact');
 
   // Price is in EUR from Shopify, convert via market context
   const displayPrice = formatMarketPrice(price);
@@ -139,26 +141,44 @@ export const ShopifyProductCard = ({ product }: ShopifyProductCardProps) => {
           </div>
         )}
 
-        {/* Feature Badges - Bottom of image, horizontal */}
-        <div className="absolute bottom-3 left-3 right-3 flex flex-wrap gap-1.5">
-          {hasBluetooth && (
-            <Badge className="bg-blue-600 text-white text-xs font-semibold px-2.5 py-1 shadow-sm">
-              <Bluetooth className="w-3.5 h-3.5 mr-1" />
-              Bluetooth
-            </Badge>
-          )}
-          {hasHeating && (
-            <Badge className="bg-orange-500 text-white text-xs font-semibold px-2.5 py-1 shadow-sm">
-              <Thermometer className="w-3.5 h-3.5 mr-1" />
-              Heated
-            </Badge>
-          )}
-          {isCompact && (
-            <Badge className="bg-violet-600 text-white text-xs font-semibold px-2.5 py-1 shadow-sm">
-              Compact
-            </Badge>
-          )}
-        </div>
+        {/* Feature Badges - functional features (top-left of image area) */}
+        {(hasBluetooth || hasHeating) && (
+          <div className="absolute bottom-10 left-3 flex flex-wrap gap-1.5">
+            {hasBluetooth && (
+              <Badge className="bg-blue-600 text-white text-xs font-semibold px-2.5 py-1 shadow-sm">
+                <Bluetooth className="w-3.5 h-3.5 mr-1" />
+                Bluetooth
+              </Badge>
+            )}
+            {hasHeating && (
+              <Badge className="bg-orange-500 text-white text-xs font-semibold px-2.5 py-1 shadow-sm">
+                <Thermometer className="w-3.5 h-3.5 mr-1" />
+                Heated
+              </Badge>
+            )}
+          </div>
+        )}
+
+        {/* Form-factor Badges - shell/use case (bottom of image) */}
+        {(isCompact || isDinH8 || isUltraCompact) && (
+          <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
+            {isUltraCompact && (
+              <Badge variant="outline" className="bg-card/90 backdrop-blur-sm text-foreground text-xs font-medium px-2.5 py-1 border-border">
+                Ultra-Compact
+              </Badge>
+            )}
+            {isCompact && !isUltraCompact && (
+              <Badge variant="outline" className="bg-card/90 backdrop-blur-sm text-foreground text-xs font-medium px-2.5 py-1 border-border">
+                Compact
+              </Badge>
+            )}
+            {isDinH8 && (
+              <Badge variant="outline" className="bg-card/90 backdrop-blur-sm text-foreground text-xs font-medium px-2.5 py-1 border-border">
+                DIN H8
+              </Badge>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Content */}
