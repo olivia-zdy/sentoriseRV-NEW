@@ -176,10 +176,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
           )}
 
           {/* Price & Actions */}
-          <div className="flex items-center justify-between pt-3 border-t border-border">
+          <div className="pt-3 border-t border-border space-y-3">
             <div>
               {product.salePrice ? (
-                <div className="flex items-baseline gap-2">
+                <div className="flex items-baseline gap-2 flex-wrap">
                   <span className="text-xl font-bold text-primary">{formatPrice(product.salePrice)}</span>
                   <span className="text-sm text-muted-foreground line-through">{formatPrice(product.price)}</span>
                 </div>
@@ -198,16 +198,16 @@ const ProductCard = ({ product }: ProductCardProps) => {
               <Button
                 variant={isComparing ? "default" : "outline"}
                 size="icon"
-                className="h-9 w-9"
+                className="h-9 w-9 shrink-0"
                 onClick={handleCompareClick}
                 disabled={!isComparing && !canAddMore}
                 title={isComparing ? "Remove from compare" : "Add to compare"}
               >
                 <GitCompare className="w-4 h-4" />
               </Button>
-              <Button size="sm" className="gap-1.5">
+              <Button size="sm" className="gap-1.5 flex-1">
                 <ShoppingCart className="w-4 h-4" />
-                <span className="hidden sm:inline">Add</span>
+                Add
               </Button>
             </div>
           </div>
