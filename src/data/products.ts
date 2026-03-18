@@ -184,7 +184,7 @@ export const products: Product[] = [
       { label: "Bluetooth", value: "Yes" },
     ],
     badge: "Compact",
-    image: product100ahMini,
+    image: product100ahStd,
     hasBluetooth: true,
     price: 329.99,
     salePrice: 299.99,
