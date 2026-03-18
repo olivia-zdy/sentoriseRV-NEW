@@ -73,7 +73,7 @@ export const products: Product[] = [
       { label: "Cycle Life", value: "4000+ cycles" },
       { label: "Operating Temp", value: "-20°C to 60°C" },
     ],
-    image: product6ah,
+    image: product100ahMini,
     price: 34.99,
     salePrice: 29.99,
     inStock: true,
