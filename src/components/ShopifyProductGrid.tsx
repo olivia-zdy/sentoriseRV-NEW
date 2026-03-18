@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { fetchShopifyProducts, ShopifyProduct } from "@/lib/shopify";
 import ShopifyProductCard from "./ShopifyProductCard";
-import { Loader2, AlertCircle, RefreshCw } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import LocalProductCard from "./LocalProductCard";
+import { products as localProducts } from "@/data/products";
+import { Loader2 } from "lucide-react";
 
 interface ShopifyProductGridProps {
   limit?: number;
@@ -17,16 +18,20 @@ export const ShopifyProductGrid = ({
 }: ShopifyProductGridProps) => {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [useFallback, setUseFallback] = useState(false);
 
   const loadProducts = async () => {
     setIsLoading(true);
-    setError(null);
+    setUseFallback(false);
     try {
       const data = await fetchShopifyProducts(limit);
-      setProducts(data);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to load products');
+      if (data.length === 0) {
+        setUseFallback(true);
+      } else {
+        setProducts(data);
+      }
+    } catch {
+      setUseFallback(true);
     } finally {
       setIsLoading(false);
     }
@@ -49,34 +54,7 @@ export const ShopifyProductGrid = ({
     );
   }
 
-  if (error) {
-    return (
-      <section className="section-padding bg-background">
-        <div className="container-custom">
-          <div className="flex flex-col items-center justify-center py-20 text-center">
-            <AlertCircle className="w-12 h-12 text-destructive mb-4" />
-            <p className="text-destructive mb-4">{error}</p>
-            <Button onClick={loadProducts} variant="outline" className="gap-2">
-              <RefreshCw className="w-4 h-4" />
-              Try Again
-            </Button>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (products.length === 0) {
-    return (
-      <section className="section-padding bg-background">
-        <div className="container-custom">
-          <div className="text-center py-20">
-            <p className="text-muted-foreground">No products found</p>
-          </div>
-        </div>
-      </section>
-    );
-  }
+  const displayProducts = useFallback ? localProducts.slice(0, limit) : [];
 
   return (
     <section id="shop" className="section-padding bg-background">
@@ -96,9 +74,14 @@ export const ShopifyProductGrid = ({
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product) => (
-            <ShopifyProductCard key={product.node.id} product={product} />
-          ))}
+          {useFallback
+            ? displayProducts.map((product) => (
+                <LocalProductCard key={product.id} product={product} />
+              ))
+            : products.map((product) => (
+                <ShopifyProductCard key={product.node.id} product={product} />
+              ))
+          }
         </div>
       </div>
     </section>
