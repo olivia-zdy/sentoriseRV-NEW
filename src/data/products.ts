@@ -109,7 +109,7 @@ export const products: Product[] = [
       { label: "Bluetooth", value: "Yes" },
     ],
     badge: "Bluetooth",
-    image: product50ah,
+    image: product6ah,
     hasBluetooth: true,
     price: 149.99,
     salePrice: 129.99,
