@@ -146,7 +146,7 @@ export const products: Product[] = [
       { label: "Format", value: "BCI Group 31" },
     ],
     badge: "Best Seller",
-    image: product100ahStd,
+    image: product50ah,
     isHot: true,
     hasBluetooth: true,
     price: 299.99,
