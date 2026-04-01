@@ -220,7 +220,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
               <Button
                 variant={isComparing ? "default" : "outline"}
                 size="icon"
-                className="h-9 w-9 shrink-0"
+                className="h-11 w-11 shrink-0"
                 onClick={handleCompareClick}
                 disabled={!isComparing && !canAddMore}
                 title={isComparing ? "Remove from compare" : "Add to compare"}
