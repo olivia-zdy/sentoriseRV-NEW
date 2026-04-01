@@ -126,7 +126,7 @@ const LocalProductCard = ({ product }: LocalProductCardProps) => {
 
         {/* View Details button (no cart since Shopify is down) */}
         <div className="pt-1">
-          <Button size="sm" className="w-full gap-2">
+          <Button size="sm" className="w-full gap-2 min-h-[44px]">
             <ShoppingCart className="w-4 h-4" />
             {t('products.viewDetails', { defaultValue: 'View Details' })}
           </Button>

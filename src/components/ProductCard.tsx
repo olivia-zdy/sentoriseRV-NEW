@@ -227,7 +227,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
               >
                 <GitCompare className="w-4 h-4" />
               </Button>
-              <Button size="sm" className="gap-1.5 flex-1">
+              <Button size="sm" className="gap-1.5 flex-1 min-h-[44px]">
                 <ShoppingCart className="w-4 h-4" />
                 Add
               </Button>
