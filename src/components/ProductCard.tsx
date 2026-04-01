@@ -118,7 +118,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           {/* Quick View Button */}
           <button
             onClick={handleQuickView}
-            className="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-background/90 backdrop-blur-sm border border-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:border-primary"
+            className="absolute bottom-3 right-3 w-11 h-11 rounded-full bg-background/90 backdrop-blur-sm border border-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:border-primary"
             title="Quick View"
           >
             <Eye className="w-4 h-4" />
