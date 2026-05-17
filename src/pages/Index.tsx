@@ -1,4 +1,5 @@
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
+import { lazyWithRetry as lazy } from "@/lib/lazyWithRetry";
 
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
