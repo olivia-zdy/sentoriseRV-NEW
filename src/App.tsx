@@ -11,6 +11,7 @@ import { CompareProvider } from "@/context/CompareContext";
 import { MarketProvider } from "@/context/MarketContext";
 import { useCartSync } from "@/hooks/useCartSync";
 import CompareBar from "@/components/CompareBar";
+import HashScroll from "@/components/HashScroll";
 import Index from "./pages/Index";
 
 // Lazy load non-critical routes
