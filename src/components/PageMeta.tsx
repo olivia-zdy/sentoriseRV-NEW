@@ -11,7 +11,14 @@ interface PageMetaProps {
 }
 
 const SITE_URL = "https://sentorise.lovable.app";
-const SUPPORTED_LANGS = ["en", "de", "fr", "zh"] as const;
+const HREFLANG_LOCALES = [
+  { lang: "en", locale: "en" },
+  { lang: "en-GB", locale: "en-GB" },
+  { lang: "en-US", locale: "en-US" },
+  { lang: "de-DE", locale: "de" },
+  { lang: "fr-FR", locale: "fr" },
+  { lang: "zh-CN", locale: "zh" },
+];
 
 const PageMeta = ({
   title,
@@ -27,7 +34,7 @@ const PageMeta = ({
 
   const hreflangLinks = canonical
     ? [
-        ...SUPPORTED_LANGS.map((l) => ({ lang: l, href: `${SITE_URL}${canonical}` })),
+        ...HREFLANG_LOCALES.map((l) => ({ lang: l.lang, href: `${SITE_URL}${canonical}` })),
         { lang: "x-default", href: `${SITE_URL}${canonical}` },
       ]
     : [];

@@ -284,46 +284,43 @@ export default function WarehousesAdmin() {
               />
             </div>
 
-            <div className="space-y-1.5">
-              <Label>Shipping copy — English</Label>
-              <Textarea
-                rows={2}
-                value={form.shipping_copy_en}
-                onChange={(e) =>
-                  setForm({ ...form, shipping_copy_en: e.target.value })
-                }
-              />
-            </div>
-            <div className="space-y-1.5">
-              <Label>Shipping copy — Deutsch</Label>
-              <Textarea
-                rows={2}
-                value={form.shipping_copy_de}
-                onChange={(e) =>
-                  setForm({ ...form, shipping_copy_de: e.target.value })
-                }
-              />
-            </div>
-            <div className="space-y-1.5">
-              <Label>Shipping copy — Français</Label>
-              <Textarea
-                rows={2}
-                value={form.shipping_copy_fr}
-                onChange={(e) =>
-                  setForm({ ...form, shipping_copy_fr: e.target.value })
-                }
-              />
-            </div>
-            <div className="space-y-1.5">
-              <Label>Shipping copy — 中文</Label>
-              <Textarea
-                rows={2}
-                value={form.shipping_copy_zh}
-                onChange={(e) =>
-                  setForm({ ...form, shipping_copy_zh: e.target.value })
-                }
-              />
-            </div>
+            {(["en", "de", "fr", "zh"] as const).map((code) => {
+              const labelMap = { en: "English", de: "Deutsch", fr: "Français", zh: "中文" };
+              const field = `shipping_copy_${code}` as keyof WarehouseForm;
+              const value = String(form[field] ?? "");
+              const len = value.length;
+              const tooLong = len > 90;
+              return (
+                <div key={code} className="space-y-1.5">
+                  <div className="flex items-center justify-between gap-2">
+                    <Label>Shipping copy — {labelMap[code]}</Label>
+                    <div className="flex items-center gap-2">
+                      {code !== "en" && (
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setForm({ ...form, [field]: form.shipping_copy_en } as WarehouseForm)
+                          }
+                          className="text-xs text-primary hover:underline"
+                        >
+                          Copy from EN
+                        </button>
+                      )}
+                      <span className={`text-xs tabular-nums ${tooLong ? "text-destructive" : "text-muted-foreground"}`}>
+                        {len}/90
+                      </span>
+                    </div>
+                  </div>
+                  <Textarea
+                    rows={2}
+                    value={value}
+                    onChange={(e) =>
+                      setForm({ ...form, [field]: e.target.value } as WarehouseForm)
+                    }
+                  />
+                </div>
+              );
+            })}
 
             <div className="grid grid-cols-3 gap-3 pt-2">
               <div className="space-y-1.5">

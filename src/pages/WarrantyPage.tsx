@@ -50,15 +50,23 @@ const WarrantyPage = () => {
                 { icon: Shield, titleKey: "warranty.coverage", descKey: "warranty.coverageDesc" },
                 { icon: CheckCircle2, titleKey: "warranty.freeReplacement", descKey: "warranty.freeReplacementDesc" },
                 { icon: Clock, titleKey: "warranty.quickProcessing", descKey: "warranty.quickProcessingDesc" },
-                { icon: Truck, titleKey: "warranty.euService", descKey: "warranty.euServiceDesc" },
-              ].map((item) => (
+                {
+                  icon: Truck,
+                  titleKey: "warranty.euService",
+                  // Dynamic per-market service description, overrides static EU copy
+                  customDesc: warehouse
+                    ? `${market.flag} ${warehouse.display_name.replace(/\s+warehouse$/i, "")} · ${copy.split("·")[1]?.trim() || copy}`
+                    : undefined,
+                  descKey: "warranty.euServiceDesc",
+                },
+              ].map((item: any) => (
                 <div key={item.titleKey} className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <item.icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">{t(item.titleKey)}</p>
-                    <p className="text-sm text-muted-foreground">{t(item.descKey)}</p>
+                    <p className="text-sm text-muted-foreground">{item.customDesc ?? t(item.descKey)}</p>
                   </div>
                 </div>
               ))}
@@ -83,7 +91,13 @@ const WarrantyPage = () => {
                     </span>
                   </div>
                 </div>
-                <p className="text-sm text-muted-foreground sm:ml-auto sm:text-right">{copy}</p>
+                <div className="sm:ml-auto flex flex-col sm:items-end gap-1.5">
+                  <p className="text-sm text-muted-foreground sm:text-right">{copy}</p>
+                  <p className="text-xs text-muted-foreground/80">
+                    {t('warranty.wrongLocation', { defaultValue: 'Wrong location?' })}{' '}
+                    <span className="text-primary">→ {t('warranty.changeMarketHint', { defaultValue: 'use the flag selector in the header' })}</span>
+                  </p>
+                </div>
               </div>
             </div>
           </section>

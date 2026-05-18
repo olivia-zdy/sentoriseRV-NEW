@@ -31,11 +31,11 @@ export const MARKET_TO_WAREHOUSE: Record<string, string> = {
  * is missing/inactive. Order matters: first available wins.
  */
 const REGION_FALLBACKS: Record<string, string[]> = {
-  DE: ["DE", "PL", "UK"],            // EU central
-  FR: ["PL", "DE", "UK"],            // EU
-  UK: ["UK", "DE", "PL"],            // UK first, then EU
-  US: ["US", "UK", "DE"],            // Americas → Atlantic
-  CN: ["CN", "DE", "UK"],            // Asia → EU
+  DE: ["DE", "PL", "UK"],
+  FR: ["PL", "DE", "UK"],
+  UK: ["UK", "DE", "PL"],
+  US: ["US", "UK", "DE"],
+  CN: ["CN", "DE", "UK"],
 };
 
 export function useWarehouses() {
@@ -71,17 +71,16 @@ export function resolveWarehouse(
   return warehouses.find((w) => w.is_default) ?? warehouses[0];
 }
 
+/** Picks localized copy with graceful fallback to EN if the chosen language is empty. */
 function pickCopy(w: Warehouse, lang: string): string {
-  switch (lang) {
-    case "de":
-      return w.shipping_copy_de;
-    case "fr":
-      return w.shipping_copy_fr;
-    case "zh":
-      return w.shipping_copy_zh;
-    default:
-      return w.shipping_copy_en;
-  }
+  const map: Record<string, string | undefined> = {
+    de: w.shipping_copy_de,
+    fr: w.shipping_copy_fr,
+    zh: w.shipping_copy_zh,
+    en: w.shipping_copy_en,
+  };
+  const value = map[lang];
+  return (value && value.trim()) || w.shipping_copy_en || "";
 }
 
 /** Returns the active warehouse + localized shipping copy for the current market. */

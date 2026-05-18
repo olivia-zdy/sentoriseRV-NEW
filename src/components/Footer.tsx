@@ -6,6 +6,12 @@ import logoLight from "@/assets/logo-light.png";
 import logoDark from "@/assets/logo-dark.png";
 import { Mail, Facebook, Instagram, Youtube, Linkedin, Shield, Award, Leaf, ShieldCheck, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
+import { useWarehouses } from "@/hooks/useLocalWarehouse";
+
+const COUNTRY_FLAGS: Record<string, string> = {
+  DE: "🇩🇪", PL: "🇵🇱", UK: "🇬🇧", GB: "🇬🇧", US: "🇺🇸", CN: "🇨🇳",
+  FR: "🇫🇷", NL: "🇳🇱", IT: "🇮🇹", ES: "🇪🇸", AT: "🇦🇹", CH: "🇨🇭",
+};
 
 const socialLinks = [
   { name: "Facebook", icon: Facebook, href: "#" },
@@ -13,6 +19,23 @@ const socialLinks = [
   { name: "YouTube", icon: Youtube, href: "#" },
   { name: "LinkedIn", icon: Linkedin, href: "#" },
 ];
+
+const WarehouseList = () => {
+  const { data: warehouses } = useWarehouses();
+  if (!warehouses || warehouses.length === 0) {
+    return <p>🇩🇪 Germany · 🇵🇱 Poland · 🇬🇧 United Kingdom</p>;
+  }
+  return (
+    <p>
+      {warehouses.map((w, i) => (
+        <span key={w.id}>
+          {i > 0 && <span> · </span>}
+          {COUNTRY_FLAGS[w.code] ?? "📦"} {w.display_name.replace(/\s+warehouse$/i, "")}
+        </span>
+      ))}
+    </p>
+  );
+};
 
 const RegistrationsToggle = forwardRef<HTMLDivElement>((_, ref) => {
   const { t } = useTranslation();
@@ -130,7 +153,7 @@ const Footer = () => {
             </div>
             <div className="space-y-2 text-xs text-muted-foreground">
               <p className="font-medium text-foreground text-sm">{t('footer.warehouses')}</p>
-              <p>🇩🇪 Germany · 🇵🇱 Poland · 🇬🇧 United Kingdom</p>
+              <WarehouseList />
             </div>
             <RegistrationsToggle />
           </div>
