@@ -114,13 +114,23 @@ export const CartDrawer = () => {
           </div>
         )}
 
-        <div className="flex flex-col flex-1 pt-6 min-h-0">
+        <div
+          ref={itemsRegionRef}
+          tabIndex={-1}
+          role="region"
+          aria-label={t('cart.title')}
+          data-testid="cart-items-region"
+          className="flex flex-col flex-1 pt-6 min-h-0 focus:outline-none"
+        >
           {items.length === 0 ? (
             <div className="flex-1 flex items-center justify-center">
               <div className="text-center">
-                <ShoppingCart className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <p className="text-muted-foreground">{t('cart.empty')}</p>
+                <ShoppingCart className="h-12 w-12 text-muted-foreground mx-auto mb-4" aria-hidden="true" />
+                <p className="text-foreground font-medium">{t('cart.empty')}</p>
                 <p className="text-sm text-muted-foreground mt-2">{t('cart.emptyHint')}</p>
+                <Button asChild className="mt-4" onClick={() => setIsOpen(false)}>
+                  <Link to="/products">{t('cart.emptyCta')}</Link>
+                </Button>
               </div>
             </div>
           ) : (
