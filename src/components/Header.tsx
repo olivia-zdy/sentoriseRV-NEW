@@ -338,7 +338,8 @@ const Header = () => {
                   </Link>
                 )
               ))}
-              <div className="pt-4 mt-4 border-t border-border">
+              <div className="pt-4 mt-4 border-t border-border space-y-2">
+                <MobileMenuCartEntry onOpen={() => setIsMenuOpen(false)} />
                 <Button asChild variant="default" className="w-full">
                   <Link to="/support#contact" onClick={() => setIsMenuOpen(false)}>{t('nav.contactUs')}</Link>
                 </Button>
