@@ -1,1 +1,1169 @@
-{"products":{},"stories":{},"blogPosts":{},"accessories":{}}
+{
+  "products": {
+    "lite-12v6": {
+      "name": "Lite 12V 6Ah Ultra-Compact",
+      "tagline": "Alimentation de secours de poche",
+      "description": "Le plus petit membre de la famille Sentorise. Parfait pour les kits d'urgence, les routeurs, les lampes de camping et toute situation où une alimentation fiable est essentielle mais l'espace est limité.",
+      "category": "Ultra-Compact",
+      "useCases": [
+        "Kits d'urgence",
+        "Routeurs et modems",
+        "Lampes de camping",
+        "Sondeurs de pêche",
+        "Petits appareils électroniques"
+      ],
+      "features": [
+        "Conception ultra-compacte",
+        "Protection BMS intégrée",
+        "Léger et portable",
+        "Remplacement direct",
+        "Plus de 4000 cycles"
+      ],
+      "highlights": [
+        "Ultra-compact",
+        "Protection BMS",
+        "Plus de 4000 cycles"
+      ],
+      "specs": [
+        {
+          "label": "Tension nominale"
+        },
+        {
+          "label": "Capacité"
+        },
+        {
+          "label": "Énergie"
+        },
+        {
+          "label": "Décharge max."
+        },
+        {
+          "label": "Dimensions"
+        },
+        {
+          "label": "Poids"
+        },
+        {
+          "label": "Durée de vie"
+        },
+        {
+          "label": "Temp. de fonctionnement"
+        }
+      ]
+    },
+    "lite-12v50": {
+      "name": "Lite 12V 50Ah Légère",
+      "tagline": "Puissance portable, capacité sérieuse",
+      "description": "L'équilibre parfait entre portabilité et puissance. Équipée d'une surveillance Bluetooth pour des mises à jour de statut en temps réel sur votre smartphone.",
+      "category": "Légère",
+      "useCases": [
+        "Petits systèmes de camping-car",
+        "Kits solaires portables",
+        "Boîtiers de batterie DIY",
+        "Moteurs de pêche à la traîne pour kayak",
+        "Alimentation de secours"
+      ],
+      "features": [
+        "Surveillance Bluetooth",
+        "Protection BMS intelligente",
+        "Coupure basse température",
+        "Conception légère",
+        "Garantie de 5 ans"
+      ],
+      "highlights": [
+        "Application Bluetooth",
+        "Légère",
+        "Garantie 5 ans"
+      ],
+      "specs": [
+        {
+          "label": "Tension nominale"
+        },
+        {
+          "label": "Capacité"
+        },
+        {
+          "label": "Énergie"
+        },
+        {
+          "label": "Décharge max."
+        },
+        {
+          "label": "Dimensions"
+        },
+        {
+          "label": "Poids"
+        },
+        {
+          "label": "Durée de vie"
+        },
+        {
+          "label": "Bluetooth"
+        }
+      ]
+    },
+    "core-12v100-std": {
+      "name": "Core 12V 100Ah Standard",
+      "tagline": "Le cheval de bataille du camping-car",
+      "description": "Notre batterie phare pour camping-car au format populaire Groupe 31. Remplacement direct des batteries au plomb-acide avec 4 fois la durée de vie et la moitié du poids.",
+      "category": "Groupe 31",
+      "useCases": [
+        "Alimentation principale de camping-car",
+        "Cabanes hors réseau",
+        "Systèmes solaires domestiques",
+        "Auxiliaire marin",
+        "Moteurs de pêche à la traîne"
+      ],
+      "features": [
+        "Surveillance Bluetooth",
+        "Décharge continue de 100A",
+        "Standard Groupe 31",
+        "Protection basse température",
+        "Garantie de 5 ans"
+      ],
+      "highlights": [
+        "Meilleure vente",
+        "Groupe 31",
+        "100A Continu"
+      ],
+      "specs": [
+        {
+          "label": "Tension nominale"
+        },
+        {
+          "label": "Capacité"
+        },
+        {
+          "label": "Énergie"
+        },
+        {
+          "label": "Décharge max."
+        },
+        {
+          "label": "Dimensions"
+        },
+        {
+          "label": "Poids"
+        },
+        {
+          "label": "Durée de vie"
+        },
+        {
+          "label": "Format"
+        }
+      ]
+    },
+    "core-12v100-mini": {
+      "name": "Core 12V 100Ah MINI",
+      "tagline": "Toute la puissance, empreinte minimale",
+      "description": "Même capacité de 100Ah que le Core standard, mais dans un format significativement plus petit. Idéal pour les fourgons et les camping-cars avec des compartiments de batterie exigus.",
+      "category": "Compact",
+      "useCases": [
+        "Aménagements de fourgons",
+        "Camping-cars compacts",
+        "Compartiments de batterie étroits",
+        "Montage sous siège",
+        "Installations personnalisées"
+      ],
+      "features": [
+        "Ultra-compact 100Ah",
+        "Surveillance Bluetooth",
+        "Conception peu encombrante",
+        "Mêmes performances Core",
+        "Garantie de 5 ans"
+      ],
+      "highlights": [
+        "Ultra-Compact",
+        "Puissance 100Ah",
+        "Gain de Place"
+      ],
+      "specs": [
+        {
+          "label": "Tension Nominale"
+        },
+        {
+          "label": "Capacité"
+        },
+        {
+          "label": "Énergie"
+        },
+        {
+          "label": "Décharge Max"
+        },
+        {
+          "label": "Dimensions"
+        },
+        {
+          "label": "Poids"
+        },
+        {
+          "label": "Durée de Vie"
+        },
+        {
+          "label": "Bluetooth"
+        }
+      ]
+    },
+    "core-12v100-din": {
+      "name": "Core 12V 100Ah DIN H8",
+      "tagline": "Montage standard européen",
+      "description": "Conçue spécifiquement pour les compartiments de batterie sous siège des camping-cars européens. Le format DIN H8 assure un ajustement parfait dans la plupart des camping-cars et caravanes européens.",
+      "category": "Sous-Siège",
+      "useCases": [
+        "Camping-cars européens",
+        "Compartiments sous siège",
+        "Systèmes de caravanes",
+        "Remplacements OEM",
+        "Véhicules de flotte"
+      ],
+      "features": [
+        "Standard DIN H8",
+        "Ajustement parfait pour les camping-cars de l'UE",
+        "Surveillance Bluetooth",
+        "Remplacement OEM",
+        "Garantie de 5 ans"
+      ],
+      "highlights": [
+        "Format DIN H8",
+        "Ajustement Parfait pour les Camping-Cars de l'UE",
+        "Compatible OEM"
+      ],
+      "specs": [
+        {
+          "label": "Tension Nominale"
+        },
+        {
+          "label": "Capacité"
+        },
+        {
+          "label": "Énergie"
+        },
+        {
+          "label": "Décharge Max"
+        },
+        {
+          "label": "Dimensions"
+        },
+        {
+          "label": "Poids"
+        },
+        {
+          "label": "Durée de Vie"
+        },
+        {
+          "label": "Format"
+        }
+      ]
+    },
+    "plus-12v200-heated": {
+      "name": "Plus 12V 200Ah Chauffée",
+      "tagline": "Centrale électrique prête pour l'Arctique",
+      "description": "Notre batterie la plus performante pour les applications exigeantes. Dotée d'un auto-chauffage intégré pour un fonctionnement fiable par températures négatives, parfaite pour les climats nordiques et le camping hivernal.",
+      "category": "Climat Froid",
+      "useCases": [
+        "Hors réseau en climat froid",
+        "Camping-cars nordiques",
+        "Camping d'hiver",
+        "Grands systèmes solaires",
+        "Applications intensives"
+      ],
+      "features": [
+        "Système auto-chauffant",
+        "200A en continu",
+        "Surveillance Bluetooth",
+        "Cellules classées Arctique",
+        "Garantie de 5 ans"
+      ],
+      "highlights": [
+        "Auto-Chauffage",
+        "Capacité 200Ah",
+        "Prête pour l'Arctique"
+      ],
+      "specs": [
+        {
+          "label": "Tension Nominale"
+        },
+        {
+          "label": "Capacité"
+        },
+        {
+          "label": "Énergie"
+        },
+        {
+          "label": "Décharge Max"
+        },
+        {
+          "label": "Dimensions"
+        },
+        {
+          "label": "Poids"
+        },
+        {
+          "label": "Durée de Vie"
+        },
+        {
+          "label": "Auto-Chauffage"
+        }
+      ]
+    }
+  },
+  "stories": {
+    "marcus-sweden": {
+      "name": "Marcus Eriksson",
+      "location": "Suède",
+      "scenarioLabel": "Vie en Van",
+      "quote": "Notre Sprinter est alimenté par la Core 100Ah depuis 8 mois maintenant. Nous avons traversé 15 pays, des fjords norvégiens aux îles grecques. La surveillance Bluetooth est incroyablement utile — je peux vérifier l'état de la batterie depuis mon lit sans sortir dans le froid.",
+      "fullStory": "Lorsque nous avons décidé de vivre à plein temps en van, choisir la bonne batterie était crucial. Après des recherches approfondies, nous avons opté pour Sentorise en raison de sa réputation sur le marché européen. La Core 100Ah MINI s'intègre parfaitement sous notre plateforme de lit, et la protection auto-chauffante nous offre une tranquillité d'esprit pendant les hivers scandinaves. Nous n'avons jamais eu le moindre problème.",
+      "productsUsed": [
+        "Core 12V 100Ah MINI",
+        "Solar Controller 30A"
+      ]
+    },
+    "sophie-france": {
+      "name": "Sophie Laurent",
+      "location": "France",
+      "scenarioLabel": "Cabane Autonome",
+      "quote": "Nous alimentons toute notre cabane alpine avec deux batteries Plus 200Ah et des panneaux solaires. Même pendant les hivers des Alpes françaises à -15°C, la fonction d'auto-chauffage leur permet de charger parfaitement. L'investissement s'est rentabilisé par sa fiabilité.",
+      "fullStory": "Notre cabane autonome dans les Alpes françaises a toujours été un défi à alimenter. Les batteries au plomb-acide tombaient en panne chaque hiver. Depuis que nous sommes passés à la série Sentorise Plus avec auto-chauffage, nous n'avons eu aucun problème par temps froid. La capacité de 200Ah alimente nos lumières, notre pompe à eau, notre réfrigérateur et même une petite plaque à induction. Absolument fiable.",
+      "productsUsed": [
+        "Plus 12V 200Ah Heated",
+        "Plus 12V 200Ah Heated"
+      ]
+    },
+    "thomas-germany": {
+      "name": "Thomas Müller",
+      "location": "Allemagne",
+      "scenarioLabel": "Professionnel du Camping-Car",
+      "quote": "Nous avons basculé toutes nos installations de camping-cars vers Sentorise. Le format DIN H8 s'adapte parfaitement aux camping-cars européens, et la garantie de 5 ans offre une tranquillité d'esprit à nos clients. C'est désormais notre recommandation standard.",
+      "fullStory": "En tant que concessionnaire de camping-cars en Bavière, nous installons des dizaines de systèmes de batteries chaque mois. Le format DIN H8 de Sentorise a résolu notre plus gros problème : trouver des batteries qui s'adaptent aux compartiments sous les sièges européens. La qualité est constante, l'application fonctionne très bien, et nous n'avons eu aucune réclamation sous garantie. Cela en dit long.",
+      "productsUsed": [
+        "Core 12V 100Ah DIN H8"
+      ]
+    },
+    "emma-netherlands": {
+      "name": "Emma van der Berg",
+      "location": "Pays-Bas",
+      "scenarioLabel": "Marine",
+      "quote": "Le système électrique de notre voilier n'a jamais été aussi fiable. La Core 100Ah gère le moteur de pêche à la traîne, la navigation et l'éclairage de la cabine sans le moindre effort. Et elle est tellement plus légère que notre ancienne installation au plomb-acide !",
+      "fullStory": "Vivant sur un voilier dans les voies navigables néerlandaises, le poids et l'espace sont primordiaux. La Sentorise Core 100Ah nous a fait économiser près de 15 kg par rapport à nos anciennes batteries, et la capacité est réellement utilisable à 100 %. Nous pouvons faire fonctionner notre réfrigérateur toute la nuit sans souci. C'est la meilleure amélioration que nous ayons apportée au bateau.",
+      "productsUsed": [
+        "Core 12V 100Ah Standard"
+      ]
+    },
+    "james-uk": {
+      "name": "James Wilson",
+      "location": "Royaume-Uni",
+      "scenarioLabel": "Solaire autonome",
+      "quote": "L'efficacité est remarquable. Nous obtenons près de 95 % d'efficacité aller-retour de notre système solaire, contre peut-être 80 % avec le plomb-acide. C'est significatif quand chaque watt compte dans une installation autonome.",
+      "fullStory": "Notre petite exploitation en Écosse rurale fonctionne entièrement à l'énergie solaire. Les batteries Sentorise Plus 200Ah stockent parfaitement notre récolte solaire quotidienne. Même les jours nuageux écossais, le système maintient l'alimentation de notre atelier, de notre maison et de nos clôtures électriques. L'application de surveillance nous aide à optimiser notre consommation d'énergie.",
+      "productsUsed": [
+        "Plus 12V 200Ah Heated",
+        "Core 12V 100Ah Standard"
+      ]
+    },
+    "anna-norway": {
+      "name": "Anna Johansen",
+      "location": "Norvège",
+      "scenarioLabel": "Camping et extérieur",
+      "quote": "La Lite 50Ah est le compagnon idéal pour nos voyages en camping. Assez légère pour être transportée, assez puissante pour faire fonctionner notre réfrigérateur portable, nos lumières et charger tous nos appareils pendant une semaine en pleine nature.",
+      "fullStory": "Nous aimons le camping sauvage dans les montagnes norvégiennes, mais nous apprécions aussi notre confort. La Lite 50Ah avec un panneau solaire pliable nous offre une indépendance énergétique totale. Elle est assez légère pour être emportée dans des endroits reculés et suffisamment fiable pour que nous ne nous inquiétions jamais de l'alimentation. L'application Bluetooth est idéale pour la surveillance lorsque nous sommes loin du camp.",
+      "productsUsed": [
+        "Lite 12V 50Ah Lightweight"
+      ]
+    }
+  },
+  "blogPosts": {
+    "1": {
+      "title": "Guide complet pour choisir la bonne batterie de camping-car",
+      "excerpt": "Apprenez à sélectionner la batterie LiFePO4 parfaite pour votre camping-car ou votre caravane en fonction de vos besoins énergétiques, de vos contraintes d'espace et de votre budget.",
+      "content": "\n## Pourquoi le LiFePO4 pour les applications de camping-car ?\n\nLes batteries au lithium fer phosphate (LiFePO4) ont révolutionné l'industrie du camping-car, offrant des avantages significatifs par rapport aux batteries plomb-acide traditionnelles. Comprendre ces avantages vous aidera à prendre une décision éclairée pour vos besoins en énergie mobile.\n\n### Avantages clés\n\n1. **Réduction du poids** : Les batteries LiFePO4 pèsent environ 50 % de moins que les batteries plomb-acide équivalentes, ce qui est crucial pour la gestion du poids du camping-car.\n\n2. **Durée de vie plus longue** : Avec plus de 4000 cycles de charge, ces batteries durent 4 à 5 fois plus longtemps que les alternatives plomb-acide.\n\n3. **Décharge plus profonde** : Vous pouvez utiliser en toute sécurité 80 à 100 % de la capacité nominale, contre seulement 50 % avec le plomb-acide.\n\n4. **Charge plus rapide** : Les batteries LiFePO4 acceptent des courants de charge plus élevés, réduisant considérablement le temps de charge.\n\n### Dimensionnement de votre système de batterie de camping-car\n\nPour déterminer la bonne capacité de batterie pour votre camping-car, calculez votre consommation d'énergie quotidienne :\n\n- **Lumières** : Les lumières LED consomment environ 5-15W chacune\n- **Réfrigérateur** : Les réfrigérateurs à compresseur 12V consomment 30-60W\n- **Pompe à eau** : 4-8A en fonctionnement\n- **Appareils** : Ordinateurs portables, téléphones et autres appareils électroniques\n\n**Formule** : Wh quotidiens totaux ÷ 0,8 (capacité utilisable) = Capacité minimale de la batterie\n\n### Considérations d'installation\n\n- Assurez une ventilation adéquate autour de la batterie\n- Utilisez des câbles de taille appropriée pour vos besoins en courant\n- Installez un système de gestion de batterie (BMS) pour la protection\n- Tenez compte des températures extrêmes si vous voyagez en hiver\n\n### Produits recommandés pour l'utilisation en camping-car\n\nPour la plupart des applications de camping-car, nous recommandons de commencer avec une batterie de 100Ah pour les besoins de base ou de 200Ah pour une vie à temps plein. Considérez nos modèles chauffants si vous campez fréquemment par temps froid.\n    ",
+      "category": "Guides",
+      "author": "Équipe Sentorise",
+      "tags": [
+        "Camping-car",
+        "LiFePO4",
+        "Guide d'achat"
+      ]
+    },
+    "2": {
+      "title": "Camping d'hiver : Comment garder vos batteries au chaud",
+      "excerpt": "Le froid peut avoir un impact significatif sur les performances de la batterie. Découvrez des stratégies pour maintenir une charge optimale par des températures inférieures à zéro.",
+      "content": "\n## Comprendre les performances des batteries par temps froid\n\nLes batteries au lithium sont sensibles à la température, en particulier pendant la charge. Comprendre comment le froid affecte votre système de batterie est essentiel pour un camping d'hiver en toute sécurité.\n\n### Effets de la température sur les batteries LiFePO4\n\n- **Décharge** : Les batteries LiFePO4 peuvent se décharger en toute sécurité jusqu'à -20 °C, bien que la capacité soit réduite\n- **Charge** : La plupart des batteries LiFePO4 ne doivent PAS être chargées en dessous de 0 °C sans chauffage\n\n### Pourquoi la charge par temps froid est dangereuse\n\nCharger une batterie au lithium en dessous de zéro peut provoquer un placage de lithium sur l'anode, endommageant de façon permanente la batterie et créant des risques pour la sécurité. C'est pourquoi une gestion thermique appropriée est essentielle.\n\n### Solutions pour le camping d'hiver\n\n1. **Batteries auto-chauffantes** : Notre modèle chauffant de 200 Ah comprend un système de chauffage intégré qui réchauffe automatiquement les cellules avant le début de la charge.\n\n2. **Boîtiers de batterie isolés** : Gardez votre batterie dans un boîtier isolé pour conserver la chaleur pendant les nuits froides.\n\n3. **Charge pendant la journée** : Lors de la charge solaire, la batterie se réchauffe naturellement pendant qu'elle se charge pendant les heures de clarté plus chaudes.\n\n4. **Couvertures de batterie** : Des coussinets chauffants externes peuvent être utilisés avec un contrôleur de température.\n\n### Bonnes pratiques\n\n- Surveillez la température de la batterie avant d'initier la charge\n- Garez-vous dans des endroits ensoleillés lorsque cela est possible\n- Utilisez un BMS avec protection contre la charge à basse température\n- Envisagez de passer à un modèle de batterie chauffante pour une utilisation hivernale fréquente\n    ",
+      "category": "Conseils",
+      "author": "Équipe technique",
+      "tags": [
+        "Hiver",
+        "Temps froid",
+        "Maintenance"
+      ]
+    },
+    "3": {
+      "title": "Solaire + Batterie : Dimensionner Votre Système Autonome",
+      "excerpt": "Un calculateur et un guide étape par étape pour déterminer la bonne capacité de panneaux solaires et de batterie pour vos aventures hors réseau.",
+      "content": "\n## Construire Votre Système d'Alimentation Autonome\n\nConcevoir un système solaire et de batterie autonome efficace nécessite une planification minutieuse. Ce guide vous accompagne pas à pas dans le processus.\n\n### Étape 1 : Calculer les Besoins Énergétiques Quotidiens\n\nListez tous vos appareils et leur consommation d'énergie :\n\n| Appareil | Watts | Heures/Jour | Wh Quotidiens |\n|--------|-------|-----------|----------|\n| Lumières LED (x4) | 20 | 4 | 80 |\n| Réfrigérateur | 50 | 24 | 400* |\n| Ordinateur portable | 60 | 3 | 180 |\n| Charge téléphone | 10 | 2 | 20 |\n| Pompe à eau | 60 | 0.5 | 30 |\n\n*Les réfrigérateurs s'allument/s'éteignent par cycles, utilisez donc 30-40% de la puissance nominale\n\n### Étape 2 : Dimensionner Votre Parc de Batteries\n\nPour une alimentation autonome fiable, dimensionnez votre batterie pour couvrir 2 à 3 jours d'autonomie :\n\n**Utilisation Quotidienne × Jours d'Autonomie ÷ Profondeur de Décharge = Capacité de la Batterie**\n\nExemple : 700Wh × 2 jours ÷ 0.8 = 1 750Wh = ~140Ah à 12V\n\n### Étape 3 : Dimensionner Votre Champ Solaire\n\nLes panneaux solaires doivent recharger complètement votre batterie en 4 à 5 heures d'ensoleillement maximal :\n\n**Utilisation Quotidienne ÷ Heures d'Ensoleillement Maximal × 1.25 (pertes système) = Watts Solaires**\n\nExemple : 700Wh ÷ 4h × 1.25 = 220W de panneaux solaires\n\n### Étape 4 : Choisir Vos Composants\n\n- **Régulateur de charge** : Les régulateurs MPPT sont 20 à 30% plus efficaces que les PWM\n- **Onduleur** : Dimensionnez-le pour votre plus grande charge AC plus 20% de marge\n- **Câbles** : Utilisez une section appropriée pour le courant et la distance\n\n### Conseils de Pro\n\n- Commencez avec plus de batterie que vous ne pensez en avoir besoin\n- L'orientation des panneaux et l'ombrage ont un impact significatif sur la production\n- Surveillez votre système pour comprendre les performances réelles\n    ",
+      "category": "Guides",
+      "author": "Équipe Sentorise",
+      "tags": [
+        "Solaire",
+        "Autonome",
+        "DIY"
+      ]
+    },
+    "4": {
+      "title": "LiFePO4 vs Plomb-Acide : La Comparaison Complète",
+      "excerpt": "Comprenez les différences clés entre les batteries lithium fer phosphate et les batteries plomb-acide traditionnelles pour les applications de camping-car et solaires.",
+      "content": "\n## LiFePO4 vs Plomb-Acide : Faire le Bon Choix\n\nLorsque vous choisissez une batterie pour votre camping-car, votre bateau ou votre système solaire, il est essentiel de comprendre les différences fondamentales entre le LiFePO4 et le plomb-acide.\n\n### Aperçu Comparatif\n\n| Caractéristique | LiFePO4 | Plomb-Acide |\n|---------|---------|-----------|\n| Poids | 50% plus léger | Plus lourd |\n| Durée de vie | 4000+ cycles | 300-500 cycles |\n| Capacité utilisable | 80-100% | 50% |\n| Temps de charge | 2-4 heures | 8-12 heures |\n| Entretien | Aucun | Régulier |\n| Coût initial | Plus élevé | Plus bas |\n\n### Coût Total de Possession\n\nBien que les batteries LiFePO4 coûtent plus cher à l'achat, elles durent 8 à 10 fois plus longtemps :\n\n**Plomb-Acide** : 200 $ × 10 remplacements = 2 000 $ sur 10 ans\n**LiFePO4** : 800 $ × 1 achat = 800 $ sur 10 ans\n\n### Quand Choisir le LiFePO4\n\n- Vous avez besoin de réduire le poids\n- Vous souhaitez un fonctionnement sans entretien\n- Vous avez besoin d'une capacité de décharge profonde\n- Vous valorisez les économies à long terme\n- Vous avez besoin d'une charge rapide\n\n### Quand le Plomb-Acide Peut Convenir\n\n- Budget initial limité\n- Applications à usage occasionnel\n- Stockage à froid sans charge\n- Besoins simples en alimentation de secours\n\n### Effectuer la Transition\n\nSi vous passez du plomb-acide au LiFePO4, vous devrez peut-être mettre à jour votre système de charge pour qu'il corresponde aux différentes exigences du profil de charge.\n    ",
+      "category": "Éducation",
+      "author": "Équipe Technique",
+      "tags": [
+        "LiFePO4",
+        "Plomb-Acide",
+        "Comparaison"
+      ]
+    },
+    "5": {
+      "title": "Comprendre les systèmes de gestion de batterie (BMS)",
+      "excerpt": "Qu'est-ce qu'un BMS et pourquoi est-il essentiel pour la sécurité et la longévité de votre batterie au lithium ? Une analyse approfondie de la protection intelligente.",
+      "content": "\n## Le cerveau de votre batterie : Comprendre le BMS\n\nChaque batterie LiFePO4 de qualité intègre un système de gestion de batterie (BMS). Ce composant essentiel assure un fonctionnement sûr et maximise la durée de vie de la batterie.\n\n### Que fait un BMS ?\n\nLe BMS surveille et protège votre batterie en :\n\n1. **Protection contre les surcharges** : Empêche la charge au-delà des limites de tension sûres\n2. **Protection contre les décharges excessives** : Coupe l'alimentation avant que les cellules ne soient endommagées\n3. **Protection contre les surintensités** : Limite le courant à des niveaux sûrs\n4. **Protection contre les courts-circuits** : Déconnecte instantanément en cas de courts-circuits\n5. **Surveillance de la température** : Empêche le fonctionnement en dehors des températures sûres\n6. **Équilibrage des cellules** : Maintient toutes les cellules à des niveaux de charge égaux\n\n### Pourquoi l'équilibrage des cellules est important\n\nDans une batterie multi-cellules, de légères variations de fabrication entraînent des charges et décharges des cellules à des rythmes différents. Sans équilibrage :\n\n- Certaines cellules atteignent leur pleine charge plus tôt, limitant la capacité totale\n- Les cellules faibles sont plus sollicitées, réduisant leur durée de vie\n- La capacité diminue avec le temps\n\nUn bon BMS équilibre activement les cellules à chaque cycle de charge.\n\n### Fonctionnalités BMS intelligentes\n\nLes systèmes BMS modernes incluent la connectivité Bluetooth pour :\n\n- La surveillance en temps réel de la tension et du courant\n- L'affichage de la tension cellule par cellule\n- L'historique de charge/décharge\n- Les relevés de température\n- Les diagnostics de codes d'erreur\n\n### Notre technologie BMS\n\nLes batteries Sentorise incluent un BMS continu de 100A avec :\n- Surveillance Bluetooth via application mobile\n- Équilibrage actif des cellules\n- Protection de charge à basse température\n- Plusieurs couches de protection de sécurité\n    ",
+      "category": "Éducation",
+      "author": "Équipe Technique",
+      "tags": [
+        "BMS",
+        "Sécurité",
+        "Technologie"
+      ]
+    },
+    "6": {
+      "title": "Installation électrique pour Van Life : Réalisations de clients",
+      "excerpt": "Découvrez comment les clients de Sentorise ont installé leurs systèmes de batterie dans des Sprinters, des Transits et d'autres conversions de vans populaires.",
+      "content": "\n## Réalisations de vans alimentés par Sentorise\n\nDécouvrez comment nos clients ont intégré les batteries Sentorise dans leurs conversions de vans. Chaque réalisation offre des aperçus uniques et de l'inspiration pour votre propre projet.\n\n### Réalisation n°1 : Mercedes Sprinter 144\"\n\n**Propriétaires** : Marcus & Jana, Allemagne\n**Batterie** : 2× 100Ah LiFePO4\n**Solaire** : Panneaux montés sur le toit de 400W\n\n« Nous avons choisi Sentorise pour sa taille compacte et sa surveillance Bluetooth. Pouvoir vérifier l'état de notre batterie depuis le lit est incroyablement pratique. »\n\n**Caractéristiques principales** :\n- Installation de la batterie sous le lit\n- Contrôleur de charge Victron MPPT\n- Onduleur 2000W pour machine à café\n- Voyage à temps plein en Europe\n\n### Réalisation n°2 : Ford Transit Custom\n\n**Propriétaire** : Tom, Royaume-Uni\n**Batterie** : 1× 200Ah LiFePO4 chauffée\n**Solaire** : Panneaux flexibles de 200W\n\n« En tant que campeur hivernal en Écosse, la batterie chauffée était non négociable. J'ai chargé à -10°C sans aucun problème. »\n\n**Caractéristiques principales** :\n- Installation compacte derrière le siège conducteur\n- Batterie chauffée pour climat froid\n- Intégration d'un chauffage diesel\n- Configuration pour les week-ends\n\n### Réalisation n°3 : VW Crafter\n\n**Propriétaire** : Sophie, Pays-Bas\n**Batterie** : 2× 200Ah LiFePO4\n**Solaire** : Panneaux rigides de 600W\n\n« Avec 400Ah de lithium, nous pouvons travailler à distance pendant des semaines. Les batteries ont été impeccables pendant 18 mois. »\n\n**Caractéristiques principales** :\n- Configuration de bureau mobile\n- Double batterie pour la redondance\n- Starlink pour internet\n- Vie de nomade numérique à temps plein\n\n### Partagez votre réalisation\n\nVous avez un van alimenté par Sentorise ? Nous serions ravis de présenter votre réalisation. Contactez-nous avec des photos et des détails !\n    ",
+      "category": "Histoires",
+      "author": "Communauté",
+      "tags": [
+        "Van Life",
+        "Témoignages Clients",
+        "Installations"
+      ]
+    },
+    "7": {
+      "title": "Installation de batteries marines : meilleures pratiques",
+      "excerpt": "Conseils essentiels pour l'installation de batteries au lithium sur les bateaux, y compris la ventilation, le montage et la protection contre l'eau salée.",
+      "content": "\n## Installation de batteries LiFePO4 sur votre bateau\n\nLes environnements marins présentent des défis uniques pour l'installation des batteries. Suivez ces meilleures pratiques pour garantir un fonctionnement sûr et fiable en mer.\n\n### Considérations spécifiques au milieu marin\n\n1. **Corrosion par l'eau salée** : Toutes les connexions doivent être protégées des embruns salés.\n2. **Vibrations** : Les bateaux sont soumis à un mouvement constant, nécessitant un montage sécurisé.\n3. **Humidité** : Les compartiments de batterie doivent être ventilés mais protégés de l'infiltration d'eau.\n4. **Réglementations de sécurité** : Les installations marines peuvent nécessiter des certifications spécifiques.\n\n### Meilleures pratiques d'installation\n\n**Montage** :\n- Utilisez de la quincaillerie en acier inoxydable de qualité marine.\n- Montez dans un boîtier de batterie dédié.\n- Sécurisez contre tout mouvement dans toutes les directions.\n- Positionnez loin de l'eau de cale.\n\n**Câblage** :\n- Utilisez uniquement des câbles marins étamés.\n- Appliquez de la graisse diélectrique sur toutes les bornes.\n- Installez des interrupteurs de déconnexion de batterie accessibles.\n- Acheminez les câbles loin des sources de chaleur.\n\n**Protection** :\n- Installez un fusible approprié à la batterie.\n- Utilisez un moniteur de batterie pour une alerte précoce.\n- Envisagez un circuit d'alimentation de secours pour la pompe de cale.\n- Ajoutez une ventilation pour éviter l'accumulation de gaz.\n\n### Charge en mer\n\n- Charge à quai : Utilisez des chargeurs de qualité marine.\n- Alternateur moteur : Peut nécessiter des régulateurs externes pour le lithium.\n- Solaire : Idéal pour les mouillages prolongés.\n\n### Produits recommandés\n\nPour une utilisation marine, nous recommandons nos batteries standard de 100 Ah ou 200 Ah avec leurs boîtiers classés IP et leurs bornes résistantes à la corrosion. La surveillance Bluetooth est particulièrement utile pour vérifier l'état de la batterie depuis la barre.\n    ",
+      "category": "Guides",
+      "author": "Équipe Technique",
+      "tags": [
+        "Marin",
+        "Installation",
+        "Bateaux"
+      ]
+    },
+    "8": {
+      "title": "Prolonger la durée de vie de votre batterie : conseils de charge",
+      "excerpt": "Découvrez les pratiques de charge optimales qui peuvent aider votre batterie LiFePO4 à durer encore plus longtemps que sa capacité nominale de plus de 4000 cycles.",
+      "content": "\n## Maximisez votre investissement en batterie\n\nBien que les batteries LiFePO4 soient conçues pour plus de 4000 cycles, des pratiques de charge appropriées peuvent prolonger cette durée de vie. Découvrez la science derrière une charge optimale.\n\n### Comprendre les cycles de charge\n\nUn cycle de charge est une décharge et une recharge complètes. Cependant :\n- Les cycles partiels comptent proportionnellement (2 décharges à 50 % = 1 cycle)\n- La profondeur de décharge affecte la durée de vie des cycles\n- Les températures extrêmes accélèrent le vieillissement\n\n### Pratiques de charge optimales\n\n1. **Évitez les décharges complètes** : Décharger régulièrement à 0 % stresse les cellules. Visez à recharger lorsque la batterie est à 20-30 % de sa capacité restante.\n\n2. **Ne chargez pas toujours à 100 %** : Pour une durée de vie maximale, chargez à 80-90 % pour une utilisation quotidienne. Ne chargez complètement qu'avant de longs trajets.\n\n3. **Utilisez des taux de charge appropriés** : Bien que les batteries LiFePO4 puissent supporter une charge rapide, des taux modérés (0,3-0,5C) minimisent le stress.\n\n4. **Évitez les températures extrêmes** : Chargez entre 0 et 45 °C pour des résultats optimaux.\n\n### Directives de stockage\n\nSi vous stockez votre batterie pendant de longues périodes :\n\n- Chargez à 50-60 %\n- Stockez dans un endroit frais et sec\n- Rechargez tous les 3 à 6 mois\n- Évitez de stocker la batterie complètement chargée ou complètement déchargée\n\n### Équipement de charge\n\nUtilisez des chargeurs conçus pour les batteries LiFePO4 avec des réglages de tension appropriés :\n- Tension de charge : 14,2-14,6 V pour les batteries 12 V\n- Tension de flottement : 13,4-13,6 V\n- Évitez les chargeurs au plomb-acide avec des modes de désulfatation\n\n### Attentes réelles\n\nAvec de bonnes pratiques, attendez-vous à :\n- Plus de 4000 cycles à 80 % de capacité\n- Plus de 10 ans de durée de vie\n- Des performances constantes tout au long de la durée de vie\n    ",
+      "category": "Conseils",
+      "author": "Équipe Sentorise",
+      "tags": [
+        "Charge",
+        "Maintenance",
+        "Durée de vie"
+      ]
+    },
+    "9": {
+      "title": "Puissance de sortie réelle des batteries LiFePO₄ par temps froid : ce que les spécifications ne disent pas",
+      "excerpt": "Au-delà de la « coupure de charge à 0 °C » — comment la limitation de courant du BMS, la chute de tension et la compatibilité de l'onduleur affectent réellement votre expérience de camping hivernal.",
+      "content": "\n## L'écart entre les fiches techniques et la réalité\n\nLa plupart des contenus sur les batteries LiFePO₄ vous disent : « Ne chargez pas en dessous de 0 °C, la décharge fonctionne jusqu'à -20 °C. » C'est techniquement correct — mais dangereusement incomplet pour quiconque dépend de sa batterie en hiver.\n\n### Ce qui se passe réellement en dessous de 0 °C\n\nLes cellules LiFePO₄ ne cessent pas soudainement de fonctionner à une température spécifique. Au lieu de cela, les performances se dégradent progressivement :\n\n| Température | Capacité utilisable approximative | Taux de décharge continue maximal |\n|-------------|------------------------|-------------------------------|\n| 25°C | 100% | 1C (pleine capacité nominale) |\n| 0°C | ~90% | 0.8C |\n| -10°C | ~70–75% | 0.5–0.6C |\n| -20°C | ~50–60% | 0.3C |\n\nCes chiffres varient selon le fabricant de cellules, mais le modèle est cohérent : **la capacité et le taux de décharge diminuent simultanément**.\n\n### Le vrai problème : limitation de courant du BMS + démarrage de l'onduleur\n\nVoici ce qui prend les gens au dépourvu. À -10 °C, votre BMS peut limiter la sortie continue à 50–60A sur une batterie de 100Ah. Considérez maintenant cette chaîne :\n\n1. Vous allumez un onduleur de 2000W pour faire fonctionner une machine à café\n2. L'onduleur tire ~170A à 12V pendant le démarrage (courant d'appel)\n3. L'allocation de pointe du BMS peut gérer 200A pendant 5 secondes\n4. Mais la chute de tension sous charge tombe à ~11.2V\n5. La protection basse tension de l'onduleur se déclenche à 11.0V\n6. **Résultat : l'onduleur s'éteint, même si la batterie n'est pas vide**\n\nCe n'est pas un défaut de batterie. C'est une incompatibilité au niveau du système qui n'apparaît que dans des conditions froides.\n\n### Comment calculer la capacité réelle par temps froid\n\n**Étape 1** : Vérifiez les spécifications de votre BMS pour la « réduction de la décharge à basse température ». La plupart des unités BMS de qualité réduisent le courant autorisé de 20 à 50 % en dessous de -5 °C.\n\n**Étape 2** : Calculez la consommation de courant réelle de votre charge (pas seulement la puissance) :\n\n**Courant (A) = Puissance (W) ÷ Tension (V)**\n\nPour une charge de 2000W à 12V : 2000 ÷ 12 = 167A\n\n**Étape 3** : Comparez cela à la limite de votre BMS réduite. Si votre BMS n'autorise que 80A en continu à -10 °C, vous ne pouvez physiquement pas faire fonctionner cette charge — quelle que soit la capacité de la batterie.\n\n### Solutions pratiques\n\n1. **Stratégie de préchauffage** : Si votre batterie dispose d'un chauffage intégré (comme notre modèle Plus 200Ah Chauffé), le chauffage s'active avant la charge ET peut améliorer les performances de décharge en maintenant les cellules au-dessus de 0 °C.\n\n2. **Réduire les charges de démarrage** : Utilisez un onduleur à démarrage progressif ou évitez les appareils à forte consommation simultanée par temps froid.\n\n3. **Batteries en parallèle** : Deux batteries de 100Ah en parallèle doublent votre courant disponible, rendant les charges par temps froid plus gérables.\n\n4. **Compartiment de batterie isolé** : Même une isolation passive peut maintenir la température de la batterie 10 à 15 °C plus chaude que la température ambiante pendant la nuit.\n\n### Qui doit se soucier de cela\n\n- **Campeurs nordiques / alpins** : Températures nocturnes régulièrement inférieures à zéro\n- **Utilisateurs de camping-cars canadiens / nord-européens** : Voyages hivernaux prolongés\n- **Propriétaires de bateaux dans les régions d'eau froide** : Demandes de chauffage de cabine par temps froid\n\nSi votre cas d'utilisation hivernal implique des charges supérieures à 1000W, vous devez prévoir une réduction de puissance par temps froid — et pas seulement une protection de charge par temps froid.\n    ",
+      "category": "Ingénierie",
+      "author": "Équipe Technique",
+      "tags": [
+        "Temps Froid",
+        "BMS",
+        "Conception de Système",
+        "Camping-car"
+      ]
+    },
+    "10": {
+      "title": "Batteries LiFePO₄ en parallèle : Quand l'équilibrage passif échoue et l'équilibrage actif devient nécessaire",
+      "excerpt": "Même lot, même SoC, même modèle — mais après 3 mois, votre pack parallèle dérive. Voici la réalité technique des systèmes multi-batteries.",
+      "content": "\n## Le conseil standard — et ses limites\n\nChaque forum dit : « Faites correspondre la marque, le lot, le SoC avant de mettre en parallèle. » C'est nécessaire, mais pas suffisant.\n\n### Pourquoi la dérive du SoC se produit\n\nMême des batteries identiques développent des différences au fil du temps en raison de :\n\n- **Variation de la résistance interne** : Des tolérances de fabrication de ±5 % signifient que les cellules vieillissent à des rythmes différents\n- **Gradient de température** : Une batterie près du moteur fonctionne plus chaud qu'une sous le lit. Température plus élevée = vieillissement calendaire plus rapide = divergence de capacité\n- **Distribution de la charge** : La batterie avec la résistance de câble la plus faible tire plus de courant, se cyclant plus rapidement\n\nAprès 100 à 200 cycles, un décalage de SoC de 3 à 5 % est courant. Après 500 cycles, il peut atteindre 10 à 15 %.\n\n### Ce qui se passe lorsque les batteries parallèles dérivent\n\nLorsque deux batteries avec des niveaux de SoC différents sont connectées en parallèle :\n\n1. La batterie avec le SoC le plus élevé décharge du courant dans la batterie avec le SoC le plus faible (courant d'égalisation)\n2. Cela se produit de manière incontrôlée, limité uniquement par la résistance du câble\n3. Le BMS de l'une ou l'autre batterie peut interpréter cela comme une condition de défaut\n4. **Résultat** : Un BMS se déclenche, déconnectant cette batterie. La batterie restante gère alors seule la pleine charge — déclenchant potentiellement sa propre protection contre les surintensités.\n\nC'est le mode de défaillance de « déconnexion en cascade » qui provoque des arrêts mystérieux du système dans les configurations multi-batteries.\n\n### Quand l'équilibrage passif est suffisant\n\nL'équilibrage passif (intégré à chaque BMS de qualité) fonctionne en purgeant l'excès de charge des cellules plus fortes pendant la phase d'absorption. C'est adéquat lorsque :\n\n- Toutes les batteries subissent des environnements de température similaires (±5 °C)\n- Le système est régulièrement chargé à 100 % (permettant un équilibrage par le haut)\n- Le nombre total de batteries en parallèle est ≤ 2\n- Les batteries proviennent du même lot de production et ont le même âge\n\n### Quand vous avez besoin d'un équilibrage actif\n\nL'équilibrage actif transfère l'énergie entre les cellules (ou les batteries) plutôt que de la gaspiller. Envisagez-le lorsque :\n\n- **3 batteries ou plus en parallèle** : La dérive s'aggrave avec plus d'unités\n- **Zones de température mixtes** : Installations de bateaux où les batteries sont situées à différents endroits de la coque\n- **Extension de systèmes existants** : Ajout de nouvelles batteries à un banc existant\n- **Modèles d'utilisation saisonniers** : Batteries qui restent à des SoC différents pendant des mois entre les utilisations\n\n### Pouvez-vous mélanger des batteries anciennes et nouvelles ?\n\nLa réponse courte : non recommandé. La réponse technique : possible avec des contraintes.\n\n- Les nouvelles cellules LiFePO₄ ont une résistance interne d'environ 3 à 5 mΩ\n- Après 2000 cycles, cela monte à environ 8 à 12 mΩ\n- La nouvelle batterie « surperformera » constamment l'ancienne, créant un déséquilibre permanent\n\n**Si vous devez étendre** : Ajoutez un isolateur DC-DC entre les bancs anciens et nouveaux. Cela les découple électriquement tout en permettant aux deux de desservir des charges via un bus commun.\n\n### Recommandations au niveau du système\n\n| Configuration | Méthode d'équilibrage | Niveau de risque |\n|---------------|-----------------------|------------------|\n| 2× même lot, même emplacement | Passif (BMS intégré) | Faible |\n| 3–4× même lot, même emplacement | Équilibreur actif externe recommandé | Moyen |\n| 2× emplacements différents (par exemple, proue/poupee) | Isolation DC-DC | Moyen |\n| Mélange de batteries anciennes + nouvelles | Isolation DC-DC requise | Élevé |\n| 4 batteries ou plus, âge mixte | Équilibreur actif + surveillance | Élevé |\n    ",
+      "category": "Ingénierie",
+      "author": "Équipe Technique",
+      "tags": [
+        "Parallèle",
+        "BMS",
+        "Conception de système",
+        "DIY"
+      ]
+    },
+    "11": {
+      "title": "12V vers 24V ou 48V : Quand une mise à niveau de tension est-elle judicieuse sur le plan technique — et quand ne l'est-elle pas ?",
+      "excerpt": "Tout le monde dit qu'une tension plus élevée est plus efficace. Mais le calcul réel implique les chaînes de pertes DC-DC, la compatibilité des appareils, les coûts de câblage et la complexité des pannes.",
+      "content": "\n## Au-delà de l'argument de l'efficacité\n\nOui, une tension plus élevée signifie un courant plus faible pour la même puissance, ce qui se traduit par moins de pertes résistives (I²R). Mais ce n'est qu'une variable dans une décision système complexe.\n\n### La véritable chaîne d'efficacité\n\nConsidérons l'alimentation d'une charge de 1200W à partir de batteries :\n\n| Système | Courant batterie | Perte de câble (2m, 35mm²) | Perte de conversion DC-DC | Efficacité nette |\n|--------|----------------|----------------------|----------------------|----------------|\n| 12V | 100A | ~3.2% | Aucune (charges 12V natives) | ~96.8% |\n| 24V | 50A | ~0.8% | 3–5% (24V→12V pour les appareils) | ~94.5–96% |\n| 48V | 25A | ~0.2% | 5–8% (48V→12V pour les appareils) | ~92–95% |\n\n**Point clé** : Si la plupart de vos charges sont natives 12V (lumières, ventilateurs, pompe à eau, USB), la perte de conversion DC-DC d'un système à tension plus élevée peut annuler les gains d'efficacité du câblage.\n\n### Quand le 24V/48V est judicieux\n\n1. **Demande de puissance totale élevée** (>3000W en continu) : Climatisation, plaques de cuisson à induction, gros onduleurs\n2. **Longues longueurs de câble** (>5m) : Grands bateaux, camions ou systèmes distribués\n3. **Optimisation du champ solaire** : Chaînes à tension plus élevée avec contrôleurs MPPT\n4. **Véhicules professionnels/commerciaux** : Où l'ensemble du système est conçu à partir de zéro\n\n### Quand le 12V reste le bon choix\n\n1. **Véhicule existant avec infrastructure 12V** : La modernisation signifie remplacer chaque appareil ou ajouter des convertisseurs\n2. **Besoins en puissance modérés** (<2000W) : Camping de week-end, appareils de camping-car standard\n3. **Priorité à la simplicité** : Moins d'étapes de conversion = moins de points de défaillance\n4. **Disponibilité des pièces** : Les composants 12V sont universellement disponibles et moins chers\n\n### Les coûts cachés des mises à niveau de tension\n\n**Remplacement du faisceau de câbles** : Chaque câble, fusible et connecteur doit être adapté à la nouvelle tension. Sur un camping-car typique, cela représente 20 à 40 heures de travail.\n\n**Compatibilité des appareils** : Les réfrigérateurs, ventilateurs, pompes et éclairages 12V ne fonctionnent pas en 24V. Vous avez besoin de convertisseurs DC-DC pour chaque circuit ou de remplacer tous les appareils.\n\n**Complexité des pannes** : Un court-circuit à 48V délivre beaucoup plus d'énergie qu'à 12V. Le risque d'arc électrique augmente. Les exigences en matière de fusibles et de sectionneurs deviennent plus strictes.\n\n**Complexité du diagnostic** : Les systèmes multi-tensions nécessitent plus d'instrumentation et de compréhension pour le dépannage.\n\n### Cadre de décision\n\nPosez-vous les questions suivantes :\n\n1. Quelle est ma charge continue maximale ? (Si <2000W → restez en 12V)\n2. Quelle est la longueur de mes câbles ? (Si <3m → l'avantage de la tension est négligeable)\n3. Est-ce que je construis à partir de zéro ou est-ce que je modernise ? (Modernisation → généralement restez en 12V)\n4. Ai-je des charges natives 24V/48V ? (Si non → les pertes de conversion s'appliquent)\n\n### Notre recommandation\n\nPour 90% des applications de camping-car et de petite marine, un système 12V bien conçu avec un dimensionnement de câble approprié est la solution la plus pratique, fiable et rentable.\n    ",
+      "category": "Ingénierie",
+      "author": "Équipe technique",
+      "tags": [
+        "Conception de système",
+        "Tension",
+        "Camping-car",
+        "DIY"
+      ]
+    },
+    "12": {
+      "title": "Appariement onduleur + batterie : Le calcul d'ingénierie que la plupart des gens ignorent",
+      "excerpt": "Une batterie de 200 Ah peut-elle alimenter un onduleur de 3000 W ? La réponse nécessite de comprendre les taux de décharge, la chute de tension, les pertes de câble et les limites du BMS.",
+      "content": "\n## La question que tout le monde pose mal\n\n« Ma batterie de 200 Ah peut-elle gérer un onduleur de 3000 W ? » Cette question est incomplète. La vraie question est : « Pendant combien de temps, à quelle température, avec quelle longueur de câble, et que se passe-t-il au démarrage ? »\n\n### Étape 1 : Calculer le courant réel consommé\n\n**Courant continu** : 3000 W ÷ 12 V = 250 A\n\nMais attendez — les onduleurs ne sont pas efficaces à 100 %. À 90 % d'efficacité :\n\n**Courant côté batterie** : 3000 W ÷ (12 V × 0,9) = 278 A\n\n### Étape 2 : Vérifier les limites de votre BMS\n\n| Batterie | Limite BMS continue | Crête (5s) | Peut gérer 3000 W ? |\n|---------|---------------------|-----------|-------------------|\n| 100 Ah / 100 A BMS | 100 A | 200 A | Non — se déclenche instantanément |\n| 100 Ah / 200 A BMS | 200 A | 400 A | Non — dépasse le continu |\n| 200 Ah / 200 A BMS | 200 A | 400 A | Non — 278 A > 200 A |\n| 2×100 Ah en parallèle / 200 A chacun | 400 A au total | 800 A | Oui — avec marge |\n\n**Point clé** : Une seule batterie de 200 Ah avec un BMS de 200 A ne peut pas alimenter en continu un onduleur de 3000 W. Vous avez besoin de batteries en parallèle ou d'un BMS de plus forte puissance.\n\n### Étape 3 : Tenir compte de la chute de tension\n\nSous forte charge, la tension de la batterie chute en raison de la résistance interne. Une batterie nominale de 12,8 V peut chuter à :\n\n- 12,2 V à 100 A\n- 11,6 V à 200 A\n- 11,0 V à 300 A\n\nLa plupart des onduleurs déclenchent la protection basse tension à 10,5–11,0 V. Cela signifie que votre onduleur peut s'arrêter même si la batterie a encore 60 % de sa capacité.\n\n### Étape 4 : Calculer les pertes de câble\n\nLa résistance du câble entraîne une chute de tension supplémentaire. Pour une longueur de câble de 1,5 m :\n\n| Section de câble | Résistance (1,5 m) | Chute de tension à 250 A | Acceptable ? |\n|------------|-------------------|---------------------|-------------|\n| 25 mm² | 2,6 mΩ | 0,65 V | Marginal |\n| 35 mm² | 1,8 mΩ | 0,45 V | Acceptable |\n| 50 mm² | 1,3 mΩ | 0,33 V | Bon |\n| 70 mm² | 0,9 mΩ | 0,23 V | Excellent |\n\n### Étape 5 : Courant d'appel au démarrage\n\nLes appareils motorisés (unités de climatisation, compresseurs, outils électriques) peuvent consommer 3 à 6 fois leur courant nominal pendant 0,5 à 2 secondes au démarrage.\n\nUn climatiseur de 1500 W peut consommer 4500 W (375 A à 12 V) pendant 1 à 2 secondes. Votre système de batterie doit pouvoir gérer ce pic sans déclencher la protection du BMS.\n\n### La formule d'appariement\n\n**Capacité minimale de la batterie = (Puissance max de l'onduleur ÷ tension du système ÷ efficacité de l'onduleur) ÷ taux C sûr max**\n\nPour un onduleur de 3000 W : (3000 ÷ 12 ÷ 0,9) ÷ 0,5 C = 556 Ah minimum\n\nCela signifie que vous avez besoin d'au moins 500 à 600 Ah de capacité de batterie pour faire fonctionner confortablement un onduleur de 3000 W en continu.\n\n### Recommandations pratiques\n\n| Taille de l'onduleur | Batterie minimale | Batterie recommandée | Section de câble |\n|---------------|----------------|--------------------| -----------|\n| 1000 W | 100 Ah | 200 Ah | 25 mm² |\n| 2000 W | 200 Ah | 2×200 Ah | 35 mm² |\n| 3000 W | 400 Ah | 3×200 Ah | 50 mm² |\n\nCes données supposent des systèmes 12 V. À 24 V, le courant est divisé par deux et les exigences sont plus faciles à gérer.\n    ",
+      "category": "Ingénierie",
+      "author": "Équipe Technique",
+      "tags": [
+        "Onduleur",
+        "Conception de système",
+        "DIY",
+        "Dimensionnement"
+      ]
+    },
+    "13": {
+      "title": "Sel, humidité et temps : comment les environnements marins dégradent réellement les modules BMS et Bluetooth",
+      "excerpt": "Personne ne parle de ce qui tombe en panne en premier sur un bateau. La réponse est presque toujours : le Bluetooth, puis les transistors MOS, puis les connexions des bornes.",
+      "content": "\n## La séquence de défaillance que personne ne documente\n\nLes installations de batteries marines sont confrontées à un chemin de dégradation unique, presque entièrement absent de la littérature des fabricants. Voici ce que nous avons appris des retours sous garantie et des rapports de terrain.\n\n### Mode de défaillance n°1 : Module Bluetooth (6 à 18 mois)\n\nLe module Bluetooth Low Energy (BLE) est généralement la première victime dans les environnements marins.\n\n**Pourquoi il tombe en panne** :\n- L'impédance de l'antenne BLE se modifie en raison de la formation de cristaux de sel sur les pistes du PCB\n- L'infiltration d'humidité par la fenêtre de l'antenne ou les presse-étoupes\n- Les cycles de condensation provoquent une micro-corrosion sur les broches de signal\n\n**Symptômes** :\n- Connexion intermittente → déconnexions fréquentes → panne complète\n- Réduction de la portée de 10 m à <1 m avant la panne\n- L'application affiche « appareil introuvable » alors que la batterie fonctionne normalement\n\n**Prévention** :\n- Revêtement conforme sur le PCB BLE (tous les fabricants ne le font pas)\n- Conception d'antenne scellée vs antenne PCB exposée\n- Inspection régulière des joints de presse-étoupes\n\n### Mode de défaillance n°2 : Dérive thermique des MOSFET (12 à 36 mois)\n\nLes MOSFET de puissance du BMS sont les principaux interrupteurs de transport de courant. Dans les environnements marins :\n\n**Ce qui se passe** :\n- L'humidité chargée de sel accélère la dégradation de l'oxyde de grille\n- Les cycles thermiques (chaleur de la salle des machines → nuits froides) fatiguent les joints de soudure\n- La résistance à l'état passant (RDS(on)) augmente progressivement, provoquant une génération de chaleur plus importante\n- Cela crée une spirale d'emballement thermique : plus de chaleur → plus de résistance → plus de chaleur\n\n**Symptômes** :\n- La batterie chauffe à des charges qui auparavant ne provoquaient aucun échauffement\n- Le BMS se déclenche à des seuils de courant inférieurs à la valeur nominale\n- La capacité semble diminuer (le BMS limite le courant plus tôt)\n\n### Mode de défaillance n°3 : Oxydation des bornes (6 à 24 mois)\n\n**Le mécanisme** :\n- Les bornes en cuivre ou en laiton développent des couches d'oxyde dans l'air salin\n- L'oxyde a une résistance 10 à 100 fois supérieure à celle du métal propre\n- La résistance de contact augmente progressivement\n- Sous courant élevé, la borne devient une source de chaleur\n\n**Symptômes** :\n- Bornes chaudes ou tièdes pendant le fonctionnement normal\n- Les relevés de tension à la borne diffèrent des relevés au BMS\n- Décoloration du matériel de la borne\n\n**Prévention** :\n- Matériel en acier inoxydable avec graisse diélectrique\n- Serrer les bornes au couple spécifié et revérifier tous les 6 mois\n- Pulvérisation anti-oxydation des bornes après l'installation\n\n### Bonnes pratiques d'installation marine\n\n1. **Vérification du revêtement conforme** : Demandez à votre fabricant de batterie si le PCB du BMS a un revêtement conforme. C'est le plus grand prédicteur de longévité marine.\n\n2. **Contexte de l'indice IP** : IP67 signifie « survit à l'immersion ». IP68 signifie « survit à une immersion prolongée ». Aucun des deux ne signifie « résiste à la corrosion par brouillard salin pendant 3 ans ». Recherchez les indices de test de brouillard salin (IEC 60068-2-11).\n\n3. **Paradoxe de la ventilation** : Vous avez besoin d'un flux d'air pour la gestion de la chaleur, mais vous voulez minimiser l'exposition à l'air salin. Utilisez une ventilation filtrée ou un compartiment scellé avec un petit ventilateur et des sachets déshydratants.\n\n4. **Programme d'entretien des bornes** : Tous les 6 mois : déconnecter, nettoyer avec un nettoyant pour contacts, inspecter la décoloration, réappliquer de la graisse diélectrique, serrer au couple spécifié.\n    ",
+      "category": "Ingénierie",
+      "author": "Équipe technique",
+      "tags": [
+        "Marine",
+        "BMS",
+        "Maintenance",
+        "Corrosion"
+      ]
+    },
+    "14": {
+      "title": "Charge multi-source sans conflits : solaire, alternateur et alimentation secteur sur un seul parc de batteries",
+      "excerpt": "Rétroaction MPPT, pics de tension d'alternateur et courant inverse du chargeur : pourquoi les systèmes DIY échouent après 6 mois et comment l'éviter.",
+      "content": "\n## Le problème : plusieurs chargeurs, une seule batterie\n\nUn camping-car ou un bateau typique dispose de trois sources de charge :\n1. Panneaux solaires via un contrôleur MPPT\n2. Alternateur du véhicule via un chargeur DC-DC ou une connexion directe\n3. Alimentation secteur via un chargeur AC-DC\n\nChaque source « voit » la tension de la batterie et tente de la réguler en conséquence. Lorsque deux sources ou plus fonctionnent simultanément, des conflits surviennent.\n\n### Conflit n°1 : Rétroaction MPPT\n\n**Ce qui se passe** : Lorsque la batterie est presque pleine et que le contrôleur MPPT entre en mode flottant, une deuxième source de charge (par exemple, l'alternateur) élève la tension de la batterie au-delà de la plage attendue par le MPPT. Le MPPT peut :\n\n- Interpréter une tension élevée comme une batterie pleine et s'arrêter prématurément\n- Tenter d'« absorber » le courant de l'autre source via son étage de sortie\n- Dans de rares cas, renvoyer le courant en arrière via la chaîne solaire\n\n**Solution** : Utilisez un contrôleur MPPT avec une protection contre le courant inverse appropriée et configurez les tensions d'absorption de manière identique sur toutes les sources de charge (à 0,1V près).\n\n### Conflit n°2 : Pics de tension de l'alternateur\n\n**Ce qui se passe** : Les alternateurs de véhicule produisent une tension régulée par l'ECU du moteur, généralement de 14,2 à 14,8V. Mais lors de délestages (par exemple, l'extinction des phares), des pics transitoires de 18 à 25V peuvent survenir pendant quelques millisecondes.\n\nLa protection contre les surtensions du BMS LiFePO₄ se déclenche généralement entre 15,6 et 16V. Ces pics peuvent :\n\n- Déclencher la déconnexion du BMS, laissant l'alternateur sans charge\n- Un alternateur sans charge peut s'autodétruire\n\n**Solution** : Utilisez toujours un chargeur DC-DC entre l'alternateur et les batteries au lithium. Ne jamais connecter directement. Le chargeur DC-DC absorbe les transitoires et fournit une sortie propre et régulée.\n\n### Conflit n°3 : Courant inverse du chargeur secteur\n\n**Ce qui se passe** : Lorsque vous vous déconnectez de l'alimentation secteur, certains chargeurs n'isolent pas immédiatement leur sortie. La batterie peut brièvement renvoyer du courant en arrière via le chargeur, ce qui peut endommager son étage de sortie.\n\n**Solution** : Utilisez des chargeurs avec des diodes anti-retour intégrées, ou installez une diode de blocage externe sur la sortie du chargeur.\n\n### Conflit n°4 : Confusion des priorités de charge\n\nLorsque l'énergie solaire et l'alimentation secteur sont toutes deux disponibles, quelle source doit charger la batterie ?\n\n**Meilleure pratique** : Configurez une hiérarchie de priorités :\n\n1. Solaire en premier (énergie gratuite, réduit la dépendance au réseau)\n2. Alternateur en second (disponible pendant la conduite)\n3. Alimentation secteur en troisième (lorsque le véhicule est stationné avec raccordement)\n\nLa plupart des contrôleurs MPPT et chargeurs de qualité prennent en charge cela via la configuration du point de consigne de tension. Réglez la tension d'absorption solaire 0,1V plus haut que l'alimentation secteur pour lui donner une priorité naturelle.\n\n### L'architecture multi-source sécurisée\n\n```\nPanneaux solaires → Contrôleur MPPT → Bus de batterie (+)\n                                      ↑\nAlternateur → Chargeur DC-DC ──────────┘\n                                      ↑  \nAlimentation secteur → Chargeur AC-DC ─────────┘\n                                      ↑\n                              Parc de batteries\n                                      ↓\n                              Panneau de fusibles → Charges\n```\n\n**Règles critiques** :\n- Chaque source doit avoir sa propre connexion fusionnée au bus de batterie\n- Ne jamais chaîner les chargeurs les uns aux autres\n- Utilisez un moniteur de batterie en aval de toutes les sources pour suivre le courant net\n- Faites correspondre tous les profils de charge aux spécifications LiFePO₄ (absorption 14,2–14,6V, flottant 13,6V)\n    ",
+      "category": "Ingénierie",
+      "author": "Équipe technique",
+      "tags": [
+        "Charge",
+        "Solaire",
+        "Conception de système",
+        "DIY"
+      ]
+    },
+    "15": {
+      "title": "Surtensions des appareils à courant élevé : ce que les machines à café et les climatiseurs font réellement à votre batterie",
+      "excerpt": "L'impact des courants d'appel fréquents sur la fatigue des MOSFET, le stress des joints de soudure et la durée de vie réelle des cycles — au-delà du chiffre théorique de 4000 cycles.",
+      "content": "\n## Théorie vs. Réalité : Durée de vie des cycles sous contrainte\n\nLes cellules LiFePO₄ sont évaluées pour plus de 4000 cycles à une décharge de 0,5C jusqu'à 80 % de DoD. Cependant, l'utilisation réelle inclut souvent des surtensions répétées à courant élevé qui accélèrent des modes de défaillance spécifiques non pris en compte dans les tests de cycle standard.\n\n### Ce qui se passe pendant une surtension\n\nLorsque vous démarrez une machine à café, un compresseur de climatiseur ou un micro-ondes via un onduleur :\n\n1. **Courant d'appel** : 3 à 6 fois le courant en régime permanent pendant 0,5 à 3 secondes\n2. **Chute de tension** : La tension de la batterie chute brusquement, puis se rétablit\n3. **Stress du BMS** : Les MOSFET gèrent le courant de pointe via leur résistance à l'état passant\n4. **Impulsion thermique** : Échauffement localisé au niveau des languettes des cellules, des barres omnibus et des jonctions des MOSFET\n\n### Les trois mécanismes de fatigue\n\n**1. Fatigue thermique des MOSFET**\n\nChaque surtension chauffe la jonction du MOSFET de 20 à 40°C en quelques millisecondes. La jonction se refroidit ensuite en quelques secondes. Ce cyclage thermique provoque :\n\n- Fatigue de la soudure de fixation de la puce (des microfissures se développent sur des milliers de cycles)\n- Décollement des fils de liaison (les fils de liaison fléchissent avec la dilatation thermique)\n- Augmentation progressive de la résistance à l'état passant\n\nAprès 10 000 à 50 000 événements de surtension, les performances des MOSFET se dégradent de manière notable. Pour un utilisateur qui fait fonctionner une machine à café deux fois par jour, cela représente 5 à 7 ans — mais c'est accéléré si combiné à d'autres charges à courant élevé.\n\n**2. Stress des languettes des cellules et des barres omnibus**\n\nLes languettes des cellules (fines bandes de nickel ou de cuivre reliant les cellules à la barre omnibus) transportent le courant de surtension complet. Les impulsions répétées à courant élevé provoquent :\n\n- Échauffement résistif au niveau des joints soudés par points\n- Cyclage de dilatation/contraction thermique\n- Augmentation progressive de la résistance de contact\n\nCeci est rarement visible de l'extérieur mais se manifeste par une augmentation de la résistance interne lors de la surveillance de la santé de la batterie.\n\n**3. Effets au niveau des cellules**\n\nAu niveau électrochimique, une décharge à haut débit :\n\n- Crée des gradients de concentration plus importants dans l'électrolyte\n- Accélère la croissance de la couche SEI sur l'anode\n- Peut provoquer un appauvrissement localisé en lithium près du collecteur de courant\n\nCependant, la chimie LiFePO₄ est remarquablement tolérante aux décharges à haut débit. L'impact au niveau des cellules est généralement le plus faible contributeur à la dégradation.\n\n### Quelle est l'importance réelle ?\n\nDans des conditions réalistes (2 à 4 événements de surtension par jour, pics de 100A, batterie de 200Ah) :\n\n| Facteur | Impact attendu sur la durée de vie des cycles |\n|--------|------------------------------|\n| Électrochimie des cellules | -2 à -5% |\n| Fatigue MOSFET / BMS | -5 à -15% |\n| Dégradation des points de connexion | -3 à -8% |\n| **Réduction totale estimée** | **-10 à -25%** |\n\nAinsi, une batterie évaluée pour 4000 cycles pourrait fournir 3000 à 3600 cycles sous une charge de surtension régulière. Toujours excellent — mais cela vaut la peine d'être compris.\n\n### Stratégies d'atténuation\n\n1. **Onduleurs à démarrage progressif** : Réduisent le courant d'appel de 50 à 70%\n2. **Banque de batteries surdimensionnée** : Taux C inférieur par événement de surtension\n3. **Couple approprié sur toutes les connexions** : Prévient le desserrage progressif\n4. **Inspection annuelle des connexions** : Détecte les augmentations de résistance précocement\n5. **Surveiller les tendances de température du BMS** : Des températures en hausse pour les mêmes charges indiquent une dégradation\n    ",
+      "category": "Ingénierie",
+      "author": "Équipe Technique",
+      "tags": [
+        "BMS",
+        "Durée de vie des cycles",
+        "Conception du système",
+        "Maintenance"
+      ]
+    },
+    "16": {
+      "title": "Taux de décharge ou cyclage : lequel dégrade le plus rapidement votre batterie LiFePO₄ ?",
+      "excerpt": "Alimentation à quai à 100 % de SoC à long terme ou cyclage régulier — la science du vieillissement calendaire, les effets de la tension de flottement et les pratiques de stockage optimales.",
+      "content": "\n## Les deux mécanismes de vieillissement\n\nChaque batterie vieillit par le biais de deux mécanismes indépendants :\n\n1. **Vieillissement par cyclage** : Dégradation due à des cycles de charge/décharge répétés\n2. **Vieillissement calendaire** : Dégradation due au temps, quelle que soit l'utilisation\n\nPour les batteries LiFePO₄, la contribution relative de chacun dépend de la manière dont vous utilisez (ou n'utilisez pas) votre batterie.\n\n### Vieillissement calendaire : le tueur silencieux\n\nLe vieillissement calendaire se produit par des réactions chimiques lentes dans la cellule, principalement :\n\n- Croissance de la couche SEI (Solid Electrolyte Interphase) sur l'anode\n- Décomposition de l'électrolyte\n- Formation d'un film de surface sur la cathode\n\nCes réactions sont accélérées par :\n- **Un SoC plus élevé** : Surfaces d'électrodes plus réactives\n- **Une température plus élevée** : Relation d'Arrhenius (environ 2 fois plus rapide par augmentation de 10 °C)\n\n### L'expérience de stockage du SoC\n\nDonnées de recherche sur le vieillissement calendaire des LiFePO₄ à différents niveaux de SoC (25 °C, 12 mois) :\n\n| SoC de stockage | Perte de capacité | Augmentation de la résistance interne |\n|-------------|--------------|------------------------------|\n| 100 % | 2,5–3,5 % | 8–12 % |\n| 80 % | 1,5–2,0 % | 4–6 % |\n| 60 % | 0,8–1,2 % | 2–3 % |\n| 50 % | 0,5–1,0 % | 1–2 % |\n| 20 % | 0,3–0,5 % | 1–2 % |\n\n**Constat clé** : La différence entre un stockage à 100 % et à 50 % est significative. Stocker à 100 % de SoC pendant un an coûte environ 3 fois plus de capacité que de stocker à 50 %.\n\n### Le problème de l'alimentation à quai\n\nDe nombreux propriétaires de camping-cars et de bateaux laissent leurs batteries branchées à l'alimentation à quai indéfiniment. Cela signifie :\n\n- La batterie reste à 100 % de SoC pendant des mois\n- La charge d'entretien compense continuellement l'autodécharge\n- La température peut être élevée (compartiment moteur, quai ensoleillé)\n\n**Effet combiné** : Une batterie stockée à 100 % de SoC à 35 °C (courant dans les marinas d'Europe du Sud) peut perdre 5 à 7 % de capacité par an uniquement en raison du vieillissement calendaire.\n\n### Cyclage ou vieillissement calendaire : lequel est le pire ?\n\nPour un utilisateur typique du week-end (100 cycles/an) :\n\n| Source de vieillissement | Perte de capacité annuelle |\n|-------------|---------------------|\n| 100 cycles à 80 % de DoD | ~2,0 % |\n| Vieillissement calendaire à 50 % de SoC | ~1,0 % |\n| Vieillissement calendaire à 100 % de SoC | ~3,0 % |\n\n**Paradoxe** : Une batterie qui reste branchée à l'alimentation à quai à 100 % de SoC toute l'année (et qui est rarement cyclée) peut vieillir plus rapidement qu'une batterie activement utilisée mais correctement stockée entre les utilisations.\n\n### Pratiques de stockage optimales\n\n**Pour une utilisation saisonnière** (stockée 4 à 6 mois) :\n1. Charger à 50–60 % de SoC\n2. Déconnecter toutes les charges et tous les chargeurs\n3. Stocker dans un endroit frais et sec (idéalement 10–20 °C)\n4. Vérifier et recharger à 50 % tous les 3 mois\n\n**Pour une utilisation intermittente** (week-ends, avec alimentation à quai disponible) :\n1. Régler la tension de flottement de votre chargeur à 13,2 V au lieu de 13,6 V — cela maintient le SoC à environ 70 % plutôt qu'à 100 %\n2. Ne charger à 100 % que la veille du départ\n3. Revenir et laisser la batterie se stabiliser à 70 % de flottement\n\n**Pour une utilisation à temps plein** :\n1. Le cyclage régulier est en fait bénéfique — il prévient les longues périodes de SoC élevé\n2. Éviter de laisser la batterie à 100 % pendant plus de 48 heures lorsqu'elle n'est pas utilisée\n3. Si vous utilisez l'énergie solaire, un contrôleur MPPT correctement configuré assure naturellement une bonne gestion du SoC\n\n### En résumé\n\nLes batteries LiFePO₄ sont exceptionnellement tolérantes par rapport aux autres chimies au lithium — les batteries NMC perdent 2 à 3 fois plus de capacité dans les mêmes conditions de stockage. Mais « tolérant » ne signifie pas « immunisé ». Le SoC de stockage optimal à long terme pour les LiFePO₄ est de **50–60 %** à **15–25 °C**.\n    ",
+      "category": "Ingénierie",
+      "author": "Équipe Technique",
+      "tags": [
+        "Maintenance",
+        "Durée de vie",
+        "Stockage",
+        "Conseils"
+      ]
+    },
+    "17": {
+      "title": "Pourquoi les systèmes de batterie DIY développent des « arrêts aléatoires » après 6 mois — et comment trouver la vraie cause",
+      "excerpt": "Tout semble correct au multimètre, mais le système coupe l'alimentation de manière aléatoire. Le problème est presque toujours une combinaison de défaillances de connexion qui se développent lentement.",
+      "content": "\n## Le mystère des arrêts inopinés\n\nVous avez construit un système de batterie DIY. Il fonctionne parfaitement pendant 3 à 6 mois. Puis cela commence : des coupures de courant aléatoires d'une durée de 1 à 5 secondes, parfois plus. Vous vérifiez tout :\n\n- Tension de la batterie : normale\n- Application BMS : aucun code d'erreur\n- Fusibles : intacts\n- Onduleur : se réinitialise et fonctionne à nouveau\n\nTout « semble correct ». Mais les arrêts continuent et s'aggravent progressivement.\n\n### Pourquoi les tests standards ne détectent pas le problème\n\nUn multimètre mesure une résistance **statique**. Mais les défaillances causant des arrêts aléatoires sont **dynamiques** — elles ne se manifestent que sous charge, à des températures spécifiques, ou après des cycles thermiques.\n\n### Les cinq causes profondes les plus courantes\n\n**1. Micro-desserrage des bornes**\n\nLes bornes à boulons se desserrent progressivement en raison de :\n- Cycles thermiques (dilatation/contraction de métaux différents)\n- Vibrations (surtout dans les véhicules et les bateaux)\n- Fluage à froid du cuivre (le cuivre se déforme sous une pression soutenue)\n\n**Détection** : Mesurez la chute de tension à chaque point de connexion sous charge (>50A). Une connexion saine affiche <10mV. Une connexion défaillante affiche 50–200mV.\n\n**Correction** : Resserrez toutes les bornes aux spécifications du fabricant. Utilisez des rondelles Belleville (ressort) pour maintenir la pression. Appliquez un composé anti-grippage.\n\n**2. Dégradation des joints de sertissage**\n\nLes cosses de câble serties sur les câbles de batterie développent une résistance élevée au fil du temps :\n- Résistance initiale : <0.1 mΩ\n- Après 6 mois de cycles thermiques : 0.5–2 mΩ\n- Un joint de 2 mΩ à 200A génère 80W de chaleur — suffisant pour faire fondre l'isolation\n\n**Détection** : Caméra thermique ou thermomètre IR pendant de fortes charges. Toute connexion dont la température est supérieure de plus de 40°C à la température ambiante est suspecte.\n\n**Correction** : Ressertissez avec une sertisseuse hydraulique (pas des pinces). Utilisez des cosses en cuivre étamé. Appliquez une gaine thermorétractable sur le sertissage.\n\n**3. Dérive thermique des MOSFET du BMS**\n\nComme décrit dans notre article sur la marine, les MOSFET développent une résistance à l'état passant accrue au fil du temps. Mais dans un contexte DIY, une mauvaise gestion thermique accélère ce phénomène :\n\n- BMS monté dans un boîtier non ventilé\n- Batterie et BMS en plein soleil\n- Pas de tampon thermique entre le MOSFET et le dissipateur thermique\n\n**Détection** : Surveillez la température du BMS pendant les charges normales. Si elle augmente sur des semaines/mois au même niveau de charge, une dégradation du MOSFET est en cours.\n\n**4. Augmentation progressive de la résistance des câbles**\n\nLes câbles sous-dimensionnés ne tombent pas en panne immédiatement. Ils chauffent, ce qui augmente la résistance, ce qui augmente encore le chauffage. Sur plusieurs mois :\n\n- L'isolation ramollit et se déforme\n- Une oxydation interne se développe aux points chauds\n- La section efficace diminue\n\n**Détection** : Mesurez la température du câble sur toute sa longueur pendant de fortes charges. Les points chauds indiquent des zones problématiques.\n\n**5. Dégradation du contact du porte-fusible**\n\nLes fusibles à lame et les fusibles ANL reposent sur la pression de contact du ressort. Au fil du temps :\n\n- Les surfaces de contact s'oxydent\n- La tension du ressort se relâche\n- Les vibrations provoquent un contact intermittent\n\n**Détection** : Mesurez la chute de tension aux bornes du porte-fusible (pas seulement du fusible) sous charge. Elle devrait être <50mV. Si >100mV, remplacez le porte-fusible.\n\n### Le processus de diagnostic\n\n1. **Test de charge** : Appliquez une charge lourde connue (>50% de la puissance nominale du système)\n2. **Analyse thermique** : Vérifiez chaque point de connexion avec un thermomètre IR\n3. **Cartographie de la chute de tension** : Mesurez la tension à la borne de la batterie, puis à chaque point de connexion jusqu'à la charge. Toute chute >20mV par connexion indique un problème.\n4. **Vérification du couple** : Resserrez chaque connexion boulonnée selon les spécifications\n5. **Inspection visuelle** : Recherchez une décoloration, une isolation fondue, une corrosion verte/blanche\n\n### Liste de contrôle de prévention\n\n- [ ] Toutes les connexions serrées au couple spécifié avec des rondelles Belleville\n- [ ] Cosses de câble serties hydrauliquement avec gaine thermorétractable\n- [ ] Câbles dimensionnés pour 125% du courant maximal prévu\n- [ ] Le BMS dispose d'une ventilation adéquate\n- [ ] Porte-fusibles adaptés au courant continu (pas seulement au calibre du fusible)\n- [ ] Inspection annuelle et programme de resserrage\n    ",
+      "category": "Ingénierie",
+      "author": "Équipe Technique",
+      "tags": [
+        "DIY",
+        "Dépannage",
+        "Conception de Système",
+        "Maintenance"
+      ]
+    },
+    "18": {
+      "title": "Données du moniteur de batterie Bluetooth : ce que vous pouvez croire et ce qui n'est qu'une estimation",
+      "excerpt": "Algorithmes de SoC, taux d'échantillonnage du courant, compensation de température — comprendre les limites réelles de précision de votre application de batterie.",
+      "content": "\n## Votre application de batterie n'est pas un instrument de laboratoire\n\nLes applications de surveillance de batterie connectées via Bluetooth affichent des données impressionnantes : tension à deux décimales, courant à l'ampère, SoC en pourcentage. Mais la précision derrière ces chiffres varie énormément.\n\n### Ce qui est précis : la tension\n\nLa mesure de la tension de la batterie est simple et fiable :\n\n- **Précision typique** : ±0,5–1 % (±0,05 V sur un système 12,8 V)\n- **Pourquoi c'est fiable** : Mesure ADC directe avec diviseur de tension\n- **Limitation** : La tension sous charge ≠ la tension au repos. Pour une estimation précise du SoC à partir de la tension, vous devez mesurer après 30 minutes ou plus de repos.\n\n### Ce qui est généralement précis : le courant\n\nLa mesure du courant via une résistance shunt est raisonnablement précise, mais avec des réserves :\n\n- **Précision typique** : ±1–2 % pour les courants de milieu de gamme\n- **À faibles courants** (<1 A) : La précision chute à ±5–10 % en raison des limites de résolution de l'ADC\n- **À très hauts courants** (>80 % de la valeur nominale du shunt) : L'échauffement du shunt modifie sa résistance, introduisant une erreur\n- **Le taux d'échantillonnage est important** : Un BMS échantillonnant à 1 Hz peut manquer de courts transitoires. Une surtension de 500 ms peut ne pas être capturée.\n\n### Ce qui est une estimation : l'état de charge (SoC)\n\nLe SoC est le chiffre que tout le monde surveille — et c'est la mesure la moins précise sur votre écran.\n\n**Méthode de comptage de Coulomb** (la plus courante) :\n- Intègre le courant au fil du temps : SoC = SoC initial + ∫(courant × dt)\n- **Problème de dérive** : De petites erreurs de mesure du courant s'accumulent. Une erreur de courant de 1 % devient une erreur de SoC de 5 % après 5 heures d'utilisation.\n- **Nécessite un étalonnage à pleine charge** : L'algorithme se réinitialise à 100 % lorsque la tension d'absorption est atteinte. Si vous ne chargez jamais complètement, la précision du SoC se dégrade au fil des semaines.\n\n**Méthode basée sur la tension** (unités BMS plus simples) :\n- Mappe la tension au SoC à l'aide d'une table de correspondance\n- **Problème** : Le LiFePO₄ a une courbe de tension très plate (12,8–13,2 V couvre 20–80 % de SoC)\n- Une erreur de mesure de 0,1 V se traduit par une erreur de SoC de 15–30 % dans la plage médiane\n\n**Méthode combinée (filtre de Kalman)** (BMS avancé) :\n- Fusionne les données de tension et de courant avec un modèle d'état\n- La plus précise, mais dépend des paramètres corrects du modèle de cellule\n- Toujours ±3–5 % dans des conditions réelles\n\n### Ce qui n'est pas fiable : les estimations de temps restant\n\n« Temps restant estimé : 4h 23m » — ceci est calculé en divisant la capacité restante par la charge actuelle. Problèmes :\n\n- Suppose une charge constante (irréaliste)\n- Basé sur un SoC potentiellement imprécis\n- Ne tient pas compte de la chute de tension à faible SoC déclenchant un arrêt précoce\n- Ne prend pas en compte les effets de la température sur la capacité disponible\n\n**Considérez le temps restant comme ±30 % au mieux.**\n\n### Ce qui manque : les données au niveau des cellules\n\nLa plupart des moniteurs Bluetooth affichent des données au **niveau du pack**. Mais les informations critiques se trouvent au niveau des cellules :\n\n- **Déséquilibre de tension des cellules** : Si une cellule dans un pack 4S est 50 mV plus basse, le pack atteindra la coupure basse tension plus tôt que le SoC ne le suggère\n- **Variance de température des cellules** : Une cellule chaude peut déclencher une protection alors que la température moyenne semble normale\n- **Impédance des cellules** : Une impédance croissante dans une cellule indique une dégradation\n\nSeuls les systèmes BMS avec rapport Bluetooth au niveau des cellules (comme ceux affichant les tensions individuelles des cellules) fournissent ces données.\n\n### Conseils pratiques\n\n| Point de données | Niveau de confiance | Utilisation |\n|-----------|-------------|---------|\n| Tension (au repos) | Élevé (±1 %) | Vérification approximative du SoC, état du système |\n| Tension (sous charge) | Moyen | Identification des problèmes de chute de tension |\n| Courant | Moyen-Élevé (±2 %) | Surveillance de la charge, taux de charge |\n| SoC (après une charge complète récente) | Moyen (±5 %) | Planification de voyage |\n| SoC (pas de charge complète depuis plus de 2 semaines) | Faible (±10–15 %) | Conscience générale uniquement |\n| Temps restant | Faible (±30 %) | Orientation approximative uniquement |\n| Température | Moyen-Élevé (±2 °C) | Décisions de sécurité |\n\n### Comment maximiser la précision\n\n1. **Chargez complètement une fois par semaine** : Cela recalibre le compteur de Coulomb\n2. **Définissez la capacité correcte de la batterie dans le moniteur** : Si votre moniteur pense que vous avez 200 Ah mais que vous avez 100 Ah, chaque lecture est fausse\n3. **Ne faites pas confiance au SoC en dessous de 20 %** : L'erreur se cumule aux extrêmes\n4. **Utilisez la tension comme vérification de bon sens** : Si le SoC indique 60 % mais que la tension est de 12,0 V sous une légère charge, le SoC est faux\n5. **Surveillez les tendances, pas les absolus** : Une augmentation progressive de l'écart de tension des cellules sur plusieurs semaines est plus informative que toute lecture unique\n    ",
+      "category": "Ingénierie",
+      "author": "Équipe Technique",
+      "tags": [
+        "Bluetooth",
+        "Surveillance",
+        "BMS",
+        "Conseils"
+      ]
+    }
+  },
+  "accessories": {
+    "SENT-CHG-14V6-20A-WP": {
+      "name": "Chargeur de batterie LiFePO₄ 20A",
+      "subtitle": "Charge rapide 14,6V, conception entièrement encapsulée et résistante à l'eau",
+      "description": "Le chargeur Sentorise 14,6V 20A LiFePO₄ est conçu pour les environnements exigeants où la fiabilité et la durabilité sont non négociables. Avec un boîtier entièrement encapsulé et résistant à l'eau, ainsi que des algorithmes de charge avancés, ce chargeur est conçu pour fonctionner dans les camping-cars, les bateaux, les systèmes hors réseau et les applications industrielles.",
+      "estimatedShipping": "Mars 2026",
+      "seoTitle": "Chargeur de batterie LiFePO₄ 20A – Charge rapide 14,6V | Sentorise",
+      "seoDescription": "Chargeur Sentorise LiFePO₄ 20A avec conception entièrement encapsulée et résistante à l'eau, fonction de réveil 0V et charge intelligente CC-CV pour camping-cars, applications marines et systèmes hors réseau.",
+      "compatibility": "Optimisé pour les batteries LiFePO₄ 12,8V. Prend également en charge les batteries plomb-acide 12V.",
+      "keyFeatures": [
+        "Puissance de sortie élevée : 280W / 20A pour une charge rapide des systèmes de batterie LiFePO₄ 12V",
+        "Fonction de réveil 0V : Récupère les batteries profondément déchargées à partir de 0V",
+        "Conception entièrement encapsulée : Protection résistante à l'eau, à l'humidité, à la poussière et aux vibrations",
+        "Large plage de fonctionnement : Tolérance de température ambiante de -20°C à 50°C",
+        "Connecteur Anderson : Connexion sécurisée à courant élevé avec protection contre l'inversion de polarité",
+        "Prise UE : Prise Schuko Type F pour les marchés européens",
+        "Charge intelligente : Algorithme CC-CV avec coupure automatique pour éviter la surcharge"
+      ],
+      "applications": [
+        "Systèmes de batterie auxiliaire pour camping-cars et fourgons aménagés",
+        "Alimentation auxiliaire marine et nautique",
+        "Installations solaires hors réseau + batteries",
+        "Systèmes d'alimentation industrielle et de secours"
+      ],
+      "packageContents": [
+        "Câble d'alimentation CA",
+        "Câble de sortie CC avec connecteur Anderson 50A et cosses annulaires",
+        "Manuel d'utilisation",
+        "Connecteurs de qualité professionnelle pour plusieurs scénarios de câblage"
+      ],
+      "warnings": [
+        "Ce chargeur est conçu spécifiquement pour la chimie LiFePO₄ (LFP). Ne pas utiliser avec des batteries lithium-ion (NMC/NCA) ou d'autres types de batteries non compatibles."
+      ],
+      "specifications": [
+        {
+          "label": "Modèle",
+          "value": "SENT-CHG-14V6-20A-WP"
+        },
+        {
+          "label": "Puissance nominale",
+          "value": "280W"
+        },
+        {
+          "label": "Tension d'entrée",
+          "value": "100–240V AC (monophasé)"
+        },
+        {
+          "label": "Fréquence d'entrée",
+          "value": "50/60Hz"
+        },
+        {
+          "label": "Courant d'entrée max.",
+          "value": "3.5A @115V AC / 2.0A @230V AC"
+        },
+        {
+          "label": "Facteur de puissance",
+          "value": "≥0.95 typique @230V AC"
+        },
+        {
+          "label": "Efficacité",
+          "value": "83% @230V AC, pleine charge"
+        },
+        {
+          "label": "Tension de sortie (CV)",
+          "value": "14.6V ± 0.2V"
+        },
+        {
+          "label": "Courant de sortie max.",
+          "value": "20A (plage 19–21A)"
+        },
+        {
+          "label": "Protection contre les surtensions",
+          "value": "Déclenchée à >17V"
+        },
+        {
+          "label": "Délai d'activation",
+          "value": "≤5 secondes"
+        },
+        {
+          "label": "Refroidissement",
+          "value": "Ventilateur interne haute efficacité"
+        },
+        {
+          "label": "Indicateur d'état",
+          "value": "LED d'état de charge"
+        },
+        {
+          "label": "Température de fonctionnement",
+          "value": "-20°C to 50°C"
+        },
+        {
+          "label": "Température de stockage",
+          "value": "-25°C to 85°C"
+        },
+        {
+          "label": "Dimensions",
+          "value": "176 × 124.5 × 59 mm (6.93 × 4.90 × 2.32 in)"
+        },
+        {
+          "label": "Emballage",
+          "value": "270 × 195 × 132 mm"
+        },
+        {
+          "label": "Câble d'entrée",
+          "value": "3 × 0.75mm², 1.2m"
+        },
+        {
+          "label": "Câble de sortie",
+          "value": "2 × 2.5mm², 1.1m"
+        },
+        {
+          "label": "Connecteur",
+          "value": "50A Anderson + cosses annulaires"
+        },
+        {
+          "label": "Type de prise",
+          "value": "Norme UE (Schuko)"
+        },
+        {
+          "label": "Poids",
+          "value": "1.45 kg (expédition : 1.9 kg)"
+        },
+        {
+          "label": "Certifications",
+          "value": "Conforme CE"
+        },
+        {
+          "label": "SKU",
+          "value": "SENT-CHG-14V6-20A-WP"
+        },
+        {
+          "label": "Code-barres",
+          "value": "6979061120085"
+        },
+        {
+          "label": "Code SH",
+          "value": "8504.40.9990"
+        },
+        {
+          "label": "Origine",
+          "value": "CN"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Charge rapide et puissante de 20A",
+          "content": "Conçu spécifiquement pour les batteries LiFePO₄ 12,8V, le SENT-CHG-14V6-20A-WP délivre une sortie stable de 14,6V jusqu'à 20A, permettant une charge rapide, efficace et fiable. Il peut charger complètement une batterie de 100Ah en environ 5 heures — jusqu'à 4 fois plus vite qu'un chargeur standard de 5A.",
+          "bullets": [
+            "Batterie 50Ah : ~2,5 heures",
+            "Batterie 100Ah : ~5 heures",
+            "Batterie 200Ah : ~10 heures"
+          ]
+        },
+        {
+          "title": "Réveil 0V et récupération de décharge profonde",
+          "content": "La fonction d'activation 0V intégrée aide à récupérer les batteries LiFePO₄ profondément déchargées qui sont tombées en dessous de leur tension de fonctionnement normale. Cette fonction favorise la récupération de la batterie, prolonge sa durée de vie globale et réduit le risque de remplacement prématuré de la batterie."
+        },
+        {
+          "title": "Sécurité avancée et protection de la batterie",
+          "content": "Conçu pour une utilisation à long terme et exigeante, le chargeur intègre une protection multicouche :",
+          "bullets": [
+            "Protection contre la surchauffe",
+            "Protection contre les courts-circuits",
+            "Protection contre l'inversion de polarité",
+            "Arrêt intelligent de sécurité et récupération automatique"
+          ]
+        },
+        {
+          "title": "Conception entièrement encapsulée et scellée, résistante à l'eau",
+          "content": "Le chargeur présente une structure interne entièrement encapsulée, avec des composants électroniques critiques encapsulés dans un composé d'enrobage et protégés par un boîtier robuste entièrement en aluminium. Cette construction améliore considérablement la résistance à l'humidité, à la poussière, aux vibrations et aux contraintes mécaniques.",
+          "bullets": [
+            "Conçu pour supporter la pluie, l'humidité et les éclaboussures lors d'une utilisation en extérieur",
+            "Non destiné à une immersion prolongée dans l'eau"
+          ]
+        },
+        {
+          "title": "Large plage de températures de fonctionnement",
+          "content": "Conçu pour fonctionner dans des environnements difficiles, le chargeur fonctionne de manière fiable sur une large plage de températures allant de -20°C à 50°C (-4°F à 122°F)."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Puis-je utiliser ce chargeur avec des batteries plomb-acide ?",
+          "answer": "Le chargeur prend également en charge les batteries plomb-acide 12V, bien qu'il soit principalement optimisé pour la chimie LiFePO₄ 12,8V."
+        },
+        {
+          "question": "Est-il sûr de laisser le chargeur connecté toute la nuit ?",
+          "answer": "Oui. L'algorithme CC-CV inclut une coupure automatique pour éviter la surcharge, ainsi que des protections de sécurité multicouches."
+        },
+        {
+          "question": "Que signifie la fonction de réveil 0V ?",
+          "answer": "Si une batterie LiFePO₄ a été profondément déchargée en dessous de sa tension de fonctionnement normale, la fonction d'activation 0V peut la récupérer en douceur, évitant potentiellement le remplacement de la batterie."
+        }
+      ]
+    },
+    "SENT-METER-500A-BT-WP": {
+      "name": "Moniteur de batterie TR24 IP68",
+      "subtitle": "Shunt M8 500A | 8–100V | Bluetooth | Compteur Coulomb de haute précision",
+      "description": "Solution de surveillance de batterie à courant élevé 500A avec shunt de type boulon M8, adaptée aux camping-cars, aux applications marines, au stockage d'énergie et aux systèmes d'alimentation industriels.",
+      "estimatedShipping": "Mars 2025",
+      "seoTitle": "Moniteur de batterie TR24 500A | Shunt M8 | IP68 | 8–100V | Sentorise",
+      "seoDescription": "Moniteur de batterie TR24 500A avec shunt M8, étanche IP68, large plage de tension 8–100V. Convient aux camping-cars, aux applications marines, au stockage d'énergie et aux systèmes de batterie industriels.",
+      "compatibility": "Compatible avec tous les systèmes de batterie 8–100V, y compris LiFePO₄, plomb-acide et autres chimies.",
+      "keyFeatures": [
+        "Mesure de courant élevé 500A : Couvre les scénarios de puissance élevée",
+        "Shunt de type boulon M8 : Prend en charge les câbles plus épais, contact stable, génération de chaleur réduite",
+        "Large plage de tension 8–100V : Compatible avec divers systèmes lithium et plomb-acide",
+        "Affichage multi-paramètres en temps réel : Tension / Courant / Puissance / Capacité (Ah) / SOC / Temps restant",
+        "Indice de protection IP68 : Convient aux environnements extérieurs, humides et difficiles",
+        "Communication Bluetooth : Lecture des données et configuration des paramètres de base via l'application"
+      ],
+      "applications": [
+        "Systèmes de batterie pour camping-cars / autocaravanes",
+        "Systèmes électriques marins / bateaux",
+        "Systèmes de stockage d'énergie (ESS)",
+        "Équipements industriels et alimentation de secours",
+        "Packs de batteries lithium haute puissance"
+      ],
+      "packageContents": [
+        "Moniteur de batterie TR24 × 1",
+        "Shunt 500A (bornes M8) × 1",
+        "Faisceau de câblage et matériel de montage × 1 jeu",
+        "Manuel d'utilisation × 1"
+      ],
+      "warnings": [
+        "Le shunt doit être installé dans le circuit négatif de la batterie. Tout le courant de charge et de décharge doit passer par le shunt.",
+        "Définissez la capacité correcte de la batterie (Ah) lors de la première utilisation, sinon les lectures de SOC seront inexactes.",
+        "Ne pas prolonger le câble blindé entre le shunt et l'unité d'affichage.",
+        "Pour les systèmes à courant élevé, utilisez des câbles de taille appropriée avec des connexions serties sécurisées."
+      ],
+      "specifications": [
+        {
+          "label": "Tension de fonctionnement",
+          "value": "8–100V"
+        },
+        {
+          "label": "Courant de mesure max.",
+          "value": "500A"
+        },
+        {
+          "label": "Borne de shunt",
+          "value": "M8"
+        },
+        {
+          "label": "Précision de mesure",
+          "value": "±1%"
+        },
+        {
+          "label": "Plage de capacité",
+          "value": "0.1–9999Ah"
+        },
+        {
+          "label": "Indice de protection",
+          "value": "IP68"
+        },
+        {
+          "label": "Température de fonctionnement",
+          "value": "-10°C to 60°C"
+        },
+        {
+          "label": "Taille du panneau",
+          "value": "72.5 × 72.5 mm (2.85 × 2.85 in)"
+        },
+        {
+          "label": "Profondeur du panneau",
+          "value": "20.75 mm (0.82 in)"
+        },
+        {
+          "label": "Découpe de montage",
+          "value": "Ø67 ±0.3 mm"
+        },
+        {
+          "label": "SKU",
+          "value": "SENT-METER-500A-BT-WP"
+        },
+        {
+          "label": "Code-barres",
+          "value": "6979061120078"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Surveillance précise de la batterie",
+          "content": "Le TR24 fournit une surveillance en temps réel de tous les paramètres critiques de la batterie, y compris la tension, le courant, la puissance, la capacité (Ah), l'état de charge (SOC) et le temps d'utilisation restant estimé. Le comptage Coulomb de haute précision assure un suivi précis au fil du temps."
+        },
+        {
+          "title": "Conception de shunt M8 500A",
+          "content": "La borne de shunt de type boulon M8 prend en charge des connexions de câbles plus épaisses, offrant un contact plus stable avec une génération de chaleur réduite par rapport aux conceptions de bornes plus petites. Cela le rend idéal pour les applications à courant élevé dans les camping-cars, les applications marines et industrielles."
+        },
+        {
+          "title": "Construction étanche IP68",
+          "content": "Avec une protection IP68, le TR24 est conçu pour résister aux environnements extérieurs, humides et difficiles. La conception scellée empêche l'infiltration d'humidité et de poussière, assurant un fonctionnement fiable à long terme."
+        },
+        {
+          "title": "Connectivité Bluetooth",
+          "content": "Connectez-vous via Bluetooth pour lire les données en temps réel et configurer les paramètres de base via une application mobile compagnon. Surveillez votre système de batterie à distance sans avoir besoin d'accéder physiquement au panneau d'affichage."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Pour quel type de système le shunt 500A est-il adapté ?",
+          "answer": "Il convient aux systèmes à courant élevé et à forte puissance que l'on trouve couramment dans les circuits d'onduleurs de camping-cars, les systèmes électriques marins et les applications de stockage d'énergie."
+        },
+        {
+          "question": "Le shunt peut-il être installé uniquement sur la borne positive ?",
+          "answer": "Non. Le shunt doit être installé dans le circuit négatif. Une installation côté positif entraînera des lectures inexactes."
+        },
+        {
+          "question": "Quelle est la différence entre les bornes M8 et M10 ?",
+          "answer": "Le M8 est plus courant pour les systèmes de moins de 500A, offrant un bon équilibre entre la commodité d'installation et la fiabilité. Le choix doit être basé sur la taille du câble et les exigences de courant du circuit."
+        }
+      ]
+    },
+    "SENT-CBL-SB50-SET": {
+      "name": "Jeu de câbles Anderson SB50",
+      "subtitle": "50A | 8 AWG | Paire rouge et noire | Cosses à œillet",
+      "description": "Jeu de câbles Anderson SB50 de qualité professionnelle pour connecter les batteries LiFePO₄ aux chargeurs, onduleurs et autres équipements. Comprend un fil de silicone robuste de 8 AWG avec des cosses à œillet pré-serties pour des connexions sécurisées à la batterie.",
+      "estimatedShipping": "Mars 2026",
+      "seoTitle": "Jeu de câbles Anderson SB50 – Câbles de batterie 50A 8AWG | Sentorise",
+      "seoDescription": "Jeu de câbles Anderson SB50 avec fil de silicone 8 AWG et cosses à œillet M8. Câbles de batterie à connexion rapide pour chargeurs LiFePO₄, onduleurs et systèmes solaires.",
+      "compatibility": "Compatible avec toutes les batteries Sentorise et la plupart des systèmes LiFePO₄ 12V avec bornes M8.",
+      "keyFeatures": [
+        "Courant nominal de 50A : Convient aux chargeurs, onduleurs et régulateurs solaires",
+        "Fil de silicone 8 AWG : Flexible, résistant à la chaleur et durable",
+        "Cosses à œillet pré-serties : Cosses à œillet M8 pour une connexion directe à la batterie",
+        "Code couleur : Rouge (positif) et noir (négatif) pour une installation sûre",
+        "Connecteur Anderson SB50 : Connexion/déconnexion rapide standard de l'industrie"
+      ],
+      "applications": [
+        "Connexions batterie-chargeur",
+        "Câblage batterie-onduleur",
+        "Connexions de régulateur de charge solaire",
+        "Câblage de banc de batteries en parallèle"
+      ],
+      "packageContents": [
+        "Câble Anderson SB50 rouge avec cosse à œillet M8 × 1",
+        "Câble Anderson SB50 noir avec cosse à œillet M8 × 1"
+      ],
+      "specifications": [
+        {
+          "label": "Type de connecteur",
+          "value": "Anderson SB50"
+        },
+        {
+          "label": "Courant nominal",
+          "value": "50A continu"
+        },
+        {
+          "label": "Calibre du fil",
+          "value": "8 AWG (8.4mm²)"
+        },
+        {
+          "label": "Type de fil",
+          "value": "Isolation silicone"
+        },
+        {
+          "label": "Type de borne",
+          "value": "Cosse à œillet M8"
+        },
+        {
+          "label": "Longueur du câble",
+          "value": "1.0m par câble"
+        },
+        {
+          "label": "Tension nominale",
+          "value": "600V"
+        },
+        {
+          "label": "Plage de température",
+          "value": "-40°C à 200°C"
+        },
+        {
+          "label": "SKU",
+          "value": "SENT-CBL-SB50-SET"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Connexions rapides et sécurisées",
+          "content": "Le connecteur Anderson SB50 offre un système de connexion rapide fiable et non genré qui empêche l'inversion accidentelle de polarité. Il suffit de le brancher pour connecter votre batterie aux chargeurs, onduleurs ou régulateurs de charge solaire."
+        },
+        {
+          "title": "Construction robuste",
+          "content": "Fabriqué avec un fil isolé en silicone de 8 AWG qui reste flexible même par temps froid. Les cosses à œillet M8 pré-serties assurent une connexion sécurisée et à faible résistance aux bornes de votre batterie."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Puis-je utiliser ce jeu de câbles avec n'importe quelle batterie LiFePO₄ ?",
+          "answer": "Oui, les cosses à œillet M8 sont compatibles avec toutes les batteries Sentorise et la plupart des autres batteries LiFePO₄ avec bornes M8."
+        },
+        {
+          "question": "Le 8 AWG est-il suffisant pour une batterie de 100Ah ?",
+          "answer": "Oui. Le 8 AWG supporte jusqu'à 50A en continu, ce qui convient à la plupart des chargeurs et des connexions d'onduleurs de puissance modérée. Pour les configurations d'onduleurs à courant élevé (>50A), utilisez des câbles de plus gros calibre."
+        }
+      ]
+    },
+    "SENT-FUSE-ANL-300A": {
+      "name": "Porte-fusible ANL + fusible 300A",
+      "subtitle": "Protection en ligne | Goujons M8 | Couvercle transparent | IP54",
+      "description": "Porte-fusible ANL de qualité industrielle avec fusible 300A inclus pour protéger votre système de batterie LiFePO₄. Comprend un couvercle de protection transparent pour une inspection visuelle du fusible et des bornes à goujon M8 pour des connexions sécurisées à courant élevé.",
+      "estimatedShipping": "Mars 2026",
+      "seoTitle": "Porte-fusible ANL + fusible 300A – Protection de circuit de batterie | Sentorise",
+      "seoDescription": "Porte-fusible ANL avec fusible 300A pour systèmes de batterie LiFePO₄. Indice IP54, couvercle transparent, bornes à goujon M8 pour la protection des véhicules récréatifs, marins et hors réseau.",
+      "compatibility": "Compatible avec tous les systèmes de batterie DC 12V–32V. Recommandé pour les configurations de batterie de 100Ah et plus.",
+      "keyFeatures": [
+        "Fusible ANL 300A inclus : Pré-installé pour une utilisation immédiate",
+        "Couvercle transparent : Inspection visuelle sans démontage",
+        "Bornes à goujon M8 : Connexions boulonnées sécurisées à courant élevé",
+        "Boîtier classé IP54 : Protection contre la poussière et les éclaboussures",
+        "Conception en ligne compacte : Installation facile dans les circuits de batterie"
+      ],
+      "applications": [
+        "Fusible principal batterie-onduleur",
+        "Protection de banc de batteries",
+        "Protection de circuit DC à courant élevé",
+        "Systèmes électriques pour véhicules récréatifs et marins"
+      ],
+      "packageContents": [
+        "Porte-fusible ANL avec couvercle × 1",
+        "Fusible ANL 300A (pré-installé) × 1",
+        "Kit de montage M8 × 1"
+      ],
+      "specifications": [
+        {
+          "label": "Type de fusible",
+          "value": "ANL (à boulonner)"
+        },
+        {
+          "label": "Courant nominal du fusible",
+          "value": "300A"
+        },
+        {
+          "label": "Tension nominale",
+          "value": "32V DC"
+        },
+        {
+          "label": "Type de borne",
+          "value": "Goujon M8"
+        },
+        {
+          "label": "Indice de protection",
+          "value": "IP54"
+        },
+        {
+          "label": "Matériau du boîtier",
+          "value": "ABS à fort impact"
+        },
+        {
+          "label": "Couvercle",
+          "value": "Polycarbonate transparent"
+        },
+        {
+          "label": "Gamme de fils",
+          "value": "Jusqu'à 2/0 AWG (70mm²)"
+        },
+        {
+          "label": "SKU",
+          "value": "SENT-FUSE-ANL-300A"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Protection de circuit essentielle",
+          "content": "Un fusible ANL est un composant de sécurité essentiel dans tout système de batterie. Il protège votre câblage et votre équipement contre les surintensités et les courts-circuits en coupant le circuit en toute sécurité avant que des dommages ne surviennent."
+        },
+        {
+          "title": "Inspection visuelle facile",
+          "content": "Le couvercle transparent en polycarbonate vous permet de vérifier visuellement l'état du fusible sans retirer le couvercle ni déconnecter le câblage. Un fusible grillé est immédiatement visible."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Où dois-je installer le fusible ANL ?",
+          "answer": "Installez le fusible sur le câble positif, aussi près que possible de la borne positive de la batterie. Cela protège l'ensemble du circuit en aval."
+        },
+        {
+          "question": "Comment choisir le bon calibre de fusible ?",
+          "answer": "Le fusible doit être calibré légèrement au-dessus de votre courant maximal attendu, mais en dessous de l'ampacité de votre câble. 300A convient à la plupart des systèmes de batterie de 200Ah avec de grands onduleurs."
+        }
+      ]
+    },
+    "SENT-TERM-KIT-M8": {
+      "name": "Kit de Cosses de Batterie",
+      "subtitle": "Cosses en Cuivre M8 | Gaine Thermorétractable | Quincaillerie Inoxydable | 6 Paires",
+      "description": "Kit complet de connexion de bornes de batterie avec cosses en cuivre étamé, gaine thermorétractable adhésive et quincaillerie en acier inoxydable. Tout le nécessaire pour des connexions de batterie professionnelles et résistantes à la corrosion.",
+      "estimatedShipping": "Mars 2026",
+      "seoTitle": "Kit de Cosses de Batterie – Cosses en Cuivre M8 & Quincaillerie | Sentorise",
+      "seoDescription": "Kit complet de cosses de batterie M8 avec cosses en cuivre étamé, gaine thermorétractable adhésive et quincaillerie en acier inoxydable pour les installations de batteries LiFePO₄.",
+      "compatibility": "Compatible avec toutes les bornes de batterie M8, y compris toutes les batteries Sentorise.",
+      "keyFeatures": [
+        "Cosses en Cuivre Étamé : Cosses à œil M8 résistantes à la corrosion, de plusieurs calibres",
+        "Gaine Thermorétractable Adhésive : Joint étanche avec doublure adhésive intégrée",
+        "Quincaillerie en Acier Inoxydable : Boulons, écrous et rondelles ressort M8 inclus",
+        "Prise en Charge Multi-Calibres : Cosses pour câbles de 6, 8, 10 et 12 AWG",
+        "6 Paires Incluses : Suffisant pour une configuration complète du système de batterie"
+      ],
+      "applications": [
+        "Connexions de bornes de batterie",
+        "Câblage d'onduleurs et de chargeurs",
+        "Connexions de barres omnibus",
+        "Câblage de régulateurs de charge solaire"
+      ],
+      "packageContents": [
+        "Cosses à œil en cuivre étamé (calibres assortis) × 12",
+        "Gaine thermorétractable adhésive (rouge et noire) × 12",
+        "Boulons en acier inoxydable M8 × 16mm × 6",
+        "Écrous nylstop en acier inoxydable M8 × 6",
+        "Rondelles ressort en acier inoxydable M8 × 6"
+      ],
+      "specifications": [
+        {
+          "label": "Type de Cosse",
+          "value": "Cosse à œil en cuivre étamé"
+        },
+        {
+          "label": "Taille du Goujon",
+          "value": "M8 (5/16\")"
+        },
+        {
+          "label": "Calibres de Fil",
+          "value": "6, 8, 10, 12 AWG"
+        },
+        {
+          "label": "Quantité de Cosses",
+          "value": "12 pièces (6 paires)"
+        },
+        {
+          "label": "Gaine Thermorétractable",
+          "value": "Doublée d'adhésif, rapport 3:1"
+        },
+        {
+          "label": "Quincaillerie",
+          "value": "Boulons, écrous, rondelles en acier inoxydable M8 × 16mm"
+        },
+        {
+          "label": "Matériau",
+          "value": "Cuivre étamé / SS304"
+        },
+        {
+          "label": "SKU",
+          "value": "SENT-TERM-KIT-M8"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Connexions de Qualité Professionnelle",
+          "content": "Les cosses en cuivre étamé offrent une excellente conductivité tout en résistant à la corrosion dans les environnements humides et marins. La gaine thermorétractable doublée d'adhésif crée un joint étanche autour de chaque connexion."
+        },
+        {
+          "title": "Kit Complet",
+          "content": "Tout ce dont vous avez besoin dans un seul emballage : cosses à œil de plusieurs calibres, gaine thermorétractable codée par couleur et fixations en acier inoxydable. Plus besoin de se rendre dans une quincaillerie séparément."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Ai-je besoin d'un outil de sertissage ?",
+          "answer": "Oui, une pince à sertir hydraulique ou à cliquet est recommandée pour un sertissage correct. Une simple pince ne créera pas une connexion fiable."
+        },
+        {
+          "question": "Ces cosses sont-elles compatibles avec les batteries Sentorise ?",
+          "answer": "Oui. Toutes les batteries Sentorise utilisent des bornes M8, et ces cosses sont conçues pour s'adapter parfaitement."
+        }
+      ]
+    }
+  }
+}
