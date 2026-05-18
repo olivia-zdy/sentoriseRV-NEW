@@ -10,10 +10,10 @@ const AnnouncementBar = () => {
         <div className="flex items-center gap-3">
           <Truck className="w-4 h-4" />
           <span className="hidden sm:inline font-medium">
-            {t('announcement.shipping', { defaultValue: 'EU-wide shipping from our Berlin warehouse · 2–5 working days' })}
+            {t('announcement.shipping')}
           </span>
           <span className="sm:hidden font-medium">
-            {t('announcement.shippingShort', { defaultValue: 'EU-wide shipping · 2–5 days' })}
+            {t('announcement.shippingShort')}
           </span>
           <span className="hidden md:inline ml-4 font-semibold">Stay Powered. Stay Free.</span>
         </div>

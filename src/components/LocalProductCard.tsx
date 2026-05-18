@@ -137,7 +137,7 @@ const LocalProductCard = ({ product }: LocalProductCardProps) => {
           <div className="flex items-center gap-2">
             <span>{t('products.warranty')}</span>
             <span>•</span>
-            <span>{t('products.freeShipping')}</span>
+            <span>{t('products.euShipping')}</span>
           </div>
           <Link
             to="/warranty"

@@ -5,7 +5,7 @@ const ServicePromises = () => {
   const { t } = useTranslation();
 
   const promises = [
-    { icon: Truck, titleKey: "servicePromises.freeShipping", descKey: "servicePromises.freeShippingDesc" },
+    { icon: Truck, titleKey: "servicePromises.euShipping", descKey: "servicePromises.euShippingDesc" },
     { icon: RotateCcw, titleKey: "servicePromises.returns", descKey: "servicePromises.returnsDesc" },
     { icon: Shield, titleKey: "servicePromises.warranty", descKey: "servicePromises.warrantyDesc" },
     { icon: Zap, titleKey: "servicePromises.fastDelivery", descKey: "servicePromises.fastDeliveryDesc" },
