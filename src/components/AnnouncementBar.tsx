@@ -1,13 +1,8 @@
 import { Truck } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { useMarket } from "@/context/MarketContext";
 
 const AnnouncementBar = () => {
   const { t } = useTranslation();
-  const { formatPrice } = useMarket();
-
-  const freeShippingThreshold = 199; // EUR base
-  const formattedThreshold = formatPrice(freeShippingThreshold);
 
   return (
     <div className="bg-primary text-primary-foreground py-2.5">
@@ -15,10 +10,10 @@ const AnnouncementBar = () => {
         <div className="flex items-center gap-3">
           <Truck className="w-4 h-4" />
           <span className="hidden sm:inline font-medium">
-            {t('announcement.freeShipping', { threshold: formattedThreshold, defaultValue: `Free shipping on orders over ${formattedThreshold}` })}
+            {t('announcement.shipping', { defaultValue: 'EU-wide shipping from our Berlin warehouse · 2–5 working days' })}
           </span>
           <span className="sm:hidden font-medium">
-            {t('announcement.freeShippingShort', { threshold: formattedThreshold, defaultValue: `Free shipping ${formattedThreshold}+` })}
+            {t('announcement.shippingShort', { defaultValue: 'EU-wide shipping · 2–5 days' })}
           </span>
           <span className="hidden md:inline ml-4 font-semibold">Stay Powered. Stay Free.</span>
         </div>

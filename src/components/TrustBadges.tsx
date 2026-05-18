@@ -9,8 +9,8 @@ const badges = [
   },
   {
     icon: Truck,
-    label: "Free Shipping €199+",
-    sublabel: "Orders over €199",
+    label: "EU-Wide Shipping",
+    sublabel: "2–5 working days",
   },
   {
     icon: RefreshCw,

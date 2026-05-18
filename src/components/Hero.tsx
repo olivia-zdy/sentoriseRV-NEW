@@ -17,7 +17,7 @@ const sceneAlts = ["RV & Motorhome", "Off-Grid Solar", "Van Life", "Marine"];
 
 const sceneTrustPointKeys: Record<string, string[]> = {
   rv: ['warranty', 'bluetooth', 'euStock'],
-  solar: ['warranty', 'lowTemp', 'freeShipping'],
+  solar: ['warranty', 'lowTemp', 'euStock'],
   vanlife: ['warranty', 'lightweight', 'easyInstall'],
   marine: ['warranty', 'bms', 'ce'],
 };
