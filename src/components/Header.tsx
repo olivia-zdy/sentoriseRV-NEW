@@ -8,6 +8,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import { MarketSelector } from "./MarketSelector";
 import { Button } from "@/components/ui/button";
 import { CartDrawer } from "./CartDrawer";
+import { MobileMenuCartEntry } from "./MobileMenuCartEntry";
 import {
   Collapsible,
   CollapsibleContent,
