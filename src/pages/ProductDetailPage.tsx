@@ -215,9 +215,13 @@ const ProductDetailPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <PageMeta 
-        title={t(`productNames.${product.id}.name`, { defaultValue: product.name })} 
-        description={`${t(`productNames.${product.id}.name`, { defaultValue: product.name })} - ${judgmentSentence} ${product.voltage} ${product.capacity} LiFePO4 battery with 5-year warranty.`}
+      <PageMeta
+        title={t(`productNames.${product.id}.name`, { defaultValue: product.name })}
+        description={t('seo.product.descriptionTemplate', {
+          name: t(`productNames.${product.id}.name`, { defaultValue: product.name }),
+          voltage: product.voltage,
+          capacity: product.capacity,
+        })}
         canonical={`/product/${product.id}`}
         ogType="product"
       />
