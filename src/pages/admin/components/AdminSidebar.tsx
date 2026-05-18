@@ -6,7 +6,8 @@ import {
   Palette, 
   LogOut,
   Bell,
-  Settings
+  Settings,
+  Warehouse,
 } from 'lucide-react';
 import { useAdminAuth } from '@/hooks/useAdminAuth';
 import { useToast } from '@/hooks/use-toast';
@@ -44,6 +45,7 @@ const menuItems = [
   { title: 'Leads', url: '/admin/leads', icon: Users },
   { title: 'Feedback', url: '/admin/feedback', icon: MessageSquare },
   { title: 'Brand Assets', url: '/admin/assets', icon: Palette },
+  { title: 'Warehouses', url: '/admin/warehouses', icon: Warehouse },
 ];
 
 export function AdminSidebar({ teamMember, roles }: AdminSidebarProps) {

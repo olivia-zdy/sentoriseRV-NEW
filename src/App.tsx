@@ -42,6 +42,7 @@ const LeadFollowUp = lazy(() => import("./pages/admin/LeadFollowUp"));
 const FeedbackHub = lazy(() => import("./pages/admin/FeedbackHub"));
 const BrandAssets = lazy(() => import("./pages/admin/BrandAssets"));
 const AdminSettings = lazy(() => import("./pages/admin/AdminSettings"));
+const WarehousesAdmin = lazy(() => import("./pages/admin/WarehousesAdmin"));
 
 const queryClient = new QueryClient();
 
@@ -89,6 +90,7 @@ const App = () => (
                     <Route path="/admin/feedback" element={<FeedbackHub />} />
                     <Route path="/admin/assets" element={<BrandAssets />} />
                     <Route path="/admin/settings" element={<AdminSettings />} />
+                    <Route path="/admin/warehouses" element={<WarehousesAdmin />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </Suspense>
