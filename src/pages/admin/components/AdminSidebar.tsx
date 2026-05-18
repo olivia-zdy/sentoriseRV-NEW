@@ -45,6 +45,7 @@ const menuItems = [
   { title: 'Leads', url: '/admin/leads', icon: Users },
   { title: 'Feedback', url: '/admin/feedback', icon: MessageSquare },
   { title: 'Brand Assets', url: '/admin/assets', icon: Palette },
+  { title: 'Warehouses', url: '/admin/warehouses', icon: Warehouse },
 ];
 
 export function AdminSidebar({ teamMember, roles }: AdminSidebarProps) {
