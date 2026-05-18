@@ -1,55 +1,76 @@
-# 全站本地化（DE / FR / ZH）
+# 运费文案统一与本地化收尾
 
-目标：让 Sentorise 网站在德语、法语、中文三个语言下完整可读，包括 UI、静态文案、产品描述、客户故事、博客文章、条款隐私等长内容。EN 保持为源语言。
+针对上一轮"移除免运费"后的残留问题做一次系统性收尾：补齐缺失的 i18n 键，删除所有免运费遗留逻辑，统一"欧盟全境配送 · 2–5 个工作日"的承诺文案，并在购物车与结账提示中显示运费计算说明。
 
-## 现状
+## 现状审计
 
-- i18n 基础设施已就绪：`react-i18next`，4 个 locale 文件（en/de/fr/zh，各 ~578 行）。
-- 但仍有大量硬编码英文，分布在：
-  - **30+ 组件**（BatterySelector、Testimonials、ContactForm、SystemDiagram、ProductUseCases 等）
-  - **20+ 页面**（BluetoothGuide、Certifications、Compare、WhySentorise、ProductDetail 等）
-  - **静态数据**（`src/data/products.ts`、`src/data/stories.ts`、`src/data/blogPosts.ts`、配件、认证清单）
-  - **法务页**（Terms、Privacy、Imprint、Returns、Warranty 条款）
+扫描发现的问题：
+
+1. **i18n 键名陈旧** — `products.freeShipping`、`servicePromises.freeShipping/freeShippingDesc`、`trust.freeShipping`、`hero.trustPoints.freeShipping` 仍叫"freeShipping"，但译文已是"欧盟配送"。键名误导。
+2. **`AnnouncementBar` / `CartDrawer.shippingNotice`** 用了 `defaultValue` 英文回退 — 一旦四个 locale 没有真实键，非英语用户会看到英文回退。
+3. **`TermsPage.tsx` § 4 Shipping and Delivery + Return Shipping + Refund Timeline** 整段硬编码英文，未接入 i18n；且 § Return Shipping 仍提到 "Amazon purchases" 与之前的直销转型矛盾。
+4. **`Index.tsx` 副标题** "All products in stock with fast EU shipping. Add to cart and checkout securely." 硬编码英文。
+5. **`AccessoriesPage.tsx`** "Est. shipping:" 标签硬编码。
+6. **`ShopifyProductDetailPage.tsx` L346** "EU-Wide Shipping" 硬编码（应走 i18n）。
+7. **`AccessoryDetailPage.tsx` L134 / L176** "Pre-order · Est. {date}"、"EU-Wide Shipping" 硬编码。
+8. **`CartDrawer.tsx` 底部** "Shopping Cart / Your cart is empty / Proceed to Checkout / SSL Encrypted / 30-Day Returns / 5-Year Warranty / Secure checkout powered by Shopify" 全部硬编码英文。
+9. **`PrivacyPage.tsx`** "Billing and shipping addresses"、"shipping updates"、"shipping carriers" 硬编码（保留，超出本轮范围，可后续整体本地化时处理）。
+10. **`llms.txt`** 内容仅供搜索/LLM 抓取，正确保持英文；当前已是 "shipping fees are calculated at checkout"，无需改动。
+11. **无残留进度条逻辑** — `CartDrawer` 中 `FREE_SHIPPING_THRESHOLD_EUR` / `qualified` / `progress` 已删除，本轮验证确认。
 
 ## 执行方案
 
-分三阶段，全部使用 Lovable AI Gateway（google/gemini-2.5-flash）作为翻译引擎，按术语表统一专业用词（LiFePO₄、BMS、循环寿命、低温保护等）。
+### 1. 重命名 i18n 键，移除"free"前缀
 
-### Phase 1 — UI 字符串抽取与翻译
-1. 扫描 `src/components/` 与 `src/pages/` 下所有硬编码英文 JSX 文本
-2. 按组件/页面分命名空间扩展 `en.json`（如 `batterySelector.*`、`bluetoothGuide.*`、`certifications.*`）
-3. 用 `useTranslation` 替换硬编码文本
-4. 用脚本调用 Lovable AI 把新增 EN keys 批量翻译到 DE / FR / ZH，写入对应 locale 文件
-5. 术语表硬约束（如 "LiFePO₄" 保持原样、"BMS" 中文保留、"5-Year Warranty" → "5 年质保 / 5 Jahre Garantie / Garantie 5 ans"）
+在四个 locale 文件中将 `freeShipping` → `euShipping`、`freeShippingDesc` → `euShippingDesc`，更新引用：
 
-### Phase 2 — 结构化数据本地化
-针对 `products.ts`、`stories.ts`、`blogPosts.ts`、`accessories.ts`、`certifications.ts`：
+- `src/components/ServicePromises.tsx`
+- `src/components/ShopifyProductCard.tsx`
+- `src/components/LocalProductCard.tsx`
+- `src/components/Hero.tsx`（`sceneTrustPointKeys.solar` 中的 `freeShipping`）
 
-1. 将文本字段（title、description、features、specs labels、story body 等）改为 `{ en, de, fr, zh }` 多语言对象
-2. 添加 `useLocalized()` 工具函数，根据当前 i18n 语言返回对应字符串
-3. 用脚本把现有 EN 内容批量翻译填充其它三种语言
+### 2. 落地 announcement / cart 提示键
 
-### Phase 3 — 长文本与法务页
-1. Terms / Privacy / Imprint / Returns / Warranty 等长内容拆为按语言加载的 markdown 文件：`src/content/legal/{lang}/terms.md`
-2. Blog 文章 body 同样转为 `src/content/blog/{lang}/{slug}.md`
-3. PageMeta（title / description）按语言切换
+在 en/de/fr/zh 四个 locale 中显式新增：
+
+- `announcement.shipping` / `announcement.shippingShort`
+- `cart.shippingNotice`
+- `cart.title` / `cart.empty` / `cart.checkout` / `cart.trust.ssl` / `cart.trust.returns` / `cart.trust.warranty` / `cart.poweredBy`
+
+去掉所有 `defaultValue` 英文回退。
+
+### 3. 重写购物车抽屉文案
+全部接入 i18n，并在 checkout 按钮上方新增一行小字提示："运费与税费将在结账时计算 · 欧盟 2–5 个工作日送达"。
+
+### 4. 重写条款页 §4 Shipping & Delivery + Returns
+- 整段抽到 i18n 命名空间 `terms.*`
+- 移除"Amazon purchases"行（与直销策略一致）
+- 在四个 locale 给出完整翻译，覆盖运输政策、退货运费规则、退款时效
+- 检查 `TermsPage.tsx` 其它仍硬编码的段落（保修、责任限制等），如本轮时间允许一并接入
+
+### 5. 修复其它硬编码点
+- `Index.tsx` 副标题 → `home.shopGridSubtitle`（4 语言译文）
+- `AccessoriesPage.tsx` "Est. shipping:" → `accessories.estShipping`
+- `ShopifyProductDetailPage.tsx` / `AccessoryDetailPage.tsx` 的 "EU-Wide Shipping" → 复用 `products.euShipping`
+- `AccessoryDetailPage.tsx` 预购日期行 → `products.preOrderEst`
+
+### 6. 校验
+- 全文搜索 `free.?ship|freeShip|kostenlos.*versand|gratuit|免运|包邮` 确认零残留
+- 切到 DE / FR / ZH 三种语言肉眼检查公告栏、信任徽章、产品卡、购物车抽屉、条款页 §4
 
 ## 技术细节
 
-- **翻译脚本**：`scripts/translate.ts`，使用项目内已有 Lovable AI 网关密钥（无需用户提供 key），分批 50 keys/请求，温度 0.2，附术语表 system prompt
-- **质量保障**：保留 EN 原文为 fallback，缺失 key 时 i18next 自动回退；保留所有 ICU 占位符（`{{count}}`、`{threshold}`）
-- **SEO**：`PageMeta` 组件读取 i18n title/description，避免在 `<head>` 中硬编码英文
-- **CN 市场**：上一轮已添加，本次将其中文文案补全
-- **不翻译**：品牌名 Sentorise、产品系列名 Lite/Core/Plus、技术缩写 BMS/LiFePO₄/CE/RoHS/UN38.3、电邮地址、公司注册号、URL
+- 所有翻译手工撰写（专业术语：LiFePO₄ 保留原文、"working days" → "Werktage / jours ouvrés / 个工作日"、"checkout" → "Kasse / paiement / 结账"）
+- 不引入额外依赖，沿用现有 `react-i18next` + `useTranslation`
+- `TermsPage` 维持单页结构，长段落用 i18n key 数组渲染列表项
+- 不动业务逻辑：购物车状态、Shopify 结账 URL、库存判断保持原样
+- llms.txt 是给爬虫的，保持英文不本地化
 
-## 工作量与产出
+## 影响范围
 
-- 预计修改 60-90 个文件，新增 4 个 markdown 内容目录 + 1 个翻译脚本
-- 建议分多个回合执行（每回合一个阶段），避免单次 diff 过大难以审阅
-- 本次回合执行 **Phase 1**，完成后请审阅再继续 Phase 2/3
+修改约 12-14 个文件：4 个 locale json + 7 个组件/页面 tsx + 可能 1-2 个新增工具。新增/重命名 i18n 键约 25-30 条。
 
-## 风险与取舍
+## 不在本轮范围
 
-- 机器翻译的德语/法语技术文档需人工抽检（尤其安规、保修法律措辞）
-- 中文市场（CNY）已加入，但物流/支付配送目前仅覆盖欧洲，CN 选项是 UI 演示用途
-- 静态数据多语言化会增加 `products.ts` 体积约 4 倍，构建产物相应变大
+- `PrivacyPage.tsx`、其它法务页的完整本地化
+- 博客文章 / 客户故事 / 产品数据文件的多语言化（属于先前未审批的"全站本地化"大计划，单独立项）
