@@ -249,7 +249,7 @@ const Header = () => {
             <Button variant="ghost" size="icon" className="rounded-full">
               <Search className="w-5 h-5" />
             </Button>
-            <CartDrawer />
+            <CartDrawer entryId="header-desktop" />
             <ThemeToggle />
             <Button asChild variant="default" size="sm" className="ml-2">
               <Link to="/support#contact">{t('nav.contactUs')}</Link>
