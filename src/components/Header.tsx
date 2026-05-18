@@ -259,7 +259,7 @@ const Header = () => {
           {/* Mobile Actions */}
           <div className="flex lg:hidden items-center gap-1">
             <MarketSelector />
-            <CartDrawer />
+            <CartDrawer entryId="header-mobile" />
             <ThemeToggle />
             <button
               className="p-2 text-foreground"
