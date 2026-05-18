@@ -42,6 +42,7 @@ const LeadFollowUp = lazy(() => import("./pages/admin/LeadFollowUp"));
 const FeedbackHub = lazy(() => import("./pages/admin/FeedbackHub"));
 const BrandAssets = lazy(() => import("./pages/admin/BrandAssets"));
 const AdminSettings = lazy(() => import("./pages/admin/AdminSettings"));
+const WarehousesAdmin = lazy(() => import("./pages/admin/WarehousesAdmin"));
 
 const queryClient = new QueryClient();
 
