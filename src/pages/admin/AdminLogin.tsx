@@ -30,6 +30,8 @@ export default function AdminLogin() {
   const loginForm = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
     defaultValues: { email: '', password: '' },
+    mode: 'onSubmit',
+    reValidateMode: 'onSubmit',
   });
 
   useEffect(() => {
