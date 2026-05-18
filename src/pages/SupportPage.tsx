@@ -55,7 +55,9 @@ const SupportPage = () => {
       <PageMeta 
         title={t('support.pageTitle')} 
         description={t('support.pageSubtitle')} 
+        canonical="/support"
       />
+      {Array.isArray(faqs) && faqs.length > 0 && <FAQSchema faqs={faqs} />}
       <AnnouncementBar />
       <Header />
       <PageTransition>
