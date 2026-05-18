@@ -131,7 +131,7 @@ const AccessoryDetailPage = () => {
                       {product.preOrder ? (
                         <div className="flex items-center gap-2 text-sm bg-primary/10 text-primary px-3 py-1.5 rounded-lg">
                           <Clock className="w-4 h-4" />
-                          Pre-order · Est. {product.estimatedShipping}
+                          {t('products.preOrderEst', { date: product.estimatedShipping })}
                         </div>
                       ) : product.inStock ? (
                         <Badge variant="outline" className="text-primary border-primary">
@@ -173,7 +173,7 @@ const AccessoryDetailPage = () => {
                     <div className="flex flex-wrap gap-4 text-xs text-muted-foreground">
                       <div className="flex items-center gap-1.5">
                         <Truck className="w-4 h-4 text-primary" />
-                        EU-Wide Shipping
+                        {t('products.euShipping')}
                       </div>
                       <div className="flex items-center gap-1.5">
                         <Shield className="w-4 h-4 text-primary" />

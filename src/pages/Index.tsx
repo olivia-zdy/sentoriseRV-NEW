@@ -81,8 +81,8 @@ const Index = () => {
             </div>
           </section>
           <ShopifyProductGrid 
-            title="Shop Our Batteries"
-            subtitle="All products in stock with fast EU shipping. Add to cart and checkout securely."
+            title={t('home.shopGridTitle')}
+            subtitle={t('home.shopGridSubtitle')}
           />
           <HomepageAccessories />
           <HomepageFAQ />

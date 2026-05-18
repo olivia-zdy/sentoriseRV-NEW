@@ -47,9 +47,9 @@ export const CartDrawer = () => {
       </SheetTrigger>
       <SheetContent className="w-full sm:max-w-lg flex flex-col h-full">
         <SheetHeader className="flex-shrink-0">
-          <SheetTitle>Shopping Cart</SheetTitle>
+          <SheetTitle>{t('cart.title')}</SheetTitle>
           <SheetDescription>
-            {totalItems === 0 ? "Your cart is empty" : `${totalItems} item${totalItems !== 1 ? 's' : ''} in your cart`}
+            {totalItems === 0 ? t('cart.empty') : t('cart.itemsCount', { count: totalItems })}
           </SheetDescription>
         </SheetHeader>
         {/* Shipping notice */}
@@ -58,7 +58,7 @@ export const CartDrawer = () => {
             <div className="flex items-center gap-2">
               <Truck className="w-4 h-4 text-muted-foreground flex-shrink-0" />
               <span className="text-sm font-medium text-foreground">
-                {t('cart.shippingNotice', { defaultValue: 'Shipping calculated at checkout · 2–5 working days across the EU' })}
+                {t('cart.shippingNotice')}
               </span>
             </div>
           </div>
@@ -69,8 +69,8 @@ export const CartDrawer = () => {
             <div className="flex-1 flex items-center justify-center">
               <div className="text-center">
                 <ShoppingCart className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <p className="text-muted-foreground">Your cart is empty</p>
-                <p className="text-sm text-muted-foreground mt-2">Add batteries to get started</p>
+                <p className="text-muted-foreground">{t('cart.empty')}</p>
+                <p className="text-sm text-muted-foreground mt-2">{t('cart.emptyHint')}</p>
               </div>
             </div>
           ) : (
@@ -129,7 +129,7 @@ export const CartDrawer = () => {
               </div>
               <div className="flex-shrink-0 space-y-4 pt-4 border-t bg-background">
                 <div className="flex justify-between items-center">
-                  <span className="text-lg font-semibold">Total</span>
+                  <span className="text-lg font-semibold">{t('cart.total')}</span>
                   <span className="text-2xl font-bold text-primary">{formatPrice(totalPrice)}</span>
                 </div>
                 <Button 
@@ -143,7 +143,7 @@ export const CartDrawer = () => {
                   ) : (
                     <>
                       <ExternalLink className="w-4 h-4 mr-2" />
-                      Proceed to Checkout
+                      {t('cart.checkout')}
                     </>
                   )}
                 </Button>
@@ -151,19 +151,19 @@ export const CartDrawer = () => {
                 <div className="flex items-center justify-center gap-4 py-2">
                   <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
                     <Shield className="w-3.5 h-3.5 text-primary" />
-                    <span>SSL Encrypted</span>
+                    <span>{t('cart.trust.ssl')}</span>
                   </div>
                   <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
                     <RotateCcw className="w-3.5 h-3.5 text-primary" />
-                    <span>30-Day Returns</span>
+                    <span>{t('cart.trust.returns')}</span>
                   </div>
                   <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
                     <Award className="w-3.5 h-3.5 text-primary" />
-                    <span>5-Year Warranty</span>
+                    <span>{t('cart.trust.warranty')}</span>
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground text-center">
-                  Secure checkout powered by Shopify
+                  {t('cart.poweredBy')}
                 </p>
               </div>
             </>
