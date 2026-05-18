@@ -191,6 +191,9 @@ const Footer = () => {
               {footerLinks.support.map((link) => (
                 <li key={link.href + link.name}><Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground">{link.name}</Link></li>
               ))}
+              <li>
+                <FooterCartLink />
+              </li>
             </ul>
           </div>
         </div>
