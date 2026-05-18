@@ -66,23 +66,33 @@ const handler = async (req: Request): Promise<Response> => {
 
     const adminEmail = "team@sentorise.com";
 
+    const escapeHtml = (value: unknown): string => {
+      if (value === null || value === undefined) return "";
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    };
+
     const reminderRows = leadDetails
       .filter((item) => item.lead)
       .map(
         ({ reminder, lead }) => `
       <tr>
         <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">
-          <strong>${lead.name}</strong><br>
-          <span style="color: #64748b; font-size: 14px;">${lead.email}</span>
+          <strong>${escapeHtml(lead.name)}</strong><br>
+          <span style="color: #64748b; font-size: 14px;">${escapeHtml(lead.email)}</span>
         </td>
         <td style="padding: 12px; border-bottom: 1px solid #e2e8f0; color: #64748b;">
           ${reminder.lead_source === "quote_request" ? "Quote Request" : "Contact Form"}
         </td>
         <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">
-          ${reminder.note || "Follow up required"}
+          ${escapeHtml(reminder.note || "Follow up required")}
         </td>
         <td style="padding: 12px; border-bottom: 1px solid #e2e8f0; text-align: center;">
-          <a href="https://sentorise.lovable.app/admin/leads?lead=${reminder.lead_id}&source=${reminder.lead_source}" 
+          <a href="https://sentorise.lovable.app/admin/leads?lead=${encodeURIComponent(reminder.lead_id)}&source=${encodeURIComponent(reminder.lead_source)}" 
              style="color: #2563eb; text-decoration: none;">View →</a>
         </td>
       </tr>
