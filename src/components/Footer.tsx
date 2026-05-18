@@ -7,6 +7,7 @@ import logoDark from "@/assets/logo-dark.png";
 import { Mail, Facebook, Instagram, Youtube, Linkedin, Shield, Award, Leaf, ShieldCheck, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 import { useWarehouses } from "@/hooks/useLocalWarehouse";
+import { FooterCartLink } from "./FooterCartLink";
 
 const COUNTRY_FLAGS: Record<string, string> = {
   DE: "🇩🇪", PL: "🇵🇱", UK: "🇬🇧", GB: "🇬🇧", US: "🇺🇸", CN: "🇨🇳",
