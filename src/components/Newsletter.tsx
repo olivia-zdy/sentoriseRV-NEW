@@ -91,7 +91,7 @@ const Newsletter = () => {
             </Button>
           </form>
           
-          <p className="text-xs text-primary-foreground/60 mt-4">
+          <p className="text-xs text-primary-foreground/85 mt-4">
             No spam. Unsubscribe at any time.
           </p>
         </div>

@@ -38,7 +38,7 @@ const TrustStats = () => {
               <p className="text-sm font-semibold text-primary-foreground/90 mb-0.5">
                 {stat.label}
               </p>
-              <p className="text-xs text-primary-foreground/60">
+              <p className="text-xs text-primary-foreground/85">
                 {stat.description}
               </p>
             </div>
