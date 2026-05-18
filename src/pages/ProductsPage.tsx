@@ -131,6 +131,27 @@ const ProductsPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageMeta
+        title="LiFePO4 Batteries — Lite, Core & Plus Series"
+        description="Browse Sentorise LiFePO4 batteries: Lite 6–50 Ah, Core 100 Ah (Group 31, DIN H8, Mini), and Plus 200 Ah heated. Bluetooth, smart BMS, 5-year warranty."
+        canonical="/products"
+        ogType="product"
+      />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Sentorise LiFePO4 Battery Catalog",
+          itemListOrder: "https://schema.org/ItemListOrderAscending",
+          numberOfItems: products.length,
+          itemListElement: products.map((p, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            url: `https://sentorise.lovable.app/product/${p.id}`,
+            name: p.name,
+          })),
+        })}</script>
+      </Helmet>
       <AnnouncementBar />
       <Header />
       <PageTransition>
