@@ -49,15 +49,15 @@ describe('AdminLogin', () => {
     signIn.mockResolvedValueOnce({ error: { message: 'Invalid login credentials' } });
     renderPage();
 
-    fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'a@b.com' } });
-    fireEvent.change(screen.getByLabelText(/password/i), { target: { value: 'secret1' } });
+    fireEvent.change(document.getElementById("login-email")!, { target: { value: 'a@b.com' } });
+    fireEvent.change(document.getElementById("login-password")!, { target: { value: 'secret1' } });
     fireEvent.click(screen.getByTestId('login-submit'));
 
     const alert = await screen.findByTestId('login-error');
     expect(alert).toHaveTextContent(/incorrect email or password/i);
 
     // Editing the form clears the backend error
-    fireEvent.change(screen.getByLabelText(/password/i), { target: { value: 'secret12' } });
+    fireEvent.change(document.getElementById("login-password")!, { target: { value: 'secret12' } });
     await waitFor(() => {
       expect(screen.queryByTestId('login-error')).not.toBeInTheDocument();
     });
@@ -72,8 +72,8 @@ describe('AdminLogin', () => {
     );
     renderPage();
 
-    fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'a@b.com' } });
-    fireEvent.change(screen.getByLabelText(/password/i), { target: { value: 'secret1' } });
+    fireEvent.change(document.getElementById("login-email")!, { target: { value: 'a@b.com' } });
+    fireEvent.change(document.getElementById("login-password")!, { target: { value: 'secret1' } });
     fireEvent.click(screen.getByTestId('login-submit'));
 
     const button = await screen.findByRole('button', { name: /logging in/i });
@@ -87,7 +87,7 @@ describe('AdminLogin', () => {
 
   it('toggles password visibility without affecting validation', () => {
     renderPage();
-    const passwordInput = screen.getByLabelText(/password/i) as HTMLInputElement;
+    const passwordInput = document.getElementById("login-password")! as HTMLInputElement;
     const toggle = screen.getByTestId('toggle-password');
 
     expect(passwordInput.type).toBe('password');
