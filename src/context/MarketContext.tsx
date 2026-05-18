@@ -1,9 +1,9 @@
 import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 
-export type MarketCode = 'DE' | 'FR' | 'UK' | 'US';
-export type CurrencyCode = 'EUR' | 'GBP' | 'USD';
-export type LanguageCode = 'de' | 'fr' | 'en';
+export type MarketCode = 'DE' | 'FR' | 'UK' | 'US' | 'CN';
+export type CurrencyCode = 'EUR' | 'GBP' | 'USD' | 'CNY';
+export type LanguageCode = 'de' | 'fr' | 'en' | 'zh';
 
 interface MarketConfig {
   code: MarketCode;
@@ -19,12 +19,14 @@ export const MARKETS: MarketConfig[] = [
   { code: 'FR', label: 'France', flag: '🇫🇷', language: 'fr', currency: 'EUR', currencySymbol: '€' },
   { code: 'UK', label: 'United Kingdom', flag: '🇬🇧', language: 'en', currency: 'GBP', currencySymbol: '£' },
   { code: 'US', label: 'United States', flag: '🇺🇸', language: 'en', currency: 'USD', currencySymbol: '$' },
+  { code: 'CN', label: '中国', flag: '🇨🇳', language: 'zh', currency: 'CNY', currencySymbol: '¥' },
 ];
 
 interface ExchangeRates {
   GBP: number;
   USD: number;
   EUR: number;
+  CNY: number;
 }
 
 interface MarketContextType {
@@ -38,7 +40,7 @@ interface MarketContextType {
 
 const MarketContext = createContext<MarketContextType | null>(null);
 
-const DEFAULT_RATES: ExchangeRates = { EUR: 1, GBP: 0.86, USD: 1.08 };
+const DEFAULT_RATES: ExchangeRates = { EUR: 1, GBP: 0.86, USD: 1.08, CNY: 7.85 };
 const RATES_CACHE_KEY = 'sentorise-exchange-rates';
 const RATES_CACHE_TTL = 3600000; // 1 hour
 
@@ -70,13 +72,14 @@ export const MarketProvider = ({ children }: { children: ReactNode }) => {
 
       setIsLoadingRates(true);
       try {
-        const res = await fetch('https://api.frankfurter.app/latest?from=EUR&to=GBP,USD');
+        const res = await fetch('https://api.frankfurter.app/latest?from=EUR&to=GBP,USD,CNY');
         if (res.ok) {
           const data = await res.json();
           const newRates: ExchangeRates = {
             EUR: 1,
-            GBP: data.rates.GBP,
-            USD: data.rates.USD,
+            GBP: data.rates.GBP ?? DEFAULT_RATES.GBP,
+            USD: data.rates.USD ?? DEFAULT_RATES.USD,
+            CNY: data.rates.CNY ?? DEFAULT_RATES.CNY,
           };
           setRates(newRates);
           localStorage.setItem(RATES_CACHE_KEY, JSON.stringify({ rates: newRates, timestamp: Date.now() }));
@@ -105,7 +108,11 @@ export const MarketProvider = ({ children }: { children: ReactNode }) => {
   const formatPrice = useCallback((eurPrice: number): string => {
     const converted = convertPrice(eurPrice);
     return new Intl.NumberFormat(
-      market.code === 'DE' ? 'de-DE' : market.code === 'FR' ? 'fr-FR' : market.code === 'UK' ? 'en-GB' : 'en-US',
+      market.code === 'DE' ? 'de-DE'
+        : market.code === 'FR' ? 'fr-FR'
+        : market.code === 'UK' ? 'en-GB'
+        : market.code === 'CN' ? 'zh-CN'
+        : 'en-US',
       { style: 'currency', currency: market.currency }
     ).format(converted);
   }, [convertPrice, market]);
