@@ -1,0 +1,525 @@
+{
+  "nav": {
+    "home": "首页",
+    "products": "产品",
+    "applications": "应用场景",
+    "whySentorise": "为何选择 Sentorise",
+    "support": "支持",
+    "blog": "博客",
+    "contactUs": "联系我们"
+  },
+  "megaMenu": {
+    "bySeries": "按系列",
+    "byFeature": "按特性",
+    "accessories": "配件",
+    "tools": "工具",
+    "liteSeries": "Lite 系列 (6–50Ah)",
+    "coreSeries": "Core 系列 (100Ah)",
+    "plusSeries": "Plus 系列 (200Ah)",
+    "viewAllProducts": "查看全部产品",
+    "bluetoothBatteries": "蓝牙电池",
+    "selfHeatingModels": "自加热型号",
+    "miniCompact": "迷你/紧凑型",
+    "dinH8Format": "DIN H8 规格",
+    "chargers": "充电器",
+    "batteryMonitors": "电池监控仪",
+    "viewAllAccessories": "查看全部配件",
+    "batterySelector": "电池选型",
+    "powerCalculator": "用电量计算",
+    "productComparison": "产品对比",
+    "mobileLiving": "移动生活",
+    "rvMotorhome": "房车",
+    "vanLife": "车旅生活",
+    "campingOutdoor": "露营与户外",
+    "energySystems": "储能系统",
+    "offGridSolar": "离网太阳能",
+    "offGridCabin": "离网小屋",
+    "backupPower": "备用电源",
+    "marine": "船舶",
+    "marineBoat": "船舶与游艇",
+    "trollingMotor": "船外推进器",
+    "supportTitle": "支持",
+    "helpCenter": "帮助中心",
+    "contactUsMenu": "联系我们",
+    "bluetoothGuide": "蓝牙使用指南",
+    "warranty": "质保",
+    "registerWarranty": "注册质保",
+    "warrantyPolicy": "质保政策",
+    "warrantyLookup": "质保查询",
+    "resources": "资源中心",
+    "knowledgeCenter": "知识中心",
+    "userStories": "用户故事",
+    "certifications": "认证与媒体",
+    "downloads": "资料下载",
+    "policy": "政策",
+    "termsConditions": "服务条款",
+    "privacyPolicy": "隐私政策",
+    "shippingPolicy": "运输政策"
+  },
+  "hero": {
+    "scenes": {
+      "rv": {
+        "title": "磷酸铁锂电池",
+        "subtitle": "抗寒可用,专为严冬而生。",
+        "highlight": "-20°C 仍可工作 • 可选自加热版本"
+      },
+      "solar": {
+        "title": "离网太阳能",
+        "subtitle": "4000+ 循环,10 年可靠供电。",
+        "highlight": "兼容 MPPT • 最大放电 200A"
+      },
+      "vanlife": {
+        "title": "车旅生活 & 露营",
+        "subtitle": "紧凑动力,实时监控。",
+        "highlight": "蓝牙 App • 实时查看电压、电量与温度"
+      },
+      "marine": {
+        "title": "船舶与游艇",
+        "subtitle": "为帆船与游艇提供稳定电力。",
+        "highlight": "防震 • 耐盐雾"
+      }
+    },
+    "trustPoints": {
+      "warranty": "5 年质保",
+      "bluetooth": "蓝牙监控",
+      "euStock": "本地仓储与售后",
+      "lowTemp": "低温保护",
+      "freeShipping": "订单满 €199 免运费",
+      "lightweight": "轻量化设计",
+      "easyInstall": "易于安装",
+      "bms": "BMS 保护",
+      "ce": "CE 认证"
+    },
+    "shopNow": "立即选购",
+    "howToChoose": "如何选型",
+    "viewAllProducts": "查看全部产品"
+  },
+  "products": {
+    "title": "我们的电池",
+    "ourProducts": "全部产品",
+    "subtitle": "为低温环境设计的磷酸铁锂电池",
+    "range": "磷酸铁锂电池系列",
+    "addToCart": "加入购物车",
+    "adding": "添加中...",
+    "outOfStock": "缺货",
+    "preOrder": "预订",
+    "viewDetails": "查看详情",
+    "quickView": "快速预览",
+    "compare": "对比",
+    "freeShipping": "€199+ 免运费",
+    "warranty": "5 年质保",
+    "register": "注册",
+    "inStock": "现货",
+    "lowStock": "仅剩 {{count}} 件!",
+    "estimatedDelivery": "预计送达",
+    "sale": "促销",
+    "viewAll": "查看全部产品",
+    "series": "系列",
+    "voltage": "电压",
+    "capacity": "容量",
+    "energy": "能量",
+    "cycleLife": "循环寿命",
+    "filters": "筛选",
+    "sortBy": "排序",
+    "priceLowHigh": "价格:从低到高",
+    "priceHighLow": "价格:从高到低",
+    "capacitySmall": "容量:小到大",
+    "capacityLarge": "容量:大到小",
+    "newestFirst": "最新优先",
+    "all": "全部",
+    "bluetooth": "蓝牙",
+    "selfHeating": "自加热",
+    "clearFilters": "清除筛选",
+    "showing": "显示 {{count}} 件产品",
+    "showing_plural": "显示 {{count}} 件产品",
+    "noProducts": "未找到符合条件的产品。",
+    "clearAll": "清除全部筛选",
+    "pageTitle": "储能产品",
+    "pageSubtitle": "适用于房车、离网、太阳能与移动能源系统的磷酸铁锂电池及配件。",
+    "batteries": "电池",
+    "accessories": "配件",
+    "add": "添加"
+  },
+  "productNames": {
+    "lite-12v6": {
+      "name": "Lite 12V 6Ah 超紧凑",
+      "tagline": "口袋级备用电源",
+      "description": "Sentorise 家族中最小的成员。适用于应急包、路由器、露营灯等空间有限但需要可靠供电的场景。"
+    },
+    "lite-12v50": {
+      "name": "Lite 12V 50Ah 轻量化",
+      "tagline": "便携式可靠容量",
+      "description": "便携与容量的完美平衡。配备蓝牙监控,可在手机上实时查看电池状态。"
+    },
+    "core-12v100-std": {
+      "name": "Core 12V 100Ah 标准版",
+      "tagline": "房车的主力电池",
+      "description": "采用主流 Group 31 规格的旗舰房车电池。可直接替换铅酸电池,循环寿命提升 4 倍,重量减半。"
+    },
+    "core-12v100-mini": {
+      "name": "Core 12V 100Ah MINI",
+      "tagline": "满电量,极致紧凑",
+      "description": "与标准版 Core 同样的 100Ah 容量,体积明显更小。适合电池仓紧凑的车辆与房车。"
+    },
+    "core-12v100-din": {
+      "name": "Core 12V 100Ah DIN H8",
+      "tagline": "欧标尺寸适配",
+      "description": "专为欧洲房车座椅下电池仓设计的 DIN H8 规格,可完美适配大多数欧系房车与拖挂车。"
+    },
+    "plus-12v200-heated": {
+      "name": "Plus 12V 200Ah 自加热版",
+      "tagline": "极地级储能站",
+      "description": "面向高强度应用的旗舰电池,内置自加热模块,可在零下温度可靠工作,适合北方气候与冬季露营。"
+    }
+  },
+  "applications": {
+    "pageTitle": "为每一次出行供能",
+    "pageSubtitle": "从周末露营到长期离网生活,Sentorise 电池为每一种生活方式提供可靠电力。",
+    "allApplications": "全部应用场景",
+    "viewRecommended": "查看推荐产品",
+    "faqTitle": "应用常见问题",
+    "faqSubtitle": "关于电池选型与使用的常见问题。",
+    "rv": {
+      "title": "房车",
+      "tagline": "你流动的家的能量核心",
+      "description": "无论是周末出游还是全职房车生活,Sentorise 电池都能为车内照明、冰箱、空调与娱乐系统提供可靠电力。",
+      "benefits": ["可直接替换铅酸电池", "比同容量铅酸轻 50%", "免维护", "可安全室内安装", "支持车内蓝牙监控"]
+    },
+    "vanlife": {
+      "title": "车旅生活",
+      "tagline": "紧凑空间内的自由",
+      "description": "改装车需要在最小空间内获得最大电力。Core MINI 与 Lite 系列为各种主流车型提供高能量密度。",
+      "benefits": ["超紧凑设计", "轻量化更省油", "静音运行,无需排气", "兼容主流太阳能控制器", "5 年质保,安心使用"]
+    },
+    "solar": {
+      "title": "离网太阳能",
+      "tagline": "把阳光储存起来",
+      "description": "用 Sentorise 电池打造可靠的离网系统。深循环 LiFePO4 技术最大化太阳能利用,昼夜稳定供电。",
+      "benefits": ["4000+ 循环寿命", "95%+ 往返效率", "支持深度放电", "并联扩容", "兼容 Victron、MPPT 与混合逆变器"]
+    },
+    "marine": {
+      "title": "船舶与游艇",
+      "tagline": "为水上行程提供电力",
+      "description": "Sentorise 电池可应对船舶环境,为船外推进器、鱼探仪与船舱系统提供免维护的可靠电力。",
+      "benefits": ["抗震结构", "可选 IP 防护外壳", "无酸液与气体", "负载下电压稳定", "轻量化提升航行表现"]
+    },
+    "camping": {
+      "title": "露营与户外",
+      "tagline": "便携电力,陪你冒险",
+      "description": "从周末露营到长途穿越,Lite 系列为照明、手机、相机与小型设备提供可靠的便携电力。",
+      "benefits": ["超轻便携", "兼容便携式太阳能板", "供电露营灯、风扇与充电器", "长货架寿命,随用随取", "背包基地营也能用"]
+    },
+    "cabin": {
+      "title": "离网小屋",
+      "tagline": "独立生活的可靠电力",
+      "description": "为偏远小屋或度假屋打造完整的离网系统,Sentorise 电池存储太阳能用于照明、水泵、制冷等。",
+      "benefits": ["大容量满足整屋用电", "自加热适应严寒", "免维护,一装永逸", "可并联扩容", "10+ 年预期寿命"]
+    },
+    "faqs": [
+      {
+        "question": "我的房车需要多大容量的电池?",
+        "answer": "周末出行加基础用电(灯具、冰箱、充电)100Ah 通常够用。全职房车生活则建议 200–400Ah。可使用我们的电池选型工具获取个性化建议。"
+      },
+      {
+        "question": "可以多块电池并联使用吗?",
+        "answer": "可以。Sentorise 电池支持并联,最多可并联 4 块。所有电池应为同型号且电量状态相近。"
+      },
+      {
+        "question": "这些电池可以室内安装吗?",
+        "answer": "可以。LiFePO4 在正常工作时不会产生气体,是最安全的锂电池类型。所有型号均内置 BMS 过充、过放与短路保护。"
+      },
+      {
+        "question": "应该选用什么太阳能控制器?",
+        "answer": "推荐使用 MPPT 控制器以获得最佳效率。Sentorise 电池兼容 Victron、EPEver、Renogy 等主流品牌。请将充电模式设置为 LiFePO4(充电 14.4V,浮充 13.8V)。"
+      }
+    ]
+  },
+  "support": {
+    "pageTitle": "支持中心",
+    "pageSubtitle": "获取 Sentorise 产品的帮助。查找答案、下载资料或联系技术支持团队。",
+    "helpCenter": "帮助中心",
+    "helpCenterDesc": "查看关于产品、安装与维护的常见问题解答。",
+    "downloads": "资料下载",
+    "downloadsDesc": "下载产品规格书、用户手册、安装指南与认证文件。",
+    "warranty": "质保",
+    "warrantyDesc": "了解 5 年质保范围与如何提交质保申请。",
+    "contactSupport": "联系支持",
+    "contactSupportDesc": "联系我们的技术支持团队,24-48 小时内回复。",
+    "quickLinks": "快速入口",
+    "bluetoothSetup": "蓝牙设置指南",
+    "bluetoothSetupDesc": "5 步连接 App",
+    "registerWarranty": "注册质保",
+    "registerWarrantyDesc": "激活您的 5 年质保",
+    "batterySelector": "电池选型",
+    "batterySelectorDesc": "找到合适的电池",
+    "faqTitle": "常见问题",
+    "faqSubtitle": "关于 Sentorise 电池的快速解答。",
+    "downloadsTitle": "资料下载",
+    "downloadsSubtitle": "获取产品文档与资源。",
+    "productDatasheets": "产品规格书",
+    "installationGuides": "安装指南",
+    "certificationDocs": "认证文件",
+    "download": "下载",
+    "warrantyTitle": "5 年质保",
+    "warrantyText": "所有 Sentorise 电池均提供全面的 5 年质保,涵盖制造缺陷与提前容量衰减。若在质保期内电池容量低于 80%,我们将免费更换。",
+    "registerProduct": "注册您的产品",
+    "contactTitle": "联系我们",
+    "contactSubtitle": "需要个性化帮助?请填写下方表单或直接联系我们。",
+    "sendMessage": "发送消息",
+    "emailSupport": "邮件支持",
+    "emailAddress": "support@sentorise.com",
+    "emailResponse": "我们通常在 24 小时内回复",
+    "phoneSupport": "电话支持",
+    "phoneNumber": "+49 123 456 7890",
+    "phoneHours": "周一至周五,9:00 - 18:00 CET",
+    "faqs": [
+      {
+        "question": "Sentorise 电池能用多久?",
+        "answer": "我们的 LiFePO4 电池在 80% 放电深度下可达 4000+ 循环。按典型房车使用频率,相当于 10 年以上可靠服务。"
+      },
+      {
+        "question": "可以在寒冷天气使用吗?",
+        "answer": "可以。所有电池均带低温充电保护,0°C 以下自动禁充以保护电芯。Plus 系列内置自加热,可在 -20°C 工作。"
+      },
+      {
+        "question": "可以兼容我现有的太阳能系统吗?",
+        "answer": "Sentorise 电池兼容大多数太阳能控制器与逆变器。建议使用支持 LiFePO4 模式的控制器以获得最佳性能。"
+      },
+      {
+        "question": "5 年质保涵盖什么?",
+        "answer": "质保涵盖制造缺陷与提前容量衰减。5 年内容量低于 80% 即可申请更换。"
+      },
+      {
+        "question": "如何连接蓝牙 App?",
+        "answer": "在 App Store 或 Google Play 下载 Sentorise App。开启手机蓝牙后打开 App,即可自动发现附近的 Sentorise 电池。详见蓝牙设置指南。"
+      },
+      {
+        "question": "可以多块电池并联吗?",
+        "answer": "可以,Core 与 Plus 系列均支持并联以扩展容量,建议最多 4 块。请确保电池型号一致且电量相近。"
+      },
+      {
+        "question": "Lite、Core 与 Plus 系列有什么区别?",
+        "answer": "Lite 系列(6-50Ah)适合便携与备用;Core 系列(100Ah)是标准房车/太阳能电池,含 Standard、MINI、DIN H8 多种规格;Plus 系列(200Ah)内置自加热,适合 -20°C 严寒。"
+      },
+      {
+        "question": "需要专用充电器吗?",
+        "answer": "推荐使用支持 LiFePO4 模式的充电器(14.4V-14.6V)。许多现代房车转换器都有锂电模式。切勿使用超过 14.6V 的充电器,以免损坏电芯。"
+      },
+      {
+        "question": "0°C 以下充电会怎样?",
+        "answer": "内置 BMS 将禁止 0°C 以下充电以保护电芯。如需低温充电,请使用 Plus 200Ah 自加热版本,该型号会在 -10°C 自动加热。所有型号均可在 -20°C 放电。"
+      },
+      {
+        "question": "如何申请质保?",
+        "answer": "请通过 support@sentorise.com 联系我们,并提供注册邮箱与问题描述。如需更换,我们会在大多数欧盟国家先发货后回收。"
+      }
+    ]
+  },
+  "warranty": {
+    "pageTitle": "5 年质保注册",
+    "pageSubtitle": "通过全面的 5 年质保保护您的投资。2 分钟即可完成注册。",
+    "coverage": "5 年覆盖",
+    "coverageDesc": "全面质保保护",
+    "freeReplacement": "免费更换",
+    "freeReplacementDesc": "适用于制造缺陷",
+    "quickProcessing": "快速处理",
+    "quickProcessingDesc": "高效完成索赔",
+    "euService": "欧洲全境服务",
+    "euServiceDesc": "柏林技术支持",
+    "registerTab": "注册质保",
+    "lookupTab": "查询状态",
+    "lookupTitle": "查询质保状态",
+    "lookupSubtitle": "请输入注册时使用的邮箱以查看质保详情。",
+    "coveredTitle": "质保范围",
+    "covered": "涵盖",
+    "notCovered": "不涵盖",
+    "coveredItems": [
+      "制造缺陷",
+      "BMS(电池管理系统)故障",
+      "电芯容量衰减至 80% 以下",
+      "加热系统故障(加热型号)",
+      "蓝牙模块缺陷",
+      "接线端子问题"
+    ],
+    "notCoveredItems": [
+      "误用或事故造成的物理损伤",
+      "安装不当导致的进水损伤",
+      "充电电压错误造成的损伤",
+      "未经授权的改装",
+      "正常磨损与外观损伤",
+      "商用/工业用途(除非特别说明)"
+    ],
+    "registrationNote": "质保注册需在购买后 30 天内完成。请妥善保留购买凭证(收据或发票)。如有疑问请联系"
+  },
+  "whySentorise": {
+    "badge": "Sentorise 的不同之处",
+    "heroTitle1": "电力自由,",
+    "heroTitle2": "不只是容量",
+    "heroSubtitle": "我们不只是另一家电池厂商。Sentorise 是为选择移动、独立与可持续生活方式的人而生的能源品牌,无论身在何处都能可靠供电。",
+    "exploreProducts": "浏览产品",
+    "contactUs": "联系我们",
+    "happyCustomers": "满意客户",
+    "countriesServed": "服务国家",
+    "cycleLifespan": "循环寿命",
+    "satisfactionRate": "满意度",
+    "acronymLabel": "SENTORISE 代表什么",
+    "acronymTitle": "每一个字母都是承诺",
+    "acronymSubtitle": "我们的名字反映了产品设计、测试与交付背后的原则——不是口号,而是我们坚守的标准。",
+    "philosophyLabel": "我们的理念",
+    "philosophyTitle": "为可靠而生,不只为参数",
+    "values": {
+      "safety": { "title": "安全优先工程", "description": "每块 Sentorise 电池均采用 A 级 LiFePO4 电芯与多层 BMS 保护,防过充、过放、短路与热失控。" },
+      "quality": { "title": "国际质量标准", "description": "通过 CE、UN38.3、FCC 与 IEC 62619 安全认证,符合欧美市场要求。" },
+      "smart": { "title": "智能监控", "description": "通过手机 App 与蓝牙实时查看电压、电流、温度与剩余电量。" },
+      "longLife": { "title": "超长寿命技术", "description": "4000+ 循环,是铅酸电池的 4 倍。LiFePO4 化学体系可稳定服务 10 年以上。" },
+      "weather": { "title": "全天候表现", "description": "内置低温保护,Plus 系列含自加热,适应极地环境。" },
+      "sustainable": { "title": "可持续选择", "description": "LiFePO4 无毒可回收,环保纸浆包装减少塑料废弃,让出行更负责任。" }
+    },
+    "differentiatorTitle": "我们的与众不同",
+    "differentiatorSubtitle": "当别人追逐虚高的参数,我们专注于真正重要的:可靠性、安全性与真实表现。",
+    "differentiators": [
+      "全系产品 5 年质保",
+      "支持欧标 DIN 与美标 BCI 规格",
+      "多数型号支持蓝牙监控",
+      "A 级方形 LiFePO4 电芯",
+      "多层 BMS 保护",
+      "低温充电保护",
+      "Plus 系列自加热可选",
+      "环保包装"
+    ],
+    "journeyLabel": "我们的历程",
+    "journeyTitle": "Sentorise 的故事",
+    "journeySubtitle": "从一个小工坊到全球能源品牌——我们不断成长,初心如一。",
+    "marketsLabel": "全球视野,本地标准",
+    "marketsTitle": "服务欧美各地",
+    "marketsSubtitle": "我们的电池专为欧美房车规格、露营文化与气候条件设计——从地中海夏日到北欧严冬,从加州阳光到加拿大雪原。"
+  },
+  "features": {
+    "sectionLabel": "为何选择 Sentorise",
+    "title": "为真实世界打造的可靠性",
+    "subtitle": "按照你真正关心的顺序解答你的问题。",
+    "group1Title": "信任与安全优先",
+    "group1Subtitle": "你真正想问的是:安全吗?会负责吗?",
+    "bms": "多层 BMS 保护",
+    "bmsDesc": "过充、过放、短路与热失控全面保护,每节电芯独立监控。",
+    "bmsBadge": "认证安全",
+    "coldWeather": "真实的低温表现",
+    "coldWeatherDesc": "0°C 以下自动禁充以保护电芯;放电可至 -20°C。",
+    "coldWeatherBadge": "-20°C 至 60°C",
+    "warrantySupport": "5 年质保与本地支持",
+    "warrantySupportDesc": "整机更换质保,24 小时内响应,无需海外周转。",
+    "warrantySupportBadge": "24h 响应",
+    "group2Title": "为你的系统而生",
+    "group2Subtitle": "与你现有的系统无缝兼容。",
+    "compatible": "兼容 Victron 与太阳能",
+    "compatibleDesc": "已与 Victron、Renogy、EPEver 等主流 MPPT 控制器实测兼容,可直接替换铅酸。",
+    "compatibleBadge": "即插即用",
+    "flexible": "灵活组合",
+    "flexibleDesc": "最多 4 串(48V)或 4 并扩容,适合定制系统。",
+    "flexibleBadge": "支持 4S4P",
+    "diagram": "查看连接方式",
+    "diagramDesc": "房车、营地与离网系统的交互式接线图。",
+    "diagramBadge": "查看图示",
+    "diagramDialogTitle": "系统接线图",
+    "group3Title": "持久性能",
+    "group3Subtitle": "再来谈谈 LiFePO₄ 为何值得投资。",
+    "cycles": "80% DoD 下 4000+ 循环",
+    "cyclesDesc": "相当于每天使用 10 年以上。铅酸只有 300-500 次,数字说话。",
+    "cyclesBadge": "10+ 年"
+  },
+  "servicePromises": {
+    "freeShipping": "€199+ 免运费",
+    "freeShippingDesc": "订单满 €199",
+    "returns": "30 天无忧退货",
+    "returnsDesc": "无理由退款",
+    "warranty": "5 年质保",
+    "warrantyDesc": "全面覆盖",
+    "fastDelivery": "快速发货",
+    "fastDeliveryDesc": "2-5 个工作日"
+  },
+  "footer": {
+    "whyBuilt": "我们为何创立 Sentorise",
+    "whyBuiltDesc": "我们创立 Sentorise,是因为厌倦了在关键时刻掉链子的电池。作为房车与离网爱好者,我们打造了我们自己想买的电池:安全、可靠、有真人负责。",
+    "certifiedCompliant": "认证与合规",
+    "europeanConformity": "欧洲合规",
+    "transportCertified": "运输认证",
+    "hazardFree": "无危险品",
+    "safetyStandard": "安全标准",
+    "companyDesc": "为追求可靠的探险者打造的高端磷酸铁锂电池。欧洲设计,服务全球。",
+    "warehouses": "仓储中心",
+    "registrations": "注册信息",
+    "products": "产品",
+    "applications": "应用",
+    "company": "关于",
+    "support": "支持",
+    "liteSeries": "Lite 系列",
+    "coreSeries": "Core 系列",
+    "plusSeries": "Plus 系列",
+    "compareLabel": "对比",
+    "rvCampervan": "房车与营地车",
+    "marineBoat": "船舶与游艇",
+    "solarOffGrid": "太阳能与离网",
+    "viewAll": "查看全部",
+    "aboutUs": "关于我们",
+    "customerStories": "用户故事",
+    "blog": "博客",
+    "helpCenter": "帮助中心",
+    "bluetoothGuide": "蓝牙指南",
+    "downloadsLabel": "资料下载",
+    "registerWarranty": "注册质保",
+    "warrantyPolicy": "质保政策",
+    "returnsPolicy": "退货政策",
+    "contactUs": "联系我们",
+    "copyright": "© {{year}} Sentorise Energy. 保留所有权利。",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "returns": "退货",
+    "warrantyLabel": "质保"
+  },
+  "common": {
+    "readMore": "查看更多",
+    "back": "返回",
+    "close": "关闭",
+    "search": "搜索",
+    "loading": "加载中...",
+    "error": "发生错误",
+    "tryAgain": "重试",
+    "noResults": "未找到结果",
+    "viewAll": "查看全部",
+    "specifications": "规格参数",
+    "description": "描述",
+    "reviews": "评价",
+    "relatedProducts": "相关产品",
+    "home": "首页"
+  },
+  "market": {
+    "selectMarket": "选择市场",
+    "germany": "德国",
+    "france": "法国",
+    "uk": "英国",
+    "us": "美国",
+    "china": "中国"
+  },
+  "trust": {
+    "freeShipping": "免运费",
+    "warranty": "5 年质保",
+    "returns": "30 天退货",
+    "cycles": "4000+ 循环",
+    "certifiedSafe": "认证安全"
+  },
+  "certifications": {
+    "badge": "质量与合规",
+    "title": "我们的认证",
+    "subtitle": "通过多项国际权威机构的技术认证。",
+    "statCerts": "国际认证",
+    "statWarranty": "年质保",
+    "statTests": "通过安全测试",
+    "statCompliance": "欧盟合规",
+    "mediaBadge": "媒体报道",
+    "mediaTitle": "媒体覆盖",
+    "mediaSubtitle": "获欧洲与国际主流媒体报道引用。",
+    "ctaTitle": "需要认证文件?",
+    "ctaDescription": "下载官方测试报告与合规证书。",
+    "ctaButton": "前往下载"
+  }
+}
