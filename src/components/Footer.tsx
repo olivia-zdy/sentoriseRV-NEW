@@ -87,9 +87,9 @@ const Footer = () => {
       { name: t('footer.compareLabel'), href: "/compare" },
     ],
     applications: [
-      { name: t('footer.rvCampervan'), href: "/applications?scene=rv" },
-      { name: t('footer.marineBoat'), href: "/applications?scene=marine" },
-      { name: t('footer.solarOffGrid'), href: "/applications?scene=solar" },
+      { name: t('footer.rvCampervan'), href: "/applications#rv" },
+      { name: t('footer.marineBoat'), href: "/applications#marine" },
+      { name: t('footer.solarOffGrid'), href: "/applications#solar" },
       { name: t('footer.viewAll'), href: "/applications" },
     ],
     company: [
