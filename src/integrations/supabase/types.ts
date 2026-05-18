@@ -404,6 +404,54 @@ export type Database = {
         }
         Relationships: []
       }
+      warehouses: {
+        Row: {
+          active: boolean
+          code: string
+          country_codes: string[]
+          created_at: string
+          display_name: string
+          id: string
+          is_default: boolean
+          shipping_copy_de: string
+          shipping_copy_en: string
+          shipping_copy_fr: string
+          shipping_copy_zh: string
+          sort_order: number
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          code: string
+          country_codes?: string[]
+          created_at?: string
+          display_name: string
+          id?: string
+          is_default?: boolean
+          shipping_copy_de: string
+          shipping_copy_en: string
+          shipping_copy_fr: string
+          shipping_copy_zh: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          code?: string
+          country_codes?: string[]
+          created_at?: string
+          display_name?: string
+          id?: string
+          is_default?: boolean
+          shipping_copy_de?: string
+          shipping_copy_en?: string
+          shipping_copy_fr?: string
+          shipping_copy_zh?: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       warranty_registrations: {
         Row: {
           city: string | null
