@@ -1,8 +1,10 @@
 import { Truck } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useLocalShippingCopy } from "@/hooks/useLocalWarehouse";
 
 const AnnouncementBar = () => {
   const { t } = useTranslation();
+  const localCopy = useLocalShippingCopy(t('announcement.shipping'));
 
   return (
     <div className="bg-primary text-primary-foreground py-2.5">
@@ -10,7 +12,7 @@ const AnnouncementBar = () => {
         <div className="flex items-center gap-3">
           <Truck className="w-4 h-4" />
           <span className="hidden sm:inline font-medium">
-            {t('announcement.shipping')}
+            {localCopy || t('announcement.shipping')}
           </span>
           <span className="sm:hidden font-medium">
             {t('announcement.shippingShort')}
@@ -23,3 +25,4 @@ const AnnouncementBar = () => {
 };
 
 export default AnnouncementBar;
+
