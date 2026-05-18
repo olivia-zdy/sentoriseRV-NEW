@@ -116,7 +116,14 @@ export default function AdminLogin() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={loginForm.handleSubmit(handleLogin)} className="space-y-4">
+            <form onSubmit={loginForm.handleSubmit(handleLogin)} className="space-y-4" noValidate>
+              {loginError && (
+                <Alert variant="destructive" role="alert" data-testid="login-error">
+                  <AlertCircle className="h-4 w-4" />
+                  <AlertDescription>{loginError}</AlertDescription>
+                </Alert>
+              )}
+
               <div className="space-y-2">
                 <Label htmlFor="login-email">Email</Label>
                 <div className="relative">
@@ -126,11 +133,12 @@ export default function AdminLogin() {
                     type="email"
                     placeholder="you@sentorise.com"
                     className="pl-10"
+                    aria-invalid={!!loginForm.formState.errors.email}
                     {...loginForm.register('email')}
                   />
                 </div>
                 {loginForm.formState.errors.email && (
-                  <p className="text-sm text-destructive">{loginForm.formState.errors.email.message}</p>
+                  <p className="text-sm text-destructive" role="alert">{loginForm.formState.errors.email.message}</p>
                 )}
               </div>
 
@@ -143,22 +151,26 @@ export default function AdminLogin() {
                     type={showPassword ? 'text' : 'password'}
                     placeholder="••••••••"
                     className="pl-10 pr-10"
+                    aria-invalid={!!loginForm.formState.errors.password}
                     {...loginForm.register('password')}
                   />
                   <button
                     type="button"
-                    onClick={() => setShowPassword(!showPassword)}
+                    onClick={() => setShowPassword((v) => !v)}
+                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    aria-pressed={showPassword}
+                    data-testid="toggle-password"
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                   >
                     {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                   </button>
                 </div>
                 {loginForm.formState.errors.password && (
-                  <p className="text-sm text-destructive">{loginForm.formState.errors.password.message}</p>
+                  <p className="text-sm text-destructive" role="alert">{loginForm.formState.errors.password.message}</p>
                 )}
               </div>
 
-              <Button type="submit" className="w-full" disabled={isLoading}>
+              <Button type="submit" className="w-full" disabled={isLoading} data-testid="login-submit">
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -172,9 +184,17 @@ export default function AdminLogin() {
           </CardContent>
         </Card>
 
-        <p className="text-center text-sm text-muted-foreground mt-6">
-          This dashboard is for authorized Sentorise team members only.
-        </p>
+        <div className="text-center text-sm text-muted-foreground mt-6 space-y-1">
+          <p>This dashboard is for authorized Sentorise team members only.</p>
+          <p>
+            Need access? Internal accounts can only be created by an existing admin.
+            Contact{' '}
+            <a href="mailto:support@sentorise.com" className="underline hover:text-foreground">
+              support@sentorise.com
+            </a>
+            .
+          </p>
+        </div>
       </div>
     </div>
   );
