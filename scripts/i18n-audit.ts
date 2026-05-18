@@ -107,7 +107,7 @@ if (REPORT_ONLY) {
   process.exit(0);
 }
 
-const HARDCODED_BUDGET = Number(process.env.I18N_HARDCODED_BUDGET ?? "9999");
+const HARDCODED_BUDGET = Number(process.env.I18N_HARDCODED_BUDGET ?? "559");
 const fail = totalMissing > 0 || hardcoded.length > HARDCODED_BUDGET;
 if (fail) {
   console.error(
