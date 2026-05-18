@@ -84,11 +84,11 @@
       "bluetooth": "蓝牙监控",
       "euStock": "本地仓储与售后",
       "lowTemp": "低温保护",
-      "freeShipping": "欧盟全境配送",
       "lightweight": "轻量化设计",
       "easyInstall": "易于安装",
       "bms": "BMS 保护",
-      "ce": "CE 认证"
+      "ce": "CE 认证",
+      "euShipping": "欧盟全境配送"
     },
     "shopNow": "立即选购",
     "howToChoose": "如何选型",
@@ -106,7 +106,6 @@
     "viewDetails": "查看详情",
     "quickView": "快速预览",
     "compare": "对比",
-    "freeShipping": "欧盟全境配送",
     "warranty": "5 年质保",
     "register": "注册",
     "inStock": "现货",
@@ -138,7 +137,9 @@
     "pageSubtitle": "适用于房车、离网、太阳能与移动能源系统的磷酸铁锂电池及配件。",
     "batteries": "电池",
     "accessories": "配件",
-    "add": "添加"
+    "add": "添加",
+    "euShipping": "欧盟全境配送",
+    "preOrderEst": "预购 · 预计 {{date}}"
   },
   "productNames": {
     "lite-12v6": {
@@ -482,14 +483,14 @@
     "cyclesBadge": "10+ 年"
   },
   "servicePromises": {
-    "freeShipping": "欧盟全境配送",
-    "freeShippingDesc": "2–5 个工作日",
     "returns": "30 天无忧退货",
     "returnsDesc": "无理由退款",
     "warranty": "5 年质保",
     "warrantyDesc": "全面覆盖",
     "fastDelivery": "快速发货",
-    "fastDeliveryDesc": "2-5 个工作日"
+    "fastDeliveryDesc": "2-5 个工作日",
+    "euShipping": "欧盟全境配送",
+    "euShippingDesc": "2–5 个工作日"
   },
   "footer": {
     "whyBuilt": "我们为何创立 Sentorise",
@@ -555,11 +556,11 @@
     "china": "中国"
   },
   "trust": {
-    "freeShipping": "欧盟配送",
     "warranty": "5 年质保",
     "returns": "30 天退货",
     "cycles": "4000+ 循环",
-    "certifiedSafe": "认证安全"
+    "certifiedSafe": "认证安全",
+    "euShipping": "欧盟配送"
   },
   "certifications": {
     "badge": "质量与合规",
@@ -575,5 +576,46 @@
     "ctaTitle": "需要认证文件?",
     "ctaDescription": "下载官方测试报告与合规证书。",
     "ctaButton": "前往下载"
+  },
+  "announcement": {
+    "shipping": "柏林仓库直发，欧盟全境配送 · 2–5 个工作日送达",
+    "shippingShort": "欧盟全境配送 · 2–5 天"
+  },
+  "cart": {
+    "title": "购物车",
+    "empty": "购物车为空",
+    "emptyHint": "添加电池开始购物",
+    "itemsCount": "购物车中有 {{count}} 件商品",
+    "itemsCount_plural": "购物车中有 {{count}} 件商品",
+    "total": "合计",
+    "checkout": "前往结账",
+    "shippingNotice": "运费与税费将在结账时计算 · 欧盟 2–5 个工作日送达",
+    "trust": {
+      "ssl": "SSL 加密",
+      "returns": "30 天退货",
+      "warranty": "5 年质保"
+    },
+    "poweredBy": "由 Shopify 提供安全结账"
+  },
+  "home": {
+    "shopGridTitle": "选购电池",
+    "shopGridSubtitle": "全部现货 · 欧盟 2–5 个工作日送达 · 安全结账。"
+  },
+  "accessories": {
+    "estShipping": "预计发货"
+  },
+  "terms": {
+    "shippingTitle": "4. 运输与配送",
+    "shippingFees": "运费将在结账时根据收货地址和订单重量计算。欧盟境内标准配送时效为 2–5 个工作日，实际时效可能因地区和承运商而异。",
+    "shippingRisk": "商品在交付承运商后，灭失风险及所有权即转移至您。",
+    "returnShippingTitle": "退货运费",
+    "returnDefective": "商品存在缺陷：",
+    "returnDefectiveDesc": "我们提供预付退货标签。",
+    "returnChange": "非质量原因退货：",
+    "returnChangeDesc": "退货运费由客户承担。",
+    "refundTitle": "退款时效",
+    "refundProcess": "我们收到退货后 5 个工作日内处理退款。",
+    "refundCredit": "退款将在 3–7 个工作日内退回原支付方式（具体以银行为准）。",
+    "refundShipping": "出库运费不予退还，商品存在质量问题除外。"
   }
 }

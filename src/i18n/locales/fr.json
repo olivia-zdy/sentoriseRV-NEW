@@ -84,11 +84,11 @@
       "bluetooth": "Surveillance Bluetooth",
       "euStock": "Stock UE & Support",
       "lowTemp": "Protection basse température",
-      "freeShipping": "Livraison dans toute l’UE",
       "lightweight": "Design léger",
       "easyInstall": "Installation facile",
       "bms": "Protection BMS",
-      "ce": "Certifié CE"
+      "ce": "Certifié CE",
+      "euShipping": "Livraison dans toute l’UE"
     },
     "shopNow": "Acheter maintenant",
     "howToChoose": "Comment choisir",
@@ -106,7 +106,6 @@
     "viewDetails": "Voir les détails",
     "quickView": "Aperçu rapide",
     "compare": "Comparer",
-    "freeShipping": "Livraison UE",
     "warranty": "Garantie 5 ans",
     "register": "Enregistrer",
     "inStock": "En stock",
@@ -138,7 +137,9 @@
     "pageSubtitle": "Batteries LiFePO₄ et accessoires pour camping-cars, systèmes solaires, off-grid et énergie mobile.",
     "batteries": "Batteries",
     "accessories": "Accessoires",
-    "add": "Ajouter"
+    "add": "Ajouter",
+    "euShipping": "Livraison UE",
+    "preOrderEst": "Précommande · est. {{date}}"
   },
   "productNames": {
     "lite-12v6": {
@@ -482,14 +483,14 @@
     "cyclesBadge": "10+ ans"
   },
   "servicePromises": {
-    "freeShipping": "Livraison dans toute l’UE",
-    "freeShippingDesc": "2 à 5 jours ouvrés",
     "returns": "Retour 30 jours",
     "returnsDesc": "Garantie satisfait ou remboursé",
     "warranty": "Garantie 5 ans",
     "warrantyDesc": "Couverture complète",
     "fastDelivery": "Livraison rapide",
-    "fastDeliveryDesc": "2-5 jours ouvrés"
+    "fastDeliveryDesc": "2-5 jours ouvrés",
+    "euShipping": "Livraison dans toute l’UE",
+    "euShippingDesc": "2 à 5 jours ouvrés"
   },
   "footer": {
     "whyBuilt": "Pourquoi nous avons créé Sentorise",
@@ -554,11 +555,11 @@
     "us": "États-Unis"
   },
   "trust": {
-    "freeShipping": "Livraison UE",
     "warranty": "Garantie 5 ans",
     "returns": "Retour sous 30 jours",
     "cycles": "4000+ Cycles",
-    "certifiedSafe": "Certifié sûr"
+    "certifiedSafe": "Certifié sûr",
+    "euShipping": "Livraison UE"
   },
   "certifications": {
     "badge": "Qualité & Conformité",
@@ -574,5 +575,46 @@
     "ctaTitle": "Besoin de documents de certification ?",
     "ctaDescription": "Téléchargez les rapports de test officiels et les certificats de conformité.",
     "ctaButton": "Accéder aux téléchargements"
+  },
+  "announcement": {
+    "shipping": "Livraison dans toute l’UE depuis notre entrepôt de Berlin · 2 à 5 jours ouvrés",
+    "shippingShort": "Livraison UE · 2–5 jours"
+  },
+  "cart": {
+    "title": "Panier",
+    "empty": "Votre panier est vide",
+    "emptyHint": "Ajoutez des batteries pour commencer",
+    "itemsCount": "{{count}} article dans votre panier",
+    "itemsCount_plural": "{{count}} articles dans votre panier",
+    "total": "Total",
+    "checkout": "Passer au paiement",
+    "shippingNotice": "Frais de port et taxes calculés au paiement · Livraison UE en 2–5 jours ouvrés",
+    "trust": {
+      "ssl": "Chiffré SSL",
+      "returns": "Retour 30 jours",
+      "warranty": "Garantie 5 ans"
+    },
+    "poweredBy": "Paiement sécurisé propulsé par Shopify"
+  },
+  "home": {
+    "shopGridTitle": "Nos batteries",
+    "shopGridSubtitle": "Tous les produits en stock · Livraison UE en 2 à 5 jours ouvrés · Paiement sécurisé."
+  },
+  "accessories": {
+    "estShipping": "Expédition est."
+  },
+  "terms": {
+    "shippingTitle": "4. Expédition et livraison",
+    "shippingFees": "Les frais d’expédition sont calculés au moment du paiement en fonction de la destination et du poids de la commande. La livraison standard dans l’Union européenne prend 2 à 5 jours ouvrés. Les délais peuvent varier selon la localisation et le transporteur.",
+    "shippingRisk": "Le risque de perte et la propriété des produits vous sont transférés à la remise au transporteur.",
+    "returnShippingTitle": "Retour",
+    "returnDefective": "Produit défectueux :",
+    "returnDefectiveDesc": "nous fournissons une étiquette de retour prépayée.",
+    "returnChange": "Changement d’avis :",
+    "returnChangeDesc": "les frais de retour sont à la charge du client.",
+    "refundTitle": "Délai de remboursement",
+    "refundProcess": "Remboursement traité dans les 5 jours ouvrés suivant la réception du produit retourné.",
+    "refundCredit": "Crédit sur le moyen de paiement initial sous 3 à 7 jours ouvrés (selon la banque).",
+    "refundShipping": "Les frais d’expédition initiaux ne sont pas remboursables, sauf en cas de produit défectueux."
   }
 }

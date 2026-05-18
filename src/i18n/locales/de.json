@@ -84,11 +84,11 @@
       "bluetooth": "Bluetooth-Überwachung",
       "euStock": "EU-Lager & Support",
       "lowTemp": "Tieftemperaturschutz",
-      "freeShipping": "EU-weiter Versand",
       "lightweight": "Leichtbauweise",
       "easyInstall": "Einfache Selbstmontage",
       "bms": "BMS-Schutz",
-      "ce": "CE-zertifiziert"
+      "ce": "CE-zertifiziert",
+      "euShipping": "EU-weiter Versand"
     },
     "shopNow": "Jetzt kaufen",
     "howToChoose": "Wie wählen",
@@ -106,7 +106,6 @@
     "viewDetails": "Details ansehen",
     "quickView": "Schnellansicht",
     "compare": "Vergleichen",
-    "freeShipping": "EU-weiter Versand",
     "warranty": "5 Jahre Garantie",
     "register": "Registrieren",
     "inStock": "Auf Lager",
@@ -138,7 +137,9 @@
     "pageSubtitle": "LiFePO₄-Batterien und Zubehör für Wohnmobile, Off-Grid-, Solar- und mobile Energiesysteme.",
     "batteries": "Batterien",
     "accessories": "Zubehör",
-    "add": "Hinzufügen"
+    "add": "Hinzufügen",
+    "euShipping": "EU-weiter Versand",
+    "preOrderEst": "Vorbestellung · vor. {{date}}"
   },
   "productNames": {
     "lite-12v6": {
@@ -482,14 +483,14 @@
     "cyclesBadge": "10+ Jahre"
   },
   "servicePromises": {
-    "freeShipping": "EU-weiter Versand",
-    "freeShippingDesc": "2–5 Werktage",
     "returns": "30 Tage Rückgabe",
     "returnsDesc": "Geld-zurück-Garantie",
     "warranty": "5 Jahre Garantie",
     "warrantyDesc": "Volle Abdeckung",
     "fastDelivery": "Schnelle Lieferung",
-    "fastDeliveryDesc": "2-5 Werktage"
+    "fastDeliveryDesc": "2-5 Werktage",
+    "euShipping": "EU-weiter Versand",
+    "euShippingDesc": "2–5 Werktage"
   },
   "footer": {
     "whyBuilt": "Warum wir Sentorise gegründet haben",
@@ -554,11 +555,11 @@
     "us": "USA"
   },
   "trust": {
-    "freeShipping": "EU-Versand",
     "warranty": "5 Jahre Garantie",
     "returns": "30 Tage Rückgabe",
     "cycles": "4000+ Zyklen",
-    "certifiedSafe": "Zertifiziert sicher"
+    "certifiedSafe": "Zertifiziert sicher",
+    "euShipping": "EU-Versand"
   },
   "certifications": {
     "badge": "Qualität & Konformität",
@@ -574,5 +575,46 @@
     "ctaTitle": "Zertifizierungsdokumente benötigt?",
     "ctaDescription": "Laden Sie offizielle Prüfberichte und Konformitätszertifikate für Ihre Unterlagen herunter.",
     "ctaButton": "Zu den Downloads"
+  },
+  "announcement": {
+    "shipping": "EU-weiter Versand aus unserem Berliner Lager · 2–5 Werktage",
+    "shippingShort": "EU-weiter Versand · 2–5 Tage"
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Ihr Warenkorb ist leer",
+    "emptyHint": "Fügen Sie Batterien hinzu, um zu beginnen",
+    "itemsCount": "{{count}} Artikel in Ihrem Warenkorb",
+    "itemsCount_plural": "{{count}} Artikel in Ihrem Warenkorb",
+    "total": "Gesamt",
+    "checkout": "Zur Kasse",
+    "shippingNotice": "Versand & Steuern werden an der Kasse berechnet · EU-Lieferung in 2–5 Werktagen",
+    "trust": {
+      "ssl": "SSL-verschlüsselt",
+      "returns": "30 Tage Rückgabe",
+      "warranty": "5 Jahre Garantie"
+    },
+    "poweredBy": "Sicherer Checkout über Shopify"
+  },
+  "home": {
+    "shopGridTitle": "Unsere Batterien",
+    "shopGridSubtitle": "Alle Produkte ab Lager · EU-weiter Versand in 2–5 Werktagen · Sicherer Checkout."
+  },
+  "accessories": {
+    "estShipping": "Voraus. Versand"
+  },
+  "terms": {
+    "shippingTitle": "4. Versand und Lieferung",
+    "shippingFees": "Die Versandkosten werden an der Kasse anhand von Lieferadresse und Bestellgewicht berechnet. Die Standardlieferung innerhalb der Europäischen Union erfolgt innerhalb von 2–5 Werktagen. Lieferzeiten können je nach Standort und Spediteur variieren.",
+    "shippingRisk": "Das Verlust- und Eigentumsrisiko der Produkte geht mit Übergabe an den Spediteur auf Sie über.",
+    "returnShippingTitle": "Rückversand",
+    "returnDefective": "Defektes Produkt:",
+    "returnDefectiveDesc": "wir stellen ein vorausbezahltes Rücksendeetikett bereit.",
+    "returnChange": "Nichtgefallen:",
+    "returnChangeDesc": "die Rücksendekosten trägt der Kunde.",
+    "refundTitle": "Erstattungsfristen",
+    "refundProcess": "Die Erstattung wird innerhalb von 5 Werktagen nach Eingang der Rücksendung bearbeitet.",
+    "refundCredit": "Die Gutschrift erfolgt innerhalb von 3–7 Werktagen auf das ursprüngliche Zahlungsmittel (bankabhängig).",
+    "refundShipping": "Die Hinversandkosten sind nicht erstattungsfähig, es sei denn, das Produkt war defekt."
   }
 }
