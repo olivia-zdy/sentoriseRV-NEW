@@ -1,65 +1,43 @@
-# CartDrawer 无障碍测试用例
+# Cart 入口审计
 
-> 项目尚未引入 Vitest（参考 `knowledge://frontend-testing-setup` 启用）。
-> 启用后将以下文件保存为 `src/components/__tests__/CartDrawer.a11y.test.tsx`。
+集中记录所有"打开购物车"的入口。每个入口在挂载时通过 `useCartEntry(id)`
+注册到 `useCartUI` 全局 store，测试在 `src/components/__tests__/CartDrawer.test.tsx`
+中验证：
 
-```tsx
-import { describe, it, expect } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
-import { CartDrawer } from "../CartDrawer";
+1. **全部入口已注册**（防止漏挂或移除）
+2. **每个入口点击后实际打开 CartDrawer**
+3. **CartDrawer 4 条无障碍用例通过**
 
-const renderDrawer = () =>
-  render(
-    <MemoryRouter>
-      <CartDrawer />
-    </MemoryRouter>
-  );
+## 入口注册表
 
-describe("CartDrawer a11y", () => {
-  it("触发按钮具有可访问名称", () => {
-    renderDrawer();
-    const trigger = screen.getByTestId("cart-trigger");
-    expect(trigger).toHaveAttribute("aria-label");
-    expect(trigger).toHaveAttribute("aria-haspopup", "dialog");
-  });
+| ID (`CART_ENTRY_POINTS`) | 位置 | 组件 | 触发方式 | testid |
+| --- | --- | --- | --- | --- |
+| `header-desktop` | 桌面 Header Actions | `<CartDrawer />` | 点击图标 → `useCartUI.openCart` | `cart-trigger` |
+| `header-mobile` | 移动 Header Actions | `<CartDrawer entryId="header-mobile" />` | 点击图标 | `cart-trigger` |
+| `mobile-menu` | 移动汉堡菜单底部 | `<MobileMenuCartEntry />` | 按钮点击 | `cart-entry-mobile-menu` |
+| `footer` | Footer Support 列底部 | `<FooterCartLink />` | 文本链接点击 | `cart-entry-footer` |
 
-  it("触发按钮满足 44×44 触摸目标", () => {
-    renderDrawer();
-    const trigger = screen.getByTestId("cart-trigger");
-    expect(trigger.className).toMatch(/min-h-11/);
-    expect(trigger.className).toMatch(/min-w-11/);
-  });
+## 当前未触发 CartDrawer 的位置（按设计保留）
 
-  it("可通过键盘聚焦并打开", () => {
-    renderDrawer();
-    const trigger = screen.getByTestId("cart-trigger");
-    trigger.focus();
-    expect(document.activeElement).toBe(trigger);
-    fireEvent.click(trigger);
-    expect(trigger).toHaveAttribute("aria-expanded", "true");
-  });
+| 位置 | 行为 | 原因 |
+| --- | --- | --- |
+| 产品页 "Add to cart" 按钮 | 调用 `cartStore.addItem`，不打开抽屉 | 不打断添加流程，由 toast 反馈 |
+| 404 NotFound 页 | 仅指向 `/products` | 该页用户无购物意图 |
 
-  it("空购物车显示引导文案与 CTA", () => {
-    renderDrawer();
-    fireEvent.click(screen.getByTestId("cart-trigger"));
-    expect(screen.getByText(/empty/i)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /browse/i })).toHaveAttribute(
-      "href",
-      "/products"
-    );
-  });
-});
+## 运行测试
+
+```bash
+bun run test          # 一次性运行
+bun run test:watch    # 监听模式
 ```
 
-## 购物车入口审计
+预期：8 passed（3 入口审计 + 4 a11y + 1 入口审计内部 each 参数化展开）。
 
-| 位置 | 触发 CartDrawer | 备注 |
-| --- | --- | --- |
-| 桌面 Header Actions | ✅ | `CartDrawer` 实例 |
-| 移动端 Header Actions | ✅ | 本次新增/修复 |
-| Footer | ❌ | 无购物车链接（DTC 站点惯例，保留） |
-| 404 / NotFound | ❌ | 仅指向产品页 |
-| 移动端折叠菜单（汉堡内） | ❌ | 建议未来添加 |
+## 新增/移除入口时的清单
 
-页面内 “Add to cart” 按钮直接走 `useCartStore.addToCart`，不通过 Header 入口，符合预期。
+1. 在 `CART_ENTRY_POINTS`（`src/stores/cartUIStore.ts`）增加常量
+2. 入口组件中 `const openCart = useCartEntry(CART_ENTRY_POINTS.XXX)`
+3. 在本文件的"入口注册表"中追加一行
+4. 在 `CartDrawer.test.tsx > Cart entry-point audit` 的 `expected` 数组与
+   参数化用例中增补
+5. 运行 `bun run test`
