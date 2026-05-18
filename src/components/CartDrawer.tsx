@@ -43,18 +43,42 @@ export const CartDrawer = () => {
     }).format(amount);
   };
 
+  const triggerLabel = totalItems > 0
+    ? t('cart.openLabelWithCount', { count: totalItems })
+    : t('cart.openLabel');
+
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetTrigger asChild>
-        <Button variant="outline" size="icon" className="relative">
-          <ShoppingCart className="h-5 w-5" />
-          {totalItems > 0 && (
-            <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs bg-primary text-primary-foreground">
-              {totalItems}
-            </Badge>
-          )}
-        </Button>
-      </SheetTrigger>
+      <TooltipProvider delayDuration={300}>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <SheetTrigger asChild>
+              <Button
+                variant="outline"
+                size="icon"
+                aria-label={triggerLabel}
+                aria-haspopup="dialog"
+                aria-expanded={isOpen}
+                data-testid="cart-trigger"
+                onClick={(e) => e.stopPropagation()}
+                className="relative min-h-11 min-w-11 z-10"
+              >
+                <ShoppingCart className="h-5 w-5" aria-hidden="true" />
+                {totalItems > 0 && (
+                  <Badge
+                    aria-hidden="true"
+                    className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs bg-primary text-primary-foreground"
+                  >
+                    {totalItems}
+                  </Badge>
+                )}
+                <span className="sr-only">{triggerLabel}</span>
+              </Button>
+            </SheetTrigger>
+          </TooltipTrigger>
+          <TooltipContent side="bottom">{t('cart.tooltip')}</TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
       <SheetContent className="w-full sm:max-w-lg flex flex-col h-full">
         <SheetHeader className="flex-shrink-0">
           <SheetTitle>{t('cart.title')}</SheetTitle>
