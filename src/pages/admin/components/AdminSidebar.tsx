@@ -6,7 +6,8 @@ import {
   Palette, 
   LogOut,
   Bell,
-  Settings
+  Settings,
+  Warehouse,
 } from 'lucide-react';
 import { useAdminAuth } from '@/hooks/useAdminAuth';
 import { useToast } from '@/hooks/use-toast';
