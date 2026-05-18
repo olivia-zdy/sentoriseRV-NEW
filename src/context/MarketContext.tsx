@@ -48,7 +48,17 @@ export const MarketProvider = ({ children }: { children: ReactNode }) => {
   const { i18n } = useTranslation();
   const [marketCode, setMarketCode] = useState<MarketCode>(() => {
     const saved = localStorage.getItem('sentorise-market');
-    return (saved as MarketCode) || 'DE';
+    if (saved && MARKETS.some(m => m.code === saved)) return saved as MarketCode;
+    // First-visit: infer from browser language
+    if (typeof navigator !== 'undefined') {
+      const nav = (navigator.language || 'en').toLowerCase();
+      if (nav.startsWith('zh')) return 'CN';
+      if (nav.startsWith('de')) return 'DE';
+      if (nav.startsWith('fr')) return 'FR';
+      if (nav === 'en-gb' || nav === 'en-ie') return 'UK';
+      if (nav.startsWith('en-us') || nav.startsWith('en-ca')) return 'US';
+    }
+    return 'DE';
   });
   const [rates, setRates] = useState<ExchangeRates>(DEFAULT_RATES);
   const [isLoadingRates, setIsLoadingRates] = useState(false);

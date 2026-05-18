@@ -6,6 +6,12 @@ import logoLight from "@/assets/logo-light.png";
 import logoDark from "@/assets/logo-dark.png";
 import { Mail, Facebook, Instagram, Youtube, Linkedin, Shield, Award, Leaf, ShieldCheck, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
+import { useWarehouses } from "@/hooks/useLocalWarehouse";
+
+const COUNTRY_FLAGS: Record<string, string> = {
+  DE: "🇩🇪", PL: "🇵🇱", UK: "🇬🇧", GB: "🇬🇧", US: "🇺🇸", CN: "🇨🇳",
+  FR: "🇫🇷", NL: "🇳🇱", IT: "🇮🇹", ES: "🇪🇸", AT: "🇦🇹", CH: "🇨🇭",
+};
 
 const socialLinks = [
   { name: "Facebook", icon: Facebook, href: "#" },
@@ -130,7 +136,7 @@ const Footer = () => {
             </div>
             <div className="space-y-2 text-xs text-muted-foreground">
               <p className="font-medium text-foreground text-sm">{t('footer.warehouses')}</p>
-              <p>🇩🇪 Germany · 🇵🇱 Poland · 🇬🇧 United Kingdom</p>
+              <WarehouseList />
             </div>
             <RegistrationsToggle />
           </div>
