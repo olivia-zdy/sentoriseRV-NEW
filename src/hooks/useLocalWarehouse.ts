@@ -82,18 +82,24 @@ export function useWarehouses() {
   });
 }
 
-/** Maps the current UI language to a warehouse code. */
-const LANG_TO_WAREHOUSE: Record<string, string> = {
-  de: "DE",
-  fr: "PL",
-  en: "UK",
-  zh: "DE",
+/** Maps the active market to its local warehouse code. */
+const MARKET_TO_WAREHOUSE: Record<string, string> = {
+  DE: "DE",
+  FR: "PL",
+  UK: "UK",
+  US: "US",
+  CN: "CN",
 };
 
-/** Returns the localized shipping copy for the warehouse matching the current language. */
+/** Returns the localized shipping copy for the warehouse matching the active market. */
 export function useLocalShippingCopy(fallback?: string): string {
   const { i18n } = useTranslation();
   const { data: warehouses } = useWarehouses();
+  // Read market directly from localStorage to avoid coupling to MarketProvider
+  const marketCode =
+    (typeof window !== "undefined" &&
+      (localStorage.getItem("sentorise-market") as string)) ||
+    "DE";
 
   if (!warehouses || warehouses.length === 0) return fallback ?? "";
 
@@ -111,7 +117,7 @@ export function useLocalShippingCopy(fallback?: string): string {
     }
   };
 
-  const targetCode = LANG_TO_WAREHOUSE[lang] ?? "UK";
+  const targetCode = MARKET_TO_WAREHOUSE[marketCode] ?? "DE";
   const match =
     warehouses.find((w) => w.code === targetCode) ??
     warehouses.find((w) => w.is_default) ??
