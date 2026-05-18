@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageMeta from "@/components/PageMeta";
 
 const PrivacyPage = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
-      <PageMeta 
-        title="Privacy Policy" 
-        description="Learn how Sentorise collects, uses, and protects your personal information." 
+      <PageMeta
+        title={t('seo.privacy.title')}
+        description={t('seo.privacy.description')}
+        canonical="/privacy"
       />
       <AnnouncementBar />
       <Header />
