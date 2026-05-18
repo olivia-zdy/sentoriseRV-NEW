@@ -84,7 +84,7 @@
       "bluetooth": "Bluetooth-Überwachung",
       "euStock": "EU-Lager & Support",
       "lowTemp": "Tieftemperaturschutz",
-      "freeShipping": "Kostenloser Versand ab 199€",
+      "freeShipping": "EU-weiter Versand",
       "lightweight": "Leichtbauweise",
       "easyInstall": "Einfache Selbstmontage",
       "bms": "BMS-Schutz",
@@ -106,7 +106,7 @@
     "viewDetails": "Details ansehen",
     "quickView": "Schnellansicht",
     "compare": "Vergleichen",
-    "freeShipping": "Versandkostenfrei ab 199€",
+    "freeShipping": "EU-weiter Versand",
     "warranty": "5 Jahre Garantie",
     "register": "Registrieren",
     "inStock": "Auf Lager",
@@ -183,37 +183,73 @@
       "title": "Wohnmobil",
       "tagline": "Das Herz Ihres rollenden Zuhauses",
       "description": "Ob Wochenendausflügler oder Vollzeit-Wohnmobilist — Sentorise-Batterien versorgen alle Bordsysteme zuverlässig mit Strom: von Beleuchtung und Kühlschrank bis hin zu Klimaanlage und Unterhaltung.",
-      "benefits": ["Drop-in-Ersatz für Bleibatterien", "50% leichter als vergleichbare Bleibatterien", "Wartungsfrei", "Sicher für den Inneneinbau", "Bluetooth-Überwachung aus dem Wohnmobil heraus"]
+      "benefits": [
+        "Drop-in-Ersatz für Bleibatterien",
+        "50% leichter als vergleichbare Bleibatterien",
+        "Wartungsfrei",
+        "Sicher für den Inneneinbau",
+        "Bluetooth-Überwachung aus dem Wohnmobil heraus"
+      ]
     },
     "vanlife": {
       "title": "Van Life",
       "tagline": "Freiheit im kompakten Format",
       "description": "Van-Umbauten erfordern maximale Leistung auf minimalem Raum. Unsere kompakte Core MINI und Lite Serie liefern ernsthafte Energiedichte für Sprinter, Transit und andere beliebte Van-Plattformen.",
-      "benefits": ["Ultra-kompakte Designs für enge Räume", "Leicht für besseren Kraftstoffverbrauch", "Leiser Betrieb — keine Belüftung nötig", "Kompatibel mit allen gängigen Solarreglern", "5 Jahre Garantie für Ihre Sicherheit"]
+      "benefits": [
+        "Ultra-kompakte Designs für enge Räume",
+        "Leicht für besseren Kraftstoffverbrauch",
+        "Leiser Betrieb — keine Belüftung nötig",
+        "Kompatibel mit allen gängigen Solarreglern",
+        "5 Jahre Garantie für Ihre Sicherheit"
+      ]
     },
     "solar": {
       "title": "Inselanlage Solar",
       "tagline": "Sonnenenergie speichern",
       "description": "Bauen Sie ein zuverlässiges Off-Grid-Stromsystem mit Sentorise-Batterien. Unsere Deep-Cycle-LiFePO4-Technologie maximiert die Solarernte und liefert Tag und Nacht konstante Energie.",
-      "benefits": ["4000+ Zyklen Lebensdauer", "95%+ Round-Trip-Effizienz", "Volle Entladetiefe möglich", "Parallelschaltung für mehr Kapazität", "Kompatibel mit Victron, MPPT und Hybrid-Wechselrichtern"]
+      "benefits": [
+        "4000+ Zyklen Lebensdauer",
+        "95%+ Round-Trip-Effizienz",
+        "Volle Entladetiefe möglich",
+        "Parallelschaltung für mehr Kapazität",
+        "Kompatibel mit Victron, MPPT und Hybrid-Wechselrichtern"
+      ]
     },
     "marine": {
       "title": "Marine & Boot",
       "tagline": "Energie für Ihre Abenteuer auf dem Wasser",
       "description": "Sentorise-Batterien bewältigen die Anforderungen der Meeresumgebung — sie versorgen Elektromotoren, Echolote und Kabinensysteme mit zuverlässiger, wartungsfreier Leistung.",
-      "benefits": ["Vibrationsresistente Konstruktion", "IP-geschützte Gehäuse verfügbar", "Keine Säureaustritte oder Dämpfe", "Konstante Spannung unter Last", "Leicht für bessere Bootleistung"]
+      "benefits": [
+        "Vibrationsresistente Konstruktion",
+        "IP-geschützte Gehäuse verfügbar",
+        "Keine Säureaustritte oder Dämpfe",
+        "Konstante Spannung unter Last",
+        "Leicht für bessere Bootleistung"
+      ]
     },
     "camping": {
       "title": "Camping & Outdoor",
       "tagline": "Tragbare Energie für jedes Abenteuer",
       "description": "Von Wochenend-Campingtrips bis hin zu ausgedehnten Wildnis-Expeditionen — unsere Lite Serie liefert zuverlässige tragbare Energie für Lampen, Handys, Kameras und kleine Geräte.",
-      "benefits": ["Ultra-leicht und tragbar", "Funktioniert mit tragbaren Solarpanels", "Versorgt Campinglichter, Ventilatoren und Ladegeräte", "Lange Lagerfähigkeit — einsatzbereit wenn nötig", "Kompakt genug für das Basislager"]
+      "benefits": [
+        "Ultra-leicht und tragbar",
+        "Funktioniert mit tragbaren Solarpanels",
+        "Versorgt Campinglichter, Ventilatoren und Ladegeräte",
+        "Lange Lagerfähigkeit — einsatzbereit wenn nötig",
+        "Kompakt genug für das Basislager"
+      ]
     },
     "cabin": {
       "title": "Autarke Hütte",
       "tagline": "Unabhängiges Wohnen, zuverlässige Energie",
       "description": "Versorgen Sie Ihre abgelegene Hütte oder Ihr Ferienhaus mit einem kompletten Off-Grid-System. Sentorise-Batterien speichern Solarenergie für Beleuchtung, Wasserpumpen, Kühlung und mehr.",
-      "benefits": ["Hohe Kapazität für die gesamte Hütte", "Selbstheizung für kalte Klimazonen", "Wartungsarm — einrichten und vergessen", "Erweiterbar durch Parallelschaltung", "10+ Jahre erwartete Lebensdauer"]
+      "benefits": [
+        "Hohe Kapazität für die gesamte Hütte",
+        "Selbstheizung für kalte Klimazonen",
+        "Wartungsarm — einrichten und vergessen",
+        "Erweiterbar durch Parallelschaltung",
+        "10+ Jahre erwartete Lebensdauer"
+      ]
     },
     "faqs": [
       {
@@ -368,12 +404,30 @@
     "philosophyLabel": "Unsere Philosophie",
     "philosophyTitle": "Gebaut für Zuverlässigkeit, nicht für Spezifikationen",
     "values": {
-      "safety": { "title": "Sicherheit zuerst", "description": "Jede Sentorise-Batterie verwendet Grade-A LiFePO4-Zellen mit mehrstufigem BMS-Schutz gegen Überladung, Tiefentladung, Kurzschluss und thermisches Durchgehen." },
-      "quality": { "title": "Internationale Qualitätsstandards", "description": "CE-zertifiziert, UN38.3-getestet, FCC-konform und erfüllt IEC 62619 Sicherheitsstandards. Bereit für europäische und amerikanische Märkte." },
-      "smart": { "title": "Intelligente Überwachung", "description": "Prüfen Sie Batteriestatus, Spannung, Strom, Temperatur und Restkapazität in Echtzeit über unsere Smartphone-App via Bluetooth." },
-      "longLife": { "title": "Langlebige Technologie", "description": "4000+ Zyklen Lebensdauer — das ist 4x länger als Bleibatterien. Unsere LiFePO4-Chemie liefert konstante Leistung für 10+ Jahre." },
-      "weather": { "title": "Allwetter-Leistung", "description": "Eingebauter Tieftemperaturschutz verhindert das Laden unter dem Gefrierpunkt. Die Plus-Serie enthält Selbstheizung für arktische Bedingungen." },
-      "sustainable": { "title": "Nachhaltige Wahl", "description": "LiFePO4 ist ungiftig und recycelbar. Unsere umweltfreundliche Papierform-Verpackung reduziert Plastikmüll. Versorgen Sie Ihre Abenteuer verantwortungsvoll." }
+      "safety": {
+        "title": "Sicherheit zuerst",
+        "description": "Jede Sentorise-Batterie verwendet Grade-A LiFePO4-Zellen mit mehrstufigem BMS-Schutz gegen Überladung, Tiefentladung, Kurzschluss und thermisches Durchgehen."
+      },
+      "quality": {
+        "title": "Internationale Qualitätsstandards",
+        "description": "CE-zertifiziert, UN38.3-getestet, FCC-konform und erfüllt IEC 62619 Sicherheitsstandards. Bereit für europäische und amerikanische Märkte."
+      },
+      "smart": {
+        "title": "Intelligente Überwachung",
+        "description": "Prüfen Sie Batteriestatus, Spannung, Strom, Temperatur und Restkapazität in Echtzeit über unsere Smartphone-App via Bluetooth."
+      },
+      "longLife": {
+        "title": "Langlebige Technologie",
+        "description": "4000+ Zyklen Lebensdauer — das ist 4x länger als Bleibatterien. Unsere LiFePO4-Chemie liefert konstante Leistung für 10+ Jahre."
+      },
+      "weather": {
+        "title": "Allwetter-Leistung",
+        "description": "Eingebauter Tieftemperaturschutz verhindert das Laden unter dem Gefrierpunkt. Die Plus-Serie enthält Selbstheizung für arktische Bedingungen."
+      },
+      "sustainable": {
+        "title": "Nachhaltige Wahl",
+        "description": "LiFePO4 ist ungiftig und recycelbar. Unsere umweltfreundliche Papierform-Verpackung reduziert Plastikmüll. Versorgen Sie Ihre Abenteuer verantwortungsvoll."
+      }
     },
     "differentiatorTitle": "Was uns unterscheidet",
     "differentiatorSubtitle": "Während andere synthetischen Kapazitätsmetriken nachjagen, konzentrieren wir uns auf das Wesentliche: Zuverlässigkeit, Sicherheit und Praxisleistung.",
@@ -428,8 +482,8 @@
     "cyclesBadge": "10+ Jahre"
   },
   "servicePromises": {
-    "freeShipping": "Kostenloser EU-Versand",
-    "freeShippingDesc": "Ab 199€",
+    "freeShipping": "EU-weiter Versand",
+    "freeShippingDesc": "2–5 Werktage",
     "returns": "30 Tage Rückgabe",
     "returnsDesc": "Geld-zurück-Garantie",
     "warranty": "5 Jahre Garantie",
@@ -500,7 +554,7 @@
     "us": "USA"
   },
   "trust": {
-    "freeShipping": "Kostenloser Versand",
+    "freeShipping": "EU-Versand",
     "warranty": "5 Jahre Garantie",
     "returns": "30 Tage Rückgabe",
     "cycles": "4000+ Zyklen",

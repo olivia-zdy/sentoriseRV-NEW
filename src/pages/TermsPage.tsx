@@ -57,9 +57,9 @@ const TermsPage = () => {
             <section className="mb-8">
               <h2 className="text-xl font-semibold text-foreground mb-4">4. Shipping and Delivery</h2>
               <p className="text-muted-foreground mb-4">
-                We offer free shipping on orders over €99 within the European Union. Standard 
-                delivery takes 2-5 business days. Delivery times may vary based on location and 
-                carrier availability.
+                Shipping fees are calculated at checkout based on destination and order weight. 
+                Standard delivery within the European Union takes 2-5 business days. Delivery 
+                times may vary based on location and carrier availability.
               </p>
               <p className="text-muted-foreground">
                 Risk of loss and title for products pass to you upon delivery to the carrier.

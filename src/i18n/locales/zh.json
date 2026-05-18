@@ -84,7 +84,7 @@
       "bluetooth": "蓝牙监控",
       "euStock": "本地仓储与售后",
       "lowTemp": "低温保护",
-      "freeShipping": "订单满 €199 免运费",
+      "freeShipping": "欧盟全境配送",
       "lightweight": "轻量化设计",
       "easyInstall": "易于安装",
       "bms": "BMS 保护",
@@ -106,7 +106,7 @@
     "viewDetails": "查看详情",
     "quickView": "快速预览",
     "compare": "对比",
-    "freeShipping": "€199+ 免运费",
+    "freeShipping": "欧盟全境配送",
     "warranty": "5 年质保",
     "register": "注册",
     "inStock": "现货",
@@ -183,37 +183,73 @@
       "title": "房车",
       "tagline": "你流动的家的能量核心",
       "description": "无论是周末出游还是全职房车生活,Sentorise 电池都能为车内照明、冰箱、空调与娱乐系统提供可靠电力。",
-      "benefits": ["可直接替换铅酸电池", "比同容量铅酸轻 50%", "免维护", "可安全室内安装", "支持车内蓝牙监控"]
+      "benefits": [
+        "可直接替换铅酸电池",
+        "比同容量铅酸轻 50%",
+        "免维护",
+        "可安全室内安装",
+        "支持车内蓝牙监控"
+      ]
     },
     "vanlife": {
       "title": "车旅生活",
       "tagline": "紧凑空间内的自由",
       "description": "改装车需要在最小空间内获得最大电力。Core MINI 与 Lite 系列为各种主流车型提供高能量密度。",
-      "benefits": ["超紧凑设计", "轻量化更省油", "静音运行,无需排气", "兼容主流太阳能控制器", "5 年质保,安心使用"]
+      "benefits": [
+        "超紧凑设计",
+        "轻量化更省油",
+        "静音运行,无需排气",
+        "兼容主流太阳能控制器",
+        "5 年质保,安心使用"
+      ]
     },
     "solar": {
       "title": "离网太阳能",
       "tagline": "把阳光储存起来",
       "description": "用 Sentorise 电池打造可靠的离网系统。深循环 LiFePO4 技术最大化太阳能利用,昼夜稳定供电。",
-      "benefits": ["4000+ 循环寿命", "95%+ 往返效率", "支持深度放电", "并联扩容", "兼容 Victron、MPPT 与混合逆变器"]
+      "benefits": [
+        "4000+ 循环寿命",
+        "95%+ 往返效率",
+        "支持深度放电",
+        "并联扩容",
+        "兼容 Victron、MPPT 与混合逆变器"
+      ]
     },
     "marine": {
       "title": "船舶与游艇",
       "tagline": "为水上行程提供电力",
       "description": "Sentorise 电池可应对船舶环境,为船外推进器、鱼探仪与船舱系统提供免维护的可靠电力。",
-      "benefits": ["抗震结构", "可选 IP 防护外壳", "无酸液与气体", "负载下电压稳定", "轻量化提升航行表现"]
+      "benefits": [
+        "抗震结构",
+        "可选 IP 防护外壳",
+        "无酸液与气体",
+        "负载下电压稳定",
+        "轻量化提升航行表现"
+      ]
     },
     "camping": {
       "title": "露营与户外",
       "tagline": "便携电力,陪你冒险",
       "description": "从周末露营到长途穿越,Lite 系列为照明、手机、相机与小型设备提供可靠的便携电力。",
-      "benefits": ["超轻便携", "兼容便携式太阳能板", "供电露营灯、风扇与充电器", "长货架寿命,随用随取", "背包基地营也能用"]
+      "benefits": [
+        "超轻便携",
+        "兼容便携式太阳能板",
+        "供电露营灯、风扇与充电器",
+        "长货架寿命,随用随取",
+        "背包基地营也能用"
+      ]
     },
     "cabin": {
       "title": "离网小屋",
       "tagline": "独立生活的可靠电力",
       "description": "为偏远小屋或度假屋打造完整的离网系统,Sentorise 电池存储太阳能用于照明、水泵、制冷等。",
-      "benefits": ["大容量满足整屋用电", "自加热适应严寒", "免维护,一装永逸", "可并联扩容", "10+ 年预期寿命"]
+      "benefits": [
+        "大容量满足整屋用电",
+        "自加热适应严寒",
+        "免维护,一装永逸",
+        "可并联扩容",
+        "10+ 年预期寿命"
+      ]
     },
     "faqs": [
       {
@@ -368,12 +404,30 @@
     "philosophyLabel": "我们的理念",
     "philosophyTitle": "为可靠而生,不只为参数",
     "values": {
-      "safety": { "title": "安全优先工程", "description": "每块 Sentorise 电池均采用 A 级 LiFePO4 电芯与多层 BMS 保护,防过充、过放、短路与热失控。" },
-      "quality": { "title": "国际质量标准", "description": "通过 CE、UN38.3、FCC 与 IEC 62619 安全认证,符合欧美市场要求。" },
-      "smart": { "title": "智能监控", "description": "通过手机 App 与蓝牙实时查看电压、电流、温度与剩余电量。" },
-      "longLife": { "title": "超长寿命技术", "description": "4000+ 循环,是铅酸电池的 4 倍。LiFePO4 化学体系可稳定服务 10 年以上。" },
-      "weather": { "title": "全天候表现", "description": "内置低温保护,Plus 系列含自加热,适应极地环境。" },
-      "sustainable": { "title": "可持续选择", "description": "LiFePO4 无毒可回收,环保纸浆包装减少塑料废弃,让出行更负责任。" }
+      "safety": {
+        "title": "安全优先工程",
+        "description": "每块 Sentorise 电池均采用 A 级 LiFePO4 电芯与多层 BMS 保护,防过充、过放、短路与热失控。"
+      },
+      "quality": {
+        "title": "国际质量标准",
+        "description": "通过 CE、UN38.3、FCC 与 IEC 62619 安全认证,符合欧美市场要求。"
+      },
+      "smart": {
+        "title": "智能监控",
+        "description": "通过手机 App 与蓝牙实时查看电压、电流、温度与剩余电量。"
+      },
+      "longLife": {
+        "title": "超长寿命技术",
+        "description": "4000+ 循环,是铅酸电池的 4 倍。LiFePO4 化学体系可稳定服务 10 年以上。"
+      },
+      "weather": {
+        "title": "全天候表现",
+        "description": "内置低温保护,Plus 系列含自加热,适应极地环境。"
+      },
+      "sustainable": {
+        "title": "可持续选择",
+        "description": "LiFePO4 无毒可回收,环保纸浆包装减少塑料废弃,让出行更负责任。"
+      }
     },
     "differentiatorTitle": "我们的与众不同",
     "differentiatorSubtitle": "当别人追逐虚高的参数,我们专注于真正重要的:可靠性、安全性与真实表现。",
@@ -428,8 +482,8 @@
     "cyclesBadge": "10+ 年"
   },
   "servicePromises": {
-    "freeShipping": "€199+ 免运费",
-    "freeShippingDesc": "订单满 €199",
+    "freeShipping": "欧盟全境配送",
+    "freeShippingDesc": "2–5 个工作日",
     "returns": "30 天无忧退货",
     "returnsDesc": "无理由退款",
     "warranty": "5 年质保",
@@ -501,7 +555,7 @@
     "china": "中国"
   },
   "trust": {
-    "freeShipping": "免运费",
+    "freeShipping": "欧盟配送",
     "warranty": "5 年质保",
     "returns": "30 天退货",
     "cycles": "4000+ 循环",
