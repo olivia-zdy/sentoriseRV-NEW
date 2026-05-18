@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageMeta from "@/components/PageMeta";
 
 const TermsPage = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
       <PageMeta 
@@ -55,14 +57,12 @@ const TermsPage = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-xl font-semibold text-foreground mb-4">4. Shipping and Delivery</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-4">{t('terms.shippingTitle')}</h2>
               <p className="text-muted-foreground mb-4">
-                Shipping fees are calculated at checkout based on destination and order weight. 
-                Standard delivery within the European Union takes 2-5 business days. Delivery 
-                times may vary based on location and carrier availability.
+                {t('terms.shippingFees')}
               </p>
               <p className="text-muted-foreground">
-                Risk of loss and title for products pass to you upon delivery to the carrier.
+                {t('terms.shippingRisk')}
               </p>
             </section>
 
@@ -77,18 +77,17 @@ const TermsPage = () => {
                 <li>Contact support@sentorise.com to receive a return authorization number</li>
               </ul>
               
-              <h3 className="font-semibold text-foreground mb-2 mt-6">Return Shipping</h3>
+              <h3 className="font-semibold text-foreground mb-2 mt-6">{t('terms.returnShippingTitle')}</h3>
               <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                <li><strong>Defective product:</strong> We provide free return shipping label</li>
-                <li><strong>Change of mind:</strong> Customer pays return shipping costs</li>
-                <li><strong>Amazon purchases:</strong> Use Amazon's standard return process</li>
+                <li><strong>{t('terms.returnDefective')}</strong> {t('terms.returnDefectiveDesc')}</li>
+                <li><strong>{t('terms.returnChange')}</strong> {t('terms.returnChangeDesc')}</li>
               </ul>
 
-              <h3 className="font-semibold text-foreground mb-2 mt-6">Refund Timeline</h3>
+              <h3 className="font-semibold text-foreground mb-2 mt-6">{t('terms.refundTitle')}</h3>
               <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-                <li>Refund processed within 5 business days of receiving returned product</li>
-                <li>Original payment method credited within 3-7 business days (bank dependent)</li>
-                <li>Shipping costs are non-refundable unless product was defective</li>
+                <li>{t('terms.refundProcess')}</li>
+                <li>{t('terms.refundCredit')}</li>
+                <li>{t('terms.refundShipping')}</li>
               </ul>
 
               <div className="mt-6 p-4 bg-muted/50 rounded-lg">

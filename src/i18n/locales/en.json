@@ -84,11 +84,11 @@
       "bluetooth": "Bluetooth Monitoring",
       "euStock": "EU Stock & Support",
       "lowTemp": "Low-Temp Protection",
-      "freeShipping": "EU-Wide Shipping",
       "lightweight": "Lightweight Design",
       "easyInstall": "Easy DIY Install",
       "bms": "BMS Protection",
-      "ce": "CE Certified"
+      "ce": "CE Certified",
+      "euShipping": "EU-Wide Shipping"
     },
     "shopNow": "Shop Now",
     "howToChoose": "How to Choose",
@@ -106,7 +106,6 @@
     "viewDetails": "View Details",
     "quickView": "Quick View",
     "compare": "Compare",
-    "freeShipping": "EU-Wide Shipping",
     "warranty": "5-Year Warranty",
     "register": "Register",
     "inStock": "In Stock",
@@ -138,7 +137,9 @@
     "pageSubtitle": "LiFePO₄ batteries and accessories for RV, off-grid, solar, and mobile energy systems.",
     "batteries": "Batteries",
     "accessories": "Accessories",
-    "add": "Add"
+    "add": "Add",
+    "euShipping": "EU-Wide Shipping",
+    "preOrderEst": "Pre-order · Est. {{date}}"
   },
   "productNames": {
     "lite-12v6": {
@@ -482,14 +483,14 @@
     "cyclesBadge": "10+ Years"
   },
   "servicePromises": {
-    "freeShipping": "EU-Wide Shipping",
-    "freeShippingDesc": "2–5 working days",
     "returns": "30-Day Returns",
     "returnsDesc": "Money Back Guarantee",
     "warranty": "5-Year Warranty",
     "warrantyDesc": "Full Coverage",
     "fastDelivery": "Fast Delivery",
-    "fastDeliveryDesc": "2-5 Business Days"
+    "fastDeliveryDesc": "2-5 Business Days",
+    "euShipping": "EU-Wide Shipping",
+    "euShippingDesc": "2–5 working days"
   },
   "footer": {
     "whyBuilt": "Why We Built Sentorise",
@@ -554,11 +555,11 @@
     "us": "United States"
   },
   "trust": {
-    "freeShipping": "EU Shipping",
     "warranty": "5-Year Warranty",
     "returns": "30-Day Returns",
     "cycles": "4000+ Cycles",
-    "certifiedSafe": "Certified Safe"
+    "certifiedSafe": "Certified Safe",
+    "euShipping": "EU Shipping"
   },
   "certifications": {
     "badge": "Quality & Compliance",
@@ -574,5 +575,46 @@
     "ctaTitle": "Need Certification Documents?",
     "ctaDescription": "Download official test reports and compliance certificates for your records or regulatory needs.",
     "ctaButton": "Go to Downloads"
+  },
+  "announcement": {
+    "shipping": "EU-wide shipping from our Berlin warehouse · 2–5 working days",
+    "shippingShort": "EU-wide shipping · 2–5 days"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "emptyHint": "Add batteries to get started",
+    "itemsCount": "{{count}} item in your cart",
+    "itemsCount_plural": "{{count}} items in your cart",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "shippingNotice": "Shipping & taxes calculated at checkout · EU delivery in 2–5 working days",
+    "trust": {
+      "ssl": "SSL Encrypted",
+      "returns": "30-Day Returns",
+      "warranty": "5-Year Warranty"
+    },
+    "poweredBy": "Secure checkout powered by Shopify"
+  },
+  "home": {
+    "shopGridTitle": "Shop Our Batteries",
+    "shopGridSubtitle": "All products in stock · EU-wide shipping in 2–5 working days · Secure checkout."
+  },
+  "accessories": {
+    "estShipping": "Est. shipping"
+  },
+  "terms": {
+    "shippingTitle": "4. Shipping and Delivery",
+    "shippingFees": "Shipping fees are calculated at checkout based on destination and order weight. Standard delivery within the European Union takes 2–5 business days. Delivery times may vary based on location and carrier availability.",
+    "shippingRisk": "Risk of loss and title for products pass to you upon delivery to the carrier.",
+    "returnShippingTitle": "Return Shipping",
+    "returnDefective": "Defective product:",
+    "returnDefectiveDesc": "we provide a prepaid return shipping label.",
+    "returnChange": "Change of mind:",
+    "returnChangeDesc": "customer pays the return shipping cost.",
+    "refundTitle": "Refund Timeline",
+    "refundProcess": "Refund processed within 5 business days of receiving the returned product.",
+    "refundCredit": "Original payment method credited within 3–7 business days (bank dependent).",
+    "refundShipping": "Outbound shipping costs are non-refundable unless the product was defective."
   }
 }

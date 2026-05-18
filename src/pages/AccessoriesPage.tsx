@@ -94,7 +94,7 @@ const AccessoriesPage = () => {
                               <div className="bg-background/90 backdrop-blur-sm rounded-lg px-3 py-2 flex items-center gap-2 text-sm">
                                 <Clock className="w-4 h-4 text-primary" />
                                 <span className="text-muted-foreground">
-                                  Est. shipping: <strong className="text-foreground">{product.estimatedShipping}</strong>
+                                  {t('accessories.estShipping')}: <strong className="text-foreground">{product.estimatedShipping}</strong>
                                 </span>
                               </div>
                             </div>

@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { useTranslation } from "react-i18next";
 import { lazyWithRetry as lazy } from "@/lib/lazyWithRetry";
 
 import AnnouncementBar from "@/components/AnnouncementBar";
@@ -42,6 +43,7 @@ const homepageFaqs = [
 ];
 
 const Index = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
       <PageMeta 
@@ -81,8 +83,8 @@ const Index = () => {
             </div>
           </section>
           <ShopifyProductGrid 
-            title="Shop Our Batteries"
-            subtitle="All products in stock with fast EU shipping. Add to cart and checkout securely."
+            title={t('home.shopGridTitle')}
+            subtitle={t('home.shopGridSubtitle')}
           />
           <HomepageAccessories />
           <HomepageFAQ />
