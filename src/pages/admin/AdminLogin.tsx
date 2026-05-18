@@ -27,6 +27,7 @@ export default function AdminLogin() {
   const { user, isTeamMember, isLoading: authLoading, signIn } = useAdminAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [loginError, setLoginError] = useState<string | null>(null);
 
   const loginForm = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
@@ -34,6 +35,14 @@ export default function AdminLogin() {
     mode: 'onSubmit',
     reValidateMode: 'onSubmit',
   });
+
+  // Clear the backend error as soon as the user edits the form again.
+  useEffect(() => {
+    const subscription = loginForm.watch(() => {
+      if (loginError) setLoginError(null);
+    });
+    return () => subscription.unsubscribe();
+  }, [loginForm, loginError]);
 
   useEffect(() => {
     if (user && isTeamMember && !authLoading) {
