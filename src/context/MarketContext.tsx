@@ -72,13 +72,14 @@ export const MarketProvider = ({ children }: { children: ReactNode }) => {
 
       setIsLoadingRates(true);
       try {
-        const res = await fetch('https://api.frankfurter.app/latest?from=EUR&to=GBP,USD');
+        const res = await fetch('https://api.frankfurter.app/latest?from=EUR&to=GBP,USD,CNY');
         if (res.ok) {
           const data = await res.json();
           const newRates: ExchangeRates = {
             EUR: 1,
-            GBP: data.rates.GBP,
-            USD: data.rates.USD,
+            GBP: data.rates.GBP ?? DEFAULT_RATES.GBP,
+            USD: data.rates.USD ?? DEFAULT_RATES.USD,
+            CNY: data.rates.CNY ?? DEFAULT_RATES.CNY,
           };
           setRates(newRates);
           localStorage.setItem(RATES_CACHE_KEY, JSON.stringify({ rates: newRates, timestamp: Date.now() }));
@@ -107,7 +108,11 @@ export const MarketProvider = ({ children }: { children: ReactNode }) => {
   const formatPrice = useCallback((eurPrice: number): string => {
     const converted = convertPrice(eurPrice);
     return new Intl.NumberFormat(
-      market.code === 'DE' ? 'de-DE' : market.code === 'FR' ? 'fr-FR' : market.code === 'UK' ? 'en-GB' : 'en-US',
+      market.code === 'DE' ? 'de-DE'
+        : market.code === 'FR' ? 'fr-FR'
+        : market.code === 'UK' ? 'en-GB'
+        : market.code === 'CN' ? 'zh-CN'
+        : 'en-US',
       { style: 'currency', currency: market.currency }
     ).format(converted);
   }, [convertPrice, market]);
