@@ -1,0 +1,1169 @@
+{
+  "products": {
+    "lite-12v6": {
+      "name": "Lite 12V 6Ah Ultra-Compact",
+      "tagline": "Pocket-sized power backup",
+      "description": "The smallest member of the Sentorise family. Perfect for emergency kits, routers, camping lights, and any situation where reliable power matters but space is limited.",
+      "category": "Ultra-Compact",
+      "useCases": [
+        "Emergency kits",
+        "Routers & modems",
+        "Camping lights",
+        "Fish finders",
+        "Small electronics"
+      ],
+      "features": [
+        "Ultra-compact design",
+        "Built-in BMS protection",
+        "Lightweight portable",
+        "Drop-in replacement",
+        "4000+ cycles"
+      ],
+      "highlights": [
+        "Ultra-compact",
+        "BMS Protection",
+        "4000+ Cycles"
+      ],
+      "specs": [
+        {
+          "label": "Nominal Voltage"
+        },
+        {
+          "label": "Capacity"
+        },
+        {
+          "label": "Energy"
+        },
+        {
+          "label": "Max Discharge"
+        },
+        {
+          "label": "Dimensions"
+        },
+        {
+          "label": "Weight"
+        },
+        {
+          "label": "Cycle Life"
+        },
+        {
+          "label": "Operating Temp"
+        }
+      ]
+    },
+    "lite-12v50": {
+      "name": "Lite 12V 50Ah Lightweight",
+      "tagline": "Portable power, serious capacity",
+      "description": "The perfect balance between portability and power. Equipped with Bluetooth monitoring for real-time status updates on your smartphone.",
+      "category": "Lightweight",
+      "useCases": [
+        "Small RV systems",
+        "Portable solar kits",
+        "DIY battery boxes",
+        "Kayak trolling motors",
+        "Backup power"
+      ],
+      "features": [
+        "Bluetooth monitoring",
+        "Smart BMS protection",
+        "Low-temperature cutoff",
+        "Lightweight design",
+        "5-year warranty"
+      ],
+      "highlights": [
+        "Bluetooth App",
+        "Lightweight",
+        "5-Year Warranty"
+      ],
+      "specs": [
+        {
+          "label": "Nominal Voltage"
+        },
+        {
+          "label": "Capacity"
+        },
+        {
+          "label": "Energy"
+        },
+        {
+          "label": "Max Discharge"
+        },
+        {
+          "label": "Dimensions"
+        },
+        {
+          "label": "Weight"
+        },
+        {
+          "label": "Cycle Life"
+        },
+        {
+          "label": "Bluetooth"
+        }
+      ]
+    },
+    "core-12v100-std": {
+      "name": "Core 12V 100Ah Standard",
+      "tagline": "The RV workhorse",
+      "description": "Our flagship RV battery in the popular Group 31 format. Direct drop-in replacement for lead-acid batteries with 4x the cycle life and half the weight.",
+      "category": "Group 31",
+      "useCases": [
+        "RV main power",
+        "Off-grid cabins",
+        "Solar home systems",
+        "Marine auxiliary",
+        "Trolling motors"
+      ],
+      "features": [
+        "Bluetooth monitoring",
+        "100A continuous discharge",
+        "Group 31 standard",
+        "Low-temp protection",
+        "5-year warranty"
+      ],
+      "highlights": [
+        "Best Seller",
+        "Group 31",
+        "100A Continuous"
+      ],
+      "specs": [
+        {
+          "label": "Nominal Voltage"
+        },
+        {
+          "label": "Capacity"
+        },
+        {
+          "label": "Energy"
+        },
+        {
+          "label": "Max Discharge"
+        },
+        {
+          "label": "Dimensions"
+        },
+        {
+          "label": "Weight"
+        },
+        {
+          "label": "Cycle Life"
+        },
+        {
+          "label": "Format"
+        }
+      ]
+    },
+    "core-12v100-mini": {
+      "name": "Core 12V 100Ah MINI",
+      "tagline": "Full power, minimal footprint",
+      "description": "Same 100Ah capacity as the standard Core, but in a significantly smaller package. Ideal for vans and RVs with tight battery compartments.",
+      "category": "Compact",
+      "useCases": [
+        "Van conversions",
+        "Compact RVs",
+        "Tight battery bays",
+        "Under-seat mounting",
+        "Custom installations"
+      ],
+      "features": [
+        "Ultra-compact 100Ah",
+        "Bluetooth monitoring",
+        "Space-efficient design",
+        "Same Core performance",
+        "5-year warranty"
+      ],
+      "highlights": [
+        "Ultra-Compact",
+        "100Ah Power",
+        "Space Saver"
+      ],
+      "specs": [
+        {
+          "label": "Nominal Voltage"
+        },
+        {
+          "label": "Capacity"
+        },
+        {
+          "label": "Energy"
+        },
+        {
+          "label": "Max Discharge"
+        },
+        {
+          "label": "Dimensions"
+        },
+        {
+          "label": "Weight"
+        },
+        {
+          "label": "Cycle Life"
+        },
+        {
+          "label": "Bluetooth"
+        }
+      ]
+    },
+    "core-12v100-din": {
+      "name": "Core 12V 100Ah DIN H8",
+      "tagline": "European standard fitment",
+      "description": "Designed specifically for European RV under-seat battery compartments. The DIN H8 format ensures perfect fitment in most European motorhomes and caravans.",
+      "category": "Under-Seat",
+      "useCases": [
+        "European motorhomes",
+        "Under-seat bays",
+        "Caravan systems",
+        "OEM replacements",
+        "Fleet vehicles"
+      ],
+      "features": [
+        "DIN H8 standard",
+        "Perfect EU RV fit",
+        "Bluetooth monitoring",
+        "OEM replacement",
+        "5-year warranty"
+      ],
+      "highlights": [
+        "DIN H8 Format",
+        "EU RV Perfect Fit",
+        "OEM Compatible"
+      ],
+      "specs": [
+        {
+          "label": "Nominal Voltage"
+        },
+        {
+          "label": "Capacity"
+        },
+        {
+          "label": "Energy"
+        },
+        {
+          "label": "Max Discharge"
+        },
+        {
+          "label": "Dimensions"
+        },
+        {
+          "label": "Weight"
+        },
+        {
+          "label": "Cycle Life"
+        },
+        {
+          "label": "Format"
+        }
+      ]
+    },
+    "plus-12v200-heated": {
+      "name": "Plus 12V 200Ah Heated",
+      "tagline": "Arctic-ready power station",
+      "description": "Our most capable battery for demanding applications. Features integrated self-heating for reliable operation in sub-zero temperatures, perfect for Nordic climates and winter camping.",
+      "category": "Cold Climate",
+      "useCases": [
+        "Cold-climate off-grid",
+        "Nordic RVs",
+        "Winter camping",
+        "Large solar systems",
+        "Heavy-duty applications"
+      ],
+      "features": [
+        "Self-heating system",
+        "200A continuous",
+        "Bluetooth monitoring",
+        "Arctic-rated cells",
+        "5-year warranty"
+      ],
+      "highlights": [
+        "Self-Heating",
+        "200Ah Capacity",
+        "Arctic-Ready"
+      ],
+      "specs": [
+        {
+          "label": "Nominal Voltage"
+        },
+        {
+          "label": "Capacity"
+        },
+        {
+          "label": "Energy"
+        },
+        {
+          "label": "Max Discharge"
+        },
+        {
+          "label": "Dimensions"
+        },
+        {
+          "label": "Weight"
+        },
+        {
+          "label": "Cycle Life"
+        },
+        {
+          "label": "Self-Heating"
+        }
+      ]
+    }
+  },
+  "stories": {
+    "marcus-sweden": {
+      "name": "Marcus Eriksson",
+      "location": "Sweden",
+      "scenarioLabel": "Van Life",
+      "quote": "Our Sprinter has been powered by the Core 100Ah for 8 months now. We've crossed 15 countries, from the Norwegian fjords to the Greek islands. The Bluetooth monitoring is incredibly useful — I can check battery status from bed without going outside in the cold.",
+      "fullStory": "When we decided to go full-time van life, choosing the right battery was crucial. After extensive research, we chose Sentorise for its reputation in the European market. The Core 100Ah MINI fits perfectly under our bed platform, and the self-heating protection gives us peace of mind during Scandinavian winters. We've never had a single issue.",
+      "productsUsed": [
+        "Core 12V 100Ah MINI",
+        "Solar Controller 30A"
+      ]
+    },
+    "sophie-france": {
+      "name": "Sophie Laurent",
+      "location": "France",
+      "scenarioLabel": "Off-Grid Cabin",
+      "quote": "We run our entire alpine cabin on two Plus 200Ah batteries with solar. Even in French Alps winters at -15°C, the self-heating feature keeps them charging perfectly. The investment paid for itself in reliability.",
+      "fullStory": "Our off-grid cabin in the French Alps was always a challenge to power. Lead-acid batteries would fail every winter. Since switching to Sentorise Plus series with self-heating, we've had zero cold-weather issues. The 200Ah capacity runs our lights, water pump, fridge, and even a small induction cooktop. Absolutely reliable.",
+      "productsUsed": [
+        "Plus 12V 200Ah Heated",
+        "Plus 12V 200Ah Heated"
+      ]
+    },
+    "thomas-germany": {
+      "name": "Thomas Müller",
+      "location": "Germany",
+      "scenarioLabel": "RV Professional",
+      "quote": "We've switched all our RV installations to Sentorise. The DIN H8 format fits perfectly in European motorhomes, and the 5-year warranty gives our customers peace of mind. It's now our standard recommendation.",
+      "fullStory": "As an RV dealer in Bavaria, we install dozens of battery systems every month. Sentorise's DIN H8 format solved our biggest headache — finding batteries that fit European under-seat compartments. The quality is consistent, the app works great, and we've had zero warranty claims. That says everything.",
+      "productsUsed": [
+        "Core 12V 100Ah DIN H8"
+      ]
+    },
+    "emma-netherlands": {
+      "name": "Emma van der Berg",
+      "location": "Netherlands",
+      "scenarioLabel": "Marine",
+      "quote": "Our sailboat's electrical system has never been more reliable. The Core 100Ah handles the trolling motor, navigation, and cabin lights without breaking a sweat. And it's so much lighter than our old lead-acid setup!",
+      "fullStory": "Living on a sailboat in the Dutch waterways, weight and space are everything. The Sentorise Core 100Ah saved us nearly 15kg compared to our old batteries, and the capacity is actually usable to 100%. We can run our fridge overnight without worry. Best upgrade we've made to the boat.",
+      "productsUsed": [
+        "Core 12V 100Ah Standard"
+      ]
+    },
+    "james-uk": {
+      "name": "James Wilson",
+      "location": "United Kingdom",
+      "scenarioLabel": "Off-Grid Solar",
+      "quote": "The efficiency is remarkable. We're getting nearly 95% round-trip efficiency from our solar system, compared to maybe 80% with lead-acid. That's significant when every watt counts in an off-grid setup.",
+      "fullStory": "Our smallholding in rural Scotland runs entirely on solar power. The Sentorise Plus 200Ah batteries store our daily solar harvest perfectly. Even on cloudy Scottish days, the system maintains power for our workshop, house, and electric fencing. The monitoring app helps us optimize our energy usage.",
+      "productsUsed": [
+        "Plus 12V 200Ah Heated",
+        "Core 12V 100Ah Standard"
+      ]
+    },
+    "anna-norway": {
+      "name": "Anna Johansen",
+      "location": "Norway",
+      "scenarioLabel": "Camping & Outdoor",
+      "quote": "The Lite 50Ah is the perfect companion for our camping trips. Light enough to carry, powerful enough to run our portable fridge, lights, and charge all our devices for a week in the wilderness.",
+      "fullStory": "We love wild camping in the Norwegian mountains, but we also like our creature comforts. The Lite 50Ah with a folding solar panel gives us complete energy independence. It's light enough to pack into remote locations and reliable enough that we never worry about power. The Bluetooth app is great for monitoring while away from camp.",
+      "productsUsed": [
+        "Lite 12V 50Ah Lightweight"
+      ]
+    }
+  },
+  "blogPosts": {
+    "1": {
+      "title": "Complete Guide to Choosing the Right RV Battery",
+      "excerpt": "Learn how to select the perfect LiFePO4 battery for your motorhome or caravan based on your energy needs, space constraints, and budget.",
+      "content": "\n## Why LiFePO4 for RV Applications?\n\nLithium Iron Phosphate (LiFePO4) batteries have revolutionized the RV industry, offering significant advantages over traditional lead-acid batteries. Understanding these benefits will help you make an informed decision for your mobile power needs.\n\n### Key Advantages\n\n1. **Weight Reduction**: LiFePO4 batteries weigh approximately 50% less than equivalent lead-acid batteries, crucial for RV weight management.\n\n2. **Longer Lifespan**: With 4000+ charge cycles, these batteries last 4-5 times longer than lead-acid alternatives.\n\n3. **Deeper Discharge**: You can safely use 80-100% of the rated capacity, compared to only 50% with lead-acid.\n\n4. **Faster Charging**: LiFePO4 batteries accept higher charge currents, reducing charging time significantly.\n\n### Sizing Your RV Battery System\n\nTo determine the right battery capacity for your RV, calculate your daily energy consumption:\n\n- **Lights**: LED lights use approximately 5-15W each\n- **Refrigerator**: 12V compressor fridges use 30-60W\n- **Water Pump**: 4-8A when running\n- **Devices**: Laptops, phones, and other electronics\n\n**Formula**: Total Daily Wh ÷ 0.8 (usable capacity) = Minimum Battery Capacity\n\n### Installation Considerations\n\n- Ensure proper ventilation around the battery\n- Use appropriately sized cables for your current requirements\n- Install a Battery Management System (BMS) for protection\n- Consider temperature extremes if you travel in winter\n\n### Recommended Products for RV Use\n\nFor most RV applications, we recommend starting with a 100Ah battery for basic needs or 200Ah for full-time living. Consider our heated models if you frequently camp in cold weather.\n    ",
+      "category": "Guides",
+      "author": "Sentorise Team",
+      "tags": [
+        "RV",
+        "LiFePO4",
+        "Buying Guide"
+      ]
+    },
+    "2": {
+      "title": "Winter Camping: How to Keep Your Batteries Warm",
+      "excerpt": "Cold weather can significantly impact battery performance. Discover strategies to maintain optimal charging in sub-zero temperatures.",
+      "content": "\n## Understanding Cold Weather Battery Performance\n\nLithium batteries are sensitive to temperature, particularly during charging. Understanding how cold affects your battery system is essential for safe winter camping.\n\n### Temperature Effects on LiFePO4 Batteries\n\n- **Discharging**: LiFePO4 batteries can discharge safely down to -20°C, though capacity is reduced\n- **Charging**: Most LiFePO4 batteries should NOT be charged below 0°C without heating\n\n### Why Cold Charging is Dangerous\n\nCharging a lithium battery below freezing can cause lithium plating on the anode, permanently damaging the battery and creating safety risks. This is why proper thermal management is critical.\n\n### Solutions for Winter Camping\n\n1. **Self-Heating Batteries**: Our 200Ah heated model includes an integrated heating system that automatically warms the cells before charging begins.\n\n2. **Insulated Battery Boxes**: Keep your battery in an insulated enclosure to retain heat during cold nights.\n\n3. **Charge During Daytime**: When solar charging, the battery naturally warms as it charges during warmer daylight hours.\n\n4. **Battery Blankets**: External heating pads can be used with a temperature controller.\n\n### Best Practices\n\n- Monitor battery temperature before initiating charging\n- Park in sunny locations when possible\n- Use a BMS with low-temperature charging protection\n- Consider upgrading to a heated battery model for frequent winter use\n    ",
+      "category": "Tips",
+      "author": "Technical Team",
+      "tags": [
+        "Winter",
+        "Cold Weather",
+        "Maintenance"
+      ]
+    },
+    "3": {
+      "title": "Solar + Battery: Sizing Your Off-Grid System",
+      "excerpt": "A step-by-step calculator and guide to determine the right solar panel and battery capacity for your off-grid adventures.",
+      "content": "\n## Building Your Off-Grid Power System\n\nDesigning an effective off-grid solar and battery system requires careful planning. This guide walks you through the process step by step.\n\n### Step 1: Calculate Daily Energy Needs\n\nList all your devices and their power consumption:\n\n| Device | Watts | Hours/Day | Daily Wh |\n|--------|-------|-----------|----------|\n| LED Lights (x4) | 20 | 4 | 80 |\n| Fridge | 50 | 24 | 400* |\n| Laptop | 60 | 3 | 180 |\n| Phone Charging | 10 | 2 | 20 |\n| Water Pump | 60 | 0.5 | 30 |\n\n*Fridges cycle on/off, so use 30-40% of rated power\n\n### Step 2: Size Your Battery Bank\n\nFor reliable off-grid power, size your battery to cover 2-3 days of autonomy:\n\n**Daily Use × Days of Autonomy ÷ Depth of Discharge = Battery Capacity**\n\nExample: 700Wh × 2 days ÷ 0.8 = 1,750Wh = ~140Ah at 12V\n\n### Step 3: Size Your Solar Array\n\nSolar panels should fully recharge your battery in 4-5 peak sun hours:\n\n**Daily Use ÷ Peak Sun Hours × 1.25 (system losses) = Solar Watts**\n\nExample: 700Wh ÷ 4h × 1.25 = 220W of solar panels\n\n### Step 4: Choose Your Components\n\n- **Charge Controller**: MPPT controllers are 20-30% more efficient than PWM\n- **Inverter**: Size for your largest AC load plus 20% headroom\n- **Cables**: Use appropriate gauge for current and distance\n\n### Pro Tips\n\n- Start with more battery than you think you need\n- Panel orientation and shading significantly impact output\n- Monitor your system to understand real-world performance\n    ",
+      "category": "Guides",
+      "author": "Sentorise Team",
+      "tags": [
+        "Solar",
+        "Off-Grid",
+        "DIY"
+      ]
+    },
+    "4": {
+      "title": "LiFePO4 vs Lead-Acid: The Complete Comparison",
+      "excerpt": "Understand the key differences between lithium iron phosphate and traditional lead-acid batteries for RV and solar applications.",
+      "content": "\n## LiFePO4 vs Lead-Acid: Making the Right Choice\n\nWhen choosing a battery for your RV, boat, or solar system, understanding the fundamental differences between LiFePO4 and lead-acid is essential.\n\n### Comparison Overview\n\n| Feature | LiFePO4 | Lead-Acid |\n|---------|---------|-----------|\n| Weight | 50% lighter | Heavier |\n| Cycle Life | 4000+ cycles | 300-500 cycles |\n| Usable Capacity | 80-100% | 50% |\n| Charge Time | 2-4 hours | 8-12 hours |\n| Maintenance | None | Regular |\n| Upfront Cost | Higher | Lower |\n\n### Total Cost of Ownership\n\nWhile LiFePO4 batteries cost more upfront, they last 8-10 times longer:\n\n**Lead-Acid**: $200 × 10 replacements = $2,000 over 10 years\n**LiFePO4**: $800 × 1 purchase = $800 over 10 years\n\n### When to Choose LiFePO4\n\n- You need weight savings\n- You want maintenance-free operation\n- You need deep cycle capability\n- You value long-term cost savings\n- You need fast charging\n\n### When Lead-Acid May Be Suitable\n\n- Limited upfront budget\n- Occasional use applications\n- Cold storage without charging\n- Simple backup power needs\n\n### Making the Switch\n\nIf you're upgrading from lead-acid to LiFePO4, you may need to update your charging system to match the different charging profile requirements.\n    ",
+      "category": "Education",
+      "author": "Technical Team",
+      "tags": [
+        "LiFePO4",
+        "Lead-Acid",
+        "Comparison"
+      ]
+    },
+    "5": {
+      "title": "Understanding Battery Management Systems (BMS)",
+      "excerpt": "What is a BMS and why is it critical for your lithium battery's safety and longevity? A deep dive into smart protection.",
+      "content": "\n## The Brain of Your Battery: Understanding BMS\n\nEvery quality LiFePO4 battery includes a Battery Management System (BMS). This critical component ensures safe operation and maximizes battery lifespan.\n\n### What Does a BMS Do?\n\nThe BMS monitors and protects your battery by:\n\n1. **Overcharge Protection**: Prevents charging above safe voltage limits\n2. **Over-discharge Protection**: Cuts off power before cells are damaged\n3. **Overcurrent Protection**: Limits current to safe levels\n4. **Short Circuit Protection**: Instantly disconnects in case of shorts\n5. **Temperature Monitoring**: Prevents operation outside safe temperatures\n6. **Cell Balancing**: Keeps all cells at equal charge levels\n\n### Why Cell Balancing Matters\n\nIn a multi-cell battery, slight manufacturing variations cause cells to charge and discharge at different rates. Without balancing:\n\n- Some cells reach full charge early, limiting total capacity\n- Weak cells are stressed more, reducing lifespan\n- Capacity diminishes over time\n\nA good BMS actively balances cells during each charge cycle.\n\n### Smart BMS Features\n\nModern BMS systems include Bluetooth connectivity for:\n\n- Real-time voltage and current monitoring\n- Cell-by-cell voltage display\n- Charge/discharge history\n- Temperature readings\n- Fault code diagnostics\n\n### Our BMS Technology\n\nSentorise batteries include a 100A continuous BMS with:\n- Bluetooth monitoring via mobile app\n- Active cell balancing\n- Low-temperature charging protection\n- Multiple layers of safety protection\n    ",
+      "category": "Education",
+      "author": "Technical Team",
+      "tags": [
+        "BMS",
+        "Safety",
+        "Technology"
+      ]
+    },
+    "6": {
+      "title": "Van Life Power Setup: Real Customer Builds",
+      "excerpt": "Explore how Sentorise customers have installed their battery systems in Sprinters, Transits, and other popular van conversions.",
+      "content": "\n## Real Van Builds Powered by Sentorise\n\nSee how our customers have integrated Sentorise batteries into their van conversions. Each build offers unique insights and inspiration for your own project.\n\n### Build #1: Mercedes Sprinter 144\"\n\n**Owner**: Marcus & Jana, Germany\n**Battery**: 2× 100Ah LiFePO4\n**Solar**: 400W roof-mounted panels\n\n\"We chose Sentorise for the compact size and Bluetooth monitoring. Being able to check our battery status from bed is incredibly convenient.\"\n\n**Key Features**:\n- Under-bed battery installation\n- Victron MPPT charge controller\n- 2000W inverter for coffee machine\n- Full-time European travel\n\n### Build #2: Ford Transit Custom\n\n**Owner**: Tom, UK\n**Battery**: 1× 200Ah Heated LiFePO4\n**Solar**: 200W flexible panels\n\n\"As a winter camper in Scotland, the heated battery was non-negotiable. I've charged at -10°C without any issues.\"\n\n**Key Features**:\n- Compact installation behind driver seat\n- Heated battery for cold climate\n- Diesel heater integration\n- Weekend warrior setup\n\n### Build #3: VW Crafter\n\n**Owner**: Sophie, Netherlands\n**Battery**: 2× 200Ah LiFePO4\n**Solar**: 600W rigid panels\n\n\"With 400Ah of lithium, we can work remotely for weeks. The batteries have been flawless for 18 months.\"\n\n**Key Features**:\n- Mobile office setup\n- Dual battery for redundancy\n- Starlink for internet\n- Full-time digital nomad life\n\n### Share Your Build\n\nHave a Sentorise-powered van? We'd love to feature your build. Contact us with photos and details!\n    ",
+      "category": "Stories",
+      "author": "Community",
+      "tags": [
+        "Van Life",
+        "Customer Stories",
+        "Installations"
+      ]
+    },
+    "7": {
+      "title": "Marine Battery Installation: Best Practices",
+      "excerpt": "Essential tips for installing lithium batteries on boats, including ventilation, mounting, and saltwater protection.",
+      "content": "\n## Installing LiFePO4 Batteries on Your Boat\n\nMarine environments present unique challenges for battery installations. Follow these best practices to ensure safe, reliable operation at sea.\n\n### Marine-Specific Considerations\n\n1. **Saltwater Corrosion**: All connections must be protected from salt spray\n2. **Vibration**: Boats experience constant motion requiring secure mounting\n3. **Moisture**: Battery compartments must be ventilated but protected from water ingress\n4. **Safety Regulations**: Marine installations may require specific certifications\n\n### Installation Best Practices\n\n**Mounting**:\n- Use marine-grade stainless steel hardware\n- Mount in a dedicated battery box\n- Secure against movement in all directions\n- Position away from bilge water\n\n**Wiring**:\n- Use tinned marine cable only\n- Apply dielectric grease to all terminals\n- Install accessible battery disconnect switches\n- Route cables away from heat sources\n\n**Protection**:\n- Install appropriate fusing at the battery\n- Use a battery monitor for early warning\n- Consider a bilge pump backup power circuit\n- Add ventilation to prevent gas accumulation\n\n### Charging at Sea\n\n- Shore power charging: Use marine-rated chargers\n- Engine alternator: May require external regulators for lithium\n- Solar: Ideal for extended anchoring\n\n### Recommended Products\n\nFor marine use, we recommend our standard 100Ah or 200Ah batteries with their IP-rated housings and corrosion-resistant terminals. The Bluetooth monitoring is especially useful for checking battery status from the helm.\n    ",
+      "category": "Guides",
+      "author": "Technical Team",
+      "tags": [
+        "Marine",
+        "Installation",
+        "Boats"
+      ]
+    },
+    "8": {
+      "title": "Extending Battery Lifespan: Charging Tips",
+      "excerpt": "Learn the optimal charging practices that can help your LiFePO4 battery last even longer than its 4000+ cycle rating.",
+      "content": "\n## Maximize Your Battery Investment\n\nWhile LiFePO4 batteries are rated for 4000+ cycles, proper charging practices can extend this even further. Learn the science behind optimal charging.\n\n### Understanding Charge Cycles\n\nA charge cycle is one complete discharge and recharge. However:\n- Partial cycles count proportionally (2× 50% discharges = 1 cycle)\n- Depth of discharge affects cycle life\n- Extreme temperatures accelerate aging\n\n### Optimal Charging Practices\n\n1. **Avoid Full Discharges**: Regularly discharging to 0% stresses cells. Aim to recharge at 20-30% remaining.\n\n2. **Don't Always Charge to 100%**: For longest life, charge to 80-90% for daily use. Only fully charge before extended trips.\n\n3. **Use Appropriate Charge Rates**: While LiFePO4 can handle fast charging, moderate rates (0.3-0.5C) minimize stress.\n\n4. **Avoid Temperature Extremes**: Charge between 0-45°C for optimal results.\n\n### Storage Guidelines\n\nIf storing your battery for extended periods:\n\n- Charge to 50-60%\n- Store in a cool, dry location\n- Recharge every 3-6 months\n- Avoid storing fully charged or fully depleted\n\n### Charging Equipment\n\nUse chargers designed for LiFePO4 with proper voltage settings:\n- Charge voltage: 14.2-14.6V for 12V batteries\n- Float voltage: 13.4-13.6V\n- Avoid lead-acid chargers with desulfation modes\n\n### Real-World Expectations\n\nWith good practices, expect:\n- 4000+ cycles to 80% capacity\n- 10+ years of service life\n- Consistent performance throughout lifespan\n    ",
+      "category": "Tips",
+      "author": "Sentorise Team",
+      "tags": [
+        "Charging",
+        "Maintenance",
+        "Lifespan"
+      ]
+    },
+    "9": {
+      "title": "LiFePO₄ Real-World Power Output in Cold Weather: What the Specs Don't Tell You",
+      "excerpt": "Beyond the '0°C charging cutoff' — how BMS current limiting, voltage sag, and inverter compatibility actually affect your winter camping experience.",
+      "content": "\n## The Gap Between Spec Sheets and Reality\n\nMost LiFePO₄ content tells you: \"Don't charge below 0°C, discharging works down to -20°C.\" That's technically correct — but dangerously incomplete for anyone relying on their battery in winter.\n\n### What Actually Happens Below 0°C\n\nLiFePO₄ cells don't suddenly stop working at a specific temperature. Instead, performance degrades progressively:\n\n| Temperature | Approx. Usable Capacity | Max Continuous Discharge Rate |\n|-------------|------------------------|-------------------------------|\n| 25°C | 100% | 1C (full rated) |\n| 0°C | ~90% | 0.8C |\n| -10°C | ~70–75% | 0.5–0.6C |\n| -20°C | ~50–60% | 0.3C |\n\nThese numbers vary by cell manufacturer, but the pattern is consistent: **both capacity and discharge rate drop simultaneously**.\n\n### The Real Problem: BMS Current Limiting + Inverter Startup\n\nHere's what catches people off guard. At -10°C, your BMS may limit continuous output to 50–60A on a 100Ah battery. Now consider this chain:\n\n1. You turn on a 2000W inverter to run a coffee machine\n2. The inverter draws ~170A at 12V during startup (inrush current)\n3. BMS peak allowance may handle 200A for 5 seconds\n4. But the voltage sag under load drops to ~11.2V\n5. The inverter's low-voltage protection triggers at 11.0V\n6. **Result: the inverter shuts down, even though the battery isn't empty**\n\nThis is not a battery defect. It's a system-level mismatch that only appears in cold conditions.\n\n### How to Calculate Real Cold-Weather Capacity\n\n**Step 1**: Check your BMS specs for \"low-temperature discharge derating.\" Most quality BMS units reduce allowed current by 20–50% below -5°C.\n\n**Step 2**: Calculate your load's actual current draw (not just wattage):\n\n**Current (A) = Power (W) ÷ Voltage (V)**\n\nFor a 2000W load at 12V: 2000 ÷ 12 = 167A\n\n**Step 3**: Compare this to your derated BMS limit. If your BMS allows only 80A continuous at -10°C, you physically cannot run that load — regardless of battery capacity.\n\n### Practical Solutions\n\n1. **Pre-heat strategy**: If your battery has integrated heating (like our Plus 200Ah Heated model), the heater activates before charging AND can improve discharge performance by keeping cells above 0°C.\n\n2. **Reduce startup loads**: Use a soft-start inverter or avoid simultaneous high-draw appliances in cold weather.\n\n3. **Parallel batteries**: Two 100Ah batteries in parallel double your available current, making cold-weather loads more manageable.\n\n4. **Insulated battery compartment**: Even passive insulation can keep battery temperature 10–15°C warmer than ambient overnight.\n\n### Who Needs to Care About This\n\n- **Nordic / Alpine campers**: Regular sub-zero overnight temperatures\n- **Canadian / Northern European RV users**: Extended winter touring\n- **Boat owners in cold-water regions**: Cabin heating demands in cold weather\n\nIf your winter use case involves loads over 1000W, you need to plan for cold-weather derating — not just cold-weather charging protection.\n    ",
+      "category": "Engineering",
+      "author": "Technical Team",
+      "tags": [
+        "Cold Weather",
+        "BMS",
+        "System Design",
+        "RV"
+      ]
+    },
+    "10": {
+      "title": "Parallel LiFePO₄ Batteries: When Passive Balancing Fails and Active Balancing Becomes Necessary",
+      "excerpt": "Same batch, same SOC, same model — but after 3 months, your parallel pack drifts. Here's the engineering reality of multi-battery systems.",
+      "content": "\n## The Standard Advice — and Where It Breaks Down\n\nEvery forum says: \"Match brand, batch, SOC before paralleling.\" That's necessary but not sufficient.\n\n### Why SOC Drift Happens\n\nEven identical batteries develop differences over time due to:\n\n- **Internal resistance variation**: Manufacturing tolerances of ±5% mean cells age at different rates\n- **Temperature gradient**: A battery near the engine runs warmer than one under the bed. Higher temperature = faster calendar aging = capacity divergence\n- **Load distribution**: The battery with lower cable resistance draws more current, cycling faster\n\nAfter 100–200 cycles, a 3–5% SOC mismatch is common. After 500 cycles, it can reach 10–15%.\n\n### What Happens When Parallel Batteries Drift\n\nWhen two batteries at different SOC levels are connected in parallel:\n\n1. The higher-SOC battery dumps current into the lower-SOC battery (equalization current)\n2. This happens uncontrolled, limited only by cable resistance\n3. The BMS on either battery may interpret this as a fault condition\n4. **Result**: One BMS trips, disconnecting that battery. The remaining battery now handles full load alone — potentially triggering its own overcurrent protection.\n\nThis is the \"cascade disconnect\" failure mode that causes mysterious system shutdowns in multi-battery setups.\n\n### When Passive Balancing Is Sufficient\n\nPassive balancing (built into every quality BMS) works by bleeding excess charge from stronger cells during the absorption phase. This is adequate when:\n\n- All batteries experience similar temperature environments (±5°C)\n- The system is regularly charged to 100% (allowing top-balance)\n- Total parallel count is ≤ 2 batteries\n- Batteries are from the same production batch and age\n\n### When You Need Active Balancing\n\nActive balancing transfers energy between cells (or batteries) rather than wasting it. Consider it when:\n\n- **3+ batteries in parallel**: Drift compounds with more units\n- **Mixed temperature zones**: Boat installations where batteries sit in different hull locations\n- **Expanding existing systems**: Adding new batteries to an existing bank\n- **Seasonal use patterns**: Batteries that sit at different SOC for months between uses\n\n### Can You Mix Old and New Batteries?\n\nThe short answer: not recommended. The engineering answer: possible with constraints.\n\n- New LiFePO₄ cells have ~3–5 mΩ internal resistance\n- After 2000 cycles, this rises to ~8–12 mΩ\n- The new battery will consistently \"outperform\" the old one, creating permanent imbalance\n\n**If you must expand**: Add a DC-DC isolator between old and new banks. This decouples them electrically while allowing both to serve loads through a common bus.\n\n### System-Level Recommendations\n\n| Configuration | Balancing Method | Risk Level |\n|---------------|-----------------|------------|\n| 2× same batch, same location | Passive (BMS built-in) | Low |\n| 3–4× same batch, same location | External active balancer recommended | Medium |\n| 2× different locations (e.g., bow/stern) | DC-DC isolation | Medium |\n| Mixed old + new batteries | DC-DC isolation required | High |\n| 4+ batteries, mixed age | Active balancer + monitoring | High |\n    ",
+      "category": "Engineering",
+      "author": "Technical Team",
+      "tags": [
+        "Parallel",
+        "BMS",
+        "System Design",
+        "DIY"
+      ]
+    },
+    "11": {
+      "title": "12V to 24V or 48V: When Voltage Upgrades Make Engineering Sense — and When They Don't",
+      "excerpt": "Everyone says higher voltage is more efficient. But the real calculation involves DC-DC loss chains, device compatibility, wiring costs, and fault complexity.",
+      "content": "\n## Beyond the Efficiency Argument\n\nYes, higher voltage means lower current for the same power, which means less resistive loss (I²R). But that's only one variable in a complex system decision.\n\n### The Real Efficiency Chain\n\nConsider powering a 1200W load from batteries:\n\n| System | Battery Current | Cable Loss (2m, 35mm²) | DC-DC Conversion Loss | Net Efficiency |\n|--------|----------------|----------------------|----------------------|----------------|\n| 12V | 100A | ~3.2% | None (native 12V loads) | ~96.8% |\n| 24V | 50A | ~0.8% | 3–5% (24V→12V for devices) | ~94.5–96% |\n| 48V | 25A | ~0.2% | 5–8% (48V→12V for devices) | ~92–95% |\n\n**Key insight**: If most of your loads are native 12V (lights, fans, water pump, USB), the DC-DC conversion loss of a higher-voltage system can negate the cable efficiency gains.\n\n### When 24V/48V Makes Sense\n\n1. **High total power demand** (>3000W continuous): Air conditioning, induction cooktops, large inverters\n2. **Long cable runs** (>5m): Larger boats, trucks, or distributed systems\n3. **Solar array optimization**: Higher voltage strings with MPPT controllers\n4. **Professional/commercial vehicles**: Where the entire system is designed from scratch\n\n### When 12V Is Still the Right Choice\n\n1. **Existing vehicle with 12V infrastructure**: Retrofitting means replacing every device or adding converters\n2. **Moderate power needs** (<2000W): Weekend camping, standard RV appliances\n3. **Simplicity priority**: Fewer conversion stages = fewer failure points\n4. **Parts availability**: 12V components are universally available and cheaper\n\n### The Hidden Costs of Voltage Upgrades\n\n**Cable harness replacement**: Every cable, fuse, and connector must be rated for the new voltage. On a typical RV, this is 20–40 hours of labor.\n\n**Device compatibility**: 12V fridges, fans, pumps, and lighting don't run on 24V. You need DC-DC converters for each circuit or replace all devices.\n\n**Fault complexity**: A short circuit at 48V delivers much more energy than at 12V. Arc flash risk increases. Fusing and disconnect requirements become more stringent.\n\n**Diagnostic complexity**: Multi-voltage systems require more instrumentation and understanding to troubleshoot.\n\n### Decision Framework\n\nAsk yourself:\n\n1. What is my peak continuous load? (If <2000W → stay 12V)\n2. How long are my cable runs? (If <3m → voltage advantage is negligible)\n3. Am I building from scratch or retrofitting? (Retrofit → usually stay 12V)\n4. Do I have 24V/48V-native loads? (If not → conversion losses apply)\n\n### Our Recommendation\n\nFor 90% of RV and small marine applications, a well-designed 12V system with proper cable sizing is the most practical, reliable, and cost-effective solution.\n    ",
+      "category": "Engineering",
+      "author": "Technical Team",
+      "tags": [
+        "System Design",
+        "Voltage",
+        "RV",
+        "DIY"
+      ]
+    },
+    "12": {
+      "title": "Inverter + Battery Matching: The Engineering Calculation Most People Skip",
+      "excerpt": "Can a 200Ah battery run a 3000W inverter? The answer requires understanding discharge rates, voltage sag, cable losses, and BMS limits.",
+      "content": "\n## The Question Everyone Asks Wrong\n\n\"Can my 200Ah battery handle a 3000W inverter?\" This question is incomplete. The real question is: \"For how long, at what temperature, with what cable run, and what happens at startup?\"\n\n### Step 1: Calculate Actual Current Draw\n\n**Continuous current**: 3000W ÷ 12V = 250A\n\nBut wait — inverters aren't 100% efficient. At 90% efficiency:\n\n**Battery-side current**: 3000W ÷ (12V × 0.9) = 278A\n\n### Step 2: Check Your BMS Limits\n\n| Battery | Continuous BMS Limit | Peak (5s) | Can Handle 3000W? |\n|---------|---------------------|-----------|-------------------|\n| 100Ah / 100A BMS | 100A | 200A | No — trips instantly |\n| 100Ah / 200A BMS | 200A | 400A | No — exceeds continuous |\n| 200Ah / 200A BMS | 200A | 400A | No — 278A > 200A |\n| 2×100Ah parallel / 200A each | 400A total | 800A | Yes — with margin |\n\n**Key insight**: A single 200Ah battery with a 200A BMS cannot continuously supply a 3000W inverter. You need parallel batteries or a higher-rated BMS.\n\n### Step 3: Account for Voltage Sag\n\nUnder heavy load, battery voltage drops due to internal resistance. A 12.8V nominal battery might sag to:\n\n- 12.2V at 100A\n- 11.6V at 200A\n- 11.0V at 300A\n\nMost inverters trigger low-voltage protection at 10.5–11.0V. This means your inverter may shut down even though the battery has 60% capacity remaining.\n\n### Step 4: Calculate Cable Losses\n\nCable resistance causes additional voltage drop. For a 1.5m cable run:\n\n| Cable Size | Resistance (1.5m) | Voltage Drop at 250A | Acceptable? |\n|------------|-------------------|---------------------|-------------|\n| 25mm² | 2.6 mΩ | 0.65V | Marginal |\n| 35mm² | 1.8 mΩ | 0.45V | Acceptable |\n| 50mm² | 1.3 mΩ | 0.33V | Good |\n| 70mm² | 0.9 mΩ | 0.23V | Excellent |\n\n### Step 5: Startup Inrush\n\nMotor-driven appliances (AC units, compressors, power tools) can draw 3–6× their rated current for 0.5–2 seconds at startup.\n\nA 1500W air conditioner may draw 4500W (375A at 12V) for 1–2 seconds. Your battery system needs to handle this peak without triggering BMS protection.\n\n### The Matching Formula\n\n**Minimum battery capacity = (Inverter max power ÷ system voltage ÷ inverter efficiency) ÷ max safe C-rate**\n\nFor a 3000W inverter: (3000 ÷ 12 ÷ 0.9) ÷ 0.5C = 556Ah minimum\n\nThis means you need at least 500–600Ah of battery capacity to comfortably run a 3000W inverter continuously.\n\n### Practical Recommendations\n\n| Inverter Size | Minimum Battery | Recommended Battery | Cable Size |\n|---------------|----------------|--------------------| -----------|\n| 1000W | 100Ah | 200Ah | 25mm² |\n| 2000W | 200Ah | 2×200Ah | 35mm² |\n| 3000W | 400Ah | 3×200Ah | 50mm² |\n\nThese assume 12V systems. At 24V, current is halved and requirements are more manageable.\n    ",
+      "category": "Engineering",
+      "author": "Technical Team",
+      "tags": [
+        "Inverter",
+        "System Design",
+        "DIY",
+        "Sizing"
+      ]
+    },
+    "13": {
+      "title": "Salt, Humidity, and Time: How Marine Environments Actually Degrade BMS and Bluetooth Modules",
+      "excerpt": "No one talks about what fails first on a boat. The answer is almost always: Bluetooth, then MOS transistors, then terminal connections.",
+      "content": "\n## The Failure Sequence No One Documents\n\nMarine battery installations face a unique degradation path that's almost entirely absent from manufacturer literature. Here's what we've learned from warranty returns and field reports.\n\n### Failure Mode #1: Bluetooth Module (6–18 months)\n\nThe Bluetooth Low Energy (BLE) module is typically the first casualty in marine environments.\n\n**Why it fails**:\n- BLE antenna impedance shifts due to salt crystal formation on PCB traces\n- Moisture ingress through the antenna window or cable glands\n- Condensation cycles cause micro-corrosion on signal pins\n\n**Symptoms**:\n- Intermittent connection → frequent disconnects → complete failure\n- Range reduction from 10m to <1m before failure\n- App shows \"device not found\" while battery works normally\n\n**Prevention**:\n- Conformal coating on BLE PCB (not all manufacturers do this)\n- Sealed antenna design vs. exposed PCB antenna\n- Regular inspection of cable gland seals\n\n### Failure Mode #2: MOSFET Thermal Drift (12–36 months)\n\nThe power MOSFETs in the BMS are the main current-carrying switches. In marine environments:\n\n**What happens**:\n- Salt-laden humidity accelerates gate oxide degradation\n- Thermal cycling (engine room heat → cold nights) fatigues solder joints\n- On-resistance (RDS(on)) gradually increases, causing more heat generation\n- This creates a thermal runaway spiral: more heat → more resistance → more heat\n\n**Symptoms**:\n- Battery runs warm at loads that previously caused no heating\n- BMS trips at lower current thresholds than rated\n- Capacity appears to decrease (BMS limiting current earlier)\n\n### Failure Mode #3: Terminal Oxidation (6–24 months)\n\n**The mechanism**:\n- Copper or brass terminals develop oxide layers in salt air\n- Oxide has 10–100× higher resistance than clean metal\n- Contact resistance increases gradually\n- Under high current, the terminal becomes a heat source\n\n**Symptoms**:\n- Warm or hot terminals during normal operation\n- Voltage readings at the terminal differ from readings at the BMS\n- Discoloration of terminal hardware\n\n**Prevention**:\n- Stainless steel hardware with dielectric grease\n- Torque terminals to spec and re-check every 6 months\n- Anti-oxidation terminal spray after installation\n\n### Marine Installation Best Practices\n\n1. **Conformal coating verification**: Ask your battery manufacturer if the BMS PCB has conformal coating. This is the single biggest predictor of marine longevity.\n\n2. **IP rating context**: IP67 means \"survives submersion.\" IP68 means \"survives prolonged submersion.\" Neither means \"resists salt fog corrosion over 3 years.\" Look for salt spray test ratings (IEC 60068-2-11).\n\n3. **Ventilation paradox**: You need airflow for heat management but want to minimize salt air exposure. Use filtered ventilation or a sealed compartment with a small fan and desiccant packs.\n\n4. **Terminal maintenance schedule**: Every 6 months: disconnect, clean with contact cleaner, inspect for discoloration, re-apply dielectric grease, torque to spec.\n    ",
+      "category": "Engineering",
+      "author": "Technical Team",
+      "tags": [
+        "Marine",
+        "BMS",
+        "Maintenance",
+        "Corrosion"
+      ]
+    },
+    "14": {
+      "title": "Multi-Source Charging Without Conflicts: Solar, Alternator, and Shore Power on One Battery Bank",
+      "excerpt": "MPPT backfeed, alternator voltage spikes, and charger reverse current — why DIY systems fail after 6 months and how to prevent it.",
+      "content": "\n## The Problem: Multiple Chargers, One Battery\n\nA typical RV or boat has three charging sources:\n1. Solar panels via MPPT controller\n2. Vehicle alternator via DC-DC charger or direct connection\n3. Shore power via AC-DC charger\n\nEach source \"sees\" the battery voltage and tries to regulate accordingly. When two or more sources operate simultaneously, conflicts arise.\n\n### Conflict #1: MPPT Backfeed\n\n**What happens**: When the battery is nearly full and the MPPT controller enters float mode, a second charging source (e.g., alternator) raises the battery voltage above the MPPT's expected range. The MPPT may:\n\n- Interpret high voltage as a full battery and shut down prematurely\n- Attempt to \"absorb\" current from the other source through its output stage\n- In rare cases, feed current backward through the solar string\n\n**Solution**: Use an MPPT controller with proper reverse-current protection and configure absorption voltages identically across all charging sources (within 0.1V).\n\n### Conflict #2: Alternator Voltage Spikes\n\n**What happens**: Vehicle alternators produce voltage regulated by the engine ECU, typically 14.2–14.8V. But during load dumps (e.g., turning off headlights), transient spikes of 18–25V can occur for milliseconds.\n\nLiFePO₄ BMS overvoltage protection typically triggers at 15.6–16V. These spikes can:\n\n- Trigger BMS disconnect, leaving the alternator without a load\n- An alternator without a load can self-destruct\n\n**Solution**: Always use a DC-DC charger between the alternator and lithium batteries. Never connect directly. The DC-DC charger absorbs transients and provides clean, regulated output.\n\n### Conflict #3: Shore Power Charger Reverse Current\n\n**What happens**: When you disconnect from shore power, some chargers don't immediately isolate their output. The battery can briefly push current backward through the charger, potentially damaging its output stage.\n\n**Solution**: Use chargers with built-in reverse polarity diodes, or install an external blocking diode on the charger output.\n\n### Conflict #4: Charging Priority Confusion\n\nWhen solar and shore power are both available, which source should charge the battery?\n\n**Best practice**: Configure a priority hierarchy:\n\n1. Solar first (free energy, reduces grid dependence)\n2. Alternator second (available while driving)\n3. Shore power third (when parked with hookup)\n\nMost quality MPPT controllers and chargers support this through voltage setpoint configuration. Set solar absorption voltage 0.1V higher than shore power to give it natural priority.\n\n### The Safe Multi-Source Architecture\n\n```\nSolar Panels → MPPT Controller → Battery Bus (+)\n                                      ↑\nAlternator → DC-DC Charger ──────────┘\n                                      ↑  \nShore Power → AC-DC Charger ─────────┘\n                                      ↑\n                              Battery Bank\n                                      ↓\n                              Fuse Panel → Loads\n```\n\n**Critical rules**:\n- Each source must have its own fused connection to the battery bus\n- Never daisy-chain chargers through each other\n- Use a battery monitor downstream of all sources to track net current\n- Match all charging profiles to LiFePO₄ specifications (14.2–14.6V absorption, 13.6V float)\n    ",
+      "category": "Engineering",
+      "author": "Technical Team",
+      "tags": [
+        "Charging",
+        "Solar",
+        "System Design",
+        "DIY"
+      ]
+    },
+    "15": {
+      "title": "High-Current Appliance Surges: What Coffee Machines and Air Conditioners Really Do to Your Battery",
+      "excerpt": "The impact of frequent inrush currents on MOSFET fatigue, solder joint stress, and real-world cycle life — beyond the theoretical 4000-cycle number.",
+      "content": "\n## Theory vs. Reality: Cycle Life Under Stress\n\nLiFePO₄ cells are rated for 4000+ cycles at 0.5C discharge to 80% DoD. But real-world usage often includes repeated high-current surges that accelerate specific failure modes not captured in standard cycle testing.\n\n### What Happens During a Surge\n\nWhen you start a coffee machine, air conditioner compressor, or microwave via an inverter:\n\n1. **Inrush current**: 3–6× the steady-state draw for 0.5–3 seconds\n2. **Voltage sag**: Battery voltage drops sharply, then recovers\n3. **BMS stress**: MOSFETs handle the peak current through their on-resistance\n4. **Thermal pulse**: Localized heating at cell tabs, bus bars, and MOSFET junctions\n\n### The Three Fatigue Mechanisms\n\n**1. MOSFET Thermal Fatigue**\n\nEach surge heats the MOSFET junction by 20–40°C in milliseconds. The junction then cools over seconds. This thermal cycling causes:\n\n- Die-attach solder fatigue (micro-cracks develop over thousands of cycles)\n- Bond wire lift-off (wire bonds flex with thermal expansion)\n- Gradual increase in on-resistance\n\nAfter 10,000–50,000 surge events, MOSFET performance degrades noticeably. For a user running a coffee machine twice daily, that's 5–7 years — but it's accelerated if combined with other high-current loads.\n\n**2. Cell Tab and Bus Bar Stress**\n\nThe cell tabs (thin nickel or copper strips connecting cells to the bus bar) carry the full surge current. Repeated high-current pulses cause:\n\n- Resistive heating at spot-weld joints\n- Thermal expansion/contraction cycling\n- Gradual increase in contact resistance\n\nThis is rarely visible from outside but shows up as increased internal resistance in battery health monitoring.\n\n**3. Cell-Level Effects**\n\nAt the electrochemical level, high-rate discharge:\n\n- Creates larger concentration gradients in the electrolyte\n- Accelerates SEI layer growth on the anode\n- Can cause localized lithium depletion near the current collector\n\nHowever, LiFePO₄ chemistry is remarkably tolerant of high-rate discharge. The cell-level impact is typically the smallest contributor to degradation.\n\n### How Much Does It Really Matter?\n\nUnder realistic conditions (2–4 surge events per day, 100A peaks, 200Ah battery):\n\n| Factor | Expected Impact on Cycle Life |\n|--------|------------------------------|\n| Cell electrochemistry | -2 to -5% |\n| MOSFET / BMS fatigue | -5 to -15% |\n| Connection point degradation | -3 to -8% |\n| **Total estimated reduction** | **-10 to -25%** |\n\nSo a battery rated for 4000 cycles might deliver 3000–3600 cycles under regular surge loading. Still excellent — but worth understanding.\n\n### Mitigation Strategies\n\n1. **Soft-start inverters**: Reduce inrush current by 50–70%\n2. **Oversized battery bank**: Lower C-rate per surge event\n3. **Proper torque on all connections**: Prevents gradual loosening\n4. **Annual connection inspection**: Catch resistance increases early\n5. **Monitor BMS temperature trends**: Rising temps at same loads indicate degradation\n    ",
+      "category": "Engineering",
+      "author": "Technical Team",
+      "tags": [
+        "BMS",
+        "Cycle Life",
+        "System Design",
+        "Maintenance"
+      ]
+    },
+    "16": {
+      "title": "Storage SOC vs. Cycling: Which Actually Degrades Your LiFePO₄ Battery Faster?",
+      "excerpt": "Long-term shore power at 100% SOC vs. regular cycling — the science of calendar aging, float voltage effects, and optimal storage practices.",
+      "content": "\n## The Two Aging Mechanisms\n\nEvery battery ages through two independent mechanisms:\n\n1. **Cycle aging**: Degradation from repeated charge/discharge cycles\n2. **Calendar aging**: Degradation from time, regardless of use\n\nFor LiFePO₄, the relative contribution of each depends on how you use (or don't use) your battery.\n\n### Calendar Aging: The Silent Killer\n\nCalendar aging occurs through slow chemical reactions in the cell, primarily:\n\n- SEI (Solid Electrolyte Interphase) layer growth on the anode\n- Electrolyte decomposition\n- Cathode surface film formation\n\nThese reactions are accelerated by:\n- **Higher SOC**: More reactive electrode surfaces\n- **Higher temperature**: Arrhenius relationship (roughly 2× faster per 10°C increase)\n\n### The SOC Storage Experiment\n\nResearch data on LiFePO₄ calendar aging at different SOC levels (25°C, 12 months):\n\n| Storage SOC | Capacity Loss | Internal Resistance Increase |\n|-------------|--------------|------------------------------|\n| 100% | 2.5–3.5% | 8–12% |\n| 80% | 1.5–2.0% | 4–6% |\n| 60% | 0.8–1.2% | 2–3% |\n| 50% | 0.5–1.0% | 1–2% |\n| 20% | 0.3–0.5% | 1–2% |\n\n**Key finding**: The difference between 100% and 50% storage is significant. Storing at 100% SOC for a year costs roughly 3× more capacity than storing at 50%.\n\n### The Shore Power Problem\n\nMany RV and boat owners leave their batteries on shore power indefinitely. This means:\n\n- Battery sits at 100% SOC for months\n- Float charge continuously compensates for self-discharge\n- Temperature may be elevated (engine compartment, sunny dock)\n\n**Combined effect**: A battery stored at 100% SOC at 35°C (common in Southern European marinas) can lose 5–7% capacity per year from calendar aging alone.\n\n### Cycling vs. Calendar: Which Is Worse?\n\nFor a typical weekend user (100 cycles/year):\n\n| Aging Source | Annual Capacity Loss |\n|-------------|---------------------|\n| 100 cycles at 80% DoD | ~2.0% |\n| Calendar aging at 50% SOC | ~1.0% |\n| Calendar aging at 100% SOC | ~3.0% |\n\n**Paradox**: A battery that sits on shore power at 100% SOC all year (and rarely cycles) can age faster than one that's actively used but stored properly between uses.\n\n### Optimal Storage Practices\n\n**For seasonal use** (stored 4–6 months):\n1. Charge to 50–60% SOC\n2. Disconnect all loads and chargers\n3. Store in a cool, dry location (ideally 10–20°C)\n4. Check and top up to 50% every 3 months\n\n**For intermittent use** (weekends, with shore power available):\n1. Set your charger's float voltage to 13.2V instead of 13.6V — this keeps SOC at ~70% rather than 100%\n2. Only charge to 100% the day before departure\n3. Return and let the battery settle to 70% float\n\n**For full-time use**:\n1. Regular cycling is actually beneficial — it prevents long high-SOC periods\n2. Avoid leaving the battery at 100% for more than 48 hours when not in use\n3. If using solar, a properly configured MPPT controller naturally provides good SOC management\n\n### The Bottom Line\n\nLiFePO₄ is exceptionally tolerant compared to other lithium chemistries — NMC batteries lose 2–3× more capacity from the same storage conditions. But \"tolerant\" doesn't mean \"immune.\" The optimal long-term storage SOC for LiFePO₄ is **50–60%** at **15–25°C**.\n    ",
+      "category": "Engineering",
+      "author": "Technical Team",
+      "tags": [
+        "Maintenance",
+        "Lifespan",
+        "Storage",
+        "Tips"
+      ]
+    },
+    "17": {
+      "title": "Why DIY Battery Systems Develop 'Random Shutdowns' After 6 Months — and How to Find the Real Cause",
+      "excerpt": "Everything tests fine on the multimeter, but the system randomly drops power. The problem is almost always a combination of slow-developing connection failures.",
+      "content": "\n## The Mystery Shutdown Pattern\n\nYou've built a DIY battery system. It works perfectly for 3–6 months. Then it starts: random power drops lasting 1–5 seconds, sometimes longer. You check everything:\n\n- Battery voltage: normal\n- BMS app: no fault codes\n- Fuses: intact\n- Inverter: resets and works again\n\nEverything \"tests fine.\" But the shutdowns continue and gradually get worse.\n\n### Why Standard Testing Misses the Problem\n\nA multimeter measures **static** resistance. But the failures causing random shutdowns are **dynamic** — they only manifest under load, at specific temperatures, or after thermal cycling.\n\n### The Five Most Common Root Causes\n\n**1. Terminal Micro-Loosening**\n\nBolt-type terminals gradually loosen due to:\n- Thermal cycling (expansion/contraction of dissimilar metals)\n- Vibration (especially in vehicles and boats)\n- Copper cold flow (copper deforms under sustained pressure)\n\n**Detection**: Measure voltage drop across each connection point while under load (>50A). A healthy connection shows <10mV. A failing connection shows 50–200mV.\n\n**Fix**: Re-torque all terminals to manufacturer specifications. Use Belleville (spring) washers to maintain pressure. Apply anti-seize compound.\n\n**2. Crimp Joint Degradation**\n\nCable lugs crimped onto battery cables develop high resistance over time:\n- Initial resistance: <0.1 mΩ\n- After 6 months of thermal cycling: 0.5–2 mΩ\n- A 2 mΩ joint at 200A generates 80W of heat — enough to melt insulation\n\n**Detection**: Thermal camera or IR thermometer during heavy loads. Any connection over 40°C warmer than ambient is suspect.\n\n**Fix**: Re-crimp with hydraulic crimper (not pliers). Use tinned copper lugs. Apply heat shrink over the crimp.\n\n**3. BMS MOSFET Thermal Drift**\n\nAs described in our marine article, MOSFETs develop increased on-resistance over time. But in a DIY context, poor thermal management accelerates this:\n\n- BMS mounted in an unventilated enclosure\n- Battery and BMS in direct sunlight\n- No thermal pad between MOSFET and heatsink\n\n**Detection**: Monitor BMS temperature during normal loads. If it's climbing over weeks/months at the same load level, MOSFET degradation is occurring.\n\n**4. Cable Resistance Creep**\n\nUndersized cables don't fail immediately. They heat up, which increases resistance, which increases heating further. Over months:\n\n- Insulation softens and deforms\n- Internal oxidation develops at hot spots\n- Effective cross-section decreases\n\n**Detection**: Measure cable temperature along its length during heavy loads. Hot spots indicate problem areas.\n\n**5. Fuse Holder Contact Degradation**\n\nBlade fuses and ANL fuses rely on spring contact pressure. Over time:\n\n- Contact surfaces oxidize\n- Spring tension relaxes\n- Vibration causes intermittent contact\n\n**Detection**: Measure voltage drop across the fuse holder (not just the fuse) during load. Should be <50mV. If >100mV, replace the holder.\n\n### The Diagnostic Workflow\n\n1. **Load test**: Apply a known heavy load (>50% of system rating)\n2. **Thermal scan**: Check every connection point with IR thermometer\n3. **Voltage drop mapping**: Measure voltage at battery terminal, then at each connection point down to the load. Any drop >20mV per connection indicates a problem.\n4. **Torque check**: Re-torque every bolt connection to spec\n5. **Visual inspection**: Look for discoloration, melted insulation, green/white corrosion\n\n### Prevention Checklist\n\n- [ ] All connections torqued to spec with Belleville washers\n- [ ] Hydraulic-crimped cable lugs with heat shrink\n- [ ] Cables sized for 125% of maximum expected current\n- [ ] BMS has adequate ventilation\n- [ ] Fuse holders rated for continuous current (not just fuse rating)\n- [ ] Annual inspection and re-torque schedule\n    ",
+      "category": "Engineering",
+      "author": "Technical Team",
+      "tags": [
+        "DIY",
+        "Troubleshooting",
+        "System Design",
+        "Maintenance"
+      ]
+    },
+    "18": {
+      "title": "Bluetooth Battery Monitor Data: What You Can Trust and What's Just an Estimate",
+      "excerpt": "SOC algorithms, current sampling rates, temperature compensation — understanding the real accuracy limits of your battery app.",
+      "content": "\n## Your Battery App Is Not a Lab Instrument\n\nBattery monitoring apps connected via Bluetooth display impressive-looking data: voltage to two decimal places, current to the amp, SOC as a percentage. But the accuracy behind these numbers varies enormously.\n\n### What's Accurate: Voltage\n\nBattery voltage measurement is straightforward and reliable:\n\n- **Typical accuracy**: ±0.5–1% (±0.05V on a 12.8V system)\n- **Why it's reliable**: Direct ADC measurement with voltage divider\n- **Limitation**: Voltage under load ≠ resting voltage. For accurate SOC estimation from voltage, you need to measure after 30+ minutes of rest.\n\n### What's Mostly Accurate: Current\n\nCurrent measurement via a shunt resistor is reasonably accurate, but with caveats:\n\n- **Typical accuracy**: ±1–2% at mid-range currents\n- **At low currents** (<1A): Accuracy drops to ±5–10% due to ADC resolution limits\n- **At very high currents** (>80% of shunt rating): Shunt heating changes its resistance, introducing error\n- **Sampling rate matters**: A BMS sampling at 1Hz can miss short transients. A 500ms surge may not be captured.\n\n### What's an Estimate: State of Charge (SOC)\n\nSOC is the number everyone watches — and it's the least accurate measurement on your screen.\n\n**Coulomb counting method** (most common):\n- Integrates current over time: SOC = initial SOC + ∫(current × dt)\n- **Drift problem**: Small current measurement errors accumulate. A 1% current error becomes a 5% SOC error after 5 hours of use.\n- **Requires full-charge calibration**: The algorithm resets to 100% when absorption voltage is reached. If you never fully charge, SOC accuracy degrades over weeks.\n\n**Voltage-based method** (simpler BMS units):\n- Maps voltage to SOC using a lookup table\n- **Problem**: LiFePO₄ has a very flat voltage curve (12.8–13.2V covers 20–80% SOC)\n- A 0.1V measurement error translates to a 15–30% SOC error in the middle range\n\n**Combined (Kalman filter) method** (advanced BMS):\n- Fuses voltage and current data with a state model\n- Most accurate, but depends on correct cell model parameters\n- Still ±3–5% under real-world conditions\n\n### What's Unreliable: Remaining Time Estimates\n\n\"Estimated remaining: 4h 23m\" — this is calculated by dividing remaining capacity by current load. Problems:\n\n- Assumes constant load (unrealistic)\n- Based on potentially inaccurate SOC\n- Doesn't account for voltage sag at low SOC triggering early shutdown\n- Doesn't factor in temperature effects on available capacity\n\n**Treat remaining time as ±30% at best.**\n\n### What's Missing: Cell-Level Data\n\nMost Bluetooth monitors show **pack-level** data. But critical information is at the cell level:\n\n- **Cell voltage imbalance**: If one cell in a 4S pack is 50mV lower, the pack will hit low-voltage cutoff earlier than SOC suggests\n- **Cell temperature variance**: One hot cell can trigger protection while average temperature looks normal\n- **Cell impedance**: Rising impedance in one cell indicates degradation\n\nOnly BMS systems with cell-level Bluetooth reporting (like those showing individual cell voltages) provide this data.\n\n### Practical Guidance\n\n| Data Point | Trust Level | Use For |\n|-----------|-------------|---------|\n| Voltage (resting) | High (±1%) | Rough SOC check, system health |\n| Voltage (under load) | Medium | Identifying voltage sag issues |\n| Current | Medium-High (±2%) | Load monitoring, charge rate |\n| SOC (after recent full charge) | Medium (±5%) | Trip planning |\n| SOC (no full charge in 2+ weeks) | Low (±10–15%) | General awareness only |\n| Remaining time | Low (±30%) | Rough guidance only |\n| Temperature | Medium-High (±2°C) | Safety decisions |\n\n### How to Maximize Accuracy\n\n1. **Fully charge once per week**: This recalibrates the Coulomb counter\n2. **Set correct battery capacity in the monitor**: If your monitor thinks you have 200Ah but you have 100Ah, every reading is wrong\n3. **Don't trust SOC below 20%**: Error compounds at the extremes\n4. **Use voltage as a sanity check**: If SOC says 60% but voltage is 12.0V under light load, SOC is wrong\n5. **Monitor trends, not absolutes**: A gradual increase in cell voltage spread over weeks is more informative than any single reading\n    ",
+      "category": "Engineering",
+      "author": "Technical Team",
+      "tags": [
+        "Bluetooth",
+        "Monitoring",
+        "BMS",
+        "Tips"
+      ]
+    }
+  },
+  "accessories": {
+    "SENT-CHG-14V6-20A-WP": {
+      "name": "20A LiFePO₄ Battery Charger",
+      "subtitle": "14.6V Fast Charging, Fully Potted & Water-Resistant Design",
+      "description": "The Sentorise 14.6V 20A LiFePO₄ charger is engineered for demanding environments where reliability and durability are non-negotiable. With a fully potted, water-resistant enclosure and advanced charging algorithms, this charger is built to perform in RVs, boats, off-grid systems, and industrial applications.",
+      "estimatedShipping": "March 2026",
+      "seoTitle": "20A LiFePO₄ Battery Charger – 14.6V Fast Charging | Sentorise",
+      "seoDescription": "Sentorise 20A LiFePO₄ charger with fully potted water-resistant design, 0V wake-up function, and CC-CV smart charging for RV, marine, and off-grid systems.",
+      "compatibility": "Optimized for 12.8V LiFePO₄ batteries. Also supports 12V lead-acid batteries.",
+      "keyFeatures": [
+        "High-Power Output: 280W / 20A fast charging for 12V LiFePO₄ battery systems",
+        "0V Wake-Up Function: Recovers deeply discharged batteries from 0V",
+        "Fully Potted Design: Water-resistant protection, resistant to moisture, dust, and vibration",
+        "Wide Operating Range: -20°C to 50°C ambient temperature tolerance",
+        "Anderson Connector: Secure, high-current connection with polarity protection",
+        "EU Plug: Schuko Type F plug for European markets",
+        "Smart Charging: CC-CV algorithm with automatic cutoff to prevent overcharging"
+      ],
+      "applications": [
+        "RV and camper van house battery systems",
+        "Marine and boat auxiliary power",
+        "Off-grid solar + battery setups",
+        "Industrial and backup power systems"
+      ],
+      "packageContents": [
+        "AC power input cable",
+        "DC output cable with 50A Anderson connector & terminal rings",
+        "User manual",
+        "Professional-grade connectors for multiple wiring scenarios"
+      ],
+      "warnings": [
+        "This charger is designed specifically for LiFePO₄ (LFP) chemistry. Do not use with lithium-ion (NMC/NCA) or other non-compatible battery types."
+      ],
+      "specifications": [
+        {
+          "label": "Model",
+          "value": "SENT-CHG-14V6-20A-WP"
+        },
+        {
+          "label": "Rated Power",
+          "value": "280W"
+        },
+        {
+          "label": "Input Voltage",
+          "value": "100–240V AC (single phase)"
+        },
+        {
+          "label": "Input Frequency",
+          "value": "50/60Hz"
+        },
+        {
+          "label": "Max Input Current",
+          "value": "3.5A @115V AC / 2.0A @230V AC"
+        },
+        {
+          "label": "Power Factor",
+          "value": "≥0.95 typical @230V AC"
+        },
+        {
+          "label": "Efficiency",
+          "value": "83% @230V AC, full load"
+        },
+        {
+          "label": "Output Voltage (CV)",
+          "value": "14.6V ± 0.2V"
+        },
+        {
+          "label": "Max Output Current",
+          "value": "20A (19–21A range)"
+        },
+        {
+          "label": "Over-Voltage Protection",
+          "value": "Triggered at >17V"
+        },
+        {
+          "label": "Turn-on Delay",
+          "value": "≤5 seconds"
+        },
+        {
+          "label": "Cooling",
+          "value": "High-efficiency internal fan"
+        },
+        {
+          "label": "Status Indicator",
+          "value": "LED charging status"
+        },
+        {
+          "label": "Operating Temperature",
+          "value": "-20°C to 50°C"
+        },
+        {
+          "label": "Storage Temperature",
+          "value": "-25°C to 85°C"
+        },
+        {
+          "label": "Dimensions",
+          "value": "176 × 124.5 × 59 mm (6.93 × 4.90 × 2.32 in)"
+        },
+        {
+          "label": "Packaging",
+          "value": "270 × 195 × 132 mm"
+        },
+        {
+          "label": "Input Cable",
+          "value": "3 × 0.75mm², 1.2m"
+        },
+        {
+          "label": "Output Cable",
+          "value": "2 × 2.5mm², 1.1m"
+        },
+        {
+          "label": "Connector",
+          "value": "50A Anderson + terminal rings"
+        },
+        {
+          "label": "Plug Type",
+          "value": "EU Standard (Schuko)"
+        },
+        {
+          "label": "Weight",
+          "value": "1.45 kg (shipping: 1.9 kg)"
+        },
+        {
+          "label": "Certifications",
+          "value": "CE compliant"
+        },
+        {
+          "label": "SKU",
+          "value": "SENT-CHG-14V6-20A-WP"
+        },
+        {
+          "label": "Barcode",
+          "value": "6979061120085"
+        },
+        {
+          "label": "HS Code",
+          "value": "8504.40.9990"
+        },
+        {
+          "label": "Origin",
+          "value": "CN"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Fast & Powerful 20A Charging",
+          "content": "Built specifically for 12.8V LiFePO₄ batteries, the SENT-CHG-14V6-20A-WP delivers a stable 14.6V output at up to 20A, enabling fast, efficient, and reliable charging. It can fully charge a 100Ah battery in approximately 5 hours — up to 4× faster than a standard 5A charger.",
+          "bullets": [
+            "50Ah battery: ~2.5 hours",
+            "100Ah battery: ~5 hours",
+            "200Ah battery: ~10 hours"
+          ]
+        },
+        {
+          "title": "0V Wake-Up & Over-Discharge Recovery",
+          "content": "The integrated 0V activation function helps recover deeply discharged LiFePO₄ batteries that have dropped below normal operating voltage. This feature supports battery recovery, extends overall battery lifespan, and reduces the risk of premature battery replacement."
+        },
+        {
+          "title": "Advanced Safety & Battery Protection",
+          "content": "Designed for long-term and demanding use, the charger incorporates multi-layer protection:",
+          "bullets": [
+            "Over-temperature protection",
+            "Short-circuit protection",
+            "Reverse polarity protection",
+            "Intelligent fail-safe shutdown and automatic recovery"
+          ]
+        },
+        {
+          "title": "Fully Potted & Sealed, Water-Resistant Design",
+          "content": "The charger features a fully potted internal structure, with critical electronic components encapsulated in potting compound and protected by a durable all-aluminum housing. This construction significantly enhances resistance to moisture, dust, vibration, and mechanical stress.",
+          "bullets": [
+            "Designed to handle rain, humidity, and splashes during outdoor use",
+            "Not intended for long-term water immersion"
+          ]
+        },
+        {
+          "title": "Wide Operating Temperature Range",
+          "content": "Engineered to perform in challenging environments, the charger operates reliably across a wide temperature range from -20°C to 50°C (-4°F to 122°F)."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Can I use this charger with lead-acid batteries?",
+          "answer": "The charger also supports 12V lead-acid batteries, though it is primarily optimized for 12.8V LiFePO₄ chemistry."
+        },
+        {
+          "question": "Is it safe to leave the charger connected overnight?",
+          "answer": "Yes. The CC-CV algorithm includes automatic cutoff to prevent overcharging, along with multi-layer safety protections."
+        },
+        {
+          "question": "What does 0V Wake-Up mean?",
+          "answer": "If a LiFePO₄ battery has been deeply discharged below its normal operating voltage, the 0V activation function can gently recover it, potentially saving the battery from replacement."
+        }
+      ]
+    },
+    "SENT-METER-500A-BT-WP": {
+      "name": "TR24 IP68 Battery Monitor",
+      "subtitle": "500A M8 Shunt | 8–100V | Bluetooth | High-Precision Coulomb Counter",
+      "description": "500A high-current battery monitoring solution with M8 bolt-type shunt, suitable for RV, marine, energy storage, and industrial power systems.",
+      "estimatedShipping": "March 2025",
+      "seoTitle": "TR24 500A Battery Monitor | M8 Shunt | IP68 | 8–100V | Sentorise",
+      "seoDescription": "TR24 500A battery monitor with M8 shunt, IP68 waterproof, 8–100V wide voltage range. Suitable for RV, marine, energy storage, and industrial battery systems.",
+      "compatibility": "Compatible with all 8–100V battery systems including LiFePO₄, lead-acid, and other chemistries.",
+      "keyFeatures": [
+        "500A High-Current Measurement: Covers heavy-duty power scenarios",
+        "M8 Bolt-Type Shunt: Supports thicker cables, stable contact, lower heat generation",
+        "8–100V Wide Voltage Range: Compatible with various lithium and lead-acid systems",
+        "Real-Time Multi-Parameter Display: Voltage / Current / Power / Capacity (Ah) / SOC / Remaining Time",
+        "IP68 Protection Rating: Suitable for outdoor, humid, and harsh environments",
+        "Bluetooth Communication: Read data and configure basic parameters via APP"
+      ],
+      "applications": [
+        "RV / Motorhome battery systems",
+        "Marine / Boat electrical systems",
+        "Energy Storage Systems (ESS)",
+        "Industrial equipment & backup power",
+        "High-power lithium battery packs"
+      ],
+      "packageContents": [
+        "TR24 Battery Monitor × 1",
+        "500A Shunt (M8 terminals) × 1",
+        "Wiring harness & mounting hardware × 1 set",
+        "User manual × 1"
+      ],
+      "warnings": [
+        "Shunt must be installed in the negative battery circuit. All load and charging current must pass through the shunt.",
+        "Set the correct battery capacity (Ah) on first use, otherwise SOC readings will be inaccurate.",
+        "Do not extend the shielded cable between shunt and display unit.",
+        "For high-current systems, use properly sized cables with secure crimped connections."
+      ],
+      "specifications": [
+        {
+          "label": "Working Voltage",
+          "value": "8–100V"
+        },
+        {
+          "label": "Max Measurement Current",
+          "value": "500A"
+        },
+        {
+          "label": "Shunt Terminal",
+          "value": "M8"
+        },
+        {
+          "label": "Measurement Accuracy",
+          "value": "±1%"
+        },
+        {
+          "label": "Capacity Range",
+          "value": "0.1–9999Ah"
+        },
+        {
+          "label": "Protection Rating",
+          "value": "IP68"
+        },
+        {
+          "label": "Operating Temperature",
+          "value": "-10°C to 60°C"
+        },
+        {
+          "label": "Panel Size",
+          "value": "72.5 × 72.5 mm (2.85 × 2.85 in)"
+        },
+        {
+          "label": "Panel Depth",
+          "value": "20.75 mm (0.82 in)"
+        },
+        {
+          "label": "Mounting Cutout",
+          "value": "Ø67 ±0.3 mm"
+        },
+        {
+          "label": "SKU",
+          "value": "SENT-METER-500A-BT-WP"
+        },
+        {
+          "label": "Barcode",
+          "value": "6979061120078"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Precision Battery Monitoring",
+          "content": "The TR24 provides real-time monitoring of all critical battery parameters including voltage, current, power, capacity (Ah), state of charge (SOC), and estimated remaining usage time. The high-precision Coulomb counting ensures accurate tracking over time."
+        },
+        {
+          "title": "500A M8 Shunt Design",
+          "content": "The M8 bolt-type shunt terminal supports thicker cable connections, providing more stable contact with lower heat generation compared to smaller terminal designs. This makes it ideal for high-current applications in RV, marine, and industrial settings."
+        },
+        {
+          "title": "IP68 Waterproof Construction",
+          "content": "With IP68-rated protection, the TR24 is built to withstand outdoor, humid, and harsh operating environments. The sealed design prevents moisture and dust ingress, ensuring reliable long-term operation."
+        },
+        {
+          "title": "Bluetooth Connectivity",
+          "content": "Connect via Bluetooth to read real-time data and configure basic parameters through a companion mobile app. Monitor your battery system remotely without needing to physically access the display panel."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What size system is the 500A shunt suitable for?",
+          "answer": "It is suitable for high-current, high-power systems commonly found in RV inverter circuits, marine electrical systems, and energy storage applications."
+        },
+        {
+          "question": "Can the shunt be installed on the positive terminal only?",
+          "answer": "No. The shunt must be installed in the negative circuit. Installing on the positive side will result in inaccurate readings."
+        },
+        {
+          "question": "What is the difference between M8 and M10 terminals?",
+          "answer": "M8 is more common for systems under 500A, offering a good balance of installation convenience and reliability. Selection should be based on cable size and circuit current requirements."
+        }
+      ]
+    },
+    "SENT-CBL-SB50-SET": {
+      "name": "Anderson SB50 Cable Set",
+      "subtitle": "50A Rated | 8 AWG | Red & Black Pair | Ring Terminals",
+      "description": "Professional-grade Anderson SB50 cable set for connecting LiFePO₄ batteries to chargers, inverters, and other equipment. Features heavy-duty 8 AWG silicone wire with pre-crimped ring terminals for secure battery connections.",
+      "estimatedShipping": "March 2026",
+      "seoTitle": "Anderson SB50 Cable Set – 50A 8AWG Battery Cables | Sentorise",
+      "seoDescription": "Anderson SB50 cable set with 8 AWG silicone wire and M8 ring terminals. Quick-connect battery cables for LiFePO₄ chargers, inverters, and solar systems.",
+      "compatibility": "Compatible with all Sentorise batteries and most 12V LiFePO₄ systems with M8 terminals.",
+      "keyFeatures": [
+        "50A Rated: Suitable for chargers, inverters, and solar controllers",
+        "8 AWG Silicone Wire: Flexible, heat-resistant, and durable",
+        "Pre-Crimped Ring Terminals: M8 ring terminals for direct battery connection",
+        "Color-Coded: Red (positive) and black (negative) for safe installation",
+        "Anderson SB50 Connector: Industry-standard quick-connect/disconnect"
+      ],
+      "applications": [
+        "Battery-to-charger connections",
+        "Battery-to-inverter wiring",
+        "Solar charge controller connections",
+        "Parallel battery bank wiring"
+      ],
+      "packageContents": [
+        "Red Anderson SB50 cable with M8 ring terminal × 1",
+        "Black Anderson SB50 cable with M8 ring terminal × 1"
+      ],
+      "specifications": [
+        {
+          "label": "Connector Type",
+          "value": "Anderson SB50"
+        },
+        {
+          "label": "Current Rating",
+          "value": "50A continuous"
+        },
+        {
+          "label": "Wire Gauge",
+          "value": "8 AWG (8.4mm²)"
+        },
+        {
+          "label": "Wire Type",
+          "value": "Silicone insulation"
+        },
+        {
+          "label": "Terminal Type",
+          "value": "M8 ring terminal"
+        },
+        {
+          "label": "Cable Length",
+          "value": "1.0m per cable"
+        },
+        {
+          "label": "Voltage Rating",
+          "value": "600V"
+        },
+        {
+          "label": "Temperature Range",
+          "value": "-40°C to 200°C"
+        },
+        {
+          "label": "SKU",
+          "value": "SENT-CBL-SB50-SET"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Quick & Secure Connections",
+          "content": "The Anderson SB50 connector provides a reliable, genderless quick-connect system that prevents accidental reverse polarity. Simply plug in to connect your battery to chargers, inverters, or solar charge controllers."
+        },
+        {
+          "title": "Heavy-Duty Construction",
+          "content": "Built with 8 AWG silicone-insulated wire that stays flexible even in cold temperatures. The pre-crimped M8 ring terminals ensure a secure, low-resistance connection to your battery terminals."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Can I use this cable set with any LiFePO₄ battery?",
+          "answer": "Yes, the M8 ring terminals are compatible with all Sentorise batteries and most other LiFePO₄ batteries with M8 terminal posts."
+        },
+        {
+          "question": "Is 8 AWG sufficient for a 100Ah battery?",
+          "answer": "Yes. 8 AWG supports up to 50A continuous, which is suitable for most charger and moderate inverter connections. For high-current inverter setups (>50A), use thicker gauge cables."
+        }
+      ]
+    },
+    "SENT-FUSE-ANL-300A": {
+      "name": "ANL Fuse Holder + 300A Fuse",
+      "subtitle": "Inline Protection | M8 Studs | Transparent Cover | IP54",
+      "description": "Industrial-grade ANL fuse holder with included 300A fuse for protecting your LiFePO₄ battery system. Features a transparent protective cover for visual fuse inspection and M8 stud terminals for secure high-current connections.",
+      "estimatedShipping": "March 2026",
+      "seoTitle": "ANL Fuse Holder + 300A Fuse – Battery Circuit Protection | Sentorise",
+      "seoDescription": "ANL fuse holder with 300A fuse for LiFePO₄ battery systems. IP54 rated, transparent cover, M8 stud terminals for RV, marine, and off-grid protection.",
+      "compatibility": "Compatible with all 12V–32V DC battery systems. Recommended for 100Ah+ battery setups.",
+      "keyFeatures": [
+        "300A ANL Fuse Included: Pre-installed for immediate use",
+        "Transparent Cover: Visual inspection without disassembly",
+        "M8 Stud Terminals: Secure high-current bolt connections",
+        "IP54 Rated Housing: Dust and splash protection",
+        "Compact Inline Design: Easy installation in battery circuits"
+      ],
+      "applications": [
+        "Battery-to-inverter main fuse",
+        "Battery bank protection",
+        "High-current DC circuit protection",
+        "RV and marine electrical systems"
+      ],
+      "packageContents": [
+        "ANL fuse holder with cover × 1",
+        "300A ANL fuse (pre-installed) × 1",
+        "M8 mounting hardware × 1 set"
+      ],
+      "specifications": [
+        {
+          "label": "Fuse Type",
+          "value": "ANL (bolt-down)"
+        },
+        {
+          "label": "Fuse Rating",
+          "value": "300A"
+        },
+        {
+          "label": "Voltage Rating",
+          "value": "32V DC"
+        },
+        {
+          "label": "Terminal Type",
+          "value": "M8 stud"
+        },
+        {
+          "label": "Protection Rating",
+          "value": "IP54"
+        },
+        {
+          "label": "Housing Material",
+          "value": "High-impact ABS"
+        },
+        {
+          "label": "Cover",
+          "value": "Transparent polycarbonate"
+        },
+        {
+          "label": "Wire Range",
+          "value": "Up to 2/0 AWG (70mm²)"
+        },
+        {
+          "label": "SKU",
+          "value": "SENT-FUSE-ANL-300A"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Essential Circuit Protection",
+          "content": "An ANL fuse is a critical safety component in any battery system. It protects your wiring and equipment from overcurrent and short circuits by safely breaking the circuit before damage occurs."
+        },
+        {
+          "title": "Easy Visual Inspection",
+          "content": "The transparent polycarbonate cover allows you to visually verify fuse condition without removing the cover or disconnecting any wiring. A blown fuse is immediately visible."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Where should I install the ANL fuse?",
+          "answer": "Install the fuse on the positive cable, as close to the battery positive terminal as possible. This protects the entire circuit downstream."
+        },
+        {
+          "question": "How do I choose the right fuse rating?",
+          "answer": "The fuse should be rated slightly above your maximum expected current but below your cable's ampacity. 300A is suitable for most 200Ah battery systems with large inverters."
+        }
+      ]
+    },
+    "SENT-TERM-KIT-M8": {
+      "name": "Battery Terminal Kit",
+      "subtitle": "M8 Copper Lugs | Heat Shrink | Stainless Hardware | 6 Pairs",
+      "description": "Complete battery terminal connection kit with tinned copper lugs, adhesive heat shrink tubing, and stainless steel hardware. Everything needed for professional, corrosion-resistant battery connections.",
+      "estimatedShipping": "March 2026",
+      "seoTitle": "Battery Terminal Kit – M8 Copper Lugs & Hardware | Sentorise",
+      "seoDescription": "Complete M8 battery terminal kit with tinned copper lugs, adhesive heat shrink, and stainless steel hardware for LiFePO₄ battery installations.",
+      "compatibility": "Compatible with all M8 battery terminal posts including all Sentorise batteries.",
+      "keyFeatures": [
+        "Tinned Copper Lugs: Corrosion-resistant M8 ring terminals in multiple gauges",
+        "Adhesive Heat Shrink: Waterproof seal with built-in adhesive lining",
+        "Stainless Steel Hardware: M8 bolts, nuts, and spring washers included",
+        "Multi-Gauge Support: Terminals for 6, 8, 10, and 12 AWG cables",
+        "6 Pairs Included: Enough for a complete battery system setup"
+      ],
+      "applications": [
+        "Battery terminal connections",
+        "Inverter and charger wiring",
+        "Bus bar connections",
+        "Solar charge controller wiring"
+      ],
+      "packageContents": [
+        "Tinned copper ring terminals (assorted gauges) × 12",
+        "Adhesive heat shrink tubing (red & black) × 12",
+        "M8 × 16mm stainless bolts × 6",
+        "M8 stainless nylon-lock nuts × 6",
+        "M8 stainless spring washers × 6"
+      ],
+      "specifications": [
+        {
+          "label": "Terminal Type",
+          "value": "Tinned copper ring lug"
+        },
+        {
+          "label": "Stud Size",
+          "value": "M8 (5/16\")"
+        },
+        {
+          "label": "Wire Gauges",
+          "value": "6, 8, 10, 12 AWG"
+        },
+        {
+          "label": "Terminal Quantity",
+          "value": "12 pcs (6 pairs)"
+        },
+        {
+          "label": "Heat Shrink",
+          "value": "Adhesive-lined, 3:1 ratio"
+        },
+        {
+          "label": "Hardware",
+          "value": "M8 × 16mm stainless bolts, nuts, washers"
+        },
+        {
+          "label": "Material",
+          "value": "Tinned copper / SS304"
+        },
+        {
+          "label": "SKU",
+          "value": "SENT-TERM-KIT-M8"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Professional-Grade Connections",
+          "content": "Tinned copper lugs provide excellent conductivity while resisting corrosion in humid and marine environments. The adhesive-lined heat shrink creates a waterproof seal around each connection."
+        },
+        {
+          "title": "Complete Kit",
+          "content": "Everything you need in one package: ring terminals in multiple gauges, color-coded heat shrink, and stainless steel fasteners. No separate hardware store visits required."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Do I need a crimping tool?",
+          "answer": "Yes, a hydraulic or ratcheting cable crimper is recommended for a proper crimp. Pliers alone will not create a reliable connection."
+        },
+        {
+          "question": "Are these terminals compatible with Sentorise batteries?",
+          "answer": "Yes. All Sentorise batteries use M8 terminal posts, and these lugs are designed to fit perfectly."
+        }
+      ]
+    }
+  }
+}
