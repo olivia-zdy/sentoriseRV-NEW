@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2, Truck, Shield, RotateCcw, Award, Warehouse as WarehouseIcon } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import { useTranslation } from "react-i18next";
@@ -9,6 +11,7 @@ import { useActiveWarehouse } from "@/hooks/useLocalWarehouse";
 
 export const CartDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const itemsRegionRef = useRef<HTMLDivElement>(null);
   const { items, isLoading, isSyncing, updateQuantity, removeItem, getCheckoutUrl, syncCart } = useCartStore();
   const { t } = useTranslation();
   const { warehouse, copy, market } = useActiveWarehouse();
@@ -16,8 +19,13 @@ export const CartDrawer = () => {
   const totalPrice = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
   const currencyCode = items[0]?.price.currencyCode || 'GBP';
 
-  useEffect(() => { 
-    if (isOpen) syncCart(); 
+  useEffect(() => {
+    if (isOpen) {
+      syncCart();
+      // Focus the items region for screen readers / keyboard users
+      const t = setTimeout(() => itemsRegionRef.current?.focus(), 80);
+      return () => clearTimeout(t);
+    }
   }, [isOpen, syncCart]);
 
   const handleCheckout = () => {
@@ -35,18 +43,42 @@ export const CartDrawer = () => {
     }).format(amount);
   };
 
+  const triggerLabel = totalItems > 0
+    ? t('cart.openLabelWithCount', { count: totalItems })
+    : t('cart.openLabel');
+
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetTrigger asChild>
-        <Button variant="outline" size="icon" className="relative">
-          <ShoppingCart className="h-5 w-5" />
-          {totalItems > 0 && (
-            <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs bg-primary text-primary-foreground">
-              {totalItems}
-            </Badge>
-          )}
-        </Button>
-      </SheetTrigger>
+      <TooltipProvider delayDuration={300}>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <SheetTrigger asChild>
+              <Button
+                variant="outline"
+                size="icon"
+                aria-label={triggerLabel}
+                aria-haspopup="dialog"
+                aria-expanded={isOpen}
+                data-testid="cart-trigger"
+                onClick={(e) => e.stopPropagation()}
+                className="relative min-h-11 min-w-11 z-10"
+              >
+                <ShoppingCart className="h-5 w-5" aria-hidden="true" />
+                {totalItems > 0 && (
+                  <Badge
+                    aria-hidden="true"
+                    className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs bg-primary text-primary-foreground"
+                  >
+                    {totalItems}
+                  </Badge>
+                )}
+                <span className="sr-only">{triggerLabel}</span>
+              </Button>
+            </SheetTrigger>
+          </TooltipTrigger>
+          <TooltipContent side="bottom">{t('cart.tooltip')}</TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
       <SheetContent className="w-full sm:max-w-lg flex flex-col h-full">
         <SheetHeader className="flex-shrink-0">
           <SheetTitle>{t('cart.title')}</SheetTitle>
@@ -82,13 +114,23 @@ export const CartDrawer = () => {
           </div>
         )}
 
-        <div className="flex flex-col flex-1 pt-6 min-h-0">
+        <div
+          ref={itemsRegionRef}
+          tabIndex={-1}
+          role="region"
+          aria-label={t('cart.title')}
+          data-testid="cart-items-region"
+          className="flex flex-col flex-1 pt-6 min-h-0 focus:outline-none"
+        >
           {items.length === 0 ? (
             <div className="flex-1 flex items-center justify-center">
               <div className="text-center">
-                <ShoppingCart className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <p className="text-muted-foreground">{t('cart.empty')}</p>
+                <ShoppingCart className="h-12 w-12 text-muted-foreground mx-auto mb-4" aria-hidden="true" />
+                <p className="text-foreground font-medium">{t('cart.empty')}</p>
                 <p className="text-sm text-muted-foreground mt-2">{t('cart.emptyHint')}</p>
+                <Button asChild className="mt-4" onClick={() => setIsOpen(false)}>
+                  <Link to="/products">{t('cart.emptyCta')}</Link>
+                </Button>
               </div>
             </div>
           ) : (
