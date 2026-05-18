@@ -7,6 +7,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { products, productSeries } from "@/data/products";
+import PageMeta from "@/components/PageMeta";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import {
   Select,
