@@ -1,13 +1,12 @@
-import { create } from "zustand";
 import { useEffect } from "react";
+import { create } from "zustand";
 
 /**
  * Global UI state + entry-point registry for the cart drawer.
  *
- * Every component that exposes a "open cart" affordance MUST:
- *   1. import { CART_ENTRY_POINTS, useCartUI } from "@/stores/cartUIStore"
- *   2. register itself via `useCartEntry(CART_ENTRY_POINTS.X)`
- *   3. call `openCart()` on activation
+ * Every component that exposes an "open cart" affordance MUST:
+ *   1. call `useCartEntry(CART_ENTRY_POINTS.X)` to self-register while mounted
+ *   2. invoke the returned `openCart()` on user activation
  *
  * Tests use `getRegisteredEntries()` to audit coverage.
  */
@@ -51,16 +50,14 @@ export const useCartUI = create<CartUIState>((set, get) => ({
   getRegisteredEntries: () => Array.from(get().registered),
 }));
 
-/** Hook for entry components to self-register while mounted. */
+/** Self-register while mounted; returns the `openCart` action for convenience. */
 export const useCartEntry = (id: CartEntryId) => {
   const registerEntry = useCartUI((s) => s.registerEntry);
   const unregisterEntry = useCartUI((s) => s.unregisterEntry);
   const openCart = useCartUI((s) => s.openCart);
-  
   useEffect(() => {
     registerEntry(id);
     return () => unregisterEntry(id);
   }, [id, registerEntry, unregisterEntry]);
-  
   return openCart;
 };
