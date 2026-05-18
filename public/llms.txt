@@ -1,0 +1,26 @@
+# Sentorise
+
+> European DTC brand for premium LiFePO4 energy storage batteries — built for RV, vanlife, off-grid solar, and mobile backup power. Smart BMS, Bluetooth monitoring, 5-year warranty, CE / RoHS / UN38.3 certified.
+
+Sentorise designs and sells lithium iron phosphate (LiFePO4) batteries directly to technically literate customers across Europe. Product lines: Lite (entry 6–50 Ah), Core (100 Ah Group 31 / DIN H8 / Mini variants), and Plus (200 Ah, heated). EUR is the base currency with live GBP/USD conversion; free shipping above €199.
+
+## Pages
+
+- [Home](/): Brand overview, product positioning, who Sentorise is for.
+- [Products](/products): Full LiFePO4 battery catalog with filtering by series, capacity, and price.
+- [Accessories](/accessories): Chargers, monitors, cables, and installation accessories.
+- [Compare](/compare): Side-by-side specification comparison (up to 3 batteries).
+- [Applications](/applications): RV, vanlife, off-grid solar, marine, and backup power scenarios.
+- [Why Sentorise](/why-sentorise): Engineering principles, safety standards, brand differentiation.
+- [Battery Selector](/battery-selector): Guided tool for choosing the right capacity and form factor.
+- [Certifications](/certifications): CE, RoHS, UN38.3 documentation and downloadable test reports.
+- [Warranty](/warranty): 5-year warranty registration and lookup.
+- [Bluetooth Guide](/bluetooth-guide): 5-step setup for the Sentorise companion app.
+- [Support](/support): FAQ, contact channels, datasheets, and installation guides.
+- [Blog](/blog): Technical articles on energy storage, off-grid setups, and product use.
+- [Stories](/stories): Verified customer case studies and installations.
+
+## Optional
+
+- [Privacy Policy](/privacy)
+- [Terms of Service](/terms)

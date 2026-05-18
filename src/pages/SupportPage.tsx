@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import PageMeta from "@/components/PageMeta";
+import FAQSchema from "@/components/SEO/FAQSchema";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -54,7 +55,9 @@ const SupportPage = () => {
       <PageMeta 
         title={t('support.pageTitle')} 
         description={t('support.pageSubtitle')} 
+        canonical="/support"
       />
+      {Array.isArray(faqs) && faqs.length > 0 && <FAQSchema faqs={faqs} />}
       <AnnouncementBar />
       <Header />
       <PageTransition>
