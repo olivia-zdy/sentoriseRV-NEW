@@ -6,12 +6,13 @@ import Footer from "@/components/Footer";
 import PageMeta from "@/components/PageMeta";
 import WarrantyRegistrationForm from "@/components/WarrantyRegistrationForm";
 import WarrantyLookup from "@/components/WarrantyLookup";
-import { Shield, CheckCircle2, Clock, Truck, Search, FileEdit } from "lucide-react";
+import { Shield, CheckCircle2, Clock, Truck, Search, FileEdit, Warehouse as WarehouseIcon } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useActiveWarehouse } from "@/hooks/useLocalWarehouse";
 
 const WarrantyPage = () => {
   const { t } = useTranslation();
-
+  const { warehouse, copy, market } = useActiveWarehouse();
   const coveredItems = t('warranty.coveredItems', { returnObjects: true }) as string[];
   const notCoveredItems = t('warranty.notCoveredItems', { returnObjects: true }) as string[];
 
@@ -64,6 +65,29 @@ const WarrantyPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Current Warehouse / Shipping availability */}
+        {warehouse && (
+          <section className="border-b bg-background">
+            <div className="container-custom py-6">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5 p-4 md:p-5 rounded-xl border border-primary/20 bg-primary/5">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <WarehouseIcon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-lg leading-none">{market.flag}</span>
+                    <span className="font-semibold text-foreground">{warehouse.display_name}</span>
+                    <span className="text-xs px-2 py-0.5 rounded-full bg-primary/15 text-primary font-mono">
+                      {warehouse.code}
+                    </span>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground sm:ml-auto sm:text-right">{copy}</p>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Registration Form & Lookup Tabs */}
         <section className="py-12 md:py-16">
