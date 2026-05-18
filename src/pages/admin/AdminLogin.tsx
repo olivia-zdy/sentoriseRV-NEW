@@ -3,11 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Loader2, Lock, Mail, Eye, EyeOff } from 'lucide-react';
+import { Loader2, Lock, Mail, Eye, EyeOff, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useToast } from '@/hooks/use-toast';
 import { useAdminAuth } from '@/hooks/useAdminAuth';
 import logoLight from '@/assets/logo-light.png';
@@ -26,6 +27,7 @@ export default function AdminLogin() {
   const { user, isTeamMember, isLoading: authLoading, signIn } = useAdminAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [loginError, setLoginError] = useState<string | null>(null);
 
   const loginForm = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
@@ -33,6 +35,14 @@ export default function AdminLogin() {
     mode: 'onSubmit',
     reValidateMode: 'onSubmit',
   });
+
+  // Clear the backend error as soon as the user edits the form again.
+  useEffect(() => {
+    const subscription = loginForm.watch(() => {
+      if (loginError) setLoginError(null);
+    });
+    return () => subscription.unsubscribe();
+  }, [loginForm, loginError]);
 
   useEffect(() => {
     if (user && isTeamMember && !authLoading) {
@@ -42,12 +52,17 @@ export default function AdminLogin() {
 
   const handleLogin = async (data: LoginFormData) => {
     setIsLoading(true);
+    setLoginError(null);
     try {
       const { error } = await signIn(data.email, data.password);
       if (error) {
+        const message = error.message?.toLowerCase().includes('invalid')
+          ? 'Incorrect email or password. Please try again.'
+          : error.message || 'Login failed. Please try again.';
+        setLoginError(message);
         toast({
           title: 'Login failed',
-          description: error.message || 'Invalid credentials',
+          description: message,
           variant: 'destructive',
         });
       } else {
@@ -57,9 +72,11 @@ export default function AdminLogin() {
         });
       }
     } catch (error) {
+      const message = 'An unexpected error occurred. Please try again.';
+      setLoginError(message);
       toast({
         title: 'Error',
-        description: 'An unexpected error occurred',
+        description: message,
         variant: 'destructive',
       });
     } finally {
@@ -99,7 +116,14 @@ export default function AdminLogin() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={loginForm.handleSubmit(handleLogin)} className="space-y-4">
+            <form onSubmit={loginForm.handleSubmit(handleLogin)} className="space-y-4" noValidate>
+              {loginError && (
+                <Alert variant="destructive" role="alert" data-testid="login-error">
+                  <AlertCircle className="h-4 w-4" />
+                  <AlertDescription>{loginError}</AlertDescription>
+                </Alert>
+              )}
+
               <div className="space-y-2">
                 <Label htmlFor="login-email">Email</Label>
                 <div className="relative">
@@ -109,11 +133,12 @@ export default function AdminLogin() {
                     type="email"
                     placeholder="you@sentorise.com"
                     className="pl-10"
+                    aria-invalid={!!loginForm.formState.errors.email}
                     {...loginForm.register('email')}
                   />
                 </div>
                 {loginForm.formState.errors.email && (
-                  <p className="text-sm text-destructive">{loginForm.formState.errors.email.message}</p>
+                  <p className="text-sm text-destructive" role="alert">{loginForm.formState.errors.email.message}</p>
                 )}
               </div>
 
@@ -126,22 +151,26 @@ export default function AdminLogin() {
                     type={showPassword ? 'text' : 'password'}
                     placeholder="••••••••"
                     className="pl-10 pr-10"
+                    aria-invalid={!!loginForm.formState.errors.password}
                     {...loginForm.register('password')}
                   />
                   <button
                     type="button"
-                    onClick={() => setShowPassword(!showPassword)}
+                    onClick={() => setShowPassword((v) => !v)}
+                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    aria-pressed={showPassword}
+                    data-testid="toggle-password"
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                   >
                     {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                   </button>
                 </div>
                 {loginForm.formState.errors.password && (
-                  <p className="text-sm text-destructive">{loginForm.formState.errors.password.message}</p>
+                  <p className="text-sm text-destructive" role="alert">{loginForm.formState.errors.password.message}</p>
                 )}
               </div>
 
-              <Button type="submit" className="w-full" disabled={isLoading}>
+              <Button type="submit" className="w-full" disabled={isLoading} data-testid="login-submit">
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -155,9 +184,17 @@ export default function AdminLogin() {
           </CardContent>
         </Card>
 
-        <p className="text-center text-sm text-muted-foreground mt-6">
-          This dashboard is for authorized Sentorise team members only.
-        </p>
+        <div className="text-center text-sm text-muted-foreground mt-6 space-y-1">
+          <p>This dashboard is for authorized Sentorise team members only.</p>
+          <p>
+            Need access? Internal accounts can only be created by an existing admin.
+            Contact{' '}
+            <a href="mailto:support@sentorise.com" className="underline hover:text-foreground">
+              support@sentorise.com
+            </a>
+            .
+          </p>
+        </div>
       </div>
     </div>
   );
