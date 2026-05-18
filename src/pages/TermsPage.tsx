@@ -9,9 +9,10 @@ const TermsPage = () => {
   const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
-      <PageMeta 
-        title="Terms of Service" 
-        description="Read the terms and conditions for using Sentorise products and services." 
+      <PageMeta
+        title={t('seo.terms.title')}
+        description={t('seo.terms.description')}
+        canonical="/terms"
       />
       <AnnouncementBar />
       <Header />

@@ -174,9 +174,11 @@ const ShopifyProductDetailPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <PageMeta 
+      <PageMeta
         title={product.title}
-        description={product.description?.slice(0, 155) || `${product.title} - Sentorise LiFePO₄ Battery`}
+        description={product.description?.slice(0, 155) || t('seo.product.descriptionTemplate', { name: product.title, voltage: '', capacity: '' })}
+        canonical={`/shop/${product.handle || product.id}`}
+        ogType="product"
       />
       <AnnouncementBar />
       <Header />

@@ -46,9 +46,9 @@ const Index = () => {
   const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
-      <PageMeta 
-        title="Cold-Weather Ready LiFePO₄ Batteries" 
-        description="LiFePO4 batteries with low-temperature protection for RV, vanlife, and off-grid solar. 5-year warranty, Bluetooth monitoring, Berlin-based support."
+      <PageMeta
+        title={t('seo.home.title')}
+        description={t('seo.home.description')}
         canonical="/"
       />
       <OrganizationSchema />
