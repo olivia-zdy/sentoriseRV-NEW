@@ -82,10 +82,17 @@ export function useWarehouses() {
   });
 }
 
-/** Returns the localized shipping copy for the user's local warehouse. */
+/** Maps the current UI language to a warehouse code. */
+const LANG_TO_WAREHOUSE: Record<string, string> = {
+  de: "DE",
+  fr: "PL",
+  en: "UK",
+  zh: "DE",
+};
+
+/** Returns the localized shipping copy for the warehouse matching the current language. */
 export function useLocalShippingCopy(fallback?: string): string {
   const { i18n } = useTranslation();
-  const country = useUserCountry();
   const { data: warehouses } = useWarehouses();
 
   if (!warehouses || warehouses.length === 0) return fallback ?? "";
@@ -104,13 +111,10 @@ export function useLocalShippingCopy(fallback?: string): string {
     }
   };
 
-  if (country) {
-    const match = warehouses.find((w) =>
-      w.country_codes.includes(country)
-    );
-    if (match) return pickCopy(match);
-  }
-
-  const def = warehouses.find((w) => w.is_default) ?? warehouses[0];
-  return pickCopy(def);
+  const targetCode = LANG_TO_WAREHOUSE[lang] ?? "UK";
+  const match =
+    warehouses.find((w) => w.code === targetCode) ??
+    warehouses.find((w) => w.is_default) ??
+    warehouses[0];
+  return pickCopy(match);
 }
