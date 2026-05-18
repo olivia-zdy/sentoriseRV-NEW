@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "https://esm.sh/resend@2.0.0";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -18,22 +19,53 @@ interface NewLeadNotification {
   quantity?: number;
 }
 
+function escapeHtml(value: unknown): string {
+  if (value === null || value === undefined) return "";
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+// Looks up the webhook secret from Supabase Vault. Same value the DB trigger uses.
+async function getVaultWebhookSecret(): Promise<string | null> {
+  const url = Deno.env.get("SUPABASE_URL");
+  const key = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+  if (!url || !key) return null;
+  try {
+    const supabase = createClient(url, key);
+    const { data } = await supabase
+      .schema("vault" as never)
+      .from("decrypted_secrets")
+      .select("decrypted_secret")
+      .eq("name", "notify_lead_webhook_secret")
+      .maybeSingle();
+    // deno-lint-ignore no-explicit-any
+    return (data as any)?.decrypted_secret ?? null;
+  } catch (_err) {
+    return null;
+  }
+}
+
 const handler = async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    // --- Authentication: service role key OR internal webhook token ---
+    // --- Authentication: service role key OR vault-sourced webhook token ---
     const authHeader = req.headers.get("Authorization");
     const webhookToken = req.headers.get("x-webhook-secret");
     const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
 
-    // Internal trigger token - matches value in notify_new_lead_trigger() DB function
-    const INTERNAL_WEBHOOK_TOKEN = "wh_sentorise_lead_notify_2026";
-
-    const isServiceRole = authHeader && authHeader === `Bearer ${serviceRoleKey}`;
-    const isInternalTrigger = webhookToken === INTERNAL_WEBHOOK_TOKEN;
+    const isServiceRole = !!authHeader && authHeader === `Bearer ${serviceRoleKey}`;
+    let isInternalTrigger = false;
+    if (!isServiceRole && webhookToken) {
+      const vaultSecret = await getVaultWebhookSecret();
+      isInternalTrigger = !!vaultSecret && webhookToken === vaultSecret;
+    }
 
     if (!isServiceRole && !isInternalTrigger) {
       return new Response(
@@ -49,7 +81,18 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     const resend = new Resend(RESEND_API_KEY);
-    const lead: NewLeadNotification = await req.json();
+    const rawLead: NewLeadNotification = await req.json();
+    // Escape every user-controlled field for safe HTML interpolation
+    const lead = {
+      lead_type: rawLead.lead_type,
+      name: escapeHtml(rawLead.name),
+      email: escapeHtml(rawLead.email),
+      phone: rawLead.phone ? escapeHtml(rawLead.phone) : "",
+      company: rawLead.company ? escapeHtml(rawLead.company) : "",
+      product_name: rawLead.product_name ? escapeHtml(rawLead.product_name) : "",
+      message: rawLead.message ? escapeHtml(rawLead.message) : "",
+      quantity: rawLead.quantity ? escapeHtml(rawLead.quantity) : "",
+    };
 
     const adminEmail = "team@sentorise.com";
 
