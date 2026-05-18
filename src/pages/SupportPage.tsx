@@ -207,7 +207,9 @@ const SupportPage = () => {
               <p className="text-muted-foreground mb-8 leading-relaxed">
                 {t('support.warrantyText')}
               </p>
-              <Button>{t('support.registerProduct')}</Button>
+              <Button asChild>
+                <Link to="/warranty">{t('support.registerProduct')}</Link>
+              </Button>
             </div>
             </ScrollReveal>
           </div>
