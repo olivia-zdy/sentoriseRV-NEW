@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "i18n:audit": "bun run scripts/i18n-audit.ts",
-    "i18n:report": "bun run scripts/i18n-audit.ts --report"
+    "i18n:report": "bun run scripts/i18n-audit.ts --report",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
