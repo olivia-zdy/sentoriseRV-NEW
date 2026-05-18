@@ -8,6 +8,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import { MarketSelector } from "./MarketSelector";
 import { Button } from "@/components/ui/button";
 import { CartDrawer } from "./CartDrawer";
+import { MobileMenuCartEntry } from "./MobileMenuCartEntry";
 import {
   Collapsible,
   CollapsibleContent,
@@ -249,7 +250,7 @@ const Header = () => {
             <Button variant="ghost" size="icon" className="rounded-full">
               <Search className="w-5 h-5" />
             </Button>
-            <CartDrawer />
+            <CartDrawer entryId="header-desktop" />
             <ThemeToggle />
             <Button asChild variant="default" size="sm" className="ml-2">
               <Link to="/support#contact">{t('nav.contactUs')}</Link>
@@ -259,7 +260,7 @@ const Header = () => {
           {/* Mobile Actions */}
           <div className="flex lg:hidden items-center gap-1">
             <MarketSelector />
-            <CartDrawer />
+            <CartDrawer entryId="header-mobile" />
             <ThemeToggle />
             <button
               className="p-2 text-foreground"
@@ -338,7 +339,8 @@ const Header = () => {
                   </Link>
                 )
               ))}
-              <div className="pt-4 mt-4 border-t border-border">
+              <div className="pt-4 mt-4 border-t border-border space-y-2">
+                <MobileMenuCartEntry onOpen={() => setIsMenuOpen(false)} />
                 <Button asChild variant="default" className="w-full">
                   <Link to="/support#contact" onClick={() => setIsMenuOpen(false)}>{t('nav.contactUs')}</Link>
                 </Button>

@@ -7,6 +7,7 @@ import logoDark from "@/assets/logo-dark.png";
 import { Mail, Facebook, Instagram, Youtube, Linkedin, Shield, Award, Leaf, ShieldCheck, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 import { useWarehouses } from "@/hooks/useLocalWarehouse";
+import { FooterCartLink } from "./FooterCartLink";
 
 const COUNTRY_FLAGS: Record<string, string> = {
   DE: "🇩🇪", PL: "🇵🇱", UK: "🇬🇧", GB: "🇬🇧", US: "🇺🇸", CN: "🇨🇳",
@@ -191,6 +192,9 @@ const Footer = () => {
               {footerLinks.support.map((link) => (
                 <li key={link.href + link.name}><Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground">{link.name}</Link></li>
               ))}
+              <li>
+                <FooterCartLink />
+              </li>
             </ul>
           </div>
         </div>

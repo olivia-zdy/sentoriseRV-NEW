@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -6,11 +6,19 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2, Truck, Shield, RotateCcw, Award, Warehouse as WarehouseIcon } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
+import { useCartUI, useCartEntry, CART_ENTRY_POINTS, type CartEntryId } from "@/stores/cartUIStore";
 import { useTranslation } from "react-i18next";
 import { useActiveWarehouse } from "@/hooks/useLocalWarehouse";
 
-export const CartDrawer = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface CartDrawerProps {
+  /** Identifies which UI surface this trigger lives on (audit + tests). */
+  entryId?: CartEntryId;
+}
+
+export const CartDrawer = ({ entryId = CART_ENTRY_POINTS.HEADER_DESKTOP }: CartDrawerProps = {}) => {
+  const isOpen = useCartUI((s) => s.isOpen);
+  const setIsOpen = useCartUI((s) => s.setOpen);
+  useCartEntry(entryId);
   const itemsRegionRef = useRef<HTMLDivElement>(null);
   const { items, isLoading, isSyncing, updateQuantity, removeItem, getCheckoutUrl, syncCart } = useCartStore();
   const { t } = useTranslation();
@@ -23,8 +31,8 @@ export const CartDrawer = () => {
     if (isOpen) {
       syncCart();
       // Focus the items region for screen readers / keyboard users
-      const t = setTimeout(() => itemsRegionRef.current?.focus(), 80);
-      return () => clearTimeout(t);
+      const timer = setTimeout(() => itemsRegionRef.current?.focus(), 80);
+      return () => clearTimeout(timer);
     }
   }, [isOpen, syncCart]);
 
