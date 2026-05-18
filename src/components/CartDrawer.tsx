@@ -19,8 +19,13 @@ export const CartDrawer = () => {
   const totalPrice = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
   const currencyCode = items[0]?.price.currencyCode || 'GBP';
 
-  useEffect(() => { 
-    if (isOpen) syncCart(); 
+  useEffect(() => {
+    if (isOpen) {
+      syncCart();
+      // Focus the items region for screen readers / keyboard users
+      const t = setTimeout(() => itemsRegionRef.current?.focus(), 80);
+      return () => clearTimeout(t);
+    }
   }, [isOpen, syncCart]);
 
   const handleCheckout = () => {
