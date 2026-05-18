@@ -52,12 +52,17 @@ export default function AdminLogin() {
 
   const handleLogin = async (data: LoginFormData) => {
     setIsLoading(true);
+    setLoginError(null);
     try {
       const { error } = await signIn(data.email, data.password);
       if (error) {
+        const message = error.message?.toLowerCase().includes('invalid')
+          ? 'Incorrect email or password. Please try again.'
+          : error.message || 'Login failed. Please try again.';
+        setLoginError(message);
         toast({
           title: 'Login failed',
-          description: error.message || 'Invalid credentials',
+          description: message,
           variant: 'destructive',
         });
       } else {
@@ -67,9 +72,11 @@ export default function AdminLogin() {
         });
       }
     } catch (error) {
+      const message = 'An unexpected error occurred. Please try again.';
+      setLoginError(message);
       toast({
         title: 'Error',
-        description: 'An unexpected error occurred',
+        description: message,
         variant: 'destructive',
       });
     } finally {
