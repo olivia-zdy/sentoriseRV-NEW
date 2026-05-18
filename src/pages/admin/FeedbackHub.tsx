@@ -326,14 +326,14 @@ export default function FeedbackHub() {
                   <div className="space-y-2">
                     <Label>Product (optional)</Label>
                     <Select 
-                      value={newFeedback.product_id} 
-                      onValueChange={(v) => setNewFeedback({...newFeedback, product_id: v})}
+                      value={newFeedback.product_id || "__none__"} 
+                      onValueChange={(v) => setNewFeedback({...newFeedback, product_id: v === "__none__" ? "" : v})}
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Select product" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">No product</SelectItem>
+                        <SelectItem value="__none__">No product</SelectItem>
                         {products.map(p => (
                           <SelectItem key={p.id} value={p.id}>{p.name}</SelectItem>
                         ))}
