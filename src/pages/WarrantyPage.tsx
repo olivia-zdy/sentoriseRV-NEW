@@ -12,7 +12,7 @@ import { useActiveWarehouse } from "@/hooks/useLocalWarehouse";
 
 const WarrantyPage = () => {
   const { t } = useTranslation();
-
+  const { warehouse, copy, market } = useActiveWarehouse();
   const coveredItems = t('warranty.coveredItems', { returnObjects: true }) as string[];
   const notCoveredItems = t('warranty.notCoveredItems', { returnObjects: true }) as string[];
 
