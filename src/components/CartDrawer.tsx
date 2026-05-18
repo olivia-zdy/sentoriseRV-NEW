@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2, Truck, Shield, RotateCcw, Award, Warehouse as WarehouseIcon } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import { useTranslation } from "react-i18next";
@@ -9,6 +11,7 @@ import { useActiveWarehouse } from "@/hooks/useLocalWarehouse";
 
 export const CartDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const itemsRegionRef = useRef<HTMLDivElement>(null);
   const { items, isLoading, isSyncing, updateQuantity, removeItem, getCheckoutUrl, syncCart } = useCartStore();
   const { t } = useTranslation();
   const { warehouse, copy, market } = useActiveWarehouse();
