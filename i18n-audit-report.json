@@ -1,0 +1,2804 @@
+{
+  "missing": {
+    "de": [],
+    "fr": [],
+    "zh": []
+  },
+  "hardcoded": [
+    {
+      "file": "src/pages/AccessoryDetailPage.tsx",
+      "line": 44,
+      "text": "Product Not Found"
+    },
+    {
+      "file": "src/pages/AccessoryDetailPage.tsx",
+      "line": 45,
+      "text": "The accessory you're looking for doesn"
+    },
+    {
+      "file": "src/pages/AccessoryDetailPage.tsx",
+      "line": 47,
+      "text": "Back to Accessories"
+    },
+    {
+      "file": "src/pages/AccessoryDetailPage.tsx",
+      "line": 73,
+      "text": "Battery Accessories"
+    },
+    {
+      "file": "src/pages/AccessoryDetailPage.tsx",
+      "line": 223,
+      "text": "Technical Specifications"
+    },
+    {
+      "file": "src/pages/AccessoryDetailPage.tsx",
+      "line": 246,
+      "text": "Ideal Applications"
+    },
+    {
+      "file": "src/pages/AccessoryDetailPage.tsx",
+      "line": 258,
+      "text": "Package Contents"
+    },
+    {
+      "file": "src/pages/BlogPostPage.tsx",
+      "line": 169,
+      "text": "Article Not Found"
+    },
+    {
+      "file": "src/pages/BlogPostPage.tsx",
+      "line": 170,
+      "text": "The article you're looking for doesn"
+    },
+    {
+      "file": "src/pages/BlogPostPage.tsx",
+      "line": 196,
+      "text": "Share cancelled"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 36,
+      "text": "Download the App"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 40,
+      "text": "Sentorise Battery' in App Store or Google Play"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 41,
+      "text": "Or scan the QR code on your battery label"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 42,
+      "text": "App is free with no subscription required"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 51,
+      "text": "Turn on Bluetooth in your phone settings"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 53,
+      "text": "Keep the app open during initial setup"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 58,
+      "text": "Approach Your Battery"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 62,
+      "text": "The Bluetooth module activates when battery is powered"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 64,
+      "text": "Metal enclosures may reduce range slightly"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 73,
+      "text": "Scan for Batteries' in the app"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 80,
+      "text": "View Real-Time Data"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 84,
+      "text": "Dashboard shows live voltage and current"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 86,
+      "text": "View cell balance status and cycle count"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 87,
+      "text": "Temperature monitoring with alerts"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 108,
+      "text": "Battery not found"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 109,
+      "text": "Battery not powered on"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 109,
+      "text": "Out of Bluetooth range"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 109,
+      "text": "Bluetooth disabled on phone"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 114,
+      "text": "Connection keeps dropping"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 115,
+      "text": "Interference from other devices"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 115,
+      "text": "Low phone battery"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 115,
+      "text": "App running in background"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 120,
+      "text": "Data not updating"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 121,
+      "text": "Connection lost"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 121,
+      "text": "App needs refresh"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 121,
+      "text": "BMS in sleep mode"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 127,
+      "text": "Region restriction"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 127,
+      "text": "Device incompatibility"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 127,
+      "text": "Old OS version"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 128,
+      "text": "Sentorise Battery"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 132,
+      "text": "Permission denied error"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 133,
+      "text": "Bluetooth permission blocked"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 133,
+      "text": "Location permission denied"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 139,
+      "text": "Live Voltage"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 140,
+      "text": "Current Flow"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 141,
+      "text": "State of Charge"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 143,
+      "text": "Cell Balance"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 143,
+      "text": "Individual cell voltages and balance status"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 144,
+      "text": "Cycle Count"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 145,
+      "text": "Usage logs and performance trends"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 146,
+      "text": "Push notifications for critical events"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 153,
+      "text": "Bluetooth Monitoring Guide"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 168,
+      "text": "Bluetooth Guide"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 188,
+      "text": "Setup Guide"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 197,
+      "text": "Get Help"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 247,
+      "text": "Download the App"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 271,
+      "text": "What You Can Monitor"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 292,
+      "text": "Device Compatibility"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 306,
+      "text": "Minimum Version"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 310,
+      "text": "Supported Devices"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 314,
+      "text": "Required Permissions"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 332,
+      "text": "Minimum Version"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 336,
+      "text": "Supported Devices"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 340,
+      "text": "Required Permissions"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 436,
+      "text": "Email Support"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 444,
+      "text": "Priority Support"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 446,
+      "text": "Faster routing to tech team"
+    },
+    {
+      "file": "src/pages/BluetoothGuidePage.tsx",
+      "line": 474,
+      "text": "Contact Support"
+    },
+    {
+      "file": "src/pages/CertificationsPage.tsx",
+      "line": 14,
+      "text": "European Conformity"
+    },
+    {
+      "file": "src/pages/CertificationsPage.tsx",
+      "line": 21,
+      "text": "UL Listed"
+    },
+    {
+      "file": "src/pages/CertificationsPage.tsx",
+      "line": 28,
+      "text": "Transport Safety"
+    },
+    {
+      "file": "src/pages/CertificationsPage.tsx",
+      "line": 35,
+      "text": "Industrial Battery Safety"
+    },
+    {
+      "file": "src/pages/CertificationsPage.tsx",
+      "line": 42,
+      "text": "RoHS Compliant"
+    },
+    {
+      "file": "src/pages/CertificationsPage.tsx",
+      "line": 49,
+      "text": "FCC Certified"
+    },
+    {
+      "file": "src/pages/CertificationsPage.tsx",
+      "line": 56,
+      "text": "LE FIGARO"
+    },
+    {
+      "file": "src/pages/CertificationsPage.tsx",
+      "line": 60,
+      "text": "SBT Insight"
+    },
+    {
+      "file": "src/pages/CertificationsPage.tsx",
+      "line": 61,
+      "text": "One News Page"
+    },
+    {
+      "file": "src/pages/ComparePage.tsx",
+      "line": 15,
+      "text": "BMS Rating"
+    },
+    {
+      "file": "src/pages/ComparePage.tsx",
+      "line": 51,
+      "text": "Browse Products"
+    },
+    {
+      "file": "src/pages/NotFound.tsx",
+      "line": 24,
+      "text": "The page you're looking for doesn"
+    },
+    {
+      "file": "src/pages/NotFound.tsx",
+      "line": 67,
+      "text": "Support Center"
+    },
+    {
+      "file": "src/pages/NotFound.tsx",
+      "line": 74,
+      "text": "Battery Selector"
+    },
+    {
+      "file": "src/pages/NotFound.tsx",
+      "line": 75,
+      "text": "Find the right battery"
+    },
+    {
+      "file": "src/pages/NotFound.tsx",
+      "line": 81,
+      "text": "Knowledge Hub"
+    },
+    {
+      "file": "src/pages/PrivacyPage.tsx",
+      "line": 24,
+      "text": "Privacy Policy"
+    },
+    {
+      "file": "src/pages/PrivacyPage.tsx",
+      "line": 28,
+      "text": "Privacy Policy"
+    },
+    {
+      "file": "src/pages/PrivacyPage.tsx",
+      "line": 39,
+      "text": "Billing and shipping addresses"
+    },
+    {
+      "file": "src/pages/PrivacyPage.tsx",
+      "line": 41,
+      "text": "Product preferences and order history"
+    },
+    {
+      "file": "src/pages/PrivacyPage.tsx",
+      "line": 42,
+      "text": "Communications with our support team"
+    },
+    {
+      "file": "src/pages/PrivacyPage.tsx",
+      "line": 50,
+      "text": "Process and fulfill your orders"
+    },
+    {
+      "file": "src/pages/PrivacyPage.tsx",
+      "line": 51,
+      "text": "Send order confirmations and shipping updates"
+    },
+    {
+      "file": "src/pages/PrivacyPage.tsx",
+      "line": 52,
+      "text": "Respond to your inquiries and provide customer support"
+    },
+    {
+      "file": "src/pages/PrivacyPage.tsx",
+      "line": 54,
+      "text": "Improve our products and services"
+    },
+    {
+      "file": "src/pages/PrivacyPage.tsx",
+      "line": 55,
+      "text": "Comply with legal obligations"
+    },
+    {
+      "file": "src/pages/PrivacyPage.tsx",
+      "line": 91,
+      "text": "Access your personal data"
+    },
+    {
+      "file": "src/pages/PrivacyPage.tsx",
+      "line": 92,
+      "text": "Request correction of inaccurate data"
+    },
+    {
+      "file": "src/pages/PrivacyPage.tsx",
+      "line": 93,
+      "text": "Request deletion of your data"
+    },
+    {
+      "file": "src/pages/PrivacyPage.tsx",
+      "line": 94,
+      "text": "Object to processing of your data"
+    },
+    {
+      "file": "src/pages/PrivacyPage.tsx",
+      "line": 95,
+      "text": "Request data portability"
+    },
+    {
+      "file": "src/pages/PrivacyPage.tsx",
+      "line": 96,
+      "text": "Withdraw consent at any time"
+    },
+    {
+      "file": "src/pages/ProductDetailPage.tsx",
+      "line": 68,
+      "text": "Regular winter charging in freezing conditions"
+    },
+    {
+      "file": "src/pages/ProductDetailPage.tsx",
+      "line": 69,
+      "text": "Nordic or alpine climate users"
+    },
+    {
+      "file": "src/pages/ProductDetailPage.tsx",
+      "line": 75,
+      "text": "Want real-time battery monitoring via smartphone"
+    },
+    {
+      "file": "src/pages/ProductDetailPage.tsx",
+      "line": 89,
+      "text": "Frequent winter charging without external battery heater"
+    },
+    {
+      "file": "src/pages/ProductDetailPage.tsx",
+      "line": 158,
+      "text": "Product Not Found"
+    },
+    {
+      "file": "src/pages/ProductDetailPage.tsx",
+      "line": 159,
+      "text": "The product you're looking for doesn"
+    },
+    {
+      "file": "src/pages/ProductDetailPage.tsx",
+      "line": 161,
+      "text": "Back to Products"
+    },
+    {
+      "file": "src/pages/ProductDetailPage.tsx",
+      "line": 199,
+      "text": "Failed to add to cart"
+    },
+    {
+      "file": "src/pages/ProductDetailPage.tsx",
+      "line": 431,
+      "text": "How this battery handles cold weather"
+    },
+    {
+      "file": "src/pages/ProductDetailPage.tsx",
+      "line": 484,
+      "text": "Bluetooth Monitoring"
+    },
+    {
+      "file": "src/pages/ProductDetailPage.tsx",
+      "line": 491,
+      "text": "What You See"
+    },
+    {
+      "file": "src/pages/ProductDetailPage.tsx",
+      "line": 626,
+      "text": "Technical Specifications"
+    },
+    {
+      "file": "src/pages/ShopifyProductDetailPage.tsx",
+      "line": 69,
+      "text": "Failed to load product"
+    },
+    {
+      "file": "src/pages/ShopifyProductDetailPage.tsx",
+      "line": 101,
+      "text": "Product not found"
+    },
+    {
+      "file": "src/pages/ShopifyProductDetailPage.tsx",
+      "line": 165,
+      "text": "Added to cart"
+    },
+    {
+      "file": "src/pages/ShopifyProductDetailPage.tsx",
+      "line": 169,
+      "text": "Failed to add to cart"
+    },
+    {
+      "file": "src/pages/ShopifyProductDetailPage.tsx",
+      "line": 358,
+      "text": "Long lifespan"
+    },
+    {
+      "file": "src/pages/ShopifyProductDetailPage.tsx",
+      "line": 365,
+      "text": "Operating range"
+    },
+    {
+      "file": "src/pages/ShopifyProductDetailPage.tsx",
+      "line": 384,
+      "text": "How this battery handles cold weather"
+    },
+    {
+      "file": "src/pages/ShopifyProductDetailPage.tsx",
+      "line": 435,
+      "text": "Bluetooth Monitoring"
+    },
+    {
+      "file": "src/pages/ShopifyProductDetailPage.tsx",
+      "line": 442,
+      "text": "What You See"
+    },
+    {
+      "file": "src/pages/StoriesPage.tsx",
+      "line": 46,
+      "text": "Customer Stories"
+    },
+    {
+      "file": "src/pages/TermsPage.tsx",
+      "line": 24,
+      "text": "Terms of Service"
+    },
+    {
+      "file": "src/pages/TermsPage.tsx",
+      "line": 28,
+      "text": "Terms of Service"
+    },
+    {
+      "file": "src/pages/TermsPage.tsx",
+      "line": 76,
+      "text": "Product must be unused and in original packaging"
+    },
+    {
+      "file": "src/pages/TermsPage.tsx",
+      "line": 109,
+      "text": "Manufacturing defects"
+    },
+    {
+      "file": "src/pages/TermsPage.tsx",
+      "line": 111,
+      "text": "BMS failures under normal use"
+    },
+    {
+      "file": "src/pages/WhySentorisePage.tsx",
+      "line": 39,
+      "text": "DIN Standards"
+    },
+    {
+      "file": "src/pages/WhySentorisePage.tsx",
+      "line": 40,
+      "text": "CE Certified"
+    },
+    {
+      "file": "src/pages/WhySentorisePage.tsx",
+      "line": 41,
+      "text": "United Kingdom"
+    },
+    {
+      "file": "src/pages/WhySentorisePage.tsx",
+      "line": 41,
+      "text": "UK Approved"
+    },
+    {
+      "file": "src/pages/WhySentorisePage.tsx",
+      "line": 42,
+      "text": "Nordic Countries"
+    },
+    {
+      "file": "src/pages/WhySentorisePage.tsx",
+      "line": 42,
+      "text": "Arctic Ready"
+    },
+    {
+      "file": "src/pages/WhySentorisePage.tsx",
+      "line": 43,
+      "text": "United States"
+    },
+    {
+      "file": "src/pages/WhySentorisePage.tsx",
+      "line": 43,
+      "text": "BCI Compatible"
+    },
+    {
+      "file": "src/pages/WhySentorisePage.tsx",
+      "line": 44,
+      "text": "Cold Climate Tested"
+    },
+    {
+      "file": "src/pages/admin/AdminDashboard.tsx",
+      "line": 103,
+      "text": "Quote Request"
+    },
+    {
+      "file": "src/pages/admin/AdminDashboard.tsx",
+      "line": 111,
+      "text": "Contact Form"
+    },
+    {
+      "file": "src/pages/admin/AdminDashboard.tsx",
+      "line": 149,
+      "text": "Total Leads"
+    },
+    {
+      "file": "src/pages/admin/AdminDashboard.tsx",
+      "line": 157,
+      "text": "At Risk"
+    },
+    {
+      "file": "src/pages/admin/AdminDashboard.tsx",
+      "line": 173,
+      "text": "Brand Assets"
+    },
+    {
+      "file": "src/pages/admin/AdminDashboard.tsx",
+      "line": 196,
+      "text": "Created At"
+    },
+    {
+      "file": "src/pages/admin/AdminDashboard.tsx",
+      "line": 247,
+      "text": "Reminders scheduled for today"
+    },
+    {
+      "file": "src/pages/admin/AdminDashboard.tsx",
+      "line": 257,
+      "text": "Follow up with lead"
+    },
+    {
+      "file": "src/pages/admin/AdminDashboard.tsx",
+      "line": 259,
+      "text": "Quote Request"
+    },
+    {
+      "file": "src/pages/admin/AdminDashboard.tsx",
+      "line": 259,
+      "text": "Contact Form"
+    },
+    {
+      "file": "src/pages/admin/AdminDashboard.tsx",
+      "line": 278,
+      "text": "Recent Leads"
+    },
+    {
+      "file": "src/pages/admin/AdminDashboard.tsx",
+      "line": 279,
+      "text": "Latest inquiries from your website"
+    },
+    {
+      "file": "src/pages/admin/AdminDashboard.tsx",
+      "line": 292,
+      "text": "No leads yet"
+    },
+    {
+      "file": "src/pages/admin/AdminLogin.tsx",
+      "line": 47,
+      "text": "Login failed"
+    },
+    {
+      "file": "src/pages/admin/AdminLogin.tsx",
+      "line": 48,
+      "text": "Invalid credentials"
+    },
+    {
+      "file": "src/pages/admin/AdminLogin.tsx",
+      "line": 60,
+      "text": "An unexpected error occurred"
+    },
+    {
+      "file": "src/pages/admin/AdminLogin.tsx",
+      "line": 94,
+      "text": "Team Dashboard"
+    },
+    {
+      "file": "src/pages/admin/AdminLogin.tsx",
+      "line": 149,
+      "text": "Log In"
+    },
+    {
+      "file": "src/pages/admin/AdminSettings.tsx",
+      "line": 92,
+      "text": "Failed to update role"
+    },
+    {
+      "file": "src/pages/admin/AdminSettings.tsx",
+      "line": 97,
+      "text": "Role updated"
+    },
+    {
+      "file": "src/pages/admin/AdminSettings.tsx",
+      "line": 110,
+      "text": "Admin Access Required"
+    },
+    {
+      "file": "src/pages/admin/AdminSettings.tsx",
+      "line": 149,
+      "text": "No team members yet"
+    },
+    {
+      "file": "src/pages/admin/AdminSettings.tsx",
+      "line": 205,
+      "text": "Invite Team Members"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 49,
+      "text": "Instagram Post"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 49,
+      "text": "Square post for Instagram feed"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 50,
+      "text": "Facebook Cover"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 50,
+      "text": "Cover photo for Facebook page"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 51,
+      "text": "Twitter Header"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 52,
+      "text": "LinkedIn Post"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 52,
+      "text": "Post image for LinkedIn"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 54,
+      "text": "Email Header"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 54,
+      "text": "Header banner for email newsletters"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 55,
+      "text": "Email Signature"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 55,
+      "text": "Signature block for team emails"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 58,
+      "text": "Invoice Header"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 58,
+      "text": "Header for invoices and quotes"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 59,
+      "text": "Presentation Slide"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 107,
+      "text": "Please fill in all required fields"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 147,
+      "text": "AI generation failed"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 152,
+      "text": "Your AI-powered brand asset is ready"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 165,
+      "text": "Failed to create asset"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 182,
+      "text": "Failed to delete asset"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 187,
+      "text": "Asset deleted"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 206,
+      "text": "Brand Assets"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 220,
+      "text": "Create Brand Asset"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 230,
+      "text": "Social Media"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 294,
+      "text": "Main text on the asset"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 303,
+      "text": "Supporting text"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 335,
+      "text": "Filter by type"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 338,
+      "text": "All Types"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 339,
+      "text": "Social Media"
+    },
+    {
+      "file": "src/pages/admin/BrandAssets.tsx",
+      "line": 370,
+      "text": "No assets yet"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 136,
+      "text": "Feedback content is required"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 156,
+      "text": "Failed to add feedback"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 171,
+      "text": "Feedback added"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 172,
+      "text": "The feedback has been saved"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 199,
+      "text": "Failed to update status"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 204,
+      "text": "Status updated"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 247,
+      "text": "Feedback Hub"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 261,
+      "text": "Add Feedback"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 278,
+      "text": "Manual Entry"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 280,
+      "text": "Phone Call"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 282,
+      "text": "Website Form"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 311,
+      "text": "John Doe"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 333,
+      "text": "Select product"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 336,
+      "text": "No product"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 362,
+      "text": "Feedback Content"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 404,
+      "text": "Save Feedback"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 436,
+      "text": "All Types"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 448,
+      "text": "All Sentiment"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 459,
+      "text": "All Status"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 477,
+      "text": "No feedback found"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 556,
+      "text": "Sentiment Distribution"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 557,
+      "text": "Overall customer sentiment"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 596,
+      "text": "Feedback Types"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 597,
+      "text": "Breakdown by category"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 616,
+      "text": "Top Tags"
+    },
+    {
+      "file": "src/pages/admin/FeedbackHub.tsx",
+      "line": 617,
+      "text": "Most frequently used feedback tags"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 120,
+      "text": "Quote Request"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 133,
+      "text": "Contact Form"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 182,
+      "text": "Failed to update lead status"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 196,
+      "text": "Status updated"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 220,
+      "text": "Failed to add activity"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 225,
+      "text": "Activity added"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 226,
+      "text": "Your note has been saved"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 247,
+      "text": "Failed to set reminder"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 252,
+      "text": "Reminder set"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 323,
+      "text": "All Status"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 337,
+      "text": "All Sources"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 338,
+      "text": "Quote Requests"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 339,
+      "text": "Contact Forms"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 349,
+      "text": "No leads found"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 478,
+      "text": "Add Activity"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 485,
+      "text": "Activity Type"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 511,
+      "text": "Save Activity"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 525,
+      "text": "Set Follow-up Reminder"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 532,
+      "text": "Reminder Date"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 554,
+      "text": "Set Reminder"
+    },
+    {
+      "file": "src/pages/admin/LeadFollowUp.tsx",
+      "line": 562,
+      "text": "Activity Timeline"
+    },
+    {
+      "file": "src/pages/admin/components/AdminSidebar.tsx",
+      "line": 46,
+      "text": "Brand Assets"
+    },
+    {
+      "file": "src/pages/admin/components/AdminSidebar.tsx",
+      "line": 61,
+      "text": "Failed to sign out"
+    },
+    {
+      "file": "src/pages/admin/components/AdminSidebar.tsx",
+      "line": 145,
+      "text": "Sign Out"
+    },
+    {
+      "file": "src/pages/admin/components/AdminSidebar.tsx",
+      "line": 149,
+      "text": "Sign Out"
+    },
+    {
+      "file": "src/components/AIChatWidget.tsx",
+      "line": 73,
+      "text": "Failed to get response"
+    },
+    {
+      "file": "src/components/AIChatWidget.tsx",
+      "line": 146,
+      "text": "Open chat"
+    },
+    {
+      "file": "src/components/AIChatWidget.tsx",
+      "line": 162,
+      "text": "Sentorise AI"
+    },
+    {
+      "file": "src/components/BackToTop.tsx",
+      "line": 37,
+      "text": "Back to top"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 40,
+      "text": "Compact conversions"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 41,
+      "text": "Cabin or home backup"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 42,
+      "text": "Auxiliary power"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 43,
+      "text": "Lightweight and mobile"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 44,
+      "text": "Backup Power"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 44,
+      "text": "Emergency reserves"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 48,
+      "text": "Standard Battery Bay"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 50,
+      "text": "Large Dedicated Area"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 50,
+      "text": "No size restrictions"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 51,
+      "text": "Not Sure"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 55,
+      "text": "Light Use"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 56,
+      "text": "Moderate Use"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 57,
+      "text": "Heavy Use"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 58,
+      "text": "Help Me Calculate"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 62,
+      "text": "Below Freezing"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 63,
+      "text": "Occasionally Cool"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 64,
+      "text": "Mostly Warm"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 110,
+      "text": "Lightweight and portable"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 123,
+      "text": "Compact form factor"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 146,
+      "text": "High capacity for heavy loads"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 178,
+      "text": "Fits tight spaces"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 181,
+      "text": "High capacity for heavy use"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 187,
+      "text": "Great all-around choice"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 197,
+      "text": "Select your primary use case"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 226,
+      "text": "This helps us recommend the right form factor"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 252,
+      "text": "Consider what appliances you'll run"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 315,
+      "text": "Your Perfect Match"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 316,
+      "text": "Based on your requirements"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 332,
+      "text": "Best Match"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 385,
+      "text": "Also Consider"
+    },
+    {
+      "file": "src/components/BatterySelector.tsx",
+      "line": 404,
+      "text": "View Details"
+    },
+    {
+      "file": "src/components/BlogProductRecommendations.tsx",
+      "line": 8,
+      "text": "Cold Weather"
+    },
+    {
+      "file": "src/components/BlogProductRecommendations.tsx",
+      "line": 11,
+      "text": "System Design"
+    },
+    {
+      "file": "src/components/BlogProductRecommendations.tsx",
+      "line": 26,
+      "text": "Cycle Life"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 15,
+      "text": "Cold Weather"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 16,
+      "text": "Winter load capacity"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 18,
+      "text": "Maintains charge from alternator during cold starts"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 23,
+      "text": "Single battery"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 23,
+      "text": "Doubles available current at cold-derated output"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 27,
+      "text": "Use soft-start inverter to avoid tripping cold-weather BMS limits on startup surge"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 31,
+      "text": "Parallel system output"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 33,
+      "text": "Charge each battery independently for best balance"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 37,
+      "text": "Passive BMS balance"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 37,
+      "text": "Active balancer module"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 41,
+      "text": "Use equal-length cables to each battery for balanced current distribution"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 45,
+      "text": "Continuous inverter load"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 47,
+      "text": "Shore Power Charger"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 47,
+      "text": "Replenishes battery bank while connected to mains"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 50,
+      "text": "Prevents voltage sag under sustained heavy loads"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 51,
+      "text": "Modified sine wave"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 51,
+      "text": "Pure sine wave inverter"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 51,
+      "text": "Required for sensitive electronics and induction cooktops"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 59,
+      "text": "Solar harvest window"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 65,
+      "text": "Alternator backup"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 65,
+      "text": "Supplements solar on cloudy days during driving"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 76,
+      "text": "Charging input range"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 79,
+      "text": "From alternator"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 79,
+      "text": "Isolates starter battery while charging house bank"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 82,
+      "text": "Halves recharge time with proper voltage profile"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 83,
+      "text": "Single source"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 83,
+      "text": "Ensures charging in any scenario"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 91,
+      "text": "Marine house load"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 99,
+      "text": "Distributes weight and provides redundancy"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 103,
+      "text": "Use tinned copper lugs and marine-grade heat shrink on all connections"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 107,
+      "text": "Typical RV daily consumption"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 109,
+      "text": "From vehicle alternator"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 110,
+      "text": "Full recharge overnight at campsite hookup"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 125,
+      "text": "System voltage decision point"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 127,
+      "text": "Match system voltage"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 127,
+      "text": "Ensure exact voltage profile for your configuration"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 143,
+      "text": "External shunt monitor"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 143,
+      "text": "Higher accuracy SOC and historical data logging"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 153,
+      "text": "Measure voltage drop under load at each connection point to find high-resistance joints"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 161,
+      "text": "Recommended load range"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 273,
+      "text": "Charger Recommendations"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 315,
+      "text": "Upgrade Path"
+    },
+    {
+      "file": "src/components/BlogSystemPairingGuide.tsx",
+      "line": 338,
+      "text": "Engineering Tips"
+    },
+    {
+      "file": "src/components/BrandTimeline.tsx",
+      "line": 14,
+      "text": "The Spark"
+    },
+    {
+      "file": "src/components/BrandTimeline.tsx",
+      "line": 20,
+      "text": "First Production Line"
+    },
+    {
+      "file": "src/components/BrandTimeline.tsx",
+      "line": 32,
+      "text": "Global Expansion"
+    },
+    {
+      "file": "src/components/BrandTimeline.tsx",
+      "line": 38,
+      "text": "Smart BMS Launch"
+    },
+    {
+      "file": "src/components/BrandTimeline.tsx",
+      "line": 44,
+      "text": "Carbon Neutral Goal"
+    },
+    {
+      "file": "src/components/ContactForm.tsx",
+      "line": 18,
+      "text": "Name is required"
+    },
+    {
+      "file": "src/components/ContactForm.tsx",
+      "line": 18,
+      "text": "Name too long"
+    },
+    {
+      "file": "src/components/ContactForm.tsx",
+      "line": 19,
+      "text": "Invalid email address"
+    },
+    {
+      "file": "src/components/ContactForm.tsx",
+      "line": 19,
+      "text": "Email too long"
+    },
+    {
+      "file": "src/components/ContactForm.tsx",
+      "line": 21,
+      "text": "Message too long"
+    },
+    {
+      "file": "src/components/ContactForm.tsx",
+      "line": 27,
+      "text": "Product Inquiry"
+    },
+    {
+      "file": "src/components/ContactForm.tsx",
+      "line": 28,
+      "text": "Technical Support"
+    },
+    {
+      "file": "src/components/ContactForm.tsx",
+      "line": 29,
+      "text": "Warranty Claim"
+    },
+    {
+      "file": "src/components/ContactForm.tsx",
+      "line": 30,
+      "text": "Bulk Order"
+    },
+    {
+      "file": "src/components/ContactForm.tsx",
+      "line": 88,
+      "text": "Your Name"
+    },
+    {
+      "file": "src/components/ContactForm.tsx",
+      "line": 98,
+      "text": "Your Email"
+    },
+    {
+      "file": "src/components/DecisionSupport.tsx",
+      "line": 15,
+      "text": "Sentorise vs Lead-Acid"
+    },
+    {
+      "file": "src/components/DecisionSupport.tsx",
+      "line": 19,
+      "text": "No maintenance required"
+    },
+    {
+      "file": "src/components/DecisionSupport.tsx",
+      "line": 30,
+      "text": "Genuine Grade-A cells with full certification"
+    },
+    {
+      "file": "src/components/DecisionSupport.tsx",
+      "line": 32,
+      "text": "Bluetooth app with real-time diagnostics"
+    },
+    {
+      "file": "src/components/DecisionSupport.tsx",
+      "line": 41,
+      "text": "Shipping Damage"
+    },
+    {
+      "file": "src/components/DecisionSupport.tsx",
+      "line": 45,
+      "text": "Installation Issues"
+    },
+    {
+      "file": "src/components/DecisionSupport.tsx",
+      "line": 49,
+      "text": "App Connection Problems"
+    },
+    {
+      "file": "src/components/DecisionSupport.tsx",
+      "line": 53,
+      "text": "Warranty Claims"
+    },
+    {
+      "file": "src/components/Footer.tsx",
+      "line": 125,
+      "text": "Sentorise Energy"
+    },
+    {
+      "file": "src/components/InstagramFeed.tsx",
+      "line": 8,
+      "text": "Solar setup complete"
+    },
+    {
+      "file": "src/components/InstagramFeed.tsx",
+      "line": 9,
+      "text": "Beach camping perfection"
+    },
+    {
+      "file": "src/components/InstagramFeed.tsx",
+      "line": 10,
+      "text": "Winter camping ready"
+    },
+    {
+      "file": "src/components/InstagramFeed.tsx",
+      "line": 11,
+      "text": "Desert sunset vibes"
+    },
+    {
+      "file": "src/components/InstallationGuide.tsx",
+      "line": 30,
+      "text": "Disconnect all loads"
+    },
+    {
+      "file": "src/components/InstallationGuide.tsx",
+      "line": 37,
+      "text": "Mount the battery securely"
+    },
+    {
+      "file": "src/components/InstallationGuide.tsx",
+      "line": 66,
+      "text": "Never short-circuit the terminals"
+    },
+    {
+      "file": "src/components/InstallationGuide.tsx",
+      "line": 69,
+      "text": "Do not exceed maximum discharge current"
+    },
+    {
+      "file": "src/components/InstallationGuide.tsx",
+      "line": 70,
+      "text": "Keep away from water and extreme heat sources"
+    },
+    {
+      "file": "src/components/InstallationGuide.tsx",
+      "line": 71,
+      "text": "Dispose of at designated battery recycling centers"
+    },
+    {
+      "file": "src/components/InstallationGuide.tsx",
+      "line": 84,
+      "text": "Installation Guide"
+    },
+    {
+      "file": "src/components/InstallationGuide.tsx",
+      "line": 92,
+      "text": "Recommended Cable"
+    },
+    {
+      "file": "src/components/InstallationGuide.tsx",
+      "line": 96,
+      "text": "Fuse Rating"
+    },
+    {
+      "file": "src/components/InstallationGuide.tsx",
+      "line": 100,
+      "text": "Terminal Torque"
+    },
+    {
+      "file": "src/components/MediaCoverageBar.tsx",
+      "line": 6,
+      "text": "LE FIGARO"
+    },
+    {
+      "file": "src/components/MediaCoverageBar.tsx",
+      "line": 10,
+      "text": "SBT Insight"
+    },
+    {
+      "file": "src/components/MediaTrustBar.tsx",
+      "line": 3,
+      "text": "SGS Certified"
+    },
+    {
+      "file": "src/components/MediaTrustBar.tsx",
+      "line": 4,
+      "text": "CE Mark"
+    },
+    {
+      "file": "src/components/MediaTrustBar.tsx",
+      "line": 5,
+      "text": "RoHS Compliant"
+    },
+    {
+      "file": "src/components/MediaTrustBar.tsx",
+      "line": 8,
+      "text": "FCC Certified"
+    },
+    {
+      "file": "src/components/MediaTrustBar.tsx",
+      "line": 9,
+      "text": "UL Listed"
+    },
+    {
+      "file": "src/components/Newsletter.tsx",
+      "line": 10,
+      "text": "Email too long"
+    },
+    {
+      "file": "src/components/Newsletter.tsx",
+      "line": 69,
+      "text": "Enter your email"
+    },
+    {
+      "file": "src/components/PowerCalculator.tsx",
+      "line": 38,
+      "text": "LED Light"
+    },
+    {
+      "file": "src/components/PowerCalculator.tsx",
+      "line": 41,
+      "text": "Phone Charger"
+    },
+    {
+      "file": "src/components/PowerCalculator.tsx",
+      "line": 44,
+      "text": "Coffee Maker"
+    },
+    {
+      "file": "src/components/PowerCalculator.tsx",
+      "line": 45,
+      "text": "Water Pump"
+    },
+    {
+      "file": "src/components/PowerCalculator.tsx",
+      "line": 66,
+      "text": "Custom Appliance"
+    },
+    {
+      "file": "src/components/PowerCalculator.tsx",
+      "line": 133,
+      "text": "Power Calculator"
+    },
+    {
+      "file": "src/components/PowerCalculator.tsx",
+      "line": 134,
+      "text": "Calculate your battery needs"
+    },
+    {
+      "file": "src/components/PowerCalculator.tsx",
+      "line": 140,
+      "text": "Quick Add Appliances"
+    },
+    {
+      "file": "src/components/PowerCalculator.tsx",
+      "line": 169,
+      "text": "Your Appliances"
+    },
+    {
+      "file": "src/components/PowerCalculator.tsx",
+      "line": 332,
+      "text": "Recommended Batteries"
+    },
+    {
+      "file": "src/components/PowerCalculator.tsx",
+      "line": 345,
+      "text": "Best Match"
+    },
+    {
+      "file": "src/components/PowerCalculator.tsx",
+      "line": 370,
+      "text": "Contact us for custom solutions"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 99,
+      "text": "Power Distribution Bus Bar"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 129,
+      "text": "Starter Bundle"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 130,
+      "text": "Get Started"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 138,
+      "text": "Anderson cable set"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 140,
+      "text": "Terminal kit"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 143,
+      "text": "No charger included"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 144,
+      "text": "No monitoring"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 151,
+      "text": "Complete Bundle"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 152,
+      "text": "Most Popular"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 158,
+      "text": "Full RV or solar installation"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 162,
+      "text": "All Starter items included"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 165,
+      "text": "No bus bar for multi-battery"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 172,
+      "text": "Pro Bundle"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 173,
+      "text": "Full System"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 182,
+      "text": "Advanced monitoring"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 183,
+      "text": "Distribution bus bar"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 184,
+      "text": "Full protection suite"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 438,
+      "text": "Recommended Accessories"
+    },
+    {
+      "file": "src/components/ProductAccessories.tsx",
+      "line": 509,
+      "text": "Individual Accessories"
+    },
+    {
+      "file": "src/components/ProductCard.tsx",
+      "line": 59,
+      "text": "Fast Charge"
+    },
+    {
+      "file": "src/components/ProductCard.tsx",
+      "line": 122,
+      "text": "Quick View"
+    },
+    {
+      "file": "src/components/ProductCard.tsx",
+      "line": 159,
+      "text": "Cycle Life"
+    },
+    {
+      "file": "src/components/ProductCard.tsx",
+      "line": 226,
+      "text": "Remove from compare"
+    },
+    {
+      "file": "src/components/ProductCard.tsx",
+      "line": 226,
+      "text": "Add to compare"
+    },
+    {
+      "file": "src/components/ProductComparisonTable.tsx",
+      "line": 25,
+      "text": "Usable Capacity"
+    },
+    {
+      "file": "src/components/ProductComparisonTable.tsx",
+      "line": 31,
+      "text": "Cycle Life"
+    },
+    {
+      "file": "src/components/ProductComparisonTable.tsx",
+      "line": 53,
+      "text": "Maintenance Required"
+    },
+    {
+      "file": "src/components/ProductComparisonTable.tsx",
+      "line": 58,
+      "text": "Mount in Any Position"
+    },
+    {
+      "file": "src/components/ProductComparisonTable.tsx",
+      "line": 63,
+      "text": "BMS Protection"
+    },
+    {
+      "file": "src/components/ProductComparisonTable.tsx",
+      "line": 68,
+      "text": "Bluetooth Monitoring"
+    },
+    {
+      "file": "src/components/ProductComparisonTable.tsx",
+      "line": 78,
+      "text": "Typical Lifespan"
+    },
+    {
+      "file": "src/components/ProductComparisonTable.tsx",
+      "line": 83,
+      "text": "Cost per Cycle"
+    },
+    {
+      "file": "src/components/ProductComparisonTable.tsx",
+      "line": 152,
+      "text": "Bottom Line"
+    },
+    {
+      "file": "src/components/ProductFAQ.tsx",
+      "line": 84,
+      "text": "Frequently Asked Questions"
+    },
+    {
+      "file": "src/components/ProductMediaShowcase.tsx",
+      "line": 25,
+      "text": "Smart BMS"
+    },
+    {
+      "file": "src/components/ProductMediaShowcase.tsx",
+      "line": 26,
+      "text": "Bluetooth Module"
+    },
+    {
+      "file": "src/components/ProductMediaShowcase.tsx",
+      "line": 185,
+      "text": "Hide Labels"
+    },
+    {
+      "file": "src/components/ProductMediaShowcase.tsx",
+      "line": 185,
+      "text": "Show Labels"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 28,
+      "text": "Router Backup"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 29,
+      "text": "Camping Lights"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 30,
+      "text": "Emergency Kit"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 31,
+      "text": "Small Electronics"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 34,
+      "text": "Small RV Systems"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 35,
+      "text": "Portable Solar"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 36,
+      "text": "Kayak Trolling"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 37,
+      "text": "DIY Battery Box"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 40,
+      "text": "RV Main Power"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 42,
+      "text": "Solar Home System"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 43,
+      "text": "Marine Auxiliary"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 46,
+      "text": "Van Conversions"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 47,
+      "text": "Compact RVs"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 48,
+      "text": "Custom Installs"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 52,
+      "text": "European Motorhomes"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 53,
+      "text": "OEM Replacement"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 54,
+      "text": "Caravan Systems"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 55,
+      "text": "Fleet Vehicles"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 58,
+      "text": "Winter Camping"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 60,
+      "text": "Large Solar Systems"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 61,
+      "text": "Nordic RVs"
+    },
+    {
+      "file": "src/components/ProductUseCases.tsx",
+      "line": 75,
+      "text": "Ideal Applications"
+    },
+    {
+      "file": "src/components/QuickViewModal.tsx",
+      "line": 188,
+      "text": "Remove from compare"
+    },
+    {
+      "file": "src/components/QuickViewModal.tsx",
+      "line": 188,
+      "text": "Add to compare"
+    },
+    {
+      "file": "src/components/QuoteRequestModal.tsx",
+      "line": 18,
+      "text": "Name is required"
+    },
+    {
+      "file": "src/components/QuoteRequestModal.tsx",
+      "line": 19,
+      "text": "Invalid email address"
+    },
+    {
+      "file": "src/components/SceneNavigation.tsx",
+      "line": 20,
+      "text": "Van Life"
+    },
+    {
+      "file": "src/components/SceneNavigation.tsx",
+      "line": 23,
+      "text": "Compact van solutions"
+    },
+    {
+      "file": "src/components/SceneNavigation.tsx",
+      "line": 30,
+      "text": "Solar storage systems"
+    },
+    {
+      "file": "src/components/SceneNavigation.tsx",
+      "line": 37,
+      "text": "Waterproof reliability"
+    },
+    {
+      "file": "src/components/SceneNavigation.tsx",
+      "line": 44,
+      "text": "Portable outdoor power"
+    },
+    {
+      "file": "src/components/SceneNavigation.tsx",
+      "line": 51,
+      "text": "Cabin power backup"
+    },
+    {
+      "file": "src/components/SeriesComparisonTable.tsx",
+      "line": 29,
+      "text": "BMS Rating"
+    },
+    {
+      "file": "src/components/SeriesComparisonTable.tsx",
+      "line": 35,
+      "text": "Cycle Life"
+    },
+    {
+      "file": "src/components/ShareButtons.tsx",
+      "line": 38,
+      "text": "Failed to copy link"
+    },
+    {
+      "file": "src/components/ShareButtons.tsx",
+      "line": 62,
+      "text": "Copy link"
+    },
+    {
+      "file": "src/components/ShopifyProductGrid.tsx",
+      "line": 16,
+      "text": "Our Batteries"
+    },
+    {
+      "file": "src/components/StandardsBar.tsx",
+      "line": 10,
+      "text": "CE Certified"
+    },
+    {
+      "file": "src/components/StandardsBar.tsx",
+      "line": 12,
+      "text": "RoHS Compliant"
+    },
+    {
+      "file": "src/components/Stats.tsx",
+      "line": 2,
+      "text": "Cycle Life"
+    },
+    {
+      "file": "src/components/Stats.tsx",
+      "line": 3,
+      "text": "Year Warranty"
+    },
+    {
+      "file": "src/components/Stats.tsx",
+      "line": 4,
+      "text": "Happy Customers"
+    },
+    {
+      "file": "src/components/StockStatus.tsx",
+      "line": 22,
+      "text": "Out of Stock"
+    },
+    {
+      "file": "src/components/StockStatus.tsx",
+      "line": 42,
+      "text": "Low Stock"
+    },
+    {
+      "file": "src/components/StockStatus.tsx",
+      "line": 51,
+      "text": "In Stock"
+    },
+    {
+      "file": "src/components/StockStatus.tsx",
+      "line": 64,
+      "text": "Contact for availability"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 33,
+      "text": "Basic RV"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 36,
+      "text": "Solar Panels"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 37,
+      "text": "MPPT Controller"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 39,
+      "text": "Fuse Box"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 39,
+      "text": "Distribution panel"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 40,
+      "text": "DC Loads"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 41,
+      "text": "AC outlets"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 53,
+      "text": "Full RV System"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 56,
+      "text": "Solar Array"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 57,
+      "text": "Solar controller"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 58,
+      "text": "Alternator charging"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 60,
+      "text": "Shore Charger"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 60,
+      "text": "AC to DC"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 61,
+      "text": "Bluetooth App"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 62,
+      "text": "Bus Bar"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 62,
+      "text": "Power distribution"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 63,
+      "text": "All Loads"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 68,
+      "text": "While driving"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 69,
+      "text": "When plugged in"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 77,
+      "text": "Van Conversion"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 78,
+      "text": "Compact DC-DC focused system"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 80,
+      "text": "Vehicle Alternator"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 80,
+      "text": "Primary charging"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 82,
+      "text": "Roof Solar"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 83,
+      "text": "Built into some DC-DC"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 84,
+      "text": "Sentorise MINI"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 85,
+      "text": "Van Loads"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 89,
+      "text": "Main charge"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 102,
+      "text": "MPPT Controller"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 106,
+      "text": "Cabin Loads"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 106,
+      "text": "Full household power"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 251,
+      "text": "Sentorise Battery"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 255,
+      "text": "Compatible Components"
+    },
+    {
+      "file": "src/components/SystemDiagram.tsx",
+      "line": 259,
+      "text": "Power Flow"
+    },
+    {
+      "file": "src/components/Testimonials.tsx",
+      "line": 9,
+      "text": "Marcus Eriksson"
+    },
+    {
+      "file": "src/components/Testimonials.tsx",
+      "line": 10,
+      "text": "Van Life Enthusiast"
+    },
+    {
+      "file": "src/components/Testimonials.tsx",
+      "line": 17,
+      "text": "Sophie Laurent"
+    },
+    {
+      "file": "src/components/Testimonials.tsx",
+      "line": 26,
+      "text": "RV Dealer"
+    },
+    {
+      "file": "src/components/Testimonials.tsx",
+      "line": 33,
+      "text": "Emma van der Berg"
+    },
+    {
+      "file": "src/components/Testimonials.tsx",
+      "line": 34,
+      "text": "Sailboat Owner"
+    },
+    {
+      "file": "src/components/Testimonials.tsx",
+      "line": 37,
+      "text": "Our sailboat"
+    },
+    {
+      "file": "src/components/Testimonials.tsx",
+      "line": 41,
+      "text": "James Wilson"
+    },
+    {
+      "file": "src/components/Testimonials.tsx",
+      "line": 42,
+      "text": "Solar Installer"
+    },
+    {
+      "file": "src/components/Testimonials.tsx",
+      "line": 43,
+      "text": "United Kingdom"
+    },
+    {
+      "file": "src/components/Testimonials.tsx",
+      "line": 49,
+      "text": "Anna Johansen"
+    },
+    {
+      "file": "src/components/Testimonials.tsx",
+      "line": 50,
+      "text": "Camping Enthusiast"
+    },
+    {
+      "file": "src/components/ThemeToggle.tsx",
+      "line": 17,
+      "text": "Toggle theme"
+    },
+    {
+      "file": "src/components/TrustBadges.tsx",
+      "line": 8,
+      "text": "Full replacement"
+    },
+    {
+      "file": "src/components/TrustBadges.tsx",
+      "line": 18,
+      "text": "No questions asked"
+    },
+    {
+      "file": "src/components/TrustBadges.tsx",
+      "line": 22,
+      "text": "Berlin Support"
+    },
+    {
+      "file": "src/components/TrustStats.tsx",
+      "line": 4,
+      "text": "Happy Customers"
+    },
+    {
+      "file": "src/components/TrustStats.tsx",
+      "line": 5,
+      "text": "Cycle Life"
+    },
+    {
+      "file": "src/components/TrustStats.tsx",
+      "line": 5,
+      "text": "Per Battery"
+    },
+    {
+      "file": "src/components/TrustStats.tsx",
+      "line": 6,
+      "text": "Full Coverage"
+    },
+    {
+      "file": "src/components/TrustStats.tsx",
+      "line": 14,
+      "text": "Low Maintenance"
+    },
+    {
+      "file": "src/components/VerifiableTrust.tsx",
+      "line": 31,
+      "text": "Transport Safety Certification"
+    },
+    {
+      "file": "src/components/VerifiableTrust.tsx",
+      "line": 37,
+      "text": "CE Mark"
+    },
+    {
+      "file": "src/components/VerifiableTrust.tsx",
+      "line": 38,
+      "text": "European Conformity"
+    },
+    {
+      "file": "src/components/VerifiableTrust.tsx",
+      "line": 45,
+      "text": "Restriction of Hazardous Substances"
+    },
+    {
+      "file": "src/components/VerifiableTrust.tsx",
+      "line": 52,
+      "text": "EU Chemical Safety"
+    },
+    {
+      "file": "src/components/VerifiableTrust.tsx",
+      "line": 59,
+      "text": "Battery Safety Standard"
+    },
+    {
+      "file": "src/components/VerifiableTrust.tsx",
+      "line": 154,
+      "text": "Register Warranty"
+    },
+    {
+      "file": "src/components/VideoShowcase.tsx",
+      "line": 78,
+      "text": "Video Guides"
+    },
+    {
+      "file": "src/components/VideoShowcase.tsx",
+      "line": 79,
+      "text": "Watch before you buy or install"
+    },
+    {
+      "file": "src/components/WarrantyLookup.tsx",
+      "line": 47,
+      "text": "No warranty registrations found for this email"
+    },
+    {
+      "file": "src/components/WarrantyLookup.tsx",
+      "line": 92,
+      "text": "Email Address"
+    },
+    {
+      "file": "src/components/WarrantyLookup.tsx",
+      "line": 97,
+      "text": "Enter your email address"
+    },
+    {
+      "file": "src/components/WarrantyLookup.tsx",
+      "line": 122,
+      "text": "No Warranties Found"
+    },
+    {
+      "file": "src/components/WarrantyLookup.tsx",
+      "line": 158,
+      "text": "Purchase Date"
+    },
+    {
+      "file": "src/components/WarrantyLookup.tsx",
+      "line": 164,
+      "text": "Valid Until"
+    },
+    {
+      "file": "src/components/WarrantyRegistrationForm.tsx",
+      "line": 20,
+      "text": "Name is required"
+    },
+    {
+      "file": "src/components/WarrantyRegistrationForm.tsx",
+      "line": 21,
+      "text": "Valid email is required"
+    },
+    {
+      "file": "src/components/WarrantyRegistrationForm.tsx",
+      "line": 25,
+      "text": "Purchase date is required"
+    },
+    {
+      "file": "src/components/WarrantyRegistrationForm.tsx",
+      "line": 47,
+      "text": "Czech Republic"
+    },
+    {
+      "file": "src/components/WarrantyRegistrationForm.tsx",
+      "line": 48,
+      "text": "United Kingdom"
+    },
+    {
+      "file": "src/components/WarrantyRegistrationForm.tsx",
+      "line": 143,
+      "text": "Confirmation email sent successfully"
+    },
+    {
+      "file": "src/components/WarrantyRegistrationForm.tsx",
+      "line": 214,
+      "text": "Select your battery"
+    },
+    {
+      "file": "src/components/WarrantyRegistrationForm.tsx",
+      "line": 242,
+      "text": "Purchase Details"
+    },
+    {
+      "file": "src/components/WarrantyRegistrationForm.tsx",
+      "line": 280,
+      "text": "Contact Information"
+    },
+    {
+      "file": "src/components/WarrantyRegistrationForm.tsx",
+      "line": 287,
+      "text": "Max Mustermann"
+    },
+    {
+      "file": "src/components/WarrantyRegistrationForm.tsx",
+      "line": 331,
+      "text": "Street Address"
+    },
+    {
+      "file": "src/components/WarrantyRegistrationForm.tsx",
+      "line": 349,
+      "text": "Postal Code"
+    },
+    {
+      "file": "src/components/admin/DashboardStats.tsx",
+      "line": 47,
+      "text": "Quote Request"
+    },
+    {
+      "file": "src/components/admin/DashboardStats.tsx",
+      "line": 48,
+      "text": "Contact Form"
+    },
+    {
+      "file": "src/components/admin/DashboardStats.tsx",
+      "line": 95,
+      "text": "No lead data available"
+    },
+    {
+      "file": "src/components/admin/DashboardStats.tsx",
+      "line": 96,
+      "text": "Start collecting leads to see statistics"
+    },
+    {
+      "file": "src/components/admin/DashboardStats.tsx",
+      "line": 127,
+      "text": "Conversion Rate"
+    },
+    {
+      "file": "src/components/admin/DashboardStats.tsx",
+      "line": 139,
+      "text": "Total Leads"
+    },
+    {
+      "file": "src/components/admin/DashboardStats.tsx",
+      "line": 179,
+      "text": "Total Leads"
+    },
+    {
+      "file": "src/components/admin/ExportButton.tsx",
+      "line": 67,
+      "text": "Failed to export data"
+    },
+    {
+      "file": "src/components/admin/ExportButton.tsx",
+      "line": 99,
+      "text": "Failed to export data"
+    },
+    {
+      "file": "src/components/ShopifyProductCard.tsx",
+      "line": 103,
+      "text": "Added to cart"
+    },
+    {
+      "file": "src/components/ShopifyProductCard.tsx",
+      "line": 107,
+      "text": "Failed to add to cart"
+    },
+    {
+      "file": "src/components/Hero.tsx",
+      "line": 16,
+      "text": "Van Life"
+    },
+    {
+      "file": "src/components/Hero.tsx",
+      "line": 263,
+      "text": "Scroll down"
+    }
+  ]
+}
