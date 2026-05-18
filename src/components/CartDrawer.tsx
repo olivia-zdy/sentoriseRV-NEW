@@ -31,8 +31,8 @@ export const CartDrawer = ({ entryId = CART_ENTRY_POINTS.HEADER_DESKTOP }: CartD
     if (isOpen) {
       syncCart();
       // Focus the items region for screen readers / keyboard users
-      const t = setTimeout(() => itemsRegionRef.current?.focus(), 80);
-      return () => clearTimeout(t);
+      const timer = setTimeout(() => itemsRegionRef.current?.focus(), 80);
+      return () => clearTimeout(timer);
     }
   }, [isOpen, syncCart]);
 
