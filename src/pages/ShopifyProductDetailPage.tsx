@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { fetchProductByHandle } from "@/lib/shopify";
 import { useCartStore, ShopifyProduct } from "@/stores/cartStore";
 import { useMarket } from "@/context/MarketContext";
@@ -46,6 +47,7 @@ import {
 import { toast } from "sonner";
 
 const ShopifyProductDetailPage = () => {
+  const { t } = useTranslation();
   const { handle } = useParams<{ handle: string }>();
   const [product, setProduct] = useState<ShopifyProduct['node'] | null>(null);
   const [isLoading, setIsLoading] = useState(true);

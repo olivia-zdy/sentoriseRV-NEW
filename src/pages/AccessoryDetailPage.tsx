@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import PageTransition from "@/components/PageTransition";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnnouncementBar from "@/components/AnnouncementBar";
@@ -30,6 +31,7 @@ import {
 import BreadcrumbSchema from "@/components/SEO/BreadcrumbSchema";
 
 const AccessoryDetailPage = () => {
+  const { t } = useTranslation();
   const { slug } = useParams<{ slug: string }>();
   const product = slug ? getAccessoryBySlug(slug) : undefined;
 
