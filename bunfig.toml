@@ -1,2 +1,1 @@
-[preload]
-script = ["./scripts/preload-asset-stub.ts"]
+preload = ["./scripts/preload-asset-stub.ts"]
