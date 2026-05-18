@@ -1,0 +1,2 @@
+[preload]
+script = ["./scripts/preload-asset-stub.ts"]
