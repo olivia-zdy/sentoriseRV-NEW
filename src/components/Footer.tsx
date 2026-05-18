@@ -20,6 +20,23 @@ const socialLinks = [
   { name: "LinkedIn", icon: Linkedin, href: "#" },
 ];
 
+const WarehouseList = () => {
+  const { data: warehouses } = useWarehouses();
+  if (!warehouses || warehouses.length === 0) {
+    return <p>🇩🇪 Germany · 🇵🇱 Poland · 🇬🇧 United Kingdom</p>;
+  }
+  return (
+    <p>
+      {warehouses.map((w, i) => (
+        <span key={w.id}>
+          {i > 0 && <span> · </span>}
+          {COUNTRY_FLAGS[w.code] ?? "📦"} {w.display_name.replace(/\s+warehouse$/i, "")}
+        </span>
+      ))}
+    </p>
+  );
+};
+
 const RegistrationsToggle = forwardRef<HTMLDivElement>((_, ref) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
