@@ -2,14 +2,16 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2, Truck, Shield, RotateCcw, Award } from "lucide-react";
+import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2, Truck, Shield, RotateCcw, Award, Warehouse as WarehouseIcon } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import { useTranslation } from "react-i18next";
+import { useActiveWarehouse } from "@/hooks/useLocalWarehouse";
 
 export const CartDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { items, isLoading, isSyncing, updateQuantity, removeItem, getCheckoutUrl, syncCart } = useCartStore();
   const { t } = useTranslation();
+  const { warehouse, copy, market } = useActiveWarehouse();
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
   const currencyCode = items[0]?.price.currencyCode || 'GBP';
@@ -54,13 +56,29 @@ export const CartDrawer = () => {
         </SheetHeader>
         {/* Shipping notice */}
         {totalItems > 0 && (
-          <div className="mt-4 p-3 rounded-lg border bg-muted/30 border-border">
-            <div className="flex items-center gap-2">
-              <Truck className="w-4 h-4 text-muted-foreground flex-shrink-0" />
-              <span className="text-sm font-medium text-foreground">
-                {t('cart.shippingNotice')}
-              </span>
+          <div className="mt-4 space-y-2">
+            <div className="p-3 rounded-lg border bg-muted/30 border-border">
+              <div className="flex items-center gap-2">
+                <Truck className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                <span className="text-sm font-medium text-foreground">
+                  {t('cart.shippingNotice')}
+                </span>
+              </div>
             </div>
+            {warehouse && (
+              <div className="p-3 rounded-lg border border-primary/20 bg-primary/5">
+                <div className="flex items-start gap-2">
+                  <WarehouseIcon className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                  <div className="text-xs">
+                    <p className="font-medium text-foreground">
+                      <span className="mr-1">{market.flag}</span>
+                      {warehouse.display_name}
+                    </p>
+                    <p className="text-muted-foreground mt-0.5">{copy}</p>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         )}
 

@@ -344,13 +344,8 @@ const ShopifyProductDetailPage = () => {
                       <p className="text-xs text-muted-foreground">Register now →</p>
                     </div>
                   </Link>
-                  <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/30">
-                    <Truck className="w-5 h-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium text-sm">{t('products.euShipping')}</p>
-                      <p className="text-xs text-muted-foreground">EU orders, 2-5 business days</p>
-                    </div>
-                  </div>
+                  <ShippingTrustCard />
+                  {/* spacer kept for grid layout */}
                   <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/30">
                     <CheckCircle2 className="w-5 h-5 text-primary mt-0.5" />
                     <div>
