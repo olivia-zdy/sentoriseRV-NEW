@@ -6,8 +6,9 @@ import Footer from "@/components/Footer";
 import PageMeta from "@/components/PageMeta";
 import WarrantyRegistrationForm from "@/components/WarrantyRegistrationForm";
 import WarrantyLookup from "@/components/WarrantyLookup";
-import { Shield, CheckCircle2, Clock, Truck, Search, FileEdit } from "lucide-react";
+import { Shield, CheckCircle2, Clock, Truck, Search, FileEdit, Warehouse as WarehouseIcon } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useActiveWarehouse } from "@/hooks/useLocalWarehouse";
 
 const WarrantyPage = () => {
   const { t } = useTranslation();
