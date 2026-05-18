@@ -616,5 +616,22 @@
     "refundProcess": "Remboursement traité dans les 5 jours ouvrés suivant la réception du produit retourné.",
     "refundCredit": "Crédit sur le moyen de paiement initial sous 3 à 7 jours ouvrés (selon la banque).",
     "refundShipping": "Les frais d’expédition initiaux ne sont pas remboursables, sauf en cas de produit défectueux."
+  },
+  "seo": {
+    "home": {
+      "title": "Batteries LiFePO₄ adaptées au grand froid",
+      "description": "Batteries LiFePO4 avec protection basse température pour camping-car, van et solaire hors réseau. Garantie 5 ans, surveillance Bluetooth, support basé à Berlin."
+    },
+    "terms": {
+      "title": "Conditions générales d'utilisation",
+      "description": "Consultez les conditions d'utilisation des produits et services Sentorise."
+    },
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "description": "Comment Sentorise collecte, utilise et protège vos données personnelles."
+    },
+    "product": {
+      "descriptionTemplate": "{{name}} — Batterie LiFePO4 {{voltage}} {{capacity}}, garantie 5 ans et surveillance Bluetooth."
+    }
   }
 }

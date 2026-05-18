@@ -617,5 +617,22 @@
     "refundProcess": "我们收到退货后 5 个工作日内处理退款。",
     "refundCredit": "退款将在 3–7 个工作日内退回原支付方式（具体以银行为准）。",
     "refundShipping": "出库运费不予退还，商品存在质量问题除外。"
+  },
+  "seo": {
+    "home": {
+      "title": "耐低温 LiFePO₄ 磷酸铁锂电池",
+      "description": "适用于房车、露营车与离网光伏的低温保护磷酸铁锂电池，5 年质保，蓝牙监控，柏林本地售后支持。"
+    },
+    "terms": {
+      "title": "服务条款",
+      "description": "查阅 Sentorise 产品与服务的使用条款。"
+    },
+    "privacy": {
+      "title": "隐私政策",
+      "description": "Sentorise 如何收集、使用并保护您的个人信息。"
+    },
+    "product": {
+      "descriptionTemplate": "{{name}} — {{voltage}} {{capacity}} 磷酸铁锂电池，5 年质保，支持蓝牙监控。"
+    }
   }
 }

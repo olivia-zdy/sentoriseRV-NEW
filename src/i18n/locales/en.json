@@ -616,5 +616,22 @@
     "refundProcess": "Refund processed within 5 business days of receiving the returned product.",
     "refundCredit": "Original payment method credited within 3–7 business days (bank dependent).",
     "refundShipping": "Outbound shipping costs are non-refundable unless the product was defective."
+  },
+  "seo": {
+    "home": {
+      "title": "Cold-Weather Ready LiFePO₄ Batteries",
+      "description": "LiFePO4 batteries with low-temperature protection for RV, vanlife, and off-grid solar. 5-year warranty, Bluetooth monitoring, Berlin-based support."
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "description": "Read the terms and conditions for using Sentorise products and services."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "How Sentorise collects, uses, and protects your personal information."
+    },
+    "product": {
+      "descriptionTemplate": "{{name}} — {{voltage}} {{capacity}} LiFePO4 battery with 5-year warranty and Bluetooth monitoring."
+    }
   }
 }
