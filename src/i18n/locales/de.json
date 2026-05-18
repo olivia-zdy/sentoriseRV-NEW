@@ -616,5 +616,22 @@
     "refundProcess": "Die Erstattung wird innerhalb von 5 Werktagen nach Eingang der Rücksendung bearbeitet.",
     "refundCredit": "Die Gutschrift erfolgt innerhalb von 3–7 Werktagen auf das ursprüngliche Zahlungsmittel (bankabhängig).",
     "refundShipping": "Die Hinversandkosten sind nicht erstattungsfähig, es sei denn, das Produkt war defekt."
+  },
+  "seo": {
+    "home": {
+      "title": "Kältefeste LiFePO₄-Batterien",
+      "description": "LiFePO4-Batterien mit Niedertemperaturschutz für Wohnmobil, Vanlife und Off-Grid-Solar. 5 Jahre Garantie, Bluetooth-Überwachung, Support aus Berlin."
+    },
+    "terms": {
+      "title": "Allgemeine Geschäftsbedingungen",
+      "description": "Lesen Sie die Geschäftsbedingungen für die Nutzung von Sentorise-Produkten und -Diensten."
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "description": "Wie Sentorise personenbezogene Daten erhebt, verwendet und schützt."
+    },
+    "product": {
+      "descriptionTemplate": "{{name}} — {{voltage}} {{capacity}} LiFePO4-Batterie mit 5 Jahren Garantie und Bluetooth-Überwachung."
+    }
   }
 }
