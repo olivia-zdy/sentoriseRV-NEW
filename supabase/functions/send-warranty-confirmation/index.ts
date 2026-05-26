@@ -269,7 +269,7 @@ const handler = async (req: Request): Promise<Response> => {
                       <tr>
                         <td style="padding: 8px 0; color: #64748b; font-size: 14px;">Seriennummer / Serial:</td>
                         <td style="padding: 8px 0; color: #0f172a; font-size: 14px; font-family: monospace; text-align: right;">
-                          ${data.serial_number}
+                          ${safeSerialNumber}
                         </td>
                       </tr>
                       ` : ''}
