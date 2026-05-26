@@ -239,7 +239,7 @@ const handler = async (req: Request): Promise<Response> => {
           <tr>
             <td style="padding: 40px;">
               <h2 style="color: #0f172a; margin: 0 0 20px; font-size: 24px;">
-                Hallo ${data.name}! 👋
+                Hallo ${safeName}! 👋
               </h2>
               
               <p style="color: #475569; line-height: 1.6; margin: 0 0 20px;">
