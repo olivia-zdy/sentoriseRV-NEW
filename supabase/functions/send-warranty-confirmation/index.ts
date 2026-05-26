@@ -204,6 +204,20 @@ const handler = async (req: Request): Promise<Response> => {
       day: 'numeric'
     });
 
+    // Escape HTML to prevent injection via user-supplied fields
+    const escapeHtml = (v: unknown): string =>
+      String(v ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+
+    const safeName = escapeHtml(data.name);
+    const safeProductName = escapeHtml(data.product_name);
+    const safeSerialNumber = escapeHtml(data.serial_number);
+    const safeOrderNumber = escapeHtml(data.order_number);
+
     const emailHtml = `
       <!DOCTYPE html>
       <html>
@@ -225,7 +239,7 @@ const handler = async (req: Request): Promise<Response> => {
           <tr>
             <td style="padding: 40px;">
               <h2 style="color: #0f172a; margin: 0 0 20px; font-size: 24px;">
-                Hallo ${data.name}! 👋
+                Hallo ${safeName}! 👋
               </h2>
               
               <p style="color: #475569; line-height: 1.6; margin: 0 0 20px;">
@@ -248,14 +262,14 @@ const handler = async (req: Request): Promise<Response> => {
                       <tr>
                         <td style="padding: 8px 0; color: #64748b; font-size: 14px;">Produkt / Product:</td>
                         <td style="padding: 8px 0; color: #0f172a; font-size: 14px; font-weight: 600; text-align: right;">
-                          ${data.product_name}
+                          ${safeProductName}
                         </td>
                       </tr>
                       ${data.serial_number ? `
                       <tr>
                         <td style="padding: 8px 0; color: #64748b; font-size: 14px;">Seriennummer / Serial:</td>
                         <td style="padding: 8px 0; color: #0f172a; font-size: 14px; font-family: monospace; text-align: right;">
-                          ${data.serial_number}
+                          ${safeSerialNumber}
                         </td>
                       </tr>
                       ` : ''}
@@ -263,7 +277,7 @@ const handler = async (req: Request): Promise<Response> => {
                       <tr>
                         <td style="padding: 8px 0; color: #64748b; font-size: 14px;">Bestellnummer / Order:</td>
                         <td style="padding: 8px 0; color: #0f172a; font-size: 14px; font-family: monospace; text-align: right;">
-                          ${data.order_number}
+                          ${safeOrderNumber}
                         </td>
                       </tr>
                       ` : ''}
