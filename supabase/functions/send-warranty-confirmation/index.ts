@@ -204,6 +204,20 @@ const handler = async (req: Request): Promise<Response> => {
       day: 'numeric'
     });
 
+    // Escape HTML to prevent injection via user-supplied fields
+    const escapeHtml = (v: unknown): string =>
+      String(v ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+
+    const safeName = escapeHtml(data.name);
+    const safeProductName = escapeHtml(data.product_name);
+    const safeSerialNumber = escapeHtml(data.serial_number);
+    const safeOrderNumber = escapeHtml(data.order_number);
+
     const emailHtml = `
       <!DOCTYPE html>
       <html>
