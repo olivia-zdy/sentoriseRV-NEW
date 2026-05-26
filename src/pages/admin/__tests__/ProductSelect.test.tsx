@@ -25,7 +25,7 @@ describe("<ProductSelect />", () => {
   it("renders with empty value without throwing and shows placeholder + 'no product' status", () => {
     const onChange = vi.fn();
     render(<ProductSelect value="" onChange={onChange} />);
-    expect(screen.getByText(/select product/i)).toBeInTheDocument();
+    expect(screen.getByText(/no product$/i)).toBeInTheDocument();
     expect(screen.getByTestId("product-select-status")).toHaveTextContent(
       /no product linked/i,
     );
