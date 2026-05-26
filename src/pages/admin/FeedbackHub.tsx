@@ -29,6 +29,7 @@ import { useToast } from '@/hooks/use-toast';
 import { format } from 'date-fns';
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
 import { products } from '@/data/products';
+import { ProductSelect, normalizeProductId } from './components/ProductSelect';
 
 interface FeedbackEntry {
   id: string;
@@ -139,11 +140,13 @@ export default function FeedbackHub() {
       return;
     }
 
+    const normalizedProductId = normalizeProductId(newFeedback.product_id);
+
     const { data, error } = await supabase
       .from('feedback_entries')
       .insert({
         ...newFeedback,
-        product_id: newFeedback.product_id || null,
+        product_id: normalizedProductId || null,
         customer_name: newFeedback.customer_name || null,
         customer_email: newFeedback.customer_email || null,
       })
@@ -325,20 +328,18 @@ export default function FeedbackHub() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label>Product (optional)</Label>
-                    <Select 
-                      value={newFeedback.product_id || "__none__"} 
-                      onValueChange={(v) => setNewFeedback({...newFeedback, product_id: v === "__none__" ? "" : v})}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select product" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="__none__">No product</SelectItem>
-                        {products.map(p => (
-                          <SelectItem key={p.id} value={p.id}>{p.name}</SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                    <ProductSelect
+                      value={newFeedback.product_id}
+                      onChange={(productId) => {
+                        setNewFeedback({ ...newFeedback, product_id: productId });
+                        toast({
+                          title: productId ? 'Product linked' : 'Product cleared',
+                          description: productId
+                            ? products.find((p) => p.id === productId)?.name ?? productId
+                            : 'This feedback will be saved without a product.',
+                        });
+                      }}
+                    />
                   </div>
                   <div className="space-y-2">
                     <Label>Sentiment</Label>
