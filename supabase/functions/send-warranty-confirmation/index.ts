@@ -262,7 +262,7 @@ const handler = async (req: Request): Promise<Response> => {
                       <tr>
                         <td style="padding: 8px 0; color: #64748b; font-size: 14px;">Produkt / Product:</td>
                         <td style="padding: 8px 0; color: #0f172a; font-size: 14px; font-weight: 600; text-align: right;">
-                          ${data.product_name}
+                          ${safeProductName}
                         </td>
                       </tr>
                       ${data.serial_number ? `
