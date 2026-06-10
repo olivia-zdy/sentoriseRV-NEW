@@ -129,14 +129,25 @@ async function verifyWarrantyExists(data: WarrantyConfirmationRequest): Promise<
   }
 }
 
+const INTERNAL_WEBHOOK_SECRET = "wh_sentorise_warranty_email_2026";
+
 const handler = async (req: Request): Promise<Response> => {
-  // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    // Get client IP for rate limiting
+    // SECURITY: this function is only meant to be invoked server-side by the
+    // warranty_registrations DB trigger, never directly from the browser.
+    const providedSecret = req.headers.get("x-webhook-secret");
+    if (providedSecret !== INTERNAL_WEBHOOK_SECRET) {
+      console.warn("send-warranty-confirmation: missing or invalid webhook secret");
+      return new Response(
+        JSON.stringify({ error: "Unauthorized" }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
     const clientIp =
       req.headers.get("x-forwarded-for")?.split(",")[0].trim() ||
       req.headers.get("x-real-ip") ||
@@ -144,7 +155,6 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log(`Warranty email request from IP: ${clientIp}`);
 
-    // Check rate limit FIRST
     const rateLimitResult = await checkRateLimit(clientIp);
     if (!rateLimitResult.allowed) {
       console.warn(`Rate limit exceeded for IP: ${clientIp}`);
@@ -154,7 +164,6 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    // Parse request body
     let data: WarrantyConfirmationRequest;
     try {
       data = await req.json();
@@ -165,7 +174,6 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    // Validate required fields
     if (!data.email || !data.name || !data.product_name || !data.purchase_date || !data.warranty_end_date) {
       return new Response(
         JSON.stringify({ error: "Invalid request data." }),
@@ -173,7 +181,6 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    // Verify warranty exists in database before sending email
     const warrantyExists = await verifyWarrantyExists(data);
     if (!warrantyExists) {
       console.warn(`No matching warranty found for email: ${data.email}, product: ${data.product_name}`);

@@ -34,12 +34,12 @@ serve(async (req) => {
     const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-    // Rate limit by IP
+    // Rate limit by IP — tightened to mitigate enumeration/scraping of customer data.
     const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0].trim() || "unknown";
     const rateLimitKey = `warranty-lookup:${clientIp}`;
     const now = Math.floor(Date.now() / 1000);
     const WINDOW = 600; // 10 minutes
-    const MAX_REQUESTS = 10;
+    const MAX_REQUESTS = 3; // tightened from 10 → 3 per 10 min per IP
 
     const { data: existing } = await supabase
       .from("rate_limits")
@@ -63,9 +63,11 @@ serve(async (req) => {
       await supabase.from("rate_limits").insert({ key: rateLimitKey, count: 1, window_start: now });
     }
 
+    // SECURITY: do NOT return serial_number — it is sensitive PII enabling warranty
+    // fraud if leaked via email enumeration. Only internal admin tools should see it.
     const { data, error } = await supabase
       .from("warranty_registrations")
-      .select("id, product_name, serial_number, purchase_date, warranty_end_date, status, created_at")
+      .select("id, product_name, purchase_date, warranty_end_date, status, created_at")
       .eq("email", email)
       .order("created_at", { ascending: false });
 
